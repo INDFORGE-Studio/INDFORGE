@@ -157,6 +157,12 @@ def redact(n=8, decoy=None):
 MODS = {m["slug"]: m for m in load(os.path.join(TOOLS, "data", "mods.json"))["mods"]}
 GENERATED = load(os.path.join(TOOLS, "data", "mods.json"))["generated"]
 CONFIGS = load(os.path.join(TOOLS, "data", "configs.json"))
+# Site-written help for keys whose config file ships none (written from the mod's code).
+_SITE_HELP = load(os.path.join(TOOLS, "data", "configs-site-help.json"))
+for _f in CONFIGS:
+    for _r in _f["rows"]:
+        if not _r.get("help") and not _r.get("group"):
+            _r["help"] = _SITE_HELP.get(_f["profile"], {}).get(_r["key"])
 
 
 # Help texts stay English in the config files themselves; the site shows them translated.
@@ -277,7 +283,7 @@ def icon(name):
 
 # ---------------------------------------------------------------- shell
 NAV = [
-    ("", "nav.home", "home"), ("mods/", "nav.mods", "mods"), ("admins/", "nav.admins", "admins"),
+    ("", "nav.home", "home"), ("workshop/", "nav.mods", "mods"), ("admins/", "nav.admins", "admins"),
     ("intel/", "nav.intel", "intel"), ("changelog/", "nav.log", "log"), ("status/", "nav.status", "status"),
     ("about/", "nav.about", "about"),
 ]
@@ -446,7 +452,7 @@ def card(slug, lazy=True):
     %s
     <span class="card-id mono" aria-hidden="true">ID %s</span>
   </span>
-</a>""" % (url("mods/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), H(ver),
+</a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), H(ver),
            H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), m["guid"])
 
 
@@ -570,7 +576,7 @@ def mod_page(slug):
     img_cls = "hero-img sq" if slug == "conflict" else "hero-img"
     stamp = t("ui.classified", "span", "stamp", None, 'aria-hidden="true"') if slug == "conflict" else ""
     hero = """<section class="mhero wrap">
-  <nav class="crumbs mono" aria-label="Breadcrumb"><a href="%s">%s</a><span aria-hidden="true">/</span><a href="%smods/">%s</a><span aria-hidden="true">/</span>%s</nav>
+  <nav class="crumbs mono" aria-label="Breadcrumb"><a href="%s">%s</a><span aria-hidden="true">/</span><a href="%sworkshop/">%s</a><span aria-hidden="true">/</span>%s</nav>
   <div class="mhero-grid">
     <div class="mhero-txt">
       <p class="kicker"><span class="kicker-code">MOD-%02d</span>%s</p>
@@ -635,10 +641,10 @@ def mod_page(slug):
     pn = """<nav class="pn wrap" aria-label="Mods">
   <a class="pn-a" href="%s" rel="prev">%s<span><small>%s</small>%s</span></a>
   <a class="pn-a pn-next" href="%s" rel="next"><span><small>%s</small>%s</span>%s</a>
-</nav>""" % (url("mods/%s/" % prev["slug"]), icon("back"), t("ui.prev"), H(name(prev)),
-             url("mods/%s/" % nxt["slug"]), t("ui.next"), H(name(nxt)), icon("arrow"))
+</nav>""" % (url("workshop/%s/" % prev["slug"]), icon("back"), t("ui.prev"), H(name(prev)),
+             url("workshop/%s/" % nxt["slug"]), t("ui.next"), H(name(nxt)), icon("arrow"))
     body = hero + '<div class="mbody wrap">%s<div class="mmain">%s</div></div>' % (side, "".join(parts)) + pn
-    page("mods/%s/" % slug, None, body, "mods", desc=fmt(E[k + "tag"], {}), title_raw=name(m),
+    page("workshop/%s/" % slug, None, body, "mods", desc=fmt(E[k + "tag"], {}), title_raw=name(m),
          image="assets/img/mods/%s.webp" % slug)
 
 
@@ -671,14 +677,14 @@ def home():
     ]
     stat_html = "".join('<div class="stat"><b class="mono" data-count="%d">%d</b>%s</div>' % (n, n, t(k)) for n, k in stats)
     latest = "".join("""<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>""" % (
-        url("mods/%s/" % s), d, H(name(MODS[s])), H(MODS[s]["version"])) for d, s in latest_updates(6))
+        url("workshop/%s/" % s), d, H(name(MODS[s])), H(MODS[s]["version"])) for d, s in latest_updates(6))
     body = """<section class="hero wrap">
   <div class="hero-txt">
     <p class="kicker"><span class="kicker-code">STN-01</span>%s</p>
     <h1 class="hero-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
     %s
     <div class="actions">
-      <a class="btn btn-primary" href="%smods/">%s%s</a>
+      <a class="btn btn-primary" href="%sworkshop/">%s%s</a>
       <a class="btn btn-ghost" href="%sadmins/">%s</a>
       <a class="btn btn-ghost" href="%sabout/">%s</a>
     </div>
@@ -736,7 +742,7 @@ def mods_index():
         "".join('<button type="button" class="fbtn" aria-pressed="false" data-filter="%s">%s</button>' % (c, t("cat." + c)) for c, _ in CATS))
     body = phead("FILE-02", "mods.kicker", "mods.h1", "mods.lead", {"n": len(MODS)}) + \
         '<section class="wrap sec orbat">%s%s</section>' % (filt, orbat())
-    page("mods/", "mods.title", body, "mods")
+    page("workshop/", "mods.title", body, "mods")
 
 
 def generic_server_json():
@@ -797,7 +803,7 @@ def cfg_table(f):
   <div class="tbl"><table class="table cfgt">
   <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th></tr></thead>
   <tbody>%s</tbody></table></div>
-</details>""" % (cfg_anchor(f["profile"]), H(f["profile"]), url("mods/%s/" % f["mod"]), H(name(mod)),
+</details>""" % (cfg_anchor(f["profile"]), H(f["profile"]), url("workshop/%s/" % f["mod"]), H(name(mod)),
                  t("ui.rows", "span", "mono dim", {"n": len(f["rows"])}), inc, notes,
                  t("ui.key"), t("ui.default"), t("ui.help"), "".join(trs))
 
@@ -808,7 +814,7 @@ def admins():
         ("cmds", "admins.cmds"), ("cfg", "admins.cfg"), ("logs", "admins.logs")])
     sj = generic_server_json()
     scen_rows = "".join('<tr><td><a href="%s">%s</a></td><td>%s</td><td><code class="wrapcode">%s</code></td><td>%s</td></tr>' % (
-        url("mods/%s/" % s), H(name(MODS[s])), H(", ".join(MODS[s]["scenarios"])), H(sid), copy_btn(text=sid, small=True))
+        url("workshop/%s/" % s), H(name(MODS[s])), H(", ".join(MODS[s]["scenarios"])), H(sid), copy_btn(text=sid, small=True))
         for s in ORDER for sid in MODS[s]["scenarioIds"])
     cfgs = "".join(cfg_table(f) for f in CONFIGS)
     body = phead("CON-03", "admins.kicker", "admins.h1", "admins.lead") + """
@@ -896,7 +902,7 @@ def intel():
         isec("radio", "intel.radio", t("intel.radio_p", "p"), "11", True),
         isec("base", "intel.base", '<ul class="feat">%s</ul>' % tl("intel.base_s"), "12")
         + isec("guide", "intel.guide", '<ol class="steps guide">%s</ol>' % tl("intel.guide_s"), "13"))
-    body += '<div class="wrap pn"><a class="pn-a" href="%smods/conflict-pve/">%s<span><small>MOD</small>INDFORGE - Conflict PvE</span></a><a class="pn-a pn-next" href="%smods/forest/"><span><small>MOD</small>INDFORGE - Forest</span>%s</a></div>' % (
+    body += '<div class="wrap pn"><a class="pn-a" href="%sworkshop/conflict-pve/">%s<span><small>MOD</small>INDFORGE - Conflict PvE</span></a><a class="pn-a pn-next" href="%sworkshop/forest/"><span><small>MOD</small>INDFORGE - Forest</span>%s</a></div>' % (
         BASE, icon("back"), BASE, icon("arrow"))
     page("intel/", "intel.title", body, "intel", cls="p-intel")
 
@@ -905,7 +911,7 @@ def changelog():
     rel = [(d, s, v) for s in ORDER for v, d in MODS[s]["versions"]]
     rel.sort(key=lambda x: (x[0], x[1]), reverse=True)
     rows = "".join('<tr><td class="mono">%s</td><td><a href="%s">%s</a></td><td class="mono">v%s</td></tr>' % (
-        d, url("mods/%s/" % s), H(name(MODS[s])), H(v)) for d, s, v in rel)
+        d, url("workshop/%s/" % s), H(name(MODS[s])), H(v)) for d, s, v in rel)
     logs = "".join("""<details class="cfg"%s><summary><span>%s</span><span class="cfg-meta mono dim">v%s · %s</span></summary>
 <blockquote class="quote-log" lang="en"><div class="log-txt">%s</div></blockquote></details>""" % (
         " open" if j == 0 else "", H(name(MODS[s])), H(MODS[s]["version"]), H(MODS[s]["updated"]), H(MODS[s]["changelog"].strip()))
@@ -928,7 +934,7 @@ def status():
         if m["game"] and m["game"] != LATEST_GAME:
             game += " " + t("ui.older", "span", "chip chip-old")
         rows.append('<tr data-cat="%s"><td><a href="%s">%s</a></td><td>%s</td><td class="mono">%s</td><td class="mono">%s</td><td class="mono">%s</td></tr>' % (
-            CAT_OF[s], url("mods/%s/" % s), H(name(m)), chips(s), H("v" + m["version"]) if m["version"] else redact(5),
+            CAT_OF[s], url("workshop/%s/" % s), H(name(m)), chips(s), H("v" + m["version"]) if m["version"] else redact(5),
             H(m["updated"]) if m["updated"] else redact(8), game))
     legend = "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t("status." + k, "span", "chip chip-" + k), t("status.%s.d" % k))
                      for k in ("operational", "standby", "classified", "restricted"))
@@ -941,7 +947,7 @@ def status():
 <tbody>%s</tbody></table></div>""" % (t("statusp.col_mod"), t("statusp.col_state"), t("statusp.col_ver"), t("statusp.col_upd"),
                                       t("statusp.col_game"), "".join(rows)), "01"),
              sec("pipeline", "statusp.pipeline", t("statusp.pipeline_p", "p", "", {"v": CPVE_VER}) +
-                 '<ul class="feat feat-inc">%s</ul><p><a href="%smods/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "02", "sec-inc"),
+                 '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "02", "sec-inc"),
              sec("legend", "statusp.col_state", '<dl class="legend">%s</dl>' % legend, "03"))
     page("status/", "statusp.title", body, "status")
 
@@ -985,7 +991,7 @@ def search_index():
     items = [{"k": "page", "t": key, "tk": 1, "u": url(p)} for p, key, _ in NAV]
     for s in ORDER:
         m = MODS[s]
-        items.append({"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"], s, " ".join(m["tags"])), "u": url("mods/%s/" % s)})
+        items.append({"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"], s, " ".join(m["tags"])), "u": url("workshop/%s/" % s)})
     for cmd, key, _ in COMMANDS:
         items.append({"k": "cmd", "t": cmd.split("\n")[0], "s": key, "u": url("admins/#cmds")})
     for f in CONFIGS:
@@ -1006,6 +1012,20 @@ def write_i18n():
             json.dump(FLAT[l], f, ensure_ascii=False, separators=(",", ":"))
         with open(os.path.join(d, "cfg-" + l + ".json"), "w", encoding="utf-8", newline="\n") as f:
             json.dump({k: H(v) for k, v in CFG_TR[l].items()}, f, ensure_ascii=False, separators=(",", ":"))
+
+
+def legacy_redirects():
+    """The mod pages moved from /mods/ to /workshop/: keep the old links working."""
+    tpl = ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>INDFORGE - Studio</title>\n'
+           '<meta name="robots" content="noindex"><link rel="canonical" href="%(abs)s">\n'
+           '<meta http-equiv="refresh" content="0; url=%(rel)s">\n'
+           '<script>location.replace("%(rel)s" + location.hash)</script></head>\n'
+           '<body style="background:#06080a;color:#ffb000;font-family:monospace"><p><a href="%(rel)s" style="color:#ffb000">%(rel)s</a></p></body></html>\n')
+    for old, new in [("mods/", "workshop/")] + [("mods/%s/" % s_, "workshop/%s/" % s_) for s_ in ORDER]:
+        out = os.path.join(ROOT, old, "index.html")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "w", encoding="utf-8", newline="\n") as f:
+            f.write(tpl % {"abs": SITE + new, "rel": BASE + new})
 
 
 def sitemap():
@@ -1033,7 +1053,7 @@ def manifest():
         "theme_color": "#06080a",
         "icons": [ico("icon-192.png", "192x192"), ico("icon-512.png", "512x512")],
         "shortcuts": [
-            {"name": E["nav.mods"], "url": BASE + "mods/", "icons": icon192},
+            {"name": E["nav.mods"], "url": BASE + "workshop/", "icons": icon192},
             {"name": E["nav.admins"], "url": BASE + "admins/", "icons": icon192},
             {"name": E["nav.intel"], "url": BASE + "intel/", "icons": icon192},
         ],
@@ -1056,6 +1076,7 @@ if __name__ == "__main__":
     status()
     e404()
     search_index()
+    legacy_redirects()
     sitemap()
     manifest()
     print("built %d pages, %d languages, version %s" % (len(PAGES), len(FLAT), VER))

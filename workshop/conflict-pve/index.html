@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en" data-v="897be40522" data-base="/INDFORGE/" data-page="mods">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INDFORGE - Conflict PvE · INDFORGE - Studio</title>
+<meta name="description" content="Co-op PvE Conflict on Everon: US players against an enemy that thinks.">
+<link rel="canonical" href="https://indforge-studio.github.io/INDFORGE/workshop/conflict-pve/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INDFORGE - Studio">
+<meta property="og:title" content="INDFORGE - Conflict PvE">
+<meta property="og:description" content="Co-op PvE Conflict on Everon: US players against an enemy that thinks.">
+<meta property="og:url" content="https://indforge-studio.github.io/INDFORGE/workshop/conflict-pve/">
+<meta property="og:image" content="https://indforge-studio.github.io/INDFORGE/assets/img/mods/conflict-pve.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indforge-studio.github.io/INDFORGE/assets/img/mods/conflict-pve.webp">
+<meta name="theme-color" content="#06080a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/INDFORGE/assets/img/favicon.ico?v=d63f64af" sizes="48x48">
+<link rel="icon" href="/INDFORGE/assets/img/favicon.svg?v=d63f64af" type="image/svg+xml">
+<link rel="icon" href="/INDFORGE/assets/img/favicon-32.png?v=d63f64af" sizes="32x32" type="image/png">
+<link rel="icon" href="/INDFORGE/assets/img/icon-192.png?v=d63f64af" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/INDFORGE/assets/img/apple-touch-icon.png?v=d63f64af" sizes="180x180">
+<link rel="manifest" href="/INDFORGE/manifest.webmanifest?v=d63f64af">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/INDFORGE/assets/css/site.css?v=897be40522">
+<script>(function(d){var h=d.documentElement,L=["en", "fr", "de", "es", "it", "pl", "uk"],l='';h.className+=' js';try{l=localStorage.getItem('ifg-lang')||''}catch(e){}if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);</script>
+<script src="/INDFORGE/assets/js/site.js?v=897be40522" defer></script>
+<script type="speculationrules">{"prerender": [{"where": {"href_matches": "/INDFORGE/*"}, "eagerness": "moderate"}]}</script>
+</head>
+<body class="">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="hud" id="top">
+  <div class="hud-bar">
+    <a class="brand" href="/INDFORGE/" aria-label="INDFORGE - Studio">
+      <img class="brand-mark" src="/INDFORGE/assets/img/logo.svg" width="36" height="36" alt="">
+      <span class="brand-txt"><b>INDFORGE</b><small aria-hidden="true"><i>A</i><i>R</i><i>M</i><i>A</i><i></i><i>R</i><i>E</i><i>F</i><i>O</i><i>R</i><i>G</i><i>E</i><i>R</i></small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><a href="/INDFORGE/"><span class="nav-n" aria-hidden="true">01</span><span data-i18n="nav.home">Command</span></a><a href="/INDFORGE/workshop/" aria-current="page"><span class="nav-n" aria-hidden="true">02</span><span data-i18n="nav.mods">Workshop</span></a><a href="/INDFORGE/admins/"><span class="nav-n" aria-hidden="true">03</span><span data-i18n="nav.admins">Admins</span></a><a href="/INDFORGE/intel/"><span class="nav-n" aria-hidden="true">04</span><span data-i18n="nav.intel">Intel</span></a><a href="/INDFORGE/changelog/"><span class="nav-n" aria-hidden="true">05</span><span data-i18n="nav.log">Log</span></a><a href="/INDFORGE/status/"><span class="nav-n" aria-hidden="true">06</span><span data-i18n="nav.status">Status</span></a><a href="/INDFORGE/about/"><span class="nav-n" aria-hidden="true">07</span><span data-i18n="nav.about">About us</span></a></nav>
+    <div class="hud-tools">
+      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="tool search-btn" data-search aria-label="Search" data-i18n-attr="aria-label=nav.search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><kbd>/</kbd></button>
+      <div class="lang">
+        <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-i18n-attr="aria-label=nav.lang"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="lang-cur">EN</span></button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr"><b>FR</b><span>Français</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de"><b>DE</b><span>Deutsch</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es"><b>ES</b><span>Español</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it"><b>IT</b><span>Italiano</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="pl" lang="pl"><b>PL</b><span>Polski</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk"><b>UK</b><span>Українська</span></button></li></ul>
+      </div>
+      <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h12"/></svg></button>
+    </div>
+  </div>
+  <div class="hud-line" aria-hidden="true"></div>
+</header>
+<main id="main" class="main" tabindex="-1">
+<section class="mhero wrap">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/INDFORGE/"><span data-i18n="nav.home">Command</span></a><span aria-hidden="true">/</span><a href="/INDFORGE/workshop/"><span data-i18n="nav.mods">Workshop</span></a><span aria-hidden="true">/</span><span data-i18n="cat.indforge">INDFORGE operations</span></nav>
+  <div class="mhero-grid">
+    <div class="mhero-txt">
+      <p class="kicker"><span class="kicker-code">MOD-01</span><span data-i18n="cat.indforge">INDFORGE operations</span></p>
+      <h1 data-scramble>INDFORGE - Conflict PvE</h1>
+      <p data-i18n="m.conflict-pve.tag" class="lead">Co-op PvE Conflict on Everon: US players against an enemy that thinks.</p>
+      <p class="chips"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span data-i18n="status.dev" class="chip chip-dev">Active development</span><span class="mono dim">v2.0.6</span></p>
+      <div class="actions"><a class="btn btn-primary" href="https://reforger.armaplatform.com/workshop/69BD142259FCF144" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg><span data-i18n="ui.open_workshop">Open on the Workshop</span></a><a class="btn btn-ghost" href="#deps"><span data-i18n="sec.deps">Dependencies</span></a></div>
+    </div>
+    <figure class="hero-img">
+      <img src="/INDFORGE/assets/img/mods/conflict-pve.webp" width="960" height="540" alt="INDFORGE - Conflict PvE" fetchpriority="high" decoding="async">
+      <span class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figcaption class="mono" aria-hidden="true">IMG // CONFLICT-PVE // 69BD142259FCF144</figcaption>
+    </figure>
+  </div>
+</section><div class="mbody wrap"><aside class="mside">
+  <div class="panel">
+    <h2 class="panel-h"><span data-i18n="sec.facts">Identification</span></h2>
+    <dl class="facts"><div><dt><span data-i18n="ui.workshop_id">Workshop ID</span></dt><dd><code>69BD142259FCF144</code><button type="button" class="copy copy-sm" data-copy-text="69BD142259FCF144"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></dd></div><div><dt><span data-i18n="ui.version">Version</span></dt><dd>v2.0.6</dd></div><div><dt><span data-i18n="ui.updated">Updated</span></dt><dd>2026-11-18</dd></div><div><dt><span data-i18n="ui.created">First release</span></dt><dd>2026-07-02</dd></div><div><dt><span data-i18n="ui.game">Built for game</span></dt><dd>1.9.0.37</dd></div><div><dt><span data-i18n="ui.size">Size</span></dt><dd>379.6 MB</dd></div><div><dt><span data-i18n="ui.license">License</span></dt><dd>Arma Public License No Derivatives (APL-ND)</dd></div><div><dt><span data-i18n="ui.author">Workshop author</span></dt><dd>TheUnknownTeam</dd></div><div><dt><span data-i18n="ui.contributors">Contributors</span></dt><dd>Volmog_0</dd></div><div><dt><span data-i18n="ui.scenario">Scenario ID</span></dt><dd><code class="wrapcode">{AEC3BDD54B62A3E6}Missions/Conflict_Everon_US_Gramps303_INDFORGE.conf</code><button type="button" class="copy copy-sm" data-copy-text="{AEC3BDD54B62A3E6}Missions/Conflict_Everon_US_Gramps303_INDFORGE.conf"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></dd></div><div><dt><span data-i18n="ui.tags">Tags</span></dt><dd><span class="tag">CONFLICT</span> <span class="tag">MODERN</span> <span class="tag">PVE</span> <span class="tag">SCENARIOS_MP</span> <span class="tag">SCENARIOS_SP</span> <span class="tag">WAR</span></dd></div></dl>
+  </div>
+  <nav class="panel toc" aria-label="Sections"><h2 class="panel-h"><span data-i18n="admins.toc">On this page</span></h2><a href="#overview"><span data-i18n="sec.overview">Overview</span></a><a href="#features"><span data-i18n="sec.features">Capabilities</span></a><a href="#incoming"><span data-i18n="sec.incoming">Incoming — next update</span></a><a href="#admin"><span data-i18n="sec.admin">Server administration</span></a><a href="#commands"><span data-i18n="sec.commands">Admin commands</span></a><a href="#deps"><span data-i18n="sec.deps">Dependencies</span></a><a href="#changelog"><span data-i18n="sec.changelog">Latest changelog</span></a><a href="#versions"><span data-i18n="sec.versions">Version history</span></a></nav>
+</aside><div class="mmain"><section class="sec " id="overview" aria-labelledby="h-overview">
+  <h2 id="h-overview"><span class="sec-code" aria-hidden="true">01</span><span data-i18n="sec.overview">Overview</span></h2>
+  <div class="prose"><p data-i18n="m.conflict-pve.intro.0">INDFORGE - Conflict PvE turns the Conflict mode into a cooperative PvE campaign on Everon. Players fight as the US; the USSR and the FIA are run by AI with a combat doctrine, a headquarters that acts on intelligence, mortars, drones and helicopters.</p><p data-i18n="m.conflict-pve.intro.1">Built on Gramps303's ConflictPVERemixedVanilla2.0 and on the WCS, RHS and ACE suites: over 100 Workshop mods, all declared dependencies, nothing repacked. For intermediate to advanced players who enjoy tactical team play. Lone wolves might shed a little tear.</p></div>
+</section><section class="sec " id="features" aria-labelledby="h-features">
+  <h2 id="h-features"><span class="sec-code" aria-hidden="true">02</span><span data-i18n="sec.features">Capabilities</span></h2>
+  <ul class="feat"><li data-i18n="m.conflict-pve.f.0"><b>Enemy headquarters.</b> Hunter groups only come on intelligence: an enemy drone or a patrol that spots you or your vehicle. They head where you should be by now, search the area, march in column and spread into a line on contact.</li><li data-i18n="m.conflict-pve.f.1"><b>Generator capture</b> (with Enhanced Compositions). Repair the FIA HQ generator with a wrench, then fill it with fuel (18 L, about 20 s) while the base siren sounds. Radio contact with your HQ is required.</li><li data-i18n="m.conflict-pve.f.2"><b>Fuel economy.</b> A running generator gives its base 10 supplies per litre, never more than the base storage holds. A friendly fuel depot or the deployable M1091 fuel truck keeps it full.</li><li data-i18n="m.conflict-pve.f.3"><b>Sabotage and breaching.</b> About 30 s after a capture, the nearest enemy soldier tries to disable the generator. Wall it in with HESCO and a breacher blows the closest wall: kill him or defuse the charges within 20 s.</li><li data-i18n="m.conflict-pve.f.4"><b>Hard HESCO.</b> Bullets, grenades and vehicles do nothing. Explosives only: 1, 2 or 4 M112 charges depending on size.</li><li data-i18n="m.conflict-pve.f.5"><b>AI doctrine.</b> Fire discipline, tactical withdrawal, engagement ranges based on posture, movement, weather and night.</li><li data-i18n="m.conflict-pve.f.6"><b>Enemy mortars</b> with forward observers, real ballistics and counter-battery play.</li><li data-i18n="m.conflict-pve.f.7"><b>Overwatch</b> sniper teams: a Spetsnaz sniper with a spotter, or alone.</li><li data-i18n="m.conflict-pve.f.8"><b>Drone warfare.</b> Enemy drones you can hide from (posture, foliage), jammers, drones kept in saved loadouts.</li><li data-i18n="m.conflict-pve.f.9"><b>Hunter squads and helicopter paratroopers</b> sized by the number of nearby players.</li><li data-i18n="m.conflict-pve.f.10"><b>AI rocket launchers</b> also target infantry, in every faction: stay spread out.</li><li data-i18n="m.conflict-pve.f.11"><b>Modern US AI</b> in MultiCam; enemies with matching camouflage and red armbands; Spetsnaz paratroopers in black and A-TACS.</li><li data-i18n="m.conflict-pve.f.12"><b>C-RAM</b> that engages all threats, with an attack siren (Main Base only).</li><li data-i18n="m.conflict-pve.f.13"><b>Ranks saved</b> across server and mission restarts.</li><li data-i18n="m.conflict-pve.f.14"><b>Complete US arsenal</b>, unlocked at every rank, except the Golden Shovel (Sergeant).</li><li data-i18n="m.conflict-pve.f.15"><b>The shovel cuts trees</b>, not just bushes, and stumps are removed.</li><li data-i18n="m.conflict-pve.f.16"><b>Ally markers:</b> icons above allies (50 m, 300 m through optics), squad members in team colour, names up close.</li><li data-i18n="m.conflict-pve.f.17"><b>Consistent garage and helipad costs:</b> a better vehicle never costs less in supplies, XP or rank.</li><li data-i18n="m.conflict-pve.f.18"><b>Patrol trucks</b> run either a supply run or a troop transport.</li></ul>
+</section><section class="sec sec-inc" id="incoming" aria-labelledby="h-incoming">
+  <h2 id="h-incoming"><span class="sec-code" aria-hidden="true">02B</span><span data-i18n="sec.incoming">Incoming — next update</span></h2><p data-i18n="sec.incoming.d" data-i18n-args="{&quot;v&quot;: &quot;2.0.6&quot;}" class="dim">Merged in development after version 2.0.6, not yet in the Workshop release.</p>
+  <ul class="feat feat-inc"><li data-i18n="m.conflict-pve.inc.0"><b>Weather director:</b> drizzle, rain, thunderstorm fronts, dawn mist and fog banks with smooth transitions. Bad weather grounds enemy drones and aircraft.</li><li data-i18n="m.conflict-pve.inc.1"><b>Night gear:</b> some enemy soldiers carry night-vision goggles or thermal scopes, and see accordingly.</li><li data-i18n="m.conflict-pve.inc.2"><b>Attack plans:</b> L-shaped attack, hammer and anvil, mortar first, infiltration, feint, harassment and road ambush, chosen from what the HQ knows.</li><li data-i18n="m.conflict-pve.inc.3"><b>Road ambushes:</b> nine kinds, from mines and AT teams to FPV corridors and pre-registered mortar strikes; persistent roadblocks on the roads you use most.</li><li data-i18n="m.conflict-pve.inc.4"><b>Air strikes and Geran raids:</b> guided glide bombs, cruise missiles on captured bases, Su-57 reconnaissance passes, Geran launch trucks you can hunt down.</li><li data-i18n="m.conflict-pve.inc.5"><b>Drone teams:</b> the enemy Mavic no longer drops grenades; it circles above its target, guides strikes, and a light under it shows its state.</li><li data-i18n="m.conflict-pve.inc.6"><b>Radio alerts:</b> short radio hints when a drone watches you, a group comes for you, or a strike is on its way.</li><li data-i18n="m.conflict-pve.inc.7"><b>FIA and regular USSR</b> soldiers in Czech Vz95 uniforms.</li></ul>
+</section><section class="sec " id="admin" aria-labelledby="h-admin">
+  <h2 id="h-admin"><span class="sec-code" aria-hidden="true">04</span><span data-i18n="sec.admin">Server administration</span></h2>
+  <ul class="feat"><li data-i18n="m.conflict-pve.admin.0">Our systems are set from <code>$profile:INDFORGE_*/config.json</code> files: AI doctrine, enemy HQ, mortars, generator capture, hunter size, drone sight, name tags, patrol trucks, shovel, session report, and more. The admin console lists every key with its help text.</li><li data-i18n="m.conflict-pve.admin.1">Third-party systems keep their own files: <code>$profile:CET/CETConfig.json</code> (hunters), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (helicopters), <code>$profile:EnhancedCompositions/Garrison.json</code> (garrisons, to switch on).</li><li data-i18n="m.conflict-pve.admin.2">The server runs the version published on the Workshop: an update arrives only after it is republished.</li></ul><ul class="filelist"><li><a href="/INDFORGE/admins/#cfg-indforge-aidoctrine"><code>$profile:INDFORGE_AIDoctrine/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-dronesight"><code>$profile:INDFORGE_DroneSight/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-droneteam"><code>$profile:INDFORGE_DroneTeam/config.json</code></a> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></li><li><a href="/INDFORGE/admins/#cfg-indforge-enemyhq"><code>$profile:INDFORGE_EnemyHQ/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-firesupport"><code>$profile:INDFORGE_FireSupport/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-generatorcapture"><code>$profile:INDFORGE_GeneratorCapture/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-huntersize"><code>$profile:INDFORGE_HunterSize/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-maviclight"><code>$profile:INDFORGE_MavicLight/config.json</code></a> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></li><li><a href="/INDFORGE/admins/#cfg-indforge-nametags"><code>$profile:INDFORGE_NameTags/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-nightgear"><code>$profile:INDFORGE_NightGear/config.json</code></a> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></li><li><a href="/INDFORGE/admins/#cfg-indforge-patroltrucks"><code>$profile:INDFORGE_PatrolTrucks/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-radioalerts"><code>$profile:INDFORGE_RadioAlerts/config.json</code></a> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></li><li><a href="/INDFORGE/admins/#cfg-indforge-sessionreport"><code>$profile:INDFORGE_SessionReport/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-shoveltrees"><code>$profile:INDFORGE_ShovelTrees/config.json</code></a></li><li><a href="/INDFORGE/admins/#cfg-indforge-weather"><code>$profile:INDFORGE_Weather/config.json</code></a> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></li></ul><p><a class="btn btn-ghost" href="/INDFORGE/admins/#cfg"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg><span data-i18n="ui.see_cfg">Every setting of this mod in the admin console</span></a></p>
+</section><section class="sec " id="commands" aria-labelledby="h-commands">
+  <h2 id="h-commands"><span class="sec-code" aria-hidden="true">04B</span><span data-i18n="sec.commands">Admin commands</span></h2>
+  <p data-i18n="admins.cmds_p">Typed in the in-game chat by a player with the server administrator or session administrator role, or sent through RCON with admin permission. Answers come back in the chat.</p><div class="tbl"><table class="table cmds">
+<thead><tr><th scope="col"><span data-i18n="admins.col_cmd">Command</span></th><th scope="col"><span data-i18n="admins.col_what">Effect</span></th><th scope="col"><span data-i18n="admins.col_state">State</span></th></tr></thead>
+<tbody><tr data-state="in"><td class="cmd"><code>#setrank &lt;player name&gt; &lt;rank&gt;</code></td><td><span data-i18n="cmd.setrank">Sets a player's rank. Exact in-game name, then the rank name (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) or its number. The rank is saved across restarts.</span></td><td><span data-i18n="ui.in_service" class="chip chip-operational">In service</span></td></tr><tr data-state="in"><td class="cmd"><code>#aidoctrine status | reload | on | off</code></td><td><span data-i18n="cmd.aidoctrine">Shows, reloads, enables or disables the AI doctrine.</span></td><td><span data-i18n="ui.in_service" class="chip chip-operational">In service</span></td></tr><tr data-state="in"><td class="cmd"><code>#aidoctrine mod &lt;name&gt; &lt;factor&gt; [seconds]</code><br><code>#aidoctrine mod &lt;name&gt; off</code></td><td><span data-i18n="cmd.aidoctrine_mod">Multiplies every engagement range by a factor, for some seconds or until switched off, to react to an event without a restart.</span></td><td><span data-i18n="ui.in_service" class="chip chip-operational">In service</span></td></tr><tr data-state="in"><td class="cmd"><code>#enemyhq status</code></td><td><span data-i18n="cmd.enemyhq">Shows the enemy headquarters: tracks, groups, plans.</span></td><td><span data-i18n="ui.in_service" class="chip chip-operational">In service</span></td></tr><tr data-state="in"><td class="cmd"><code>#enemyhq here [drone] [vehicle]</code></td><td><span data-i18n="cmd.enemyhq_here">Sends a fake sighting of yourself to the enemy HQ (as a drone contact and/or a vehicle), for tests.</span></td><td><span data-i18n="ui.in_service" class="chip chip-operational">In service</span></td></tr><tr data-state="inc"><td class="cmd"><code>#enemyhq roadblocks [reset]</code></td><td><span data-i18n="cmd.enemyhq_rb">Lists the persistent roadblocks, or removes them all.</span></td><td><span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></td></tr><tr data-state="inc"><td class="cmd"><code>#enemyhq strike glide | missile | flyby | geran2 | geran4</code></td><td><span data-i18n="cmd.enemyhq_strike">Triggers an air strike or a Geran salvo in front of the admin, for tests.</span></td><td><span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></td></tr><tr data-state="inc"><td class="cmd"><code>#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | off | on</code></td><td><span data-i18n="cmd.weather">Weather director: status, force the next episode, hold fog, rain or wind values, resume, switch off or on.</span></td><td><span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></td></tr><tr data-state="inc"><td class="cmd"><code>#nightgear status</code></td><td><span data-i18n="cmd.nightgear">Night-vision and thermal equipment of the AI: counts and settings.</span></td><td><span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></td></tr></tbody></table></div>
+</section><section class="sec " id="deps" aria-labelledby="h-deps">
+  <h2 id="h-deps"><span class="sec-code" aria-hidden="true">05</span><span data-i18n="sec.deps">Dependencies</span></h2>
+  <p data-i18n="deps.intro">Ready to paste. The list holds the mod and everything it needs, its prerequisites included, generated from the project file and the Workshop pages. The game itself (Arma Reforger base data) is left out. The server also downloads required dependencies on its own.</p><p data-i18n="deps.direct" data-i18n-args="{&quot;n&quot;: 59, &quot;m&quot;: 101}" class="dim">59 declared directly by the project, 101 in total with their own requirements.</p>
+<div class="code-grid">
+  <figure class="codebox">
+    <figcaption><span><span data-i18n="deps.server_json"><code>server.json</code> — <code>game.mods</code> block</span></span><span class="mono dim">102</span><button type="button" class="copy" data-copy="#deps-json-conflict-pve"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></figcaption>
+    <pre class="code" id="deps-json-conflict-pve" tabindex="0"><code>&quot;mods&quot;: [
+  { &quot;modId&quot;: &quot;69BD142259FCF144&quot;, &quot;name&quot;: &quot;INDFORGE - Conflict PvE&quot; },
+  { &quot;modId&quot;: &quot;65AD7D0D9941A380&quot;, &quot;name&quot;: &quot;ACE Core Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7C139EB4C1A1&quot;, &quot;name&quot;: &quot;ACE Backblast Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7C249E4ECDFB&quot;, &quot;name&quot;: &quot;ACE Captives Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7C379CBD394D&quot;, &quot;name&quot;: &quot;ACE Carrying Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7CF69FAF1FDD&quot;, &quot;name&quot;: &quot;ACE Compass Dev&quot; },
+  { &quot;modId&quot;: &quot;664AFDC993C9CE1A&quot;, &quot;name&quot;: &quot;ACE Cook-Off Dev&quot; },
+  { &quot;modId&quot;: &quot;68EAA4B96976D557&quot;, &quot;name&quot;: &quot;ACE Facepaint Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7D2E9866FA6E&quot;, &quot;name&quot;: &quot;ACE Finger Dev&quot; },
+  { &quot;modId&quot;: &quot;6586079789278413&quot;, &quot;name&quot;: &quot;ACE Medical Core Dev&quot; },
+  { &quot;modId&quot;: &quot;65B343F799FB521B&quot;, &quot;name&quot;: &quot;ACE Medical Hitzones Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7C75826B46C6&quot;, &quot;name&quot;: &quot;ACE Radio Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7CD09CAEC4E2&quot;, &quot;name&quot;: &quot;ACE Tactical Periscope Dev&quot; },
+  { &quot;modId&quot;: &quot;667B230F9505C8BA&quot;, &quot;name&quot;: &quot;ACE Weather Dev&quot; },
+  { &quot;modId&quot;: &quot;695D1C20908DA231&quot;, &quot;name&quot;: &quot;SHS Backpacks&quot; },
+  { &quot;modId&quot;: &quot;6A034CF803186A96&quot;, &quot;name&quot;: &quot;AI Airborne&quot; },
+  { &quot;modId&quot;: &quot;65AD60E204191D37&quot;, &quot;name&quot;: &quot;Realistic Combat Drones&quot; },
+  { &quot;modId&quot;: &quot;690D33EDCB46C4B9&quot;, &quot;name&quot;: &quot;AI Use Drones&quot; },
+  { &quot;modId&quot;: &quot;61B514B96692C049&quot;, &quot;name&quot;: &quot;ConflictPVERemixedVanilla2.0&quot; },
+  { &quot;modId&quot;: &quot;68F352219EA04EC6&quot;, &quot;name&quot;: &quot;AWM - Summer Version&quot; },
+  { &quot;modId&quot;: &quot;69B856EFDEA992EB&quot;, &quot;name&quot;: &quot;ConstantEnemyThreat 1.7&quot; },
+  { &quot;modId&quot;: &quot;660C6D2259B60EE8&quot;, &quot;name&quot;: &quot;Enhanced Compositions&quot; },
+  { &quot;modId&quot;: &quot;686AC479236F235D&quot;, &quot;name&quot;: &quot;M777 Howitzer Artillery&quot; },
+  { &quot;modId&quot;: &quot;631EE12D448D7FCC&quot;, &quot;name&quot;: &quot;DarcCore&quot; },
+  { &quot;modId&quot;: &quot;689EDED542F881AF&quot;, &quot;name&quot;: &quot;DarcChopper&quot; },
+  { &quot;modId&quot;: &quot;6976D02296D2CA42&quot;, &quot;name&quot;: &quot;MBS Auto Spawn AI helicopters&quot; },
+  { &quot;modId&quot;: &quot;6A388D460E34F5BF&quot;, &quot;name&quot;: &quot;NBS C-RAM&quot; },
+  { &quot;modId&quot;: &quot;64610AFB74AA9842&quot;, &quot;name&quot;: &quot;WCS_Core&quot; },
+  { &quot;modId&quot;: &quot;68F006D910E7546F&quot;, &quot;name&quot;: &quot;WCS_Weapon_Scripts&quot; },
+  { &quot;modId&quot;: &quot;1337C0DE5DABBEEF&quot;, &quot;name&quot;: &quot;RHS - Content Pack 01&quot; },
+  { &quot;modId&quot;: &quot;BADC0DEDABBEDA5E&quot;, &quot;name&quot;: &quot;RHS - Content Pack 02&quot; },
+  { &quot;modId&quot;: &quot;595F2BF2F44836FB&quot;, &quot;name&quot;: &quot;RHS - Status Quo&quot; },
+  { &quot;modId&quot;: &quot;631C3C1AEE9C90BC&quot;, &quot;name&quot;: &quot;WCS_Sounds&quot; },
+  { &quot;modId&quot;: &quot;615806DC6C57AF02&quot;, &quot;name&quot;: &quot;WCS_NATO&quot; },
+  { &quot;modId&quot;: &quot;615818DA7C0343FD&quot;, &quot;name&quot;: &quot;WCS_RU&quot; },
+  { &quot;modId&quot;: &quot;62A668F513428630&quot;, &quot;name&quot;: &quot;WCS_Scopes&quot; },
+  { &quot;modId&quot;: &quot;61C74A8B647617DA&quot;, &quot;name&quot;: &quot;WCS_Attachments&quot; },
+  { &quot;modId&quot;: &quot;6A717EEA63A35E67&quot;, &quot;name&quot;: &quot;WCS_RHS_Attachments&quot; },
+  { &quot;modId&quot;: &quot;3B8081D9CAD979D2&quot;, &quot;name&quot;: &quot;WCS_RHS_Scopes&quot; },
+  { &quot;modId&quot;: &quot;6602C1EC7E5A4A87&quot;, &quot;name&quot;: &quot;WCS_Clothing_Assets&quot; },
+  { &quot;modId&quot;: &quot;6152CB0BD0684837&quot;, &quot;name&quot;: &quot;WCS_Clothing&quot; },
+  { &quot;modId&quot;: &quot;61E42AE6714A3CC2&quot;, &quot;name&quot;: &quot;WCS_Armbands&quot; },
+  { &quot;modId&quot;: &quot;629B2BA37EFFD577&quot;, &quot;name&quot;: &quot;WCS_Armaments&quot; },
+  { &quot;modId&quot;: &quot;65CF7AE8574E06D2&quot;, &quot;name&quot;: &quot;WCS_Weapons&quot; },
+  { &quot;modId&quot;: &quot;6AAE2A3269AD5C39&quot;, &quot;name&quot;: &quot;WCS_RHS_Sounds&quot; },
+  { &quot;modId&quot;: &quot;65F929DF622BAD50&quot;, &quot;name&quot;: &quot;WCS_RHS_Weapons&quot; },
+  { &quot;modId&quot;: &quot;6AAEEB19367529A1&quot;, &quot;name&quot;: &quot;WCS_RHS_Clothing&quot; },
+  { &quot;modId&quot;: &quot;615CC2D870A39838&quot;, &quot;name&quot;: &quot;WCS_Arsenal&quot; },
+  { &quot;modId&quot;: &quot;65D10E606F9A0B25&quot;, &quot;name&quot;: &quot;Realistic Combat Drones - WCS&quot; },
+  { &quot;modId&quot;: &quot;68746C2DCDABB93D&quot;, &quot;name&quot;: &quot;REAPER_NH-90 HQ&quot; },
+  { &quot;modId&quot;: &quot;6934F9C61CE24DE5&quot;, &quot;name&quot;: &quot;REAPER_RHIB&quot; },
+  { &quot;modId&quot;: &quot;69C8C48790525BE3&quot;, &quot;name&quot;: &quot;Sleeper Cell - AI&quot; },
+  { &quot;modId&quot;: &quot;59EAA899751805DF&quot;, &quot;name&quot;: &quot;Stun Grenade&quot; },
+  { &quot;modId&quot;: &quot;61ECB5EFAA346151&quot;, &quot;name&quot;: &quot;TacticalAnimationOverhaul TEST&quot; },
+  { &quot;modId&quot;: &quot;65AD7CB89F219E38&quot;, &quot;name&quot;: &quot;ACE Tactical Ladder Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7CE59E8DB349&quot;, &quot;name&quot;: &quot;ACE Trenches Dev&quot; },
+  { &quot;modId&quot;: &quot;65AD7D1E9EEAFA53&quot;, &quot;name&quot;: &quot;ACE Explosives Dev&quot; },
+  { &quot;modId&quot;: &quot;6A8E689750C80548&quot;, &quot;name&quot;: &quot;WCS_ACE&quot; },
+  { &quot;modId&quot;: &quot;64CB39E57377C861&quot;, &quot;name&quot;: &quot;WCS_AH-1S&quot; },
+  { &quot;modId&quot;: &quot;62CCD69DD17E4F2F&quot;, &quot;name&quot;: &quot;AKI_Core&quot; },
+  { &quot;modId&quot;: &quot;6303360DA719E832&quot;, &quot;name&quot;: &quot;WCS_AH-64D&quot; },
+  { &quot;modId&quot;: &quot;662EB83AB3F8CAE3&quot;, &quot;name&quot;: &quot;AKI_Core_Upgrade&quot; },
+  { &quot;modId&quot;: &quot;6326F0C7E748AB8A&quot;, &quot;name&quot;: &quot;WCS_AH-64D_Upgrade&quot; },
+  { &quot;modId&quot;: &quot;6273146ADFE8241D&quot;, &quot;name&quot;: &quot;WCS_AH-6M&quot; },
+  { &quot;modId&quot;: &quot;62AE96D92179F7A0&quot;, &quot;name&quot;: &quot;WCS_AH-6M_Upgrade&quot; },
+  { &quot;modId&quot;: &quot;5E389BB9F58B79A6&quot;, &quot;name&quot;: &quot;WCS_SpaceCore&quot; },
+  { &quot;modId&quot;: &quot;5E524E4FEECCA92B&quot;, &quot;name&quot;: &quot;WCS_BMP-1&quot; },
+  { &quot;modId&quot;: &quot;5B383D4CB27E0D54&quot;, &quot;name&quot;: &quot;WCS_BMP-3&quot; },
+  { &quot;modId&quot;: &quot;612F512CD4CB21D5&quot;, &quot;name&quot;: &quot;WCS_Earplugs&quot; },
+  { &quot;modId&quot;: &quot;65B60A48AEC31157&quot;, &quot;name&quot;: &quot;WCS_FMTV&quot; },
+  { &quot;modId&quot;: &quot;6A20948448913FD7&quot;, &quot;name&quot;: &quot;WCS_Hescos&quot; },
+  { &quot;modId&quot;: &quot;672D432E181E6807&quot;, &quot;name&quot;: &quot;WCS_HoldBreath&quot; },
+  { &quot;modId&quot;: &quot;5C721177A220B42F&quot;, &quot;name&quot;: &quot;WCS_JLTV&quot; },
+  { &quot;modId&quot;: &quot;6528B3CE24C85120&quot;, &quot;name&quot;: &quot;WCS_JLTV_Upgrade&quot; },
+  { &quot;modId&quot;: &quot;684CE0507D2F8AD2&quot;, &quot;name&quot;: &quot;WCS_KBA-105&quot; },
+  { &quot;modId&quot;: &quot;656EC7E7513E76A9&quot;, &quot;name&quot;: &quot;WCS_PS5&quot; },
+  { &quot;modId&quot;: &quot;69D176C07DDCFF64&quot;, &quot;name&quot;: &quot;WCS_RHS_TempFixes&quot; },
+  { &quot;modId&quot;: &quot;61BA4EB5C886D396&quot;, &quot;name&quot;: &quot;WCS_VehicleLock&quot; },
+  { &quot;modId&quot;: &quot;615A80027C5C9170&quot;, &quot;name&quot;: &quot;WCS_Vehicles&quot; },
+  { &quot;modId&quot;: &quot;64900A5A31F5DCB5&quot;, &quot;name&quot;: &quot;WCS_MRZR&quot; },
+  { &quot;modId&quot;: &quot;6A50528453E5FF27&quot;, &quot;name&quot;: &quot;WCS_RHS_Vehicles&quot; },
+  { &quot;modId&quot;: &quot;5B02128D896F7DE8&quot;, &quot;name&quot;: &quot;WCS_Stryker&quot; },
+  { &quot;modId&quot;: &quot;685EDA5A6ACD53C5&quot;, &quot;name&quot;: &quot;WCS_Suppression&quot; },
+  { &quot;modId&quot;: &quot;61C4B48772550E0F&quot;, &quot;name&quot;: &quot;WCS_TempFixes&quot; },
+  { &quot;modId&quot;: &quot;6A68E18470531D4B&quot;, &quot;name&quot;: &quot;WCS_ViewDistance&quot; },
+  { &quot;modId&quot;: &quot;63294BA2D9F0339B&quot;, &quot;name&quot;: &quot;WCS_ZU-23-2&quot; },
+  { &quot;modId&quot;: &quot;0EE9CE408F80A62C&quot;, &quot;name&quot;: &quot;Were You Raised In A Barn&quot; },
+  { &quot;modId&quot;: &quot;62F364B35E9B51B0&quot;, &quot;name&quot;: &quot;Wirecutters 2&quot; },
+  { &quot;modId&quot;: &quot;5D1880C4AD410C14&quot;, &quot;name&quot;: &quot;WCS_M1A1&quot; },
+  { &quot;modId&quot;: &quot;63120AE07E6C0966&quot;, &quot;name&quot;: &quot;WCS_M2A2&quot; },
+  { &quot;modId&quot;: &quot;61D57616CAFBB23D&quot;, &quot;name&quot;: &quot;WCS_LoadoutEditor&quot; },
+  { &quot;modId&quot;: &quot;5E0AB16BEB16D6A4&quot;, &quot;name&quot;: &quot;WCS_T-72&quot; },
+  { &quot;modId&quot;: &quot;69333B6C7C8BE8AB&quot;, &quot;name&quot;: &quot;WCS_VON&quot; },
+  { &quot;modId&quot;: &quot;61A25BD1C99515B5&quot;, &quot;name&quot;: &quot;WCS_Commands&quot; },
+  { &quot;modId&quot;: &quot;614D1A3874A23AD9&quot;, &quot;name&quot;: &quot;WCS_Interface&quot; },
+  { &quot;modId&quot;: &quot;6A8312058F0EDC8E&quot;, &quot;name&quot;: &quot;FRP_DroneDetector&quot; },
+  { &quot;modId&quot;: &quot;6A9554824B4C155B&quot;, &quot;name&quot;: &quot;TFO_DroneDetector_ENG&quot; },
+  { &quot;modId&quot;: &quot;6AA3385AD956B4DD&quot;, &quot;name&quot;: &quot;TFO - Drone Jammer Backpacks&quot; },
+  { &quot;modId&quot;: &quot;66D6340C1D565C98&quot;, &quot;name&quot;: &quot;Chungus Core&quot; },
+  { &quot;modId&quot;: &quot;620E584B1D2C96A4&quot;, &quot;name&quot;: &quot;Chungus Shotguns&quot; },
+  { &quot;modId&quot;: &quot;6A89645B840FD4EE&quot;, &quot;name&quot;: &quot;S&amp;D Drone Systems&quot; },
+  { &quot;modId&quot;: &quot;6AA93D208350694A&quot;, &quot;name&quot;: &quot;S&amp;D Fixed Wing&quot; }
+]</code></pre>
+  </figure>
+  <figure class="codebox">
+    <figcaption><span><span data-i18n="deps.plain">Plain list — Name - ID</span></span><span class="mono dim">102</span><button type="button" class="copy" data-copy="#deps-plain-conflict-pve"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></figcaption>
+    <pre class="code" id="deps-plain-conflict-pve" tabindex="0"><code>INDFORGE - Conflict PvE - 69BD142259FCF144
+ACE Core Dev - 65AD7D0D9941A380
+ACE Backblast Dev - 65AD7C139EB4C1A1
+ACE Captives Dev - 65AD7C249E4ECDFB
+ACE Carrying Dev - 65AD7C379CBD394D
+ACE Compass Dev - 65AD7CF69FAF1FDD
+ACE Cook-Off Dev - 664AFDC993C9CE1A
+ACE Facepaint Dev - 68EAA4B96976D557
+ACE Finger Dev - 65AD7D2E9866FA6E
+ACE Medical Core Dev - 6586079789278413
+ACE Medical Hitzones Dev - 65B343F799FB521B
+ACE Radio Dev - 65AD7C75826B46C6
+ACE Tactical Periscope Dev - 65AD7CD09CAEC4E2
+ACE Weather Dev - 667B230F9505C8BA
+SHS Backpacks - 695D1C20908DA231
+AI Airborne - 6A034CF803186A96
+Realistic Combat Drones - 65AD60E204191D37
+AI Use Drones - 690D33EDCB46C4B9
+ConflictPVERemixedVanilla2.0 - 61B514B96692C049
+AWM - Summer Version - 68F352219EA04EC6
+ConstantEnemyThreat 1.7 - 69B856EFDEA992EB
+Enhanced Compositions - 660C6D2259B60EE8
+M777 Howitzer Artillery - 686AC479236F235D
+DarcCore - 631EE12D448D7FCC
+DarcChopper - 689EDED542F881AF
+MBS Auto Spawn AI helicopters - 6976D02296D2CA42
+NBS C-RAM - 6A388D460E34F5BF
+WCS_Core - 64610AFB74AA9842
+WCS_Weapon_Scripts - 68F006D910E7546F
+RHS - Content Pack 01 - 1337C0DE5DABBEEF
+RHS - Content Pack 02 - BADC0DEDABBEDA5E
+RHS - Status Quo - 595F2BF2F44836FB
+WCS_Sounds - 631C3C1AEE9C90BC
+WCS_NATO - 615806DC6C57AF02
+WCS_RU - 615818DA7C0343FD
+WCS_Scopes - 62A668F513428630
+WCS_Attachments - 61C74A8B647617DA
+WCS_RHS_Attachments - 6A717EEA63A35E67
+WCS_RHS_Scopes - 3B8081D9CAD979D2
+WCS_Clothing_Assets - 6602C1EC7E5A4A87
+WCS_Clothing - 6152CB0BD0684837
+WCS_Armbands - 61E42AE6714A3CC2
+WCS_Armaments - 629B2BA37EFFD577
+WCS_Weapons - 65CF7AE8574E06D2
+WCS_RHS_Sounds - 6AAE2A3269AD5C39
+WCS_RHS_Weapons - 65F929DF622BAD50
+WCS_RHS_Clothing - 6AAEEB19367529A1
+WCS_Arsenal - 615CC2D870A39838
+Realistic Combat Drones - WCS - 65D10E606F9A0B25
+REAPER_NH-90 HQ - 68746C2DCDABB93D
+REAPER_RHIB - 6934F9C61CE24DE5
+Sleeper Cell - AI - 69C8C48790525BE3
+Stun Grenade - 59EAA899751805DF
+TacticalAnimationOverhaul TEST - 61ECB5EFAA346151
+ACE Tactical Ladder Dev - 65AD7CB89F219E38
+ACE Trenches Dev - 65AD7CE59E8DB349
+ACE Explosives Dev - 65AD7D1E9EEAFA53
+WCS_ACE - 6A8E689750C80548
+WCS_AH-1S - 64CB39E57377C861
+AKI_Core - 62CCD69DD17E4F2F
+WCS_AH-64D - 6303360DA719E832
+AKI_Core_Upgrade - 662EB83AB3F8CAE3
+WCS_AH-64D_Upgrade - 6326F0C7E748AB8A
+WCS_AH-6M - 6273146ADFE8241D
+WCS_AH-6M_Upgrade - 62AE96D92179F7A0
+WCS_SpaceCore - 5E389BB9F58B79A6
+WCS_BMP-1 - 5E524E4FEECCA92B
+WCS_BMP-3 - 5B383D4CB27E0D54
+WCS_Earplugs - 612F512CD4CB21D5
+WCS_FMTV - 65B60A48AEC31157
+WCS_Hescos - 6A20948448913FD7
+WCS_HoldBreath - 672D432E181E6807
+WCS_JLTV - 5C721177A220B42F
+WCS_JLTV_Upgrade - 6528B3CE24C85120
+WCS_KBA-105 - 684CE0507D2F8AD2
+WCS_PS5 - 656EC7E7513E76A9
+WCS_RHS_TempFixes - 69D176C07DDCFF64
+WCS_VehicleLock - 61BA4EB5C886D396
+WCS_Vehicles - 615A80027C5C9170
+WCS_MRZR - 64900A5A31F5DCB5
+WCS_RHS_Vehicles - 6A50528453E5FF27
+WCS_Stryker - 5B02128D896F7DE8
+WCS_Suppression - 685EDA5A6ACD53C5
+WCS_TempFixes - 61C4B48772550E0F
+WCS_ViewDistance - 6A68E18470531D4B
+WCS_ZU-23-2 - 63294BA2D9F0339B
+Were You Raised In A Barn - 0EE9CE408F80A62C
+Wirecutters 2 - 62F364B35E9B51B0
+WCS_M1A1 - 5D1880C4AD410C14
+WCS_M2A2 - 63120AE07E6C0966
+WCS_LoadoutEditor - 61D57616CAFBB23D
+WCS_T-72 - 5E0AB16BEB16D6A4
+WCS_VON - 69333B6C7C8BE8AB
+WCS_Commands - 61A25BD1C99515B5
+WCS_Interface - 614D1A3874A23AD9
+FRP_DroneDetector - 6A8312058F0EDC8E
+TFO_DroneDetector_ENG - 6A9554824B4C155B
+TFO - Drone Jammer Backpacks - 6AA3385AD956B4DD
+Chungus Core - 66D6340C1D565C98
+Chungus Shotguns - 620E584B1D2C96A4
+S&amp;D Drone Systems - 6A89645B840FD4EE
+S&amp;D Fixed Wing - 6AA93D208350694A</code></pre>
+  </figure>
+</div>
+<details class="deps-table">
+  <summary><span data-i18n="deps.table">Full table</span> <span class="mono dim">(101)</span></summary>
+  <div class="tbl"><table class="table">
+  <thead><tr><th scope="col">#</th><th scope="col"><span data-i18n="deps.col_name">Mod</span></th><th scope="col"><span data-i18n="deps.col_id">ID</span></th><th scope="col"><span data-i18n="deps.col_author">Author</span></th></tr></thead>
+  <tbody><tr><td>1</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7D0D9941A380" target="_blank" rel="noopener noreferrer">ACE Core Dev</a></td><td><code>65AD7D0D9941A380</code></td><td>acemod</td></tr><tr><td>2</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7C139EB4C1A1" target="_blank" rel="noopener noreferrer">ACE Backblast Dev</a></td><td><code>65AD7C139EB4C1A1</code></td><td>acemod</td></tr><tr><td>3</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7C249E4ECDFB" target="_blank" rel="noopener noreferrer">ACE Captives Dev</a></td><td><code>65AD7C249E4ECDFB</code></td><td>acemod</td></tr><tr><td>4</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7C379CBD394D" target="_blank" rel="noopener noreferrer">ACE Carrying Dev</a></td><td><code>65AD7C379CBD394D</code></td><td>acemod</td></tr><tr><td>5</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7CF69FAF1FDD" target="_blank" rel="noopener noreferrer">ACE Compass Dev</a></td><td><code>65AD7CF69FAF1FDD</code></td><td>acemod</td></tr><tr><td>6</td><td><a href="https://reforger.armaplatform.com/workshop/664AFDC993C9CE1A" target="_blank" rel="noopener noreferrer">ACE Cook-Off Dev</a></td><td><code>664AFDC993C9CE1A</code></td><td>acemod</td></tr><tr><td>7</td><td><a href="https://reforger.armaplatform.com/workshop/68EAA4B96976D557" target="_blank" rel="noopener noreferrer">ACE Facepaint Dev</a></td><td><code>68EAA4B96976D557</code></td><td>acemod</td></tr><tr><td>8</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7D2E9866FA6E" target="_blank" rel="noopener noreferrer">ACE Finger Dev</a></td><td><code>65AD7D2E9866FA6E</code></td><td>acemod</td></tr><tr><td>9</td><td><a href="https://reforger.armaplatform.com/workshop/6586079789278413" target="_blank" rel="noopener noreferrer">ACE Medical Core Dev</a></td><td><code>6586079789278413</code></td><td>acemod</td></tr><tr><td>10</td><td><a href="https://reforger.armaplatform.com/workshop/65B343F799FB521B" target="_blank" rel="noopener noreferrer">ACE Medical Hitzones Dev</a></td><td><code>65B343F799FB521B</code></td><td>acemod</td></tr><tr><td>11</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7C75826B46C6" target="_blank" rel="noopener noreferrer">ACE Radio Dev</a></td><td><code>65AD7C75826B46C6</code></td><td>acemod</td></tr><tr><td>12</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7CD09CAEC4E2" target="_blank" rel="noopener noreferrer">ACE Tactical Periscope Dev</a></td><td><code>65AD7CD09CAEC4E2</code></td><td>acemod</td></tr><tr><td>13</td><td><a href="https://reforger.armaplatform.com/workshop/667B230F9505C8BA" target="_blank" rel="noopener noreferrer">ACE Weather Dev</a></td><td><code>667B230F9505C8BA</code></td><td>acemod</td></tr><tr><td>14</td><td><a href="https://reforger.armaplatform.com/workshop/695D1C20908DA231" target="_blank" rel="noopener noreferrer">SHS Backpacks</a></td><td><code>695D1C20908DA231</code></td><td>Shadow_Haven_Studios</td></tr><tr><td>15</td><td><a href="https://reforger.armaplatform.com/workshop/6A034CF803186A96" target="_blank" rel="noopener noreferrer">AI Airborne</a></td><td><code>6A034CF803186A96</code></td><td>streetone</td></tr><tr><td>16</td><td><a href="https://reforger.armaplatform.com/workshop/65AD60E204191D37" target="_blank" rel="noopener noreferrer">Realistic Combat Drones</a></td><td><code>65AD60E204191D37</code></td><td>SalamiBoiDev</td></tr><tr><td>17</td><td><a href="https://reforger.armaplatform.com/workshop/690D33EDCB46C4B9" target="_blank" rel="noopener noreferrer">AI Use Drones</a></td><td><code>690D33EDCB46C4B9</code></td><td>MikeKn</td></tr><tr><td>18</td><td><a href="https://reforger.armaplatform.com/workshop/61B514B96692C049" target="_blank" rel="noopener noreferrer">ConflictPVERemixedVanilla2.0</a></td><td><code>61B514B96692C049</code></td><td>Gramps303</td></tr><tr><td>19</td><td><a href="https://reforger.armaplatform.com/workshop/68F352219EA04EC6" target="_blank" rel="noopener noreferrer">AWM - Summer Version</a></td><td><code>68F352219EA04EC6</code></td><td> EO</td></tr><tr><td>20</td><td><a href="https://reforger.armaplatform.com/workshop/69B856EFDEA992EB" target="_blank" rel="noopener noreferrer">ConstantEnemyThreat 1.7</a></td><td><code>69B856EFDEA992EB</code></td><td>WhiskeyDreamzZz</td></tr><tr><td>21</td><td><a href="https://reforger.armaplatform.com/workshop/660C6D2259B60EE8" target="_blank" rel="noopener noreferrer">Enhanced Compositions</a></td><td><code>660C6D2259B60EE8</code></td><td>TheUnknownTeam</td></tr><tr><td>22</td><td><a href="https://reforger.armaplatform.com/workshop/686AC479236F235D" target="_blank" rel="noopener noreferrer">M777 Howitzer Artillery</a></td><td><code>686AC479236F235D</code></td><td>PandaMods</td></tr><tr><td>23</td><td><a href="https://reforger.armaplatform.com/workshop/631EE12D448D7FCC" target="_blank" rel="noopener noreferrer">DarcCore</a></td><td><code>631EE12D448D7FCC</code></td><td>darc_</td></tr><tr><td>24</td><td><a href="https://reforger.armaplatform.com/workshop/689EDED542F881AF" target="_blank" rel="noopener noreferrer">DarcChopper</a></td><td><code>689EDED542F881AF</code></td><td>darc_</td></tr><tr><td>25</td><td><a href="https://reforger.armaplatform.com/workshop/6976D02296D2CA42" target="_blank" rel="noopener noreferrer">MBS Auto Spawn AI helicopters</a></td><td><code>6976D02296D2CA42</code></td><td>tommills2209</td></tr><tr><td>26</td><td><a href="https://reforger.armaplatform.com/workshop/6A388D460E34F5BF" target="_blank" rel="noopener noreferrer">NBS C-RAM</a></td><td><code>6A388D460E34F5BF</code></td><td>Punkster</td></tr><tr><td>27</td><td><a href="https://reforger.armaplatform.com/workshop/64610AFB74AA9842" target="_blank" rel="noopener noreferrer">WCS_Core</a></td><td><code>64610AFB74AA9842</code></td><td>Worst Case Scenario</td></tr><tr><td>28</td><td><a href="https://reforger.armaplatform.com/workshop/68F006D910E7546F" target="_blank" rel="noopener noreferrer">WCS_Weapon_Scripts</a></td><td><code>68F006D910E7546F</code></td><td>Worst Case Scenario</td></tr><tr><td>29</td><td><a href="https://reforger.armaplatform.com/workshop/1337C0DE5DABBEEF" target="_blank" rel="noopener noreferrer">RHS - Content Pack 01</a></td><td><code>1337C0DE5DABBEEF</code></td><td>Red Hammer Studios</td></tr><tr><td>30</td><td><a href="https://reforger.armaplatform.com/workshop/BADC0DEDABBEDA5E" target="_blank" rel="noopener noreferrer">RHS - Content Pack 02</a></td><td><code>BADC0DEDABBEDA5E</code></td><td>Red Hammer Studios</td></tr><tr><td>31</td><td><a href="https://reforger.armaplatform.com/workshop/595F2BF2F44836FB" target="_blank" rel="noopener noreferrer">RHS - Status Quo</a></td><td><code>595F2BF2F44836FB</code></td><td>Red Hammer Studios</td></tr><tr><td>32</td><td><a href="https://reforger.armaplatform.com/workshop/631C3C1AEE9C90BC" target="_blank" rel="noopener noreferrer">WCS_Sounds</a></td><td><code>631C3C1AEE9C90BC</code></td><td>Worst Case Scenario</td></tr><tr><td>33</td><td><a href="https://reforger.armaplatform.com/workshop/615806DC6C57AF02" target="_blank" rel="noopener noreferrer">WCS_NATO</a></td><td><code>615806DC6C57AF02</code></td><td>Worst Case Scenario</td></tr><tr><td>34</td><td><a href="https://reforger.armaplatform.com/workshop/615818DA7C0343FD" target="_blank" rel="noopener noreferrer">WCS_RU</a></td><td><code>615818DA7C0343FD</code></td><td>Worst Case Scenario</td></tr><tr><td>35</td><td><a href="https://reforger.armaplatform.com/workshop/62A668F513428630" target="_blank" rel="noopener noreferrer">WCS_Scopes</a></td><td><code>62A668F513428630</code></td><td>Worst Case Scenario</td></tr><tr><td>36</td><td><a href="https://reforger.armaplatform.com/workshop/61C74A8B647617DA" target="_blank" rel="noopener noreferrer">WCS_Attachments</a></td><td><code>61C74A8B647617DA</code></td><td>Worst Case Scenario</td></tr><tr><td>37</td><td><a href="https://reforger.armaplatform.com/workshop/6A717EEA63A35E67" target="_blank" rel="noopener noreferrer">WCS_RHS_Attachments</a></td><td><code>6A717EEA63A35E67</code></td><td>Worst Case Scenario</td></tr><tr><td>38</td><td><a href="https://reforger.armaplatform.com/workshop/3B8081D9CAD979D2" target="_blank" rel="noopener noreferrer">WCS_RHS_Scopes</a></td><td><code>3B8081D9CAD979D2</code></td><td>Worst Case Scenario</td></tr><tr><td>39</td><td><a href="https://reforger.armaplatform.com/workshop/6602C1EC7E5A4A87" target="_blank" rel="noopener noreferrer">WCS_Clothing_Assets</a></td><td><code>6602C1EC7E5A4A87</code></td><td>Worst Case Scenario</td></tr><tr><td>40</td><td><a href="https://reforger.armaplatform.com/workshop/6152CB0BD0684837" target="_blank" rel="noopener noreferrer">WCS_Clothing</a></td><td><code>6152CB0BD0684837</code></td><td>Worst Case Scenario</td></tr><tr><td>41</td><td><a href="https://reforger.armaplatform.com/workshop/61E42AE6714A3CC2" target="_blank" rel="noopener noreferrer">WCS_Armbands</a></td><td><code>61E42AE6714A3CC2</code></td><td>Worst Case Scenario</td></tr><tr><td>42</td><td><a href="https://reforger.armaplatform.com/workshop/629B2BA37EFFD577" target="_blank" rel="noopener noreferrer">WCS_Armaments</a></td><td><code>629B2BA37EFFD577</code></td><td>Worst Case Scenario</td></tr><tr><td>43</td><td><a href="https://reforger.armaplatform.com/workshop/65CF7AE8574E06D2" target="_blank" rel="noopener noreferrer">WCS_Weapons</a></td><td><code>65CF7AE8574E06D2</code></td><td>Worst Case Scenario</td></tr><tr><td>44</td><td><a href="https://reforger.armaplatform.com/workshop/6AAE2A3269AD5C39" target="_blank" rel="noopener noreferrer">WCS_RHS_Sounds</a></td><td><code>6AAE2A3269AD5C39</code></td><td>Worst Case Scenario</td></tr><tr><td>45</td><td><a href="https://reforger.armaplatform.com/workshop/65F929DF622BAD50" target="_blank" rel="noopener noreferrer">WCS_RHS_Weapons</a></td><td><code>65F929DF622BAD50</code></td><td>Worst Case Scenario</td></tr><tr><td>46</td><td><a href="https://reforger.armaplatform.com/workshop/6AAEEB19367529A1" target="_blank" rel="noopener noreferrer">WCS_RHS_Clothing</a></td><td><code>6AAEEB19367529A1</code></td><td>Worst Case Scenario</td></tr><tr><td>47</td><td><a href="https://reforger.armaplatform.com/workshop/615CC2D870A39838" target="_blank" rel="noopener noreferrer">WCS_Arsenal</a></td><td><code>615CC2D870A39838</code></td><td>Worst Case Scenario</td></tr><tr><td>48</td><td><a href="https://reforger.armaplatform.com/workshop/65D10E606F9A0B25" target="_blank" rel="noopener noreferrer">Realistic Combat Drones - WCS</a></td><td><code>65D10E606F9A0B25</code></td><td>TheUnknownTeam</td></tr><tr><td>49</td><td><a href="https://reforger.armaplatform.com/workshop/68746C2DCDABB93D" target="_blank" rel="noopener noreferrer">REAPER_NH-90 HQ</a></td><td><code>68746C2DCDABB93D</code></td><td>r34p3r</td></tr><tr><td>50</td><td><a href="https://reforger.armaplatform.com/workshop/6934F9C61CE24DE5" target="_blank" rel="noopener noreferrer">REAPER_RHIB</a></td><td><code>6934F9C61CE24DE5</code></td><td>r34p3r</td></tr><tr><td>51</td><td><a href="https://reforger.armaplatform.com/workshop/69C8C48790525BE3" target="_blank" rel="noopener noreferrer">Sleeper Cell - AI</a></td><td><code>69C8C48790525BE3</code></td><td>Volmog_0</td></tr><tr><td>52</td><td><a href="https://reforger.armaplatform.com/workshop/59EAA899751805DF" target="_blank" rel="noopener noreferrer">Stun Grenade</a></td><td><code>59EAA899751805DF</code></td><td>ceo_of_bacon</td></tr><tr><td>53</td><td><a href="https://reforger.armaplatform.com/workshop/61ECB5EFAA346151" target="_blank" rel="noopener noreferrer">TacticalAnimationOverhaul TEST</a></td><td><code>61ECB5EFAA346151</code></td><td>Bale&#x27;</td></tr><tr><td>54</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7CB89F219E38" target="_blank" rel="noopener noreferrer">ACE Tactical Ladder Dev</a></td><td><code>65AD7CB89F219E38</code></td><td>acemod</td></tr><tr><td>55</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7CE59E8DB349" target="_blank" rel="noopener noreferrer">ACE Trenches Dev</a></td><td><code>65AD7CE59E8DB349</code></td><td>acemod</td></tr><tr><td>56</td><td><a href="https://reforger.armaplatform.com/workshop/65AD7D1E9EEAFA53" target="_blank" rel="noopener noreferrer">ACE Explosives Dev</a></td><td><code>65AD7D1E9EEAFA53</code></td><td>acemod</td></tr><tr><td>57</td><td><a href="https://reforger.armaplatform.com/workshop/6A8E689750C80548" target="_blank" rel="noopener noreferrer">WCS_ACE</a></td><td><code>6A8E689750C80548</code></td><td>Worst Case Scenario</td></tr><tr><td>58</td><td><a href="https://reforger.armaplatform.com/workshop/64CB39E57377C861" target="_blank" rel="noopener noreferrer">WCS_AH-1S</a></td><td><code>64CB39E57377C861</code></td><td>Worst Case Scenario</td></tr><tr><td>59</td><td><a href="https://reforger.armaplatform.com/workshop/62CCD69DD17E4F2F" target="_blank" rel="noopener noreferrer">AKI_Core</a></td><td><code>62CCD69DD17E4F2F</code></td><td>AkiraSeki</td></tr><tr><td>60</td><td><a href="https://reforger.armaplatform.com/workshop/6303360DA719E832" target="_blank" rel="noopener noreferrer">WCS_AH-64D</a></td><td><code>6303360DA719E832</code></td><td>Worst Case Scenario</td></tr><tr><td>61</td><td><a href="https://reforger.armaplatform.com/workshop/662EB83AB3F8CAE3" target="_blank" rel="noopener noreferrer">AKI_Core_Upgrade</a></td><td><code>662EB83AB3F8CAE3</code></td><td>AkiraSeki</td></tr><tr><td>62</td><td><a href="https://reforger.armaplatform.com/workshop/6326F0C7E748AB8A" target="_blank" rel="noopener noreferrer">WCS_AH-64D_Upgrade</a></td><td><code>6326F0C7E748AB8A</code></td><td>Worst Case Scenario</td></tr><tr><td>63</td><td><a href="https://reforger.armaplatform.com/workshop/6273146ADFE8241D" target="_blank" rel="noopener noreferrer">WCS_AH-6M</a></td><td><code>6273146ADFE8241D</code></td><td>Worst Case Scenario</td></tr><tr><td>64</td><td><a href="https://reforger.armaplatform.com/workshop/62AE96D92179F7A0" target="_blank" rel="noopener noreferrer">WCS_AH-6M_Upgrade</a></td><td><code>62AE96D92179F7A0</code></td><td>Worst Case Scenario</td></tr><tr><td>65</td><td><a href="https://reforger.armaplatform.com/workshop/5E389BB9F58B79A6" target="_blank" rel="noopener noreferrer">WCS_SpaceCore</a></td><td><code>5E389BB9F58B79A6</code></td><td>Worst Case Scenario</td></tr><tr><td>66</td><td><a href="https://reforger.armaplatform.com/workshop/5E524E4FEECCA92B" target="_blank" rel="noopener noreferrer">WCS_BMP-1</a></td><td><code>5E524E4FEECCA92B</code></td><td>Worst Case Scenario</td></tr><tr><td>67</td><td><a href="https://reforger.armaplatform.com/workshop/5B383D4CB27E0D54" target="_blank" rel="noopener noreferrer">WCS_BMP-3</a></td><td><code>5B383D4CB27E0D54</code></td><td>Worst Case Scenario</td></tr><tr><td>68</td><td><a href="https://reforger.armaplatform.com/workshop/612F512CD4CB21D5" target="_blank" rel="noopener noreferrer">WCS_Earplugs</a></td><td><code>612F512CD4CB21D5</code></td><td>Worst Case Scenario</td></tr><tr><td>69</td><td><a href="https://reforger.armaplatform.com/workshop/65B60A48AEC31157" target="_blank" rel="noopener noreferrer">WCS_FMTV</a></td><td><code>65B60A48AEC31157</code></td><td>Worst Case Scenario</td></tr><tr><td>70</td><td><a href="https://reforger.armaplatform.com/workshop/6A20948448913FD7" target="_blank" rel="noopener noreferrer">WCS_Hescos</a></td><td><code>6A20948448913FD7</code></td><td>Worst Case Scenario</td></tr><tr><td>71</td><td><a href="https://reforger.armaplatform.com/workshop/672D432E181E6807" target="_blank" rel="noopener noreferrer">WCS_HoldBreath</a></td><td><code>672D432E181E6807</code></td><td>Worst Case Scenario</td></tr><tr><td>72</td><td><a href="https://reforger.armaplatform.com/workshop/5C721177A220B42F" target="_blank" rel="noopener noreferrer">WCS_JLTV</a></td><td><code>5C721177A220B42F</code></td><td>Worst Case Scenario</td></tr><tr><td>73</td><td><a href="https://reforger.armaplatform.com/workshop/6528B3CE24C85120" target="_blank" rel="noopener noreferrer">WCS_JLTV_Upgrade</a></td><td><code>6528B3CE24C85120</code></td><td>Worst Case Scenario</td></tr><tr><td>74</td><td><a href="https://reforger.armaplatform.com/workshop/684CE0507D2F8AD2" target="_blank" rel="noopener noreferrer">WCS_KBA-105</a></td><td><code>684CE0507D2F8AD2</code></td><td>Worst Case Scenario</td></tr><tr><td>75</td><td><a href="https://reforger.armaplatform.com/workshop/656EC7E7513E76A9" target="_blank" rel="noopener noreferrer">WCS_PS5</a></td><td><code>656EC7E7513E76A9</code></td><td>Cyborgmatt</td></tr><tr><td>76</td><td><a href="https://reforger.armaplatform.com/workshop/69D176C07DDCFF64" target="_blank" rel="noopener noreferrer">WCS_RHS_TempFixes</a></td><td><code>69D176C07DDCFF64</code></td><td>Worst Case Scenario</td></tr><tr><td>77</td><td><a href="https://reforger.armaplatform.com/workshop/61BA4EB5C886D396" target="_blank" rel="noopener noreferrer">WCS_VehicleLock</a></td><td><code>61BA4EB5C886D396</code></td><td>Worst Case Scenario</td></tr><tr><td>78</td><td><a href="https://reforger.armaplatform.com/workshop/615A80027C5C9170" target="_blank" rel="noopener noreferrer">WCS_Vehicles</a></td><td><code>615A80027C5C9170</code></td><td>Worst Case Scenario</td></tr><tr><td>79</td><td><a href="https://reforger.armaplatform.com/workshop/64900A5A31F5DCB5" target="_blank" rel="noopener noreferrer">WCS_MRZR</a></td><td><code>64900A5A31F5DCB5</code></td><td>Worst Case Scenario</td></tr><tr><td>80</td><td><a href="https://reforger.armaplatform.com/workshop/6A50528453E5FF27" target="_blank" rel="noopener noreferrer">WCS_RHS_Vehicles</a></td><td><code>6A50528453E5FF27</code></td><td>Worst Case Scenario</td></tr><tr><td>81</td><td><a href="https://reforger.armaplatform.com/workshop/5B02128D896F7DE8" target="_blank" rel="noopener noreferrer">WCS_Stryker</a></td><td><code>5B02128D896F7DE8</code></td><td>Worst Case Scenario</td></tr><tr><td>82</td><td><a href="https://reforger.armaplatform.com/workshop/685EDA5A6ACD53C5" target="_blank" rel="noopener noreferrer">WCS_Suppression</a></td><td><code>685EDA5A6ACD53C5</code></td><td>Worst Case Scenario</td></tr><tr><td>83</td><td><a href="https://reforger.armaplatform.com/workshop/61C4B48772550E0F" target="_blank" rel="noopener noreferrer">WCS_TempFixes</a></td><td><code>61C4B48772550E0F</code></td><td>Worst Case Scenario</td></tr><tr><td>84</td><td><a href="https://reforger.armaplatform.com/workshop/6A68E18470531D4B" target="_blank" rel="noopener noreferrer">WCS_ViewDistance</a></td><td><code>6A68E18470531D4B</code></td><td>Worst Case Scenario</td></tr><tr><td>85</td><td><a href="https://reforger.armaplatform.com/workshop/63294BA2D9F0339B" target="_blank" rel="noopener noreferrer">WCS_ZU-23-2</a></td><td><code>63294BA2D9F0339B</code></td><td>Worst Case Scenario</td></tr><tr><td>86</td><td><a href="https://reforger.armaplatform.com/workshop/0EE9CE408F80A62C" target="_blank" rel="noopener noreferrer">Were You Raised In A Barn</a></td><td><code>0EE9CE408F80A62C</code></td><td>Rick James Bish</td></tr><tr><td>87</td><td><a href="https://reforger.armaplatform.com/workshop/62F364B35E9B51B0" target="_blank" rel="noopener noreferrer">Wirecutters 2</a></td><td><code>62F364B35E9B51B0</code></td><td>dax5150</td></tr><tr><td>88</td><td><a href="https://reforger.armaplatform.com/workshop/5D1880C4AD410C14" target="_blank" rel="noopener noreferrer">WCS_M1A1</a></td><td><code>5D1880C4AD410C14</code></td><td>Worst Case Scenario</td></tr><tr><td>89</td><td><a href="https://reforger.armaplatform.com/workshop/63120AE07E6C0966" target="_blank" rel="noopener noreferrer">WCS_M2A2</a></td><td><code>63120AE07E6C0966</code></td><td>Worst Case Scenario</td></tr><tr><td>90</td><td><a href="https://reforger.armaplatform.com/workshop/61D57616CAFBB23D" target="_blank" rel="noopener noreferrer">WCS_LoadoutEditor</a></td><td><code>61D57616CAFBB23D</code></td><td>Worst Case Scenario</td></tr><tr><td>91</td><td><a href="https://reforger.armaplatform.com/workshop/5E0AB16BEB16D6A4" target="_blank" rel="noopener noreferrer">WCS_T-72</a></td><td><code>5E0AB16BEB16D6A4</code></td><td>Worst Case Scenario</td></tr><tr><td>92</td><td><a href="https://reforger.armaplatform.com/workshop/69333B6C7C8BE8AB" target="_blank" rel="noopener noreferrer">WCS_VON</a></td><td><code>69333B6C7C8BE8AB</code></td><td>Worst Case Scenario</td></tr><tr><td>93</td><td><a href="https://reforger.armaplatform.com/workshop/61A25BD1C99515B5" target="_blank" rel="noopener noreferrer">WCS_Commands</a></td><td><code>61A25BD1C99515B5</code></td><td>Worst Case Scenario</td></tr><tr><td>94</td><td><a href="https://reforger.armaplatform.com/workshop/614D1A3874A23AD9" target="_blank" rel="noopener noreferrer">WCS_Interface</a></td><td><code>614D1A3874A23AD9</code></td><td>Worst Case Scenario</td></tr><tr><td>95</td><td><a href="https://reforger.armaplatform.com/workshop/6A8312058F0EDC8E" target="_blank" rel="noopener noreferrer">FRP_DroneDetector</a></td><td><code>6A8312058F0EDC8E</code></td><td>sgt_Chaudard</td></tr><tr><td>96</td><td><a href="https://reforger.armaplatform.com/workshop/6A9554824B4C155B" target="_blank" rel="noopener noreferrer">TFO_DroneDetector_ENG</a></td><td><code>6A9554824B4C155B</code></td><td>Rickerd</td></tr><tr><td>97</td><td><a href="https://reforger.armaplatform.com/workshop/6AA3385AD956B4DD" target="_blank" rel="noopener noreferrer">TFO - Drone Jammer Backpacks</a></td><td><code>6AA3385AD956B4DD</code></td><td>jassnl</td></tr><tr><td>98</td><td><a href="https://reforger.armaplatform.com/workshop/66D6340C1D565C98" target="_blank" rel="noopener noreferrer">Chungus Core</a></td><td><code>66D6340C1D565C98</code></td><td>Big  Chungus</td></tr><tr><td>99</td><td><a href="https://reforger.armaplatform.com/workshop/620E584B1D2C96A4" target="_blank" rel="noopener noreferrer">Chungus Shotguns</a></td><td><code>620E584B1D2C96A4</code></td><td>Big  Chungus</td></tr><tr><td>100</td><td><a href="https://reforger.armaplatform.com/workshop/6A89645B840FD4EE" target="_blank" rel="noopener noreferrer">S&amp;D Drone Systems</a></td><td><code>6A89645B840FD4EE</code></td><td>SammyS_</td></tr><tr><td>101</td><td><a href="https://reforger.armaplatform.com/workshop/6AA93D208350694A" target="_blank" rel="noopener noreferrer">S&amp;D Fixed Wing</a></td><td><code>6AA93D208350694A</code></td><td>SammyS_</td></tr></tbody></table></div>
+</details>
+</section><section class="sec " id="changelog" aria-labelledby="h-changelog">
+  <h2 id="h-changelog"><span class="sec-code" aria-hidden="true">06</span><span data-i18n="sec.changelog">Latest changelog</span></h2>
+  <p data-i18n="log.workshop_note" class="dim">Changelog text quoted from the Workshop page, in its original language.</p><blockquote class="quote-log" lang="en"><p class="mono dim">v2.0.6 // 2026-11-18</p><div class="log-txt">ENEMY HQ (new)
+
+- Enemy hunter groups are no longer sent straight at your exact position. The enemy HQ only reacts to intel: an enemy drone or a patrol that spots you or your vehicle.
+- It sends a group to where you were last seen, or to where you should be by now: it estimates your direction and speed.
+- No intel: it searches the area, then the group returns.
+- Groups march in column and spread into a line on contact.
+
+BASE CAPTURE
+
+- The generator gives 10 supplies per liter (doubled) and never delivers more than the base storage holds.
+- If players wall the generator in with HESCO, an enemy breacher now walks to the wall closest to the generator, lays demolition charges and runs clear before the blast. Kill him, or disarm the charges within 20 s.
+- HESCO are now destructible, but very hard to break: no damage from bullets, grenades or vehicles. Explosives are needed: 1 M112 for the small HESCO, 2 for the long one, 4 for the long and tall one.
+- The saboteur finds a free side when a vehicle blocks the generator.
+
+VEHICLES
+
+- Garage and helipad costs reworked: a better vehicle never costs less, in supplies, XP or rank.
+- The M777 artillery ammo truck is removed: its driving data is broken in game version 1.9. M777 shells stay in the arsenal.
+
+ARSENAL / AI
+
+- Spetsnaz paratroopers (black and A-TACS) and Mi-8 patrol passengers.
+- More variety in hunter anti-tank weapons and Overwatch weapons.
+- Groin plates on the Shaw ARC vests, plus 5-plate AVS vests.
+
+MISC
+
+- Medical litter is cleared after 120 s.
+- Enhanced Compositions garrisons spawn even with enemies 50 m away (instead of 200 m).
+- Server log session report (INDFORGE session lines).
+- FPVUR Base and FPVUR Ground Robotics are removed from the server mods.
+
+Server mods:
+
+INDFORGE - Conflict PvE - 69BD142259FCF144
+ACE Core Dev - 65AD7D0D9941A380
+ACE Backblast Dev - 65AD7C139EB4C1A1
+ACE Captives Dev - 65AD7C249E4ECDFB
+ACE Carrying Dev - 65AD7C379CBD394D
+ACE Compass Dev - 65AD7CF69FAF1FDD
+ACE Cook-Off Dev - 664AFDC993C9CE1A
+ACE Facepaint Dev - 68EAA4B96976D557
+ACE Finger Dev - 65AD7D2E9866FA6E
+ACE Medical Core Dev - 6586079789278413
+ACE Medical Hitzones Dev - 65B343F799FB521B
+ACE Radio Dev - 65AD7C75826B46C6
+ACE Tactical Periscope Dev - 65AD7CD09CAEC4E2
+ACE Weather Dev - 667B230F9505C8BA
+SHS Backpacks - 695D1C20908DA231
+AI Airborne - 6A034CF803186A96
+Realistic Combat Drones - 65AD60E204191D37
+AI Use Drones - 690D33EDCB46C4B9
+WCS_Sounds - 631C3C1AEE9C90BC
+WCS_NATO - 615806DC6C57AF02
+WCS_Weapon_Scripts - 68F006D910E7546F
+WCS_RU - 615818DA7C0343FD
+WCS_Scopes - 62A668F513428630
+WCS_Attachments - 61C74A8B647617DA
+WCS_Weapons - 65CF7AE8574E06D2
+RHS - Content Pack 02 - BADC0DEDABBEDA5E
+RHS - Content Pack 01 - 1337C0DE5DABBEEF
+RHS - Status Quo - 595F2BF2F44836FB
+WCS_Clothing_Assets - 6602C1EC7E5A4A87
+WCS_Clothing - 6152CB0BD0684837
+Thomoskis Modernised FIA - 69D007B68A1E8C20
+ConflictPVERemixedVanilla2.0 - 61B514B96692C049
+AWM - Summer Version - 68F352219EA04EC6
+ConstantEnemyThreat 1.7 - 69B856EFDEA992EB
+Enhanced Compositions - 660C6D2259B60EE8
+M777 Howitzer Artillery - 686AC479236F235D
+DarcCore - 631EE12D448D7FCC
+DarcChopper - 689EDED542F881AF
+MBS Auto Spawn AI helicopters - 6976D02296D2CA42
+NBS C-RAM - 6A388D460E34F5BF
+WCS_RHS_Sounds - 6AAE2A3269AD5C39
+WCS_Core - 64610AFB74AA9842
+WCS_RHS_Attachments - 6A717EEA63A35E67
+WCS_RHS_Scopes - 3B8081D9CAD979D2
+WCS_Armbands - 61E42AE6714A3CC2
+WCS_RHS_Weapons - 65F929DF622BAD50
+WCS_Armaments - 629B2BA37EFFD577
+WCS_RHS_Clothing - 6AAEEB19367529A1
+WCS_Arsenal - 615CC2D870A39838
+Realistic Combat Drones - WCS - 65D10E606F9A0B25
+REAPER_NH-90 HQ - 68746C2DCDABB93D
+REAPER_RHIB - 6934F9C61CE24DE5
+Sleeper Cell - AI - 69C8C48790525BE3
+Stun Grenade - 59EAA899751805DF
+TacticalAnimationOverhaul TEST - 61ECB5EFAA346151
+ACE Trenches Dev - 65AD7CE59E8DB349
+ACE Tactical Ladder Dev - 65AD7CB89F219E38
+ACE Explosives Dev - 65AD7D1E9EEAFA53
+WCS_ACE - 6A8E689750C80548
+WCS_AH-1S - 64CB39E57377C861
+AKI_Core - 62CCD69DD17E4F2F
+AKI_Core_Upgrade - 662EB83AB3F8CAE3
+WCS_AH-64D - 6303360DA719E832
+WCS_AH-64D_Upgrade - 6326F0C7E748AB8A
+WCS_AH-6M - 6273146ADFE8241D
+WCS_AH-6M_Upgrade - 62AE96D92179F7A0
+WCS_SpaceCore - 5E389BB9F58B79A6
+WCS_BMP-1 - 5E524E4FEECCA92B
+WCS_BMP-3 - 5B383D4CB27E0D54
+WCS_Earplugs - 612F512CD4CB21D5
+WCS_FMTV - 65B60A48AEC31157
+WCS_Hescos - 6A20948448913FD7
+WCS_HoldBreath - 672D432E181E6807
+WCS_JLTV - 5C721177A220B42F
+WCS_JLTV_Upgrade - 6528B3CE24C85120
+WCS_KBA-105 - 684CE0507D2F8AD2
+WCS_PS5 - 656EC7E7513E76A9
+WCS_RHS_TempFixes - 69D176C07DDCFF64
+WCS_VehicleLock - 61BA4EB5C886D396
+WCS_Vehicles - 615A80027C5C9170
+WCS_MRZR - 64900A5A31F5DCB5
+WCS_RHS_Vehicles - 6A50528453E5FF27
+WCS_Stryker - 5B02128D896F7DE8
+WCS_Suppression - 685EDA5A6ACD53C5
+WCS_TempFixes - 61C4B48772550E0F
+WCS_ViewDistance - 6A68E18470531D4B
+WCS_ZU-23-2 - 63294BA2D9F0339B
+Were You Raised In A Barn - 0EE9CE408F80A62C
+Wirecutters 2 - 62F364B35E9B51B0
+WCS_M1A1 - 5D1880C4AD410C14
+WCS_M2A2 - 63120AE07E6C0966
+WCS_LoadoutEditor - 61D57616CAFBB23D
+WCS_T-72 - 5E0AB16BEB16D6A4
+WCS_VON - 69333B6C7C8BE8AB
+WCS_Commands - 61A25BD1C99515B5
+WCS_Interface - 614D1A3874A23AD9
+FRP_DroneDetector - 6A8312058F0EDC8E
+TFO_DroneDetector_ENG - 6A9554824B4C155B
+TFO - Drone Jammer Backpacks - 6AA3385AD956B4DD
+Chungus Core - 66D6340C1D565C98
+Chungus Shotguns - 620E584B1D2C96A4</div></blockquote>
+</section><section class="sec " id="versions" aria-labelledby="h-versions">
+  <h2 id="h-versions"><span class="sec-code" aria-hidden="true">07</span><span data-i18n="sec.versions">Version history</span></h2>
+  <ol class="vlist"><li><span class="mono">v2.0.6</span><span class="dim mono">2026-11-18</span><span data-i18n="ui.current" class="chip chip-cur">current</span></li><li><span class="mono">v2.0.5</span><span class="dim mono">2026-11-16</span></li><li><span class="mono">v2.0.4</span><span class="dim mono">2026-11-15</span></li><li><span class="mono">v2.0.3</span><span class="dim mono">2026-11-15</span></li><li><span class="mono">v2.0.2</span><span class="dim mono">2026-11-15</span></li><li><span class="mono">v2.0.1</span><span class="dim mono">2026-11-14</span></li><li><span class="mono">v2.0.0</span><span class="dim mono">2026-11-13</span></li><li><span class="mono">v1.2.2</span><span class="dim mono">2026-11-12</span></li><li><span class="mono">v1.2.1</span><span class="dim mono">2026-11-11</span></li><li><span class="mono">v1.2.0</span><span class="dim mono">2026-11-11</span></li></ol><p><a href="/INDFORGE/changelog/"><span data-i18n="logp.h1">Version log</span></a></p>
+</section><section class="sec " id="credits" aria-labelledby="h-credits">
+  <h2 id="h-credits"><span class="sec-code" aria-hidden="true">08</span><span data-i18n="sec.credits">Credits</span></h2>
+  <p data-i18n="m.conflict-pve.credits">Based on Gramps303's ConflictPVERemixedVanilla2.0 and iRON79's creations. Thanks to Bohemia Interactive and to ACE, RHS, SHS, TFO, WCS, AkiraSeki, Chungus, darc_, dax5150, Gramps303, iRON79, MikeKn, PandaMods, Punkster, r34p3r, SalamiBoiDev, streetone, Thomoskis, tommills2209, Volmog_0, WhiskeyDreamzZz, WhoaItsLouie, WillowSaysWhat and every creator listed in the dependencies.</p>
+</section></div></div><nav class="pn wrap" aria-label="Mods">
+  <a class="pn-a" href="/INDFORGE/workshop/uaz-452-offroad/" rel="prev"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span><small><span data-i18n="ui.prev">Previous</span></small>UAZ-452 Offroad</span></a>
+  <a class="pn-a pn-next" href="/INDFORGE/workshop/forest/" rel="next"><span><small><span data-i18n="ui.next">Next</span></small>INDFORGE - Forest</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-name">INDFORGE - Studio <span class="dim">//</span> <span data-i18n="site.division">Arma Reforger</span></p>
+      <p data-i18n="about.motto" class="motto">Alone we go faster, but together we go further… and always beyond the possible.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="/INDFORGE/"><span data-i18n="nav.home">Command</span></a><a href="/INDFORGE/workshop/"><span data-i18n="nav.mods">Workshop</span></a><a href="/INDFORGE/admins/"><span data-i18n="nav.admins">Admins</span></a><a href="/INDFORGE/intel/"><span data-i18n="nav.intel">Intel</span></a><a href="/INDFORGE/changelog/"><span data-i18n="nav.log">Log</span></a><a href="/INDFORGE/status/"><span data-i18n="nav.status">Status</span></a><a href="/INDFORGE/about/"><span data-i18n="nav.about">About us</span></a></nav>
+    <p data-i18n="ui.footer_legal" class="legal">Fan-made community mods for Arma Reforger. Arma Reforger is a trademark of its owner; this site is not affiliated with or endorsed by Bohemia Interactive. Third-party mod names are used only to describe dependencies.</p>
+    <p data-i18n="ui.footer_source" data-i18n-args="{&quot;date&quot;: &quot;2026-11-20&quot;}" class="src">Data checked against the mods' project files and public Workshop pages on 2026-11-20.</p>
+    <p class="foot-sys mono" aria-hidden="true">SYS.897BE4 // CH-19 // <span class="blink">&#9632;</span> SECURE CHANNEL</p>
+  </div>
+</footer>
+</body>
+</html>

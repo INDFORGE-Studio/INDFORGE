@@ -29,7 +29,7 @@
   "shortcuts": [
     {
       "name": "Workshop",
-      "url": "/INDFORGE/mods/",
+      "url": "/INDFORGE/workshop/",
       "icons": [
         {
           "src": "assets/img/icon-192.png?v=d63f64af",
