@@ -363,22 +363,6 @@ HEAD_JS = (
 SPEC = json.dumps({"prerender": [{"where": {"href_matches": BASE + "*"}, "eagerness": "moderate"}]})
 
 
-# Image filters for the optics: luminance mapped onto each palette (night vision, ironbow...).
-def _fx(fid, r, g, b):
-    return ('<filter id="%s" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" '
-            'values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/><feComponentTransfer>'
-            '<feFuncR type="table" tableValues="%s"/><feFuncG type="table" tableValues="%s"/>'
-            '<feFuncB type="table" tableValues="%s"/></feComponentTransfer></filter>') % (fid, r, g, b)
-
-
-FX_DEFS = '<svg class="fx-defs" aria-hidden="true" focusable="false">%s</svg>' % "".join([
-    _fx("fx-nvg", "0 .04 .3 .7", "0 .42 .88 1", "0 .07 .28 .6"),
-    _fx("fx-thermal", "0 .22 .68 .95 1 1", "0 0 .05 .38 .78 1", ".1 .45 .55 .15 .05 .85"),
-    _fx("fx-red", "0 .42 .88 1", "0 .02 .14 .5", "0 .02 .1 .42"),
-    _fx("fx-arctic", "0 .08 .5 .85", "0 .22 .72 .95", ".03 .38 .9 1"),
-])
-
-
 # Header mark inlined so it takes the colours of the chosen optic (accent and dark fill).
 def _brand_mark():
     svg = open(os.path.join(ROOT, "assets", "img", "logo.svg"), encoding="utf-8").read().strip()
@@ -417,7 +401,6 @@ def header(active):
                'aria-checked="true" class="opt-fx" data-fx><b class="opt-k">FX</b>%s<i class="opt-tg" aria-hidden="true"></i></button></li>'
                % t("optic.fx"))
     return """<a class="skip" href="#main" data-i18n="nav.skip">%s</a>
-%s
 <header class="hud" id="top">
   <div class="hud-bar">
     <a class="brand" href="%s" aria-label="INDFORGE - Studio">
@@ -441,7 +424,7 @@ def header(active):
     </div>
   </div>
   <div class="hud-line" aria-hidden="true"></div>
-</header>""" % (H(E["nav.skip"]), FX_DEFS, url(), BRAND_MARK, "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
+</header>""" % (H(E["nav.skip"]), url(), BRAND_MARK, "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
                  ta("aria-label", "nav.optic"), icon("optic"), t("optic.h"), optics,
                  ta("aria-label", "nav.menu"), icon("menu"))

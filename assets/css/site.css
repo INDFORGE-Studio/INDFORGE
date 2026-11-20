@@ -576,7 +576,6 @@ details[open] > summary::before { transform: rotate(90deg); }
 html.vt-optic::view-transition-old(root), html.vt-optic::view-transition-old(hud) { animation: none; }
 html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud) { animation: optic-in .75s cubic-bezier(.6, 0, .2, 1) both; }
 @keyframes optic-in { from { clip-path: circle(0 at var(--vx) var(--vy)); } to { clip-path: circle(150vmax at var(--vx) var(--vy)); } }
-.opt-fx-img { transition: filter .3s; }
 
 /* night vision: green phosphor, grain and tube vignette */
 :root[data-theme="nvg"] {
@@ -694,9 +693,10 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
   --green: #2c6a2c; --green-rgb: 44, 106, 44; --cyan: #145f87; --cyan-rgb: 20, 95, 135;
   --violet: #5b3aa8; --violet-rgb: 91, 58, 168; --red: #b3161d; --red-rgb: 179, 22, 29;
   --hi: #0d0e0b; --nav-txt: #1d1f1a; --code-txt: #26331f; --on-accent: #fff8e8; --scan: .12;
-  --ok: #1f7a3a; --ok-rgb: 31, 122, 58; --dev: #145f87; --dev-rgb: 20, 95, 135; --unl: #5b3aa8; --unl-rgb: 91, 58, 168;
-  --idle: #6b6757; --idle-rgb: 107, 103, 87; --warn: #9a5a00; --warn-rgb: 154, 90, 0;
 }
+/* on paper the status labels sit on a dark plate, so they keep their Arma colours */
+:root[data-theme="day"] .chip, :root[data-theme="day"] .cfgt .val { background-color: #0a0e10; }
+:root[data-theme="day"] .lvl-grunt { color: var(--green); }
 :root[data-theme="day"] body { background-image:
   radial-gradient(1200px 600px at 80% -10%, rgba(143, 79, 0, .07), transparent 60%),
   linear-gradient(rgba(var(--line-rgb), .06) 1px, transparent 1px),
@@ -845,13 +845,6 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
   content: ""; position: fixed; inset: 0; z-index: 89; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .36 0 0 0 0 .24 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
 }
-
-/* images seen through the optic */
-:root[data-theme="nvg"] img, :root[data-theme="nvg"] .card:hover .card-img img { filter: url(#fx-nvg); }
-:root[data-theme="thermal"] img, :root[data-theme="thermal"] .card:hover .card-img img { filter: url(#fx-thermal); }
-:root[data-theme="red"] img, :root[data-theme="red"] .card:hover .card-img img { filter: url(#fx-red); }
-:root[data-theme="arctic"] img, :root[data-theme="arctic"] .card:hover .card-img img { filter: url(#fx-arctic); }
-.fx-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 /* ---------- responsive */
 @media (max-width: 1480px) {
