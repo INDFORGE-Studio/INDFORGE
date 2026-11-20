@@ -3,7 +3,7 @@
 Public documentation site of the INDFORGE - Studio mods for Arma Reforger:
 <https://indforge-studio.github.io/INDFORGE/>
 
-Every mod has a permanent page at `/INDFORGE/workshop/<slug>/` (ancien `/mods/<slug>/`, redirigé) with its features,
+Every mod has a permanent page at `/INDFORGE/workshop/<slug>/` (old `/mods/<slug>/` links redirect there) with its features,
 admin settings and a ready-to-paste dependency list (`server.json` block and
 `Name - ID` list).
 

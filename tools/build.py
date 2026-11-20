@@ -304,7 +304,8 @@ def header(active):
     links = []
     for i, (p, key, pid) in enumerate(NAV):
         cur = ' aria-current="page"' if pid == active else ""
-        links.append('<a href="%s"%s><span class="nav-n" aria-hidden="true">%02d</span>%s</a>' % (url(p), cur, i + 1, t(key)))
+        hot = ' class="nav-hot"' if pid == "mods" else ""
+        links.append('<a href="%s"%s%s><span class="nav-n" aria-hidden="true">%02d</span>%s</a>' % (url(p), hot, cur, i + 1, t(key)))
     langs = "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="%s" lang="%s"><b>%s</b><span>%s</span></button></li>'
         % (l, l, l.upper(), H(n)) for l, n in LANGS)
