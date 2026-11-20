@@ -12,6 +12,7 @@ import json
 import math
 import os
 import re
+import struct
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -154,6 +155,55 @@ def redact(n=8, decoy=None):
 MODS = {m["slug"]: m for m in load(os.path.join(TOOLS, "data", "mods.json"))["mods"]}
 GENERATED = load(os.path.join(TOOLS, "data", "mods.json"))["generated"]
 CONFIGS = load(os.path.join(TOOLS, "data", "configs.json"))
+
+
+# Help texts stay English in the config files themselves; the site shows them translated.
+# tools/i18n/cfg/en.json is regenerated from configs.json; the other languages map the same ids.
+def cfg_id(s):
+    return "c." + hashlib.sha1(s.encode("utf-8")).hexdigest()[:10]
+
+
+CFG_EN = {}
+for _f in CONFIGS:
+    for _s in [_f.get("readme")] + [_r.get("help") for _r in _f["rows"]]:
+        if _s:
+            CFG_EN[cfg_id(_s)] = _s
+CFG_DIR = os.path.join(TOOLS, "i18n", "cfg")
+os.makedirs(CFG_DIR, exist_ok=True)
+with open(os.path.join(CFG_DIR, "en.json"), "w", encoding="utf-8", newline="\n") as _fh:
+    json.dump(CFG_EN, _fh, ensure_ascii=False, indent=1)
+    _fh.write("\n")
+CFG_TR = {"en": CFG_EN}
+for _l, _ in LANGS[1:]:
+    _p = os.path.join(CFG_DIR, _l + ".json")
+    _d = load(_p) if os.path.exists(_p) else {}
+    _miss = [k for k in CFG_EN if not _d.get(k)]
+    if _miss and "--draft" not in sys.argv:
+        sys.exit("cfg i18n %s: %d help texts missing (e.g. %s)" % (_l, len(_miss), _miss[:3]))
+    _extra = set(_d) - set(CFG_EN)
+    if _extra:
+        print("cfg i18n %s: %d stale entries ignored" % (_l, len(_extra)))
+    CFG_TR[_l] = {k: _d.get(k) or CFG_EN[k] for k in CFG_EN}
+CFG_VER = hashlib.sha1(json.dumps(CFG_TR, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:10]
+_FLOAT = re.compile(r"-?\d+\.\d{7,}")
+
+
+def tidy_float(m):
+    """Shortest decimal that reads back as the same 32-bit float (0.699999988079071 -> 0.7)."""
+    v = m.group()
+    x = float(v)
+    f32 = struct.unpack("f", struct.pack("f", x))[0]
+    if f32 != x:
+        return v
+    for p in range(1, 10):
+        out = "%.*g" % (p, x)
+        if struct.unpack("f", struct.pack("f", float(out)))[0] == f32:
+            return out if ("." in out or "e" in out) else out + ".0"
+    return v
+
+
+def cfg_text(s):
+    return '<span data-i18n="%s">%s</span>' % (cfg_id(s), H(s))
 assert sorted(MODS) == sorted(ORDER), "slug list mismatch"
 OUR_IDS = {m["guid"] for m in MODS.values()}
 LATEST_GAME = max((m["game"] for m in MODS.values() if m["game"]), key=lambda v: [int(x) for x in v.split(".")])
@@ -292,7 +342,7 @@ def footer():
                  t("ui.footer_source", "p", "src", {"date": GENERATED}), VER[:6].upper(), len(MODS), H(E["ui.secure"].upper()))
 
 
-def page(path, title_key, body, active, desc=None, title_raw=None, image=None, cls=""):
+def page(path, title_key, body, active, desc=None, title_raw=None, image=None, cls="", cfg_i18n=False):
     if title_raw:
         title = '<title>%s · INDFORGE - Studio</title>' % H(title_raw)
         og_title = title_raw
@@ -305,7 +355,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
     desc = desc or E["site.desc"]
     img = SITE + (image or "assets/img/mods/conflict-pve.webp")
     doc = """<!doctype html>
-<html lang="en" data-v="%(ver)s" data-base="%(base)s" data-page="%(active)s">
+<html lang="en" data-v="%(ver)s"%(cfgv)s data-base="%(base)s" data-page="%(active)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -343,7 +393,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 %(footer)s
 </body>
 </html>
-""" % {"ver": VER, "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
+""" % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
        "ogt": H(og_title), "img": img, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
        "header": header(active), "body": body, "footer": footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
@@ -719,18 +769,18 @@ def cfg_table(f):
     trs = []
     for r in f["rows"]:
         if r.get("group"):
-            trs.append('<tr class="grp"><td colspan="3"><code class="wrapcode">%s</code><span lang="en">%s</span></td></tr>' % (
-                H(r["key"]), H(r["help"] or "")))
+            trs.append('<tr class="grp"><td colspan="3"><code class="wrapcode">%s</code>%s</td></tr>' % (
+                H(r["key"]), cfg_text(r["help"]) if r["help"] else ""))
             continue
-        val = r["value"]
-        help_ = H(r["help"]) if r["help"] else '<span class="dim">—</span>'
-        trs.append('<tr><td><code class="wrapcode">%s</code></td><td><code class="wrapcode val">%s</code></td><td lang="en">%s</td></tr>' % (
+        val = _FLOAT.sub(tidy_float, r["value"])
+        help_ = cfg_text(r["help"]) if r["help"] else '<span class="dim">—</span>'
+        trs.append('<tr><td><code class="wrapcode">%s</code></td><td><code class="wrapcode val">%s</code></td><td>%s</td></tr>' % (
             H(r["key"]), H(val), help_))
     folder = cfg_folder(f["profile"])
     mod = MODS[f["mod"]]
     notes = ""
     if f.get("readme"):
-        notes += '<p class="dim" lang="en">%s</p>' % H(f["readme"])
+        notes += '<p class="dim">%s</p>' % cfg_text(f["readme"])
     if f["mod"] == "enhanced-compositions":
         notes += t("ui.cfg_cpve", "p", "dim")
     inc = " " + badge_inc() if folder in CFG_INCOMING else ""
@@ -783,7 +833,7 @@ def admins():
 </div>
 <div class="cfgs">%s</div>""" % (icon("search"), ta("placeholder", "admins.cfg_filter"), cfgs), "06"),
              sec("logs", "admins.logs", t("admins.logs_p", "p") + '<ul class="feat">%s</ul>' % tl("admins.logs_s"), "07"))
-    page("admins/", "admins.title", body, "admins")
+    page("admins/", "admins.title", body, "admins", cfg_i18n=True)
 
 
 def intel():
@@ -947,6 +997,8 @@ def write_i18n():
     for l in FLAT:
         with open(os.path.join(d, l + ".json"), "w", encoding="utf-8", newline="\n") as f:
             json.dump(FLAT[l], f, ensure_ascii=False, separators=(",", ":"))
+        with open(os.path.join(d, "cfg-" + l + ".json"), "w", encoding="utf-8", newline="\n") as f:
+            json.dump({k: H(v) for k, v in CFG_TR[l].items()}, f, ensure_ascii=False, separators=(",", ":"))
 
 
 def sitemap():

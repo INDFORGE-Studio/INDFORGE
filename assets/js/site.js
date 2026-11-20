@@ -40,14 +40,25 @@
     $$(".lang-menu [data-lang]").forEach(function (b) { b.setAttribute("aria-checked", String(b.getAttribute("data-lang") === lang)); });
     root.classList.remove("i18n-wait");
   }
-  function cacheKey(lang) { return "ifg-i18n-" + lang; }
-  function loadLang(lang, cb) {
-    var c = store(cacheKey(lang));
-    if (c) { try { var o = JSON.parse(c); if (o.v === VER && o.d) { cb(o.d); return; } } catch (e) {} }
-    fetch(BASE + "assets/i18n/" + lang + ".json?v=" + VER, { credentials: "same-origin" })
+  /* Pages with config tables also load the translated help texts (data-i18n-cfg = their version). */
+  var CFGV = root.getAttribute("data-i18n-cfg");
+  function loadPack(name, ver, cb) {
+    var key = "ifg-i18n-" + name, c = store(key);
+    if (c) { try { var o = JSON.parse(c); if (o.v === ver && o.d) { cb(o.d); return; } } catch (e) {} }
+    fetch(BASE + "assets/i18n/" + name + ".json?v=" + ver, { credentials: "same-origin" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (d) { store(cacheKey(lang), JSON.stringify({ v: VER, d: d })); cb(d); })
-      .catch(function () { root.classList.remove("i18n-wait"); cb(null); });
+      .then(function (d) { store(key, JSON.stringify({ v: ver, d: d })); cb(d); })
+      .catch(function () { cb(null); });
+  }
+  function loadLang(lang, cb) {
+    loadPack(lang, VER, function (d) {
+      if (!d) { root.classList.remove("i18n-wait"); cb(null); return; }
+      if (!CFGV) { cb(d); return; }
+      loadPack("cfg-" + lang, CFGV, function (c) {
+        if (c) for (var k in c) d[k] = c[k];
+        cb(d);
+      });
+    });
   }
   function setLang(lang, save) {
     if (LANGS.indexOf(lang) < 0) lang = "en";

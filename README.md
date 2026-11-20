@@ -18,6 +18,7 @@ admin settings and a ready-to-paste dependency list (`server.json` block and
 | `tools/build.py` | Generator |
 | `tools/data/*.json` | Mod data (Workshop pages and project files) and server settings reference |
 | `tools/i18n/*.json` | Source texts: `en` (source), `fr`, `de`, `es`, `it`, `pl`, `uk` |
+| `tools/i18n/cfg/*.json` | Translations of the config help texts shown on the admin page. `en.json` is regenerated from `configs.json`; the config files themselves stay English |
 
 ## Build
 
