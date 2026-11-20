@@ -1,0 +1,626 @@
+{
+  "_meta": "Source language. Values may hold inline HTML (code, b, em, a). Keep placeholders like {n} and every HTML tag unchanged when translating.",
+  "site.name": "INDFORGE - Studio",
+  "site.division": "Arma-Reforger-Division",
+  "site.desc": "Offizielle Dokumentation der INDFORGE - Studio Mods für Arma Reforger: Features, Admin-Einstellungen, Befehle und kopierfertige Abhängigkeitslisten.",
+  "nav.home": "Kommando",
+  "nav.mods": "Mods",
+  "nav.admins": "Admins",
+  "nav.intel": "Intel",
+  "nav.log": "Log",
+  "nav.status": "Status",
+  "nav.about": "Über uns",
+  "nav.skip": "Zum Inhalt springen",
+  "nav.menu": "Menü",
+  "nav.close": "Schließen",
+  "nav.lang": "Sprache",
+  "nav.search": "Suche",
+  "ui.copy": "Kopieren",
+  "ui.copied": "Kopiert",
+  "ui.copy_fail": "Kopieren blockiert: Text von Hand markieren",
+  "ui.open_workshop": "Im Workshop öffnen",
+  "ui.open_page": "Datei öffnen",
+  "ui.back_top": "Nach oben",
+  "ui.version": "Version",
+  "ui.updated": "Aktualisiert",
+  "ui.created": "Erstveröffentlichung",
+  "ui.game": "Gebaut für Spielversion",
+  "ui.size": "Größe",
+  "ui.license": "Lizenz",
+  "ui.workshop_id": "Workshop-ID",
+  "ui.author": "Workshop-Autor",
+  "ui.contributors": "Mitwirkende",
+  "ui.scenario": "Szenario-ID",
+  "ui.tags": "Tags",
+  "ui.none": "Keine",
+  "ui.filter": "Filtern…",
+  "ui.all": "Alle",
+  "ui.default": "Standard",
+  "ui.key": "Schlüssel",
+  "ui.help": "Hilfetext (aus der Datei)",
+  "ui.rows": "{n} Einstellungen",
+  "ui.mods_count": "{n} Mods",
+  "ui.deps_count": "{n} Abhängigkeiten",
+  "ui.no_js": "Interaktive Ebene offline: Der Inhalt bleibt voll lesbar.",
+  "ui.zulu": "Zulu",
+  "ui.signal": "Signal",
+  "ui.secure": "Gesicherter Kanal",
+  "ui.classified": "Geheim",
+  "ui.declassified": "Für die Öffentlichkeit freigegeben",
+  "ui.denied": "Zugriff verweigert",
+  "ui.in_service": "Im Dienst",
+  "ui.incoming": "Demnächst",
+  "ui.current": "aktuell",
+  "ui.older": "ältere Spielversion",
+  "ui.unknown": "nicht veröffentlicht",
+  "ui.search_ph": "Mod, Seite oder Befehl eingeben…",
+  "ui.search_hint": "<kbd>↑</kbd><kbd>↓</kbd> navigieren · <kbd>Enter</kbd> öffnen · <kbd>Esc</kbd> schließen",
+  "ui.search_empty": "Kein Treffer auf dieser Frequenz.",
+  "ui.search_open": "<kbd>/</kbd> drücken zum Suchen",
+  "ui.boot_skip": "Beliebige Taste drücken",
+  "ui.boot": [
+    "SICHERE VERBINDUNG HERGESTELLT",
+    "FELDHANDBUCH WIRD ENTSCHLÜSSELT",
+    "KRÄFTEGLIEDERUNG WIRD GELADEN",
+    "ALLE STATIONEN: BEREIT"
+  ],
+  "ui.footer_legal": "Von Fans erstellte Community-Mods für Arma Reforger. Arma Reforger ist eine Marke ihres Inhabers; diese Seite steht in keiner Verbindung zu Bohemia Interactive und wird von diesem nicht unterstützt. Namen von Drittanbieter-Mods dienen nur zur Beschreibung von Abhängigkeiten.",
+  "ui.footer_source": "Daten am {date} mit den Projektdateien der Mods und den öffentlichen Workshop-Seiten abgeglichen.",
+  "ui.made": "Gebaut von INDFORGE - Studio",
+  "status.operational": "Einsatzbereit",
+  "status.standby": "Bereitschaft",
+  "status.classified": "Nicht veröffentlicht",
+  "status.restricted": "Nicht gelistet",
+  "status.dev": "Aktive Entwicklung",
+  "status.operational.d": "Im Workshop veröffentlicht.",
+  "status.standby.d": "Pausiert: vorerst kein Update geplant. Eventuell wird er mit einem anderen Mod zusammengeführt.",
+  "status.classified.d": "Noch nicht im Workshop veröffentlicht. Diese Seite reserviert seine Adresse.",
+  "status.restricted.d": "Im Workshop veröffentlicht, aber nicht gelistet: nur über die ID erreichbar.",
+  "cat.indforge": "INDFORGE-Operationen",
+  "cat.indforge.d": "Unsere Szenarien, Frameworks und Gameplay-Systeme.",
+  "cat.auc": "AUC — Arma Ukraine Community",
+  "cat.auc.d": "Konfigurationspakete für die Server der [AUC] Arma Ukraine Community.",
+  "cat.ctrp": "ChercheToi RP",
+  "cat.ctrp.d": "Konfigurationspakete für die Community CHERCHE TOI – RP LIFE.",
+  "cat.gear": "Ausrüstung & Fahrzeuge",
+  "cat.gear.d": "Fraktionen, Fahrzeuge, Drohnen und Komfort-Erweiterungen.",
+  "cat.standby": "Bereitschaft",
+  "cat.standby.d": "Pausierte Mods, weiterhin in den Akten geführt.",
+  "sec.overview": "Überblick",
+  "sec.features": "Fähigkeiten",
+  "sec.incoming": "Demnächst — nächstes Update",
+  "sec.incoming.d": "Nach Version {v} in die Entwicklung eingeflossen, noch nicht in der Workshop-Version.",
+  "sec.setup": "Einrichtung",
+  "sec.admin": "Serveradministration",
+  "sec.commands": "Admin-Befehle",
+  "sec.deps": "Abhängigkeiten",
+  "sec.changelog": "Letztes Changelog",
+  "sec.versions": "Versionsverlauf",
+  "sec.credits": "Danksagung",
+  "sec.facts": "Kennung",
+  "deps.intro": "Kopierfertig. Die Liste enthält den Mod und alles, was er braucht, einschließlich seiner Voraussetzungen, erzeugt aus der Projektdatei und den Workshop-Seiten. Das Spiel selbst (Arma-Reforger-Basisdaten) ist nicht enthalten. Der Server lädt benötigte Abhängigkeiten außerdem selbst herunter.",
+  "deps.none": "Keine Abhängigkeit: Dieser Mod braucht nur das Basisspiel.",
+  "deps.server_json": "<code>server.json</code> — Block <code>game.mods</code>",
+  "deps.plain": "Einfache Liste — Name - ID",
+  "deps.table": "Vollständige Tabelle",
+  "deps.col_name": "Mod",
+  "deps.col_id": "ID",
+  "deps.col_author": "Autor",
+  "deps.direct": "{n} direkt vom Projekt deklariert, insgesamt {m} mit ihren eigenen Voraussetzungen.",
+  "log.workshop_note": "Changelog-Text von der Workshop-Seite zitiert, in der Originalsprache.",
+  "log.none": "Kein Changelog veröffentlicht.",
+  "home.title": "Kommando",
+  "home.kicker": "Feldhandbuch und Funkzentrale",
+  "home.h1": "INDFORGE - Studio",
+  "home.lead": "Wir bauen Mods für Arma Reforger: kooperative PvE-Kampagnen mit einem Gegner, der denkt, Systeme für Missionsbauer und Konfigurationspakete für die Communitys, mit denen wir spielen. Diese Station ist die offizielle Dokumentation aller Mods.",
+  "home.cta_mods": "Kräftegliederung öffnen",
+  "home.cta_admins": "Admin-Konsole",
+  "home.cta_about": "Wer wir sind",
+  "home.stat_mods": "Mods in den Akten",
+  "home.stat_deps": "Workshop-Mods als Abhängigkeiten gewürdigt",
+  "home.stat_keys": "dokumentierte Servereinstellungen",
+  "home.stat_cmds": "Admin-Befehle",
+  "home.orbat": "Kräftegliederung",
+  "home.orbat_d": "Jeder Mod hat eine eigene Seite und eine stabile Adresse: Die Workshop-Beschreibungen verweisen hierher.",
+  "home.latest": "Letzte Funksprüche",
+  "home.latest_d": "Die neuesten Workshop-Updates.",
+  "home.featured": "Leitoperation",
+  "home.featured_t": "Conflict PvE: Der Feind hat ein Hauptquartier",
+  "home.featured_p": "Jäger rücken nur nach Aufklärung aus, Mörser brauchen einen Beobachter, Drohnen sehen nach Haltung und Bewuchs, und das Wetter verändert, was der Feind tun kann. Lies das freigegebene Dossier, bevor du in den Einsatz gehst.",
+  "home.featured_cta": "Feind-Dossier lesen",
+  "home.who": "Wer wir sind",
+  "home.who_p": "INDFORGE - Studio ist ein kleines, unabhängiges Team. Wir veröffentlichen im Workshop als <b>TheUnknownTeam</b> und stehen auf den Schultern von Riesen: Unsere Mods würdigen die Arbeit anderer Ersteller und bauen darauf auf, nichts wird neu verpackt.",
+  "about.title": "Über uns",
+  "about.kicker": "Personalakte",
+  "about.h1": "Wer wir sind",
+  "about.lead": "INDFORGE - Studio baut Mods für Arma Reforger. Diese Akte erklärt, wer wir sind, wie wir arbeiten und für wen wir bauen.",
+  "about.unit": "Einheit",
+  "about.unit_p": "Ein unabhängiges Modding-Studio. Unsere Arma-Reforger-Mods erscheinen im Workshop unter dem Autorennamen <b>TheUnknownTeam</b>.",
+  "about.roster": "Im Workshop genannt",
+  "about.roster_d": "Hier stehen nur die Namen, die auf unseren Workshop-Seiten veröffentlicht sind.",
+  "about.r_author": "Autor aller unserer Arma-Reforger-Mods",
+  "about.r_volmog": "Mitwirkender bei INDFORGE - Conflict PvE",
+  "about.r_soldiers": "Mitwirkender bei ChercheToi RP - Vehicles",
+  "about.r_valaaks": "Mitwirkender des CTRP-Teams: SAMU-Ausrüstung in ChercheToi RP - Clothing",
+  "about.doctrine": "Doktrin",
+  "about.d": [
+    "<b>Auf den Schultern von Riesen.</b> Wir bauen auf Mods anderer Ersteller als deklarierte Abhängigkeiten auf und würdigen sie auf jeder Seite. Nichts wird neu verpackt.",
+    "<b>Dokumentierte Einstellungen.</b> Jede Servereinstellung hat ihren eigenen Hilfetext, direkt daneben in der Datei.",
+    "<b>Vor dem Release getestet.</b> Änderungen durchlaufen einen echten Dedicated-Server-Prüfstand und ein Review, bevor sie den Workshop erreichen.",
+    "<b>Für Spieler lesbar.</b> Der Feind schummelt weniger und verrät mehr: Lichter an Drohnen, Funkhinweise, Sirenen vor einem Schlag.",
+    "<b>Lizenzen respektieren.</b> Unsere Mods erscheinen unter der Arma Public Licence (APL oder APL-ND, wie auf jeder Seite angegeben)."
+  ],
+  "about.theatres": "Einsatzgebiete",
+  "about.th": [
+    "<b>Everon</b> — INDFORGE - Conflict PvE, Off-Road Vehicles (Game Master)",
+    "<b>Belleau Wood</b> — INDFORGE - Forest",
+    "<b>Kolguyev</b> — AUC - Conflict",
+    "<b>Arland</b> — INDFORGE - AI Framework Testszenarien",
+    "<b>Faircroft Islands</b> — ChercheToi RP - Props"
+  ],
+  "about.communities": "Communitys, für die wir bauen",
+  "about.c": [
+    "<b>[AUC] Arma Ukraine Community</b> — AUC - Factions, AUC - Vehicles, AUC - Conflict.",
+    "<b>CHERCHE TOI – RP LIFE</b> — ChercheToi RP - Clothing, Props und Vehicles.",
+    "<b>Task Force Baguette</b> — TalibanMod Red Side V2."
+  ],
+  "about.contact": "Fehler melden",
+  "about.contact_p": "Kommentiere auf der Workshop-Seite des Mods und nenne dabei: die Mod-Version, die Karte und das Szenario, deine anderen aktiven Mods, was du erwartet hast, was tatsächlich passiert ist und die Schritte zur Reproduktion.",
+  "about.motto": "Allein kommen wir schneller voran, aber gemeinsam kommen wir weiter… und immer über das Mögliche hinaus.",
+  "mods.title": "Mods",
+  "mods.kicker": "Kräftegliederung",
+  "mods.h1": "Unsere Mods",
+  "mods.lead": "{n} Mods in den Akten. Jeder hat eine dauerhafte Seite mit seinen Fähigkeiten, Einstellungen und einer kopierfertigen Abhängigkeitsliste.",
+  "admins.title": "Admins",
+  "admins.kicker": "Admin-Konsole",
+  "admins.h1": "Serveradministration",
+  "admins.lead": "Einen Dedicated Server installieren, unsere Mods laden, sie über die Profildateien einrichten und per Ingame-Befehlen steuern. Alles hier ist generisch: kein echter Server, keine Adresse, kein Port, kein Passwort.",
+  "admins.toc": "Auf dieser Seite",
+  "admins.install": "1. Dedicated Server installieren",
+  "admins.install_s": [
+    "Installiere den <b>Arma Reforger Server</b> (Steam-Tool oder SteamCMD mit der App-ID <code>1874900</code>) oder miete einen Gameserver bei einem Hoster.",
+    "Schreibe eine Konfigurationsdatei, zum Beispiel <code>server.json</code> (Struktur unten).",
+    "Starte den Server mit <code>-config</code> auf diese Datei und <code>-profile</code> auf einen beschreibbaren Ordner. Dieser Ordner heißt in unseren Mods <code>$profile:</code>.",
+    "Füge unsere Mods in <code>game.mods</code> ein: Jede Mod-Seite liefert den kompletten, kopierfertigen Block und die Szenario-ID für <code>game.scenarioId</code>.",
+    "Einmal starten, stoppen, dann unsere <code>config.json</code>-Dateien in den Profilordner legen (Abschnitt 4) und erneut starten."
+  ],
+  "admins.json": "2. Generische server.json",
+  "admins.json_p": "Die übliche Struktur einer Reforger-Dedicated-Server-Konfiguration. Trage deine eigenen Werte ein; die gezeigten Ports sind die dokumentierten Standardwerte. Halte <code>passwordAdmin</code> aus jeder Datei heraus, die du teilst.",
+  "admins.json_persist": "<code>game.gameProperties.persistence.autoSaveInterval</code> legt das Autospeicher-Intervall fest (Minuten). Der Block <code>persistence</code> gehört in <code>gameProperties</code>: An der Wurzel oder direkt in <code>game</code> verweigert der Server den Start.",
+  "admins.scen": "3. Szenario-IDs",
+  "admins.scen_p": "Wert für <code>game.scenarioId</code>. Die Mod-Liste stammt von der Seite des jeweiligen Mods.",
+  "admins.profile": "4. Profildateien",
+  "admins.profile_s": [
+    "<code>$profile:</code> ist der Ordner, der dem Server mit <code>-profile</code> übergeben wird. Eine Datei namens <code>$profile:INDFORGE_Weather/config.json</code> liegt in <code>&lt;profile&gt;/INDFORGE_Weather/config.json</code>.",
+    "Eine fehlende Datei wird beim Start mit ihren Standardwerten angelegt. Eine vorhandene Datei wird nie überschrieben: Um einen neuen Standard zu übernehmen, kopiere die Referenzdatei zurück.",
+    "Zu jedem Schlüssel <code>Name</code> gehört direkt darüber ein Hilfeschlüssel <code>_Name</code>. Der Mod liest Hilfeschlüssel nie: Sie sind für dich da und können gelöscht werden.",
+    "Die meisten Dateien werden nur beim Start gelesen: Starte den Server nach einer Änderung neu. Bearbeite eine Datei nie, während der Server hineinschreibt.",
+    "Lösche keinen Schlüssel, um \"zum Standard zurückzukehren\": Der Code-Fallback ist nicht immer der ausgelieferte Wert. Kopiere stattdessen den Originalwert zurück."
+  ],
+  "admins.cmds": "5. Ingame-Befehle",
+  "admins.cmds_p": "Im Ingame-Chat von einem Spieler mit der Rolle Server-Administrator oder Sitzungs-Administrator eingegeben oder per RCON mit Admin-Berechtigung gesendet. Die Antworten erscheinen im Chat.",
+  "admins.col_cmd": "Befehl",
+  "admins.col_what": "Wirkung",
+  "admins.col_mod": "Mod",
+  "admins.col_state": "Zustand",
+  "admins.cfg": "6. Einstellungsreferenz",
+  "admins.cfg_p": "Jeder Schlüssel unserer Serverdateien mit ausgeliefertem Wert und Hilfetext, gelesen aus den Referenzkopien. Hilfetexte werden auf Englisch zitiert, wie in den Dateien.",
+  "admins.cfg_filter": "Einstellungen filtern: Schlüssel oder Wort…",
+  "admins.logs": "7. Serverlog",
+  "admins.logs_p": "Unsere Systeme schreiben markierte Zeilen ins Serverlog. Suche nach diesen Tags, um ihr Verhalten zu verfolgen:",
+  "admins.logs_s": [
+    "<code>INDFORGE enemy HQ:</code> Spuren, entsandte Gruppen, Pläne, Hinterhalte, Schläge und alle 5 Minuten eine Zusammenfassung.",
+    "<code>INDFORGE AI doctrine:</code> beim Start, bei Wetterwechseln und alle 5 Minuten.",
+    "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> und <code>INDFORGE fuel truck:</code> Basiseroberung.",
+    "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — und, im nächsten Update, <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
+    "AI Framework: Zeilen, die mit <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> und <code>[INDF_CombatHeliSpawner]</code> beginnen."
+  ],
+  "cmd.setrank": "Setzt den Rang eines Spielers. Genauer Ingame-Name, dann der Rangname (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) oder seine Nummer. Der Rang bleibt über Neustarts gespeichert.",
+  "cmd.aidoctrine": "Zeigt die KI-Doktrin an, lädt sie neu, aktiviert oder deaktiviert sie.",
+  "cmd.aidoctrine_mod": "Multipliziert alle Gefechtsreichweiten mit einem Faktor, für einige Sekunden oder bis zum Abschalten, um ohne Neustart auf ein Ereignis zu reagieren.",
+  "cmd.enemyhq": "Zeigt das feindliche Hauptquartier: Spuren, Gruppen, Pläne.",
+  "cmd.enemyhq_here": "Sendet dem feindlichen HQ eine falsche Sichtung von dir selbst (als Drohnenkontakt und/oder Fahrzeug), für Tests.",
+  "cmd.enemyhq_rb": "Listet die dauerhaften Straßensperren auf oder entfernt sie alle.",
+  "cmd.enemyhq_strike": "Löst vor dem Admin einen Luftschlag oder eine Geran-Salve aus, für Tests.",
+  "cmd.weather": "Wetter-Regie: Status, nächste Episode erzwingen, Nebel-, Regen- oder Windwerte halten, fortsetzen, aus- oder einschalten.",
+  "cmd.nightgear": "Nachtsicht- und Wärmebildausrüstung der KI: Anzahl und Einstellungen.",
+  "intel.title": "Intel",
+  "intel.kicker": "Aufklärungsbericht",
+  "intel.h1": "Dossier: das feindliche Hauptquartier",
+  "intel.lead": "Was wir über das USSR/FIA-Kommando wissen, dem du in INDFORGE - Conflict PvE und INDFORGE - Forest gegenüberstehst. Lies es, bevor du in den Einsatz gehst.",
+  "intel.stamp": "Streng geheim — für Spieler freigegeben",
+  "intel.ref": "Ref.",
+  "intel.summary": "Zusammenfassung",
+  "intel.summary_p": "Der Feind weiß nicht mehr durch Magie, wo du bist. Sein Hauptquartier handelt nach Meldungen: dem, was seine Drohnen und Patrouillen tatsächlich sehen. Es sagt voraus, wohin du gehst, wählt einen Plan, ruft seine Mörser und passt sich an Wetter und Nacht an. Bleib unentdeckt, und er bleibt blind.",
+  "intel.hq": "Kommandostruktur",
+  "intel.hq_s": [
+    "<b>Quellen.</b> Ein feindlicher Drohnenkontakt oder eine feindliche Gruppe, die einen Spieler oder ein Spielerfahrzeug erkennt. Nahe Meldungen verschmelzen zu einer <em>Spur</em>: letzte bekannte Position, Zeit, Quelle, zu Fuß oder im Fahrzeug.",
+    "<b>Entsendung.</b> Eine frische Spur bekommt eine Gruppe, die auf einer Straße weit weg von allen Spielern erscheint. Drohnen-Intel bringt Spezialkräfte; eine Patrouillenmeldung bringt Jäger. Ein gesichtetes Fahrzeug bringt ein Panzerabwehrteam.",
+    "<b>Vorhersage.</b> Zwei Meldungen ergeben deine Richtung und Geschwindigkeit. Die Gruppe geht dorthin, wo du inzwischen sein müsstest, nicht dorthin, wo du gesehen wurdest.",
+    "<b>Suche.</b> Eine kalte Spur wird um ihre geschätzte Position abgesucht, in einem Radius, der mit der Zeit wächst; dann kehrt die Gruppe zurück.",
+    "<b>Formationen.</b> Kolonne auf dem Marsch, Keil beim Anmarsch, Linie beim Angriff und bei Feindkontakt.",
+    "<b>Stärke.</b> Jägergruppen und Hubschrauber-Fallschirmjäger wachsen mit der Zahl der Spieler in der Nähe."
+  ],
+  "intel.doctrine": "Gefechtsdoktrin",
+  "intel.doctrine_p": "Jeder feindliche Soldat folgt einer Doktrinstufe, die festlegt, wann er auf Infanterie das Feuer eröffnet, aus welcher Entfernung und wie er sich zurückzieht.",
+  "intel.lvl_col": "Stufe",
+  "intel.lvl_who": "Wer",
+  "intel.lvl_wd": "Rückzüge",
+  "intel.lvl.boot": "FIA-Soldaten, auf eine Patrouillenmeldung entsandte Jäger",
+  "intel.lvl.grunt": "Reguläre USSR- und US-Infanterie, Gruppenscharfschützen",
+  "intel.lvl.operator": "Spetsnaz, KLMK, Aufklärer, Spezialkräfte, moderne US-KI",
+  "intel.lvl.overwatch": "Nur Scharfschützen der Spezialkräfte und ihre Beobachter",
+  "intel.doctrine_s": [
+    "<b>Feuerdisziplin.</b> Eine Gruppe, die dich entdeckt, bevor du sie siehst, hält das Feuer zurück und rückt näher.",
+    "<b>Taktischer Rückzug.</b> Auf dem falschen Fuß erwischt, weicht die halbe Gruppe feuernd zurück, während die andere Hälfte in Deckung sprintet; dann wechseln sie, sammeln sich und kommen wieder.",
+    "<b>Reichweiten</b> hängen von deiner Haltung und Bewegung, der Waffe, der Gruppengröße, Nacht und Wetter ab. Ein Ziel, das schießt, verliert den Vorteil seiner Haltung."
+  ],
+  "intel.fires": "Feuerunterstützung",
+  "intel.fires_s": [
+    "<b>Mörserbatterien</b> werden in einer feindlichen Basis 900 m bis 3,5 km vom Ziel entfernt aufgebaut, außerhalb von Ortschaften, mit Bedienung, Wachen und einer Patrouille.",
+    "<b>Ein Beobachter ist nötig:</b> Ein Gruppenführer oder eine Aufklärungsdrohne muss dich sehen, und du musst lange genug stehen bleiben. Erst kommen Einschießschüsse, dann das Wirkungsfeuer.",
+    "<b>Gegenbatteriefeuer:</b> Die Batterien lassen sich finden und zerstören."
+  ],
+  "intel.drones": "Drohnen",
+  "intel.drones_p": "Feindliche Drohnen sehen dich nach Entfernung, Haltung und Deckung:",
+  "intel.drone_col_pos": "Deine Haltung",
+  "intel.drone_col_rng": "Gesehen innerhalb von",
+  "intel.drone_stand": "Stehend",
+  "intel.drone_crouch": "Geduckt",
+  "intel.drone_prone": "Liegend",
+  "intel.drones_s": [
+    "Stillstehen verkürzt diese Reichweiten um 30 %. Nacht und Wetter verkürzen sie weiter.",
+    "<b>Jeder Bewuchs zwischen dir und der Drohne verbirgt dich</b> — auch der Busch, in dem du dich versteckst. Unter 15 m gilt der eigene Test der Drohne.",
+    "Eine Drohne, die dich verliert, sucht etwa zwei Minuten lang dort, wo sie dich zuletzt gesehen hat.",
+    "Rucksack-Störsender stoppen FPV-Drohnen innerhalb von 50 m."
+  ],
+  "intel.light": "Mavic-Lichtcode",
+  "intel.light_p": "Ein kleines Licht unter der feindlichen Mavic zeigt, was sie gerade tut. Nie an einer FPV.",
+  "intel.light_g": "Patrouille, nichts entdeckt",
+  "intel.light_r": "Verfolgt ein Ziel",
+  "intel.light_rf": "Schnelles rotes Blinken: lenkt eine Gleitbombe",
+  "intel.light_o": "Orangefarbenes Blinken: sucht, wo sie dich verloren hat",
+  "intel.plans": "Angriffspläne",
+  "intel.plans_p": "Für jede Spur bewertet das HQ, was es weiß — zu Fuß oder im Fahrzeug, stillstehend oder in Bewegung, gruppierte Spieler, innerhalb einer Basis, Nacht, Nebel, Regen, verfügbare Drohnen, Mörser, jüngste Verluste — und wählt dann einen Plan:",
+  "intel.plan": [
+    "<b>L-förmiger Angriff</b> — eine Gruppe bindet dich auf 200 m, eine zweite umgeht im 90°-Winkel, beide greifen gemeinsam an.",
+    "<b>Hammer und Amboss</b> — eine Gruppe sperrt die Straße vor einem bewegten Ziel, die andere drängt nach.",
+    "<b>Mörser zuerst</b> — die Batterie schlägt zu, die Gruppe wartet außerhalb der Gefahrenzone und greift dann an.",
+    "<b>Infiltration</b> — Spezialkräfte schleichen sich nachts oder im Nebel nah heran.",
+    "<b>Finte</b> — eine Gruppe zeigt sich und greift an, die zweite wartet auf einer anderen Achse.",
+    "<b>Zermürbung</b> — ein Scharfschützenteam auf einer Anhöhe plus der Mörser, gegen eine starke Stellung.",
+    "<b>Hinterhalt an der Straße</b> — gegen ein fahrendes Fahrzeug (unten)."
+  ],
+  "intel.plans_esc": "<b>Eskalation.</b> Jede Gruppe, die du in der Nähe auslöschst, macht die nächsten größer und schärfer und begünstigt den Mörser.",
+  "intel.ambush": "Hinterhalte an der Straße",
+  "intel.ambush_s": [
+    "Das HQ folgt der Straße vor deinem Fahrzeug und legt 400 bis 600 m weiter eine Kill Zone an, auf der höher gelegenen Seite.",
+    "Neun Varianten: einzelnes Panzerabwehrteam, L-förmig, Minen und Feuer, die Falle (Straße hinter dir gesperrt), der Köder (ein Wrack auf der Straße), FPV-Korridor, naher Nachthinterhalt, Fernjäger auf einem Kamm und ein voreingeschossener Mörserschlag an einer Kreuzung.",
+    "Dauerhafte Straßensperren erscheinen auf den asphaltierten Straßen, die du am meisten nutzt, und wechseln alle paar Tage.",
+    "Niemand schießt, bevor du die Zone betrittst: erst die erste Rakete, dann alle."
+  ],
+  "intel.air": "Luft- und Fernschläge",
+  "intel.air_s": [
+    "<b>Gleitbombe</b> auf Spieler zu Fuß, die eine Mavic im Blick behält — ihr rotes Licht blinkt schnell. Schieß die Drohne ab oder brich ihre Sicht.",
+    "<b>Marschflugkörper</b> auf eine Basis, die du dem Feind gerade abgenommen hast. Die Basissirene ertönt vor dem Einschlag.",
+    "<b>Su-57-Aufklärungsüberflüge</b> können dich beim HQ melden.",
+    "<b>Geran-Angriffe</b> von Starttrucks, die kilometerweit entfernt auf Straßen stehen. Zerstöre den Truck oder töte den Fahrer, und der Angriff endet.",
+    "Nie auf die Hauptbasis einer Fraktion, nie in unmittelbarer Nähe feindlicher Soldaten, nie wenn das Wetter Flugzeuge am Boden hält."
+  ],
+  "intel.weather": "Wetter",
+  "intel.weather_s": [
+    "Glaubwürdige Episoden in Folge: klar, heiter, wolkig, bedeckt, Nieselregen, Regen, Gewitterfronten, Morgendunst, Nebelbänke — mit weichen Übergängen.",
+    "Drohnen bleiben ab 10 m/s Wind, bei Starkregen oder dichtem Nebel am Boden; Hubschrauberabsetzungen und Wellen ab 14 m/s; Fallschirmjäger ab 8 m/s.",
+    "Nebel und Regen verkürzen die Sicht der Mörserbeobachter. Wärmebildgeräte sehen durch leichten Nebel."
+  ],
+  "intel.night": "Nacht",
+  "intel.night_s": [
+    "Manche Soldaten bekommen Nachtsichtgeräte — häufiger Scharfschützen und Spezialkräfte, tagsüber seltener.",
+    "Was ein Soldat sieht, hängt davon ab, was er trägt: bloßes Auge, Nachtsicht oder Wärmebildzielfernrohr. Manche feindlichen Drohnen tragen eine Wärmebildkamera."
+  ],
+  "intel.radio": "Funkwarnungen",
+  "intel.radio_p": "Kurze Hinweise im Funkstil erreichen die betroffenen Spieler: Drohne über dir, Abfanggruppe unterwegs, Mörser, Geran, Rakete, Jet, Hinterhalt. Nie die genaue Position des Feindes.",
+  "intel.base": "Basiseroberung",
+  "intel.base_s": [
+    "In der Zone zu stehen erobert keine Generatorbasis mehr: Repariere den Generator mit einem Schraubenschlüssel und fülle ihn dann mit 18 L Treibstoff, während die Sirene ertönt. Funkkontakt zu deinem HQ ist erforderlich.",
+    "Etwa 30 s nach der Einnahme geht der nächste feindliche Soldat zum Generator, um ihn zu sabotieren (8 s). Töte ihn zuerst.",
+    "Mauere den Generator mit HESCO ein, und ein Sprengtrupp legt Sprengladungen an die nächste Wand: 20 s Zündschnur, töte ihn oder entschärfe."
+  ],
+  "intel.guide": "Überlebensleitfaden fürs Feld",
+  "intel.guide_s": [
+    "Bleibt auseinandergezogen: Feindliche Raketenwerfer feuern auch auf Infanterie.",
+    "Brich die Sichtlinie mit Bewuchs, geh in Bauchlage, bleib unter einer Drohne regungslos.",
+    "Wenn du entdeckt wurdest, wechsle die Richtung: Sie zielen dorthin, wo du sein müsstest, nicht dorthin, wo du warst.",
+    "Beobachte das Mavic-Licht. Rot: Du wirst beobachtet. Schnelles rotes Blinken: Bewegung, sofort.",
+    "Eine Sirene an deiner Basis bedeutet, dass ein Schlag kommt: Verlass die Basis.",
+    "Töte den Saboteur, bevor er den Generator erreicht."
+  ],
+  "intel.state_note": "Mit <b>Demnächst</b> markierte Punkte sind in die Entwicklung eingeflossen und kommen mit dem nächsten Workshop-Update von Conflict PvE.",
+  "logp.title": "Log",
+  "logp.kicker": "Funkprotokoll",
+  "logp.h1": "Versionslog",
+  "logp.lead": "Jede Workshop-Version unserer Mods, die neueste zuerst, mit dem Changelog der aktuellen Version.",
+  "logp.recent": "Neueste Releases",
+  "logp.col_date": "Datum",
+  "logp.col_mod": "Mod",
+  "logp.col_ver": "Version",
+  "statusp.title": "Status",
+  "statusp.kicker": "Statustafel",
+  "statusp.h1": "Projektstatus",
+  "statusp.lead": "Wo jeder Mod steht: Release, letztes Update, Spielversion, für die er gebaut wurde.",
+  "statusp.col_mod": "Mod",
+  "statusp.col_state": "Zustand",
+  "statusp.col_ver": "Version",
+  "statusp.col_upd": "Aktualisiert",
+  "statusp.col_game": "Spiel",
+  "statusp.game_now": "Neueste Spielversion auf unseren Workshop-Seiten: {v}.",
+  "statusp.pipeline": "In der Pipeline",
+  "statusp.pipeline_p": "Nach Version {v} in INDFORGE - Conflict PvE eingeflossen, wartet auf das nächste Workshop-Update:",
+  "e404.title": "Signal verloren",
+  "e404.h1": "404 — Signal verloren",
+  "e404.p": "Diese Frequenz sendet nichts. Die Adresse ist vielleicht falsch, oder die Seite wurde verschoben.",
+  "e404.cta": "Zurück zum Kommando",
+  "m.conflict-pve.tag": "Kooperatives PvE-Conflict auf Everon: US-Spieler gegen einen Gegner, der denkt.",
+  "m.conflict-pve.intro": [
+    "INDFORGE - Conflict PvE macht aus dem Conflict-Modus eine kooperative PvE-Kampagne auf Everon. Die Spieler kämpfen als US; die USSR und die FIA werden von KI mit Gefechtsdoktrin, einem Hauptquartier, das auf Aufklärung reagiert, Mörsern, Drohnen und Hubschraubern gesteuert.",
+    "Gebaut auf Gramps303s ConflictPVERemixedVanilla2.0 und auf den Paketen WCS, RHS und ACE: über 100 Workshop-Mods, alle als Abhängigkeiten deklariert, nichts neu verpackt. Für fortgeschrittene bis erfahrene Spieler, die taktisches Teamspiel mögen. Einzelgänger vergießen vielleicht ein Tränchen."
+  ],
+  "m.conflict-pve.f": [
+    "<b>Feindliches Hauptquartier.</b> Jägergruppen rücken nur nach Aufklärung aus: einer feindlichen Drohne oder einer Patrouille, die dich oder dein Fahrzeug entdeckt. Sie gehen dorthin, wo du inzwischen sein müsstest, durchsuchen das Gebiet, marschieren in Kolonne und entfalten sich bei Feindkontakt zur Linie.",
+    "<b>Generator-Eroberung</b> (mit Enhanced Compositions). Repariere den Generator des FIA-HQ mit einem Schraubenschlüssel und fülle ihn mit Treibstoff (18 L, etwa 20 s), während die Basissirene ertönt. Funkkontakt zu deinem HQ ist erforderlich.",
+    "<b>Treibstoffwirtschaft.</b> Ein laufender Generator gibt seiner Basis 10 Vorräte pro Liter, nie mehr, als das Basislager fasst. Ein freundliches Treibstofflager oder der aufstellbare M1091-Tankwagen hält ihn gefüllt.",
+    "<b>Sabotage und Durchbruch.</b> Etwa 30 s nach einer Eroberung versucht der nächste feindliche Soldat, den Generator auszuschalten. Mauere ihn mit HESCO ein, und ein Sprengtrupp sprengt die nächste Wand: Töte ihn oder entschärfe die Ladungen innerhalb von 20 s.",
+    "<b>Harte HESCO.</b> Kugeln, Granaten und Fahrzeuge richten nichts aus. Nur Sprengstoff: 1, 2 oder 4 M112-Ladungen je nach Größe.",
+    "<b>KI-Doktrin.</b> Feuerdisziplin, taktischer Rückzug, Gefechtsreichweiten nach Haltung, Bewegung, Wetter und Nacht.",
+    "<b>Feindliche Mörser</b> mit vorgeschobenen Beobachtern, echter Ballistik und Gegenbatteriefeuer.",
+    "<b>Overwatch</b>-Scharfschützenteams: ein Spetsnaz-Scharfschütze mit Beobachter oder allein.",
+    "<b>Drohnenkrieg.</b> Feindliche Drohnen, vor denen du dich verstecken kannst (Haltung, Bewuchs), Störsender, Drohnen in gespeicherten Loadouts.",
+    "<b>Jägertrupps und Hubschrauber-Fallschirmjäger</b>, in der Stärke nach der Zahl der Spieler in der Nähe.",
+    "<b>KI-Raketenwerfer</b> zielen in jeder Fraktion auch auf Infanterie: Bleibt auseinandergezogen.",
+    "<b>Moderne US-KI</b> in MultiCam; Feinde mit passender Tarnung und roten Armbinden; Spetsnaz-Fallschirmjäger in Schwarz und A-TACS.",
+    "<b>C-RAM</b>, das alle Bedrohungen bekämpft, mit Angriffssirene (nur Hauptbasis).",
+    "<b>Ränge gespeichert</b> über Server- und Missionsneustarts hinweg.",
+    "<b>Komplettes US-Arsenal</b>, bei jedem Rang freigeschaltet, außer dem Golden Shovel (Sergeant).",
+    "<b>Der Spaten fällt Bäume</b>, nicht nur Büsche, und Stümpfe werden entfernt.",
+    "<b>Verbündeten-Markierungen:</b> Symbole über Verbündeten (50 m, 300 m durch Optiken), Squad-Mitglieder in Teamfarbe, Namen aus der Nähe.",
+    "<b>Stimmige Garagen- und Helipad-Kosten:</b> Ein besseres Fahrzeug kostet nie weniger Vorräte, XP oder Rang.",
+    "<b>Patrouillentrucks</b> fahren entweder einen Nachschubtransport oder einen Truppentransport."
+  ],
+  "m.conflict-pve.inc": [
+    "<b>Wetter-Regie:</b> Nieselregen, Regen, Gewitterfronten, Morgendunst und Nebelbänke mit weichen Übergängen. Schlechtes Wetter hält feindliche Drohnen und Flugzeuge am Boden.",
+    "<b>Nachtausrüstung:</b> Manche feindlichen Soldaten tragen Nachtsichtgeräte oder Wärmebildzielfernrohre und sehen entsprechend.",
+    "<b>Angriffspläne:</b> L-förmiger Angriff, Hammer und Amboss, Mörser zuerst, Infiltration, Finte, Zermürbung und Hinterhalt an der Straße, gewählt nach dem Wissen des HQ.",
+    "<b>Hinterhalte an der Straße:</b> neun Arten, von Minen und Panzerabwehrteams bis zu FPV-Korridoren und voreingeschossenen Mörserschlägen; dauerhafte Straßensperren auf den Straßen, die du am meisten nutzt.",
+    "<b>Luftschläge und Geran-Angriffe:</b> gelenkte Gleitbomben, Marschflugkörper auf eroberte Basen, Su-57-Aufklärungsüberflüge, Geran-Starttrucks, die du jagen kannst.",
+    "<b>Drohnenteams:</b> Die feindliche Mavic wirft keine Granaten mehr ab; sie kreist über ihrem Ziel, lenkt Schläge, und ein Licht darunter zeigt ihren Zustand.",
+    "<b>Funkwarnungen:</b> kurze Funkhinweise, wenn eine Drohne dich beobachtet, eine Gruppe auf dich zukommt oder ein Schlag unterwegs ist.",
+    "<b>FIA und reguläre USSR</b>-Soldaten in tschechischen Vz95-Uniformen."
+  ],
+  "m.conflict-pve.admin": [
+    "Unsere Systeme werden über Dateien <code>$profile:INDFORGE_*/config.json</code> eingestellt: KI-Doktrin, feindliches HQ, Mörser, Generator-Eroberung, Jägerstärke, Drohnensicht, Namensschilder, Patrouillentrucks, Spaten, Sitzungsbericht und mehr. Die Admin-Konsole listet jeden Schlüssel mit seinem Hilfetext.",
+    "Systeme von Drittanbietern behalten ihre eigenen Dateien: <code>$profile:CET/CETConfig.json</code> (Jäger), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (Hubschrauber), <code>$profile:EnhancedCompositions/Garrison.json</code> (Garnisonen, zum Einschalten).",
+    "Der Server führt die im Workshop veröffentlichte Version aus: Ein Update kommt erst an, wenn es neu veröffentlicht wurde."
+  ],
+  "m.conflict-pve.credits": "Basierend auf Gramps303s ConflictPVERemixedVanilla2.0 und iRON79s Kreationen. Dank an Bohemia Interactive und an ACE, RHS, SHS, TFO, WCS, AkiraSeki, Chungus, darc_, dax5150, Gramps303, iRON79, MikeKn, PandaMods, Punkster, r34p3r, SalamiBoiDev, streetone, Thomoskis, tommills2209, Volmog_0, WhiskeyDreamzZz, WhoaItsLouie, WillowSaysWhat und jeden Ersteller, der in den Abhängigkeiten genannt ist.",
+  "m.forest.tag": "Conflict PvE in den dichten Wäldern von Belleau Wood.",
+  "m.forest.intro": [
+    "INDFORGE - Forest bringt das Erlebnis von INDFORGE - Conflict PvE auf die Karte Belleau Wood: dieselbe KI, Doktrin, dasselbe Arsenal, dieselben Ränge und Einstellungen wie auf Everon, mit eigenen Basen, Relaisstationen, Straßensperren, Patrouillen und Fahrzeug-Spawnpunkten.",
+    "Er benötigt INDFORGE - Conflict PvE. Eine Änderung in Conflict PvE erreicht Forest, sobald Conflict PvE im Workshop neu veröffentlicht wird."
+  ],
+  "m.forest.f": [
+    "Conflict-Basen, Relaisstationen und Startpunkte, an Belleau Wood angepasst.",
+    "15 Waldstraßensperren samt Wachen.",
+    "Jede einnehmbare Basis wird von 3 bis 4 Gruppen verteidigt: Schützengruppe, MG-Team, Feuerteam, Panzerabwehrteam.",
+    "Spetsnaz-Overwatch-Scharfschützen, Teams und einzelne Scharfschützen, die auf offenem Feld rund um die Basen ihre Beute verfolgen.",
+    "Fußpatrouillen zwischen den Basen, bewaffnete und Transportfahrzeug-Patrouillen, zivile Präsenz.",
+    "KI-Spawnpunkte nach dem benannt, was sie wirklich spawnen, für leichtere Administration und Bearbeitung.",
+    "Zufällige Waffenlager: auf dieser Karte vorerst ausgeschaltet, kommen bald."
+  ],
+  "m.forest.admin": [
+    "Dieselben Server-Profildateien wie Conflict PvE: Die Einstellungen und Befehle der Admin-Konsole gelten auch hier.",
+    "Setze <code>game.scenarioId</code> auf die oben genannte Szenario-ID und nutze den kompletten Mods-Block unten: Forest, Conflict PvE samt Abhängigkeiten, Belleau Wood und die beiden Eisenbahn-Mods."
+  ],
+  "m.forest.credits": "Karte Belleau Wood von Thinwheat01. RailwayGenerator und RailEnfusionRedux von TilW. Und jeder Ersteller der Abhängigkeiten von Conflict PvE.",
+  "m.conflict.tag": "Ein angepasstes Conflict-Szenario auf Everon. Noch nicht veröffentlicht.",
+  "m.conflict.intro": [
+    "INDFORGE - Conflict ist ein von unserem Team angepasstes Conflict-Szenario auf Everon, gebaut auf WCS_Core.",
+    "Es ist zum Zeitpunkt des Schreibens nicht im Workshop veröffentlicht: Diese Seite reserviert seine dauerhafte Adresse. Die Details werden zum Release freigegeben."
+  ],
+  "m.conflict.f": [
+    "Conflict-Mission auf Everon (HQ Commander), angepasst von TheUnknownTeam.",
+    "Benötigt WCS_Core."
+  ],
+  "m.ai-framework.tag": "Modulare, kartenunabhängige KI für PvE-Szenarien: Hubschrauberpatrouillen, Garnisonen, Bodenpatrouillen.",
+  "m.ai-framework.intro": [
+    "INDFORGE - AI Framework fügt kompatiblen Conflict-Szenarien konfigurierbare feindliche Hubschrauberpatrouillen, Militärgarnisonen und Bodenpatrouillen hinzu.",
+    "Alles wird über eine JSON-Datei im Serverprofil eingestellt, ohne den Code anzufassen. Die Kartenunterstützung hängt von den Points of Interest ab, die das Szenario bereitstellt."
+  ],
+  "m.ai-framework.f": [
+    "<b>Combat Heli Spawner.</b> Ein feindlicher USSR-Patrouillenhubschrauber erscheint nahe der größten Spielergruppe, verankert an einem Point of Interest (Militärbasis, Flughafen, Stadt, Dorf…), mit voller Besatzung und konfigurierbarem KI-Können, von Noob bis Expert.",
+    "<b>Geskripteter Flugregler</b>, nicht die Flug-KI der Engine: Patrouillenschleife über nahen Points of Interest, Höhenhaltung, geneigte Kurven.",
+    "<b>Automatische Bereinigung.</b> Abgeschossen, Pilot oder Rotor verloren, gelandet oder im Wasser: Das Wrack verschwindet, und der Slot wird nach einer Abklingzeit freigegeben (insgesamt 23 Minuten mit den ausgelieferten Werten).",
+    "<b>Militärgarnisonen.</b> Jeder geeignete Point of Interest bekommt zwei Patrouillen, eine enge und eine weite, und kleine statische Teams besetzen Türme, Bunker und Wachtürme.",
+    "<b>Priorität unter dem KI-Limit.</b> Die Engine hält etwa 128 KI gleichzeitig aktiv: zuerst die Hubschrauberbesatzung, dann nahe Patrouillen und Gebäudeposten, dann weite Patrouillen."
+  ],
+  "m.ai-framework.setup": [
+    "Abonniere den Mod und füge ihn den Mods deines Servers hinzu.",
+    "Füge im World Editor die INDFORGE-Komponenten zur Entity <code>GameModeCampaign</code> (oder zum Basis-<code>GameMode</code>) deiner Mission hinzu.",
+    "Kopiere die ausgelieferte <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> nach <code>$profile:INDF_CombatHeliSpawner/config.json</code>. Diese Kopie wird einmalig beim Start gelesen.",
+    "Pro Welt: Füge im FIA-<code>CampaignFactionManager</code> die USSR zu den <em>Friendly Factions Ids</em> hinzu, und die FIA im USSR-Manager. Ohne das bekämpfen sich die beiden Fraktionen.",
+    "Starte den Server nach jeder Änderung neu. Schließe und öffne Workbench erneut: Es speichert die Datei im Cache."
+  ],
+  "m.ai-framework.admin": [
+    "Erhöhe <code>MaxActiveHelicopters</code> nicht: Der Flug ist geskriptet und hat keine Kollisionsvermeidung zwischen Luftfahrzeugen.",
+    "Beim Start muss das Log <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code> zeigen, danach den POI-Scan und die Garnisonsbesetzung.",
+    "Kein Hubschrauber? Prüfe die Spielerzahl (<code>MinimumPlayersToActivate</code>) und die 23 Minuten Wartezeit nach einem Abschuss."
+  ],
+  "m.enhanced-compositions.tag": "Kompakte Conflict-Kompositionen, Generator-Eroberung und KI-Garnisonen.",
+  "m.enhanced-compositions.intro": [
+    "Enhanced Compositions gibt Missionsbauern, Game Mastern und Spielern einfachere Conflict-Kompositionen, die sich leicht an Missionen oder Karten anpassen lassen, auf denen der Conflict-Mod schwer einzurichten ist, plus eine neue Art, Basen zu erobern, und KI-Garnisonen, die Gebäude schützen."
+  ],
+  "m.enhanced-compositions.f": [
+    "<b>Kompositionen:</b> kleine Antenne, Munitionslager (WIP), Feldlazarett (WIP), Fahrzeugwartung und Wohnbereich für US und USSR, wobei der Wohnbereich die vollständige Liste der KI-Gruppen in seinem Menü hat; kleines FIA-Hauptquartier, Zelt und Hütte, jeweils mit oder ohne Generator.",
+    "<b>FIA-HQ-Generator.</b> Startet defekt und leer, kann nicht zerstört werden. Repariere ihn mit einem Schraubenschlüssel (8 s, jede Fraktion), fülle ihn mit einem Kanister: Er läuft, bis der Tank leer ist. Eine Kiste in jedem Generator-HQ enthält einen Schraubenschlüssel und einen Kanister.",
+    "<b>Kommandanten-Aktionen</b> gebündelt am HQ-Tisch, neben dem Bau-Panel: Logistik, Gefechtsunterstützung und Bau.",
+    "<b>Garnisonen.</b> Kaserne: 5 patrouillierende Soldaten plus die vollständige Einheitenliste. Waffenkammer, Fahrzeugwerkstätten und Treibstofflager: ein Zweierteam. Antenne: ein Zweier-Aufklärungsteam.",
+    "<b>Garnisonsregeln.</b> Die erste Gruppe ist kostenlos. Eine ausgelöschte Gruppe kehrt nach 10 Minuten zurück, wenn die Vorräte reichen und kein Feind in der Nähe ist. Nicht rekrutierbar, nicht gespeichert. Corporals und höher schalten sie mit der Aktion <em>Garrison</em> um.",
+    "<b>Fahrzeugservice</b>, solange ein Wächter lebt: Das Treibstofflager betankt verbündete Fahrzeuge kostenlos; die Werkstätten reparieren und munitionieren sie gegen Vorräte auf.",
+    "<b>Golden Shovel</b> in den US- und USSR-Arsenalen, ab dem Rang Sergeant.",
+    "Nur mit INDFORGE - Conflict PvE: Eroberung per Treibstoff, Vorräte vom Generator und feindliche Sabotage."
+  ],
+  "m.enhanced-compositions.admin": [
+    "Alle Garnisonseinstellungen liegen in <code>$profile:EnhancedCompositions/Garrison.json</code>.",
+    "Die Datei wird beim ersten Start mit <code>\"Enabled\": false</code> angelegt: Setze es auf <code>true</code>, um Garnisonen einzuschalten. Der Mod überschreibt sie nie."
+  ],
+  "m.auc-factions.tag": "Ukrainische, russische und Sturmbataillon-Fraktionen für die Arma Ukraine Community.",
+  "m.auc-factions.intro": [
+    "AUC - Factions ist eine spezifische Konfiguration der WCS-Fraktionen NATO und RU und ein wenig mehr, für die PvPvE-Server der [AUC] Arma Ukraine Community. Er baut auf diesen Mods auf, für Stabilität und immersives Gameplay."
+  ],
+  "m.auc-factions.f": [
+    "<b>BLUFOR:</b> Du spielst die ukrainischen Streitkräfte.",
+    "<b>OPFOR:</b> Du spielst das 214. Unabhängige Sturmbataillon, das einzige Bataillon, das als feindliche Kräfte spielen darf.",
+    "<b>INDFOR:</b> Du kämpfst gegen die russischen Streitkräfte.",
+    "Bringt als Abhängigkeiten Realistic Combat Drones - WCS sowie kukas Vampire-UAV- und FPV-Drohnen mit."
+  ],
+  "m.auc-factions.credits": "Dank an die Teams von WCS und RHS, SalamiBoiDev, FriendlyModder und kuka-.",
+  "m.auc-vehicles.tag": "Der Fahrzeugpool der Server der Arma Ukraine Community.",
+  "m.auc-vehicles.intro": [
+    "AUC - Vehicles ist eine spezifische Konfiguration mehrerer Fahrzeug-Mods, mit einigen zusätzlichen Änderungen, gebaut für die [AUC] Arma Ukraine Community."
+  ],
+  "m.auc-vehicles.f": [
+    "<b>BLUFOR:</b> 65 Fahrzeuge, per Rang freigeschaltet.",
+    "<b>OPFOR:</b> 55 Fahrzeuge, per Rang freigeschaltet.",
+    "<b>INDFOR:</b> 21 Fahrzeuge in RHS-Tarnung.",
+    "<b>Zivil:</b> 13 Fahrzeuge."
+  ],
+  "m.auc-vehicles.credits": "Dank an die Teams von WCS, RHS, CIE und FRM und an jeden Fahrzeugersteller in den Abhängigkeiten.",
+  "m.auc-conflict.tag": "PvPvE-Conflict für die Arma Ukraine Community, beginnend auf Kolguyev.",
+  "m.auc-conflict.intro": [
+    "AUC - Conflict ist eine spezifische Konfiguration des Conflict-Modus für die [AUC] Arma Ukraine Community. Er stützt sich auf WCS_Core für Stabilität und eignet sich für verschiedene Geländearten."
+  ],
+  "m.auc-conflict.f": [
+    "Verfügbares Szenario: <b>AUC HQ Conflict - Kolguyev</b>.",
+    "Weitere Gelände folgen.",
+    "Spawn-Schutz durch WCS_SpawnProtection."
+  ],
+  "m.cherchetoi-rp-clothing.tag": "Rollenspiel-Kleidung für die Community CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-clothing.intro": [
+    "ChercheToi RP - Clothing ist eine spezifische Konfiguration mehrerer Kleidungs-Mods, mit einigen Änderungen, für die Rollenspiel-Community CHERCHE TOI – RP LIFE."
+  ],
+  "m.cherchetoi-rp-clothing.f": [
+    "Zivil-, Biker- und Presse-Outfits, zusammengetragen aus den Kleidungs-Mods der Abhängigkeiten.",
+    "SAMU-Rettungsdienstausrüstung, vom CTRP-Teammitglied Captain Valaaks."
+  ],
+  "m.cherchetoi-rp-props.tag": "Rollenspiel-Props für die Community CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-props.intro": [
+    "ChercheToi RP - Props ist eine spezifische Konfiguration von Props für die Community CHERCHE TOI – RP LIFE, aufbauend auf Lakes Dans Arbeit für die Faircroft Islands."
+  ],
+  "m.cherchetoi-rp-props.f": [
+    "Props aus Faircroft Islands und Brit Props von Lakes Dan.",
+    "Palmen aus Palmtree von Ben.obj."
+  ],
+  "m.cherchetoi-rp-vehicles.tag": "Der Rollenspiel-Fahrzeugpool der Community CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-vehicles.intro": [
+    "ChercheToi RP - Vehicles ist eine spezifische Konfiguration von 32 Fahrzeug- und Ausrüstungs-Mods, mit einigen Änderungen, für die Rollenspiel-Community CHERCHE TOI – RP LIFE."
+  ],
+  "m.cherchetoi-rp-vehicles.f": [
+    "Autos, SUVs, Transporter, ein Bus, Pickups, Motorräder, Fahrräder, Karts und Boote aus den Lieblings-Fahrzeug-Mods der Community.",
+    "Lastwagen wie der KamAZ 5350 und der Hubschrauber SA342 Gazelle."
+  ],
+  "m.lav-25-desert.tag": "Der LAV-25 Piranha in den Farben der Operation Desert Storm.",
+  "m.lav-25-desert.intro": [
+    "Der LAV-25 Piranha ist ein leichtes gepanzertes Fahrzeug, das 1981–1982 von General Motors Canada entwickelt wurde. Er kam 1983 beim United States Marine Corps in Dienst, 758 Stück wurden geliefert.",
+    "Bewaffnet mit einer 25-mm-Bordkanone M242 Bushmaster und einem koaxialen MG M240, kommt er hier in den vier Farben, die während der Operation Desert Storm am 17. Januar 1991 verwendet wurden. Ein Gedanke an die Veteranen dieses Krieges."
+  ],
+  "m.lav-25-desert.f": [
+    "LAV-25 (MC) in vier Desert-Storm-Farbschemata.",
+    "25-mm-Kanone M242 Bushmaster und koaxiales M240.",
+    "Keine Abhängigkeit."
+  ],
+  "m.modern-fia.tag": "Eine modernisierte FIA: Bullpup-Gewehr, ballistische Helme, Körperschutz.",
+  "m.modern-fia.intro": [
+    "Im Rahmen eines Programms zur Modernisierung ihrer Infanterie erhält die Freedom and Independence Army (FIA) neue Ausrüstung."
+  ],
+  "m.modern-fia.f": [
+    "Bullpup-Sturmgewehr Promet in 6,5×39 mm, 30-Schuss-Magazin.",
+    "Zwei ballistische Helme NIJ IIIA.",
+    "Körperschutz NIJ IV.",
+    "Uniform der Tschechischen Armee von _OV_.",
+    "Und ein paar Extras."
+  ],
+  "m.rcd-rhs.tag": "SalamiBoiDevs Drohnen und Störsender-Rucksack in jedem RHS-Arsenal.",
+  "m.rcd-rhs.intro": [
+    "Realistic Combat Drones - RHS fügt den RHS-Arsenalen das komplette Set von SalamiBoiDevs Drohnenausrüstung hinzu."
+  ],
+  "m.rcd-rhs.f": [
+    "FPV-Drohnen, Abwurfdrohnen und Aufklärungsdrohnen, jeweils mit Akku.",
+    "Drohnen-Controller und Drohnenbrille.",
+    "Störsender-Rucksack.",
+    "In den Arsenalen FFA, ION, RHS MSV und USMC."
+  ],
+  "m.rcd-wcs.tag": "SalamiBoiDevs Drohnen in den WCS-Arsenalen und ein baubarer Störsender TPN-19.",
+  "m.rcd-wcs.intro": [
+    "Realistic Combat Drones - WCS fügt den WCS-Arsenalen der US (BLUFOR) und der USSR (OPFOR) das komplette Set von SalamiBoiDevs Drohnenausrüstung hinzu, mit Kosten und Rängen, plus einen Drohnen-Störsender, den du in Conflict-Basen bauen kannst."
+  ],
+  "m.rcd-wcs.f": [
+    "FPV-RPG-Drohne (125), FPV-Drohne (100), Abwurfdrohne (75), Aufklärungsdrohne (50), Akkus (2), Controller und Brille (0): Corporal.",
+    "Störsender-Tasche (100): Private. Drohnen-Langstreckenantenne (200): Sergeant. Drohnen-Kommandostation (300): Lieutenant.",
+    "<b>Radarstörsender TPN-19</b>, in Conflict-Basen von US, USSR oder FIA baubar (Kosten 300): stört Drohnen im Umkreis von 250 m, sobald er gebaut ist. EIN/AUS-Schalter am Türgriff an der Seite, von jedem bedienbar. Generatorgeräusche folgen seinem Zustand. Auch für Game Master verfügbar.",
+    "<b>Freund oder Feind:</b> Ein getragener, mitgeführter oder in eine Basis eingebauter Störsender kappt nicht mehr die Drohnen der eigenen Seite und der Verbündeten. Ein am Boden abgelegter Störsender stört alle.",
+    "Drohnen-Controller im Slot der Sekundärwaffe; zur Drohnenbrille kann eine Maske getragen werden."
+  ],
+  "m.solo-push-pull.tag": "Schiebe oder ziehe jedes Auto und jeden Lastwagen allein. Sogar den BTR.",
+  "m.solo-push-pull.intro": [
+    "Eine einfache Änderung der Vanilla-Aktion zum Umdrehen, die mit Arma Reforger 1.2.0.92 kam: Jetzt kannst du jedes Auto und jeden Lastwagen, sogar den BTR, auch allein schieben oder ziehen, wie ein echter Superheld.",
+    "Mit allen Mods kompatibel. Vorsicht: Eine Überdosis Push-Pull kann zu gesundheitlichen Problemen führen."
+  ],
+  "m.solo-push-pull.f": [
+    "Schieben und Ziehen allein bei Autos, Lastwagen und gepanzerten Fahrzeugen.",
+    "Keine Abhängigkeit, mit allen Mods kompatibel."
+  ],
+  "m.solo-push-pull.credits": "Ein großes Dankeschön an das Team von Conflict In Europe [CIE], das diesen Mod ins Rampenlicht gerückt hat.",
+  "m.talibanmod-red-side-v2.tag": "FIA und USSR als Aufständische der arabischen Welt, für Task Force Baguette.",
+  "m.talibanmod-red-side-v2.intro": [
+    "TalibanMod Red Side V2, gemacht für Task Force Baguette, verwandelt die FIA und die USSR in OPFOR-Kämpfer verschiedener Rebellionen der arabischen Welt. PvE Conflict verfügbar."
+  ],
+  "m.talibanmod-red-side-v2.f": [
+    "Neue Charaktere, Westen und Kopfbedeckungen.",
+    "Fahrzeuge in Tan.",
+    "Zivilisten und Zivilfahrzeuge im arabischen Stil.",
+    "Arabische Schriftzüge auf FIA- und USSR-Schildern."
+  ],
+  "m.talibanmod-red-side-v2.credits": "Dank an V-lst für Insurgents SAF und an zelik für Zeliks Character.",
+  "m.off-road-vehicles.tag": "Geländefahrzeuge 4×4 und 6×6 für grenzenlose Erkundung.",
+  "m.off-road-vehicles.intro": [
+    "Off-Road Vehicles bringt mehrere 4×4- und 6×6-Fahrzeuge, um Everon wie nie zuvor zu entdecken, mit einem Game-Master-Szenario zum Ausprobieren.",
+    "In Bereitschaft: Der Mod wird eventuell mit UAZ-452 Offroad zusammengeführt."
+  ],
+  "m.off-road-vehicles.f": [
+    "4×4- und 6×6-Fahrzeuge in sechs Farben: Blau, Grau, Orange, Savanne, Schnee, Suburban.",
+    "Eine Version für Reparatur und medizinische Hilfe.",
+    "Game-Master-Szenario <b>Everon Explorer</b>.",
+    "Tipp: Wenn der Vorwärtsgang nicht reicht, hat der Rückwärtsgang mehr Drehmoment."
+  ],
+  "m.uaz-452-offroad.tag": "Der UAZ-452 \"Bukhanka\", überarbeitet für die Berge.",
+  "m.uaz-452-offroad.intro": [
+    "Der UAZ-452 Classic ist ein Geländebus, der seit 1965 im Werk Uljanowsk gebaut wird. Wir haben sein Design überarbeitet, um eine echte Bukhanka zu schaffen, bereit für die Berge: 110 PS und mehr, die dich über den Horizont hinaus bringen.",
+    "In Bereitschaft: Der Mod wird eventuell mit Off-Road Vehicles zusammengeführt."
+  ],
+  "m.uaz-452-offroad.f": [
+    "Zivile 4×4 in acht Farben: Khaki, Rot, Gelb, Grün, Blau, Dunkelblau, Lila, Rosa.",
+    "Reparaturversion für die Fraktionen Zivil, FIA und USSR."
+  ],
+  "deps.unreleased": "Die Liste der Abhängigkeiten wird mit dem Mod veröffentlicht.",
+  "intel.lvl_rng": "Eröffnet das Feuer auf Infanterie bis (stehend / hockend / liegend)",
+  "ui.prev": "Zurück",
+  "ui.next": "Weiter",
+  "ui.see_cfg": "Alle Einstellungen dieses Mods in der Admin-Konsole",
+  "ui.cfg_cpve": "Werte aus dem Referenzprofil von INDFORGE - Conflict PvE.",
+  "ui.redacted": "Geschwärzt",
+  "ui.k_page": "Seite",
+  "ui.k_mod": "Mod",
+  "ui.k_cmd": "Befehl",
+  "ui.k_cfg": "Einstellungsdatei",
+  "home.feed": "Live-Meldungen",
+  "ui.lang_saved": "Sprache auf diesem Gerät gespeichert."
+}

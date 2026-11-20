@@ -1,0 +1,3069 @@
+[
+ {
+  "profile": "$profile:INDFORGE_AIDoctrine/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "TelemetryMinutes",
+    "value": "5",
+    "help": null
+   },
+   {
+    "key": "BandMedium",
+    "value": "50.0",
+    "help": null
+   },
+   {
+    "key": "BandLong",
+    "value": "200.0",
+    "help": null
+   },
+   {
+    "key": "BandVeryLong",
+    "value": "400.0",
+    "help": null
+   },
+   {
+    "key": "FactorMachineGun",
+    "value": "2.0",
+    "help": null
+   },
+   {
+    "key": "FactorSniper",
+    "value": "1.600000023841858",
+    "help": null
+   },
+   {
+    "key": "FactorHandgun",
+    "value": "0.30000001192092896",
+    "help": null
+   },
+   {
+    "key": "FogFactor",
+    "value": "0.25",
+    "help": null
+   },
+   {
+    "key": "SpottedAngle",
+    "value": "12.0",
+    "help": null
+   },
+   {
+    "key": "OpenFireSeconds",
+    "value": "30.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawMinDistance",
+    "value": "80.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawOdds",
+    "value": "3.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawReplySeconds",
+    "value": "6.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawSeconds",
+    "value": "64.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawWaveSeconds",
+    "value": "8.0",
+    "help": null
+   },
+   {
+    "key": "RegroupSeconds",
+    "value": "20.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawSafeSeconds",
+    "value": "8.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawBound",
+    "value": "40.0",
+    "help": null
+   },
+   {
+    "key": "WithdrawForgetSeconds",
+    "value": "300.0",
+    "help": null
+   },
+   {
+    "key": "DoubtSeconds",
+    "value": "120.0",
+    "help": null
+   },
+   {
+    "key": "DefendLeash",
+    "value": "150.0",
+    "help": null
+   },
+   {
+    "key": "MoveLeash",
+    "value": "250.0",
+    "help": null
+   },
+   {
+    "key": "CloseContact",
+    "value": "100.0",
+    "help": null
+   },
+   {
+    "key": "RainFactor",
+    "value": "0.699999988079071",
+    "help": null
+   },
+   {
+    "key": "FiredAtEnvFloor",
+    "value": "0.6",
+    "help": null
+   },
+   {
+    "key": "NightFactor",
+    "value": "0.6000000238418579",
+    "help": null
+   },
+   {
+    "key": "NightAim",
+    "value": "1.2000000476837158",
+    "help": null
+   },
+   {
+    "key": "NightVisionNightFactor",
+    "value": "0.9",
+    "help": "Night range factor of a soldier with night vision goggles or a night scope, instead of NightFactor"
+   },
+   {
+    "key": "ThermalNightFactor",
+    "value": "1.0",
+    "help": "Night range factor of a soldier looking through a thermal sight"
+   },
+   {
+    "key": "NightVisionNightAim",
+    "value": "0.6",
+    "help": "Aim error factor at night with night vision or a thermal sight (vanilla doubles it again on a badly lit target)"
+   },
+   {
+    "key": "ThermalFogExponent",
+    "value": "2.0",
+    "help": "Thermal sights see through light fog, hardly through thick fog: the fog level (0 to 1) is raised to this power. 1: like the eye"
+   },
+   {
+    "key": "DefaultLevel",
+    "value": "\"Grunt\"",
+    "help": null
+   },
+   {
+    "key": "Weather",
+    "value": "[\"Clear=1\", \"Light Cloud=1\", \"Medium Cloud=0.95\", \"Heavy Cloud=0.85\"]",
+    "help": null
+   },
+   {
+    "key": "AssignPrefab",
+    "value": "[\"Overwatch=Overwatch\", \"Spetsnaz=Operator\", \"KLMK=Operator\", \"Recon=Operator\", \"INDF_U…",
+    "help": null
+   },
+   {
+    "key": "AssignFaction",
+    "value": "[\"USSR=Grunt\", \"US=Grunt\", \"FIA=Boot\"]",
+    "help": null
+   },
+   {
+    "key": "LevelNames",
+    "value": "[\"Boot\", \"Overwatch\", \"Grunt\", \"Operator\"]",
+    "help": null
+   },
+   {
+    "key": "Levels",
+    "value": "{\"Boot\": {\"RangeStand\": 275, \"RangeCrouch\": 165, \"RangeProne\": 90, \"RangeMin\": 40.0, \"M…",
+    "help": null
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_DroneSight/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false lets the AI drones of AI Use Drones see and hunt as they do without INDFORGE"
+   },
+   {
+    "key": "RangeStand",
+    "value": "300.0",
+    "help": "Metres. Farthest an AI drone (Mavic or FPV) can spot a standing soldier. Scaled by night and weather when the AI doctrine runs"
+   },
+   {
+    "key": "RangeCrouch",
+    "value": "180.0",
+    "help": "Metres. Same for a crouched soldier"
+   },
+   {
+    "key": "RangeProne",
+    "value": "100.0",
+    "help": "Metres. Same for a prone soldier"
+   },
+   {
+    "key": "StillFactor",
+    "value": "0.7",
+    "help": "Ranges are multiplied by this when the soldier keeps still (under 1.5 m/s)"
+   },
+   {
+    "key": "CloseRange",
+    "value": "15.0",
+    "help": "Metres. Within this distance the drone keeps its own test: a drone on top of its target goes on"
+   },
+   {
+    "key": "FoliageBlocks",
+    "value": "true",
+    "help": "true: bushes, foliage and vegetation between the drone and the soldier hide him"
+   },
+   {
+    "key": "HuntSeconds",
+    "value": "120.0",
+    "help": "Seconds a drone that lost its target keeps hunting around where it saw it last, before flying back to its operator"
+   },
+   {
+    "key": "MavicHuntRadius",
+    "value": "40.0",
+    "help": "Metres. A Mavic hunts within this distance of where it saw its target last"
+   },
+   {
+    "key": "MavicHuntAltitude",
+    "value": "40.0",
+    "help": "Metres above the ground a Mavic flies while it hunts (its patrol height is 100 m). Keep it above the treetops"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_DroneTeam/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false lets the drone teams of AI Use Drones work as they do without INDFORGE"
+   },
+   {
+    "key": "MavicReconOnly",
+    "value": "true",
+    "help": "true: the Mavic never drops its grenade, it watches its target from above and reports its position"
+   },
+   {
+    "key": "OverwatchRadius",
+    "value": "40.0",
+    "help": "Metres (horizontal). A Mavic circles its target at this distance, at its patrol height. Keep it under the prone range of INDFORGE_DroneSight"
+   },
+   {
+    "key": "OverwatchOrbitSpeed",
+    "value": "3.0",
+    "help": "Metres per second along its circle while it watches"
+   },
+   {
+    "key": "OverwatchMemorySeconds",
+    "value": "20.0",
+    "help": "Seconds a Mavic hovers over the last known position of a target out of sight before it starts searching"
+   },
+   {
+    "key": "FlightSeconds",
+    "value": "900.0",
+    "help": "Seconds a Mavic flies before it goes back to its operator to change battery. 0: no limit"
+   },
+   {
+    "key": "AttackDrones",
+    "value": "[\"{DACE636DC6AF366F}Prefabs/Drones/FPVBase/FPVRPG_AI.et\", \"{821D293AB12438A1}Prefabs/Dr…",
+    "help": "Attack drones an FPV operator draws from at each launch (prefabs with the NOVA_FPV component). Empty: the drone of the operator"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_EnemyHQ/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false turns the enemy HQ off"
+   },
+   {
+    "key": "ReplaceCET",
+    "value": "true",
+    "help": "true: the hunters of Constant Enemy Threat stay home, this HQ sends its own on intelligence only"
+   },
+   {
+    "key": "Factions",
+    "value": "[\"USSR\", \"FIA\"]",
+    "help": "Factions whose drones and groups report to the HQ"
+   },
+   {
+    "key": "TrackMergeRadius",
+    "value": "250",
+    "help": "Meters. Reports this close to a track update it instead of opening a new one"
+   },
+   {
+    "key": "TrackColdSeconds",
+    "value": "240",
+    "help": "Seconds without a report after which the trail of a track is cold: its group searches, then goes home"
+   },
+   {
+    "key": "TrackForgetSeconds",
+    "value": "900",
+    "help": "Seconds without a report after which the HQ forgets a track"
+   },
+   {
+    "key": "RetaskSeconds",
+    "value": "30",
+    "help": "Seconds between two re-taskings of one group"
+   },
+   {
+    "key": "RetaskDistance",
+    "value": "60",
+    "help": "Meters. A group is re-tasked only when the last known position moved this far"
+   },
+   {
+    "key": "MaxActive",
+    "value": "2",
+    "help": "Hunter groups out at once, groups going home included"
+   },
+   {
+    "key": "DispatchGapSeconds",
+    "value": "90",
+    "help": "Seconds between two groups sent"
+   },
+   {
+    "key": "SpawnMinDistance",
+    "value": "400",
+    "help": "Meters. A group spawns at least this far from where it is sent"
+   },
+   {
+    "key": "SpawnMaxDistance",
+    "value": "900",
+    "help": "And at most this far"
+   },
+   {
+    "key": "SpawnPlayerDistance",
+    "value": "350",
+    "help": "Meters. No group spawns this close to a player"
+   },
+   {
+    "key": "SearchRadius",
+    "value": "150",
+    "help": "Meters. Once the trail is cold, the group searches this far around the last known position"
+   },
+   {
+    "key": "SearchSeconds",
+    "value": "300",
+    "help": "Seconds of that search before the group goes home"
+   },
+   {
+    "key": "ZonePatrol",
+    "value": "true",
+    "help": "true: without any intel, a group patrols an area near the players now and then, without knowing where they are"
+   },
+   {
+    "key": "ZoneIntervalSeconds",
+    "value": "600",
+    "help": "Seconds between two zone patrols"
+   },
+   {
+    "key": "ZoneOffsetMin",
+    "value": "250",
+    "help": "Meters. The patrolled area is centered at least this far from a player"
+   },
+   {
+    "key": "ZoneOffsetMax",
+    "value": "700",
+    "help": "And at most this far"
+   },
+   {
+    "key": "ZoneRadius",
+    "value": "250",
+    "help": "Meters. Radius of the patrolled area"
+   },
+   {
+    "key": "ZoneSeconds",
+    "value": "600",
+    "help": "Seconds of zone patrol before the group goes home"
+   },
+   {
+    "key": "MaxLifeSeconds",
+    "value": "2400",
+    "help": "Seconds after which any group goes home"
+   },
+   {
+    "key": "DespawnPlayerDistance",
+    "value": "500",
+    "help": "Meters. A group going home is removed once no player is this close to any of its soldiers"
+   },
+   {
+    "key": "DroneLevel",
+    "value": "\"Operator\"",
+    "help": "AI doctrine level of a group sent on drone intel (Boot, Grunt, Operator; empty: the level of its soldiers)"
+   },
+   {
+    "key": "PatrolLevel",
+    "value": "\"Boot\"",
+    "help": "Level of a group sent on a patrol report"
+   },
+   {
+    "key": "ZoneLevel",
+    "value": "\"\"",
+    "help": "Level of a zone patrol"
+   },
+   {
+    "key": "MarchFormation",
+    "value": "\"Column\"",
+    "help": "Formation of a group on the move: Column, StaggeredColumn, Wedge or Line; empty: the group keeps its own"
+   },
+   {
+    "key": "ContactFormation",
+    "value": "\"Line\"",
+    "help": "Formation a group deploys in once it identifies an enemy within ContactDistance; empty: no change on contact"
+   },
+   {
+    "key": "AssaultFormation",
+    "value": "\"Line\"",
+    "help": "Formation of a group sent in to attack its target (end of a wait, fire lifted, plan); empty: MarchFormation"
+   },
+   {
+    "key": "ApproachFormation",
+    "value": "\"Wedge\"",
+    "help": "Formation of a group moving to its attack position, its post or its stand-off point; empty: MarchFormation"
+   },
+   {
+    "key": "SearchFormation",
+    "value": "\"Wedge\"",
+    "help": "Formation of a group searching where a cold trail leads; empty: MarchFormation"
+   },
+   {
+    "key": "PatrolFormation",
+    "value": "\"StaggeredColumn\"",
+    "help": "Formation of a zone patrol sent without intel; empty: MarchFormation"
+   },
+   {
+    "key": "ContactDistance",
+    "value": "300",
+    "help": "Meters. An enemy identified this close to the group is a direct threat"
+   },
+   {
+    "key": "ContactHoldSeconds",
+    "value": "120",
+    "help": "Seconds without a direct threat after which the group goes back to the formation of what it does"
+   },
+   {
+    "key": "PredictSeconds",
+    "value": "60",
+    "help": "Seconds. From reports at least 10 s apart the HQ estimates where a target heads; a group is sent where it should be up to this long after the last report (0: the last known position)"
+   },
+   {
+    "key": "PredictMaxDistance",
+    "value": "300",
+    "help": "Meters. The estimated position is at most this far from the last report"
+   },
+   {
+    "key": "FootSpeedMax",
+    "value": "4",
+    "help": "m/s. Highest speed believed for players on foot (a sprint is about 5)"
+   },
+   {
+    "key": "VehicleSpeedMax",
+    "value": "20",
+    "help": "m/s. Highest speed believed for a player vehicle"
+   },
+   {
+    "key": "SearchSpreadSpeed",
+    "value": "0.5",
+    "help": "m/s. A search starts with SearchRadius plus this much per second since the last report (with defaults: 150 + 0.5 x 240 = 270 m)"
+   },
+   {
+    "key": "SearchRadiusMax",
+    "value": "400",
+    "help": "Meters. Largest search radius"
+   },
+   {
+    "key": "ReconStrike",
+    "value": "true",
+    "help": "true: mortar first. On a fresh track the HQ asks the enemy fire support for a mission on the player it found (an observer must see him holding his spot, see ReconStrike* in the fire support config); its groups wait outside the fire, then assault"
+   },
+   {
+    "key": "StrikeRadius",
+    "value": "60",
+    "help": "Meters. The player struck must be this close to the last known position of the track"
+   },
+   {
+    "key": "StrikeAskSeconds",
+    "value": "10",
+    "help": "Seconds between two asks of a track while no recon-strike can start"
+   },
+   {
+    "key": "StrikeRepeatSeconds",
+    "value": "300",
+    "help": "Seconds after the start of a recon-strike before the same track asks another one"
+   },
+   {
+    "key": "StrikeStandOffDistance",
+    "value": "350",
+    "help": "Meters from the target where the groups of the track wait while the mortars fire (150 to 1000)"
+   },
+   {
+    "key": "StrikeWaitSeconds",
+    "value": "180",
+    "help": "Seconds a group holds StrikeStandOffDistance out before the first recon-strike of its track, while a battery covers it (0 to 300; 0: it goes in at once). A group already fighting the target does not pull back"
+   },
+   {
+    "key": "ReportSeconds",
+    "value": "60",
+    "help": "Seconds between two situation reports in the server log, one line per group out (plan, role, orders, soldiers, distance to its target, age of the trail and of the last contact; -1 unknown); 0 turns them off"
+   },
+   {
+    "key": "DroneVehicleGroups",
+    "value": "[\"{7448919F1696DA41}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiVehicle_ATA…",
+    "help": "Groups drawn for drone intel on a player vehicle"
+   },
+   {
+    "key": "DroneInfantryGroups",
+    "value": "[\"{9AA4D537E88AF1AD}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel_A…",
+    "help": "Groups drawn for drone intel on players on foot"
+   },
+   {
+    "key": "PatrolVehicleGroups",
+    "value": "[\"{491AEDD0AEC06F03}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiVehicle.et\"]",
+    "help": "Groups drawn for a patrol report of a player vehicle"
+   },
+   {
+    "key": "PatrolInfantryGroups",
+    "value": "[\"{FE8F38BF5355B150}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel.et\"]",
+    "help": "Groups drawn for a patrol report of players on foot"
+   },
+   {
+    "key": "ZoneGroups",
+    "value": "[\"{FE8F38BF5355B150}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel.e…",
+    "help": "Groups drawn for a zone patrol"
+   },
+   {
+    "key": "AttackPlans",
+    "value": "true",
+    "help": "true: the HQ chooses a plan of attack for each track from what it knows (target on foot or in a vehicle, still or moving, players together, in a base, night, fog, rain, drones grounded, mortars, past losses), drawn at random among the best ones; false: one group per track and the mortar on every track"
+   },
+   {
+    "key": "PlanReviewSeconds",
+    "value": "30",
+    "help": "Seconds between two reviews of the plan of a track: a change of weather or of the target can switch it"
+   },
+   {
+    "key": "PlanHoldSeconds",
+    "value": "90",
+    "help": "Seconds a plan is kept before a better one may replace it (a plan that became impossible is replaced at once; a group in contact keeps fighting)"
+   },
+   {
+    "key": "PlanSwitchMargin",
+    "value": "0.5",
+    "help": "A plan is replaced only by one scoring this much better (0.5: 50 % better)"
+   },
+   {
+    "key": "PlanTopShare",
+    "value": "0.75",
+    "help": "The plan is drawn among those scoring at least this share of the best one (1: always the best)"
+   },
+   {
+    "key": "PlanPlayersRadius",
+    "value": "75",
+    "help": "Meters. Players this close to the track count as one position (feint, harassment)"
+   },
+   {
+    "key": "FixDistance",
+    "value": "200",
+    "help": "Meters from the target where the fixing group of the L-shaped attack takes position"
+   },
+   {
+    "key": "FlankDistance",
+    "value": "250",
+    "help": "Meters from the target where the flanking group takes position, at 90 degrees from the fixing group (also the main group of the feint)"
+   },
+   {
+    "key": "FeintDistance",
+    "value": "250",
+    "help": "Meters from the target where the feint group shows itself before attacking"
+   },
+   {
+    "key": "InfiltrationDistance",
+    "value": "150",
+    "help": "Meters from the target the infiltrating team reaches before its attack"
+   },
+   {
+    "key": "InfiltrationFog",
+    "value": "0.4",
+    "help": "Fog level (0 to 1) from which an infiltration is possible by day"
+   },
+   {
+    "key": "StageSeconds",
+    "value": "180",
+    "help": "Seconds a group waits at most on its position for the other group before attacking"
+   },
+   {
+    "key": "AnvilDistance",
+    "value": "300",
+    "help": "Meters ahead of a moving target where the blocking group (anvil, anti-vehicle team) waits"
+   },
+   {
+    "key": "HarassDistanceMin",
+    "value": "350",
+    "help": "Meters. The sniper team of the harassment takes the highest ground between this distance from the target..."
+   },
+   {
+    "key": "HarassDistanceMax",
+    "value": "500",
+    "help": "...and this one"
+   },
+   {
+    "key": "EscalationRadius",
+    "value": "800",
+    "help": "Meters. Groups wiped out this close to a track raise the escalation of its attack (up to 3)"
+   },
+   {
+    "key": "EscalationSeconds",
+    "value": "1800",
+    "help": "Seconds a lost group counts for the escalation"
+   },
+   {
+    "key": "EscalationSoldiers",
+    "value": "1",
+    "help": "Soldiers added to each group per escalation level; each level also raises the doctrine level (Boot, Grunt, Operator)"
+   },
+   {
+    "key": "WeightDirect",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightFixFlank",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightHammerAnvil",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightMortarFirst",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightInfiltration",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightFeint",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightHarass",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "WeightVehicleHunt",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "OverwatchGroups",
+    "value": "[\"{40DFAC0BDF2137E8}Prefabs/Groups/OPFOR/AmbientPatrols/INDF_Group_USSR_Overwatch_Team_…",
+    "help": "Groups drawn for the sniper team of the harassment (spawned with their own size)"
+   },
+   {
+    "key": "DroneTeamGroups",
+    "value": "[\"{29D37EF8013B7F54}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_DronesReconTeam_NotS…",
+    "help": "Groups drawn for the drone team of the vehicle hunt (spawned with their own size)"
+   },
+   {
+    "key": "AmbushDistanceMin",
+    "value": "400",
+    "help": "Meters. The vehicle hunt posts its ambush this far ahead of a tracked player vehicle, following the roads..."
+   },
+   {
+    "key": "AmbushDistanceMax",
+    "value": "600",
+    "help": "...up to this far (drawn between both)"
+   },
+   {
+    "key": "AmbushPostDistanceMin",
+    "value": "25",
+    "help": "Meters from the road where the ambush groups hide..."
+   },
+   {
+    "key": "AmbushPostDistanceMax",
+    "value": "40",
+    "help": "...up to this far"
+   },
+   {
+    "key": "AmbushCloseDistanceMin",
+    "value": "12",
+    "help": "Meters from the road for the close night ambush of the special forces..."
+   },
+   {
+    "key": "AmbushCloseDistanceMax",
+    "value": "18",
+    "help": "...up to this far"
+   },
+   {
+    "key": "KillZoneRadius",
+    "value": "60",
+    "help": "Meters. The ambush holds its fire until its target is this close to the middle of the kill zone (20 to 200)"
+   },
+   {
+    "key": "AmbushRifleDelaySeconds",
+    "value": "3",
+    "help": "Seconds after the ambush is sprung during which one launcher alone may fire: one rocket first, a chance to escape"
+   },
+   {
+    "key": "AmbushSelfDefenseDistance",
+    "value": "25",
+    "help": "Meters. A target this close to a soldier of the ambush, or shooting at it, springs the ambush at once"
+   },
+   {
+    "key": "AmbushHoldSeconds",
+    "value": "600",
+    "help": "Seconds an ambush waits for its target before the groups go home and the mines are lifted"
+   },
+   {
+    "key": "AmbushEndSeconds",
+    "value": "45",
+    "help": "Seconds without a player within AmbushEndPlayerDistance of a sprung ambush before it is over"
+   },
+   {
+    "key": "AmbushEndPlayerDistance",
+    "value": "250",
+    "help": "Meters around the kill zone a sprung ambush watches for players"
+   },
+   {
+    "key": "AmbushCooldownSeconds",
+    "value": "900",
+    "help": "Seconds during which a player caught in an ambush is not ambushed again"
+   },
+   {
+    "key": "AmbushSpawnPlayerDistance",
+    "value": "300",
+    "help": "Meters. The ambush groups spawn behind their posts, never this close to a player"
+   },
+   {
+    "key": "AmbushCleanupPlayerDistance",
+    "value": "200",
+    "help": "Meters. Mines and bait of an ambush that is over are removed once no player is this close"
+   },
+   {
+    "key": "AmbushReportMaxSeconds",
+    "value": "20",
+    "help": "Seconds. An ambush is laid only from a report of the vehicle this fresh: an older one tells too little of where it is now"
+   },
+   {
+    "key": "MineChance",
+    "value": "0.35",
+    "help": "Chance (0 to 1) that the mines-and-fire ambush is among the choices of an ambush"
+   },
+   {
+    "key": "MinesMax",
+    "value": "2",
+    "help": "Most TM-62M anti-tank mines laid on the road by the mines-and-fire ambush (1 to 4)"
+   },
+   {
+    "key": "BaitApMinesMax",
+    "value": "2",
+    "help": "Most PMN-4 anti-personnel mines laid around the bait wreck (0 to 3)"
+   },
+   {
+    "key": "AsphaltMinWidth",
+    "value": "6",
+    "help": "Meters. Roads at least this wide count as asphalt roads, the only ones that get a bait wreck"
+   },
+   {
+    "key": "AmbushNightFog",
+    "value": "0.4",
+    "help": "Fog level (0 to 1) from which the close night ambush is possible by day"
+   },
+   {
+    "key": "AmbushLongRangeFogMax",
+    "value": "0.2",
+    "help": "Fog level (0 to 1) below which the long-range hunter is possible; never by night"
+   },
+   {
+    "key": "AmbushLongRangeDistanceMin",
+    "value": "800",
+    "help": "Meters from the kill zone to the crest of the long-range hunter, which must see the kill zone (300 to 3000)..."
+   },
+   {
+    "key": "AmbushLongRangeDistanceMax",
+    "value": "1500",
+    "help": "...up to this far"
+   },
+   {
+    "key": "AmbushLongRangeMaxSlope",
+    "value": "0.15",
+    "help": "Steepest ground (height per meter, 0.02 to 0.5) where the hunter vehicle stops on its crest"
+   },
+   {
+    "key": "AmbushLongRangePlayerDistance",
+    "value": "600",
+    "help": "Meters. No crest this close to a player, and the hunter vehicle never appears with a player this close"
+   },
+   {
+    "key": "AmbushLongRangeVehicleChance",
+    "value": "0.7",
+    "help": "Chance (0 to 1) that a vehicle holds the crest when a drone team could too (the other choice)"
+   },
+   {
+    "key": "AmbushLongRangeCleanupDistance",
+    "value": "500",
+    "help": "Meters. The hunter vehicle of an ambush that is over is removed once no player is this close"
+   },
+   {
+    "key": "AmbushLongRangeVehicles",
+    "value": "[\"{E8D254FC24B032C2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Kornet.et\", \"{C63657059F3EF8…",
+    "help": "Vehicles drawn for the long-range hunter, each with a weapon turret (empty: always a drone team)"
+   },
+   {
+    "key": "AmbushLongRangeCrewPrefab",
+    "value": "\"{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et\"",
+    "help": "Soldier spawned in the driver and turret seats of the hunter vehicle (his faction is the crew's)"
+   },
+   {
+    "key": "AmbushJunctionMinDistance",
+    "value": "250",
+    "help": "Meters. The pre-registered junction ambush takes a junction at least this far ahead of the vehicle on its road, up to AmbushDistanceMax"
+   },
+   {
+    "key": "AmbushJunctionPostDistance",
+    "value": "150",
+    "help": "Meters from the junction where its group waits (never inside the danger zone of the mortar rounds, about 130 m by default)"
+   },
+   {
+    "key": "AmbushWeightATTeam",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightLShape",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightMines",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightTrap",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightBait",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightFPVCorridor",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightNightClose",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightLongRange",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "AmbushWeightJunction",
+    "value": "1.0",
+    "help": null
+   },
+   {
+    "key": "MinePrefab",
+    "value": "\"{44DCCCB56D42C43B}PrefabsEditable/Mines/E_Mine_TM62M.et\"",
+    "help": "Anti-tank mine of the mines-and-fire ambush (an editable mine arms itself)"
+   },
+   {
+    "key": "ApMinePrefab",
+    "value": "\"{4F6673E18A5A5974}PrefabsEditable/Mines/E_Mine_PMN4.et\"",
+    "help": "Anti-personnel mine around the bait"
+   },
+   {
+    "key": "BaitPrefabs",
+    "value": "[\"{712232FE13FAC5A7}Prefabs/Structures/Roadblock/Ambush_Asphalt_Roadblock_01.et\", \"{1AA…",
+    "help": "Roadblock wrecks drawn for the bait; their pivot lies on the middle of the road"
+   },
+   {
+    "key": "MineMethodWeightScript",
+    "value": "1",
+    "help": null
+   },
+   {
+    "key": "MineMethodWeightSappers",
+    "value": "1",
+    "help": null
+   },
+   {
+    "key": "MineMethodWeightDrone",
+    "value": "1",
+    "help": null
+   },
+   {
+    "key": "MineLaySeconds",
+    "value": "8",
+    "help": "Seconds a sapper kneels on the road to lay one mine (1 to 60)"
+   },
+   {
+    "key": "MineLiftSeconds",
+    "value": "10",
+    "help": "Seconds a sapper kneels to lift one mine (1 to 60)"
+   },
+   {
+    "key": "MineLayTimeoutSeconds",
+    "value": "150",
+    "help": "Seconds the sappers or the drone get to lay the mines, from the ambush laid (30 to 900)"
+   },
+   {
+    "key": "MineLiftTimeoutSeconds",
+    "value": "300",
+    "help": "Seconds the sappers or the drone get to lift the mines once the ambush is over, else the script removes them out of sight (30 to 3600)"
+   },
+   {
+    "key": "MineLayAbortDistance",
+    "value": "150",
+    "help": "Meters. A sapper still walking, or a drone still flying, gives up laying when a player is this close to the mine spot"
+   },
+   {
+    "key": "MineLiftPlayerDistance",
+    "value": "120",
+    "help": "Meters. The sappers or the drone wait to lift a mine until no player is this close to it"
+   },
+   {
+    "key": "MineDroneCruiseHeight",
+    "value": "30",
+    "help": "Meters above the ground a mine drone flies to and from the road (10 to 100)"
+   },
+   {
+    "key": "MineDroneDropHeight",
+    "value": "3",
+    "help": "Meters above the road a mine drone comes down to drop or lift a mine (1.5 to 10)"
+   },
+   {
+    "key": "MineDroneDropSeconds",
+    "value": "2",
+    "help": "Seconds a mine drone hovers low before it drops its mine"
+   },
+   {
+    "key": "MineDroneLiftSeconds",
+    "value": "4",
+    "help": "Seconds a mine drone hovers low over a mine to lift it"
+   },
+   {
+    "key": "DroneTeamVehiclePrefab",
+    "value": "\"{D768882A4BA33526}Prefabs/Vehicles/Wheeled/MRZR/Unarmed/MRZR_D4_Unarmed_Black.et\"",
+    "help": "Vehicle the drone team of an ambush came in, parked where it spawns (empty: none)"
+   },
+   {
+    "key": "RoadblockPool",
+    "value": "true",
+    "help": "true: a pool of roadblocks (the bait prefabs) stays on the asphalt roads, kept across restarts in roadblocks.json next to this file; road ambushes may take one on their route as their kill zone"
+   },
+   {
+    "key": "RoadblockStartCount",
+    "value": "4",
+    "help": "Roadblocks laid at least, one of each prefab first, on roads the players drive often, else on random asphalt roads"
+   },
+   {
+    "key": "RoadblockMax",
+    "value": "8",
+    "help": "Roadblocks at most"
+   },
+   {
+    "key": "RoadblockRotationHours",
+    "value": "48",
+    "help": "Real hours after which a roadblock is removed, out of sight of the players, and another one comes elsewhere"
+   },
+   {
+    "key": "RoadblockGrowSeconds",
+    "value": "3600",
+    "help": "Game seconds between two new roadblocks on roads the players drive often, beyond RoadblockStartCount"
+   },
+   {
+    "key": "RoadblockMinVisits",
+    "value": "3",
+    "help": "Passages of player vehicles through a 200 m road cell before the HQ counts the road as driven often"
+   },
+   {
+    "key": "RoadblockSpacing",
+    "value": "1000",
+    "help": "Meters at least between two roadblocks"
+   },
+   {
+    "key": "RoadblockPlayerDistance",
+    "value": "500",
+    "help": "Meters: no roadblock appears or is removed with a player nearer than this"
+   },
+   {
+    "key": "RoadblockBaseMargin",
+    "value": "100",
+    "help": "Meters beyond the radius of any base where no roadblock lies"
+   },
+   {
+    "key": "RoadblockAmbushChance",
+    "value": "0.7",
+    "help": "Chance that a road ambush whose route passes a roadblock takes it as its kill zone (a prepared ambush)"
+   },
+   {
+    "key": "RoadblockAmbushMinDistance",
+    "value": "400",
+    "help": "Meters ahead of the target vehicle a roadblock must be to become the kill zone (beyond AmbushSpawnPlayerDistance, or the groups come from afar)"
+   },
+   {
+    "key": "RoadMemorySampleSeconds",
+    "value": "30",
+    "help": "Seconds between two looks at the roads the player vehicles drive"
+   },
+   {
+    "key": "RoadMemoryMax",
+    "value": "300",
+    "help": "Road cells remembered at most; the least driven is forgotten first"
+   },
+   {
+    "key": "RoadMemoryKeep",
+    "value": "0.75",
+    "help": "Share of its passages a road cell keeps at each restart (0.75: a road the players left is forgotten in a few days)"
+   },
+   {
+    "key": "AirStrikes",
+    "value": "true",
+    "help": "true: the HQ calls air strikes with the RHS call-ins: glide bomb guided by a Mavic, cruise missile on a base taken by the players, jet recon passes. false: none"
+   },
+   {
+    "key": "AirDangerCloseDistance",
+    "value": "150",
+    "help": "Meters. No bomb nor missile within this distance of one of our soldiers (any AI of our factions)"
+   },
+   {
+    "key": "AirGlideBomb",
+    "value": "true",
+    "help": "true: glide bomb (FAB-500 UMPK) on a player on foot that one of our Mavics keeps in sight while he holds his spot"
+   },
+   {
+    "key": "AirGlidePrefab",
+    "value": "\"{B881CA7B63D4EDF5}Prefabs/Vehicles/Bombs/UMPK500/UMPK500_CAS.et\"",
+    "help": "Prefab of the glide bomb (an RHS call-in)"
+   },
+   {
+    "key": "AirGlideImpactSeconds",
+    "value": "26",
+    "help": "Seconds from the spawn of that prefab to its impact (26 for the RHS UMPK)"
+   },
+   {
+    "key": "AirGlideHoldSeconds",
+    "value": "60",
+    "help": "Seconds the player must stay within AirGlideHoldRadius, in sight of the Mavic"
+   },
+   {
+    "key": "AirGlideHoldRadius",
+    "value": "40",
+    "help": "Meters. Moving farther starts the hold again"
+   },
+   {
+    "key": "AirGlideMinEscalation",
+    "value": "1",
+    "help": "Groups the HQ lost near the player lately (escalation, 0 to 3) before it spends a glide bomb on him. 0: any player"
+   },
+   {
+    "key": "AirGlideChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) that a full hold draws the strike; refused, the next full hold draws again"
+   },
+   {
+    "key": "AirGlideDelayMin",
+    "value": "40",
+    "help": "Seconds from the request to the impact, at least"
+   },
+   {
+    "key": "AirGlideDelayMax",
+    "value": "70",
+    "help": "And at most"
+   },
+   {
+    "key": "AirGlideDispersion",
+    "value": "12",
+    "help": "Meters. The bomb lands up to this far from where the Mavic last saw the player"
+   },
+   {
+    "key": "AirGlideLostSeconds",
+    "value": "10",
+    "help": "Seconds without the guiding Mavic on its target before the release: the strike is called off"
+   },
+   {
+    "key": "AirGlideCooldownSeconds",
+    "value": "900",
+    "help": "Seconds after a glide bomb request before the next one"
+   },
+   {
+    "key": "AirMissile",
+    "value": "true",
+    "help": "true: cruise missile (Kh-55) on a base the players take from our factions"
+   },
+   {
+    "key": "AirMissilePrefab",
+    "value": "\"{17B08DA4B050BBFE}Prefabs/Vehicles/Missles/kh55/KH55_CAS.et\"",
+    "help": "Prefab of the cruise missile (an RHS call-in)"
+   },
+   {
+    "key": "AirMissileImpactSeconds",
+    "value": "25",
+    "help": "Seconds from the spawn of that prefab to its impact (25 for the RHS Kh-55)"
+   },
+   {
+    "key": "AirMissileChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) that a base taken draws a missile"
+   },
+   {
+    "key": "AirMissileDelayMin",
+    "value": "180",
+    "help": "Seconds from the capture to the impact, at least"
+   },
+   {
+    "key": "AirMissileDelayMax",
+    "value": "480",
+    "help": "And at most"
+   },
+   {
+    "key": "AirMissileWarningSeconds",
+    "value": "40",
+    "help": "Seconds before the impact when the base siren sounds for the players inside it (0: no warning)"
+   },
+   {
+    "key": "AirMissileCooldownSeconds",
+    "value": "1800",
+    "help": "Seconds after a missile order before the next one"
+   },
+   {
+    "key": "AirMissileDamageAssessment",
+    "value": "true",
+    "help": "true: after the impact a jet passes over the base and reports the players still there"
+   },
+   {
+    "key": "AirFlyby",
+    "value": "true",
+    "help": "true: jet recon passes (Su-57) over a random player now and then"
+   },
+   {
+    "key": "AirFlybyPrefab",
+    "value": "\"{FDD01BF3CEAB37E3}Prefabs/Vehicles/Airplanes/SU57/su57_flyby.et\"",
+    "help": "Prefab of the jet pass (an RHS call-in, harmless)"
+   },
+   {
+    "key": "AirFlybyPassSeconds",
+    "value": "22",
+    "help": "Seconds from the spawn of that prefab to the jet over the target (22 for the RHS Su-57)"
+   },
+   {
+    "key": "AirFlybyIntervalMin",
+    "value": "900",
+    "help": "Seconds between two recon passes, at least"
+   },
+   {
+    "key": "AirFlybyIntervalMax",
+    "value": "1800",
+    "help": "And at most"
+   },
+   {
+    "key": "AirFlybyReportChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) that a recon pass reports the players it saw to the HQ"
+   },
+   {
+    "key": "AirFlybySeeDistance",
+    "value": "400",
+    "help": "Meters. Players this close to the point the jet flies over are seen"
+   },
+   {
+    "key": "GeranRaids",
+    "value": "true",
+    "help": "true: the HQ sends S&D Fixed Wing launcher trucks to fire Geran salvos at bases held by the players. false: none"
+   },
+   {
+    "key": "GeranGeran2TruckPrefab",
+    "value": "\"{39EEC8F0EC466206}Prefabs/SFW/Heavy/SFW_Ural4320_Geran2.et\"",
+    "help": "Prefab of the Geran-2 launcher truck (S&D Fixed Wing)"
+   },
+   {
+    "key": "GeranGeran4TruckPrefab",
+    "value": "\"{F727A29984DA81C6}Prefabs/SFW/Heavy/SFW_Ural4320_Geran4.et\"",
+    "help": "Prefab of the Geran-4 launcher truck (S&D Fixed Wing, jet: faster)"
+   },
+   {
+    "key": "GeranGeran4Chance",
+    "value": "0.4",
+    "help": "Chance (0 to 1) that a raid on a base the players hold uses the Geran-4 truck, else the Geran-2"
+   },
+   {
+    "key": "GeranGeran4CaptureChance",
+    "value": "0.7",
+    "help": "The same for a raid on a base the players just took (time counts: the jet more often)"
+   },
+   {
+    "key": "GeranCaptureChance",
+    "value": "0.35",
+    "help": "Chance (0 to 1) that a base the players take, when it draws no cruise missile, draws a raid"
+   },
+   {
+    "key": "GeranCaptureDelayMin",
+    "value": "120",
+    "help": "Seconds from that capture to the truck leaving, at least"
+   },
+   {
+    "key": "GeranCaptureDelayMax",
+    "value": "300",
+    "help": "And at most"
+   },
+   {
+    "key": "GeranRaidIntervalMin",
+    "value": "1800",
+    "help": "Seconds between two raids on the base the players hold with the most of them inside, at least"
+   },
+   {
+    "key": "GeranRaidIntervalMax",
+    "value": "3600",
+    "help": "And at most"
+   },
+   {
+    "key": "GeranCooldownSeconds",
+    "value": "1200",
+    "help": "Seconds after a raid goes out before the next one; one raid at a time"
+   },
+   {
+    "key": "GeranSalvoMin",
+    "value": "2",
+    "help": "Rounds fired by one truck, at least (1 to 4: its magazine; 45 s reload between two)"
+   },
+   {
+    "key": "GeranSalvoMax",
+    "value": "3",
+    "help": "And at most"
+   },
+   {
+    "key": "GeranAimDispersion",
+    "value": "30",
+    "help": "Meters. Each round aims up to this far from the target"
+   },
+   {
+    "key": "GeranLaunchMinDistance",
+    "value": "2500",
+    "help": "Meters. The launch site is at least this far from the target"
+   },
+   {
+    "key": "GeranLaunchMaxDistance",
+    "value": "9000",
+    "help": "Meters. The base the truck comes from is at most this far from the target"
+   },
+   {
+    "key": "GeranSpawnPlayerDistance",
+    "value": "1200",
+    "help": "Meters. The truck comes from a base of ours with no player within this distance"
+   },
+   {
+    "key": "GeranSitePlayerDistance",
+    "value": "1000",
+    "help": "Meters. No player within this distance of the launch site"
+   },
+   {
+    "key": "GeranSiteDistanceMin",
+    "value": "300",
+    "help": "Meters the truck drives from its base to the launch site, at least"
+   },
+   {
+    "key": "GeranSiteDistanceMax",
+    "value": "800",
+    "help": "And at most"
+   },
+   {
+    "key": "GeranSiteMaxSlope",
+    "value": "0.08",
+    "help": "Steepest ground of the launch site (rise over run, 0.08 = about 4.6 deg; the rail refuses past 8 deg)"
+   },
+   {
+    "key": "GeranDriveTimeoutSeconds",
+    "value": "420",
+    "help": "Seconds of driving at most: then the truck fires from where it stopped"
+   },
+   {
+    "key": "GeranRoundTimeoutSeconds",
+    "value": "150",
+    "help": "Seconds without a launch before the salvo ends (reload 45 s, weather, refusals)"
+   },
+   {
+    "key": "GeranLeaveTimeoutSeconds",
+    "value": "600",
+    "help": "Seconds of the drive back at most, then the truck is removed out of the players' sight"
+   },
+   {
+    "key": "GeranWarningDistance",
+    "value": "2500",
+    "help": "Meters. The siren of the target base sounds when the first round is this close (0: no warning)"
+   },
+   {
+    "key": "GeranDangerCloseDistance",
+    "value": "200",
+    "help": "Meters. No round launched while one of our soldiers (any AI of our factions) is this close to the target"
+   },
+   {
+    "key": "GeranCleanupPlayerDistance",
+    "value": "300",
+    "help": "Meters. The truck and its crew are removed only with no player this close"
+   },
+   {
+    "key": "GeranEscortCount",
+    "value": "2",
+    "help": "Soldiers of the escort in the cab (0 to 2, the free seats of the Ural cab): they get out at the launch site and patrol around the truck"
+   },
+   {
+    "key": "GeranEscortPrefabs",
+    "value": "[\"{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman…",
+    "help": "Soldier prefabs of the escort, taken in turn"
+   },
+   {
+    "key": "GeranEscortRadius",
+    "value": "40",
+    "help": "Meters. The escort patrols this far around the truck while it fires"
+   },
+   {
+    "key": "GeranEscortBoardSeconds",
+    "value": "90",
+    "help": "Seconds the truck waits for its escort to get back in after the salvo, then it leaves without the ones still out"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_FireSupport/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false turns the enemy mortars off"
+   },
+   {
+    "key": "ReplaceCPRArtillery",
+    "value": "true",
+    "help": "true: the mortar pits of ConflictPVERemixed stay empty, these batteries replace them (also while Enabled is false)"
+   },
+   {
+    "key": "ScanSeconds",
+    "value": "3",
+    "help": "Seconds between two looks of the enemy observers at the players"
+   },
+   {
+    "key": "MaxBatteries",
+    "value": "3",
+    "help": "Mortar batteries the enemy can have at once on the map (each one: a mortar pit and its crew)"
+   },
+   {
+    "key": "PlayersPerMission",
+    "value": "4",
+    "help": "One fire mission at a time per this many players in the game (10 players, 4: 3 missions)"
+   },
+   {
+    "key": "MissionGapSeconds",
+    "value": "60",
+    "help": "Seconds between the start of two fire missions"
+   },
+   {
+    "key": "BatteryComposition",
+    "value": "\"{28D63631873AA636}Prefabs/Compositions/Slotted/SlotFlatSmall/MortarPlacement_S_USSR_01…",
+    "help": "Mortar pit placed for a battery (it holds the mortar)"
+   },
+   {
+    "key": "BatteryTube",
+    "value": "\"{D1FFE458E8AC4BDB}Prefabs/Weapons/Mortars/2B14/Mortar_2B14.et\"",
+    "help": "Mortar placed instead if the pit holds none"
+   },
+   {
+    "key": "CrewGroup",
+    "value": "\"{6A4EF2879232E589}Prefabs/Groups/OPFOR/AmbientPatrols/INDF_Group_USSR_MortarCrew.et\"",
+    "help": "Group whose first members crew the mortar"
+   },
+   {
+    "key": "CrewSize",
+    "value": "6",
+    "help": "Crewmen per battery: the gunner in the mortar, the sentries and the patrol. The battery is silent once none is left alive within 60 m of the mortar"
+   },
+   {
+    "key": "SentryCount",
+    "value": "2",
+    "help": "Crewmen who hold posts around the pit to protect the gunner; the others patrol"
+   },
+   {
+    "key": "PatrolRadius",
+    "value": "50",
+    "help": "Meters. The patrolling crewmen walk around the pit this far out"
+   },
+   {
+    "key": "AmmoHE",
+    "value": "\"{98EC9C526AFBA282}Prefabs/Weapons/Ammo/Ammo_Shell_82mm_HE_O832DU.et\"",
+    "help": "High explosive round (adjustment and fire for effect)"
+   },
+   {
+    "key": "AmmoSmoke",
+    "value": "\"{A544A2C131DE2C64}Prefabs/Weapons/Ammo/Ammo_Shell_82mm_Smoke_D832DU.et\"",
+    "help": "Smoke round (screen for a counter-attack)"
+   },
+   {
+    "key": "AmmoIllumination",
+    "value": "\"{C8A906FB198D1A33}Prefabs/Weapons/Ammo/Ammo_Shell_82mm_Illum_S832S.et\"",
+    "help": "Illumination round (first round of a night mission)"
+   },
+   {
+    "key": "BatteryMinDistance",
+    "value": "900",
+    "help": "Meters. A new battery is set up in an enemy base at least this far from the target"
+   },
+   {
+    "key": "BatteryMaxDistance",
+    "value": "3500",
+    "help": "Meters. And at most this far (the 2B14 reaches about 4 km)"
+   },
+   {
+    "key": "BatteryIdealDistance",
+    "value": "1800",
+    "help": "Meters. Among the bases that fit, the one closest to this distance from the target is chosen"
+   },
+   {
+    "key": "BatteryPlayerDistance",
+    "value": "600",
+    "help": "Meters. No battery is set up in a base with a player this close"
+   },
+   {
+    "key": "SiteSearchRadius",
+    "value": "400",
+    "help": "Meters around the center of the base where the mortar pit is dug, on a random clear spot"
+   },
+   {
+    "key": "SiteTownRadius",
+    "value": "80",
+    "help": "Meters. Out of towns and villages: the pit is refused when more than SiteTownBuildings buildings stand this close"
+   },
+   {
+    "key": "SiteTownBuildings",
+    "value": "2",
+    "help": "Buildings allowed within SiteTownRadius of the pit (2: a farm or a shed)"
+   },
+   {
+    "key": "SiteBuildingClearance",
+    "value": "25",
+    "help": "Meters. No house this close to the pit"
+   },
+   {
+    "key": "SiteClearance",
+    "value": "10",
+    "help": "Meters. Nothing standing this close to the pit: tree, bush, wall, fence, prop, vehicle"
+   },
+   {
+    "key": "SiteRoadClearance",
+    "value": "15",
+    "help": "Meters. No road this close to the pit (paved squares and yards are refused as well)"
+   },
+   {
+    "key": "SiteMaxRise",
+    "value": "0.5",
+    "help": "Meters. Largest height difference of the ground within 7 m of the pit (its earth platform)"
+   },
+   {
+    "key": "EmplaceSeconds",
+    "value": "120",
+    "help": "Seconds for a new battery to set up before its first round"
+   },
+   {
+    "key": "RoundsPerBattery",
+    "value": "24",
+    "help": "Rounds a battery holds"
+   },
+   {
+    "key": "ResupplySecondsPerRound",
+    "value": "120",
+    "help": "Seconds for an idle battery to get one round back while its base holds"
+   },
+   {
+    "key": "ObserverRange",
+    "value": "800",
+    "help": "Meters. A group leader who sees a player this close can call fire on him"
+   },
+   {
+    "key": "ObserverSeenSeconds",
+    "value": "6",
+    "help": "Seconds since the observer last saw the player for him to count as seen"
+   },
+   {
+    "key": "DroneSpotRadius",
+    "value": "150",
+    "help": "Meters. An airborne enemy recon drone (Mavic) sees the players this close horizontally, unless cover hides them"
+   },
+   {
+    "key": "StaticSeconds",
+    "value": "60",
+    "help": "Seconds a seen player must stay put before fire is called on him"
+   },
+   {
+    "key": "StaticRadius",
+    "value": "15",
+    "help": "Meters. A player who moves less than this stays put"
+   },
+   {
+    "key": "RequestSecondsMin",
+    "value": "30",
+    "help": "Seconds of the call for fire before the first round, at least"
+   },
+   {
+    "key": "RequestSecondsMax",
+    "value": "60",
+    "help": "And at most"
+   },
+   {
+    "key": "AdjustErrorMin",
+    "value": "60",
+    "help": "Meters. The adjusting round is aimed this far off the target, at least"
+   },
+   {
+    "key": "AdjustErrorMax",
+    "value": "140",
+    "help": "And at most"
+   },
+   {
+    "key": "AdjustSeconds",
+    "value": "20",
+    "help": "Seconds between the burst of an adjusting round and the next round"
+   },
+   {
+    "key": "MaxAdjustRounds",
+    "value": "2",
+    "help": "Adjusting rounds before fire for effect at most"
+   },
+   {
+    "key": "EffectRadius",
+    "value": "40",
+    "help": "Meters. An adjusting round this close to the target brings fire for effect at once"
+   },
+   {
+    "key": "EffectRoundsMin",
+    "value": "4",
+    "help": "Rounds of fire for effect, at least"
+   },
+   {
+    "key": "EffectRoundsMax",
+    "value": "6",
+    "help": "And at most"
+   },
+   {
+    "key": "SecondsBetweenRounds",
+    "value": "4",
+    "help": "Seconds between two rounds of fire for effect"
+   },
+   {
+    "key": "EffectDispersion",
+    "value": "25",
+    "help": "Meters. Rounds of fire for effect fall this far around the aim point at most"
+   },
+   {
+    "key": "RoundDispersion",
+    "value": "30",
+    "help": "Meters. Natural scatter of the mortar: every round bursts this far from its aim point at most, adjusting rounds included"
+   },
+   {
+    "key": "DangerClose",
+    "value": "80",
+    "help": "Meters. No round is fired while a friendly enemy soldier is this close to its aim point (after 60 s the mission ends)"
+   },
+   {
+    "key": "Illumination",
+    "value": "true",
+    "help": "true: at night an illumination round goes first"
+   },
+   {
+    "key": "IlluminationLeadSeconds",
+    "value": "12",
+    "help": "Seconds between the illumination round and the next round"
+   },
+   {
+    "key": "ProtectiveFire",
+    "value": "true",
+    "help": "true: fire on the generator of an enemy base while players capture it (registered target, no adjustment)"
+   },
+   {
+    "key": "ProtectiveRequestSeconds",
+    "value": "15",
+    "help": "Seconds of the call for that fire"
+   },
+   {
+    "key": "ProtectiveRounds",
+    "value": "3",
+    "help": "Rounds on the generator"
+   },
+   {
+    "key": "ProtectiveDispersion",
+    "value": "20",
+    "help": "Meters around the generator"
+   },
+   {
+    "key": "HarassLostBases",
+    "value": "true",
+    "help": "true: harassing fire on a base the enemy just lost to players, then smoke for the counter-attack"
+   },
+   {
+    "key": "HarassDelayMin",
+    "value": "60",
+    "help": "Seconds after the loss of the base before that fire, at least"
+   },
+   {
+    "key": "HarassDelayMax",
+    "value": "150",
+    "help": "And at most"
+   },
+   {
+    "key": "HarassRounds",
+    "value": "6",
+    "help": "Rounds of harassing fire"
+   },
+   {
+    "key": "HarassSeconds",
+    "value": "90",
+    "help": "Seconds over which they fall"
+   },
+   {
+    "key": "CounterAttackDistance",
+    "value": "600",
+    "help": "Meters. Enemy troops this close to the lost base get a smoke screen between them and the base"
+   },
+   {
+    "key": "LiftFireDistance",
+    "value": "200",
+    "help": "Meters. The harassing fire stops when enemy troops come this close to the base"
+   },
+   {
+    "key": "SmokeRounds",
+    "value": "3",
+    "help": "Smoke rounds of that screen (0: none)"
+   },
+   {
+    "key": "TargetCooldownSeconds",
+    "value": "300",
+    "help": "Seconds before the same spot can be shelled again"
+   },
+   {
+    "key": "TargetCooldownRadius",
+    "value": "150",
+    "help": "Meters. Size of that spot"
+   },
+   {
+    "key": "HQSafeDistance",
+    "value": "300",
+    "help": "Meters beyond the radius of a player HQ where no round is ever called"
+   },
+   {
+    "key": "AdminFaction",
+    "value": "\"USSR\"",
+    "help": "Faction of the battery for the #firesupport here test of the admins"
+   },
+   {
+    "key": "ReconStrike",
+    "value": "true",
+    "help": "true: the enemy HQ may ask fire on a player its intel found, before its hunter group goes in (the group waits outside the fire)"
+   },
+   {
+    "key": "ReconStrikeHoldSeconds",
+    "value": "20",
+    "help": "Seconds a seen player must stay put (StaticRadius) before a recon-strike is fired on him"
+   },
+   {
+    "key": "ReconStrikeRequestSecondsMin",
+    "value": "10",
+    "help": "Seconds of the call for a recon-strike before the first round, at least (the HQ already passed the target)"
+   },
+   {
+    "key": "ReconStrikeRequestSecondsMax",
+    "value": "20",
+    "help": "And at most"
+   },
+   {
+    "key": "ReconStrikeDroneAdjustFactor",
+    "value": "0.5",
+    "help": "Error of the first adjusting round of a recon-strike seen by a drone, times AdjustErrorMin/Max (0.5: half as far off)"
+   },
+   {
+    "key": "ObserverGraceSeconds",
+    "value": "45",
+    "help": "Seconds an observed mission or a recon-strike holds its fire when its observer is lost (drone gone home, leader behind cover), waiting for him or another one who sees a player near the target, before it ends"
+   },
+   {
+    "key": "RegisteredRequestSecondsMin",
+    "value": "5",
+    "help": "Seconds of the call for a registered strike (a road ambush of the enemy HQ on the junction its battery registered) before the first round, at least..."
+   },
+   {
+    "key": "RegisteredRequestSecondsMax",
+    "value": "10",
+    "help": "...and at most"
+   },
+   {
+    "key": "RegisteredDispersion",
+    "value": "20",
+    "help": "Meters. Spread of the rounds of a registered strike around the registered point (no adjusting round)"
+   },
+   {
+    "key": "DoubleTap",
+    "value": "true",
+    "help": "true: a strike of the enemy HQ that leaves a player down may be followed, once, by a second one on those who come to help him"
+   },
+   {
+    "key": "DoubleTapChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) of the double tap after a strike that left a player down"
+   },
+   {
+    "key": "DoubleTapRadius",
+    "value": "40",
+    "help": "Meters. A player down this close to the target of the strike, and the helpers this close to him"
+   },
+   {
+    "key": "DoubleTapWatchSeconds",
+    "value": "240",
+    "help": "Seconds the battery waits for the helpers after the strike"
+   },
+   {
+    "key": "DoubleTapRequestSeconds",
+    "value": "10",
+    "help": "Seconds of the call for the second strike before its adjusting round"
+   },
+   {
+    "key": "DoubleTapAdjustError",
+    "value": "40",
+    "help": "Meters off the helpers where the adjusting round of the second strike lands, a warning before the fire for effect"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_GeneratorCapture/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false keeps the vanilla capture everywhere"
+   },
+   {
+    "key": "CaptureLiters",
+    "value": "18",
+    "help": "Liters in a repaired generator for a player of a hostile faction standing by it to take the base. Fuel stays in the tank until burned. 18: most of the 20 L jerrycan of the HQ, about 22 s of pouring"
+   },
+   {
+    "key": "LitersPerHour",
+    "value": "40",
+    "help": "Fuel burned per hour by a running generator. 40: the 20 L tank lasts 30 min"
+   },
+   {
+    "key": "SupplyPerLiter",
+    "value": "10",
+    "help": "Supplies given to the base per liter burned, for fuel poured from jerrycans. 10: the 20 L jerrycan of the HQ pays 200 supplies. The base storage caps what a base holds"
+   },
+   {
+    "key": "StationSupplyPerLiter",
+    "value": "10",
+    "help": "Supplies per liter burned for fuel coming from a fuel depot or a fuel truck (same as SupplyPerLiter by default: a liter is a liter, and the base storage caps what a base holds)"
+   },
+   {
+    "key": "FuelSourceRadius",
+    "value": "30",
+    "help": "Meters. A friendly fuel depot or deployed fuel truck this close to the generator keeps it full"
+   },
+   {
+    "key": "ZeroStartingSupplies",
+    "value": "true",
+    "help": "true: a base with a generator starts with no supplies"
+   },
+   {
+    "key": "Sabotage",
+    "value": "true",
+    "help": "true: the nearest enemy AI inside the base radius comes to put the generator out of order"
+   },
+   {
+    "key": "SabotageDelaySeconds",
+    "value": "30",
+    "help": "Seconds after a capture before the first sabotage"
+   },
+   {
+    "key": "SabotageSeconds",
+    "value": "8",
+    "help": "Seconds of work for the sabotage (the repair takes 8 s)"
+   },
+   {
+    "key": "SabotageRadius",
+    "value": "2",
+    "help": "Meters from the generator where the saboteur stands"
+   },
+   {
+    "key": "SabotageApproachSeconds",
+    "value": "90",
+    "help": "Seconds the saboteur has to walk to the generator; after that he gives up and another one comes 30 s later"
+   },
+   {
+    "key": "Breach",
+    "value": "true",
+    "help": "true: a saboteur stopped by a destructible wall (a player's HESCO) lays charges against the wall closest to the generator, then goes on with the sabotage. The charges exist only once laid, armed with a timed fuse; players can disarm them, and a disarmed one disappears"
+   },
+   {
+    "key": "BreachSearchRadius",
+    "value": "20",
+    "help": "Meters around the generator where walls are looked for"
+   },
+   {
+    "key": "BreachApproachSeconds",
+    "value": "60",
+    "help": "Seconds the breacher has to reach the wall"
+   },
+   {
+    "key": "BreachPlantSeconds",
+    "value": "6",
+    "help": "Seconds of work to lay the charges"
+   },
+   {
+    "key": "BreachFuseSeconds",
+    "value": "20",
+    "help": "Seconds between the arming and the blast, the time players have to disarm"
+   },
+   {
+    "key": "BreachRetreatDistance",
+    "value": "35",
+    "help": "Meters the breacher and his comrades run away from the charges before the blast"
+   },
+   {
+    "key": "BreachChargeDamage",
+    "value": "14000",
+    "help": "Damage counted per charge to decide how many to lay (one charge stuck on the face, TM-62M warhead, deals about 16000 to a HESCO; HESCO health 5000 / 10000 / 20000)"
+   },
+   {
+    "key": "BreachMaxCharges",
+    "value": "4",
+    "help": "Most charges laid at once"
+   },
+   {
+    "key": "Alarm",
+    "value": "true",
+    "help": "true: the base siren sounds for the players in the base while fuel is poured for a capture or a sabotage is in progress, and the owner gets the vanilla base under attack warning"
+   },
+   {
+    "key": "AlarmRepeatSeconds",
+    "value": "20",
+    "help": "Seconds between two sirens while it lasts"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_HunterSize/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "PlayerRadius",
+    "value": "1000.0",
+    "help": "Metres. Living players within this distance of where a squad starts are counted for its size (at least 1). 0 counts every player on the server"
+   },
+   {
+    "key": "HuntersPerPlayer",
+    "value": "2.0",
+    "help": "Soldiers per counted player in each Constant Enemy Threat hunter group, rounded up. Replaces SquadSize of CETConfig.json"
+   },
+   {
+    "key": "HuntersMin",
+    "value": "2",
+    "help": "Fewest soldiers in a hunter group"
+   },
+   {
+    "key": "HuntersMax",
+    "value": "5",
+    "help": "Most soldiers in a hunter group. Beyond the group's own members, its members are repeated in order"
+   },
+   {
+    "key": "ParatroopersPerPlayer",
+    "value": "3.0",
+    "help": "Paratroopers per counted player in each AI Airborne helicopter drop, rounded up"
+   },
+   {
+    "key": "ParatroopersMin",
+    "value": "4",
+    "help": "Fewest paratroopers in a drop"
+   },
+   {
+    "key": "ParatroopersMax",
+    "value": "14",
+    "help": "Most paratroopers in a drop, also limited by the helicopter's passenger seats (14 in the Mi-8)"
+   },
+   {
+    "key": "VDVParatrooperWeight",
+    "value": "0.0",
+    "help": "Draw weight of the VDV paratroopers (Flora, 1990s look, left out by default) for each AI Airborne helicopter. A group's chance is its weight divided by the sum of the three weights; 0 never draws it"
+   },
+   {
+    "key": "SpetsnazParatrooperWeight",
+    "value": "1.0",
+    "help": "Draw weight of the black Spetsnaz paratroopers (MultiCam Black)"
+   },
+   {
+    "key": "ATACSParatrooperWeight",
+    "value": "1.0",
+    "help": "Draw weight of the A-TACS FG Spetsnaz paratroopers"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_MavicLight/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "true: a small light under the enemy Mavic tells the players what it is doing. false: no light"
+   },
+   {
+    "key": "Factions",
+    "value": "[\"USSR\", \"FIA\"]",
+    "help": "Faction keys whose Mavics carry the light"
+   },
+   {
+    "key": "PatrolColor",
+    "value": "\"0,255,0\"",
+    "help": "R,G,B (0 to 255) on patrol, nothing spotted"
+   },
+   {
+    "key": "TrackingColor",
+    "value": "\"255,0,0\"",
+    "help": "R,G,B while it tracks a target"
+   },
+   {
+    "key": "SearchingColor",
+    "value": "\"255,140,0\"",
+    "help": "R,G,B, blinking, while it searches where it lost its target"
+   },
+   {
+    "key": "LightValue",
+    "value": "8.0",
+    "help": "Brightness (light value, LV). Higher shows from farther, in daylight too"
+   },
+   {
+    "key": "Radius",
+    "value": "3.0",
+    "help": "Metres the light reaches around the drone"
+   },
+   {
+    "key": "FlareScale",
+    "value": "1.0",
+    "help": "Size of the glow seen around the light. 0: no glow"
+   },
+   {
+    "key": "BlinkSeconds",
+    "value": "0.5",
+    "help": "Seconds on, then as many off, while it searches. 0: steady"
+   },
+   {
+    "key": "GuidingBlinkSeconds",
+    "value": "0.15",
+    "help": "Seconds on, then as many off, in TrackingColor, while it guides a glide bomb of the enemy HQ on its target. 0: steady"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_NameTags/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "AllFriendlies",
+    "value": "true",
+    "help": "true: every friendly soldier, AI included, gets the head icon. false: squadmates only"
+   },
+   {
+    "key": "NameFullDistance",
+    "value": "5.0",
+    "help": "Meters up to which the name of a player of your group shows in full. Nobody else shows a name"
+   },
+   {
+    "key": "NameFadeDistance",
+    "value": "8.0",
+    "help": "Meters at which the fading player name is gone. Beyond it only the head icon shows"
+   },
+   {
+    "key": "IconDistance",
+    "value": "50.0",
+    "help": "Meters up to which the head icon shows on foot"
+   },
+   {
+    "key": "IconOpticDistance",
+    "value": "300.0",
+    "help": "Meters up to which the head icon shows through an optic, binoculars or from a turret. 300 at most"
+   },
+   {
+    "key": "IconFadePercent",
+    "value": "20.0",
+    "help": "Past its range, the head icon fades out over this percentage of the range: 20 = from 50 to 60 m on foot"
+   },
+   {
+    "key": "SquadColorA",
+    "value": "\"140,40,230\"",
+    "help": "Head icon color of fireteam A and of AI under your command, \"R,G,B\" from 0 to 255"
+   },
+   {
+    "key": "SquadColorB",
+    "value": "\"0,255,210\"",
+    "help": "Head icon color of fireteam B"
+   },
+   {
+    "key": "SquadColorC",
+    "value": "\"255,170,0\"",
+    "help": "Head icon color of fireteam C"
+   },
+   {
+    "key": "OtherFriendlyColor",
+    "value": "\"faction\"",
+    "help": "Head icon color of friendly soldiers outside your group, \"R,G,B\" or \"faction\""
+   },
+   {
+    "key": "PlatformIcon",
+    "value": "false",
+    "help": "true: the platform icon (PC, Xbox, PlayStation) shows next to player names. false: hidden"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_NightGear/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false: no goggles are handed out (sights already in the prefabs still count)"
+   },
+   {
+    "key": "GoggleRules",
+    "value": "[\"Overwatch=0.6\", \"Spetsnaz=0.4\", \"KLMK=0.25\"]",
+    "help": "keyword=chance (0 to 1) of night vision goggles for an AI soldier whose prefab name holds the keyword; the first matching rule counts, no rule: none"
+   },
+   {
+    "key": "DayChanceFactor",
+    "value": "0.5",
+    "help": "The chances are multiplied by this for a soldier who appears by day"
+   },
+   {
+    "key": "GogglePrefabs",
+    "value": "[\"{B0534A120633D08D}Prefabs/Items/Equipment/Nightvision/1PN138/NVG_1PN138.et=1\"]",
+    "help": "prefab=weight: goggles handed out, drawn by weight. They must fit the night vision mount of the helmets"
+   },
+   {
+    "key": "GoggleSlotNames",
+    "value": "[\"NVG\"]",
+    "help": "Names of the helmet slots that hold night vision goggles"
+   },
+   {
+    "key": "ThermalKeywords",
+    "value": "[\"thermal\", \"infratech\", \"pas13\", \"reap_ir\"]",
+    "help": "A weapon or optic whose prefab name holds one of these gives a thermal sight"
+   },
+   {
+    "key": "NightScopeKeywords",
+    "value": "[\"1pn93\", \"dedal_nv\", \"1pn138\"]",
+    "help": "A weapon or optic whose prefab name holds one of these gives night vision"
+   },
+   {
+    "key": "ThermalDroneChance",
+    "value": "0.3",
+    "help": "Chance (0 to 1) that an AI drone has a thermal camera: it then sees as a thermal sight does"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_PatrolTrucks/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "SupplyRunChance",
+    "value": "0.5",
+    "help": "0 to 1. Chance that a patrol truck that spawns loaded keeps its supplies and carries only its cab crew; otherwise the supplies are emptied and the whole squad rides in the back"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_RadioAlerts/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false: no radio alert at all"
+   },
+   {
+    "key": "DurationSeconds",
+    "value": "8.0",
+    "help": "Seconds an alert stays on screen (2 to 30)"
+   },
+   {
+    "key": "PlayerGapSeconds",
+    "value": "20.0",
+    "help": "Seconds between two drone or jet alerts to the same player (the others, more urgent, are never held back by it)"
+   },
+   {
+    "key": "RepeatSeconds",
+    "value": "180.0",
+    "help": "Seconds before the same alert is given again to the same player"
+   },
+   {
+    "key": "AmbushHintChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) that the players of a vehicle hear of the road ambush laid ahead of them: the rest stays a surprise"
+   },
+   {
+    "key": "StartSound",
+    "value": "\"SOUND_RADIO_SIGNAL_GAIN\"",
+    "help": "UI sound event played when the alert comes in (vanilla radio sounds: SOUND_RADIO_SIGNAL_GAIN, SOUND_RADIO_TURN_ON, SOUND_RADIO_CHANGEFREQUENCY, SOUND_HUD_NOTIFICATION). Empty: none"
+   },
+   {
+    "key": "EndSound",
+    "value": "\"SOUND_RADIO_ROGERBEEP\"",
+    "help": "UI sound event played at the end of the call (SOUND_RADIO_ROGERBEEP, SOUND_RADIO_SIGNAL_LOST, SOUND_RADIO_TURN_OFF). Empty: none"
+   },
+   {
+    "key": "EndSoundDelaySeconds",
+    "value": "2.5",
+    "help": "Seconds between the two sounds"
+   },
+   {
+    "key": "Directions",
+    "value": "[\"north\", \"north-east\", \"east\", \"south-east\", \"south\", \"south-west\", \"west\", \"north-west\"]",
+    "help": "The 8 compass directions of the interception alert, from north clockwise (%1 of InterceptText)"
+   },
+   {
+    "key": "DroneEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "DroneRadius",
+    "value": "30.0",
+    "help": null
+   },
+   {
+    "key": "DroneTitle",
+    "value": "\"Enemy drone overhead\"",
+    "help": null
+   },
+   {
+    "key": "DroneText",
+    "value": "\"Enemy drone feed intercepted: a drone is watching you. Break line of sight, get under …",
+    "help": null
+   },
+   {
+    "key": "InterceptEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "InterceptRadius",
+    "value": "300.0",
+    "help": null
+   },
+   {
+    "key": "InterceptTitle",
+    "value": "\"Enemy chatter intercepted\"",
+    "help": null
+   },
+   {
+    "key": "InterceptText",
+    "value": "\"An enemy group is being sent to your sector, from the %1. Expect contact.\"",
+    "help": null
+   },
+   {
+    "key": "MortarEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "MortarRadius",
+    "value": "150.0",
+    "help": null
+   },
+   {
+    "key": "MortarTitle",
+    "value": "\"Enemy mortar ranging\"",
+    "help": null
+   },
+   {
+    "key": "MortarText",
+    "value": "\"Enemy fire mission intercepted: a ranging round is on its way to your position. Spread…",
+    "help": null
+   },
+   {
+    "key": "GeranEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "GeranRadius",
+    "value": "500.0",
+    "help": null
+   },
+   {
+    "key": "GeranTitle",
+    "value": "\"Geran raid inbound\"",
+    "help": null
+   },
+   {
+    "key": "GeranText",
+    "value": "\"Enemy launch detected: one-way attack drones are heading for %1. Take cover.\"",
+    "help": null
+   },
+   {
+    "key": "MissileEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "MissileRadius",
+    "value": "500.0",
+    "help": null
+   },
+   {
+    "key": "MissileTitle",
+    "value": "\"Cruise missile detected\"",
+    "help": null
+   },
+   {
+    "key": "MissileText",
+    "value": "\"A cruise missile is heading for %1, impact in about %2 min. Clear the base.\"",
+    "help": null
+   },
+   {
+    "key": "FlybyEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "FlybyTitle",
+    "value": "\"Enemy jet overhead\"",
+    "help": null
+   },
+   {
+    "key": "FlybyText",
+    "value": "\"An enemy recon jet is passing over your sector. Assume they know where you are.\"",
+    "help": null
+   },
+   {
+    "key": "AmbushEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "AmbushRadius",
+    "value": "150.0",
+    "help": null
+   },
+   {
+    "key": "AmbushTitle",
+    "value": "\"Road ahead: enemy activity\"",
+    "help": null
+   },
+   {
+    "key": "AmbushText",
+    "value": "\"Unconfirmed reports of enemy activity on the road ahead. Possible ambush, stay alert.\"",
+    "help": null
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_SessionReport/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "true: the server log gets a session report (lines INDFORGE session:)"
+   },
+   {
+    "key": "IntervalSeconds",
+    "value": "120",
+    "help": "Seconds between two reports of the players' positions and the bases"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_ShovelTrees/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "StumpRemoval",
+    "value": "true",
+    "help": "true: what a shovel cut leaves (stump, or a map stump the cut cannot fell) is removed from the world, for every player"
+   },
+   {
+    "key": "StumpRemovalSeconds",
+    "value": "20.0",
+    "help": "Seconds between the cut and the stump removal; the falling trunk despawns about 20 s after the cut"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDFORGE_Weather/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false: the director stays off and the map's own weather runs"
+   },
+   {
+    "key": "TickSeconds",
+    "value": "5.0",
+    "help": "Seconds between two small steps of fog, rain and wind"
+   },
+   {
+    "key": "StartRampSeconds",
+    "value": "30.0",
+    "help": "Seconds to reach the first episode after the server starts"
+   },
+   {
+    "key": "SevereCooldownMinutes",
+    "value": "45.0",
+    "help": "Minutes after a severe episode (Severe true) before another severe one can start"
+   },
+   {
+    "key": "WindDriftDegreesPerMinute",
+    "value": "3.0",
+    "help": "Degrees per minute the wind direction may wander outside a wind shift"
+   },
+   {
+    "key": "DawnHoursBefore",
+    "value": "3.0",
+    "help": "Game hours before sunrise from which a DawnOnly episode may start"
+   },
+   {
+    "key": "DawnHoursAfter",
+    "value": "0.5",
+    "help": "Game hours after sunrise until which it may start"
+   },
+   {
+    "key": "FogAmountFull",
+    "value": "0.03",
+    "help": "Fog amount from which more amount no longer thickens the fog. Fog level (0-1) = amount share up to this x height density: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m (Everon, measured in game)"
+   },
+   {
+    "key": "ReleaseRatio",
+    "value": "0.800000011920929",
+    "help": "A grounded asset flies again once wind, rain and fog level are all below this share of their limits"
+   },
+   {
+    "key": "DroneWindMax",
+    "value": "10.0",
+    "help": "m/s. Enemy drones (Mavic, FPV) stay on the ground from this wind"
+   },
+   {
+    "key": "DroneRainMax",
+    "value": "0.5",
+    "help": "Rain intensity (0-1) from which enemy drones stay on the ground"
+   },
+   {
+    "key": "DroneFogMax",
+    "value": "0.5",
+    "help": "Fog level (0-1) from which enemy drones stay on the ground"
+   },
+   {
+    "key": "AirWindMax",
+    "value": "14.0",
+    "help": "m/s. Enemy helicopters (gunships, airborne drops) do not take off from this wind"
+   },
+   {
+    "key": "AirRainMax",
+    "value": "0.8500000238418579",
+    "help": "Rain intensity from which enemy helicopters do not take off"
+   },
+   {
+    "key": "AirFogMax",
+    "value": "0.699999988079071",
+    "help": "Fog level from which enemy helicopters do not take off"
+   },
+   {
+    "key": "ParaWindMax",
+    "value": "8.0",
+    "help": "m/s. No airborne drop from this wind (canopies)"
+   },
+   {
+    "key": "ObserverFogFactor",
+    "value": "0.20000000298023224",
+    "help": "Range of an enemy mortar observer in the thickest fog, as a share of his clear range"
+   },
+   {
+    "key": "ObserverRainFactor",
+    "value": "0.699999988079071",
+    "help": "And in the heaviest rain"
+   },
+   {
+    "key": "EpisodeNames",
+    "value": "[\"Clear\", \"Fair\", \"Cloudy\", \"Overcast\", \"Drizzle\", \"Rain\", \"Thunderstorm\", \"DawnMist\", …",
+    "help": "Episodes, each described under Episodes with the same name"
+   },
+   {
+    "key": "Episodes",
+    "value": "{\"Clear\": {\"StartWeight\": 2.0, \"MinMinutes\": 25.0, \"MaxMinutes\": 60.0, \"RampMinutes\": 1…",
+    "help": "StartWeight: chance to be the first episode. Min/MaxMinutes: real minutes it lasts. RampMinutes: real minutes to reach its values from the previous ones (short only where real weather changes fast). VariationMinutes: its values drift inside their ranges this often. Fog/FogHeight (0-1; the height density makes the fog: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m; the amount only thickens it up to about 0.03), Rain (0-1), Wind (m/s): ranges drawn from. WindShiftMin/Max: degrees the wind turns as it starts. Severe: capped by MaxMinutes and SevereCooldownMinutes. DawnOnly: starts only around sunrise, ends BurnOffHours game hours after sunrise. Sky: the map weather states to show, first one the map has. Next: episodes that may follow, Name=weight"
+   }
+  ]
+ },
+ {
+  "profile": "$profile:EnhancedCompositions/Garrison.json",
+  "mod": "enhanced-compositions",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "true turns the base garrisons on. Conflict PvE: on."
+   },
+   {
+    "key": "StartSpawningOn",
+    "value": "true",
+    "help": "State of the player switch on each new building: true = the garrison spawns without anyone switching it on."
+   },
+   {
+    "key": "FirstSpawnFree",
+    "value": "true",
+    "help": "true = the first garrison of a building (and the one after a server restart) costs no supply. Later respawns are paid."
+   },
+   {
+    "key": "CheckIntervalSeconds",
+    "value": "5.0",
+    "help": "Seconds between two checks of a garrison (dead, supply, enemies)."
+   },
+   {
+    "key": "HostileRadius",
+    "value": "50.0",
+    "help": "Metres. No respawn while a living enemy soldier, AI or player, is this close to the building."
+   },
+   {
+    "key": "HostileRetrySeconds",
+    "value": "30.0",
+    "help": "Seconds before trying again after a respawn blocked by enemies or missing supply."
+   },
+   {
+    "key": "ActivationDistance",
+    "value": "600.0",
+    "help": "Metres. The garrison soldiers appear when a player or camera comes this close."
+   },
+   {
+    "key": "DormancyDistance",
+    "value": "800.0",
+    "help": "Metres. The garrison soldiers are put aside (not killed, not paid again) when everyone is farther than this."
+   },
+   {
+    "key": "SpawnRingMin",
+    "value": "8.0",
+    "help": "Metres from the building centre, nearest spawn point of the group."
+   },
+   {
+    "key": "SpawnRingMax",
+    "value": "15.0",
+    "help": "Metres from the building centre, farthest spawn point of the group."
+   },
+   {
+    "key": "PatrolRadius",
+    "value": "30.0",
+    "help": "Metres. Radius of the patrol loop around a Patrol building."
+   },
+   {
+    "key": "PatrolPoints",
+    "value": "4",
+    "help": "Number of points of the patrol loop (2 to 12)."
+   },
+   {
+    "key": "FixedRadius",
+    "value": "10.0",
+    "help": "Metres. Area held by a Fixed garrison around its building."
+   },
+   {
+    "key": "ToggleMinimumRank",
+    "value": "\"CORPORAL\"",
+    "help": "Lowest rank allowed to switch a garrison on or off: PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR, COLONEL, GENERAL."
+   },
+   {
+    "key": "ToggleMaxDistance",
+    "value": "15.0",
+    "help": "Metres. A player farther than this from the building cannot use the switch."
+   },
+   {
+    "key": "ActionNameOn",
+    "value": "\"Garrison: on (switch off)\"",
+    "help": "Text of the switch while the garrison is on."
+   },
+   {
+    "key": "ActionNameOff",
+    "value": "\"Garrison: off (switch on)\"",
+    "help": "Text of the switch while the garrison is off."
+   },
+   {
+    "key": "VehicleServiceEnabled",
+    "value": "true",
+    "help": "true = guards of the fuel depot refuel, guards of the vehicle workshops repair and rearm a friendly vehicle stopped next to them."
+   },
+   {
+    "key": "ServiceRadius",
+    "value": "15.0",
+    "help": "Metres from the building centre where a vehicle is serviced."
+   },
+   {
+    "key": "ServiceIntervalSeconds",
+    "value": "5.0",
+    "help": "Seconds between two service steps."
+   },
+   {
+    "key": "ServiceMaxSpeed",
+    "value": "1.0",
+    "help": "Metres per second. A vehicle faster than this is not serviced."
+   },
+   {
+    "key": "RefuelLitersPerStep",
+    "value": "40.0",
+    "help": "Litres added at each step by the fuel depot, free of supply."
+   },
+   {
+    "key": "RepairHealthPerStep",
+    "value": "300.0",
+    "help": "Health points given back to the damaged parts of a vehicle at each step."
+   },
+   {
+    "key": "RepairSupplyPerStep",
+    "value": "10",
+    "help": "Supply taken from the workshop for each repair step. Not enough supply: no repair."
+   },
+   {
+    "key": "RearmFractionPerStep",
+    "value": "0.25",
+    "help": "Share of a full magazine given back at each step (0.25 = a quarter)."
+   },
+   {
+    "key": "RearmSupplyPerStep",
+    "value": "5",
+    "help": "Supply taken from the workshop for each magazine step. Not enough supply: no rearm."
+   },
+   {
+    "key": "BuildingNames",
+    "value": "[\"Barracks\", \"Armory\", \"VehicleWorkshop\", \"FuelDepot\", \"Antenna\"]",
+    "help": "Buildings read below. Each name is set on the building prefab (EC_GarrisonComponent, Building Key)."
+   },
+   {
+    "key": "Buildings",
+    "value": "{\"Barracks\": {\"Enabled\": true, \"Posture\": \"Patrol\", \"SupplyCost\": 200, \"MaxMembers\": 5,…",
+    "help": "Per building: Enabled, Posture (Patrol or Fixed), SupplyCost of a whole group, MaxMembers (largest number of soldiers taken from the group, 0 = all), RespawnDelaySeconds after the whole group is dead, Groups as FactionKey={GUID}path."
+   }
+  ]
+ },
+ {
+  "profile": "$profile:INDF_CombatHeliSpawner/config.json",
+  "mod": "ai-framework",
+  "readme": "INDFORGE AI Framework configuration. Keys starting with '_' are help texts: the mod never reads them and they can be deleted. Only edit the values. The file is read once at startup: restart the server (or Workbench) after any change. 'Default' = value used by the code when the key is missing. A prefab reference is '{GUID}path': GUID and path must belong to the same prefab.",
+  "rows": [
+   {
+    "key": "ModVersion",
+    "value": "\"1.0.0\"",
+    "help": "Information only, not read by the code."
+   },
+   {
+    "key": "TargetGameVersion",
+    "value": "\"1.8.0.13\"",
+    "help": "Information only, not read by the code."
+   },
+   {
+    "key": "AIActiveLimit",
+    "value": "0",
+    "help": "Maximum number of AI the engine keeps active at once. 0 = leave the engine default untouched (currently 128). Raising it lets a denser map exist but costs server performance: measure before shipping a value above the default."
+   },
+   {
+    "key": "CombatHeliSpawner",
+    "value": null,
+    "help": "Hostile patrol helicopter (USSR): spawns near a player, flies a patrol loop, is destroyed and cleaned up when shot down, when its pilot or a rotor is lost, or when it lands.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.Enabled",
+    "value": "true",
+    "help": "true = module active, false = no helicopter. Default false."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics",
+    "value": null,
+    "help": "When helicopters are spawned.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MinIntervalSeconds",
+    "value": "300",
+    "help": "Minimum wait (seconds) between two spawn attempts; a random delay between Min and Max is drawn after each attempt. The very first attempt happens about 10 s after the first player joins. Default 300."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MaxIntervalSeconds",
+    "value": "600",
+    "help": "Maximum wait (seconds) between two spawn attempts. Must be >= MinIntervalSeconds. Default 600."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MinimumPlayersToActivate",
+    "value": "1",
+    "help": "No helicopter spawns while fewer players than this are connected. Default 1."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MinHelicoptersPerWave",
+    "value": "1",
+    "help": "NO EFFECT: not used by the current code."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MaxHelicoptersPerWave",
+    "value": "1",
+    "help": "NO EFFECT: not used by the current code."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.MaxActiveHelicopters",
+    "value": "1",
+    "help": "Maximum helicopters alive at the same time. Keep 1: the flight controller has no collision avoidance between helicopters. A destroyed helicopter keeps its slot until WreckageLifetimeSeconds + SlotAvailabilityCooldownSeconds have passed. Default 3 (if the key is missing)."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.PlayerClusterRadiusMeters",
+    "value": "500.0",
+    "help": "Two players closer than this (meters) count as the same group. The helicopter is sent to the BIGGEST group of players, not to the first one connected. All players isolated: one of them is picked at random. Default 500."
+   },
+   {
+    "key": "CombatHeliSpawner.DetectionMechanics",
+    "value": null,
+    "help": "Where the helicopter spawns and patrols, relative to the reference player.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.DetectionMechanics.DetectionRadiusMeters",
+    "value": "1500",
+    "help": "Last resort only: if no POI is found (see PoiSearchRadiusMeters), the spawn anchor is a random point between MinSpawnDistanceMeters and this radius (meters) around the player. Default 1500."
+   },
+   {
+    "key": "CombatHeliSpawner.DetectionMechanics.PoiSearchRadiusMeters",
+    "value": "600",
+    "help": "Radius (meters) around the player in which a POI of PoiHierarchy is searched as spawn anchor; if none is found, the search is retried at twice this radius. Default 600."
+   },
+   {
+    "key": "CombatHeliSpawner.DetectionMechanics.PatrolRadiusAroundPoiMeters",
+    "value": "1000",
+    "help": "Radius (meters) of the patrol loop around the spawn point. Nearby POIs are used as patrol points first, random points fill the rest. Default 1000."
+   },
+   {
+    "key": "CombatHeliSpawner.DetectionMechanics.PatrolWaypointCount",
+    "value": "10",
+    "help": "Number of points in the helicopter patrol loop. Default 5."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnPosition",
+    "value": null,
+    "help": "Exact spawn point around the anchor POI.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnPosition.MinSpawnDistanceMeters",
+    "value": "1500",
+    "help": "Minimum horizontal distance (meters) from the anchor POI (also the inner radius of the last-resort area). Default 300."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnPosition.MaxSpawnDistanceMeters",
+    "value": "2000",
+    "help": "Maximum horizontal distance (meters) from the anchor POI. Must be > MinSpawnDistanceMeters. Default 600."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnPosition.MinSpawnHeightMeters",
+    "value": "250",
+    "help": "Minimum spawn height (meters) above the ground of the anchor POI. Default 200."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnPosition.MaxSpawnHeightMeters",
+    "value": "300",
+    "help": "Maximum spawn height (meters) above the ground of the anchor POI. Default 350."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics",
+    "value": null,
+    "help": "Helicopter AI.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.AISkillLevel",
+    "value": "\"Expert\"",
+    "help": "Skill of the pilot and crew: Noob, Rookie, Regular, Veteran or Expert (case-sensitive). Unknown value = Regular with a warning. Default Expert."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.EngineStartDelaySeconds",
+    "value": "5",
+    "help": "Seconds between starting the engine and handing the helicopter to the scripted flight. Without it the airframe moves while the rotor is still spinning up. Default 5."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.SearchAndDestroyHoldSeconds",
+    "value": "30",
+    "help": "NO EFFECT: not used by the current code."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.PatrolHoldSeconds",
+    "value": "15",
+    "help": "NO EFFECT: not used by the current code."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup",
+    "value": null,
+    "help": "What happens once the helicopter is shot down, loses its pilot or a rotor, or lands.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.ForceDestroyIfGroundedSeconds",
+    "value": "10",
+    "help": "Safety net: this many seconds after the pilot dies, a rotor is destroyed or the helicopter is destroyed, it is forced into a wreck and the cleanup starts. Default 10."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.WreckageLifetimeSeconds",
+    "value": "180",
+    "help": "Time (seconds) the wreck stays in the world before it is deleted together with its pilot and crew groups. Default 180."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.WreckageDespawnRadiusMeters",
+    "value": "1200",
+    "help": "NO EFFECT: not used by the current code (the wreck is deleted after WreckageLifetimeSeconds wherever the players are)."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.CheckPlayerFOVBeforeDespawn",
+    "value": "true",
+    "help": "NO EFFECT: not used by the current code (the wreck is deleted even if a player is looking at it)."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.SlotAvailabilityCooldownSeconds",
+    "value": "1200",
+    "help": "Extra wait (seconds) after the wreck is deleted before a new helicopter may spawn. Delay from destruction to the next helicopter = WreckageLifetimeSeconds + this value (180 + 1200 = 23 min). Lower it for tests. Default 1200."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.GroundedAltitudeMeters",
+    "value": "3.0",
+    "help": "Height above ground (meters) under which the helicopter counts as landed. A landed helicopter, or one in water, destroys itself. Default 3.0."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.GroundedMaxSpeedMetersPerSecond",
+    "value": "1.5",
+    "help": "Speed (m/s) under which the helicopter counts as landed (together with GroundedAltitudeMeters). Default 1.5."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.GroundedConfirmSeconds",
+    "value": "2",
+    "help": "The landed condition must hold this long (seconds) before the self-destruction. Water triggers it at once. Default 2."
+   },
+   {
+    "key": "CombatHeliSpawner.CrashCleanup.FailedDestroyDeleteSeconds",
+    "value": "30",
+    "help": "If the scripted destruction fails, the helicopter is deleted after this delay (seconds). Default 30."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig",
+    "value": null,
+    "help": "Custom flight controller (not the Bohemia AI flight). Values interact: change one at a time and test. WARNING: when a key is missing the code default is used, and several defaults are very different from the tuned values below.",
+    "group": true
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.CruiseSpeed",
+    "value": "25.0",
+    "help": "Forward speed (m/s). 25 m/s = 90 km/h. Default 25.0."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.WaypointReachRadius",
+    "value": "200.0",
+    "help": "Horizontal distance (meters) at which a patrol point counts as reached. Default 75.0."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.MaxTurnRatePerTick",
+    "value": "0.15",
+    "help": "Maximum turn and roll rate (radians per second). Higher = sharper turns. Default 0.5."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.MaxClimbRatePerTick",
+    "value": "5.0",
+    "help": "Maximum vertical speed (m/s), up or down. Default 5.0."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.AltitudeCorrectionGain",
+    "value": "0.3",
+    "help": "How strongly an altitude error is corrected (vertical m/s per meter of error). Too high = the helicopter bounces up and down. Default 0.3."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.GravityCompensationSpeed",
+    "value": "1.5",
+    "help": "Constant upward speed (m/s) added against residual sinking. Default 1.5."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.PatrolAltitudeMeters",
+    "value": "150.0",
+    "help": "Flight height (meters) above the ground height of each patrol point. Default 150.0."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.DecisionIntervalSeconds",
+    "value": "0.1",
+    "help": "How often (seconds) the controller recomputes its target; the motion itself is applied at 60 Hz and smoothed in between. Default 0.1."
+   },
+   {
+    "key": "CombatHeliSpawner.FlightConfig.BankFactor",
+    "value": "0.15",
+    "help": "Tilt in turns: turns the turn rate into a bank angle (capped). Higher = more tilt. Default 2.0."
+   },
+   {
+    "key": "CombatHeliSpawner.PoiHierarchy",
+    "value": "[\"Military\", \"City\", \"Village\"]",
+    "help": "Order in which POI categories are tried as spawn anchor; the closest POI of the first category that has one wins. Allowed values: Military (military bases, airports, radio towers, spawn points), City (towns, settlements), Village (villages, hamlets, local places). Empty = random point around the player."
+   },
+   {
+    "key": "CombatHeliSpawner.Helicopters",
+    "value": "[{\"Name\": \"USSR_Mi8MT_Armed\", \"Prefab\": \"{28FD3C8C89DB914E}Prefabs/Vehicles/Helicopters…",
+    "help": "Helicopter types; one is picked at random by SpawnWeight. Only Faction USSR entries are used. Fields: Name = label shown in the logs; Prefab = helicopter prefab, it must carry the INDF_CombatHeliFlightController component; Faction = USSR; PilotGroupPrefab = AI group put in the pilot seat; CrewGroupPrefab = AI group put in the turrets; SpawnWeight = relative chance (20 vs 40 = half as likely, 0 or less counts as 1)."
+   },
+   {
+    "key": "CombatHeliSpawner.Factions",
+    "value": "{\"PlayableFactions\": [\"US\"], \"HostileFactions\": [\"USSR\", \"FIA\"], \"Relations\": {\"USSR\": …",
+    "help": "NO EFFECT: this whole section is read but not used by the current code. Reserved for a future version."
+   },
+   {
+    "key": "MilitaryGarrison",
+    "value": null,
+    "help": "AI garrisons on the map points of interest (POI): each eligible POI gets a GUARD squad and a PATROL squad; small guard posts are also placed next to some vanilla buildings. A wiped POI squad is replaced after a cooldown. The engine limits active AI (128 by default): extra AI wait until there is room.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.Enabled",
+    "value": "true",
+    "help": "true = module active, false = no garrison and no building post. Default false."
+   },
+   {
+    "key": "MilitaryGarrison.MaxGarrisonInstances",
+    "value": "25",
+    "help": "Maximum number of POI garrisons created at startup (each = 2 squads), filled in the order of EligiblePoiTypes. Default 40."
+   },
+   {
+    "key": "MilitaryGarrison.EligiblePoiTypes",
+    "value": "[\"MILITARY_BASE\", \"AIRPORT\", \"RADIO_TOWER\", \"PORT\", \"TOWER\", \"TOWN\", \"SETTLEMENT\", \"VIL…",
+    "help": "POI types that get a garrison, in priority order (the order matters once MaxGarrisonInstances is reached). Allowed: TOWN, SETTLEMENT, VILLAGE, HAMLET, LOCAL, MILITARY_BASE, AIRPORT, PORT, RADIO_TOWER, SPAWNPOINT, CONSTRUCTION_SITE, FUEL_STATION, HOSPITAL, FIRE_DEPARTMENT, POLICE_STATION, STORE, HOTEL, PUB, HILL, VALLEY, RIDGE, ISLAND, WATER_MAJOR, WATER_MINOR, LANDMARK, CAVE, CHURCH, TOWER. An unknown value is skipped with a warning. POIs under water or near a Conflict military base are always skipped."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics",
+    "value": null,
+    "help": "Placement and orders shared by all garrison squads.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.AllowLocalPatrol",
+    "value": "true",
+    "help": "true = the GUARD squad may move on its own up to MaxAutonomousDistanceMeters from the POI. Default true."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.MaxAutonomousDistanceMeters",
+    "value": "80.0",
+    "help": "How far (meters) the GUARD squad may wander from its defend point (only with AllowLocalPatrol). Default 80.0."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.FallbackPlacementMinRadiusMeters",
+    "value": "5.0",
+    "help": "Without a 'garrisonspawn' marker, a squad spawns at a random dry-land point between this and FallbackPlacementMaxRadiusMeters (meters) from the POI. Default 5.0."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.FallbackPlacementMaxRadiusMeters",
+    "value": "25.0",
+    "help": "See FallbackPlacementMinRadiusMeters. Must be > the min value. Default 25.0."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.MarkerSearchRadiusMeters",
+    "value": "50.0",
+    "help": "Search radius (meters) around the POI for a hand-placed entity whose name contains 'garrisonspawn' (exact GUARD spawn point) and for a reaction trigger. Default 50.0."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.DefendWaypointPrefab",
+    "value": "\"{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et\"",
+    "help": "Defend waypoint given to GUARD squads. Expected: {93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et. Another GUID loads another prefab even with the same path (e.g. {A70634B518C5C3B8} is AIWaypoint_Defend_Small). Empty = guards get no order."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.MoveWaypointPrefab",
+    "value": "\"{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et\"",
+    "help": "Move waypoint used by reinforcements to walk to the POI. Empty = no move order (only MaxInboundTravelSeconds applies)."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.ConflictMilitaryBaseExclusionRadiusMeters",
+    "value": "125.0",
+    "help": "No garrison and no building post within this radius (meters) of a Conflict military base (HQ or control point). Default 100.0."
+   },
+   {
+    "key": "MilitaryGarrison.GarrisonMechanics.MinGroundHeightMeters",
+    "value": "0.5",
+    "help": "Terrain height (meters, sea level = 0) under which a point counts as water: POIs, posts and spawn points below it are skipped. Rivers and lakes above sea level are not detected. Default 0.5."
+   },
+   {
+    "key": "MilitaryGarrison.DetectionMechanics",
+    "value": null,
+    "help": "Optional reaction trigger.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.DetectionMechanics.TriggerRadiusMeters",
+    "value": "150.0",
+    "help": "Radius (meters) of an INDF_MilitaryGarrisonReactionTrigger hand-placed near a POI in the World Editor (none = no effect). It only sets an internal 'recently engaged' flag that no behavior uses yet. Default 150.0."
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics",
+    "value": null,
+    "help": "Replacement of wiped POI squads. Building posts are never replaced.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics.Enabled",
+    "value": "true",
+    "help": "true = a wiped POI squad is replaced by a reinforcement wave. Default true."
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics.CooldownSecondsAfterWipe",
+    "value": "600",
+    "help": "Delay (seconds) between a squad being wiped and its reinforcement spawning. Default 600."
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics.ReinforcementArrivalDistanceMeters",
+    "value": "600.0",
+    "help": "The reinforcement spawns about this far (meters, +/- 10%) from the POI on dry land, then walks to it. Default 600.0."
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics.ReinforcementArrivalRadiusMeters",
+    "value": "25.0",
+    "help": "The reinforcement counts as arrived within this distance (meters) of the POI, then takes its guard or patrol role. Default 25.0."
+   },
+   {
+    "key": "MilitaryGarrison.RespawnMechanics.MaxInboundTravelSeconds",
+    "value": "300",
+    "help": "Safety net: after this time (seconds) the reinforcement takes its role even if it has not arrived. Default 300."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics",
+    "value": null,
+    "help": "Loop walked by the PATROL squad of each POI.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolRadiusMeters",
+    "value": "150.0",
+    "help": "Radius (meters) around the POI in which the patrol points are drawn. Default 150.0."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.ClosePatrolRadiusFactor",
+    "value": "0.5",
+    "help": "Radius of the CLOSE patrol squad, as a fraction of PatrolRadiusMeters (0.5 = half). Each POI has two patrolling squads: the close one (marker spawn point, HIGH admission priority) and the wide one. Keep it well under 1.0 so the two loops do not overlap. Default 0.5."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolWaypointCount",
+    "value": "10",
+    "help": "Number of points in the patrol loop. Points in water are dropped; fewer than 2 left = no patrol, the squad holds position. Default 5."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolWaypointYPrecisionMeters",
+    "value": "5.0",
+    "help": "Height tolerance (meters) for a patrol point to count as reached. Too low = squads can get stuck on slopes. Default 12.0."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolCycleWaypointPrefab",
+    "value": "\"{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et\"",
+    "help": "Cycle waypoint that loops the patrol points. Empty = no patrol loop, the squad holds position."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolPointWaypointPrefab",
+    "value": "\"{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et\"",
+    "help": "Waypoint used for each patrol point. Default AIWaypoint_Patrol."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.SettleFallbackSeconds",
+    "value": "30",
+    "help": "Safety net: if the members of a new squad are not all spawned after this delay (seconds), the guard or patrol order is given anyway. Default 30."
+   },
+   {
+    "key": "MilitaryGarrison.PatrolMechanics.PatrolGroups",
+    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_U…",
+    "help": "AI groups used by PATROL squads; one is picked at random by SpawnWeight. Empty list = patrols use the Garrisons group. Fields: Faction = label only; UnitGroupPrefab = group prefab, its unit slots set the headcount (Team_AT 4, RifleSquad 6, FireGroup 4, Team_LAT 4); SpawnWeight = relative chance (0 or less counts as 1)."
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts",
+    "value": null,
+    "help": "Small guard posts next to some vanilla buildings, in addition to the POI garrisons. Never replaced after a wipe.",
+    "group": true
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts.Enabled",
+    "value": "true",
+    "help": "true = building posts active. Default false."
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts.MaxPosts",
+    "value": "50",
+    "help": "Maximum number of building posts on the whole map, placed in scan order. Default 20."
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts.MinSpacingBetweenPostsMeters",
+    "value": "25.0",
+    "help": "Two posts are never closer than this (meters). Default 60.0."
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts.MinDistanceToPoiGarrisonMeters",
+    "value": "50.0",
+    "help": "No post closer than this (meters) to a POI garrison. Default 100.0."
+   },
+   {
+    "key": "MilitaryGarrison.BuildingPosts.Entries",
+    "value": "[{\"Name\": \"GuardHouse\", \"PrefabPathContains\": \"GuardHouse_01\", \"Faction\": \"USSR\", \"Unit…",
+    "help": "Building types that can host a post. Fields: Name = label shown in the logs; PrefabPathContains = text searched (case-insensitive) in the building prefab path, e.g. GuardTower_01; Faction = label only; UnitGroupPrefab = group placed there, its unit slots set the headcount (SentryTeam 2, MachineGunTeam 2, FireGroup 4); SpawnChance = chance from 0.0 to 1.0 that a matching building gets a post (default 1.0); PlacementMinRadiusMeters / PlacementMaxRadiusMeters = random dry-land spawn ring around the building, in meters (default 3.0 / 8.0)."
+   },
+   {
+    "key": "MilitaryGarrison.Garrisons",
+    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{3A76D9342C76A1F5}Prefabs/Groups/OPFOR/Group_U…",
+    "help": "AI groups used by the GUARD squad of every POI (and by PATROL squads when PatrolGroups is empty); one Faction USSR entry is picked at random by SpawnWeight. Fields: Faction = USSR; UnitGroupPrefab = group prefab, its unit slots set the headcount (SearchGroup = 11); SpawnWeight = relative chance (0 or less counts as 1). To change the squad size, change the group prefab."
+   }
+  ]
+ }
+]

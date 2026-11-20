@@ -1,0 +1,3775 @@
+{
+ "generated": "2026-11-20",
+ "mods": [
+  {
+   "slug": "conflict-pve",
+   "guid": "69BD142259FCF144",
+   "title": "INDFORGE - Conflict PvE",
+   "workshop": true,
+   "name": "INDFORGE - Conflict PvE",
+   "version": "2.0.6",
+   "size": 379639995,
+   "created": "2026-07-02",
+   "updated": "2026-11-18",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [
+    "Volmog_0"
+   ],
+   "tags": [
+    "CONFLICT",
+    "MODERN",
+    "PVE",
+    "SCENARIOS_MP",
+    "SCENARIOS_SP",
+    "WAR"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "2.0.6",
+     "2026-11-18"
+    ],
+    [
+     "2.0.5",
+     "2026-11-16"
+    ],
+    [
+     "2.0.4",
+     "2026-11-15"
+    ],
+    [
+     "2.0.3",
+     "2026-11-15"
+    ],
+    [
+     "2.0.2",
+     "2026-11-15"
+    ],
+    [
+     "2.0.1",
+     "2026-11-14"
+    ],
+    [
+     "2.0.0",
+     "2026-11-13"
+    ],
+    [
+     "1.2.2",
+     "2026-11-12"
+    ],
+    [
+     "1.2.1",
+     "2026-11-11"
+    ],
+    [
+     "1.2.0",
+     "2026-11-11"
+    ]
+   ],
+   "changelog": "ENEMY HQ (new)\n\n- Enemy hunter groups are no longer sent straight at your exact position. The enemy HQ only reacts to intel: an enemy drone or a patrol that spots you or your vehicle.\n- It sends a group to where you were last seen, or to where you should be by now: it estimates your direction and speed.\n- No intel: it searches the area, then the group returns.\n- Groups march in column and spread into a line on contact.\n\nBASE CAPTURE\n\n- The generator gives 10 supplies per liter (doubled) and never delivers more than the base storage holds.\n- If players wall the generator in with HESCO, an enemy breacher now walks to the wall closest to the generator, lays demolition charges and runs clear before the blast. Kill him, or disarm the charges within 20 s.\n- HESCO are now destructible, but very hard to break: no damage from bullets, grenades or vehicles. Explosives are needed: 1 M112 for the small HESCO, 2 for the long one, 4 for the long and tall one.\n- The saboteur finds a free side when a vehicle blocks the generator.\n\nVEHICLES\n\n- Garage and helipad costs reworked: a better vehicle never costs less, in supplies, XP or rank.\n- The M777 artillery ammo truck is removed: its driving data is broken in game version 1.9. M777 shells stay in the arsenal.\n\nARSENAL / AI\n\n- Spetsnaz paratroopers (black and A-TACS) and Mi-8 patrol passengers.\n- More variety in hunter anti-tank weapons and Overwatch weapons.\n- Groin plates on the Shaw ARC vests, plus 5-plate AVS vests.\n\nMISC\n\n- Medical litter is cleared after 120 s.\n- Enhanced Compositions garrisons spawn even with enemies 50 m away (instead of 200 m).\n- Server log session report (INDFORGE session lines).\n- FPVUR Base and FPVUR Ground Robotics are removed from the server mods.\n\nServer mods:\n\nINDFORGE - Conflict PvE - 69BD142259FCF144\nACE Core Dev - 65AD7D0D9941A380\nACE Backblast Dev - 65AD7C139EB4C1A1\nACE Captives Dev - 65AD7C249E4ECDFB\nACE Carrying Dev - 65AD7C379CBD394D\nACE Compass Dev - 65AD7CF69FAF1FDD\nACE Cook-Off Dev - 664AFDC993C9CE1A\nACE Facepaint Dev - 68EAA4B96976D557\nACE Finger Dev - 65AD7D2E9866FA6E\nACE Medical Core Dev - 6586079789278413\nACE Medical Hitzones Dev - 65B343F799FB521B\nACE Radio Dev - 65AD7C75826B46C6\nACE Tactical Periscope Dev - 65AD7CD09CAEC4E2\nACE Weather Dev - 667B230F9505C8BA\nSHS Backpacks - 695D1C20908DA231\nAI Airborne - 6A034CF803186A96\nRealistic Combat Drones - 65AD60E204191D37\nAI Use Drones - 690D33EDCB46C4B9\nWCS_Sounds - 631C3C1AEE9C90BC\nWCS_NATO - 615806DC6C57AF02\nWCS_Weapon_Scripts - 68F006D910E7546F\nWCS_RU - 615818DA7C0343FD\nWCS_Scopes - 62A668F513428630\nWCS_Attachments - 61C74A8B647617DA\nWCS_Weapons - 65CF7AE8574E06D2\nRHS - Content Pack 02 - BADC0DEDABBEDA5E\nRHS - Content Pack 01 - 1337C0DE5DABBEEF\nRHS - Status Quo - 595F2BF2F44836FB\nWCS_Clothing_Assets - 6602C1EC7E5A4A87\nWCS_Clothing - 6152CB0BD0684837\nThomoskis Modernised FIA - 69D007B68A1E8C20\nConflictPVERemixedVanilla2.0 - 61B514B96692C049\nAWM - Summer Version - 68F352219EA04EC6\nConstantEnemyThreat 1.7 - 69B856EFDEA992EB\nEnhanced Compositions - 660C6D2259B60EE8\nM777 Howitzer Artillery - 686AC479236F235D\nDarcCore - 631EE12D448D7FCC\nDarcChopper - 689EDED542F881AF\nMBS Auto Spawn AI helicopters - 6976D02296D2CA42\nNBS C-RAM - 6A388D460E34F5BF\nWCS_RHS_Sounds - 6AAE2A3269AD5C39\nWCS_Core - 64610AFB74AA9842\nWCS_RHS_Attachments - 6A717EEA63A35E67\nWCS_RHS_Scopes - 3B8081D9CAD979D2\nWCS_Armbands - 61E42AE6714A3CC2\nWCS_RHS_Weapons - 65F929DF622BAD50\nWCS_Armaments - 629B2BA37EFFD577\nWCS_RHS_Clothing - 6AAEEB19367529A1\nWCS_Arsenal - 615CC2D870A39838\nRealistic Combat Drones - WCS - 65D10E606F9A0B25\nREAPER_NH-90 HQ - 68746C2DCDABB93D\nREAPER_RHIB - 6934F9C61CE24DE5\nSleeper Cell - AI - 69C8C48790525BE3\nStun Grenade - 59EAA899751805DF\nTacticalAnimationOverhaul TEST - 61ECB5EFAA346151\nACE Trenches Dev - 65AD7CE59E8DB349\nACE Tactical Ladder Dev - 65AD7CB89F219E38\nACE Explosives Dev - 65AD7D1E9EEAFA53\nWCS_ACE - 6A8E689750C80548\nWCS_AH-1S - 64CB39E57377C861\nAKI_Core - 62CCD69DD17E4F2F\nAKI_Core_Upgrade - 662EB83AB3F8CAE3\nWCS_AH-64D - 6303360DA719E832\nWCS_AH-64D_Upgrade - 6326F0C7E748AB8A\nWCS_AH-6M - 6273146ADFE8241D\nWCS_AH-6M_Upgrade - 62AE96D92179F7A0\nWCS_SpaceCore - 5E389BB9F58B79A6\nWCS_BMP-1 - 5E524E4FEECCA92B\nWCS_BMP-3 - 5B383D4CB27E0D54\nWCS_Earplugs - 612F512CD4CB21D5\nWCS_FMTV - 65B60A48AEC31157\nWCS_Hescos - 6A20948448913FD7\nWCS_HoldBreath - 672D432E181E6807\nWCS_JLTV - 5C721177A220B42F\nWCS_JLTV_Upgrade - 6528B3CE24C85120\nWCS_KBA-105 - 684CE0507D2F8AD2\nWCS_PS5 - 656EC7E7513E76A9\nWCS_RHS_TempFixes - 69D176C07DDCFF64\nWCS_VehicleLock - 61BA4EB5C886D396\nWCS_Vehicles - 615A80027C5C9170\nWCS_MRZR - 64900A5A31F5DCB5\nWCS_RHS_Vehicles - 6A50528453E5FF27\nWCS_Stryker - 5B02128D896F7DE8\nWCS_Suppression - 685EDA5A6ACD53C5\nWCS_TempFixes - 61C4B48772550E0F\nWCS_ViewDistance - 6A68E18470531D4B\nWCS_ZU-23-2 - 63294BA2D9F0339B\nWere You Raised In A Barn - 0EE9CE408F80A62C\nWirecutters 2 - 62F364B35E9B51B0\nWCS_M1A1 - 5D1880C4AD410C14\nWCS_M2A2 - 63120AE07E6C0966\nWCS_LoadoutEditor - 61D57616CAFBB23D\nWCS_T-72 - 5E0AB16BEB16D6A4\nWCS_VON - 69333B6C7C8BE8AB\nWCS_Commands - 61A25BD1C99515B5\nWCS_Interface - 614D1A3874A23AD9\nFRP_DroneDetector - 6A8312058F0EDC8E\nTFO_DroneDetector_ENG - 6A9554824B4C155B\nTFO - Drone Jammer Backpacks - 6AA3385AD956B4DD\nChungus Core - 66D6340C1D565C98\nChungus Shotguns - 620E584B1D2C96A4",
+   "scenarios": [
+    "Gramps303's Everon Conflict"
+   ],
+   "direct": [
+    {
+     "id": "65AD7C139EB4C1A1",
+     "name": "ACE Backblast Dev"
+    },
+    {
+     "id": "65AD7C249E4ECDFB",
+     "name": "ACE Captives Dev"
+    },
+    {
+     "id": "65AD7C379CBD394D",
+     "name": "ACE Carrying Dev"
+    },
+    {
+     "id": "65AD7CF69FAF1FDD",
+     "name": "ACE Compass Dev"
+    },
+    {
+     "id": "664AFDC993C9CE1A",
+     "name": "ACE Cook-Off Dev"
+    },
+    {
+     "id": "68EAA4B96976D557",
+     "name": "ACE Facepaint Dev"
+    },
+    {
+     "id": "65AD7D2E9866FA6E",
+     "name": "ACE Finger Dev"
+    },
+    {
+     "id": "65B343F799FB521B",
+     "name": "ACE Medical Hitzones Dev"
+    },
+    {
+     "id": "65AD7C75826B46C6",
+     "name": "ACE Radio Dev"
+    },
+    {
+     "id": "65AD7CD09CAEC4E2",
+     "name": "ACE Tactical Periscope Dev"
+    },
+    {
+     "id": "667B230F9505C8BA",
+     "name": "ACE Weather Dev"
+    },
+    {
+     "id": "6A034CF803186A96",
+     "name": "AI Airborne"
+    },
+    {
+     "id": "690D33EDCB46C4B9",
+     "name": "AI Use Drones"
+    },
+    {
+     "id": "61B514B96692C049",
+     "name": "ConflictPVERemixedVanilla2.0"
+    },
+    {
+     "id": "68F352219EA04EC6",
+     "name": "AWM - Summer Version"
+    },
+    {
+     "id": "69B856EFDEA992EB",
+     "name": "ConstantEnemyThreat 1.7"
+    },
+    {
+     "id": "660C6D2259B60EE8",
+     "name": "Enhanced Compositions"
+    },
+    {
+     "id": "686AC479236F235D",
+     "name": "M777 Howitzer Artillery"
+    },
+    {
+     "id": "6976D02296D2CA42",
+     "name": "MBS Auto Spawn AI helicopters"
+    },
+    {
+     "id": "6A388D460E34F5BF",
+     "name": "NBS C-RAM"
+    },
+    {
+     "id": "65D10E606F9A0B25",
+     "name": "Realistic Combat Drones - WCS"
+    },
+    {
+     "id": "68746C2DCDABB93D",
+     "name": "REAPER_NH-90 HQ"
+    },
+    {
+     "id": "6934F9C61CE24DE5",
+     "name": "REAPER_RHIB"
+    },
+    {
+     "id": "69C8C48790525BE3",
+     "name": "Sleeper Cell - AI"
+    },
+    {
+     "id": "59EAA899751805DF",
+     "name": "Stun Grenade"
+    },
+    {
+     "id": "61ECB5EFAA346151",
+     "name": "TacticalAnimationOverhaul TEST"
+    },
+    {
+     "id": "6A8E689750C80548",
+     "name": "WCS_ACE"
+    },
+    {
+     "id": "64CB39E57377C861",
+     "name": "WCS_AH-1S"
+    },
+    {
+     "id": "6326F0C7E748AB8A",
+     "name": "WCS_AH-64D_Upgrade"
+    },
+    {
+     "id": "62AE96D92179F7A0",
+     "name": "WCS_AH-6M_Upgrade"
+    },
+    {
+     "id": "5E524E4FEECCA92B",
+     "name": "WCS_BMP-1"
+    },
+    {
+     "id": "5B383D4CB27E0D54",
+     "name": "WCS_BMP-3"
+    },
+    {
+     "id": "612F512CD4CB21D5",
+     "name": "WCS_Earplugs"
+    },
+    {
+     "id": "65B60A48AEC31157",
+     "name": "WCS_FMTV"
+    },
+    {
+     "id": "6A20948448913FD7",
+     "name": "WCS_Hescos"
+    },
+    {
+     "id": "672D432E181E6807",
+     "name": "WCS_HoldBreath"
+    },
+    {
+     "id": "6528B3CE24C85120",
+     "name": "WCS_JLTV_Upgrade"
+    },
+    {
+     "id": "684CE0507D2F8AD2",
+     "name": "WCS_KBA-105"
+    },
+    {
+     "id": "656EC7E7513E76A9",
+     "name": "WCS_PS5"
+    },
+    {
+     "id": "69D176C07DDCFF64",
+     "name": "WCS_RHS_TempFixes"
+    },
+    {
+     "id": "6A50528453E5FF27",
+     "name": "WCS_RHS_Vehicles"
+    },
+    {
+     "id": "5B02128D896F7DE8",
+     "name": "WCS_Stryker"
+    },
+    {
+     "id": "685EDA5A6ACD53C5",
+     "name": "WCS_Suppression"
+    },
+    {
+     "id": "61C4B48772550E0F",
+     "name": "WCS_TempFixes"
+    },
+    {
+     "id": "6A68E18470531D4B",
+     "name": "WCS_ViewDistance"
+    },
+    {
+     "id": "63294BA2D9F0339B",
+     "name": "WCS_ZU-23-2"
+    },
+    {
+     "id": "0EE9CE408F80A62C",
+     "name": "Were You Raised In A Barn"
+    },
+    {
+     "id": "62F364B35E9B51B0",
+     "name": "Wirecutters 2"
+    },
+    {
+     "id": "5D1880C4AD410C14",
+     "name": "WCS_M1A1"
+    },
+    {
+     "id": "63120AE07E6C0966",
+     "name": "WCS_M2A2"
+    },
+    {
+     "id": "61D57616CAFBB23D",
+     "name": "WCS_LoadoutEditor"
+    },
+    {
+     "id": "5E0AB16BEB16D6A4",
+     "name": "WCS_T-72"
+    },
+    {
+     "id": "69333B6C7C8BE8AB",
+     "name": "WCS_VON"
+    },
+    {
+     "id": "61A25BD1C99515B5",
+     "name": "WCS_Commands"
+    },
+    {
+     "id": "614D1A3874A23AD9",
+     "name": "WCS_Interface"
+    },
+    {
+     "id": "6A9554824B4C155B",
+     "name": "TFO_DroneDetector_ENG"
+    },
+    {
+     "id": "6AA3385AD956B4DD",
+     "name": "TFO - Drone Jammer Backpacks"
+    },
+    {
+     "id": "620E584B1D2C96A4",
+     "name": "Chungus Shotguns"
+    },
+    {
+     "id": "6AA93D208350694A",
+     "name": "S&D Fixed Wing"
+    }
+   ],
+   "deps": [
+    {
+     "id": "65AD7D0D9941A380",
+     "name": "ACE Core Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C139EB4C1A1",
+     "name": "ACE Backblast Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C249E4ECDFB",
+     "name": "ACE Captives Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C379CBD394D",
+     "name": "ACE Carrying Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CF69FAF1FDD",
+     "name": "ACE Compass Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "664AFDC993C9CE1A",
+     "name": "ACE Cook-Off Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "68EAA4B96976D557",
+     "name": "ACE Facepaint Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7D2E9866FA6E",
+     "name": "ACE Finger Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "6586079789278413",
+     "name": "ACE Medical Core Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65B343F799FB521B",
+     "name": "ACE Medical Hitzones Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C75826B46C6",
+     "name": "ACE Radio Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CD09CAEC4E2",
+     "name": "ACE Tactical Periscope Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "667B230F9505C8BA",
+     "name": "ACE Weather Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "695D1C20908DA231",
+     "name": "SHS Backpacks",
+     "author": "Shadow_Haven_Studios"
+    },
+    {
+     "id": "6A034CF803186A96",
+     "name": "AI Airborne",
+     "author": "streetone"
+    },
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones",
+     "author": "SalamiBoiDev"
+    },
+    {
+     "id": "690D33EDCB46C4B9",
+     "name": "AI Use Drones",
+     "author": "MikeKn"
+    },
+    {
+     "id": "61B514B96692C049",
+     "name": "ConflictPVERemixedVanilla2.0",
+     "author": "Gramps303"
+    },
+    {
+     "id": "68F352219EA04EC6",
+     "name": "AWM - Summer Version",
+     "author": " EO"
+    },
+    {
+     "id": "69B856EFDEA992EB",
+     "name": "ConstantEnemyThreat 1.7",
+     "author": "WhiskeyDreamzZz"
+    },
+    {
+     "id": "660C6D2259B60EE8",
+     "name": "Enhanced Compositions",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "686AC479236F235D",
+     "name": "M777 Howitzer Artillery",
+     "author": "PandaMods"
+    },
+    {
+     "id": "631EE12D448D7FCC",
+     "name": "DarcCore",
+     "author": "darc_"
+    },
+    {
+     "id": "689EDED542F881AF",
+     "name": "DarcChopper",
+     "author": "darc_"
+    },
+    {
+     "id": "6976D02296D2CA42",
+     "name": "MBS Auto Spawn AI helicopters",
+     "author": "tommills2209"
+    },
+    {
+     "id": "6A388D460E34F5BF",
+     "name": "NBS C-RAM",
+     "author": "Punkster"
+    },
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615806DC6C57AF02",
+     "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615818DA7C0343FD",
+     "name": "WCS_RU",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62A668F513428630",
+     "name": "WCS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C74A8B647617DA",
+     "name": "WCS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A717EEA63A35E67",
+     "name": "WCS_RHS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "3B8081D9CAD979D2",
+     "name": "WCS_RHS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6602C1EC7E5A4A87",
+     "name": "WCS_Clothing_Assets",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61E42AE6714A3CC2",
+     "name": "WCS_Armbands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65CF7AE8574E06D2",
+     "name": "WCS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAEEB19367529A1",
+     "name": "WCS_RHS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615CC2D870A39838",
+     "name": "WCS_Arsenal",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65D10E606F9A0B25",
+     "name": "Realistic Combat Drones - WCS",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "68746C2DCDABB93D",
+     "name": "REAPER_NH-90 HQ",
+     "author": "r34p3r"
+    },
+    {
+     "id": "6934F9C61CE24DE5",
+     "name": "REAPER_RHIB",
+     "author": "r34p3r"
+    },
+    {
+     "id": "69C8C48790525BE3",
+     "name": "Sleeper Cell - AI",
+     "author": "Volmog_0"
+    },
+    {
+     "id": "59EAA899751805DF",
+     "name": "Stun Grenade",
+     "author": "ceo_of_bacon"
+    },
+    {
+     "id": "61ECB5EFAA346151",
+     "name": "TacticalAnimationOverhaul TEST",
+     "author": "Bale'"
+    },
+    {
+     "id": "65AD7CB89F219E38",
+     "name": "ACE Tactical Ladder Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CE59E8DB349",
+     "name": "ACE Trenches Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7D1E9EEAFA53",
+     "name": "ACE Explosives Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "6A8E689750C80548",
+     "name": "WCS_ACE",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64CB39E57377C861",
+     "name": "WCS_AH-1S",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62CCD69DD17E4F2F",
+     "name": "AKI_Core",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "6303360DA719E832",
+     "name": "WCS_AH-64D",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "662EB83AB3F8CAE3",
+     "name": "AKI_Core_Upgrade",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "6326F0C7E748AB8A",
+     "name": "WCS_AH-64D_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6273146ADFE8241D",
+     "name": "WCS_AH-6M",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62AE96D92179F7A0",
+     "name": "WCS_AH-6M_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E524E4FEECCA92B",
+     "name": "WCS_BMP-1",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5B383D4CB27E0D54",
+     "name": "WCS_BMP-3",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "612F512CD4CB21D5",
+     "name": "WCS_Earplugs",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65B60A48AEC31157",
+     "name": "WCS_FMTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A20948448913FD7",
+     "name": "WCS_Hescos",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "672D432E181E6807",
+     "name": "WCS_HoldBreath",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5C721177A220B42F",
+     "name": "WCS_JLTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6528B3CE24C85120",
+     "name": "WCS_JLTV_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "684CE0507D2F8AD2",
+     "name": "WCS_KBA-105",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "656EC7E7513E76A9",
+     "name": "WCS_PS5",
+     "author": "Cyborgmatt"
+    },
+    {
+     "id": "69D176C07DDCFF64",
+     "name": "WCS_RHS_TempFixes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61BA4EB5C886D396",
+     "name": "WCS_VehicleLock",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615A80027C5C9170",
+     "name": "WCS_Vehicles",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A50528453E5FF27",
+     "name": "WCS_RHS_Vehicles",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5B02128D896F7DE8",
+     "name": "WCS_Stryker",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "685EDA5A6ACD53C5",
+     "name": "WCS_Suppression",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C4B48772550E0F",
+     "name": "WCS_TempFixes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A68E18470531D4B",
+     "name": "WCS_ViewDistance",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63294BA2D9F0339B",
+     "name": "WCS_ZU-23-2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "0EE9CE408F80A62C",
+     "name": "Were You Raised In A Barn",
+     "author": "Rick James Bish"
+    },
+    {
+     "id": "62F364B35E9B51B0",
+     "name": "Wirecutters 2",
+     "author": "dax5150"
+    },
+    {
+     "id": "5D1880C4AD410C14",
+     "name": "WCS_M1A1",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63120AE07E6C0966",
+     "name": "WCS_M2A2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61D57616CAFBB23D",
+     "name": "WCS_LoadoutEditor",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E0AB16BEB16D6A4",
+     "name": "WCS_T-72",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "69333B6C7C8BE8AB",
+     "name": "WCS_VON",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61A25BD1C99515B5",
+     "name": "WCS_Commands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "614D1A3874A23AD9",
+     "name": "WCS_Interface",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A8312058F0EDC8E",
+     "name": "FRP_DroneDetector",
+     "author": "sgt_Chaudard"
+    },
+    {
+     "id": "6A9554824B4C155B",
+     "name": "TFO_DroneDetector_ENG",
+     "author": "Rickerd"
+    },
+    {
+     "id": "6AA3385AD956B4DD",
+     "name": "TFO - Drone Jammer Backpacks",
+     "author": "jassnl"
+    },
+    {
+     "id": "66D6340C1D565C98",
+     "name": "Chungus Core",
+     "author": "Big  Chungus"
+    },
+    {
+     "id": "620E584B1D2C96A4",
+     "name": "Chungus Shotguns",
+     "author": "Big  Chungus"
+    },
+    {
+     "id": "6A89645B840FD4EE",
+     "name": "S&D Drone Systems",
+     "author": "SammyS_"
+    },
+    {
+     "id": "6AA93D208350694A",
+     "name": "S&D Fixed Wing",
+     "author": "SammyS_"
+    }
+   ],
+   "unresolved": [],
+   "image": 66246,
+   "scenarioIds": [
+    "{AEC3BDD54B62A3E6}Missions/Conflict_Everon_US_Gramps303_INDFORGE.conf"
+   ]
+  },
+  {
+   "slug": "conflict",
+   "guid": "697B5789E7A32A62",
+   "title": "INDFORGE - Conflict",
+   "workshop": false,
+   "name": "INDFORGE - Conflict",
+   "version": null,
+   "size": null,
+   "created": null,
+   "updated": null,
+   "game": null,
+   "license": null,
+   "author": null,
+   "contributors": [],
+   "tags": [],
+   "unlisted": null,
+   "versions": [],
+   "changelog": null,
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core"
+    }
+   ],
+   "deps": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    }
+   ],
+   "unresolved": [],
+   "image": 25264,
+   "scenarioIds": []
+  },
+  {
+   "slug": "forest",
+   "guid": "6A8E3DDAEECB3134",
+   "title": "INDFORGE - Forest",
+   "workshop": true,
+   "name": "INDFORGE - Forest",
+   "version": "0.0.2",
+   "size": 117144,
+   "created": "2026-11-11",
+   "updated": "2026-11-15",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "CONFLICT",
+    "FOREST",
+    "MODERN",
+    "PVE",
+    "SCENARIOS_MP",
+    "SCENARIOS_SP",
+    "WAR"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.2",
+     "2026-11-15"
+    ],
+    [
+     "0.0.1",
+     "2026-11-11"
+    ]
+   ],
+   "changelog": "- Denser enemy presence: every capturable base now has 3 to 4 defending groups (rifle squad, machine gun team, fire team, AT team).\n- Fewer two-man sentries: most of them are now full fire teams.\n- More Spetsnaz Overwatch snipers around the bases.\n- 10 new foot patrols moving between bases.\n- Defensive positions reworked: guards now hold their posts properly.\n- All AI spawn points renamed after what they really spawn, for easier admin and editing.",
+   "scenarios": [
+    "INDFORGE Forest Conflict (Belleau Wood)"
+   ],
+   "direct": [
+    {
+     "id": "69BD142259FCF144",
+     "name": "INDFORGE - Conflict PvE"
+    },
+    {
+     "id": "629EDC37CDE3AD35",
+     "name": "Belleau Wood"
+    },
+    {
+     "id": "5F0D245931200FD1",
+     "name": "Railway Generator"
+    },
+    {
+     "id": "5DE612963E4B005A",
+     "name": "Rail Enfusion Redux"
+    }
+   ],
+   "deps": [
+    {
+     "id": "65AD7D0D9941A380",
+     "name": "ACE Core Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C139EB4C1A1",
+     "name": "ACE Backblast Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C249E4ECDFB",
+     "name": "ACE Captives Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C379CBD394D",
+     "name": "ACE Carrying Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CF69FAF1FDD",
+     "name": "ACE Compass Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "664AFDC993C9CE1A",
+     "name": "ACE Cook-Off Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "68EAA4B96976D557",
+     "name": "ACE Facepaint Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7D2E9866FA6E",
+     "name": "ACE Finger Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "6586079789278413",
+     "name": "ACE Medical Core Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65B343F799FB521B",
+     "name": "ACE Medical Hitzones Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7C75826B46C6",
+     "name": "ACE Radio Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CD09CAEC4E2",
+     "name": "ACE Tactical Periscope Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "667B230F9505C8BA",
+     "name": "ACE Weather Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "695D1C20908DA231",
+     "name": "SHS Backpacks",
+     "author": "Shadow_Haven_Studios"
+    },
+    {
+     "id": "6A034CF803186A96",
+     "name": "AI Airborne",
+     "author": "streetone"
+    },
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones",
+     "author": "SalamiBoiDev"
+    },
+    {
+     "id": "690D33EDCB46C4B9",
+     "name": "AI Use Drones",
+     "author": "MikeKn"
+    },
+    {
+     "id": "61B514B96692C049",
+     "name": "ConflictPVERemixedVanilla2.0",
+     "author": "Gramps303"
+    },
+    {
+     "id": "68F352219EA04EC6",
+     "name": "AWM - Summer Version",
+     "author": " EO"
+    },
+    {
+     "id": "69B856EFDEA992EB",
+     "name": "ConstantEnemyThreat 1.7",
+     "author": "WhiskeyDreamzZz"
+    },
+    {
+     "id": "660C6D2259B60EE8",
+     "name": "Enhanced Compositions",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "686AC479236F235D",
+     "name": "M777 Howitzer Artillery",
+     "author": "PandaMods"
+    },
+    {
+     "id": "631EE12D448D7FCC",
+     "name": "DarcCore",
+     "author": "darc_"
+    },
+    {
+     "id": "689EDED542F881AF",
+     "name": "DarcChopper",
+     "author": "darc_"
+    },
+    {
+     "id": "6976D02296D2CA42",
+     "name": "MBS Auto Spawn AI helicopters",
+     "author": "tommills2209"
+    },
+    {
+     "id": "6A388D460E34F5BF",
+     "name": "NBS C-RAM",
+     "author": "Punkster"
+    },
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615806DC6C57AF02",
+     "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615818DA7C0343FD",
+     "name": "WCS_RU",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62A668F513428630",
+     "name": "WCS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C74A8B647617DA",
+     "name": "WCS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A717EEA63A35E67",
+     "name": "WCS_RHS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "3B8081D9CAD979D2",
+     "name": "WCS_RHS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6602C1EC7E5A4A87",
+     "name": "WCS_Clothing_Assets",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61E42AE6714A3CC2",
+     "name": "WCS_Armbands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65CF7AE8574E06D2",
+     "name": "WCS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAEEB19367529A1",
+     "name": "WCS_RHS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615CC2D870A39838",
+     "name": "WCS_Arsenal",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65D10E606F9A0B25",
+     "name": "Realistic Combat Drones - WCS",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "68746C2DCDABB93D",
+     "name": "REAPER_NH-90 HQ",
+     "author": "r34p3r"
+    },
+    {
+     "id": "6934F9C61CE24DE5",
+     "name": "REAPER_RHIB",
+     "author": "r34p3r"
+    },
+    {
+     "id": "69C8C48790525BE3",
+     "name": "Sleeper Cell - AI",
+     "author": "Volmog_0"
+    },
+    {
+     "id": "59EAA899751805DF",
+     "name": "Stun Grenade",
+     "author": "ceo_of_bacon"
+    },
+    {
+     "id": "61ECB5EFAA346151",
+     "name": "TacticalAnimationOverhaul TEST",
+     "author": "Bale'"
+    },
+    {
+     "id": "65AD7CB89F219E38",
+     "name": "ACE Tactical Ladder Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7CE59E8DB349",
+     "name": "ACE Trenches Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "65AD7D1E9EEAFA53",
+     "name": "ACE Explosives Dev",
+     "author": "acemod"
+    },
+    {
+     "id": "6A8E689750C80548",
+     "name": "WCS_ACE",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64CB39E57377C861",
+     "name": "WCS_AH-1S",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62CCD69DD17E4F2F",
+     "name": "AKI_Core",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "6303360DA719E832",
+     "name": "WCS_AH-64D",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "662EB83AB3F8CAE3",
+     "name": "AKI_Core_Upgrade",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "6326F0C7E748AB8A",
+     "name": "WCS_AH-64D_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6273146ADFE8241D",
+     "name": "WCS_AH-6M",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62AE96D92179F7A0",
+     "name": "WCS_AH-6M_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E524E4FEECCA92B",
+     "name": "WCS_BMP-1",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5B383D4CB27E0D54",
+     "name": "WCS_BMP-3",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "612F512CD4CB21D5",
+     "name": "WCS_Earplugs",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65B60A48AEC31157",
+     "name": "WCS_FMTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A20948448913FD7",
+     "name": "WCS_Hescos",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "672D432E181E6807",
+     "name": "WCS_HoldBreath",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5C721177A220B42F",
+     "name": "WCS_JLTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6528B3CE24C85120",
+     "name": "WCS_JLTV_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "684CE0507D2F8AD2",
+     "name": "WCS_KBA-105",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "656EC7E7513E76A9",
+     "name": "WCS_PS5",
+     "author": "Cyborgmatt"
+    },
+    {
+     "id": "69D176C07DDCFF64",
+     "name": "WCS_RHS_TempFixes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61BA4EB5C886D396",
+     "name": "WCS_VehicleLock",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615A80027C5C9170",
+     "name": "WCS_Vehicles",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A50528453E5FF27",
+     "name": "WCS_RHS_Vehicles",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5B02128D896F7DE8",
+     "name": "WCS_Stryker",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "685EDA5A6ACD53C5",
+     "name": "WCS_Suppression",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C4B48772550E0F",
+     "name": "WCS_TempFixes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A68E18470531D4B",
+     "name": "WCS_ViewDistance",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63294BA2D9F0339B",
+     "name": "WCS_ZU-23-2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "0EE9CE408F80A62C",
+     "name": "Were You Raised In A Barn",
+     "author": "Rick James Bish"
+    },
+    {
+     "id": "62F364B35E9B51B0",
+     "name": "Wirecutters 2",
+     "author": "dax5150"
+    },
+    {
+     "id": "5D1880C4AD410C14",
+     "name": "WCS_M1A1",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63120AE07E6C0966",
+     "name": "WCS_M2A2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61D57616CAFBB23D",
+     "name": "WCS_LoadoutEditor",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E0AB16BEB16D6A4",
+     "name": "WCS_T-72",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "69333B6C7C8BE8AB",
+     "name": "WCS_VON",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61A25BD1C99515B5",
+     "name": "WCS_Commands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "614D1A3874A23AD9",
+     "name": "WCS_Interface",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A8312058F0EDC8E",
+     "name": "FRP_DroneDetector",
+     "author": "sgt_Chaudard"
+    },
+    {
+     "id": "6A9554824B4C155B",
+     "name": "TFO_DroneDetector_ENG",
+     "author": "Rickerd"
+    },
+    {
+     "id": "6AA3385AD956B4DD",
+     "name": "TFO - Drone Jammer Backpacks",
+     "author": "jassnl"
+    },
+    {
+     "id": "66D6340C1D565C98",
+     "name": "Chungus Core",
+     "author": "Big  Chungus"
+    },
+    {
+     "id": "620E584B1D2C96A4",
+     "name": "Chungus Shotguns",
+     "author": "Big  Chungus"
+    },
+    {
+     "id": "6A89645B840FD4EE",
+     "name": "S&D Drone Systems",
+     "author": "SammyS_"
+    },
+    {
+     "id": "6AA93D208350694A",
+     "name": "S&D Fixed Wing",
+     "author": "SammyS_"
+    },
+    {
+     "id": "69BD142259FCF144",
+     "name": "INDFORGE - Conflict PvE",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "5F0D245931200FD1",
+     "name": "Railway Generator",
+     "author": "TilW"
+    },
+    {
+     "id": "5DE612963E4B005A",
+     "name": "Rail Enfusion Redux",
+     "author": "TilW"
+    },
+    {
+     "id": "629EDC37CDE3AD35",
+     "name": "Belleau Wood",
+     "author": "Thinwheat01"
+    }
+   ],
+   "unresolved": [],
+   "image": 66246,
+   "scenarioIds": [
+    "{77A7CBC536D7A088}Missions/Conflict_BelleauWood_US_INDFORGE.conf"
+   ]
+  },
+  {
+   "slug": "ai-framework",
+   "guid": "6A2D1B9166B50BBE",
+   "title": "INDFORGE - AI Framework",
+   "workshop": true,
+   "name": "INDFORGE - AI Framework",
+   "version": "1.0.7",
+   "size": 633559,
+   "created": "2026-09-20",
+   "updated": "2026-09-24",
+   "game": "1.8.0.13",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "AI",
+    "FRAMEWORK",
+    "INDFORGE",
+    "SCENARIOS_MP",
+    "SCENARIOS_SP",
+    "SYSTEMS"
+   ],
+   "unlisted": true,
+   "versions": [
+    [
+     "1.0.7",
+     "2026-09-24"
+    ],
+    [
+     "1.0.6",
+     "2026-09-24"
+    ],
+    [
+     "1.0.5",
+     "2026-09-23"
+    ],
+    [
+     "1.0.4",
+     "2026-09-23"
+    ],
+    [
+     "1.0.3",
+     "2026-09-23"
+    ],
+    [
+     "1.0.2",
+     "2026-09-22"
+    ],
+    [
+     "1.0.1",
+     "2026-09-20"
+    ],
+    [
+     "1.0.0",
+     "2026-09-20"
+    ]
+   ],
+   "changelog": "",
+   "scenarios": [
+    "INDFORGE - AI Framework [QA TEST]",
+    "INDFORGE - AI Framework"
+   ],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 10778,
+   "scenarioIds": []
+  },
+  {
+   "slug": "enhanced-compositions",
+   "guid": "660C6D2259B60EE8",
+   "title": "Enhanced Compositions",
+   "workshop": true,
+   "name": "Enhanced Compositions",
+   "version": "1.1.0",
+   "size": 2392724,
+   "created": "2025-08-19",
+   "updated": "2026-11-16",
+   "game": "1.9.0.37",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "COMPOSITIONS",
+    "CONFLICT",
+    "ENHANCED",
+    "PROPS",
+    "STRUCTURES",
+    "SYSTEMS"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.1.0",
+     "2026-11-16"
+    ],
+    [
+     "1.0.0",
+     "2026-11-13"
+    ],
+    [
+     "0.0.37",
+     "2026-11-10"
+    ],
+    [
+     "0.0.36",
+     "2026-11-10"
+    ],
+    [
+     "0.0.35",
+     "2026-11-07"
+    ],
+    [
+     "0.0.34",
+     "2026-11-07"
+    ],
+    [
+     "0.0.33",
+     "2026-10-30"
+    ],
+    [
+     "0.0.32",
+     "2026-09-09"
+    ],
+    [
+     "0.0.31",
+     "2026-09-03"
+    ],
+    [
+     "0.0.30",
+     "2026-07-27"
+    ]
+   ],
+   "changelog": "V1.1.0 FIA HEADQUARTERS WITH GENERATOR\n\n- The original FIA headquarters (tent and hut) has been restored to its version without a generator for missions that do not use the new capture.\n- New items: ‘FIA Headquarters, Tent (Generator)’ and ‘FIA Headquarters, Hut (Generator)’, with the generator out of order.\n- The repair key and jerry can are now stored in a crate in every HQ equipped with a generator (the same crate found in small FIA garages), rather than being left on the floor.\n- All the commander’s actions are grouped together on the HQ table, next to the construction panel: logistics, combat support and construction. Only the commander of the faction controlling the base can see them.\n- The generator repair and refuelling interactions are now easier to access.\n- Fix: the ‘Become Commander’ panel was appearing twice in the FIA tent HQ.",
+   "scenarios": [],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 29194,
+   "scenarioIds": []
+  },
+  {
+   "slug": "auc-factions",
+   "guid": "684EA039B3914133",
+   "title": "AUC - Factions",
+   "workshop": true,
+   "name": "AUC - Factions",
+   "version": "0.1.22",
+   "size": 66486227,
+   "created": "2026-01-14",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "ARMA",
+    "AUC",
+    "CHARACTERS",
+    "COMMUNITY",
+    "FACTIONS",
+    "UKRAINE",
+    "WEAPONS"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.1.22",
+     "2026-11-07"
+    ],
+    [
+     "0.1.21",
+     "2026-07-01"
+    ],
+    [
+     "0.1.20",
+     "2026-06-20"
+    ],
+    [
+     "0.1.19",
+     "2026-06-19"
+    ],
+    [
+     "0.1.18",
+     "2026-06-19"
+    ],
+    [
+     "0.1.17",
+     "2026-06-19"
+    ],
+    [
+     "0.1.16",
+     "2026-06-17"
+    ],
+    [
+     "0.1.15",
+     "2026-06-02"
+    ],
+    [
+     "0.1.14",
+     "2026-06-02"
+    ],
+    [
+     "0.1.13",
+     "2026-06-02"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "65B007413A813417",
+     "name": "kuka Vampire UAV & FPV drones"
+    },
+    {
+     "id": "65D10E606F9A0B25",
+     "name": "Realistic Combat Drones - WCS"
+    },
+    {
+     "id": "66A513FA8DEEB7C0",
+     "name": "WCS_Squads"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts"
+    }
+   ],
+   "deps": [
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones",
+     "author": "SalamiBoiDev"
+    },
+    {
+     "id": "65B007413A813417",
+     "name": "kuka Vampire UAV & FPV drones",
+     "author": "kuka-"
+    },
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615806DC6C57AF02",
+     "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615818DA7C0343FD",
+     "name": "WCS_RU",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62A668F513428630",
+     "name": "WCS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C74A8B647617DA",
+     "name": "WCS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A717EEA63A35E67",
+     "name": "WCS_RHS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "3B8081D9CAD979D2",
+     "name": "WCS_RHS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6602C1EC7E5A4A87",
+     "name": "WCS_Clothing_Assets",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61E42AE6714A3CC2",
+     "name": "WCS_Armbands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65CF7AE8574E06D2",
+     "name": "WCS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAEEB19367529A1",
+     "name": "WCS_RHS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615CC2D870A39838",
+     "name": "WCS_Arsenal",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65D10E606F9A0B25",
+     "name": "Realistic Combat Drones - WCS",
+     "author": "TheUnknownTeam"
+    },
+    {
+     "id": "66A513FA8DEEB7C0",
+     "name": "WCS_Squads",
+     "author": "Worst Case Scenario"
+    }
+   ],
+   "unresolved": [],
+   "image": 9762,
+   "scenarioIds": []
+  },
+  {
+   "slug": "auc-vehicles",
+   "guid": "66F02ECA63319B7B",
+   "title": "AUC - Vehicles",
+   "workshop": true,
+   "name": "AUC - Vehicles",
+   "version": "0.0.48",
+   "size": 185250156,
+   "created": "2026-01-24",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "ARMA",
+    "AUC",
+    "COMMUNITY",
+    "UKRAINE",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.48",
+     "2026-11-07"
+    ],
+    [
+     "0.0.47",
+     "2026-06-03"
+    ],
+    [
+     "0.0.46",
+     "2026-06-03"
+    ],
+    [
+     "0.0.45",
+     "2026-06-02"
+    ],
+    [
+     "0.0.44",
+     "2026-06-02"
+    ],
+    [
+     "0.0.43",
+     "2026-06-02"
+    ],
+    [
+     "0.0.42",
+     "2026-06-02"
+    ],
+    [
+     "0.0.41",
+     "2026-05-20"
+    ],
+    [
+     "0.0.40",
+     "2026-04-19"
+    ],
+    [
+     "0.0.39",
+     "2026-04-19"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core"
+    },
+    {
+     "id": "62CCD69DD17E4F2F",
+     "name": "AKI_Core"
+    },
+    {
+     "id": "662EB83AB3F8CAE3",
+     "name": "AKI_Core_Upgrade"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore"
+    },
+    {
+     "id": "632F64CB7D65D1FC",
+     "name": "TraceVehCore"
+    },
+    {
+     "id": "615A80027C5C9170",
+     "name": "WCS_Vehicles"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments"
+    },
+    {
+     "id": "61BA4EB5C886D396",
+     "name": "WCS_VehicleLock"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02"
+    },
+    {
+     "id": "5E5C154FEE1094BB",
+     "name": "M113 APC"
+    },
+    {
+     "id": "63120AE07E6C0966",
+     "name": "WCS_M2A2"
+    },
+    {
+     "id": "5E524E4FEECCA92B",
+     "name": "WCS_BMP-1"
+    },
+    {
+     "id": "64C2D989353DDD0A",
+     "name": "CIE Ukrainian IMV"
+    },
+    {
+     "id": "65B60A48AEC31157",
+     "name": "WCS_FMTV"
+    },
+    {
+     "id": "605A33788BA667A6",
+     "name": "HMMWV Avenger"
+    },
+    {
+     "id": "63325B929F261130",
+     "name": "Iveco LMV"
+    },
+    {
+     "id": "5C721177A220B42F",
+     "name": "WCS_JLTV"
+    },
+    {
+     "id": "6528B3CE24C85120",
+     "name": "WCS_JLTV_Upgrade"
+    },
+    {
+     "id": "652CFB1896E2AA24",
+     "name": "More Vanilla Vehicles"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR"
+    },
+    {
+     "id": "5B02128D896F7DE8",
+     "name": "WCS_Stryker"
+    },
+    {
+     "id": "63294BA2D9F0339B",
+     "name": "WCS_ZU-23-2"
+    },
+    {
+     "id": "62D15D0025AE021B",
+     "name": "ZSU-23-4 Shilka"
+    },
+    {
+     "id": "5E0AB16BEB16D6A4",
+     "name": "WCS_T-72"
+    },
+    {
+     "id": "657B66182A78C789",
+     "name": "LAV-25A2 HAZARD"
+    },
+    {
+     "id": "6273146ADFE8241D",
+     "name": "WCS_AH-6M"
+    },
+    {
+     "id": "62AE96D92179F7A0",
+     "name": "WCS_AH-6M_Upgrade"
+    },
+    {
+     "id": "628933A0D3A0D700",
+     "name": "WCS_Mi-24V"
+    },
+    {
+     "id": "6608EB45061AFC69",
+     "name": "WCS_Mi-24V_Upgrade"
+    },
+    {
+     "id": "66B523AD189F3233",
+     "name": "Bandit Gear"
+    },
+    {
+     "id": "60ED3CC6E7E40221",
+     "name": "Sikorsky H60 Project"
+    },
+    {
+     "id": "6276E6E3CC97A22B",
+     "name": "AUS_CORE"
+    },
+    {
+     "id": "64EE818E08AFCF94",
+     "name": "MFD Framework"
+    },
+    {
+     "id": "663B2784961621FB",
+     "name": "VT4 - FRM"
+    },
+    {
+     "id": "60F697135C1AF8E9",
+     "name": "VTF Rally Championship"
+    }
+   ],
+   "deps": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62CCD69DD17E4F2F",
+     "name": "AKI_Core",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "662EB83AB3F8CAE3",
+     "name": "AKI_Core_Upgrade",
+     "author": "AkiraSeki"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "632F64CB7D65D1FC",
+     "name": "TraceVehCore",
+     "author": "TraceSnowOwl"
+    },
+    {
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615806DC6C57AF02",
+     "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615818DA7C0343FD",
+     "name": "WCS_RU",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61BA4EB5C886D396",
+     "name": "WCS_VehicleLock",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62A668F513428630",
+     "name": "WCS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615A80027C5C9170",
+     "name": "WCS_Vehicles",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E5C154FEE1094BB",
+     "name": "M113 APC",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63120AE07E6C0966",
+     "name": "WCS_M2A2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E524E4FEECCA92B",
+     "name": "WCS_BMP-1",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F8A813D7EF1E30",
+     "name": "CIE_Thermal",
+     "author": "Palych GAME"
+    },
+    {
+     "id": "68CD35053063C6D5",
+     "name": "CIE Tracked Core",
+     "author": "Ligthman"
+    },
+    {
+     "id": "64C2D989353DDD0A",
+     "name": "CIE Ukrainian IMV",
+     "author": "EU Conflict"
+    },
+    {
+     "id": "65B60A48AEC31157",
+     "name": "WCS_FMTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "605A33788BA667A6",
+     "name": "HMMWV Avenger",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63325B929F261130",
+     "name": "Iveco LMV",
+     "author": "TraceSnowOwl"
+    },
+    {
+     "id": "5C721177A220B42F",
+     "name": "WCS_JLTV",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6528B3CE24C85120",
+     "name": "WCS_JLTV_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "652CFB1896E2AA24",
+     "name": "More Vanilla Vehicles",
+     "author": "TraceSnowOwl"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5B02128D896F7DE8",
+     "name": "WCS_Stryker",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "63294BA2D9F0339B",
+     "name": "WCS_ZU-23-2",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62D15D0025AE021B",
+     "name": "ZSU-23-4 Shilka",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E0AB16BEB16D6A4",
+     "name": "WCS_T-72",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "657B66182A78C789",
+     "name": "LAV-25A2 HAZARD",
+     "author": "BlueHAZRD"
+    },
+    {
+     "id": "6273146ADFE8241D",
+     "name": "WCS_AH-6M",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62AE96D92179F7A0",
+     "name": "WCS_AH-6M_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "628933A0D3A0D700",
+     "name": "WCS_Mi-24V",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6608EB45061AFC69",
+     "name": "WCS_Mi-24V_Upgrade",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character",
+     "author": "zelik"
+    },
+    {
+     "id": "66B523AD189F3233",
+     "name": "Bandit Gear",
+     "author": "microplastic9000"
+    },
+    {
+     "id": "6276E6E3CC97A22B",
+     "name": "AUS_CORE",
+     "author": "TheAussieMerc"
+    },
+    {
+     "id": "64EE818E08AFCF94",
+     "name": "MFD Framework",
+     "author": "Colton1070"
+    },
+    {
+     "id": "60ED3CC6E7E40221",
+     "name": "Sikorsky H60 Project",
+     "author": "TheAussieMerc"
+    },
+    {
+     "id": "663B2784961621FB",
+     "name": "VT4 - FRM",
+     "author": "FrenchReforgerMod"
+    },
+    {
+     "id": "60F697135C1AF8E9",
+     "name": "VTF Rally Championship",
+     "author": "Wayward_S0n"
+    }
+   ],
+   "unresolved": [],
+   "image": 9538,
+   "scenarioIds": []
+  },
+  {
+   "slug": "auc-conflict",
+   "guid": "66F45DB4333D0393",
+   "title": "AUC - Conflict",
+   "workshop": true,
+   "name": "AUC - Conflict",
+   "version": "0.1.70",
+   "size": 698826404,
+   "created": "2025-11-26",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "AUC",
+    "CONFLICT",
+    "PVP",
+    "SCENARIOS_MP",
+    "SCENARIOS_SP"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.1.70",
+     "2026-11-07"
+    ],
+    [
+     "0.1.69",
+     "2026-06-17"
+    ],
+    [
+     "0.1.68",
+     "2026-06-02"
+    ],
+    [
+     "0.1.67",
+     "2026-06-02"
+    ],
+    [
+     "0.1.66",
+     "2026-06-02"
+    ],
+    [
+     "0.1.65",
+     "2026-06-02"
+    ],
+    [
+     "0.1.64",
+     "2026-06-02"
+    ],
+    [
+     "0.1.63",
+     "2026-04-09"
+    ],
+    [
+     "0.1.62",
+     "2026-03-31"
+    ],
+    [
+     "0.1.61",
+     "2026-03-29"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [
+    "AUC HQ Conflict - Kolguyev"
+   ],
+   "direct": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core"
+    },
+    {
+     "id": "614C00DA7F8765F6",
+     "name": "WCS_SpawnProtection"
+    }
+   ],
+   "deps": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "614C00DA7F8765F6",
+     "name": "WCS_SpawnProtection",
+     "author": "Worst Case Scenario"
+    }
+   ],
+   "unresolved": [],
+   "image": 9288,
+   "scenarioIds": [
+    "{2E9304CF1F97A04B}Missions/AUC_C_Kolguyev.conf"
+   ]
+  },
+  {
+   "slug": "cherchetoi-rp-clothing",
+   "guid": "6930250D69578D25",
+   "title": "ChercheToi RP - Clothing",
+   "workshop": true,
+   "name": "ChercheToi RP - Clothing",
+   "version": "0.0.11",
+   "size": 98814727,
+   "created": "2026-05-06",
+   "updated": "2026-06-01",
+   "game": "1.7.0.41",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "CHARACTERS",
+    "CHERCHETOI",
+    "CLOTHING",
+    "ROLEPLAY"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.11",
+     "2026-06-01"
+    ],
+    [
+     "0.0.10",
+     "2026-06-01"
+    ],
+    [
+     "0.0.9",
+     "2026-05-29"
+    ],
+    [
+     "0.0.8",
+     "2026-05-18"
+    ],
+    [
+     "0.0.7",
+     "2026-05-17"
+    ],
+    [
+     "0.0.6",
+     "2026-05-16"
+    ],
+    [
+     "0.0.5",
+     "2026-05-15"
+    ],
+    [
+     "0.0.4",
+     "2026-05-11"
+    ],
+    [
+     "0.0.3",
+     "2026-05-09"
+    ],
+    [
+     "0.0.2",
+     "2026-05-09"
+    ]
+   ],
+   "changelog": "",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "687CD82F6E41D627",
+     "name": "Attachment Framework-Core"
+    },
+    {
+     "id": "645F08FA9E7CDEDE",
+     "name": "Attachment Framework"
+    },
+    {
+     "id": "60FB19EB2B5D119C",
+     "name": "Civilian Clothing Mod"
+    },
+    {
+     "id": "666D2C5F02F88A56",
+     "name": "Clothing_pack_v2"
+    },
+    {
+     "id": "687520341696351E",
+     "name": "Entropy Biker Cuts"
+    },
+    {
+     "id": "6590D8CA3AC6DA90",
+     "name": "FRENCH Core"
+    },
+    {
+     "id": "65EF16962A8D9840",
+     "name": "Press Gear - Expanded"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character"
+    }
+   ],
+   "deps": [
+    {
+     "id": "687CD82F6E41D627",
+     "name": "Attachment Framework-Core",
+     "author": "Tonic "
+    },
+    {
+     "id": "645F08FA9E7CDEDE",
+     "name": "Attachment Framework",
+     "author": "McTiddies4Lunch3"
+    },
+    {
+     "id": "60FB19EB2B5D119C",
+     "name": "Civilian Clothing Mod",
+     "author": "Sk1p36"
+    },
+    {
+     "id": "666D2C5F02F88A56",
+     "name": "Clothing_pack_v2",
+     "author": "Pierre_Roger"
+    },
+    {
+     "id": "687520341696351E",
+     "name": "Entropy Biker Cuts",
+     "author": "entropynine"
+    },
+    {
+     "id": "6590D8CA3AC6DA90",
+     "name": "FRENCH Core",
+     "author": "dob_session"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character",
+     "author": "zelik"
+    },
+    {
+     "id": "65EF16962A8D9840",
+     "name": "Press Gear - Expanded",
+     "author": "microplastic9000"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    }
+   ],
+   "unresolved": [],
+   "image": 30496,
+   "scenarioIds": []
+  },
+  {
+   "slug": "cherchetoi-rp-props",
+   "guid": "692E26A1CF5CAE2D",
+   "title": "ChercheToi RP - Props",
+   "workshop": true,
+   "name": "ChercheToi RP - Props",
+   "version": "0.0.6",
+   "size": 104373599,
+   "created": "2026-05-06",
+   "updated": "2026-06-01",
+   "game": "1.7.0.41",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "CHERCHETOI",
+    "FAIRCROFT",
+    "PROPS",
+    "ROLEPLAY"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.6",
+     "2026-06-01"
+    ],
+    [
+     "0.0.5",
+     "2026-05-29"
+    ],
+    [
+     "0.0.4",
+     "2026-05-22"
+    ],
+    [
+     "0.0.3",
+     "2026-05-19"
+    ],
+    [
+     "0.0.2",
+     "2026-05-06"
+    ],
+    [
+     "0.0.1",
+     "2026-05-06"
+    ]
+   ],
+   "changelog": "",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "5F3831B634575167",
+     "name": "Brit Props"
+    },
+    {
+     "id": "614B62005CBB8057",
+     "name": "Faircroft Islands"
+    },
+    {
+     "id": "5F3942418F2E1FAE",
+     "name": "Palmtree"
+    }
+   ],
+   "deps": [
+    {
+     "id": "5F3831B634575167",
+     "name": "Brit Props",
+     "author": "Lakes Dan"
+    },
+    {
+     "id": "614B62005CBB8057",
+     "name": "Faircroft Islands",
+     "author": "Lakes Dan"
+    },
+    {
+     "id": "5F3942418F2E1FAE",
+     "name": "Palmtree",
+     "author": "Ben.obj"
+    }
+   ],
+   "unresolved": [],
+   "image": 30132,
+   "scenarioIds": []
+  },
+  {
+   "slug": "cherchetoi-rp-vehicles",
+   "guid": "68C4735E25FE6FE7",
+   "title": "ChercheToi RP - Vehicles",
+   "workshop": true,
+   "name": "ChercheToi RP - Vehicles",
+   "version": "0.0.33",
+   "size": 231605627,
+   "created": "2026-03-05",
+   "updated": "2026-06-08",
+   "game": "1.7.0.41",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [
+    "Unknown Soldiers"
+   ],
+   "tags": [
+    "CHERCHETOI",
+    "ROLERPLAY",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.33",
+     "2026-06-08"
+    ],
+    [
+     "0.0.32",
+     "2026-06-03"
+    ],
+    [
+     "0.0.31",
+     "2026-06-03"
+    ],
+    [
+     "0.0.30",
+     "2026-05-31"
+    ],
+    [
+     "0.0.29",
+     "2026-05-31"
+    ],
+    [
+     "0.0.28",
+     "2026-05-29"
+    ],
+    [
+     "0.0.27",
+     "2026-05-19"
+    ],
+    [
+     "0.0.26",
+     "2026-05-17"
+    ],
+    [
+     "0.0.25",
+     "2026-05-17"
+    ],
+    [
+     "0.0.24",
+     "2026-05-10"
+    ]
+   ],
+   "changelog": "",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "687CD82F6E41D627",
+     "name": "Attachment Framework-Core"
+    },
+    {
+     "id": "645F08FA9E7CDEDE",
+     "name": "Attachment Framework"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02"
+    },
+    {
+     "id": "5E440E8FBA164A4C",
+     "name": "AModestBoat"
+    },
+    {
+     "id": "61B84088181A8FA4",
+     "name": "Motorbike"
+    },
+    {
+     "id": "66AC004EFEE2CDDC",
+     "name": "DarkGru RHIB Edits"
+    },
+    {
+     "id": "5D0D623BB27CC015",
+     "name": "Gatoma Pickup Truck"
+    },
+    {
+     "id": "64DF7E9C426AD97C",
+     "name": "SA342 Gazelle - FRM"
+    },
+    {
+     "id": "633343E891C1CD38",
+     "name": "KamAZ 5350"
+    },
+    {
+     "id": "61B77B1E14183311",
+     "name": "Maverick XR"
+    },
+    {
+     "id": "672007DD982C2D2D",
+     "name": "kuka Bus"
+    },
+    {
+     "id": "61081370197674F9",
+     "name": "Beetle 1967"
+    },
+    {
+     "id": "696A0CE876246081",
+     "name": "Modest_Boat_Core"
+    },
+    {
+     "id": "61A6B4C21F6FCF22",
+     "name": "Modest AI Radio"
+    },
+    {
+     "id": "610C8532D3756F2D",
+     "name": "Motorboat"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR"
+    },
+    {
+     "id": "60F697135C1AF8E9",
+     "name": "VTF Rally Championship"
+    },
+    {
+     "id": "65EF16962A8D9840",
+     "name": "Press Gear - Expanded"
+    },
+    {
+     "id": "6878233A749EFD39",
+     "name": "ReforgedZ KartBuggy"
+    },
+    {
+     "id": "665E125128E0AAE6",
+     "name": "RMS SlavLife - Boats"
+    },
+    {
+     "id": "5994614FB5AD35C2",
+     "name": "RHIB"
+    },
+    {
+     "id": "5614E482BF83E310",
+     "name": "Sample Mod - New Car"
+    },
+    {
+     "id": "5CCC20B09E94E467",
+     "name": "Gators Car Pack"
+    },
+    {
+     "id": "65E20C2186CB9753",
+     "name": "SuperVan"
+    },
+    {
+     "id": "5EE8436695761AEB",
+     "name": "SUV pack"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments"
+    },
+    {
+     "id": "62B4A8E40D31F94B",
+     "name": "WW2_Bicycle"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character"
+    }
+   ],
+   "deps": [
+    {
+     "id": "687CD82F6E41D627",
+     "name": "Attachment Framework-Core",
+     "author": "Tonic "
+    },
+    {
+     "id": "645F08FA9E7CDEDE",
+     "name": "Attachment Framework",
+     "author": "McTiddies4Lunch3"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "5E389BB9F58B79A6",
+     "name": "WCS_SpaceCore",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "696A0CE876246081",
+     "name": "Modest_Boat_Core",
+     "author": "Modest23"
+    },
+    {
+     "id": "5E440E8FBA164A4C",
+     "name": "AModestBoat",
+     "author": "Modest23"
+    },
+    {
+     "id": "61B84088181A8FA4",
+     "name": "Motorbike",
+     "author": "Big  Chungus"
+    },
+    {
+     "id": "5994614FB5AD35C2",
+     "name": "RHIB",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "66AC004EFEE2CDDC",
+     "name": "DarkGru RHIB Edits",
+     "author": "CMinano98 2.0"
+    },
+    {
+     "id": "5D0D623BB27CC015",
+     "name": "Gatoma Pickup Truck",
+     "author": "The Gator"
+    },
+    {
+     "id": "64DF7E9C426AD97C",
+     "name": "SA342 Gazelle - FRM",
+     "author": "FrenchReforgerMod"
+    },
+    {
+     "id": "633343E891C1CD38",
+     "name": "KamAZ 5350",
+     "author": "TraceSnowOwl"
+    },
+    {
+     "id": "6A7D4E7B69969355",
+     "name": "Modest VehicleCore",
+     "author": "Modest23"
+    },
+    {
+     "id": "61B77B1E14183311",
+     "name": "Maverick XR",
+     "author": "Modest23"
+    },
+    {
+     "id": "672007DD982C2D2D",
+     "name": "kuka Bus",
+     "author": "kuka-"
+    },
+    {
+     "id": "61081370197674F9",
+     "name": "Beetle 1967",
+     "author": "Modest23"
+    },
+    {
+     "id": "61A6B4C21F6FCF22",
+     "name": "Modest AI Radio",
+     "author": "Modest23"
+    },
+    {
+     "id": "610C8532D3756F2D",
+     "name": "Motorboat",
+     "author": "Modest23"
+    },
+    {
+     "id": "64900A5A31F5DCB5",
+     "name": "WCS_MRZR",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "60F697135C1AF8E9",
+     "name": "VTF Rally Championship",
+     "author": "Wayward_S0n"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character",
+     "author": "zelik"
+    },
+    {
+     "id": "65EF16962A8D9840",
+     "name": "Press Gear - Expanded",
+     "author": "microplastic9000"
+    },
+    {
+     "id": "6878233A749EFD39",
+     "name": "ReforgedZ KartBuggy",
+     "author": "Modest23"
+    },
+    {
+     "id": "665E125128E0AAE6",
+     "name": "RMS SlavLife - Boats",
+     "author": "Enclave Mark"
+    },
+    {
+     "id": "5614E482BF83E310",
+     "name": "Sample Mod - New Car",
+     "author": "Bohemia Interactive"
+    },
+    {
+     "id": "5CCC20B09E94E467",
+     "name": "Gators Car Pack",
+     "author": "The Gator"
+    },
+    {
+     "id": "65E20C2186CB9753",
+     "name": "SuperVan",
+     "author": "The Gator"
+    },
+    {
+     "id": "5EE8436695761AEB",
+     "name": "SUV pack",
+     "author": "The Gator"
+    },
+    {
+     "id": "62B4A8E40D31F94B",
+     "name": "WW2_Bicycle",
+     "author": "Modest23"
+    }
+   ],
+   "unresolved": [],
+   "image": 29682,
+   "scenarioIds": []
+  },
+  {
+   "slug": "lav-25-desert",
+   "guid": "6504422356E3275F",
+   "title": "LAV-25 Desert",
+   "workshop": true,
+   "name": "LAV-25 Desert Storm",
+   "version": "1.0.9",
+   "size": 10864918,
+   "created": "2025-04-02",
+   "updated": "2025-11-05",
+   "game": "1.6.0.54",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "DESERTSTORM",
+    "LAV25",
+    "PIRANHA",
+    "USMC",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.0.9",
+     "2025-11-05"
+    ],
+    [
+     "1.0.8",
+     "2025-05-26"
+    ],
+    [
+     "1.0.7",
+     "2025-05-26"
+    ],
+    [
+     "1.0.6",
+     "2025-04-06"
+    ],
+    [
+     "1.0.5",
+     "2025-04-06"
+    ],
+    [
+     "1.0.4",
+     "2025-04-04"
+    ],
+    [
+     "1.0.3",
+     "2025-04-03"
+    ],
+    [
+     "1.0.2",
+     "2025-04-02"
+    ],
+    [
+     "1.0.1",
+     "2025-04-02"
+    ],
+    [
+     "1.0.0",
+     "2025-04-02"
+    ]
+   ],
+   "changelog": "Simple update to version 1.6",
+   "scenarios": [],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 65728,
+   "scenarioIds": []
+  },
+  {
+   "slug": "modern-fia",
+   "guid": "61E2375C8D777A4E",
+   "title": "Modern FIA",
+   "workshop": true,
+   "name": "Modern FIA",
+   "version": "0.1.23",
+   "size": 57096272,
+   "created": "2024-07-17",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "CHARACTERS",
+    "FIA",
+    "MODERN",
+    "PROMET",
+    "VEHICLES",
+    "WEAPONS"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.1.23",
+     "2026-11-07"
+    ],
+    [
+     "0.1.22",
+     "2026-06-11"
+    ],
+    [
+     "0.1.21",
+     "2026-06-06"
+    ],
+    [
+     "0.1.20",
+     "2026-06-05"
+    ],
+    [
+     "0.1.19",
+     "2026-05-29"
+    ],
+    [
+     "0.1.18",
+     "2026-05-29"
+    ],
+    [
+     "0.1.17",
+     "2026-05-29"
+    ],
+    [
+     "0.1.16",
+     "2026-01-16"
+    ],
+    [
+     "0.1.15",
+     "2025-11-30"
+    ],
+    [
+     "0.1.14",
+     "2025-11-06"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "5614E481506D2979",
+     "name": "Sample Mod - New Weapon"
+    },
+    {
+     "id": "5614E48144F30A55",
+     "name": "Sample Mod - New Character"
+    },
+    {
+     "id": "68DD4B900967B9B6",
+     "name": "Czech Army Vz95 uniforms"
+    }
+   ],
+   "deps": [
+    {
+     "id": "5614E481506D2979",
+     "name": "Sample Mod - New Weapon",
+     "author": "Bohemia Interactive"
+    },
+    {
+     "id": "5614E48144F30A55",
+     "name": "Sample Mod - New Character",
+     "author": "Bohemia Interactive"
+    },
+    {
+     "id": "68DD4B900967B9B6",
+     "name": "Czech Army Vz95 uniforms",
+     "author": "_OV_"
+    }
+   ],
+   "unresolved": [],
+   "image": 39058,
+   "scenarioIds": []
+  },
+  {
+   "slug": "rcd-rhs",
+   "guid": "65D08E0825A12E2C",
+   "title": "Realistic Combat Drones - RHS",
+   "workshop": true,
+   "name": "Realistic Combat Drones - RHS",
+   "version": "0.0.10",
+   "size": 37578,
+   "created": "2025-07-08",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "DJI",
+    "DRONE",
+    "FPV",
+    "JAMMER",
+    "MAVIC2",
+    "MISC"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.10",
+     "2026-11-07"
+    ],
+    [
+     "0.0.9",
+     "2026-08-13"
+    ],
+    [
+     "0.0.8",
+     "2026-08-13"
+    ],
+    [
+     "0.0.7",
+     "2026-08-13"
+    ],
+    [
+     "0.0.6",
+     "2026-06-08"
+    ],
+    [
+     "0.0.5",
+     "2026-02-04"
+    ],
+    [
+     "0.0.4",
+     "2026-01-16"
+    ],
+    [
+     "0.0.3",
+     "2025-11-01"
+    ],
+    [
+     "0.0.2",
+     "2025-07-08"
+    ],
+    [
+     "0.0.1",
+     "2025-07-08"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo"
+    }
+   ],
+   "deps": [
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones",
+     "author": "SalamiBoiDev"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    }
+   ],
+   "unresolved": [],
+   "image": 46158,
+   "scenarioIds": []
+  },
+  {
+   "slug": "rcd-wcs",
+   "guid": "65D10E606F9A0B25",
+   "title": "Realistic Combat Drones - WCS",
+   "workshop": true,
+   "name": "Realistic Combat Drones - WCS",
+   "version": "1.0.3",
+   "size": 565597,
+   "created": "2025-07-08",
+   "updated": "2026-11-14",
+   "game": "1.9.0.37",
+   "license": "Arma Public License No Derivatives (APL-ND)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "DJI",
+    "DRONE",
+    "FPV",
+    "JAMMER",
+    "MAVIC2",
+    "MISC"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.0.3",
+     "2026-11-14"
+    ],
+    [
+     "1.0.2",
+     "2026-11-10"
+    ],
+    [
+     "1.0.1",
+     "2026-11-07"
+    ],
+    [
+     "1.0.0",
+     "2026-10-31"
+    ],
+    [
+     "0.0.12",
+     "2026-10-23"
+    ],
+    [
+     "0.0.11",
+     "2026-09-09"
+    ],
+    [
+     "0.0.10",
+     "2026-09-03"
+    ],
+    [
+     "0.0.9",
+     "2026-08-23"
+    ],
+    [
+     "0.0.8",
+     "2026-06-08"
+    ],
+    [
+     "0.0.7",
+     "2026-04-09"
+    ]
+   ],
+   "changelog": "- Reorganization of configuration files",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts"
+    },
+    {
+     "id": "615CC2D870A39838",
+     "name": "WCS_Arsenal"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo"
+    },
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones"
+    }
+   ],
+   "deps": [
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "1337C0DE5DABBEEF",
+     "name": "RHS - Content Pack 01",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "BADC0DEDABBEDA5E",
+     "name": "RHS - Content Pack 02",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "595F2BF2F44836FB",
+     "name": "RHS - Status Quo",
+     "author": "Red Hammer Studios"
+    },
+    {
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615806DC6C57AF02",
+     "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615818DA7C0343FD",
+     "name": "WCS_RU",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "62A668F513428630",
+     "name": "WCS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61C74A8B647617DA",
+     "name": "WCS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6A717EEA63A35E67",
+     "name": "WCS_RHS_Attachments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "3B8081D9CAD979D2",
+     "name": "WCS_RHS_Scopes",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6602C1EC7E5A4A87",
+     "name": "WCS_Clothing_Assets",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "61E42AE6714A3CC2",
+     "name": "WCS_Armbands",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65CF7AE8574E06D2",
+     "name": "WCS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6AAEEB19367529A1",
+     "name": "WCS_RHS_Clothing",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "615CC2D870A39838",
+     "name": "WCS_Arsenal",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "65AD60E204191D37",
+     "name": "Realistic Combat Drones",
+     "author": "SalamiBoiDev"
+    }
+   ],
+   "unresolved": [],
+   "image": 46082,
+   "scenarioIds": []
+  },
+  {
+   "slug": "solo-push-pull",
+   "guid": "61ED28EAECF0D304",
+   "title": "Solo Push-Pull",
+   "workshop": true,
+   "name": "Solo Push-Pull",
+   "version": "0.0.16",
+   "size": 13660,
+   "created": "2024-07-22",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "PULL",
+    "PUSH",
+    "SYSTEMS",
+    "UNFLIP",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "0.0.16",
+     "2026-11-07"
+    ],
+    [
+     "0.0.15",
+     "2026-09-20"
+    ],
+    [
+     "0.0.14",
+     "2026-05-28"
+    ],
+    [
+     "0.0.13",
+     "2026-03-07"
+    ],
+    [
+     "0.0.12",
+     "2026-01-16"
+    ],
+    [
+     "0.0.11",
+     "2025-10-31"
+    ],
+    [
+     "0.0.10",
+     "2025-10-31"
+    ],
+    [
+     "0.0.9",
+     "2025-05-25"
+    ],
+    [
+     "0.0.8",
+     "2025-05-25"
+    ],
+    [
+     "0.0.7",
+     "2025-05-25"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 62970,
+   "scenarioIds": []
+  },
+  {
+   "slug": "talibanmod-red-side-v2",
+   "guid": "65651694F5D27C8D",
+   "title": "TalibanMod Red Side V2",
+   "workshop": true,
+   "name": "TalibanMod Red Side V2",
+   "version": "1.0.15",
+   "size": 31634450,
+   "created": "2025-05-18",
+   "updated": "2026-11-07",
+   "game": "1.9.0.37",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "CHARACTERS",
+    "OPFOR",
+    "PVE",
+    "REDSIDE",
+    "TALIBAN",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.0.15",
+     "2026-11-07"
+    ],
+    [
+     "1.0.14",
+     "2026-10-28"
+    ],
+    [
+     "1.0.13",
+     "2026-09-04"
+    ],
+    [
+     "1.0.12",
+     "2026-06-04"
+    ],
+    [
+     "1.0.11",
+     "2026-06-04"
+    ],
+    [
+     "1.0.10",
+     "2026-06-04"
+    ],
+    [
+     "1.0.9",
+     "2026-06-04"
+    ],
+    [
+     "1.0.8",
+     "2026-06-03"
+    ],
+    [
+     "1.0.7",
+     "2026-05-28"
+    ],
+    [
+     "1.0.6",
+     "2026-01-16"
+    ]
+   ],
+   "changelog": "- Update for v1.9",
+   "scenarios": [],
+   "direct": [
+    {
+     "id": "6167529D6B3F6BE4",
+     "name": "Insurgents SAF"
+    },
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character"
+    }
+   ],
+   "deps": [
+    {
+     "id": "5D0551624969C92E",
+     "name": "Zeliks Character",
+     "author": "zelik"
+    },
+    {
+     "id": "6167529D6B3F6BE4",
+     "name": "Insurgents SAF",
+     "author": "V-lst"
+    }
+   ],
+   "unresolved": [],
+   "image": 38682,
+   "scenarioIds": []
+  },
+  {
+   "slug": "off-road-vehicles",
+   "guid": "65AB41C94C11F1DD",
+   "title": "Off-Road Vehicles",
+   "workshop": true,
+   "name": "Off-Road Vehicles",
+   "version": "1.0.1",
+   "size": 146358833,
+   "created": "2025-07-29",
+   "updated": "2025-07-31",
+   "game": "1.4.0.48",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "ASSETS",
+    "MANW_2025",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.0.1",
+     "2025-07-31"
+    ],
+    [
+     "1.0.0",
+     "2025-07-31"
+    ],
+    [
+     "0.9.9",
+     "2025-07-31"
+    ],
+    [
+     "0.9.8",
+     "2025-07-30"
+    ],
+    [
+     "0.9.7",
+     "2025-07-30"
+    ],
+    [
+     "0.9.6",
+     "2025-07-30"
+    ],
+    [
+     "0.9.5",
+     "2025-07-30"
+    ],
+    [
+     "0.9.4",
+     "2025-07-29"
+    ],
+    [
+     "0.9.3",
+     "2025-07-29"
+    ],
+    [
+     "0.9.2",
+     "2025-07-29"
+    ]
+   ],
+   "changelog": "- Always more, always more... It's not good, drugs are bad.",
+   "scenarios": [
+    "Game Master - Everon Explorer"
+   ],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 48856,
+   "scenarioIds": [
+    "{B30A3C603BBD2AC6}Missions/GM_Eden_OffRoadVehicles.conf"
+   ]
+  },
+  {
+   "slug": "uaz-452-offroad",
+   "guid": "62332D2F8F3AB376",
+   "title": "UAZ-452 Offroad",
+   "workshop": true,
+   "name": "UAZ-452 Offroad",
+   "version": "1.0.0",
+   "size": 2307779,
+   "created": "2024-08-25",
+   "updated": "2024-08-28",
+   "game": "1.2.0.124",
+   "license": "Arma Public License (APL)",
+   "author": "TheUnknownTeam",
+   "contributors": [],
+   "tags": [
+    "BUKHANKA",
+    "OFFROAD",
+    "UAZ-452",
+    "VEHICLES"
+   ],
+   "unlisted": false,
+   "versions": [
+    [
+     "1.0.0",
+     "2024-08-28"
+    ],
+    [
+     "0.0.42",
+     "2024-08-28"
+    ],
+    [
+     "0.0.41",
+     "2024-08-28"
+    ],
+    [
+     "0.0.40",
+     "2024-08-28"
+    ],
+    [
+     "0.0.39",
+     "2024-08-28"
+    ],
+    [
+     "0.0.38",
+     "2024-08-28"
+    ],
+    [
+     "0.0.37",
+     "2024-08-28"
+    ],
+    [
+     "0.0.36",
+     "2024-08-28"
+    ],
+    [
+     "0.0.35",
+     "2024-08-28"
+    ],
+    [
+     "0.0.34",
+     "2024-08-28"
+    ]
+   ],
+   "changelog": "- Update v1.0.0",
+   "scenarios": [],
+   "direct": [],
+   "deps": [],
+   "unresolved": [],
+   "image": 50218,
+   "scenarioIds": []
+  }
+ ]
+}
