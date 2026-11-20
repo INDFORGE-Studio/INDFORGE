@@ -554,15 +554,46 @@
   }
 
   /* ------------------------------------------------ filters */
+  /* Workshop page: one family and any of the checked Workshop tags; no sorting, the ORBAT order stays. */
   function initModFilter() {
-    var btns = $$(".fbtn"); if (!btns.length) return;
-    btns.forEach(function (b) {
-      b.addEventListener("click", function () {
-        var f = b.getAttribute("data-filter");
-        btns.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        $$(".orbat-group").forEach(function (g) { g.hidden = !(f === "all" || g.getAttribute("data-group") === f); });
+    var box = $("#wsf"); if (!box) return;
+    var cards = $$(".orbat .card"), groups = $$(".orbat-group"), fams = $$(".wsf-fam input", box), tags = $$(".wsf-tag input", box);
+    var count = $("#wsf-n"), reset = $(".wsf-reset", box), empty = $(".wsf-empty");
+    function has(el, attr, v) { return (" " + el.getAttribute(attr) + " ").indexOf(" " + v + " ") >= 0; }
+    function setN(el, args) {
+      if (!el) return;
+      el.setAttribute("data-i18n-args", JSON.stringify(args));
+      el.innerHTML = fmt(tr(el.getAttribute("data-i18n"), "{n} mods"), args);
+    }
+    function run() {
+      var f = "all", on = [], n = 0;
+      fams.forEach(function (x) { if (x.checked) f = x.value; });
+      tags.forEach(function (x) { if (x.checked) on.push(x.value); });
+      function inFam(c) { return f === "all" || has(c, "data-fam", f); }
+      cards.forEach(function (c) {
+        var ok = inFam(c) && (!on.length || on.some(function (v) { return has(c, "data-tags", v); }));
+        c.hidden = !ok; if (ok) n++;
       });
+      groups.forEach(function (g) {
+        var v = $$(".card", g).filter(function (c) { return !c.hidden; }).length;
+        g.hidden = !v; setN($(".orbat-n", g), { n: v });
+      });
+      tags.forEach(function (x) {
+        var k = cards.filter(function (c) { return inFam(c) && has(c, "data-tags", x.value); }).length;
+        x.parentNode.querySelector("i").textContent = k;
+        x.disabled = !k && !x.checked;
+      });
+      setN(count, { n: n, t: cards.length });
+      if (empty) empty.hidden = n > 0;
+      reset.disabled = f === "all" && !on.length;
+    }
+    box.addEventListener("change", run);
+    reset.addEventListener("click", function () {
+      fams.forEach(function (x) { x.checked = x.value === "all"; });
+      tags.forEach(function (x) { x.checked = false; });
+      run(); fams[0].focus();
     });
+    run();
   }
   function initCfgFilter() {
     var input = $("#cfg-filter"), count = $("#cfg-count"); if (!input) return;

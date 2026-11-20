@@ -821,7 +821,13 @@
    "image": 66246,
    "scenarioIds": [
     "{AEC3BDD54B62A3E6}Missions/Conflict_Everon_US_Gramps303_INDFORGE.conf"
-   ]
+   ],
+   "stats": {
+    "subs": 1,
+    "downloads": 133,
+    "rating": 100,
+    "votes": 3
+   }
   },
   {
    "slug": "forest",
@@ -1410,7 +1416,13 @@
    "image": 66246,
    "scenarioIds": [
     "{77A7CBC536D7A088}Missions/Conflict_BelleauWood_US_INDFORGE.conf"
-   ]
+   ],
+   "stats": {
+    "subs": 0,
+    "downloads": 313,
+    "rating": 100,
+    "votes": 2
+   }
   },
   {
    "slug": "ai-framework",
@@ -1518,7 +1530,13 @@
    "deps": [],
    "unresolved": [],
    "image": 29194,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 1,
+    "downloads": 4681,
+    "rating": 91,
+    "votes": 23
+   }
   },
   {
    "slug": "auc-factions",
@@ -1735,7 +1753,13 @@
    ],
    "unresolved": [],
    "image": 9762,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 4301,
+    "rating": 92,
+    "votes": 51
+   }
   },
   {
    "slug": "auc-vehicles",
@@ -2182,7 +2206,13 @@
    ],
    "unresolved": [],
    "image": 9538,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 2109,
+    "rating": 100,
+    "votes": 14
+   }
   },
   {
    "slug": "auc-conflict",
@@ -2278,7 +2308,13 @@
    "image": 9288,
    "scenarioIds": [
     "{2E9304CF1F97A04B}Missions/AUC_C_Kolguyev.conf"
-   ]
+   ],
+   "stats": {
+    "subs": 0,
+    "downloads": 935,
+    "rating": 95,
+    "votes": 21
+   }
   },
   {
    "slug": "cherchetoi-rp-clothing",
@@ -2450,7 +2486,13 @@
    ],
    "unresolved": [],
    "image": 30496,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 1966,
+    "rating": 100,
+    "votes": 2
+   }
   },
   {
    "slug": "cherchetoi-rp-props",
@@ -2534,7 +2576,13 @@
    ],
    "unresolved": [],
    "image": 30132,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 1842,
+    "rating": 100,
+    "votes": 1
+   }
   },
   {
    "slug": "cherchetoi-rp-vehicles",
@@ -2892,7 +2940,13 @@
    ],
    "unresolved": [],
    "image": 29682,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 2719,
+    "rating": 75,
+    "votes": 4
+   }
   },
   {
    "slug": "lav-25-desert",
@@ -2964,7 +3018,13 @@
    "deps": [],
    "unresolved": [],
    "image": 65728,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 5029,
+    "rating": 96,
+    "votes": 24
+   }
   },
   {
    "slug": "modern-fia",
@@ -3066,7 +3126,13 @@
    ],
    "unresolved": [],
    "image": 39058,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 6454,
+    "rating": 95,
+    "votes": 43
+   }
   },
   {
    "slug": "rcd-rhs",
@@ -3177,7 +3243,13 @@
    ],
    "unresolved": [],
    "image": 46158,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 2,
+    "downloads": 48259,
+    "rating": 91,
+    "votes": 68
+   }
   },
   {
    "slug": "rcd-wcs",
@@ -3390,7 +3462,13 @@
    ],
    "unresolved": [],
    "image": 46082,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 1,
+    "downloads": 58243,
+    "rating": 91,
+    "votes": 47
+   }
   },
   {
    "slug": "solo-push-pull",
@@ -3462,7 +3540,13 @@
    "deps": [],
    "unresolved": [],
    "image": 62970,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 2,
+    "downloads": 982862,
+    "rating": 91,
+    "votes": 22
+   }
   },
   {
    "slug": "talibanmod-red-side-v2",
@@ -3555,7 +3639,13 @@
    ],
    "unresolved": [],
    "image": 38682,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 23647,
+    "rating": 90,
+    "votes": 62
+   }
   },
   {
    "slug": "off-road-vehicles",
@@ -3629,7 +3719,13 @@
    "image": 48856,
    "scenarioIds": [
     "{B30A3C603BBD2AC6}Missions/GM_Eden_OffRoadVehicles.conf"
-   ]
+   ],
+   "stats": {
+    "subs": 0,
+    "downloads": 4698,
+    "rating": 93,
+    "votes": 29
+   }
   },
   {
    "slug": "uaz-452-offroad",
@@ -3700,7 +3796,14 @@
    "deps": [],
    "unresolved": [],
    "image": 50218,
-   "scenarioIds": []
+   "scenarioIds": [],
+   "stats": {
+    "subs": 0,
+    "downloads": 12545,
+    "rating": 100,
+    "votes": 18
+   }
   }
- ]
+ ],
+ "stats_date": "2026-11-20"
 }

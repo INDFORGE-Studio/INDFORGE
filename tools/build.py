@@ -66,6 +66,19 @@ CATS = [
 ]
 ORDER = [s for _, slugs in CATS for s in slugs]
 CAT_OF = {s: c for c, slugs in CATS for s in slugs}
+# Workshop page: filter by family (one choice) and by the official Workshop main tags.
+FAMILIES = [
+    ("indforge", "fam.indforge", dict(CATS)["indforge"]),
+    ("auc", "fam.auc", dict(CATS)["auc"]),
+    ("ctrp", "fam.ctrp", dict(CATS)["ctrp"]),
+    ("manw", "fam.manw", ["off-road-vehicles"]),
+    ("gear", "cat.gear", dict(CATS)["gear"]),
+    ("standby", "cat.standby", dict(CATS)["standby"]),
+]
+FAM_OF = {s: [f for f, _, slugs in FAMILIES if s in slugs] for s in ORDER}
+# The Workshop's own main categories, in its order (reforger.armaplatform.com/workshop).
+WS_TAGS = ["VEHICLES", "WEAPONS", "STRUCTURES", "CHARACTERS", "ANIMALS", "VEGETATION", "PROPS", "COMPOSITIONS",
+           "SCENARIOS_SP", "SCENARIOS_MP", "TERRAINS", "SYSTEMS", "EFFECTS", "MISC"]
 
 STATUS = {
     "conflict-pve": ["operational", "dev"],
@@ -197,7 +210,9 @@ for _m in MODS.values():
         _m["versions"] = []
         _m["guid"] = None
         _m["scenarioIds"] = []
+        _m.pop("stats", None)
 GENERATED = load(os.path.join(TOOLS, "data", "mods.json"))["generated"]
+STATS_DATE = load(os.path.join(TOOLS, "data", "mods.json")).get("stats_date")
 CONFIGS = load(os.path.join(TOOLS, "data", "configs.json"))
 # Site-written help for keys whose config file ships none (written from the mod's code).
 _SITE_HELP = load(os.path.join(TOOLS, "data", "configs-site-help.json"))
@@ -338,6 +353,9 @@ def icon(name):
         "optic": _aperture(),
         "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
         "cfg": '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+        "rating": '<path d="M7 11v9H4v-9zM7 11l4-7c1.6 0 2.4 1 2 2.6L12.4 10H19c1.2 0 2 1 1.8 2.2l-1.3 6.2c-.2 1-1 1.6-2 1.6H7"/>',
+        "subs": '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.8-4 3.8-6 7.5-6s6.7 2 7.5 6"/>',
+        "dl": '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
     }
     return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">%s</svg>' % paths[name]
 
@@ -533,6 +551,21 @@ def sec(id_, title_key, body, code="", cls="", note=""):
 </section>""" % (cls, id_, id_, id_, H(code), t(title_key), note, body)
 
 
+def num(n):
+    """Thousands split by a narrow no-break space: reads the same in English and French."""
+    return "{:,}".format(n).replace(",", "\u202f")
+
+
+def stat_items(m):
+    """Rating, subscribers and downloads as the Workshop shows them; classified for unlisted mods."""
+    st = m.get("stats")
+    vals = [("st.rating", "rating", st and "%d%%" % st["rating"]),
+            ("st.subs", "subs", st and num(st["subs"])),
+            ("st.downloads", "dl", st and num(st["downloads"]))]
+    return "".join('<span class="cstat" %s>%s%s<b>%s</b></span>' % (
+        ta("title", key), icon(ico), t(key, "span", "sr"), H(v) if v else redact(3)) for key, ico, v in vals)
+
+
 def badge_inc():
     return t("ui.incoming", "span", "chip chip-inc")
 
@@ -541,16 +574,17 @@ def badge_inc():
 def card(slug, lazy=True):
     m = MODS[slug]
     ver = H("v" + m["version"]) if m["version"] else redact(5)
-    return """<a class="card" href="%s" data-cat="%s">
+    return """<a class="card" href="%s" data-cat="%s" data-fam="%s" data-tags="%s">
   <span class="card-img"><img src="%sassets/img/thumbs/%s.webp" width="480" height="270" alt=""%s decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
   <span class="card-body">
     <span class="card-meta">%s<span class="mono dim">%s</span></span>
     <span class="card-title">%s</span>
     %s
+    <span class="card-stats mono">%s</span>
     <span class="card-id mono" aria-hidden="true">ID %s</span>
   </span>
-</a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), ver,
-           H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), m["guid"] or redact(16))
+</a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], " ".join(FAM_OF[slug]), H(" ".join(m["tags"])), BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), ver,
+           H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), stat_items(m), m["guid"] or redact(16))
 
 
 def orbat(lazy=True):
@@ -639,6 +673,9 @@ def facts(m):
         row("ui.game", m["game"]),
         row("ui.size", size(m["size"])),
         row("ui.license", m["license"]),
+        row("st.rating", m.get("stats") and "%d%% %s" % (m["stats"]["rating"], t("st.votes", "span", "dim", {"n": num(m["stats"]["votes"])})), True),
+        row("st.subs", m.get("stats") and num(m["stats"]["subs"])),
+        row("st.downloads", m.get("stats") and num(m["stats"]["downloads"])),
         row("ui.author", m["author"]),
     ]
     if m["contributors"]:
@@ -831,12 +868,28 @@ def home():
     page("", "home.title", body, "home", cls="p-home")
 
 
+def ws_filters():
+    def fam(value, key, n, checked=False):
+        return ('<label class="wsf-fam"><input type="radio" name="wsf-fam" value="%s"%s>'
+                '<span class="wsf-lbl">%s</span><i class="mono">%d</i></label>') % (value, " checked" if checked else "", t(key), n)
+    fams = fam("all", "ui.all", len(ORDER), True) + "".join(fam(f, k, len(s)) for f, k, s in FAMILIES)
+    tags = "".join(('<label class="wsf-tag"><input type="checkbox" value="%s"><span class="wsf-box" aria-hidden="true"></span>'
+                    '<span class="wsf-lbl">%s</span><i class="mono">%d</i></label>') % (
+        tg, t("tag." + tg), sum(tg in MODS[s]["tags"] for s in ORDER)) for tg in WS_TAGS)
+    date = t("wsf.stats_date", "span", "dim", {"d": STATS_DATE}) if STATS_DATE else ""
+    return """<div class="wsf js-only" id="wsf">
+  <fieldset class="wsf-set"><legend class="wsf-leg mono">%s</legend><div class="wsf-fams">%s</div></fieldset>
+  <fieldset class="wsf-set"><legend class="wsf-leg mono">%s <span class="dim">%s</span></legend><div class="wsf-tags">%s</div></fieldset>
+  <div class="wsf-foot mono"><span aria-live="polite">%s</span>%s<button type="button" class="wsf-reset" disabled>%s</button></div>
+</div>
+<p class="wsf-empty mono" hidden>%s</p>""" % (
+        t("wsf.family"), fams, t("wsf.tags"), t("wsf.tags_d"), tags,
+        t("wsf.result", "span", "", {"n": len(ORDER), "t": len(ORDER)}, 'id="wsf-n"'), date, t("wsf.reset"), t("wsf.empty"))
+
+
 def mods_index():
-    filt = '<div class="filters js-only" role="group" %s><button type="button" class="fbtn" aria-pressed="true" data-filter="all">%s</button>%s</div>' % (
-        ta("aria-label", "ui.filter"), t("ui.all"),
-        "".join('<button type="button" class="fbtn" aria-pressed="false" data-filter="%s">%s</button>' % (c, t("cat." + c)) for c, _ in CATS))
     body = phead("FILE-02", "mods.kicker", "mods.h1", "mods.lead", {"n": len(MODS)}) + \
-        '<section class="wrap sec orbat">%s%s</section>' % (filt, orbat())
+        '<section class="wrap sec orbat">%s%s</section>' % (ws_filters(), orbat())
     page("workshop/", "mods.title", body, "mods")
 
 

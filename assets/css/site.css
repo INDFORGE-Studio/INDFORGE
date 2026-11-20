@@ -393,10 +393,52 @@ details[open] > summary::before { transform: rotate(90deg); }
 .card:hover .card-title { color: var(--amber); }
 .card-tag { font-size: .9rem; color: var(--txt2); line-height: 1.5; }
 .card-id { margin-top: auto; padding-top: 8px; font-size: 10.5px; color: var(--mute); }
-.filters { flex-wrap: wrap; gap: 8px; margin: 12px 0 6px; }
-.fbtn { padding: 7px 12px; cursor: pointer; font: 600 12px var(--f-mono); letter-spacing: .06em; color: var(--txt2); background: rgba(255, 255, 255, .02); border: 1px solid var(--line2); border-radius: var(--r); }
-.fbtn:hover { color: var(--hi); border-color: var(--amber); }
-.fbtn[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: var(--on-accent); }
+.card[hidden] { display: none; }
+.card-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 8px; margin-top: auto; border-top: 1px dashed rgba(var(--line-rgb), .14); font-size: 11.5px; color: var(--txt2); }
+.card-stats + .card-id { margin-top: 0; padding-top: 2px; }
+.cstat { display: inline-flex; align-items: center; gap: 5px; }
+.cstat .ico { width: 13px; height: 13px; color: var(--mute); }
+.cstat b { font-weight: 600; color: var(--hi); }
+/* Workshop filters: family (one choice) and the official Workshop tags */
+.wsf { margin: 12px 0 8px; padding: 14px 16px; background: rgba(var(--panel-rgb), .55); border: 1px solid var(--line2); border-radius: var(--r); }
+.wsf-set { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+.wsf-leg { padding: 0; margin-bottom: 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+.wsf-leg .dim { letter-spacing: .04em; text-transform: none; color: var(--mute); }
+.wsf-fams { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line2); border-radius: var(--r); width: fit-content; max-width: 100%; overflow: hidden; }
+.wsf-fam { position: relative; display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; cursor: pointer;
+  font: 600 12px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--txt2); border-right: 1px solid var(--line2); }
+.wsf-fam:last-child { border-right: 0; }
+.wsf-fam i, .wsf-tag i { font-style: normal; font-size: 10.5px; color: var(--mute); }
+.wsf-fam:hover { color: var(--hi); background: rgba(var(--amber-rgb), .08); }
+.wsf-fam:has(input:checked) { background: var(--amber); color: var(--on-accent); }
+.wsf-fam:has(input:checked) i { color: inherit; opacity: .75; }
+.wsf input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
+.wsf-fam:has(input:focus-visible), .wsf-tag:has(input:focus-visible) { outline: 2px solid var(--amber); outline-offset: -2px; }
+.wsf-tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 4px 12px; }
+.wsf-tag { position: relative; display: flex; align-items: center; gap: 9px; padding: 6px 8px; cursor: pointer; border-radius: var(--r);
+  font: 600 12px var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--txt2); }
+.wsf-tag:hover { color: var(--hi); background: rgba(var(--amber-rgb), .06); }
+.wsf-tag i { margin-left: auto; }
+.wsf-box { flex: none; width: 14px; height: 14px; border: 1px solid var(--line2); border-radius: 2px; background: rgba(var(--deep-rgb), .6); display: grid; place-items: center; }
+.wsf-tag input:checked + .wsf-box { background: var(--amber); border-color: var(--amber); }
+.wsf-tag input:checked + .wsf-box::after { content: ""; width: 7px; height: 4px; border: solid var(--on-accent); border-width: 0 0 2px 2px; transform: translateY(-1px) rotate(-45deg); }
+.wsf-tag:has(input:checked) { color: var(--hi); }
+.wsf-tag:has(input:disabled) { opacity: .38; cursor: default; }
+.wsf-tag:has(input:disabled):hover { background: none; color: var(--txt2); }
+.wsf-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 12px; border-top: 1px solid var(--line2); font-size: 12px; color: var(--txt2); }
+.wsf-foot #wsf-n { color: var(--hi); font-weight: 600; }
+.wsf-reset { margin-left: auto; padding: 6px 12px; cursor: pointer; font: 600 11.5px var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--txt2); background: none; border: 1px solid var(--line2); border-radius: var(--r); }
+.wsf-reset:hover:not(:disabled) { color: var(--hi); border-color: var(--amber); }
+.wsf-reset:disabled { opacity: .35; cursor: default; }
+.wsf-empty { margin: 26px 0; padding: 18px; text-align: center; color: var(--mute); border: 1px dashed var(--line2); border-radius: var(--r); }
+@media (max-width: 640px) {
+  .wsf { padding: 12px; }
+  .wsf-fams { width: auto; }
+  .wsf-fam { flex: 1 1 auto; justify-content: center; padding: 8px 10px; border-bottom: 1px solid var(--line2); }
+  .wsf-tags { grid-template-columns: 1fr 1fr; gap: 2px 6px; }
+  .wsf-tag { padding: 6px 4px; font-size: 11px; letter-spacing: .02em; }
+}
 
 /* ---------- mod page */
 .mhero { padding-top: clamp(20px, 4vw, 40px); }
