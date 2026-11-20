@@ -817,8 +817,10 @@ def home():
     stat_html = "".join('<div class="stat"><b class="mono" data-count="%d">%d</b>%s</div>' % (n, n, t(k)) for n, k in stats)
     body = """<div class="home wrap">
 <section class="home-top">
-  <h1 class="home-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
-  %s
+  <div class="home-title">
+    <h1 class="home-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
+    <p class="home-sub"><span class="sr">Arma Reforger</span><span class="home-sub-l" aria-hidden="true">%s</span></p>
+  </div>
   <div class="actions home-act">
     <a class="btn btn-primary" href="%sworkshop/">%s%s</a>
     <a class="btn btn-ghost" href="%sadmins/">%s</a>
@@ -848,7 +850,7 @@ def home():
 </div>
 <section class="stats home-stats" aria-label="Stats">%s</section>
 </div>""" % (
-        t("home.lead", "p", "lead home-lead"),
+        "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in "ARMA REFORGER"),
         BASE, t("home.cta_mods"), icon("arrow"), BASE, t("home.cta_admins"), icon("search"), t("home.search"),
         t("tele.h"), t("tele.d", "p", "dim", {"d": STATS_DATE or ""}), kpi, tele_rows, BASE, t("tele.more"), icon("arrow"),
         t("ui.declassified", "span", "stamp", None, 'aria-hidden="true"'), t("home.news"), H(MODS["conflict-pve"]["updated"]),
