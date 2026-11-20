@@ -32,13 +32,27 @@ LIVE = ("en", "fr")
 LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 
 # Display modes ("optics"): code, menu tag, then swatch colours (background, accent, secondary).
+# All but the first carry an ambient effect layer (site.js, "fx").
 OPTICS = [
-    ("tactical", "AMB", "#06080a", "#ffb000", "#46f08c"),
+    ("arma", "ARM", "#06080a", "#ffb000", "#46f08c"),
     ("nvg", "NVG", "#010603", "#a6ff3d", "#3dffb4"),
     ("thermal", "THM", "#07030f", "#ff8a1f", "#ff3d8b"),
     ("arctic", "ARC", "#03070d", "#4cc9ff", "#7dffd8"),
     ("red", "RED", "#070101", "#ff3b2f", "#ff8a5c"),
     ("day", "DAY", "#e9e3d1", "#8f4f00", "#2c6a2c"),
+]
+# National colour schemes: colours only, no ambient effect. Code, menu tag, flag swatch.
+NATIONS = [
+    ("fra", "FRA", "linear-gradient(90deg,#002654 0 33.4%,#fff 0 66.6%,#ce1126 0)"),
+    ("gbr", "GBR", "linear-gradient(#c8102e,#c8102e) center/100% 18% no-repeat,linear-gradient(#c8102e,#c8102e) center/14% 100% no-repeat,"
+                   "linear-gradient(#fff,#fff) center/100% 36% no-repeat,linear-gradient(#fff,#fff) center/26% 100% no-repeat,"
+                   "linear-gradient(to top right,transparent 42%,#fff 42% 58%,transparent 58%),"
+                   "linear-gradient(to bottom right,transparent 42%,#fff 42% 58%,transparent 58%),#012169"),
+    ("deu", "DEU", "linear-gradient(#000 0 33.4%,#dd0000 0 66.6%,#ffce00 0)"),
+    ("esp", "ESP", "linear-gradient(#aa151b 0 25%,#f1bf00 0 75%,#aa151b 0)"),
+    ("ita", "ITA", "linear-gradient(90deg,#009246 0 33.4%,#f4f5f0 0 66.6%,#ce2b37 0)"),
+    ("pol", "POL", "linear-gradient(#f4f4f4 0 50%,#dc143c 0)"),
+    ("ukr", "UKR", "linear-gradient(#0057b7 0 50%,#ffd700 0)"),
 ]
 
 CATS = [
@@ -294,6 +308,24 @@ def copy_btn(target=None, text=None, small=False):
     return '<button type="button" class="%s" %s><span class="copy-ico" aria-hidden="true"></span>%s</button>' % (cls, a, t("ui.copy", "span", "copy-lbl"))
 
 
+def _aperture():
+    # Lens iris: a hexagonal opening, each edge carried on to the barrel as a blade.
+    import math
+    r, R, c = 3.6, 9.0, 12.0
+    v = [(c + r * math.cos(math.radians(60 * i - 90)), c + r * math.sin(math.radians(60 * i - 90))) for i in range(6)]
+    blades = []
+    for i in range(6):
+        (ax, ay), (bx, by) = v[i], v[(i + 1) % 6]
+        dx, dy = bx - ax, by - ay
+        n = math.hypot(dx, dy)
+        dx, dy = dx / n, dy / n
+        px, py = bx - c, by - c
+        k = -(px * dx + py * dy) + math.sqrt((px * dx + py * dy) ** 2 - (px * px + py * py - R * R))
+        blades.append("M%.2f %.2fL%.2f %.2f" % (bx, by, bx + k * dx, by + k * dy))
+    hexa = "M" + "L".join("%.2f %.2f" % p for p in v) + "Z"
+    return '<circle cx="12" cy="12" r="9"/><path class="lens" d="%s"/><path d="%s"/>' % (hexa, "".join(blades))
+
+
 def icon(name):
     paths = {
         "search": '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>',
@@ -301,9 +333,7 @@ def icon(name):
         "ext": '<path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/>',
         "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
         "back": '<path d="M19 12H5M11 6l-6 6 6 6"/>',
-        "nvg": '<path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/><path d="M12 3v0"/><rect x="2.5" y="8" width="8" height="11" rx="2.5"/>'
-               '<rect x="13.5" y="8" width="8" height="11" rx="2.5"/><path d="M10.5 12h3"/>'
-               '<circle class="lens" cx="6.5" cy="15" r="2.2"/><circle class="lens" cx="17.5" cy="15" r="2.2"/>',
+        "optic": _aperture(),
         "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
         "cfg": '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
     }
@@ -322,10 +352,11 @@ HEAD_JS = (
     "try{l=localStorage.getItem('ifg-lang')||''}catch(e){}"
     "if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];"
     "for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}"
-    "h.setAttribute('data-lang',l);try{var o=localStorage.getItem('ifg-optic');if(O.indexOf(o)>0)h.setAttribute('data-theme',o)}catch(e){}"
+    "h.setAttribute('data-lang',l);try{var o=localStorage.getItem('ifg-optic');if(O.indexOf(o)>0)h.setAttribute('data-theme',o);"
+    "var f=localStorage.getItem('ifg-fx');if(f==='off'||(!f&&matchMedia('(prefers-reduced-motion: reduce)').matches))h.className+=' fx-off'}catch(e){}"
     "if(l!=='en'){h.className+=' i18n-wait';"
     "setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);"
-) % (json.dumps([l for l, _ in LANGS]), json.dumps([o[0] for o in OPTICS]))
+) % (json.dumps([l for l, _ in LANGS]), json.dumps([o[0] for o in OPTICS] + [n[0] for n in NATIONS]))
 
 SPEC = json.dumps({"prerender": [{"where": {"href_matches": BASE + "*"}, "eagerness": "moderate"}]})
 
@@ -365,6 +396,13 @@ def header(active):
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
         '<i class="opt-sw" style="--c:%s;--a:%s;--b:%s" aria-hidden="true"></i><b class="opt-k">%s</b>%s</button></li>'
         % (o, c, a, b, k, t("optic." + o)) for o, k, c, a, b in OPTICS)
+    optics += '<li role="presentation" class="opt-h">%s</li>' % t("optic.nat") + "".join(
+        '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
+        '<i class="opt-sw opt-flag" style="--flag:%s" aria-hidden="true"></i><b class="opt-k">%s</b>%s</button></li>'
+        % (o, f, k, t("optic." + o)) for o, k, f in NATIONS)
+    optics += ('<li role="separator" class="lang-sep"></li><li role="none"><button type="button" role="menuitemcheckbox" '
+               'aria-checked="true" class="opt-fx" data-fx><b class="opt-k">FX</b>%s<i class="opt-tg" aria-hidden="true"></i></button></li>'
+               % t("optic.fx"))
     return """<a class="skip" href="#main" data-i18n="nav.skip">%s</a>
 %s
 <header class="hud" id="top">
@@ -383,7 +421,7 @@ def header(active):
         <ul class="lang-menu" id="lang-menu" role="menu" hidden>%s</ul>
       </div>
       <div class="lang opt">
-        <button type="button" class="tool opt-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="opt-menu" %s>%s<span class="opt-cur">AMB</span></button>
+        <button type="button" class="tool opt-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="opt-menu" %s>%s<span class="opt-cur">ARM</span></button>
         <ul class="lang-menu opt-menu" id="opt-menu" role="menu" hidden><li role="presentation" class="opt-h">%s</li>%s</ul>
       </div>
       <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" %s>%s</button>
@@ -392,7 +430,7 @@ def header(active):
   <div class="hud-line" aria-hidden="true"></div>
 </header>""" % (H(E["nav.skip"]), FX_DEFS, url(), BASE + "assets/img/logo.svg", "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
-                 ta("aria-label", "nav.optic"), icon("nvg"), t("optic.h"), optics,
+                 ta("aria-label", "nav.optic"), icon("optic"), t("optic.h"), optics,
                  ta("aria-label", "nav.menu"), icon("menu"))
 
 

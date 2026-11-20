@@ -95,50 +95,194 @@
   }
 
   /* ------------------------------------------------ optics (display modes) */
+  // Ambient layer of each optic: one canvas, a corner HUD and a click mark. Arma and the
+  // national colours have none. Stops when the tab is hidden or the switch is off.
+  var FX = { nvg: 1, thermal: 1, arctic: 1, red: 1, day: 1 };
+  var DIRS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  function fxOn() { return !root.classList.contains("fx-off"); }
+  function makeFx() {
+    var cv, ctx, hud, tl, br, torch, parts = [], raf = 0, last = 0, W = 0, Hh = 0, dpr = 1, kind = "", sweep = 0, sprite = null, hudRaf = 0;
+    var fine = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
+    function el(cls) { var d = doc.createElement("div"); d.className = cls; d.setAttribute("aria-hidden", "true"); d.hidden = true; doc.body.appendChild(d); return d; }
+    function ensure() {
+      if (cv) return;
+      cv = doc.createElement("canvas"); cv.className = "fx-cv"; cv.setAttribute("aria-hidden", "true"); cv.hidden = true;
+      doc.body.appendChild(cv); ctx = cv.getContext("2d");
+      hud = el("fx-hud"); hud.innerHTML = '<span class="fx-tl"></span><span class="fx-br"></span>';
+      tl = hud.firstChild; br = hud.lastChild;
+      torch = el("fx-torch");
+      window.addEventListener("resize", function () { if (kind) { size(); seed(); } }, { passive: true });
+      window.addEventListener("scroll", function () { if (kind && !hudRaf) hudRaf = requestAnimationFrame(hudText); }, { passive: true });
+      doc.addEventListener("visibilitychange", function () { if (doc.hidden) stop(); else if (kind) start(); });
+      if (fine) doc.addEventListener("pointermove", function (e) {
+        if (kind !== "red") return;
+        torch.style.setProperty("--mx", e.clientX + "px"); torch.style.setProperty("--my", e.clientY + "px");
+      }, { passive: true });
+    }
+    function rgbVar(n) { return getComputedStyle(root).getPropertyValue(n).trim() || "255, 255, 255"; }
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5); W = innerWidth; Hh = innerHeight;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(Hh * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+    function spawn(p, top) {
+      if (kind === "arctic") { p.x = rnd(0, W); p.y = top ? rnd(-20, 0) : rnd(0, Hh); p.r = rnd(.6, 2.2); p.vy = .35 + p.r * .4; p.vx = rnd(.2, .6); p.ph = rnd(0, 6.3); p.a = rnd(.35, .85); }
+      else if (kind === "thermal") { p.x = rnd(0, W); p.y = top ? Hh + rnd(0, 60) : rnd(0, Hh); p.r = rnd(10, 34); p.vy = -rnd(.15, .55); p.vx = rnd(-.1, .1); p.ph = rnd(0, 6.3); p.a = rnd(.05, .14); p.c = Math.random() < .7 ? 0 : 1; }
+      else { p.x = rnd(0, W); p.y = rnd(0, Hh); p.r = rnd(.5, 1.5); p.vx = rnd(-.09, .09); p.vy = rnd(-.09, .09); p.ph = rnd(0, 6.3); p.a = rnd(.2, kind === "red" ? .4 : .7); }
+      return p;
+    }
+    function seed() {
+      var area = W * Hh, n = kind === "arctic" ? Math.min(120, area / 12000) : kind === "thermal" ? Math.min(28, area / 50000) : Math.min(90, area / 16000);
+      if (kind === "red") n *= .5;
+      parts = []; for (var i = 0; i < Math.round(n); i++) parts.push(spawn({}, false));
+    }
+    function makeSprite() {
+      var a = rgbVar("--amber-rgb"), g = rgbVar("--green-rgb");
+      sprite = [a, g].map(function (c) {
+        var s = doc.createElement("canvas"); s.width = s.height = 64; var x = s.getContext("2d");
+        var gr = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+        gr.addColorStop(0, "rgba(" + c + ",1)"); gr.addColorStop(1, "rgba(" + c + ",0)");
+        x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return s;
+      });
+    }
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      var dt = Math.min(50, now - (last || now)) / 16.67; last = now;
+      ctx.clearRect(0, 0, W, Hh);
+      var col = rgbVar("--amber-rgb"), t = now / 1000, i, p;
+      if (kind === "thermal") {
+        ctx.globalCompositeOperation = "lighter";
+        for (i = 0; i < parts.length; i++) {
+          p = parts[i]; p.y += p.vy * dt; p.x += (p.vx + Math.sin(t + p.ph) * .15) * dt;
+          if (p.y < -p.r * 2) spawn(p, true);
+          ctx.globalAlpha = p.a * (.7 + .3 * Math.sin(t * 1.5 + p.ph));
+          ctx.drawImage(sprite[p.c], p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        }
+        ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+        return;
+      }
+      if (kind === "arctic") {
+        var wind = .6 + .5 * Math.sin(t * .3);
+        ctx.fillStyle = "rgb(228, 244, 255)";
+        for (i = 0; i < parts.length; i++) {
+          p = parts[i]; p.y += p.vy * dt; p.x += (p.vx * wind + Math.sin(t + p.ph) * .3) * dt;
+          if (p.y > Hh + 4) spawn(p, true);
+          if (p.x > W + 4) p.x = -4;
+          ctx.globalAlpha = p.a; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        return;
+      }
+      ctx.fillStyle = "rgb(" + col + ")";
+      for (i = 0; i < parts.length; i++) {
+        p = parts[i]; p.x += p.vx * dt; p.y += p.vy * dt;
+        if (p.x < 0) p.x = W; else if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = Hh; else if (p.y > Hh) p.y = 0;
+        ctx.globalAlpha = p.a * (.55 + .45 * Math.sin(t * 3 + p.ph));
+        ctx.fillRect(p.x, p.y, p.r, p.r);
+      }
+      ctx.globalAlpha = 1;
+      if (kind === "nvg") {
+        sweep = (sweep + 1.1 * dt) % (Hh + 160);
+        var y = sweep - 80, g = ctx.createLinearGradient(0, y - 70, 0, y + 10);
+        g.addColorStop(0, "rgba(" + col + ",0)"); g.addColorStop(.85, "rgba(" + col + ",.07)"); g.addColorStop(1, "rgba(" + col + ",0)");
+        ctx.fillStyle = g; ctx.fillRect(0, y - 70, W, 80);
+      }
+    }
+    function start() { if (!raf && kind && kind !== "day" && !doc.hidden) { last = 0; raf = requestAnimationFrame(frame); } }
+    function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+    function scrollFrac() { var m = doc.documentElement.scrollHeight - innerHeight; return m > 0 ? Math.min(1, Math.max(0, scrollY / m)) : 0; }
+    function hdg() { var d = Math.round(42 + scrollFrac() * 318) % 360; return "HDG " + ("00" + d).slice(-3) + "° " + DIRS[Math.round(d / 45) % 8]; }
+    function hudText() {
+      hudRaf = 0; var f = scrollFrac();
+      if (kind === "nvg") { tl.innerHTML = "NVG<i></i>GAIN 3"; br.textContent = hdg(); }
+      else if (kind === "thermal") { tl.innerHTML = "IR<i></i>WHITE-HOT"; br.textContent = "T° " + (29 + f * 8).toFixed(1) + "°C"; }
+      else if (kind === "arctic") { tl.innerHTML = "ARC<i></i>WIND " + (12 + Math.round(f * 9)) + " KT NW"; br.textContent = "T° −" + (16 + Math.round(f * 7)) + "°C"; }
+      else if (kind === "red") { tl.innerHTML = "RED<i></i>LOW-LIGHT"; br.textContent = hdg(); }
+    }
+    function refresh() {
+      var k = root.getAttribute("data-theme") || "";
+      k = FX[k] && fxOn() ? k : "";
+      if (!k && !cv) return;
+      ensure(); stop(); kind = k;
+      cv.hidden = !k || k === "day"; hud.hidden = !k || k === "day"; torch.hidden = !(k === "red" && fine);
+      if (!k) { ctx.clearRect(0, 0, W, Hh); return; }
+      if (k === "day") return;
+      size(); if (k === "thermal") makeSprite(); seed(); hudText(); start();
+    }
+    function hit(x, y) {
+      var k = kind; if (!k) return;
+      var label = k === "nvg" ? "RNG " + Math.round(rnd(120, 900)) + " m"
+        : k === "thermal" ? "+" + rnd(31, 39).toFixed(1) + "°C"
+        : k === "arctic" ? "−" + Math.round(rnd(8, 31)) + "°C"
+        : k === "red" ? "PING " + ("00" + Math.round(rnd(0, 359))).slice(-3) + "°"
+        : plain(tr("optic.stamp", "Read & approved"));
+      var d = doc.createElement("div"); d.className = "fx-hit fx-" + k; d.setAttribute("aria-hidden", "true");
+      d.style.left = x + "px"; d.style.top = y + "px";
+      if (k === "day") d.style.setProperty("--rot", rnd(-12, 12).toFixed(1) + "deg");
+      d.innerHTML = "<i></i><b></b>"; d.lastChild.textContent = label;
+      doc.body.appendChild(d); setTimeout(function () { d.remove(); }, k === "day" ? 2700 : 1150);
+    }
+    doc.addEventListener("click", function (e) {
+      if (!kind || e.detail === 0 || e.target.closest("input, textarea, select, .lang-menu, .pal")) return;
+      hit(e.clientX, e.clientY);
+    });
+    return { refresh: refresh };
+  }
+
   function initOptics() {
     var btn = $(".opt-btn"), menu = $("#opt-menu");
     if (!btn || !menu) return;
-    var items = $$("[data-optic]", menu), meta = $('meta[name="theme-color"]');
-    function current() { return root.getAttribute("data-theme") || "tactical"; }
+    var radios = $$("[data-optic]", menu), fxBtn = $("[data-fx]", menu), items = $$("button", menu);
+    var meta = $('meta[name="theme-color"]'), fx = makeFx();
+    function current() { return root.getAttribute("data-theme") || "arma"; }
     function sync() {
-      var cur = current(), on = items.filter(function (b) { return b.getAttribute("data-optic") === cur; })[0];
-      items.forEach(function (b) { b.setAttribute("aria-checked", String(b === on)); });
-      $(".opt-cur", btn).textContent = on ? $(".opt-k", on).textContent : "AMB";
+      var cur = current(), on = radios.filter(function (b) { return b.getAttribute("data-optic") === cur; })[0];
+      radios.forEach(function (b) { b.setAttribute("aria-checked", String(b === on)); });
+      if (fxBtn) fxBtn.setAttribute("aria-checked", String(fxOn()));
+      $(".opt-cur", btn).textContent = on ? $(".opt-k", on).textContent : "ARM";
       if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || "#06080a");
     }
     function apply(o) {
-      if (o === "tactical") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
-      store("ifg-optic", o); sync();
+      if (o === "arma") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
+      store("ifg-optic", o); sync(); fx.refresh();
     }
     function engage(o, from) {
       if (o === current()) return;
-      var r = from.getBoundingClientRect();
+      var r = from.getBoundingClientRect(), anim = !reduce && fxOn();
       root.style.setProperty("--vx", Math.round(r.left + r.width / 2) + "px");
       root.style.setProperty("--vy", Math.round(r.top + r.height / 2) + "px");
       var label = plain(tr("optic." + o, o));
-      if (reduce || !doc.startViewTransition) { apply(o); }
+      if (!anim || !doc.startViewTransition) { apply(o); }
       else {
         root.classList.add("vt-optic");
         var vt = doc.startViewTransition(function () { apply(o); });
-        vt.finished.then(done, done);
+        vt.ready.catch(function () {}); vt.finished.then(done, done);
       }
-      if (!reduce) {
+      if (anim) {
         var ring = doc.createElement("div"); ring.className = "optic-ring"; ring.setAttribute("aria-hidden", "true");
         doc.body.appendChild(ring); setTimeout(function () { ring.remove(); }, 800);
       }
       toast(fmt(tr("optic.on", "Optic engaged: {n}"), { n: label }));
       function done() { root.classList.remove("vt-optic"); }
     }
+    function toggleFx() {
+      var on = !fxOn();
+      root.classList.toggle("fx-off", !on); store("ifg-fx", on ? "on" : "off");
+      sync(); fx.refresh();
+      toast(plain(tr(on ? "optic.fx_on" : "optic.fx_off", on ? "Ambient effects on" : "Ambient effects off")));
+    }
     function open(v) {
       btn.setAttribute("aria-expanded", String(v)); menu.hidden = !v;
       if (v) {
         var lb = $(".lang-btn"), lm = $("#lang-menu");
         if (lm && !lm.hidden) { lm.hidden = true; lb.setAttribute("aria-expanded", "false"); }
-        var c = $('[aria-checked="true"]', menu) || items[0]; c && c.focus();
+        var c = $('[data-optic][aria-checked="true"]', menu) || radios[0]; c && c.focus();
       }
     }
     btn.addEventListener("click", function (e) { e.stopPropagation(); open(menu.hidden); });
     menu.addEventListener("click", function (e) {
+      if (e.target.closest("[data-fx]")) { toggleFx(); return; }
       var b = e.target.closest("[data-optic]"); if (!b) return;
       open(false); btn.focus(); engage(b.getAttribute("data-optic"), btn);
     });
@@ -146,12 +290,14 @@
       var i = items.indexOf(doc.activeElement);
       if (e.key === "ArrowDown") { e.preventDefault(); items[(i + 1) % items.length].focus(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+      else if (e.key === "Home") { e.preventDefault(); items[0].focus(); }
+      else if (e.key === "End") { e.preventDefault(); items[items.length - 1].focus(); }
       else if (e.key === "Escape") { open(false); btn.focus(); }
       else if (e.key === "Tab") { open(false); }
     });
     doc.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".opt")) open(false); });
     var lb0 = $(".lang-btn"); if (lb0) lb0.addEventListener("click", function () { if (!menu.hidden) open(false); });
-    sync();
+    sync(); fx.refresh();
   }
 
   /* ------------------------------------------------ mobile menu */
