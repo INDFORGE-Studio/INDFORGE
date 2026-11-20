@@ -1067,7 +1067,7 @@ html.fx-off body::before { animation: none; }
   .nav a { padding: 8px 9px; }
   .nav a::after { left: 9px; right: 9px; }
 }
-@media (max-width: 1340px) {
+@media (max-width: 1420px) {
   .clock-l { display: none; }
   .hud-bar { flex-wrap: wrap; height: auto; min-height: var(--hud-h); padding-top: 8px; padding-bottom: 8px; }
   .nav { order: 3; flex: 1 0 100%; flex-wrap: wrap; margin: 0; }

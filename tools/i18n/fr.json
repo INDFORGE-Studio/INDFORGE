@@ -7,7 +7,7 @@
   "nav.mods": "Workshop",
   "nav.admins": "Admins",
   "nav.intel": "News",
-  "nav.log": "Journal",
+  "nav.log": "Changelog",
   "nav.status": "Roadmap",
   "nav.about": "Qui sommes-nous",
   "nav.skip": "Aller au contenu",
@@ -324,7 +324,7 @@
     "Tuez le saboteur avant qu'il n'atteigne le générateur."
   ],
   "intel.state_note": "Les éléments marqués <b>À venir</b> sont intégrés en développement et arrivent avec la prochaine mise à jour Workshop de Conflict PvE.",
-  "logp.title": "Journal",
+  "logp.title": "Changelog",
   "logp.kicker": "Journal des transmissions",
   "logp.h1": "Journal des versions",
   "logp.lead": "Chaque publication de nos mods sur le Workshop, la plus récente d'abord, avec le journal des modifications de la version actuelle.",

@@ -7,7 +7,7 @@
   "nav.mods": "Workshop",
   "nav.admins": "Admins",
   "nav.intel": "News",
-  "nav.log": "Log",
+  "nav.log": "Changelog",
   "nav.status": "Roadmap",
   "nav.about": "About us",
   "nav.skip": "Skip to content",
@@ -324,7 +324,7 @@
     "Kill the saboteur before he reaches the generator."
   ],
   "intel.state_note": "Items marked <b>Incoming</b> are merged in development and arrive with the next Workshop update of Conflict PvE.",
-  "logp.title": "Log",
+  "logp.title": "Changelog",
   "logp.kicker": "Transmission log",
   "logp.h1": "Version log",
   "logp.lead": "Every Workshop release of our mods, latest first, with the changelog of the current version.",
