@@ -1098,8 +1098,8 @@ def status():
 
 
 def about():
-    roster = [("TheUnknownTeam", "about.r_author"), ("Volmog_0", "about.r_volmog"),
-              ("Unknown Soldiers", "about.r_soldiers"), ("Captain Valaaks", "about.r_valaaks")]
+    roster = [("Volmog_0", "about.r_volmog"), ("Unknown Soldiers", "about.r_soldiers"),
+              ("Captain Valaaks", "about.r_valaaks")]
     def initials(n):
         w = re.findall(r"[A-Za-z0-9]+", n)
         return (w[0][0] + (w[1][0] if len(w) > 1 else w[0][-1])).upper()
