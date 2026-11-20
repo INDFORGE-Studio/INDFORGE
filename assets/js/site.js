@@ -97,11 +97,11 @@
   /* ------------------------------------------------ optics (display modes) */
   // Ambient layer of each optic: one canvas, a corner HUD and a click mark. Arma and the
   // national colours have none. Stops when the tab is hidden or the switch is off.
-  var FX = { nvg: 1, thermal: 1, arctic: 1, red: 1, day: 1 };
+  var FX = { nvg: 1, thermal: 1, arctic: 1, desert: 1, forest: 1, red: 1, day: 1 };
   var DIRS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   function fxOn() { return !root.classList.contains("fx-off"); }
   function makeFx() {
-    var cv, ctx, hud, tl, br, torch, parts = [], raf = 0, last = 0, W = 0, Hh = 0, dpr = 1, kind = "", sweep = 0, sprite = null, hudRaf = 0;
+    var cv, ctx, hud, tl, br, torch, parts = [], raf = 0, last = 0, W = 0, Hh = 0, dpr = 1, kind = "", sweep = 0, sprite = null, hudRaf = 0, col = "", col2 = "", flies = [];
     var fine = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
     function el(cls) { var d = doc.createElement("div"); d.className = cls; d.setAttribute("aria-hidden", "true"); d.hidden = true; doc.body.appendChild(d); return d; }
     function ensure() {
@@ -127,18 +127,23 @@
     function rnd(a, b) { return a + Math.random() * (b - a); }
     function spawn(p, top) {
       if (kind === "arctic") { p.x = rnd(0, W); p.y = top ? rnd(-20, 0) : rnd(0, Hh); p.r = rnd(.6, 2.2); p.vy = .35 + p.r * .4; p.vx = rnd(.2, .6); p.ph = rnd(0, 6.3); p.a = rnd(.35, .85); }
+      else if (kind === "desert") { p.x = top ? rnd(-80, -10) : rnd(0, W); p.y = rnd(0, Hh); p.len = rnd(4, 16); p.vx = rnd(2.5, 6); p.vy = rnd(-.15, .25); p.ph = rnd(0, 6.3); p.a = rnd(.12, .42); }
+      else if (kind === "forest") { p.x = rnd(0, W); p.y = top ? rnd(-30, -8) : rnd(0, Hh); p.s = rnd(3, 7); p.rot = rnd(0, 6.3); p.vr = rnd(-.04, .04); p.vy = rnd(.3, .85); p.sw = rnd(.4, 1.2); p.ph = rnd(0, 6.3); p.a = rnd(.3, .65); p.c = Math.random() < .55 ? 0 : 1; }
       else if (kind === "thermal") { p.x = rnd(0, W); p.y = top ? Hh + rnd(0, 60) : rnd(0, Hh); p.r = rnd(10, 34); p.vy = -rnd(.15, .55); p.vx = rnd(-.1, .1); p.ph = rnd(0, 6.3); p.a = rnd(.05, .14); p.c = Math.random() < .7 ? 0 : 1; }
       else { p.x = rnd(0, W); p.y = rnd(0, Hh); p.r = rnd(.5, 1.5); p.vx = rnd(-.09, .09); p.vy = rnd(-.09, .09); p.ph = rnd(0, 6.3); p.a = rnd(.2, kind === "red" ? .4 : .7); }
       return p;
     }
     function seed() {
-      var area = W * Hh, n = kind === "arctic" ? Math.min(120, area / 12000) : kind === "thermal" ? Math.min(28, area / 50000) : Math.min(90, area / 16000);
+      var area = W * Hh, n = kind === "arctic" ? Math.min(120, area / 12000) : kind === "thermal" ? Math.min(28, area / 50000)
+        : kind === "desert" ? Math.min(140, area / 9000) : kind === "forest" ? Math.min(40, area / 28000) : Math.min(90, area / 16000);
       if (kind === "red") n *= .5;
       parts = []; for (var i = 0; i < Math.round(n); i++) parts.push(spawn({}, false));
+      flies = [];
+      if (kind === "forest") for (i = 0; i < Math.round(Math.min(14, area / 70000)); i++)
+        flies.push({ x: rnd(0, W), y: rnd(Hh * .25, Hh), vx: rnd(-.3, .3), vy: rnd(-.2, .2), ph: rnd(0, 6.3), r: rnd(5, 9) });
     }
-    function makeSprite() {
-      var a = rgbVar("--amber-rgb"), g = rgbVar("--green-rgb");
-      sprite = [a, g].map(function (c) {
+    function makeSprite(cols) {
+      sprite = cols.map(function (c) {
         var s = doc.createElement("canvas"); s.width = s.height = 64; var x = s.getContext("2d");
         var gr = x.createRadialGradient(32, 32, 0, 32, 32, 32);
         gr.addColorStop(0, "rgba(" + c + ",1)"); gr.addColorStop(1, "rgba(" + c + ",0)");
@@ -149,7 +154,7 @@
       raf = requestAnimationFrame(frame);
       var dt = Math.min(50, now - (last || now)) / 16.67; last = now;
       ctx.clearRect(0, 0, W, Hh);
-      var col = rgbVar("--amber-rgb"), t = now / 1000, i, p;
+      var t = now / 1000, i, p;
       if (kind === "thermal") {
         ctx.globalCompositeOperation = "lighter";
         for (i = 0; i < parts.length; i++) {
@@ -157,6 +162,37 @@
           if (p.y < -p.r * 2) spawn(p, true);
           ctx.globalAlpha = p.a * (.7 + .3 * Math.sin(t * 1.5 + p.ph));
           ctx.drawImage(sprite[p.c], p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        }
+        ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+        return;
+      }
+      if (kind === "desert") {
+        var gust = .7 + .35 * Math.sin(t * .5) + .2 * Math.sin(t * 1.7);
+        ctx.strokeStyle = "rgb(" + col2 + ")"; ctx.lineWidth = 1;
+        for (i = 0; i < parts.length; i++) {
+          p = parts[i]; p.x += p.vx * gust * dt; p.y += (p.vy + Math.sin(t * 2 + p.ph) * .25) * dt;
+          if (p.x > W + 20) spawn(p, true);
+          ctx.globalAlpha = p.a; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.len * gust, p.y); ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        return;
+      }
+      if (kind === "forest") {
+        var leaf = ["rgb(" + col + ")", "rgb(" + col2 + ")"];
+        for (i = 0; i < parts.length; i++) {
+          p = parts[i]; p.y += p.vy * dt; p.x += Math.sin(t * .9 + p.ph) * p.sw * dt; p.rot += p.vr * dt;
+          if (p.y > Hh + 10) spawn(p, true);
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot + Math.sin(t + p.ph) * .5);
+          ctx.globalAlpha = p.a; ctx.fillStyle = leaf[p.c];
+          ctx.beginPath(); ctx.ellipse(0, 0, p.s, p.s * .42, 0, 0, 6.283); ctx.fill(); ctx.restore();
+        }
+        ctx.globalCompositeOperation = "lighter";
+        for (i = 0; i < flies.length; i++) {
+          p = flies[i]; p.x += (p.vx + Math.sin(t * .7 + p.ph) * .25) * dt; p.y += (p.vy + Math.cos(t * .6 + p.ph) * .2) * dt;
+          if (p.x < 0) p.x = W; else if (p.x > W) p.x = 0;
+          if (p.y < Hh * .2) p.y = Hh; else if (p.y > Hh) p.y = Hh * .2;
+          ctx.globalAlpha = Math.max(0, Math.sin(t * 1.3 + p.ph)) * .9;
+          ctx.drawImage(sprite[0], p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
         }
         ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
         return;
@@ -198,6 +234,8 @@
       if (kind === "nvg") { tl.innerHTML = "NVG<i></i>GAIN 3"; br.textContent = hdg(); }
       else if (kind === "thermal") { tl.innerHTML = "IR<i></i>WHITE-HOT"; br.textContent = "T° " + (29 + f * 8).toFixed(1) + "°C"; }
       else if (kind === "arctic") { tl.innerHTML = "ARC<i></i>WIND " + (12 + Math.round(f * 9)) + " KT NW"; br.textContent = "T° −" + (16 + Math.round(f * 7)) + "°C"; }
+      else if (kind === "desert") { tl.innerHTML = "DST<i></i>WIND " + (18 + Math.round(f * 14)) + " KT E"; br.textContent = "T° " + (41 + Math.round(f * 8)) + "°C"; }
+      else if (kind === "forest") { tl.innerHTML = "FOR<i></i>CANOPY " + (88 - Math.round(f * 20)) + "%"; br.textContent = hdg(); }
       else if (kind === "red") { tl.innerHTML = "RED<i></i>LOW-LIGHT"; br.textContent = hdg(); }
     }
     function refresh() {
@@ -208,13 +246,17 @@
       cv.hidden = !k || k === "day"; hud.hidden = !k || k === "day"; torch.hidden = !(k === "red" && fine);
       if (!k) { ctx.clearRect(0, 0, W, Hh); return; }
       if (k === "day") return;
-      size(); if (k === "thermal") makeSprite(); seed(); hudText(); start();
+      col = rgbVar("--amber-rgb"); col2 = rgbVar("--green-rgb");
+      size(); if (k === "thermal") makeSprite([col, col2]); else if (k === "forest") makeSprite(["255, 222, 130"]);
+      seed(); hudText(); start();
     }
     function hit(x, y) {
       var k = kind; if (!k) return;
       var label = k === "nvg" ? "RNG " + Math.round(rnd(120, 900)) + " m"
         : k === "thermal" ? "+" + rnd(31, 39).toFixed(1) + "°C"
         : k === "arctic" ? "−" + Math.round(rnd(8, 31)) + "°C"
+        : k === "desert" ? "BRG " + ("00" + Math.round(rnd(0, 359))).slice(-3) + "°"
+        : k === "forest" ? "WPT " + ("0" + Math.round(rnd(1, 24))).slice(-2)
         : k === "red" ? "PING " + ("00" + Math.round(rnd(0, 359))).slice(-3) + "°"
         : plain(tr("optic.stamp", "Read & approved"));
       var d = doc.createElement("div"); d.className = "fx-hit fx-" + k; d.setAttribute("aria-hidden", "true");

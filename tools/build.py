@@ -38,12 +38,14 @@ OPTICS = [
     ("nvg", "NVG", "#010603", "#a6ff3d", "#3dffb4"),
     ("thermal", "THM", "#07030f", "#ff8a1f", "#ff3d8b"),
     ("arctic", "ARC", "#03070d", "#4cc9ff", "#7dffd8"),
+    ("desert", "DST", "#0c0904", "#f0913a", "#e3c88f"),
+    ("forest", "FOR", "#040805", "#93c24f", "#d39a4c"),
     ("red", "RED", "#070101", "#ff3b2f", "#ff8a5c"),
     ("day", "DAY", "#e9e3d1", "#8f4f00", "#2c6a2c"),
 ]
 # National colour schemes: colours only, no ambient effect. Code, menu tag, flag swatch.
 NATIONS = [
-    ("fra", "FRA", "linear-gradient(90deg,#002654 0 33.4%,#fff 0 66.6%,#ce1126 0)"),
+    ("fra", "FRA", "linear-gradient(90deg,#000091 0 33.4%,#fff 0 66.6%,#e1000f 0)"),
     ("gbr", "GBR", "linear-gradient(#c8102e,#c8102e) center/100% 18% no-repeat,linear-gradient(#c8102e,#c8102e) center/14% 100% no-repeat,"
                    "linear-gradient(#fff,#fff) center/100% 36% no-repeat,linear-gradient(#fff,#fff) center/26% 100% no-repeat,"
                    "linear-gradient(to top right,transparent 42%,#fff 42% 58%,transparent 58%),"

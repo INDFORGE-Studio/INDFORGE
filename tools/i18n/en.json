@@ -618,6 +618,8 @@
   "optic.nvg": "Night vision",
   "optic.thermal": "Thermal",
   "optic.arctic": "Arctic",
+  "optic.desert": "Desert",
+  "optic.forest": "Forest",
   "optic.red": "Red light",
   "optic.day": "Daylight",
   "optic.fra": "France",
