@@ -133,8 +133,7 @@ table { border-collapse: collapse; width: 100%; }
 .nav a::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform .2s var(--ease); }
 .nav a:hover { color: var(--amber); }
 .nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
-.nav a.nav-hot { color: var(--amber); }
-.nav a.nav-hot:hover { color: var(--amber2); }
+.nav a[aria-current="page"] { color: var(--amber); } /* only the current page is coloured */
 .hud-tools { display: flex; align-items: center; gap: 10px; margin-left: auto; flex: none; }
 .clock { display: flex; align-items: baseline; gap: 6px; font: 500 13px var(--f-mono); color: var(--green); letter-spacing: .06em; text-shadow: 0 0 8px rgba(var(--green-rgb), .45); }
 .clock-l { font-size: 9.5px; color: var(--mute); text-shadow: none; text-transform: uppercase; letter-spacing: .1em; }
