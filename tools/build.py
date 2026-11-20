@@ -168,7 +168,8 @@ def redact(n=8, decoy=None):
 
 # ---------------------------------------------------------------- data
 MODS = {m["slug"]: m for m in load(os.path.join(TOOLS, "data", "mods.json"))["mods"]}
-# Unlisted mods: release details stay classified. They are dropped here, so the pages
+# Unlisted mods: release details and the Workshop ID stay classified (anyone holding the ID
+# could add the mod to a server and pull its files). They are dropped here, so the pages
 # only ever carry redaction bars, never the real values.
 for _m in MODS.values():
     if _m["unlisted"]:
@@ -178,6 +179,8 @@ for _m in MODS.values():
         for _k in ("version", "updated", "created", "game", "size", "changelog"):
             _m[_k] = None
         _m["versions"] = []
+        _m["guid"] = None
+        _m["scenarioIds"] = []
 GENERATED = load(os.path.join(TOOLS, "data", "mods.json"))["generated"]
 CONFIGS = load(os.path.join(TOOLS, "data", "configs.json"))
 # Site-written help for keys whose config file ships none (written from the mod's code).
@@ -236,7 +239,7 @@ def tidy_float(m):
 def cfg_text(s):
     return '<span data-i18n="%s">%s</span>' % (cfg_id(s), H(s))
 assert sorted(MODS) == sorted(ORDER), "slug list mismatch"
-OUR_IDS = {m["guid"] for m in MODS.values()}
+OUR_IDS = {m["guid"] for m in MODS.values() if m["guid"]}
 LATEST_GAME = max((m["game"] for m in MODS.values() if m["game"]), key=lambda v: [int(x) for x in v.split(".")])
 CPVE_VER = MODS["conflict-pve"]["version"]
 THIRD_PARTY = {d["id"] for m in MODS.values() for d in m["deps"]} - OUR_IDS - {BASE_GAME}
@@ -513,7 +516,7 @@ def card(slug, lazy=True):
     <span class="card-id mono" aria-hidden="true">ID %s</span>
   </span>
 </a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), ver,
-           H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), m["guid"])
+           H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), m["guid"] or redact(16))
 
 
 def orbat(lazy=True):
@@ -551,9 +554,9 @@ def dep_lists(m):
 
 def deps_section(m):
     slug = m["slug"]
-    if not m["workshop"]:
+    if not m["workshop"] or not m["guid"]:
         body = """<p>%s</p><div class="classified-box"><p class="mono">"mods": [ %s ]</p><p>%s</p></div>""" % (
-            t("deps.unreleased"), redact(28), redact(0, "WCS_Core - ████████████████"))
+            t("deps.unreleased" if not m["workshop"] else "deps.unlisted"), redact(28), redact(0, "████████████████ - ████████████████"))
         return sec("deps", "sec.deps", body, "05")
     entries, js, plain = dep_lists(m)
     intro = t("deps.intro", "p")
@@ -595,7 +598,7 @@ def facts(m):
         v = val if raw else (H(val) if val else None)
         return "<div><dt>%s</dt><dd>%s</dd></div>" % (t(key), v if v else redact(10))
     rows = [
-        row("ui.workshop_id", '<code>%s</code>%s' % (m["guid"], copy_btn(text=m["guid"], small=True)), True),
+        row("ui.workshop_id", m["guid"] and '<code>%s</code>%s' % (m["guid"], copy_btn(text=m["guid"], small=True)), True),
         row("ui.version", m["version"] and "v" + m["version"]),
         row("ui.updated", m["updated"]),
         row("ui.created", m["created"]),
@@ -631,7 +634,7 @@ def mod_page(slug):
     k = "m.%s." % slug
     has = lambda s: (k + s) in SRC["en"]
     ws_btn = ""
-    if m["workshop"]:
+    if m["workshop"] and m["guid"]:
         ws_btn = ext(WORKSHOP + m["guid"], icon("ext") + t("ui.open_workshop"), "btn btn-primary")
     hero = """<section class="mhero wrap">
   <nav class="crumbs mono" aria-label="Breadcrumb"><a href="%s">%s</a><span aria-hidden="true">/</span><a href="%sworkshop/">%s</a><span aria-hidden="true">/</span>%s</nav>
@@ -652,7 +655,7 @@ def mod_page(slug):
 </section>""" % (url(), t("nav.home"), BASE, t("nav.mods"), t("cat." + cat), i + 1, t("cat." + cat), H(name(m)),
                  t(k + "tag", "p", "lead"), chips(slug), H("v" + m["version"]) if m["version"] else "",
                  ws_btn, t("sec.deps"), BASE, slug, 540, H(name(m)),
-                 slug.upper(), m["guid"])
+                 slug.upper(), m["guid"] or "████████████████")
 
     parts = []
     ov = tl(k + "intro", "p")
@@ -1049,7 +1052,7 @@ def search_index():
     items = [{"k": "page", "t": key, "tk": 1, "u": url(p)} for p, key, _ in NAV]
     for s in ORDER:
         m = MODS[s]
-        items.append({"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"], s, " ".join(m["tags"])), "u": url("workshop/%s/" % s)})
+        items.append({"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"] or "", s, " ".join(m["tags"])), "u": url("workshop/%s/" % s)})
     for cmd, key, _ in COMMANDS:
         items.append({"k": "cmd", "t": cmd.split("\n")[0], "s": key, "u": url("admins/#cmds")})
     for f in CONFIGS:

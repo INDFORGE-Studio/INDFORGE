@@ -620,5 +620,6 @@
   "optic.arctic": "Arctic",
   "optic.red": "Red light",
   "optic.day": "Daylight",
-  "optic.on": "Optic engaged: {n}"
+  "optic.on": "Optic engaged: {n}",
+  "deps.unlisted": "This mod is unlisted on the Workshop: its ID stays classified."
 }

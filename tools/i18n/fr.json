@@ -620,5 +620,6 @@
   "optic.arctic": "Arctique",
   "optic.red": "Lumière rouge",
   "optic.day": "Plein jour",
-  "optic.on": "Optique engagée : {n}"
+  "optic.on": "Optique engagée : {n}",
+  "deps.unlisted": "Ce mod n'est pas répertorié sur le Workshop : son identifiant reste classifié."
 }
