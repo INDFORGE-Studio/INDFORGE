@@ -571,7 +571,11 @@ details[open] > summary::before { transform: rotate(90deg); }
 
 /* ---------- docs layout */
 .docgrid { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: start; margin-top: 20px; }
-.docgrid.nogrid { grid-template-columns: minmax(0, 1fr); max-width: 980px; margin-left: 0; }
+.docgrid.nogrid { grid-template-columns: minmax(0, 1fr); max-width: 980px; margin-left: auto; margin-right: auto; }
+/* centred page head (About): same axis as the centred column below */
+.phead-c { max-width: 980px; text-align: center; }
+.phead-c .kicker { justify-content: center; }
+.phead-c .lead { margin-left: auto; margin-right: auto; }
 .sticky { position: sticky; top: calc(var(--hud-h) + 16px); }
 .docmain > .sec:first-child { margin-top: 10px; }
 .twocol { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 30px; align-items: start; }
