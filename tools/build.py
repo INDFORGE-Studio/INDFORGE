@@ -111,6 +111,8 @@ for _f in ("favicon.svg", "favicon.ico", "favicon-32.png", "icon-192.png", "icon
     with open(os.path.join(ROOT, "assets", "img", _f), "rb") as _fh:
         _hi.update(_fh.read())
 ICON_VER = _hi.hexdigest()[:8]
+with open(os.path.join(ROOT, "assets", "img", "og.jpg"), "rb") as _fh:
+    OG_VER = hashlib.sha1(_fh.read()).hexdigest()[:8]
 
 
 def fmt(s, args):
@@ -353,7 +355,11 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
         title = '<title data-i18n="%s" data-i18n-suffix=" · INDFORGE - Studio">%s · INDFORGE - Studio</title>' % (title_key, H(E[title_key]))
         og_title = E[title_key] + " · INDFORGE - Studio"
     desc = desc or E["site.desc"]
-    img = SITE + (image or "assets/img/mods/conflict-pve.webp")
+    if image:
+        img, img_meta = SITE + image, ""
+    else:
+        img = SITE + "assets/img/og.jpg?v=" + OG_VER
+        img_meta = '\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">'
     doc = """<!doctype html>
 <html lang="en" data-v="%(ver)s"%(cfgv)s data-base="%(base)s" data-page="%(active)s">
 <head>
@@ -367,8 +373,9 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 <meta property="og:title" content="%(ogt)s">
 <meta property="og:description" content="%(desc)s">
 <meta property="og:url" content="%(canon)s">
-<meta property="og:image" content="%(img)s">
+<meta property="og:image" content="%(img)s">%(imgmeta)s
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="%(img)s">
 <meta name="theme-color" content="#06080a">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="%(base)sassets/img/favicon.ico?v=%(iv)s" sizes="48x48">
@@ -394,7 +401,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 </body>
 </html>
 """ % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
-       "ogt": H(og_title), "img": img, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
+       "ogt": H(og_title), "img": img, "imgmeta": img_meta, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
        "header": header(active), "body": body, "footer": footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(out), exist_ok=True)
