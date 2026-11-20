@@ -42,7 +42,6 @@
   "ui.mods_count": "{n} mods",
   "ui.deps_count": "{n} dépendances",
   "ui.no_js": "Couche interactive hors ligne : le contenu reste entièrement lisible.",
-  "ui.zulu": "Zoulou",
   "ui.signal": "Signal",
   "ui.secure": "Canal sécurisé",
   "ui.classified": "Classifié",
@@ -668,5 +667,8 @@
   "ui.totop": "Haut de page",
   "optic.usa": "États-Unis",
   "tele.votes": "Votes",
-  "optic.emblem": "Emblème INDFORGE · {n}"
+  "optic.emblem": "Emblème INDFORGE · {n}",
+  "ui.callsign": "Indicatif",
+  "ui.callsign_new": "Tirer un nouvel indicatif",
+  "ui.callsign_set": "Nouvel indicatif : {c}"
 }

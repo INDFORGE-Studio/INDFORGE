@@ -369,14 +369,31 @@
     window.addEventListener("resize", function () { if (innerWidth > 1340 && nav.classList.contains("open")) set(false); });
   }
 
-  /* ------------------------------------------------ Zulu clock */
-  function initClock() {
-    var el = $("#zulu"); if (!el) return;
-    function pad(n) { return (n < 10 ? "0" : "") + n; }
-    function tick() { var d = new Date(); el.textContent = pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds()) + "Z"; }
-    tick();
-    var id = setInterval(tick, 1000);
-    doc.addEventListener("visibilitychange", function () { clearInterval(id); if (!doc.hidden) { tick(); id = setInterval(tick, 1000); } });
+  /* ------------------------------------------------ radio callsign: each visitor gets one, a click draws a new one */
+  var CALLSIGNS = ["VIPER", "FALCON", "RAVEN", "WOLF", "GHOST", "HAWK", "COBRA", "TALON", "SABRE", "LANCER", "NOMAD", "RANGER",
+    "SPECTRE", "ATLAS", "ORION", "HUNTER", "KESTREL", "OSPREY", "HORNET", "BADGER", "MUSTANG", "PHOENIX", "TITAN", "BISON",
+    "LYNX", "GRIFFIN", "WARDEN", "SHADOW", "STORM", "ARROW", "MAGPIE", "TEMPEST"];
+  function initCallsign() {
+    var b = $(".csign"), v = b && $(".csign-v", b); if (!v) return;
+    function draw() {
+      var w = CALLSIGNS[Math.floor(Math.random() * CALLSIGNS.length)];
+      return w + " " + (1 + Math.floor(Math.random() * 9)) + "-" + (1 + Math.floor(Math.random() * 9));
+    }
+    var cur = store("ifg-callsign");
+    if (!cur || !/^[A-Z]+ [1-9]-[1-9]$/.test(cur)) { cur = draw(); store("ifg-callsign", cur); }
+    v.textContent = cur;
+    b.addEventListener("click", function () {
+      var next = cur; while (next === cur) next = draw();
+      cur = next; store("ifg-callsign", cur);
+      toast(tr("ui.callsign_set", "New callsign: {c}").replace("{c}", cur));
+      if (reduce) { v.textContent = cur; return; }
+      var n = 0, A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      (function tick() { // radio static before the new callsign locks in
+        n++;
+        v.textContent = cur.split("").map(function (c, i) { return c === " " || c === "-" || i < n - 3 ? c : A[Math.floor(Math.random() * A.length)]; }).join("");
+        if (n < cur.length + 4) setTimeout(tick, 35); else v.textContent = cur;
+      })();
+    });
   }
 
   /* ------------------------------------------------ toast & copy */
@@ -754,7 +771,7 @@
   }
 
   function init() {
-    initLangMenu(); initOptics(); initMenu(); initClock(); initCopy(); initSearch();
+    initLangMenu(); initOptics(); initMenu(); initCallsign(); initCopy(); initSearch();
     initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }

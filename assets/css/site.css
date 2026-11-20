@@ -137,7 +137,11 @@ table { border-collapse: collapse; width: 100%; }
 .nav a.nav-hot:hover { color: var(--amber2); }
 .hud-tools { display: flex; align-items: center; gap: 10px; margin-left: auto; flex: none; }
 .clock { display: flex; align-items: baseline; gap: 6px; font: 500 13px var(--f-mono); color: var(--green); letter-spacing: .06em; text-shadow: 0 0 8px rgba(var(--green-rgb), .45); }
-.clock-l { font-size: 9.5px; color: var(--mute); text-shadow: none; }
+.clock-l { font-size: 9.5px; color: var(--mute); text-shadow: none; text-transform: uppercase; letter-spacing: .1em; }
+.csign { padding: 4px 6px; margin: 0; background: none; border: 1px solid transparent; cursor: pointer; white-space: nowrap; }
+.js .csign.js-only { display: flex !important; }
+.csign:hover, .csign:focus-visible { border-color: rgba(var(--green-rgb), .4); background: rgba(var(--green-rgb), .06); }
+.csign-v { font-weight: 600; min-width: 9.5ch; text-align: left; }
 .sig { display: flex; align-items: flex-end; gap: 2px; height: 16px; }
 .sig i { width: 3px; background: var(--green); opacity: .85; border-radius: 1px; transform-origin: bottom; animation: sig 2.4s infinite var(--ease); }
 .sig i:nth-child(1) { height: 25%; } .sig i:nth-child(2) { height: 45%; animation-delay: .2s; } .sig i:nth-child(3) { height: 65%; animation-delay: .4s; }
@@ -1114,7 +1118,7 @@ html.fx-off body::before { animation: none; }
   .feat li::before { left: 11px; top: 19px; }
 }
 @media (max-width: 400px) {
-  .clock, .fsb { display: none !important; }
+  .clock, .js .csign.js-only, .fsb { display: none !important; }
 }
 @media (max-width: 359px) {
   .brand-txt { display: none; }

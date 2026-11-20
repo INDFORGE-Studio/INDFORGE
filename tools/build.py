@@ -430,7 +430,7 @@ def header(active):
     <nav class="nav" id="nav" %s>%s</nav>
     <div class="hud-tools">
       <span class="fsb" aria-hidden="true"></span>
-      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <button type="button" class="clock csign js-only" %s>%s<b class="csign-v">-----</b></button>
       <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
       <button type="button" class="tool search-btn" data-search %s>%s<kbd>/</kbd></button>
       <div class="lang">
@@ -446,6 +446,7 @@ def header(active):
   </div>
   <div class="hud-line" aria-hidden="true"></div>
 </header>""" % (H(E["nav.skip"]), url(), BRAND_MARK, "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
+                 ta("title", "ui.callsign_new"), t("ui.callsign", "span", "clock-l"),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
                  ta("aria-label", "nav.optic"), icon("optic"), t("optic.h"), optics,
                  ta("aria-label", "nav.menu"), icon("menu"))
