@@ -686,10 +686,10 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
 /* daylight: printed briefing paper, redactions stay black */
 :root[data-theme="day"] {
   color-scheme: light;
-  --bg: #e9e3d1; --bg2: #ded7c2; --panel2: #f5f0e1; --deep: #f1ecdc;
-  --bg-rgb: 233, 227, 209; --bg2-rgb: 222, 215, 194; --deep-rgb: 241, 236, 220; --panel-rgb: 247, 243, 231;
-  --line-rgb: 60, 55, 40; --txt: #1d1f1a; --txt2: #3e4238; --mute: #6b6757; --mute-rgb: 107, 103, 87;
-  --amber: #8f4f00; --amber2: #b36400; --amber-rgb: 143, 79, 0;
+  --bg: #c8c1ac; --bg2: #bcb5a0; --panel2: #d2cbb6; --deep: #cec7b2;
+  --bg-rgb: 200, 193, 172; --bg2-rgb: 188, 181, 160; --deep-rgb: 206, 199, 178; --panel-rgb: 210, 203, 182;
+  --line-rgb: 50, 46, 34; --txt: #1a1b17; --txt2: #34372f; --mute: #55524a; --mute-rgb: 85, 82, 74;
+  --amber: #7a4200; --amber2: #9a5600; --amber-rgb: 122, 66, 0;
   --green: #2c6a2c; --green-rgb: 44, 106, 44; --cyan: #145f87; --cyan-rgb: 20, 95, 135;
   --violet: #5b3aa8; --violet-rgb: 91, 58, 168; --red: #b3161d; --red-rgb: 179, 22, 29;
   --hi: #0d0e0b; --nav-txt: #1d1f1a; --code-txt: #26331f; --on-accent: #fff8e8; --scan: .12;
@@ -765,6 +765,87 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
   --green: #0057b7; --green-rgb: 0, 87, 183; --cyan: #5a9cf0; --cyan-rgb: 90, 156, 240;
   --hi: #ffffff; --nav-txt: #e6edf8; --code-txt: #e6edf8; --on-accent: #00204a; --on-sec: #ffd700; --scan: .5;
 }
+
+/* national identity: the flag over the top of the page, a flag band and a flag edge (static) */
+:root[data-theme="fra"] { --band: linear-gradient(90deg, #000091 0 33.4%, #fff 0 66.6%, #e1000f 0); --edge: linear-gradient(#000091 0 33.4%, #fff 0 66.6%, #e1000f 0); }
+:root[data-theme="fra"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(90deg, #000091 0 33.4%, #fff 0 66.6%, #e1000f 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="gbr"] { --band: linear-gradient(90deg, #012169 0 30%, #fff 0 40%, #c8102e 0 60%, #fff 0 70%, #012169 0); --edge: linear-gradient(#012169 0 30%, #fff 0 40%, #c8102e 0 60%, #fff 0 70%, #012169 0); }
+:root[data-theme="gbr"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#c8102e, #c8102e) 0 282px / 100% 77px no-repeat,
+    linear-gradient(#c8102e, #c8102e) 50% 0 / 7% 640px no-repeat,
+    linear-gradient(#fff, #fff) 0 243px / 100% 154px no-repeat,
+    linear-gradient(#fff, #fff) 50% 0 / 14% 640px no-repeat,
+    linear-gradient(to top right, transparent 46%, #c8102e 46% 48.5%, #fff 48.5% 53%, transparent 53%) 0 0 / 100% 640px no-repeat,
+    linear-gradient(to bottom right, transparent 46%, #fff 46% 51.5%, #c8102e 51.5% 54%, transparent 54%) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#012169, #012169) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="deu"] { --band: linear-gradient(90deg, #000 0 33.4%, #dd0000 0 66.6%, #ffcc00 0); --edge: linear-gradient(#000 0 33.4%, #dd0000 0 66.6%, #ffcc00 0); }
+:root[data-theme="deu"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#000 0 33.4%, #dd0000 0 66.6%, #ffcc00 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="esp"] { --band: linear-gradient(90deg, #aa151b 0 25%, #f1bf00 0 75%, #aa151b 0); --edge: linear-gradient(#aa151b 0 25%, #f1bf00 0 75%, #aa151b 0); }
+:root[data-theme="esp"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#aa151b 0 25%, #f1bf00 0 75%, #aa151b 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="ita"] { --band: linear-gradient(90deg, #009246 0 33.4%, #f4f5f0 0 66.6%, #ce2b37 0); --edge: linear-gradient(#009246 0 33.4%, #f4f5f0 0 66.6%, #ce2b37 0); }
+:root[data-theme="ita"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(90deg, #009246 0 33.4%, #f4f5f0 0 66.6%, #ce2b37 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="pol"] { --band: linear-gradient(90deg, #fff 0 50%, #dc143c 0); --edge: linear-gradient(#fff 0 50%, #dc143c 0); }
+:root[data-theme="pol"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#fff 0 50%, #dc143c 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:root[data-theme="ukr"] { --band: linear-gradient(90deg, #0057b7 0 50%, #ffd700 0); --edge: linear-gradient(#0057b7 0 50%, #ffd700 0); }
+:root[data-theme="ukr"] body {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#0057b7 0 50%, #ffd700 0) 0 0 / 100% 640px no-repeat,
+    linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg);
+  background-attachment: fixed;
+}
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"]) .hud-line { height: 3px; opacity: 1; background: var(--band); }
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"]) body::before { content: ""; position: fixed; left: 0; top: 0; bottom: 0; width: 4px; z-index: 101; pointer-events: none; background: var(--edge); }
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"]) .foot { border-top: 3px solid transparent; border-image: var(--band) 1; }
 
 /* ---------- ambient effects of the optics (layers drawn by site.js; switch: html.fx-off) */
 .fx-cv { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 89; pointer-events: none; }
@@ -893,6 +974,7 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
   .tool { padding: 0 8px; }
   .opt-cur { display: none; }
   .fx-hud { display: none; }
+  :root { --wash-a: .82; --wash-b: .88; }
   .clock { font-size: 12px; }
   .brand-txt small { display: none; }
   .mside { grid-template-columns: minmax(0, 1fr); }

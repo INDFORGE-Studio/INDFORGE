@@ -41,7 +41,7 @@ OPTICS = [
     ("desert", "DST", "#0c0904", "#f0913a", "#e3c88f"),
     ("forest", "FOR", "#040805", "#93c24f", "#d39a4c"),
     ("red", "RED", "#070101", "#ff3b2f", "#ff8a5c"),
-    ("day", "DAY", "#e9e3d1", "#8f4f00", "#2c6a2c"),
+    ("day", "DAY", "#c8c1ac", "#7a4200", "#2c6a2c"),
 ]
 # National colour schemes: colours only, no ambient effect. Code, menu tag, flag swatch.
 NATIONS = [
