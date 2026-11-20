@@ -71,7 +71,7 @@
   "status.dev": "Active development",
   "status.operational.d": "Published on the Workshop.",
   "status.standby.d": "On hold: no update planned for now. It may be merged with another mod.",
-  "status.restricted.d": "Published but unlisted on the Workshop: reachable by its ID only.",
+  "status.restricted.d": "Published but unlisted on the Workshop: top secret.",
   "cat.indforge": "INDFORGE operations",
   "cat.indforge.d": "Our scenarios, frameworks and gameplay systems.",
   "cat.auc": "AUC — Arma Ukraine Community",
