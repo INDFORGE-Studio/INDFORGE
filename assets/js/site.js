@@ -3,7 +3,7 @@
 (function () {
   "use strict";
   var doc = document, root = doc.documentElement;
-  var BASE = root.getAttribute("data-base") || "/REFORGER/";
+  var BASE = root.getAttribute("data-base") || "/INDFORGE/";
   var VER = root.getAttribute("data-v") || "0";
   var LANGS = ["en", "fr", "de", "es", "it", "pl", "uk"];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;

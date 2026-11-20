@@ -16,8 +16,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
-BASE = "/REFORGER/"
-SITE = "https://indforge-studio.github.io/REFORGER/"
+BASE = "/INDFORGE/"
+SITE = "https://indforge-studio.github.io/INDFORGE/"
 WORKSHOP = "https://reforger.armaplatform.com/workshop/"
 BASE_GAME = "58D0FB3206B6F859"
 
@@ -105,6 +105,11 @@ for _f in ("assets/css/site.css", "assets/js/site.js", "tools/data/mods.json", "
     with open(os.path.join(ROOT, _f), "rb") as _fh:
         _h.update(_fh.read())
 VER = _h.hexdigest()[:10]
+_hi = hashlib.sha1()
+for _f in ("favicon.svg", "favicon.ico", "favicon-32.png", "icon-192.png", "icon-512.png", "apple-touch-icon.png"):
+    with open(os.path.join(ROOT, "assets", "img", _f), "rb") as _fh:
+        _hi.update(_fh.read())
+ICON_VER = _hi.hexdigest()[:8]
 
 
 def fmt(s, args):
@@ -316,10 +321,12 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#06080a">
 <meta name="color-scheme" content="dark">
-<link rel="icon" href="%(base)sassets/img/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="%(base)sassets/img/favicon.ico" sizes="48x48">
-<link rel="icon" href="%(base)sassets/img/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="%(base)sassets/img/apple-touch-icon.png">
+<link rel="icon" href="%(base)sassets/img/favicon.ico?v=%(iv)s" sizes="48x48">
+<link rel="icon" href="%(base)sassets/img/favicon.svg?v=%(iv)s" type="image/svg+xml">
+<link rel="icon" href="%(base)sassets/img/favicon-32.png?v=%(iv)s" sizes="32x32" type="image/png">
+<link rel="icon" href="%(base)sassets/img/icon-192.png?v=%(iv)s" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="%(base)sassets/img/apple-touch-icon.png?v=%(iv)s" sizes="180x180">
+<link rel="manifest" href="%(base)smanifest.webmanifest?v=%(iv)s">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
@@ -336,7 +343,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 %(footer)s
 </body>
 </html>
-""" % {"ver": VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
+""" % {"ver": VER, "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
        "ogt": H(og_title), "img": img, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
        "header": header(active), "body": body, "footer": footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
@@ -949,6 +956,34 @@ def sitemap():
     open(os.path.join(ROOT, ".nojekyll"), "w").close()
 
 
+def manifest():
+    ico = lambda n, s: {"src": "assets/img/%s?v=%s" % (n, ICON_VER), "sizes": s, "type": "image/png"}
+    icon192 = [ico("icon-192.png", "192x192")]
+    m = {
+        "name": "INDFORGE - Studio · Arma Reforger",
+        "short_name": "INDFORGE",
+        "description": E["site.desc"],
+        "id": BASE,
+        "start_url": BASE,
+        "scope": BASE,
+        "display": "standalone",
+        "lang": "en",
+        "dir": "ltr",
+        "categories": ["games", "entertainment"],
+        "background_color": "#06080a",
+        "theme_color": "#06080a",
+        "icons": [ico("icon-192.png", "192x192"), ico("icon-512.png", "512x512")],
+        "shortcuts": [
+            {"name": E["nav.mods"], "url": BASE + "mods/", "icons": icon192},
+            {"name": E["nav.admins"], "url": BASE + "admins/", "icons": icon192},
+            {"name": E["nav.intel"], "url": BASE + "intel/", "icons": icon192},
+        ],
+    }
+    with open(os.path.join(ROOT, "manifest.webmanifest"), "w", encoding="utf-8", newline="\n") as f:
+        json.dump(m, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
 if __name__ == "__main__":
     write_i18n()
     home()
@@ -963,4 +998,5 @@ if __name__ == "__main__":
     e404()
     search_index()
     sitemap()
+    manifest()
     print("built %d pages, %d languages, version %s" % (len(PAGES), len(FLAT), VER))

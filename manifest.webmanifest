@@ -1,0 +1,64 @@
+{
+  "name": "INDFORGE - Studio · Arma Reforger",
+  "short_name": "INDFORGE",
+  "description": "Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.",
+  "id": "/INDFORGE/",
+  "start_url": "/INDFORGE/",
+  "scope": "/INDFORGE/",
+  "display": "standalone",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "games",
+    "entertainment"
+  ],
+  "background_color": "#06080a",
+  "theme_color": "#06080a",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png?v=d63f64af",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png?v=d63f64af",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mods",
+      "url": "/INDFORGE/mods/",
+      "icons": [
+        {
+          "src": "assets/img/icon-192.png?v=d63f64af",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Admins",
+      "url": "/INDFORGE/admins/",
+      "icons": [
+        {
+          "src": "assets/img/icon-192.png?v=d63f64af",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Intel",
+      "url": "/INDFORGE/intel/",
+      "icons": [
+        {
+          "src": "assets/img/icon-192.png?v=d63f64af",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
