@@ -147,7 +147,7 @@
     "<b>On the shoulders of giants.</b> We build on other creators' mods as declared dependencies and credit them on every page. Nothing repacked.",
     "<b>Documented settings.</b> Every server setting ships with its own help text, right next to it in the file.",
     "<b>Tested before release.</b> Changes go through a real dedicated-server test bench and a review before they reach the Workshop.",
-    "<b>Readable by players.</b> The enemy cheats less and tells you more: lights on drones, radio hints, sirens before a strike.",
+    "<b>Readable by players.</b> The enemy cheats less and tells you more: signal lights on drones that change colour when they spot you, radio hints, sirens before a strike.",
     "<b>Respect the licences.</b> Our mods are released under the Arma Public Licence (APL or APL-ND, as stated on each page)."
   ],
   "about.theatres": "Theatres of operation",

@@ -147,7 +147,7 @@
     "<b>Auf den Schultern von Riesen.</b> Wir bauen auf Mods anderer Ersteller als deklarierte Abhängigkeiten auf und würdigen sie auf jeder Seite. Nichts wird neu verpackt.",
     "<b>Dokumentierte Einstellungen.</b> Jede Servereinstellung hat ihren eigenen Hilfetext, direkt daneben in der Datei.",
     "<b>Vor dem Release getestet.</b> Änderungen durchlaufen einen echten Dedicated-Server-Prüfstand und ein Review, bevor sie den Workshop erreichen.",
-    "<b>Für Spieler lesbar.</b> Der Feind schummelt weniger und verrät mehr: Lichter an Drohnen, Funkhinweise, Sirenen vor einem Schlag.",
+    "<b>Für Spieler lesbar.</b> Der Feind schummelt weniger und verrät mehr: Signallichter an den Drohnen, die die Farbe wechseln, sobald sie dich entdecken, Funkhinweise, Sirenen vor einem Schlag.",
     "<b>Lizenzen respektieren.</b> Unsere Mods erscheinen unter der Arma Public Licence (APL oder APL-ND, wie auf jeder Seite angegeben)."
   ],
   "about.theatres": "Einsatzgebiete",

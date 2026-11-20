@@ -147,7 +147,7 @@
     "<b>Sur les épaules des géants.</b> Nous construisons sur les mods d'autres créateurs, déclarés en dépendance et cités sur chaque page. Rien n'est réempaqueté.",
     "<b>Des réglages documentés.</b> Chaque réglage serveur est livré avec son texte d'aide, juste à côté dans le fichier.",
     "<b>Testé avant publication.</b> Chaque changement passe par un vrai banc de serveur dédié et une relecture avant d'arriver sur le Workshop.",
-    "<b>Lisible par les joueurs.</b> L'ennemi triche moins et vous en dit plus : feux sur les drones, alertes radio, sirènes avant une frappe.",
+    "<b>Lisible par les joueurs.</b> L'ennemi triche moins et vous en dit plus : feux de signalisation sur les drones, qui changent de couleur quand ils vous repèrent, alertes radio, sirènes avant une frappe.",
     "<b>Le respect des licences.</b> Nos mods sont publiés sous Arma Public License (APL ou APL-ND, indiquée sur chaque page)."
   ],
   "about.theatres": "Théâtres d'opérations",

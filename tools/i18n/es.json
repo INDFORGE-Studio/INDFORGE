@@ -147,7 +147,7 @@
     "<b>A hombros de gigantes.</b> Construimos sobre mods de otros creadores como dependencias declaradas y los acreditamos en cada página. Sin reempaquetar nada.",
     "<b>Ajustes documentados.</b> Cada ajuste del servidor incluye su propio texto de ayuda, justo al lado en el archivo.",
     "<b>Probado antes de publicar.</b> Los cambios pasan por un banco de pruebas real en servidor dedicado y por una revisión antes de llegar al Workshop.",
-    "<b>Legible para los jugadores.</b> El enemigo hace menos trampas y avisa más: luces en los drones, indicios por radio, sirenas antes de un ataque.",
+    "<b>Legible para los jugadores.</b> El enemigo hace menos trampas y avisa más: luces de señalización en los drones que cambian de color cuando te detectan, indicios por radio, sirenas antes de un ataque.",
     "<b>Respeto a las licencias.</b> Nuestros mods se publican bajo la Arma Public Licence (APL o APL-ND, según se indica en cada página)."
   ],
   "about.theatres": "Teatros de operaciones",
