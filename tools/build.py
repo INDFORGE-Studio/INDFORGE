@@ -429,6 +429,7 @@ def header(active):
     <span class="mradar" aria-hidden="true"><canvas width="34" height="34"></canvas></span>
     <nav class="nav" id="nav" %s>%s</nav>
     <div class="hud-tools">
+      <span class="fsb" aria-hidden="true"></span>
       <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
       <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
       <button type="button" class="tool search-btn" data-search %s>%s<kbd>/</kbd></button>

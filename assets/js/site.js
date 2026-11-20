@@ -294,6 +294,8 @@
       radios.forEach(function (b) { b.setAttribute("aria-checked", String(b === on)); });
       if (fxBtn) fxBtn.setAttribute("aria-checked", String(fxOn()));
       $(".opt-cur", btn).textContent = on ? $(".opt-k", on).textContent : "ARM";
+      var fsb = $(".fsb"), nm = on && $("[data-i18n]", on);
+      if (fsb) fsb.title = nm ? plain(tr("optic.emblem", "INDFORGE emblem · {n}")).replace("{n}", nm.textContent) : "";
       if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || "#06080a");
     }
     function apply(o) {

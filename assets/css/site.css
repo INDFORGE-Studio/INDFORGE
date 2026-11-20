@@ -410,6 +410,19 @@ details[open] > summary::before { transform: rotate(90deg); }
   .hl-list li:nth-child(n+7) { display: none; }
 }
 
+/* national optics: an original INDFORGE emblem beside the clock (no real insignia reproduced) */
+.fsb { display: none; width: 26px; height: 31px; flex: 0 0 auto; background: center / contain no-repeat; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .6)); }
+:root[data-theme="fra"] .fsb { display: block; background-image: url("../img/fs/fra.svg"); }
+:root[data-theme="gbr"] .fsb { display: block; background-image: url("../img/fs/gbr.svg"); }
+:root[data-theme="deu"] .fsb { display: block; background-image: url("../img/fs/deu.svg"); }
+:root[data-theme="esp"] .fsb { display: block; background-image: url("../img/fs/esp.svg"); }
+:root[data-theme="ita"] .fsb { display: block; background-image: url("../img/fs/ita.svg"); }
+:root[data-theme="pol"] .fsb { display: block; background-image: url("../img/fs/pol.svg"); }
+:root[data-theme="ukr"] .fsb { display: block; background-image: url("../img/fs/ukr.svg"); }
+:root[data-theme="usa"] .fsb { display: block; background-image: url("../img/fs/usa.svg"); }
+.fsb { animation: fsb-in .5s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes fsb-in { from { opacity: 0; transform: translateY(-4px) scale(.88); } }
+
 /* back to top */
 .totop { position: fixed; right: 20px; bottom: 44px; z-index: 95; width: 44px; height: 44px; place-items: center; padding: 0; cursor: pointer;
   color: var(--amber); background: rgba(var(--bg2-rgb), .92); border: 1px solid rgba(var(--amber-rgb), .6); box-shadow: 0 0 18px rgba(0, 0, 0, .5);
@@ -1094,7 +1107,7 @@ html.fx-off body::before { animation: none; }
   .feat li::before { left: 11px; top: 19px; }
 }
 @media (max-width: 400px) {
-  .clock { display: none; }
+  .clock, .fsb { display: none !important; }
 }
 @media (max-width: 359px) {
   .brand-txt { display: none; }
