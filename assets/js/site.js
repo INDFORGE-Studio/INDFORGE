@@ -40,6 +40,7 @@
     var cur = $(".lang-cur"); if (cur) cur.textContent = lang.toUpperCase();
     $$(".lang-menu [data-lang]").forEach(function (b) { b.setAttribute("aria-checked", String(b.getAttribute("data-lang") === lang)); });
     root.classList.remove("i18n-wait");
+    doc.dispatchEvent(new Event("ifg:lang")); // texts built by script (emblem title) follow the language
   }
   /* Pages with config tables also load the translated help texts (data-i18n-cfg = their version). */
   var CFGV = root.getAttribute("data-i18n-cfg");
@@ -298,6 +299,7 @@
       if (fsb) fsb.title = nm ? plain(tr("optic.emblem", "INDFORGE emblem · {n}")).replace("{n}", nm.textContent) : "";
       if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || "#06080a");
     }
+    doc.addEventListener("ifg:lang", sync);
     function apply(o) {
       if (o === "arma") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
       store("ifg-optic", o); sync(); fx.refresh();

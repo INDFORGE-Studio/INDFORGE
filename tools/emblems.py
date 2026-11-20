@@ -47,6 +47,21 @@ def star(cx, cy, r):
     return '<polygon points="%s"/>' % " ".join(pts)
 
 
+CAN_RED = "#ff0000"  # FIP red, RGB 255-0-0
+CAN_LEAF = ("M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z")
+
+
+def can():
+    """Canadian pale: red, white, red in 1:2:1, the official 11-point maple leaf in the white pale."""
+    # 1:2:1 measured on the visible inside of the shield (x 4.7 to 35.3, inside the gold edge)
+    x0, x1 = 4.7, 35.3
+    q = (x1 - x0) / 4
+    k = 2 * q / 4800  # the leaf keeps its place in the flag's white square
+    return ('<rect width="40" height="48" fill="%s"/><rect x="%.2f" y="0" width="%.2f" height="48" fill="#ffffff"/>' % (CAN_RED, x0 + q, 2 * q)
+            + '<path fill="%s" transform="translate(%.3f %.3f) scale(%.6f) translate(-2400 0)" d="%s"/>'
+            % (CAN_RED, x0 + q, 23 - q, k, CAN_LEAF))
+
+
 def usa():
     """13 stripes, canton over 7 of them, 50 stars in 9 rows of 6 and 5 (US flag layout)."""
     h = (BOT - TOP) / 13
@@ -74,6 +89,7 @@ FIELDS = {
     "pol": hbands([("#f4f4f4", 1), ("#dc143c", 1)]),
     "ukr": hbands([("#0057b7", 1), ("#ffd700", 1)]),
     "gbr": gbr(),
+    "can": can(),
     "usa": usa(),
 }
 

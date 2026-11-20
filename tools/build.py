@@ -56,6 +56,7 @@ NATIONS = [
     ("pol", "POL", "linear-gradient(#f4f4f4 0 50%,#dc143c 0)"),
     ("ukr", "UKR", "linear-gradient(#0057b7 0 50%,#ffd700 0)"),
     ("usa", "USA", "linear-gradient(#0a3161,#0a3161) 0 0/42% 54% no-repeat,repeating-linear-gradient(#b31942 0 7.7%,#fff 0 15.4%)"),
+    ("can", "CAN", "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%222400 0 4800 4800%22%3E%3Cpath fill=%22%23ff0000%22 d=%22M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z%22/%3E%3C/svg%3E') center/auto 100% no-repeat,linear-gradient(90deg,#ff0000 0 25%,#fff 0 75%,#ff0000 0)"),
 ]
 
 CATS = [
