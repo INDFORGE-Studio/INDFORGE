@@ -55,6 +55,7 @@ NATIONS = [
     ("ita", "ITA", "linear-gradient(90deg,#009246 0 33.4%,#f4f5f0 0 66.6%,#ce2b37 0)"),
     ("pol", "POL", "linear-gradient(#f4f4f4 0 50%,#dc143c 0)"),
     ("ukr", "UKR", "linear-gradient(#0057b7 0 50%,#ffd700 0)"),
+    ("usa", "USA", "linear-gradient(#0a3161,#0a3161) 0 0/42% 54% no-repeat,repeating-linear-gradient(#b31942 0 7.7%,#fff 0 15.4%)"),
 ]
 
 CATS = [
@@ -363,7 +364,7 @@ def icon(name):
 # ---------------------------------------------------------------- shell
 NAV = [
     ("", "nav.home", "home"), ("workshop/", "nav.mods", "mods"), ("admins/", "nav.admins", "admins"),
-    ("intel/", "nav.intel", "intel"), ("changelog/", "nav.log", "log"), ("status/", "nav.status", "status"),
+    ("news/", "nav.intel", "intel"), ("changelog/", "nav.log", "log"), ("roadmap/", "nav.status", "status"),
     ("about/", "nav.about", "about"),
 ]
 
@@ -519,12 +520,13 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 <main id="main" class="main" tabindex="-1">
 %(body)s
 </main>
+<button type="button" class="totop js-only" tabindex="-1" aria-hidden="true" %(totop)s>%(arrow)s</button>
 %(footer)s
 </body>
 </html>
 """ % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
        "ogt": H(og_title), "img": img, "imgmeta": img_meta, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
-       "header": header(active), "body": body, "footer": "" if active == "home" else footer()}
+       "totop": ta("aria-label", "ui.totop"), "arrow": icon("arrow"), "header": header(active), "body": body, "footer": "" if active == "home" else footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8", newline="\n") as f:
@@ -789,14 +791,23 @@ def latest_updates(n):
 
 
 def home():
-    rel = [(d, sl, v) for sl in ORDER for v, d in MODS[sl]["versions"]]
-    rel.sort(key=lambda x: (x[0], x[1]), reverse=True)
-
     def row(d, sl, v):
         return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>' % (
             url("workshop/%s/" % sl), d, H(name(MODS[sl])), H(v))
-    feed = "".join(row(d, sl, v) for d, sl, v in rel[:12])
     latest = "".join(row(d, sl, MODS[sl]["version"]) for d, sl in latest_updates(12))
+    # Workshop telemetry: public figures of every listed mod (unlisted mods carry no stats)
+    measured = [sl for sl in ORDER if MODS[sl].get("stats")]
+    dl = sum(MODS[sl]["stats"]["downloads"] for sl in measured)
+    votes = sum(MODS[sl]["stats"]["votes"] for sl in measured)
+    rating = round(sum(MODS[sl]["stats"]["rating"] * MODS[sl]["stats"]["votes"] for sl in measured) / votes) if votes else 0
+    top = sorted(measured, key=lambda sl: -MODS[sl]["stats"]["downloads"])
+    peak = max(MODS[top[0]]["stats"]["downloads"], 1) if top else 1
+    tele_rows = "".join(
+        '<li><a href="%s"><span class="lt-name">%s</span><span class="mono dim">%s</span><i class="tele-bar" style="--w:%.3f" aria-hidden="true"></i></a></li>' % (
+            url("workshop/%s/" % sl), H(name(MODS[sl])), num(MODS[sl]["stats"]["downloads"]), MODS[sl]["stats"]["downloads"] / peak)
+        for sl in top)
+    kpi = "".join('<div><b class="mono">%s</b>%s</div>' % (v, t(k, "span")) for v, k in (
+        (num(dl), "st.downloads"), (num(votes), "tele.votes"), ("%d %%" % rating, "st.rating")))
     stats = [
         (len(MODS), "home.stat_mods"), (len(THIRD_PARTY), "home.stat_deps"),
         (CFG_KEYS, "home.stat_keys"), (len(COMMANDS), "home.stat_cmds"),
@@ -813,10 +824,11 @@ def home():
   </div>
 </section>
 <div class="home-grid">
-  <section class="panel hl" aria-labelledby="h-feed">
-    <h2 class="panel-h" id="h-feed">%s</h2>%s
-    <ol class="lt hl-list">%s</ol>
-    <a class="more" href="%schangelog/#recent">%s%s</a>
+  <section class="panel hl tele" aria-labelledby="h-tele">
+    <h2 class="panel-h" id="h-tele">%s</h2>%s
+    <div class="tele-kpi">%s</div>
+    <ol class="lt hl-list tele-list">%s</ol>
+    <a class="more" href="%sworkshop/">%s%s</a>
   </section>
   <article class="dossier-card home-news" aria-labelledby="h-news">
     %s
@@ -824,19 +836,19 @@ def home():
     %s
     %s
     <p class="mono dim home-ref">%s %s · %s %s</p>
-    <a class="btn btn-primary" href="%sintel/">%s%s</a>
+    <a class="btn btn-primary" href="%snews/">%s%s</a>
   </article>
   <section class="panel hl" aria-labelledby="h-latest">
     <h2 class="panel-h" id="h-latest">%s</h2>%s
     <ol class="lt hl-list">%s</ol>
-    <a class="more" href="%sstatus/">%s%s</a>
+    <a class="more" href="%sroadmap/">%s%s</a>
   </section>
 </div>
 <section class="stats home-stats" aria-label="Stats">%s</section>
 </div>""" % (
         t("home.lead", "p", "lead home-lead"),
         BASE, t("home.cta_mods"), icon("arrow"), BASE, t("home.cta_admins"), icon("search"), t("home.search"),
-        t("home.feed"), t("home.feed_d", "p", "dim"), feed, BASE, t("home.feed_more"), icon("arrow"),
+        t("tele.h"), t("tele.d", "p", "dim", {"d": STATS_DATE or ""}), kpi, tele_rows, BASE, t("tele.more"), icon("arrow"),
         t("ui.declassified", "span", "stamp", None, 'aria-hidden="true"'), t("home.news"), H(MODS["conflict-pve"]["updated"]),
         t("home.featured_t", "h2"), t("home.featured_p", "p"),
         t("intel.ref"), "IFG/HQ-" + redact(4) + "-26", t("ui.classified"), redact(12),
@@ -991,7 +1003,8 @@ def intel():
 <article class="dossier">
   <header class="dossier-h">
     %s
-    <p class="kicker"><span class="kicker-code">INTREP</span>%s</p>
+    <p class="news-mod mono"><span>%s</span>%s</p>
+    <p class="kicker"><span class="kicker-code">NEWS</span><span class="mono">%s</span></p>
     <h1 data-scramble>%s</h1>
     %s
     <dl class="dossier-meta mono">
@@ -1007,7 +1020,9 @@ def intel():
   </div>
 </article>
 </div>""" % (
-        t("intel.stamp", "span", "stamp", None, 'aria-hidden="true"'), t("intel.kicker"), t("intel.h1"), t("intel.lead", "p", "lead"),
+        t("intel.stamp", "span", "stamp", None, 'aria-hidden="true"'), t("news.mod"),
+        "".join('<a class="news-chip" href="%s">%s%s</a>' % (url("workshop/%s/" % sl), H(name(MODS[sl])), icon("arrow")) for sl in ("conflict-pve", "forest")),
+        H(MODS["conflict-pve"]["updated"]), t("intel.h1"), t("intel.lead", "p", "lead"),
         t("intel.ref"), redact(4), redact(14), t("ui.classified"), t("ui.declassified"),
         t("intel.state_note", "p", "note"),
         isec("summary", "intel.summary", t("intel.summary_p", "p", "lead2"), "00"),
@@ -1028,9 +1043,7 @@ def intel():
         isec("radio", "intel.radio", t("intel.radio_p", "p"), "11", True),
         isec("base", "intel.base", '<ul class="feat">%s</ul>' % tl("intel.base_s"), "12")
         + isec("guide", "intel.guide", '<ol class="steps guide">%s</ol>' % tl("intel.guide_s"), "13"))
-    body += '<div class="wrap pn"><a class="pn-a" href="%sworkshop/conflict-pve/">%s<span><small>MOD</small>INDFORGE - Conflict PvE</span></a><a class="pn-a pn-next" href="%sworkshop/forest/"><span><small>MOD</small>INDFORGE - Forest</span>%s</a></div>' % (
-        BASE, icon("back"), BASE, icon("arrow"))
-    page("intel/", "intel.title", body, "intel", cls="p-intel")
+    page("news/", "intel.title", body, "intel", cls="p-intel")
 
 
 def changelog():
@@ -1068,14 +1081,14 @@ def status():
 %s
 %s
 %s
-</div>""" % (sec("board", "statusp.h1", t("statusp.game_now", "p", "dim", {"v": LATEST_GAME}) + """<div class="tbl"><table class="table board">
+</div>""" % (sec("pipeline", "statusp.pipeline", t("statusp.pipeline_p", "p", "", {"v": CPVE_VER}) +
+                 '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "01", "sec-inc"),
+             sec("board", "statusp.board", t("statusp.game_now", "p", "dim", {"v": LATEST_GAME}) + """<div class="tbl"><table class="table board">
 <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th></tr></thead>
 <tbody>%s</tbody></table></div>""" % (t("statusp.col_mod"), t("statusp.col_state"), t("statusp.col_ver"), t("statusp.col_upd"),
-                                      t("statusp.col_game"), "".join(rows)), "01"),
-             sec("pipeline", "statusp.pipeline", t("statusp.pipeline_p", "p", "", {"v": CPVE_VER}) +
-                 '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "02", "sec-inc"),
+                                      t("statusp.col_game"), "".join(rows)), "02"),
              sec("legend", "statusp.col_state", '<dl class="legend">%s</dl>' % legend, "03"))
-    page("status/", "statusp.title", body, "status")
+    page("roadmap/", "statusp.title", body, "status")
 
 
 def about():
@@ -1123,7 +1136,7 @@ def search_index():
     for f in CONFIGS:
         items.append({"k": "cfg", "t": f["profile"], "x": " ".join(r["key"] for r in f["rows"]), "u": url("admins/#" + cfg_anchor(f["profile"]))})
     for a in ("hq", "doctrine", "fires", "drones", "light", "plans", "ambush", "air", "weather", "night", "radio", "base", "guide"):
-        items.append({"k": "page", "t": "intel." + a, "tk": 1, "s": "intel.title", "u": url("intel/#" + a)})
+        items.append({"k": "page", "t": "intel." + a, "tk": 1, "s": "intel.title", "u": url("news/#" + a)})
     for a, key in (("install", "admins.install"), ("json", "admins.json"), ("scen", "admins.scen"), ("profile", "admins.profile"), ("logs", "admins.logs")):
         items.append({"k": "page", "t": key, "tk": 1, "s": "admins.title", "u": url("admins/#" + a)})
     with open(os.path.join(ROOT, "assets", "search.json"), "w", encoding="utf-8", newline="\n") as f:
@@ -1146,13 +1159,13 @@ def write_i18n():
 
 
 def legacy_redirects():
-    """The mod pages moved from /mods/ to /workshop/: keep the old links working."""
+    """Pages that moved keep their old address: /mods/ -> /workshop/, /intel/ -> /news/, /status/ -> /roadmap/."""
     tpl = ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>INDFORGE - Studio</title>\n'
            '<meta name="robots" content="noindex"><link rel="canonical" href="%(abs)s">\n'
            '<meta http-equiv="refresh" content="0; url=%(rel)s">\n'
            '<script>location.replace("%(rel)s" + location.hash)</script></head>\n'
            '<body style="background:#06080a;color:#ffb000;font-family:monospace"><p><a href="%(rel)s" style="color:#ffb000">%(rel)s</a></p></body></html>\n')
-    for old, new in [("mods/", "workshop/")] + [("mods/%s/" % s_, "workshop/%s/" % s_) for s_ in ORDER]:
+    for old, new in [("mods/", "workshop/"), ("intel/", "news/"), ("status/", "roadmap/")] + [("mods/%s/" % s_, "workshop/%s/" % s_) for s_ in ORDER]:
         out = os.path.join(ROOT, old, "index.html")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "w", encoding="utf-8", newline="\n") as f:
@@ -1186,7 +1199,7 @@ def manifest():
         "shortcuts": [
             {"name": E["nav.mods"], "url": BASE + "workshop/", "icons": icon192},
             {"name": E["nav.admins"], "url": BASE + "admins/", "icons": icon192},
-            {"name": E["nav.intel"], "url": BASE + "intel/", "icons": icon192},
+            {"name": E["nav.intel"], "url": BASE + "news/", "icons": icon192},
         ],
     }
     with open(os.path.join(ROOT, "manifest.webmanifest"), "w", encoding="utf-8", newline="\n") as f:

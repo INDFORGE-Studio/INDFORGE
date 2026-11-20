@@ -127,7 +127,7 @@
     function rnd(a, b) { return a + Math.random() * (b - a); }
     function spawn(p, top) {
       if (kind === "arctic") { p.x = rnd(0, W); p.y = top ? rnd(-20, 0) : rnd(0, Hh); p.r = rnd(.6, 2.2); p.vy = .35 + p.r * .4; p.vx = rnd(.2, .6); p.ph = rnd(0, 6.3); p.a = rnd(.35, .85); }
-      else if (kind === "desert") { p.x = top ? rnd(-80, -10) : rnd(0, W); p.y = rnd(0, Hh); p.len = rnd(4, 16); p.vx = rnd(2.5, 6); p.vy = rnd(-.15, .25); p.ph = rnd(0, 6.3); p.a = rnd(.12, .42); }
+      else if (kind === "desert") { p.x = top ? rnd(-30, -4) : rnd(0, W); p.y = Hh * Math.sqrt(Math.random()); /* sand blows low */ p.r = rnd(.6, 1.7); p.vx = rnd(.8, 2.6); p.vy = rnd(-.12, .12); p.ph = rnd(0, 6.3); p.tw = rnd(.6, 1.6); p.a = rnd(.18, .6); p.c = Math.random() < .7 ? 0 : 1; }
       else if (kind === "forest") { p.x = rnd(0, W); p.y = top ? rnd(-30, -8) : rnd(0, Hh); p.s = rnd(3, 7); p.rot = rnd(0, 6.3); p.vr = rnd(-.04, .04); p.vy = rnd(.3, .85); p.sw = rnd(.4, 1.2); p.ph = rnd(0, 6.3); p.a = rnd(.3, .65); p.c = Math.random() < .55 ? 0 : 1; }
       else if (kind === "thermal") { p.x = rnd(0, W); p.y = top ? Hh + rnd(0, 60) : rnd(0, Hh); p.r = rnd(10, 34); p.vy = -rnd(.15, .55); p.vx = rnd(-.1, .1); p.ph = rnd(0, 6.3); p.a = rnd(.05, .14); p.c = Math.random() < .7 ? 0 : 1; }
       else { p.x = rnd(0, W); p.y = rnd(0, Hh); p.r = rnd(.5, 1.5); p.vx = rnd(-.09, .09); p.vy = rnd(-.09, .09); p.ph = rnd(0, 6.3); p.a = rnd(.2, kind === "red" ? .4 : .7); }
@@ -135,10 +135,12 @@
     }
     function seed() {
       var area = W * Hh, n = kind === "arctic" ? Math.min(120, area / 12000) : kind === "thermal" ? Math.min(28, area / 50000)
-        : kind === "desert" ? Math.min(140, area / 9000) : kind === "forest" ? Math.min(40, area / 28000) : Math.min(90, area / 16000);
+        : kind === "desert" ? Math.min(220, area / 7000) : kind === "forest" ? Math.min(40, area / 28000) : Math.min(90, area / 16000);
       if (kind === "red") n *= .5;
       parts = []; for (var i = 0; i < Math.round(n); i++) parts.push(spawn({}, false));
       flies = [];
+      if (kind === "desert") for (i = 0; i < Math.round(Math.min(10, 3 + area / 220000)); i++) // drifting dust clouds
+        flies.push({ x: rnd(-200, W), y: rnd(Hh * .15, Hh * 1.05), r: rnd(180, 420), vx: rnd(.25, .7), a: rnd(.05, .11), ph: rnd(0, 6.3) });
       if (kind === "forest") for (i = 0; i < Math.round(Math.min(14, area / 70000)); i++)
         flies.push({ x: rnd(0, W), y: rnd(Hh * .25, Hh), vx: rnd(-.3, .3), vy: rnd(-.2, .2), ph: rnd(0, 6.3), r: rnd(5, 9) });
     }
@@ -167,12 +169,21 @@
         return;
       }
       if (kind === "desert") {
-        var gust = .7 + .35 * Math.sin(t * .5) + .2 * Math.sin(t * 1.7);
-        ctx.strokeStyle = "rgb(" + col2 + ")"; ctx.lineWidth = 1;
-        for (i = 0; i < parts.length; i++) {
-          p = parts[i]; p.x += p.vx * gust * dt; p.y += (p.vy + Math.sin(t * 2 + p.ph) * .25) * dt;
-          if (p.x > W + 20) spawn(p, true);
-          ctx.globalAlpha = p.a; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.len * gust, p.y); ctx.stroke();
+        var gust = .75 + .35 * Math.sin(t * .45) + .25 * Math.max(0, Math.sin(t * 1.9 + 1)), haze = ctx.createLinearGradient(0, Hh * .45, 0, Hh);
+        haze.addColorStop(0, "rgba(214, 178, 120, 0)"); haze.addColorStop(1, "rgba(214, 178, 120, " + (.07 + .05 * gust).toFixed(3) + ")");
+        ctx.fillStyle = haze; ctx.fillRect(0, Hh * .45, W, Hh * .55);
+        for (i = 0; i < flies.length; i++) { // dust clouds rolling with the wind
+          p = flies[i]; p.x += p.vx * gust * dt;
+          if (p.x - p.r > W) { p.x = -p.r; p.y = rnd(Hh * .15, Hh * 1.05); }
+          ctx.globalAlpha = p.a * (.75 + .25 * Math.sin(t * .4 + p.ph)) * gust;
+          ctx.drawImage(sprite[0], p.x - p.r, p.y - p.r * .55, p.r * 2, p.r * 1.1);
+        }
+        var grain = ["rgb(226, 196, 146)", "rgb(176, 138, 88)"];
+        for (i = 0; i < parts.length; i++) { // sand grains: uneven, tumbling, in gusts
+          p = parts[i]; p.x += p.vx * gust * dt; p.y += (p.vy + Math.sin(t * p.tw + p.ph) * .45) * dt;
+          if (p.x > W + 6) spawn(p, true);
+          ctx.globalAlpha = p.a * (.6 + .4 * Math.sin(t * 2.3 + p.ph)) * (.25 + .75 * Math.max(0, p.y) / Hh); ctx.fillStyle = grain[p.c];
+          ctx.fillRect(p.x, p.y, p.r * (1 + gust * .8), p.r);
         }
         ctx.globalAlpha = 1;
         return;
@@ -247,7 +258,7 @@
       if (!k) { ctx.clearRect(0, 0, W, Hh); return; }
       if (k === "day") return;
       col = rgbVar("--amber-rgb"); col2 = rgbVar("--green-rgb");
-      size(); if (k === "thermal") makeSprite([col, col2]); else if (k === "forest") makeSprite(["255, 222, 130"]);
+      size(); if (k === "thermal") makeSprite([col, col2]); else if (k === "forest") makeSprite(["255, 222, 130"]); else if (k === "desert") makeSprite(["205, 168, 112"]);
       seed(); hudText(); start();
     }
     function hit(x, y) {
@@ -644,7 +655,6 @@
       g = cs.getPropertyValue("--green-rgb").trim() || g; a = cs.getPropertyValue("--amber-rgb").trim() || a;
     }
     colors();
-    if ("MutationObserver" in window) new MutationObserver(colors).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
     function spawn(k, edge) {
       var ang = Math.random() * TAU, r = edge ? .97 : .2 + Math.random() * .7;
       var head = ang + Math.PI + (Math.random() - .5) * 1.6, sp = .02 + Math.random() * .035; // share of the radius per second
@@ -681,11 +691,35 @@
       });
       beam = nb;
     }
-    if (reduce) { draw(performance.now(), true); return; }
-    (function loop(now) {
+    var running = false;
+    function loop(now) {
+      if (!running) return;
       if (now - drawn > 30) { drawn = now; draw(now, false); } // about 30 frames a second is plenty
       requestAnimationFrame(loop);
-    })(performance.now());
+    }
+    function run() { // ambient effect: it follows the site's FX switch, like the optics
+      if (fxOn()) { if (!running) { running = true; last = performance.now(); requestAnimationFrame(loop); } }
+      else { running = false; draw(performance.now(), true); }
+    }
+    if ("MutationObserver" in window) new MutationObserver(function () { colors(); run(); }).observe(root, { attributes: true, attributeFilter: ["data-theme", "class"] });
+    run();
+  }
+
+  /* ------------------------------------------------ back to top */
+  function initTop() {
+    var b = $(".totop"); if (!b) return;
+    var on = false, tick = 0;
+    function upd() {
+      tick = 0; var v = scrollY > 480;
+      if (v === on) return; on = v;
+      b.classList.toggle("on", v); b.tabIndex = v ? 0 : -1; b.setAttribute("aria-hidden", String(!v));
+    }
+    addEventListener("scroll", function () { if (!tick) tick = requestAnimationFrame(upd); }, { passive: true });
+    b.addEventListener("click", function () {
+      scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      var m = $("#main"); if (m) m.focus({ preventScroll: true });
+    });
+    upd();
   }
 
   /* ------------------------------------------------ home lists */
@@ -719,7 +753,7 @@
 
   function init() {
     initLangMenu(); initOptics(); initMenu(); initClock(); initCopy(); initSearch();
-    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists();
+    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }
     else setLang(lang, false);
