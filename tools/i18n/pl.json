@@ -69,12 +69,10 @@
   "ui.made": "Stworzone przez INDFORGE - Studio",
   "status.operational": "Operacyjny",
   "status.standby": "Wstrzymany",
-  "status.classified": "Niewydany",
   "status.restricted": "Niepubliczny",
   "status.dev": "W aktywnym rozwoju",
   "status.operational.d": "Opublikowany w Workshop.",
   "status.standby.d": "Wstrzymany: na razie bez planowanej aktualizacji. Może zostać połączony z innym modem.",
-  "status.classified.d": "Jeszcze nie opublikowany w Workshop. Ta strona rezerwuje jego adres.",
   "status.restricted.d": "Opublikowany, ale niepubliczny w Workshop: dostępny tylko po ID.",
   "cat.indforge": "Operacje INDFORGE",
   "cat.indforge.d": "Nasze scenariusze, frameworki i systemy rozgrywki.",
@@ -421,15 +419,6 @@
     "Ustaw <code>game.scenarioId</code> na ID scenariusza podane wyżej i użyj pełnego bloku modów poniżej: Forest, Conflict PvE wraz z zależnościami, Belleau Wood i dwa mody kolejowe."
   ],
   "m.forest.credits": "Mapa Belleau Wood autorstwa Thinwheat01. RailwayGenerator i RailEnfusionRedux autorstwa TilW. Oraz każdy twórca zależności Conflict PvE.",
-  "m.conflict.tag": "Dostosowany scenariusz Conflict na Everon. Jeszcze niewydany.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict to scenariusz Conflict na Everon dostosowany przez nasz zespół, zbudowany na WCS_Core.",
-    "W momencie pisania nie jest opublikowany w Workshop: ta strona rezerwuje jego stały adres. Szczegóły zostaną odtajnione w dniu wydania."
-  ],
-  "m.conflict.f": [
-    "Misja Conflict na Everon (HQ Commander) dostosowana przez TheUnknownTeam.",
-    "Wymaga WCS_Core."
-  ],
   "m.ai-framework.tag": "Modularne AI niezależne od mapy dla scenariuszy PvE: patrole śmigłowców, garnizony, patrole naziemne.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework dodaje konfigurowalne wrogie patrole śmigłowców, garnizony wojskowe i patrole naziemne do zgodnych scenariuszy Conflict.",

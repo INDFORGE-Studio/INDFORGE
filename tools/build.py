@@ -28,7 +28,7 @@ LANGS = [
 ]
 
 CATS = [
-    ("indforge", ["conflict-pve", "forest", "conflict", "ai-framework", "enhanced-compositions"]),
+    ("indforge", ["conflict-pve", "forest", "ai-framework", "enhanced-compositions"]),
     ("auc", ["auc-factions", "auc-vehicles", "auc-conflict"]),
     ("ctrp", ["cherchetoi-rp-clothing", "cherchetoi-rp-props", "cherchetoi-rp-vehicles"]),
     ("gear", ["lav-25-desert", "modern-fia", "rcd-rhs", "rcd-wcs", "solo-push-pull", "talibanmod-red-side-v2"]),
@@ -39,7 +39,6 @@ CAT_OF = {s: c for c, slugs in CATS for s in slugs}
 
 STATUS = {
     "conflict-pve": ["operational", "dev"],
-    "conflict": ["classified"],
     "ai-framework": ["restricted"],
     "off-road-vehicles": ["standby"],
     "uaz-452-offroad": ["standby"],
@@ -155,6 +154,16 @@ def redact(n=8, decoy=None):
 
 # ---------------------------------------------------------------- data
 MODS = {m["slug"]: m for m in load(os.path.join(TOOLS, "data", "mods.json"))["mods"]}
+# Unlisted mods: release details stay classified. They are dropped here, so the pages
+# only ever carry redaction bars, never the real values.
+for _m in MODS.values():
+    if _m["unlisted"]:
+        STATUS.setdefault(_m["slug"], [])
+        if "restricted" not in STATUS[_m["slug"]]:
+            STATUS[_m["slug"]].append("restricted")
+        for _k in ("version", "updated", "created", "game", "size", "changelog"):
+            _m[_k] = None
+        _m["versions"] = []
 GENERATED = load(os.path.join(TOOLS, "data", "mods.json"))["generated"]
 CONFIGS = load(os.path.join(TOOLS, "data", "configs.json"))
 # Site-written help for keys whose config file ships none (written from the mod's code).
@@ -444,7 +453,7 @@ def badge_inc():
 # ---------------------------------------------------------------- components
 def card(slug, lazy=True):
     m = MODS[slug]
-    ver = ("v" + m["version"]) if m["version"] else "—"
+    ver = H("v" + m["version"]) if m["version"] else redact(5)
     return """<a class="card" href="%s" data-cat="%s">
   <span class="card-img"><img src="%sassets/img/thumbs/%s.webp" width="480" height="270" alt=""%s decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
   <span class="card-body">
@@ -453,7 +462,7 @@ def card(slug, lazy=True):
     %s
     <span class="card-id mono" aria-hidden="true">ID %s</span>
   </span>
-</a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), H(ver),
+</a>""" % (url("workshop/%s/" % slug), CAT_OF[slug], BASE, slug, ' loading="lazy"' if lazy else "", chips(slug), ver,
            H(name(m)), t("m.%s.tag" % slug, "span", "card-tag"), m["guid"])
 
 
@@ -574,8 +583,6 @@ def mod_page(slug):
     ws_btn = ""
     if m["workshop"]:
         ws_btn = ext(WORKSHOP + m["guid"], icon("ext") + t("ui.open_workshop"), "btn btn-primary")
-    img_cls = "hero-img sq" if slug == "conflict" else "hero-img"
-    stamp = t("ui.classified", "span", "stamp", None, 'aria-hidden="true"') if slug == "conflict" else ""
     hero = """<section class="mhero wrap">
   <nav class="crumbs mono" aria-label="Breadcrumb"><a href="%s">%s</a><span aria-hidden="true">/</span><a href="%sworkshop/">%s</a><span aria-hidden="true">/</span>%s</nav>
   <div class="mhero-grid">
@@ -586,16 +593,16 @@ def mod_page(slug):
       <p class="chips">%s<span class="mono dim">%s</span></p>
       <div class="actions">%s<a class="btn btn-ghost" href="#deps">%s</a></div>
     </div>
-    <figure class="%s">
+    <figure class="hero-img">
       <img src="%sassets/img/mods/%s.webp" width="960" height="%d" alt="%s" fetchpriority="high" decoding="async">
       <span class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <figcaption class="mono" aria-hidden="true">IMG // %s // %s</figcaption>%s
+      <figcaption class="mono" aria-hidden="true">IMG // %s // %s</figcaption>
     </figure>
   </div>
 </section>""" % (url(), t("nav.home"), BASE, t("nav.mods"), t("cat." + cat), i + 1, t("cat." + cat), H(name(m)),
                  t(k + "tag", "p", "lead"), chips(slug), H("v" + m["version"]) if m["version"] else "",
-                 ws_btn, t("sec.deps"), img_cls, BASE, slug, 960 if slug == "conflict" else 540, H(name(m)),
-                 slug.upper(), m["guid"], stamp)
+                 ws_btn, t("sec.deps"), BASE, slug, 540, H(name(m)),
+                 slug.upper(), m["guid"])
 
     parts = []
     ov = tl(k + "intro", "p")
@@ -938,7 +945,7 @@ def status():
             CAT_OF[s], url("workshop/%s/" % s), H(name(m)), chips(s), H("v" + m["version"]) if m["version"] else redact(5),
             H(m["updated"]) if m["updated"] else redact(8), game))
     legend = "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t("status." + k, "span", "chip chip-" + k), t("status.%s.d" % k))
-                     for k in ("operational", "standby", "classified", "restricted"))
+                     for k in ("operational", "standby", "restricted"))
     body = phead("SIT-06", "statusp.kicker", "statusp.h1", "statusp.lead") + """<div class="wrap">
 %s
 %s

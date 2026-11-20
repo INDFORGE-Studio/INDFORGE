@@ -69,12 +69,10 @@
   "ui.made": "Built by INDFORGE - Studio",
   "status.operational": "Operational",
   "status.standby": "Standby",
-  "status.classified": "Not released",
   "status.restricted": "Unlisted",
   "status.dev": "Active development",
   "status.operational.d": "Published on the Workshop.",
   "status.standby.d": "On hold: no update planned for now. It may be merged with another mod.",
-  "status.classified.d": "Not published on the Workshop yet. This page reserves its address.",
   "status.restricted.d": "Published but unlisted on the Workshop: reachable by its ID only.",
   "cat.indforge": "INDFORGE operations",
   "cat.indforge.d": "Our scenarios, frameworks and gameplay systems.",
@@ -421,15 +419,6 @@
     "Set <code>game.scenarioId</code> to the scenario ID above and use the full mods block below: Forest, Conflict PvE and its dependencies, Belleau Wood and the two railway mods."
   ],
   "m.forest.credits": "Belleau Wood map by Thinwheat01. RailwayGenerator and RailEnfusionRedux by TilW. And every creator of the Conflict PvE dependencies.",
-  "m.conflict.tag": "A customised Conflict scenario on Everon. Not released yet.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict is a Conflict scenario on Everon customised by our team, built on WCS_Core.",
-    "It is not published on the Workshop at the time of writing: this page reserves its permanent address. Its details will be declassified at release."
-  ],
-  "m.conflict.f": [
-    "Everon Conflict mission (HQ Commander) customised by TheUnknownTeam.",
-    "Requires WCS_Core."
-  ],
   "m.ai-framework.tag": "Modular, map-agnostic AI for PvE scenarios: helicopter patrols, garrisons, ground patrols.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework adds configurable hostile helicopter patrols, military garrisons and ground patrols to compatible Conflict scenarios.",

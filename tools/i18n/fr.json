@@ -69,12 +69,10 @@
   "ui.made": "Conçu par INDFORGE - Studio",
   "status.operational": "Opérationnel",
   "status.standby": "En attente",
-  "status.classified": "Non publié",
   "status.restricted": "Non répertorié",
   "status.dev": "Développement actif",
   "status.operational.d": "Publié sur le Workshop.",
   "status.standby.d": "En attente : aucune mise à jour prévue pour l'instant. Il pourrait être fusionné avec un autre mod.",
-  "status.classified.d": "Pas encore publié sur le Workshop. Cette page réserve son adresse.",
   "status.restricted.d": "Publié mais non répertorié sur le Workshop : accessible seulement par son ID.",
   "cat.indforge": "Opérations INDFORGE",
   "cat.indforge.d": "Nos scénarios, nos frameworks et nos systèmes de jeu.",
@@ -421,15 +419,6 @@
     "Mettez <code>game.scenarioId</code> sur l'ID de scénario ci-dessus et utilisez le bloc de mods complet ci-dessous : Forest, Conflict PvE et ses dépendances, Belleau Wood et les deux mods de voie ferrée."
   ],
   "m.forest.credits": "Carte Belleau Wood de Thinwheat01. RailwayGenerator et RailEnfusionRedux de TilW. Et chaque créateur des dépendances de Conflict PvE.",
-  "m.conflict.tag": "Un scénario Conflict personnalisé sur Everon. Pas encore publié.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict est un scénario Conflict sur Everon personnalisé par notre équipe, construit sur WCS_Core.",
-    "Il n'est pas publié sur le Workshop à l'heure où ces lignes sont écrites : cette page réserve son adresse permanente. Ses détails seront déclassifiés à sa sortie."
-  ],
-  "m.conflict.f": [
-    "Mission Conflict d'Everon (HQ Commander) personnalisée par TheUnknownTeam.",
-    "Nécessite WCS_Core."
-  ],
   "m.ai-framework.tag": "Une IA modulaire, indépendante de la carte, pour les scénarios PvE : patrouilles d'hélicoptères, garnisons, patrouilles au sol.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework ajoute aux scénarios Conflict compatibles des patrouilles d'hélicoptères hostiles, des garnisons militaires et des patrouilles au sol, toutes réglables.",

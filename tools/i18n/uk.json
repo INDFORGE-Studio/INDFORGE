@@ -69,12 +69,10 @@
   "ui.made": "Створено INDFORGE - Studio",
   "status.operational": "У строю",
   "status.standby": "У резерві",
-  "status.classified": "Не випущено",
   "status.restricted": "Прихований",
   "status.dev": "Активна розробка",
   "status.operational.d": "Опубліковано у Workshop.",
   "status.standby.d": "Призупинено: оновлень поки не планується. Можливе об'єднання з іншим модом.",
-  "status.classified.d": "Ще не опубліковано у Workshop. Ця сторінка резервує його адресу.",
   "status.restricted.d": "Опубліковано у Workshop, але не в загальному списку: доступний лише за ID.",
   "cat.indforge": "Операції INDFORGE",
   "cat.indforge.d": "Наші сценарії, фреймворки та ігрові системи.",
@@ -421,15 +419,6 @@
     "Вкажіть у <code>game.scenarioId</code> ID сценарію зверху й використовуйте повний блок модів нижче: Forest, Conflict PvE та його залежності, Belleau Wood і два залізничні моди."
   ],
   "m.forest.credits": "Мапа Belleau Wood від Thinwheat01. RailwayGenerator і RailEnfusionRedux від TilW. А також кожен творець залежностей Conflict PvE.",
-  "m.conflict.tag": "Налаштований сценарій Conflict на Everon. Ще не випущено.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict — це сценарій Conflict на Everon, налаштований нашою командою на основі WCS_Core.",
-    "На момент написання він не опублікований у Workshop: ця сторінка резервує його постійну адресу. Подробиці буде розсекречено під час випуску."
-  ],
-  "m.conflict.f": [
-    "Місія Conflict на Everon (HQ Commander), налаштована TheUnknownTeam.",
-    "Потребує WCS_Core."
-  ],
   "m.ai-framework.tag": "Модульний ШІ без прив'язки до мапи для PvE-сценаріїв: гелікоптерні патрулі, гарнізони, наземні патрулі.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework додає до сумісних сценаріїв Conflict настроювані ворожі гелікоптерні патрулі, військові гарнізони та наземні патрулі.",

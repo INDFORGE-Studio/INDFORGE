@@ -69,12 +69,10 @@
   "ui.made": "Gebaut von INDFORGE - Studio",
   "status.operational": "Einsatzbereit",
   "status.standby": "Bereitschaft",
-  "status.classified": "Nicht veröffentlicht",
   "status.restricted": "Nicht gelistet",
   "status.dev": "Aktive Entwicklung",
   "status.operational.d": "Im Workshop veröffentlicht.",
   "status.standby.d": "Pausiert: vorerst kein Update geplant. Eventuell wird er mit einem anderen Mod zusammengeführt.",
-  "status.classified.d": "Noch nicht im Workshop veröffentlicht. Diese Seite reserviert seine Adresse.",
   "status.restricted.d": "Im Workshop veröffentlicht, aber nicht gelistet: nur über die ID erreichbar.",
   "cat.indforge": "INDFORGE-Operationen",
   "cat.indforge.d": "Unsere Szenarien, Frameworks und Gameplay-Systeme.",
@@ -421,15 +419,6 @@
     "Setze <code>game.scenarioId</code> auf die oben genannte Szenario-ID und nutze den kompletten Mods-Block unten: Forest, Conflict PvE samt Abhängigkeiten, Belleau Wood und die beiden Eisenbahn-Mods."
   ],
   "m.forest.credits": "Karte Belleau Wood von Thinwheat01. RailwayGenerator und RailEnfusionRedux von TilW. Und jeder Ersteller der Abhängigkeiten von Conflict PvE.",
-  "m.conflict.tag": "Ein angepasstes Conflict-Szenario auf Everon. Noch nicht veröffentlicht.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict ist ein von unserem Team angepasstes Conflict-Szenario auf Everon, gebaut auf WCS_Core.",
-    "Es ist zum Zeitpunkt des Schreibens nicht im Workshop veröffentlicht: Diese Seite reserviert seine dauerhafte Adresse. Die Details werden zum Release freigegeben."
-  ],
-  "m.conflict.f": [
-    "Conflict-Mission auf Everon (HQ Commander), angepasst von TheUnknownTeam.",
-    "Benötigt WCS_Core."
-  ],
   "m.ai-framework.tag": "Modulare, kartenunabhängige KI für PvE-Szenarien: Hubschrauberpatrouillen, Garnisonen, Bodenpatrouillen.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework fügt kompatiblen Conflict-Szenarien konfigurierbare feindliche Hubschrauberpatrouillen, Militärgarnisonen und Bodenpatrouillen hinzu.",

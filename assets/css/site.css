@@ -166,7 +166,6 @@ table { border-collapse: collapse; width: 100%; }
 .chip-dev { color: var(--cyan); background: rgba(95, 212, 255, .1); }
 .chip-dev::before { animation: pulse 1.6s infinite; }
 .chip-standby, .chip-old { color: var(--mute); background: rgba(123, 138, 130, .1); }
-.chip-classified { color: var(--red); background: var(--red-d); }
 .chip-restricted { color: var(--violet); background: rgba(185, 156, 255, .1); }
 .chip-inc { color: var(--amber); background: var(--amber-d); }
 .chip-inc::before { animation: pulse 1.2s infinite; }

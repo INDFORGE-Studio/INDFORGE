@@ -69,12 +69,10 @@
   "ui.made": "Creado por INDFORGE - Studio",
   "status.operational": "Operativo",
   "status.standby": "En espera",
-  "status.classified": "No publicado",
   "status.restricted": "No listado",
   "status.dev": "En desarrollo activo",
   "status.operational.d": "Publicado en el Workshop.",
   "status.standby.d": "En pausa: sin actualización prevista por ahora. Podría fusionarse con otro mod.",
-  "status.classified.d": "Aún no publicado en el Workshop. Esta página reserva su dirección.",
   "status.restricted.d": "Publicado pero no listado en el Workshop: solo se accede con su ID.",
   "cat.indforge": "Operaciones INDFORGE",
   "cat.indforge.d": "Nuestros escenarios, frameworks y sistemas de juego.",
@@ -421,15 +419,6 @@
     "Pon en <code>game.scenarioId</code> el ID de escenario indicado arriba y usa el bloque de mods completo de abajo: Forest, Conflict PvE y sus dependencias, Belleau Wood y los dos mods de ferrocarril."
   ],
   "m.forest.credits": "Mapa Belleau Wood de Thinwheat01. RailwayGenerator y RailEnfusionRedux de TilW. Y todos los creadores de las dependencias de Conflict PvE.",
-  "m.conflict.tag": "Un escenario Conflict personalizado en Everon. Aún no publicado.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict es un escenario Conflict en Everon personalizado por nuestro equipo, construido sobre WCS_Core.",
-    "No está publicado en el Workshop en el momento de escribir esto: esta página reserva su dirección permanente. Sus detalles se desclasificarán en el lanzamiento."
-  ],
-  "m.conflict.f": [
-    "Misión Conflict de Everon (HQ Commander) personalizada por TheUnknownTeam.",
-    "Requiere WCS_Core."
-  ],
   "m.ai-framework.tag": "IA modular e independiente del mapa para escenarios PvE: patrullas de helicópteros, guarniciones, patrullas terrestres.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework añade patrullas de helicópteros hostiles configurables, guarniciones militares y patrullas terrestres a escenarios Conflict compatibles.",

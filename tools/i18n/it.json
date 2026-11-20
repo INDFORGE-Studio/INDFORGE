@@ -69,12 +69,10 @@
   "ui.made": "Realizzato da INDFORGE - Studio",
   "status.operational": "Operativa",
   "status.standby": "In standby",
-  "status.classified": "Non rilasciata",
   "status.restricted": "Non in elenco",
   "status.dev": "Sviluppo attivo",
   "status.operational.d": "Pubblicata sul Workshop.",
   "status.standby.d": "In pausa: nessun aggiornamento previsto per ora. Potrebbe essere unita a un'altra mod.",
-  "status.classified.d": "Non ancora pubblicata sul Workshop. Questa pagina ne riserva l'indirizzo.",
   "status.restricted.d": "Pubblicata ma non in elenco sul Workshop: raggiungibile solo tramite il suo ID.",
   "cat.indforge": "Operazioni INDFORGE",
   "cat.indforge.d": "I nostri scenari, framework e sistemi di gioco.",
@@ -421,15 +419,6 @@
     "Imposta <code>game.scenarioId</code> sull'ID scenario indicato sopra e usa il blocco mod completo qui sotto: Forest, Conflict PvE e le sue dipendenze, Belleau Wood e le due mod ferroviarie."
   ],
   "m.forest.credits": "Mappa Belleau Wood di Thinwheat01. RailwayGenerator e RailEnfusionRedux di TilW. E ogni creatore delle dipendenze di Conflict PvE.",
-  "m.conflict.tag": "Uno scenario Conflict personalizzato su Everon. Non ancora rilasciato.",
-  "m.conflict.intro": [
-    "INDFORGE - Conflict è uno scenario Conflict su Everon personalizzato dal nostro team, costruito su WCS_Core.",
-    "Al momento della scrittura non è pubblicato sul Workshop: questa pagina ne riserva l'indirizzo permanente. I dettagli saranno declassificati al rilascio."
-  ],
-  "m.conflict.f": [
-    "Missione Conflict su Everon (HQ Commander) personalizzata da TheUnknownTeam.",
-    "Richiede WCS_Core."
-  ],
   "m.ai-framework.tag": "IA modulare e indipendente dalla mappa per scenari PvE: pattuglie di elicotteri, guarnigioni, pattuglie a terra.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework aggiunge pattuglie di elicotteri ostili configurabili, guarnigioni militari e pattuglie a terra agli scenari Conflict compatibili.",
