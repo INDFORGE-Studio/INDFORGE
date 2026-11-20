@@ -142,6 +142,13 @@ table { border-collapse: collapse; width: 100%; }
 .lang-menu button[aria-checked="true"] { color: var(--amber); }
 .lang-menu button[aria-checked="true"] b { color: var(--amber); }
 .lang-menu button[aria-checked="true"]::after { content: "◉"; margin-left: auto; font-size: 11px; }
+.lang-sep { margin: 6px 4px; border-top: 1px solid var(--line2); }
+.lang-wip { display: flex; gap: 12px; align-items: center; padding: 6px 10px; color: var(--mute); font: 400 13px var(--f-body); cursor: not-allowed; }
+.lang-wip b { font: 600 12px var(--f-mono); width: 22px; opacity: .6; }
+.lang-wip em {
+  margin-left: auto; padding: 1px 5px; font: 600 10px var(--f-mono); font-style: normal; letter-spacing: .12em;
+  color: var(--amber); border: 1px solid rgba(255, 176, 0, .5);
+}
 
 /* ---------- buttons, chips */
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }

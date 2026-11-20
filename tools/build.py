@@ -322,6 +322,12 @@ def header(active):
     langs = "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="%s" lang="%s"><b>%s</b><span>%s</span></button></li>'
         % (l, l, l.upper(), H(n)) for l, n in LANGS)
+    wip = [(l, n) for l, n in ALL_LANGS if l not in LIVE]
+    if wip:
+        # Paused languages: listed, but classified until their translation is back.
+        langs += '<li role="separator" class="lang-sep"></li>' + "".join(
+            '<li role="none"><span class="lang-wip" role="menuitem" aria-disabled="true"><b>%s</b>%s<em>W.I.P</em></span></li>'
+            % (l.upper(), redact(len(n))) for l, n in wip)
     return """<a class="skip" href="#main" data-i18n="nav.skip">%s</a>
 <header class="hud" id="top">
   <div class="hud-bar">
