@@ -255,7 +255,7 @@ def header(active):
   <div class="hud-bar">
     <a class="brand" href="%s" aria-label="INDFORGE - Studio">
       <img class="brand-mark" src="%s" width="36" height="36" alt="">
-      <span class="brand-txt"><b>INDFORGE</b><small>%s</small></span>
+      <span class="brand-txt"><b>INDFORGE</b><small aria-hidden="true">%s</small></span>
     </a>
     <nav class="nav" id="nav" %s>%s</nav>
     <div class="hud-tools">
@@ -270,7 +270,7 @@ def header(active):
     </div>
   </div>
   <div class="hud-line" aria-hidden="true"></div>
-</header>""" % (H(E["nav.skip"]), url(), BASE + "assets/img/logo.svg", t("site.division"), ta("aria-label", "nav.menu"), "".join(links),
+</header>""" % (H(E["nav.skip"]), url(), BASE + "assets/img/logo.svg", "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
                  ta("aria-label", "nav.menu"), icon("menu"))
 
