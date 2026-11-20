@@ -1,7 +1,7 @@
 {
   "_meta": "Source language. Values may hold inline HTML (code, b, em, a). Keep placeholders like {n} and every HTML tag unchanged when translating.",
   "site.name": "INDFORGE - Studio",
-  "site.division": "Підрозділ Arma Reforger",
+  "site.division": "Arma Reforger",
   "site.desc": "Офіційна документація модів INDFORGE - Studio для Arma Reforger: можливості, налаштування адміністратора, команди та готові до вставлення списки залежностей.",
   "nav.home": "Штаб",
   "nav.mods": "Моди",
