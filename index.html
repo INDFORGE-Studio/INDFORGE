@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" data-v="54cc3aa918" data-base="/REFORGER/" data-page="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INDFORGE - Studio · Arma Reforger</title>
+<meta name="description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<link rel="canonical" href="https://indforge-studio.github.io/REFORGER/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INDFORGE - Studio">
+<meta property="og:title" content="INDFORGE - Studio · Arma Reforger">
+<meta property="og:description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<meta property="og:url" content="https://indforge-studio.github.io/REFORGER/">
+<meta property="og:image" content="https://indforge-studio.github.io/REFORGER/assets/img/mods/conflict-pve.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06080a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/REFORGER/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/REFORGER/assets/css/site.css?v=54cc3aa918">
+<script>(function(d){var h=d.documentElement,L=["en", "fr", "de", "es", "it", "pl", "uk"],l='';h.className+=' js';try{l=localStorage.getItem('ifg-lang')||''}catch(e){}if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);</script>
+<script src="/REFORGER/assets/js/site.js?v=54cc3aa918" defer></script>
+<script type="speculationrules">{"prerender": [{"where": {"href_matches": "/REFORGER/*"}, "eagerness": "moderate"}]}</script>
+</head>
+<body class="p-home">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="hud" id="top">
+  <div class="hud-bar">
+    <a class="brand" href="/REFORGER/" aria-label="INDFORGE - Studio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13z"/><path d="M16 8v16M9 12l7 4 7-4"/></svg>
+      <span class="brand-txt"><b>INDFORGE</b><small><span data-i18n="site.division">Arma Reforger division</span></small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><a href="/REFORGER/" aria-current="page"><span class="nav-n" aria-hidden="true">01</span><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span class="nav-n" aria-hidden="true">02</span><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span class="nav-n" aria-hidden="true">03</span><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span class="nav-n" aria-hidden="true">04</span><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span class="nav-n" aria-hidden="true">05</span><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span class="nav-n" aria-hidden="true">06</span><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span class="nav-n" aria-hidden="true">07</span><span data-i18n="nav.about">About us</span></a></nav>
+    <div class="hud-tools">
+      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="tool search-btn" data-search aria-label="Search" data-i18n-attr="aria-label=nav.search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><kbd>/</kbd></button>
+      <div class="lang">
+        <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-i18n-attr="aria-label=nav.lang"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="lang-cur">EN</span></button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr"><b>FR</b><span>Français</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de"><b>DE</b><span>Deutsch</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es"><b>ES</b><span>Español</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it"><b>IT</b><span>Italiano</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="pl" lang="pl"><b>PL</b><span>Polski</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk"><b>UK</b><span>Українська</span></button></li></ul>
+      </div>
+      <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h12"/></svg></button>
+    </div>
+  </div>
+  <div class="hud-line" aria-hidden="true"></div>
+</header>
+<main id="main" class="main" tabindex="-1">
+<section class="hero wrap">
+  <div class="hero-txt">
+    <p class="kicker"><span class="kicker-code">STN-01</span><span data-i18n="home.kicker">Field manual and transmission centre</span></p>
+    <h1 class="hero-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
+    <p data-i18n="home.lead" class="lead">We build Arma Reforger mods: co-op PvE campaigns with an enemy that thinks, systems for mission makers, and configuration packs for the communities we play with. This station is the official documentation of every one of them.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/REFORGER/mods/"><span data-i18n="home.cta_mods">Open the order of battle</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="/REFORGER/admins/"><span data-i18n="home.cta_admins">Admin console</span></a>
+      <a class="btn btn-ghost" href="/REFORGER/about/"><span data-i18n="home.cta_about">Who we are</span></a>
+    </div>
+    <p class="hint mono"><span data-i18n="ui.search_open" class="js-only">Press <kbd>/</kbd> to search</span></p>
+  </div>
+  <div class="radar" aria-hidden="true">
+  <div class="radar-ring"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
+  <div class="radar-cross"></div><div class="radar-sweep"></div><i style="left:32.1%;top:51.6%;--d:2944ms" class="blip blip-hot"></i><i style="left:64.0%;top:70.7%;--d:1622ms" class="blip"></i><i style="left:79.5%;top:37.5%;--d:744ms" class="blip"></i><i style="left:81.9%;top:25.9%;--d:588ms" class="blip"></i><i style="left:65.7%;top:53.3%;--d:1133ms" class="blip"></i><i style="left:32.6%;top:42.3%;--d:3266ms" class="blip"></i><i style="left:14.1%;top:34.8%;--d:3255ms" class="blip"></i><i style="left:15.1%;top:52.4%;--d:2955ms" class="blip"></i><i style="left:82.9%;top:64.6%;--d:1266ms" class="blip"></i><i style="left:55.9%;top:68.1%;--d:1800ms" class="blip"></i><i style="left:18.7%;top:63.3%;--d:2744ms" class="blip"></i><i style="left:70.1%;top:74.9%;--d:1566ms" class="blip"></i><i style="left:51.3%;top:86.0%;--d:1977ms" class="blip"></i><i style="left:80.4%;top:44.1%;--d:877ms" class="blip"></i><i style="left:33.1%;top:48.2%;--d:3066ms" class="blip"></i><i style="left:62.1%;top:54.7%;--d:1233ms" class="blip"></i><i style="left:74.1%;top:23.2%;--d:466ms" class="blip"></i><i style="left:16.4%;top:55.3%;--d:2900ms" class="blip"></i><i style="left:31.5%;top:82.0%;--d:2333ms" class="blip"></i>
+  <span class="radar-l mono">AO EVERON // 19 CONTACTS</span>
+</div>
+</section>
+<section class="feed" aria-label="Feed">
+  <div class="feed-in"><span class="feed-l mono"><span data-i18n="home.feed">Live feed</span></span><div class="feed-track"><ul><li><span class="mono amber">2026-11-18</span> INDFORGE - Conflict PvE <span class="mono">v2.0.6</span></li><li><span class="mono amber">2026-11-16</span> Enhanced Compositions <span class="mono">v1.1.0</span></li><li><span class="mono amber">2026-11-15</span> INDFORGE - Forest <span class="mono">v0.0.2</span></li><li><span class="mono amber">2026-11-14</span> Realistic Combat Drones - WCS <span class="mono">v1.0.3</span></li><li><span class="mono amber">2026-11-07</span> TalibanMod Red Side V2 <span class="mono">v1.0.15</span></li><li><span class="mono amber">2026-11-07</span> Solo Push-Pull <span class="mono">v0.0.16</span></li><li><span class="mono amber">2026-11-07</span> Realistic Combat Drones - RHS <span class="mono">v0.0.10</span></li><li><span class="mono amber">2026-11-07</span> Modern FIA <span class="mono">v0.1.23</span></li><li><span class="mono amber">2026-11-07</span> AUC - Vehicles <span class="mono">v0.0.48</span></li><li><span class="mono amber">2026-11-07</span> AUC - Factions <span class="mono">v0.1.22</span></li></ul><ul aria-hidden="true"><li><span class="mono amber">2026-11-18</span> INDFORGE - Conflict PvE <span class="mono">v2.0.6</span></li><li><span class="mono amber">2026-11-16</span> Enhanced Compositions <span class="mono">v1.1.0</span></li><li><span class="mono amber">2026-11-15</span> INDFORGE - Forest <span class="mono">v0.0.2</span></li><li><span class="mono amber">2026-11-14</span> Realistic Combat Drones - WCS <span class="mono">v1.0.3</span></li><li><span class="mono amber">2026-11-07</span> TalibanMod Red Side V2 <span class="mono">v1.0.15</span></li><li><span class="mono amber">2026-11-07</span> Solo Push-Pull <span class="mono">v0.0.16</span></li><li><span class="mono amber">2026-11-07</span> Realistic Combat Drones - RHS <span class="mono">v0.0.10</span></li><li><span class="mono amber">2026-11-07</span> Modern FIA <span class="mono">v0.1.23</span></li><li><span class="mono amber">2026-11-07</span> AUC - Vehicles <span class="mono">v0.0.48</span></li><li><span class="mono amber">2026-11-07</span> AUC - Factions <span class="mono">v0.1.22</span></li></ul></div></div>
+</section>
+<section class="wrap stats" aria-label="Stats"><div class="stat"><b class="mono" data-count="19">19</b><span data-i18n="home.stat_mods">mods on record</span></div><div class="stat"><b class="mono" data-count="159">159</b><span data-i18n="home.stat_deps">Workshop mods credited as dependencies</span></div><div class="stat"><b class="mono" data-count="587">587</b><span data-i18n="home.stat_keys">documented server settings</span></div><div class="stat"><b class="mono" data-count="9">9</b><span data-i18n="home.stat_cmds">admin commands</span></div></section>
+<section class="wrap featured">
+  <div class="dossier-card">
+    <span data-i18n="ui.declassified" class="stamp" aria-hidden="true">Declassified for public release</span>
+    <p class="kicker"><span class="kicker-code">INTSUM</span><span data-i18n="home.featured">Flagship operation</span></p>
+    <h2 data-i18n="home.featured_t">Conflict PvE: the enemy has a headquarters</h2>
+    <p data-i18n="home.featured_p">Hunters only come on intelligence, mortars need an observer, drones see by posture and foliage, and the weather changes what the enemy can do. Read the declassified dossier before you deploy.</p>
+    <p class="mono dim"><span data-i18n="intel.ref">Ref.</span> IFG/HQ-<span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">████</span>-26 · <span data-i18n="ui.classified">Classified</span> <span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">████████████</span></p>
+    <a class="btn btn-primary" href="/REFORGER/intel/"><span data-i18n="home.featured_cta">Read the enemy dossier</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="panel latest">
+    <h2 class="panel-h"><span data-i18n="home.latest">Latest transmissions</span></h2><p data-i18n="home.latest_d" class="dim">Most recent Workshop updates.</p>
+    <ol class="lt"><li><a href="/REFORGER/mods/conflict-pve/"><span class="mono amber">2026-11-18</span><span class="lt-name">INDFORGE - Conflict PvE</span><span class="mono dim">v2.0.6</span></a></li><li><a href="/REFORGER/mods/enhanced-compositions/"><span class="mono amber">2026-11-16</span><span class="lt-name">Enhanced Compositions</span><span class="mono dim">v1.1.0</span></a></li><li><a href="/REFORGER/mods/forest/"><span class="mono amber">2026-11-15</span><span class="lt-name">INDFORGE - Forest</span><span class="mono dim">v0.0.2</span></a></li><li><a href="/REFORGER/mods/rcd-wcs/"><span class="mono amber">2026-11-14</span><span class="lt-name">Realistic Combat Drones - WCS</span><span class="mono dim">v1.0.3</span></a></li><li><a href="/REFORGER/mods/talibanmod-red-side-v2/"><span class="mono amber">2026-11-07</span><span class="lt-name">TalibanMod Red Side V2</span><span class="mono dim">v1.0.15</span></a></li><li><a href="/REFORGER/mods/solo-push-pull/"><span class="mono amber">2026-11-07</span><span class="lt-name">Solo Push-Pull</span><span class="mono dim">v0.0.16</span></a></li></ol>
+    <a class="more" href="/REFORGER/changelog/"><span data-i18n="logp.h1">Version log</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+<section class="wrap sec orbat" id="orbat" aria-labelledby="h-orbat">
+  <h2 id="h-orbat"><span class="sec-code" aria-hidden="true">ORBAT</span><span data-i18n="home.orbat">Order of battle</span></h2>
+  <p data-i18n="home.orbat_d" class="dim">Every mod has its own page and a stable address: the Workshop descriptions point here.</p>
+  <div class="orbat-group" data-group="indforge">
+  <div class="orbat-head"><h3><span class="mono dim">1/</span> <span data-i18n="cat.indforge">INDFORGE operations</span></h3><p data-i18n="cat.indforge.d" class="dim">Our scenarios, frameworks and gameplay systems.</p><span class="mono dim orbat-n"><span data-i18n="ui.mods_count" data-i18n-args="{&quot;n&quot;: 5}">5 mods</span></span></div>
+  <div class="cards"><a class="card" href="/REFORGER/mods/conflict-pve/" data-cat="indforge">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/conflict-pve.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span data-i18n="status.dev" class="chip chip-dev">Active development</span><span class="mono dim">v2.0.6</span></span>
+    <span class="card-title">INDFORGE - Conflict PvE</span>
+    <span data-i18n="m.conflict-pve.tag" class="card-tag">Co-op PvE Conflict on Everon: US players against an enemy that thinks.</span>
+    <span class="card-id mono" aria-hidden="true">ID 69BD142259FCF144</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/forest/" data-cat="indforge">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/forest.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.2</span></span>
+    <span class="card-title">INDFORGE - Forest</span>
+    <span data-i18n="m.forest.tag" class="card-tag">Conflict PvE in the dense forests of Belleau Wood.</span>
+    <span class="card-id mono" aria-hidden="true">ID 6A8E3DDAEECB3134</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/conflict/" data-cat="indforge">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/conflict.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.classified" class="chip chip-classified">Not released</span><span class="mono dim">—</span></span>
+    <span class="card-title">INDFORGE - Conflict</span>
+    <span data-i18n="m.conflict.tag" class="card-tag">A customised Conflict scenario on Everon. Not released yet.</span>
+    <span class="card-id mono" aria-hidden="true">ID 697B5789E7A32A62</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/ai-framework/" data-cat="indforge">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/ai-framework.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.restricted" class="chip chip-restricted">Unlisted</span><span class="mono dim">v1.0.7</span></span>
+    <span class="card-title">INDFORGE - AI Framework</span>
+    <span data-i18n="m.ai-framework.tag" class="card-tag">Modular, map-agnostic AI for PvE scenarios: helicopter patrols, garrisons, ground patrols.</span>
+    <span class="card-id mono" aria-hidden="true">ID 6A2D1B9166B50BBE</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/enhanced-compositions/" data-cat="indforge">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/enhanced-compositions.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v1.1.0</span></span>
+    <span class="card-title">Enhanced Compositions</span>
+    <span data-i18n="m.enhanced-compositions.tag" class="card-tag">Compact Conflict compositions, generator capture and AI garrisons.</span>
+    <span class="card-id mono" aria-hidden="true">ID 660C6D2259B60EE8</span>
+  </span>
+</a></div>
+</div><div class="orbat-group" data-group="auc">
+  <div class="orbat-head"><h3><span class="mono dim">2/</span> <span data-i18n="cat.auc">AUC — Arma Ukraine Community</span></h3><p data-i18n="cat.auc.d" class="dim">Configuration packs built for the [AUC] Arma Ukraine Community servers.</p><span class="mono dim orbat-n"><span data-i18n="ui.mods_count" data-i18n-args="{&quot;n&quot;: 3}">3 mods</span></span></div>
+  <div class="cards"><a class="card" href="/REFORGER/mods/auc-factions/" data-cat="auc">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/auc-factions.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.1.22</span></span>
+    <span class="card-title">AUC - Factions</span>
+    <span data-i18n="m.auc-factions.tag" class="card-tag">Ukrainian, Russian and assault-battalion factions for the Arma Ukraine Community.</span>
+    <span class="card-id mono" aria-hidden="true">ID 684EA039B3914133</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/auc-vehicles/" data-cat="auc">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/auc-vehicles.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.48</span></span>
+    <span class="card-title">AUC - Vehicles</span>
+    <span data-i18n="m.auc-vehicles.tag" class="card-tag">The vehicle pool of the Arma Ukraine Community servers.</span>
+    <span class="card-id mono" aria-hidden="true">ID 66F02ECA63319B7B</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/auc-conflict/" data-cat="auc">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/auc-conflict.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.1.70</span></span>
+    <span class="card-title">AUC - Conflict</span>
+    <span data-i18n="m.auc-conflict.tag" class="card-tag">PvPvE Conflict for the Arma Ukraine Community, starting on Kolguyev.</span>
+    <span class="card-id mono" aria-hidden="true">ID 66F45DB4333D0393</span>
+  </span>
+</a></div>
+</div><div class="orbat-group" data-group="ctrp">
+  <div class="orbat-head"><h3><span class="mono dim">3/</span> <span data-i18n="cat.ctrp">ChercheToi RP</span></h3><p data-i18n="cat.ctrp.d" class="dim">Configuration packs built for the CHERCHE TOI – RP LIFE community.</p><span class="mono dim orbat-n"><span data-i18n="ui.mods_count" data-i18n-args="{&quot;n&quot;: 3}">3 mods</span></span></div>
+  <div class="cards"><a class="card" href="/REFORGER/mods/cherchetoi-rp-clothing/" data-cat="ctrp">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/cherchetoi-rp-clothing.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.11</span></span>
+    <span class="card-title">ChercheToi RP - Clothing</span>
+    <span data-i18n="m.cherchetoi-rp-clothing.tag" class="card-tag">Role-play clothing for the CHERCHE TOI – RP LIFE community.</span>
+    <span class="card-id mono" aria-hidden="true">ID 6930250D69578D25</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/cherchetoi-rp-props/" data-cat="ctrp">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/cherchetoi-rp-props.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.6</span></span>
+    <span class="card-title">ChercheToi RP - Props</span>
+    <span data-i18n="m.cherchetoi-rp-props.tag" class="card-tag">Role-play props for the CHERCHE TOI – RP LIFE community.</span>
+    <span class="card-id mono" aria-hidden="true">ID 692E26A1CF5CAE2D</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/cherchetoi-rp-vehicles/" data-cat="ctrp">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/cherchetoi-rp-vehicles.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.33</span></span>
+    <span class="card-title">ChercheToi RP - Vehicles</span>
+    <span data-i18n="m.cherchetoi-rp-vehicles.tag" class="card-tag">The role-play vehicle pool of the CHERCHE TOI – RP LIFE community.</span>
+    <span class="card-id mono" aria-hidden="true">ID 68C4735E25FE6FE7</span>
+  </span>
+</a></div>
+</div><div class="orbat-group" data-group="gear">
+  <div class="orbat-head"><h3><span class="mono dim">4/</span> <span data-i18n="cat.gear">Equipment & vehicles</span></h3><p data-i18n="cat.gear.d" class="dim">Factions, vehicles, drones and quality-of-life additions.</p><span class="mono dim orbat-n"><span data-i18n="ui.mods_count" data-i18n-args="{&quot;n&quot;: 6}">6 mods</span></span></div>
+  <div class="cards"><a class="card" href="/REFORGER/mods/lav-25-desert/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/lav-25-desert.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v1.0.9</span></span>
+    <span class="card-title">LAV-25 Desert Storm</span>
+    <span data-i18n="m.lav-25-desert.tag" class="card-tag">The LAV-25 Piranha in Operation Desert Storm colours.</span>
+    <span class="card-id mono" aria-hidden="true">ID 6504422356E3275F</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/modern-fia/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/modern-fia.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.1.23</span></span>
+    <span class="card-title">Modern FIA</span>
+    <span data-i18n="m.modern-fia.tag" class="card-tag">A modernised FIA: bullpup rifle, ballistic helmets, body armour.</span>
+    <span class="card-id mono" aria-hidden="true">ID 61E2375C8D777A4E</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/rcd-rhs/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/rcd-rhs.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.10</span></span>
+    <span class="card-title">Realistic Combat Drones - RHS</span>
+    <span data-i18n="m.rcd-rhs.tag" class="card-tag">SalamiBoiDev's drones and jammer backpack in every RHS arsenal.</span>
+    <span class="card-id mono" aria-hidden="true">ID 65D08E0825A12E2C</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/rcd-wcs/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/rcd-wcs.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v1.0.3</span></span>
+    <span class="card-title">Realistic Combat Drones - WCS</span>
+    <span data-i18n="m.rcd-wcs.tag" class="card-tag">SalamiBoiDev's drones in the WCS arsenals, and a buildable TPN-19 jammer.</span>
+    <span class="card-id mono" aria-hidden="true">ID 65D10E606F9A0B25</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/solo-push-pull/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/solo-push-pull.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v0.0.16</span></span>
+    <span class="card-title">Solo Push-Pull</span>
+    <span data-i18n="m.solo-push-pull.tag" class="card-tag">Push or pull any car or truck on your own. Even the BTR.</span>
+    <span class="card-id mono" aria-hidden="true">ID 61ED28EAECF0D304</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/talibanmod-red-side-v2/" data-cat="gear">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/talibanmod-red-side-v2.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v1.0.15</span></span>
+    <span class="card-title">TalibanMod Red Side V2</span>
+    <span data-i18n="m.talibanmod-red-side-v2.tag" class="card-tag">FIA and USSR turned into insurgents of the Arab world, for Task Force Baguette.</span>
+    <span class="card-id mono" aria-hidden="true">ID 65651694F5D27C8D</span>
+  </span>
+</a></div>
+</div><div class="orbat-group" data-group="standby">
+  <div class="orbat-head"><h3><span class="mono dim">5/</span> <span data-i18n="cat.standby">Standby</span></h3><p data-i18n="cat.standby.d" class="dim">Mods on hold, kept on the record.</p><span class="mono dim orbat-n"><span data-i18n="ui.mods_count" data-i18n-args="{&quot;n&quot;: 2}">2 mods</span></span></div>
+  <div class="cards"><a class="card" href="/REFORGER/mods/off-road-vehicles/" data-cat="standby">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/off-road-vehicles.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.standby" class="chip chip-standby">Standby</span><span class="mono dim">v1.0.1</span></span>
+    <span class="card-title">Off-Road Vehicles</span>
+    <span data-i18n="m.off-road-vehicles.tag" class="card-tag">Off-road 4×4 and 6×6 vehicles for limitless exploration.</span>
+    <span class="card-id mono" aria-hidden="true">ID 65AB41C94C11F1DD</span>
+  </span>
+</a><a class="card" href="/REFORGER/mods/uaz-452-offroad/" data-cat="standby">
+  <span class="card-img"><img src="/REFORGER/assets/img/thumbs/uaz-452-offroad.webp" width="480" height="270" alt="" loading="lazy" decoding="async"><span class="card-scan" aria-hidden="true"></span></span>
+  <span class="card-body">
+    <span class="card-meta"><span data-i18n="status.standby" class="chip chip-standby">Standby</span><span class="mono dim">v1.0.0</span></span>
+    <span class="card-title">UAZ-452 Offroad</span>
+    <span data-i18n="m.uaz-452-offroad.tag" class="card-tag">The UAZ-452 "Bukhanka", reworked for the mountains.</span>
+    <span class="card-id mono" aria-hidden="true">ID 62332D2F8F3AB376</span>
+  </span>
+</a></div>
+</div>
+</section>
+<section class="wrap who">
+  <div class="panel who-in">
+    <h2 class="panel-h"><span data-i18n="home.who">Who we are</span></h2>
+    <p data-i18n="home.who_p">INDFORGE - Studio is a small independent team. We publish on the Workshop as <b>TheUnknownTeam</b>, and we move forward on the shoulders of giants: our mods credit and depend on the work of other creators, nothing repacked.</p>
+    <a class="btn btn-ghost" href="/REFORGER/about/"><span data-i18n="home.cta_about">Who we are</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-name">INDFORGE - Studio <span class="dim">//</span> <span data-i18n="site.division">Arma Reforger division</span></p>
+      <p data-i18n="about.motto" class="motto">Alone we go faster, but together we go further… and always beyond the possible.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="/REFORGER/"><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span data-i18n="nav.about">About us</span></a></nav>
+    <p data-i18n="ui.footer_legal" class="legal">Fan-made community mods for Arma Reforger. Arma Reforger is a trademark of its owner; this site is not affiliated with or endorsed by Bohemia Interactive. Third-party mod names are used only to describe dependencies.</p>
+    <p data-i18n="ui.footer_source" data-i18n-args="{&quot;date&quot;: &quot;2026-11-20&quot;}" class="src">Data checked against the mods' project files and public Workshop pages on 2026-11-20.</p>
+    <p class="foot-sys mono" aria-hidden="true">SYS.54CC3A // CH-19 // <span class="blink">&#9632;</span> SECURE CHANNEL</p>
+  </div>
+</footer>
+</body>
+</html>

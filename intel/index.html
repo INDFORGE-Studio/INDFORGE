@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-v="54cc3aa918" data-base="/REFORGER/" data-page="intel">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="intel.title" data-i18n-suffix=" · INDFORGE - Studio">Intel · INDFORGE - Studio</title>
+<meta name="description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<link rel="canonical" href="https://indforge-studio.github.io/REFORGER/intel/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INDFORGE - Studio">
+<meta property="og:title" content="Intel · INDFORGE - Studio">
+<meta property="og:description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<meta property="og:url" content="https://indforge-studio.github.io/REFORGER/intel/">
+<meta property="og:image" content="https://indforge-studio.github.io/REFORGER/assets/img/mods/conflict-pve.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06080a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/REFORGER/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/REFORGER/assets/css/site.css?v=54cc3aa918">
+<script>(function(d){var h=d.documentElement,L=["en", "fr", "de", "es", "it", "pl", "uk"],l='';h.className+=' js';try{l=localStorage.getItem('ifg-lang')||''}catch(e){}if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);</script>
+<script src="/REFORGER/assets/js/site.js?v=54cc3aa918" defer></script>
+<script type="speculationrules">{"prerender": [{"where": {"href_matches": "/REFORGER/*"}, "eagerness": "moderate"}]}</script>
+</head>
+<body class="p-intel">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="hud" id="top">
+  <div class="hud-bar">
+    <a class="brand" href="/REFORGER/" aria-label="INDFORGE - Studio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13z"/><path d="M16 8v16M9 12l7 4 7-4"/></svg>
+      <span class="brand-txt"><b>INDFORGE</b><small><span data-i18n="site.division">Arma Reforger division</span></small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><a href="/REFORGER/"><span class="nav-n" aria-hidden="true">01</span><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span class="nav-n" aria-hidden="true">02</span><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span class="nav-n" aria-hidden="true">03</span><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/" aria-current="page"><span class="nav-n" aria-hidden="true">04</span><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span class="nav-n" aria-hidden="true">05</span><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span class="nav-n" aria-hidden="true">06</span><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span class="nav-n" aria-hidden="true">07</span><span data-i18n="nav.about">About us</span></a></nav>
+    <div class="hud-tools">
+      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="tool search-btn" data-search aria-label="Search" data-i18n-attr="aria-label=nav.search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><kbd>/</kbd></button>
+      <div class="lang">
+        <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-i18n-attr="aria-label=nav.lang"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="lang-cur">EN</span></button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr"><b>FR</b><span>Français</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de"><b>DE</b><span>Deutsch</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es"><b>ES</b><span>Español</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it"><b>IT</b><span>Italiano</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="pl" lang="pl"><b>PL</b><span>Polski</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk"><b>UK</b><span>Українська</span></button></li></ul>
+      </div>
+      <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h12"/></svg></button>
+    </div>
+  </div>
+  <div class="hud-line" aria-hidden="true"></div>
+</header>
+<main id="main" class="main" tabindex="-1">
+<div class="wrap">
+<article class="dossier">
+  <header class="dossier-h">
+    <span data-i18n="intel.stamp" class="stamp" aria-hidden="true">Top secret — declassified for players</span>
+    <p class="kicker"><span class="kicker-code">INTREP</span><span data-i18n="intel.kicker">Intelligence report</span></p>
+    <h1 data-scramble><span data-i18n="intel.h1">Dossier: the enemy headquarters</span></h1>
+    <p data-i18n="intel.lead" class="lead">What we know of the USSR/FIA command you face in INDFORGE - Conflict PvE and INDFORGE - Forest. Read it before you deploy.</p>
+    <dl class="dossier-meta mono">
+      <div><dt><span data-i18n="intel.ref">Ref.</span></dt><dd>IFG/HQ-<span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">████</span>-26</dd></div>
+      <div><dt>AO</dt><dd>EVERON · BELLEAU WOOD</dd></div>
+      <div><dt>SRC</dt><dd><span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">██████████████</span></dd></div>
+      <div><dt><span data-i18n="ui.classified">Classified</span></dt><dd><span data-i18n="ui.declassified">Declassified for public release</span></dd></div>
+    </dl>
+  </header>
+  <p data-i18n="intel.state_note" class="note">Items marked <b>Incoming</b> are merged in development and arrive with the next Workshop update of Conflict PvE.</p>
+  <div class="dossier-body">
+  <section class="dsec" id="summary" aria-labelledby="h-summary">
+  <h2 id="h-summary"><span class="sec-code" aria-hidden="true">00</span><span data-i18n="intel.summary">Summary</span></h2>
+  <p data-i18n="intel.summary_p" class="lead2">The enemy no longer knows where you are by magic. Its headquarters acts on reports: what its drones and patrols actually see. It predicts where you are going, chooses a plan, calls its mortars and adapts to weather and night. Stay unseen and it stays blind.</p>
+</section> <section class="dsec" id="hq" aria-labelledby="h-hq">
+  <h2 id="h-hq"><span class="sec-code" aria-hidden="true">01</span><span data-i18n="intel.hq">Command structure</span></h2>
+  <ul class="feat"><li data-i18n="intel.hq_s.0"><b>Sources.</b> An enemy drone contact, or an enemy group that identifies a player or a player vehicle. Close reports merge into a <em>track</em>: last known position, time, source, on foot or in a vehicle.</li><li data-i18n="intel.hq_s.1"><b>Dispatch.</b> A fresh track gets a group, spawned on a road far from every player. Drone intel brings special forces; a patrol report brings hunters. A spotted vehicle brings an anti-vehicle team.</li><li data-i18n="intel.hq_s.2"><b>Prediction.</b> Two reports give your direction and speed. The group heads where you should be by now, not where you were seen.</li><li data-i18n="intel.hq_s.3"><b>Search.</b> A cold track is searched around its estimated position, on a radius that grows with time, then the group returns.</li><li data-i18n="intel.hq_s.4"><b>Formations.</b> Column on the march, wedge on approach, line on assault and on contact.</li><li data-i18n="intel.hq_s.5"><b>Size.</b> Hunter groups and helicopter paratroopers grow with the number of players nearby.</li></ul>
+</section> <section class="dsec" id="doctrine" aria-labelledby="h-doctrine">
+  <h2 id="h-doctrine"><span class="sec-code" aria-hidden="true">02</span><span data-i18n="intel.doctrine">Combat doctrine</span></h2>
+  <p data-i18n="intel.doctrine_p">Every enemy soldier follows a doctrine level that sets when he opens fire on infantry, from how far, and how he withdraws.</p><div class="tbl"><table class="table">
+<thead><tr><th scope="col"><span data-i18n="intel.lvl_col">Level</span></th><th scope="col"><span data-i18n="intel.lvl_who">Who</span></th><th scope="col"><span data-i18n="intel.lvl_rng">Opens fire on infantry within (standing / crouched / prone)</span></th><th scope="col"><span data-i18n="intel.lvl_wd">Withdrawals</span></th></tr></thead>
+<tbody><tr><th scope="row"><span class="lvl lvl-boot">Boot</span></th><td><span data-i18n="intel.lvl.boot">FIA soldiers, hunters sent on a patrol report</span></td><td class="mono">275 / 165 / 90 m</td><td class="mono">0</td></tr><tr><th scope="row"><span class="lvl lvl-grunt">Grunt</span></th><td><span data-i18n="intel.lvl.grunt">Regular USSR and US infantry, squad marksmen</span></td><td class="mono">330 / 220 / 130 m</td><td class="mono">1</td></tr><tr><th scope="row"><span class="lvl lvl-operator">Operator</span></th><td><span data-i18n="intel.lvl.operator">Spetsnaz, KLMK, recon, special forces, modern US AI</span></td><td class="mono">440 / 275 / 165 m</td><td class="mono">2</td></tr><tr><th scope="row"><span class="lvl lvl-overwatch">Overwatch</span></th><td><span data-i18n="intel.lvl.overwatch">Special-forces snipers and their spotters only</span></td><td class="mono">385 / 275 / 165 m</td><td class="mono">2</td></tr></tbody></table></div><ul class="feat"><li data-i18n="intel.doctrine_s.0"><b>Fire discipline.</b> A group that spots you before you see it holds its fire and closes in.</li><li data-i18n="intel.doctrine_s.1"><b>Tactical withdrawal.</b> Caught off guard, half the group falls back firing while the other half sprints to cover, then they swap, regroup and come back.</li><li data-i18n="intel.doctrine_s.2"><b>Ranges</b> depend on your posture and movement, the weapon, the group size, night and weather. A target that fires loses the benefit of its posture.</li></ul>
+</section> <section class="dsec" id="fires" aria-labelledby="h-fires">
+  <h2 id="h-fires"><span class="sec-code" aria-hidden="true">03</span><span data-i18n="intel.fires">Fire support</span></h2>
+  <ul class="feat"><li data-i18n="intel.fires_s.0"><b>Mortar batteries</b> set up in an enemy base 900 m to 3.5 km from the target, out of towns, with a crew, sentries and a patrol.</li><li data-i18n="intel.fires_s.1"><b>An observer is required:</b> a group leader or a recon drone must see you, and you must stay put long enough. Ranging rounds come first, then fire for effect.</li><li data-i18n="intel.fires_s.2"><b>Counter-battery play:</b> the batteries can be found and destroyed.</li></ul>
+</section> <section class="dsec" id="drones" aria-labelledby="h-drones">
+  <h2 id="h-drones"><span class="sec-code" aria-hidden="true">04</span><span data-i18n="intel.drones">Drones</span></h2>
+  <p data-i18n="intel.drones_p">Enemy drones see you by distance, posture and cover:</p><div class="tbl"><table class="table drones">
+<thead><tr><th scope="col"><span data-i18n="intel.drone_col_pos">Your posture</span></th><th scope="col"><span data-i18n="intel.drone_col_rng">Seen within</span></th><th scope="col"><span class="sr">%</span></th></tr></thead>
+<tbody><tr><th scope="row"><span data-i18n="intel.drone_stand">Standing</span></th><td class="mono">300 m</td><td><span class="bar" style="--w:100%"></span></td></tr><tr><th scope="row"><span data-i18n="intel.drone_crouch">Crouched</span></th><td class="mono">180 m</td><td><span class="bar" style="--w:60%"></span></td></tr><tr><th scope="row"><span data-i18n="intel.drone_prone">Prone</span></th><td class="mono">100 m</td><td><span class="bar" style="--w:33%"></span></td></tr></tbody></table></div><ul class="feat"><li data-i18n="intel.drones_s.0">Standing still cuts these ranges by 30 %. Night and weather cut them further.</li><li data-i18n="intel.drones_s.1"><b>Any foliage between you and the drone hides you</b> — even the bush you hide in. Under 15 m, the drone's own test applies.</li><li data-i18n="intel.drones_s.2">A drone that loses you hunts where it last saw you for about two minutes.</li><li data-i18n="intel.drones_s.3">Back-pack jammers stop FPV drones within 50 m.</li></ul>
+</section> <section class="dsec" id="light" aria-labelledby="h-light">
+  <h2 id="h-light"><span class="sec-code" aria-hidden="true">05</span><span data-i18n="intel.light">Mavic light code</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <p data-i18n="intel.light_p">A small light under the enemy Mavic tells you what it is doing. Never on an FPV.</p><ul class="leds"><li><span class="led led-g" aria-hidden="true"></span><span data-i18n="intel.light_g">Patrolling, nothing spotted</span></li><li><span class="led led-r" aria-hidden="true"></span><span data-i18n="intel.light_r">Tracking a target</span></li><li><span class="led led-rf" aria-hidden="true"></span><span data-i18n="intel.light_rf">Fast red blink: guiding a glide bomb</span></li><li><span class="led led-o" aria-hidden="true"></span><span data-i18n="intel.light_o">Orange blink: searching where it lost you</span></li></ul>
+</section> <section class="dsec" id="plans" aria-labelledby="h-plans">
+  <h2 id="h-plans"><span class="sec-code" aria-hidden="true">06</span><span data-i18n="intel.plans">Attack plans</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <p data-i18n="intel.plans_p">For each track, the HQ scores what it knows — on foot or in a vehicle, still or moving, grouped players, inside a base, night, fog, rain, drones available, mortars, recent losses — then picks a plan:</p><ol class="steps"><li data-i18n="intel.plan.0"><b>L-shaped attack</b> — one group fixes you at 200 m, a second flanks at 90°, both assault together.</li><li data-i18n="intel.plan.1"><b>Hammer and anvil</b> — one group blocks the road ahead of a moving target, the other pushes.</li><li data-i18n="intel.plan.2"><b>Mortar first</b> — the battery strikes, the group waits out of the danger zone, then assaults.</li><li data-i18n="intel.plan.3"><b>Infiltration</b> — special forces creep in close, at night or in fog.</li><li data-i18n="intel.plan.4"><b>Feint</b> — one group shows itself and attacks, the second waits on another axis.</li><li data-i18n="intel.plan.5"><b>Harassment</b> — a sniper team on high ground plus the mortar, against a strong position.</li><li data-i18n="intel.plan.6"><b>Road ambush</b> — against a moving vehicle (below).</li></ol><p data-i18n="intel.plans_esc" class="note"><b>Escalation.</b> Every group you wipe out nearby makes the next ones bigger and sharper, and favours the mortar.</p>
+</section> <section class="dsec" id="ambush" aria-labelledby="h-ambush">
+  <h2 id="h-ambush"><span class="sec-code" aria-hidden="true">07</span><span data-i18n="intel.ambush">Road ambushes</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <ul class="feat"><li data-i18n="intel.ambush_s.0">The HQ follows the road ahead of your vehicle and sets a kill zone 400 to 600 m further, on the high side.</li><li data-i18n="intel.ambush_s.1">Nine variants: lone AT team, L-shaped, mines and fire, the trap (road closed behind you), the bait (a wreck on the road), FPV corridor, close night ambush, long-range hunter on a crest, and a pre-registered mortar strike at a junction.</li><li data-i18n="intel.ambush_s.2">Persistent roadblocks appear on the paved roads you use most, and move every couple of days.</li><li data-i18n="intel.ambush_s.3">Nobody fires before you enter the zone: the first rocket, then everyone.</li></ul>
+</section> <section class="dsec" id="air" aria-labelledby="h-air">
+  <h2 id="h-air"><span class="sec-code" aria-hidden="true">08</span><span data-i18n="intel.air">Air and long-range strikes</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <ul class="feat"><li data-i18n="intel.air_s.0"><b>Glide bomb</b> on players on foot that a Mavic keeps in sight — its red light blinks fast. Shoot the drone or break its view.</li><li data-i18n="intel.air_s.1"><b>Cruise missile</b> on a base you just took from the enemy. The base siren sounds before impact.</li><li data-i18n="intel.air_s.2"><b>Su-57 reconnaissance passes</b> can report you to the HQ.</li><li data-i18n="intel.air_s.3"><b>Geran raids</b> from launch trucks parked on roads kilometres away. Kill the truck or its driver and the raid stops.</li><li data-i18n="intel.air_s.4">Never on a faction's main base, never danger-close to enemy soldiers, never when the weather grounds aircraft.</li></ul>
+</section> <section class="dsec" id="weather" aria-labelledby="h-weather">
+  <h2 id="h-weather"><span class="sec-code" aria-hidden="true">09</span><span data-i18n="intel.weather">Weather</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <ul class="feat"><li data-i18n="intel.weather_s.0">Credible episodes in sequence: clear, fair, cloudy, overcast, drizzle, rain, thunderstorm fronts, dawn mist, fog banks — with smooth transitions.</li><li data-i18n="intel.weather_s.1">Drones are grounded from 10 m/s of wind, heavy rain or thick fog; helicopter drops and waves from 14 m/s; paratroopers from 8 m/s.</li><li data-i18n="intel.weather_s.2">Fog and rain shorten what mortar observers can see. Thermal sights see through light fog.</li></ul>
+</section> <section class="dsec" id="night" aria-labelledby="h-night">
+  <h2 id="h-night"><span class="sec-code" aria-hidden="true">10</span><span data-i18n="intel.night">Night</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <ul class="feat"><li data-i18n="intel.night_s.0">Some soldiers get night-vision goggles — more often snipers and special forces, less often by day.</li><li data-i18n="intel.night_s.1">What a soldier sees comes from what he carries: naked eye, night vision or thermal scope. Some enemy drones carry a thermal camera.</li></ul>
+</section> <section class="dsec" id="radio" aria-labelledby="h-radio">
+  <h2 id="h-radio"><span class="sec-code" aria-hidden="true">11</span><span data-i18n="intel.radio">Radio alerts</span> <span data-i18n="ui.incoming" class="chip chip-inc">Incoming</span></h2>
+  <p data-i18n="intel.radio_p">Short radio-style hints reach the players concerned: drone overhead, interception group on the way, mortar, Geran, missile, jet, ambush. Never the enemy's exact position.</p>
+</section> <section class="dsec" id="base" aria-labelledby="h-base">
+  <h2 id="h-base"><span class="sec-code" aria-hidden="true">12</span><span data-i18n="intel.base">Base capture</span></h2>
+  <ul class="feat"><li data-i18n="intel.base_s.0">Standing in the zone no longer takes a generator base: repair the generator with a wrench, then fill it with 18 L of fuel while the siren sounds. Radio contact with your HQ is required.</li><li data-i18n="intel.base_s.1">About 30 s after you take it, the nearest enemy soldier walks to the generator to sabotage it (8 s). Kill him first.</li><li data-i18n="intel.base_s.2">Wall the generator in with HESCO and a breacher lays demolition charges on the closest wall: 20 s fuse, kill him or defuse.</li></ul>
+</section><section class="dsec" id="guide" aria-labelledby="h-guide">
+  <h2 id="h-guide"><span class="sec-code" aria-hidden="true">13</span><span data-i18n="intel.guide">Field survival guide</span></h2>
+  <ol class="steps guide"><li data-i18n="intel.guide_s.0">Stay spread out: enemy rocket launchers also fire at infantry.</li><li data-i18n="intel.guide_s.1">Break the line of sight with foliage, go prone, keep still under a drone.</li><li data-i18n="intel.guide_s.2">Once spotted, change direction: they aim where you should be, not where you were.</li><li data-i18n="intel.guide_s.3">Watch the Mavic light. Red: you are watched. Fast red blink: move, now.</li><li data-i18n="intel.guide_s.4">A siren at your base means a strike is coming: get out of the base.</li><li data-i18n="intel.guide_s.5">Kill the saboteur before he reaches the generator.</li></ol>
+</section>
+  </div>
+</article>
+</div><div class="wrap pn"><a class="pn-a" href="/REFORGER/mods/conflict-pve/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span><small>MOD</small>INDFORGE - Conflict PvE</span></a><a class="pn-a pn-next" href="/REFORGER/mods/forest/"><span><small>MOD</small>INDFORGE - Forest</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-name">INDFORGE - Studio <span class="dim">//</span> <span data-i18n="site.division">Arma Reforger division</span></p>
+      <p data-i18n="about.motto" class="motto">Alone we go faster, but together we go further… and always beyond the possible.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="/REFORGER/"><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span data-i18n="nav.about">About us</span></a></nav>
+    <p data-i18n="ui.footer_legal" class="legal">Fan-made community mods for Arma Reforger. Arma Reforger is a trademark of its owner; this site is not affiliated with or endorsed by Bohemia Interactive. Third-party mod names are used only to describe dependencies.</p>
+    <p data-i18n="ui.footer_source" data-i18n-args="{&quot;date&quot;: &quot;2026-11-20&quot;}" class="src">Data checked against the mods' project files and public Workshop pages on 2026-11-20.</p>
+    <p class="foot-sys mono" aria-hidden="true">SYS.54CC3A // CH-19 // <span class="blink">&#9632;</span> SECURE CHANNEL</p>
+  </div>
+</footer>
+</body>
+</html>

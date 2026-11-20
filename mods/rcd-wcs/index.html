@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-v="54cc3aa918" data-base="/REFORGER/" data-page="mods">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realistic Combat Drones - WCS · INDFORGE - Studio</title>
+<meta name="description" content="SalamiBoiDev&#x27;s drones in the WCS arsenals, and a buildable TPN-19 jammer.">
+<link rel="canonical" href="https://indforge-studio.github.io/REFORGER/mods/rcd-wcs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INDFORGE - Studio">
+<meta property="og:title" content="Realistic Combat Drones - WCS">
+<meta property="og:description" content="SalamiBoiDev&#x27;s drones in the WCS arsenals, and a buildable TPN-19 jammer.">
+<meta property="og:url" content="https://indforge-studio.github.io/REFORGER/mods/rcd-wcs/">
+<meta property="og:image" content="https://indforge-studio.github.io/REFORGER/assets/img/mods/rcd-wcs.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06080a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/REFORGER/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/REFORGER/assets/css/site.css?v=54cc3aa918">
+<script>(function(d){var h=d.documentElement,L=["en", "fr", "de", "es", "it", "pl", "uk"],l='';h.className+=' js';try{l=localStorage.getItem('ifg-lang')||''}catch(e){}if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);</script>
+<script src="/REFORGER/assets/js/site.js?v=54cc3aa918" defer></script>
+<script type="speculationrules">{"prerender": [{"where": {"href_matches": "/REFORGER/*"}, "eagerness": "moderate"}]}</script>
+</head>
+<body class="">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="hud" id="top">
+  <div class="hud-bar">
+    <a class="brand" href="/REFORGER/" aria-label="INDFORGE - Studio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13z"/><path d="M16 8v16M9 12l7 4 7-4"/></svg>
+      <span class="brand-txt"><b>INDFORGE</b><small><span data-i18n="site.division">Arma Reforger division</span></small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><a href="/REFORGER/"><span class="nav-n" aria-hidden="true">01</span><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/" aria-current="page"><span class="nav-n" aria-hidden="true">02</span><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span class="nav-n" aria-hidden="true">03</span><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span class="nav-n" aria-hidden="true">04</span><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span class="nav-n" aria-hidden="true">05</span><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span class="nav-n" aria-hidden="true">06</span><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span class="nav-n" aria-hidden="true">07</span><span data-i18n="nav.about">About us</span></a></nav>
+    <div class="hud-tools">
+      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="tool search-btn" data-search aria-label="Search" data-i18n-attr="aria-label=nav.search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><kbd>/</kbd></button>
+      <div class="lang">
+        <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-i18n-attr="aria-label=nav.lang"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="lang-cur">EN</span></button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr"><b>FR</b><span>Français</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de"><b>DE</b><span>Deutsch</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es"><b>ES</b><span>Español</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it"><b>IT</b><span>Italiano</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="pl" lang="pl"><b>PL</b><span>Polski</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk"><b>UK</b><span>Українська</span></button></li></ul>
+      </div>
+      <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h12"/></svg></button>
+    </div>
+  </div>
+  <div class="hud-line" aria-hidden="true"></div>
+</header>
+<main id="main" class="main" tabindex="-1">
+<section class="mhero wrap">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/REFORGER/"><span data-i18n="nav.home">Command</span></a><span aria-hidden="true">/</span><a href="/REFORGER/mods/"><span data-i18n="nav.mods">Mods</span></a><span aria-hidden="true">/</span><span data-i18n="cat.gear">Equipment & vehicles</span></nav>
+  <div class="mhero-grid">
+    <div class="mhero-txt">
+      <p class="kicker"><span class="kicker-code">MOD-15</span><span data-i18n="cat.gear">Equipment & vehicles</span></p>
+      <h1 data-scramble>Realistic Combat Drones - WCS</h1>
+      <p data-i18n="m.rcd-wcs.tag" class="lead">SalamiBoiDev's drones in the WCS arsenals, and a buildable TPN-19 jammer.</p>
+      <p class="chips"><span data-i18n="status.operational" class="chip chip-operational">Operational</span><span class="mono dim">v1.0.3</span></p>
+      <div class="actions"><a class="btn btn-primary" href="https://reforger.armaplatform.com/workshop/65D10E606F9A0B25" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg><span data-i18n="ui.open_workshop">Open on the Workshop</span></a><a class="btn btn-ghost" href="#deps"><span data-i18n="sec.deps">Dependencies</span></a></div>
+    </div>
+    <figure class="hero-img">
+      <img src="/REFORGER/assets/img/mods/rcd-wcs.webp" width="960" height="540" alt="Realistic Combat Drones - WCS" fetchpriority="high" decoding="async">
+      <span class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figcaption class="mono" aria-hidden="true">IMG // RCD-WCS // 65D10E606F9A0B25</figcaption>
+    </figure>
+  </div>
+</section><div class="mbody wrap"><aside class="mside">
+  <div class="panel">
+    <h2 class="panel-h"><span data-i18n="sec.facts">Identification</span></h2>
+    <dl class="facts"><div><dt><span data-i18n="ui.workshop_id">Workshop ID</span></dt><dd><code>65D10E606F9A0B25</code><button type="button" class="copy copy-sm" data-copy-text="65D10E606F9A0B25"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></dd></div><div><dt><span data-i18n="ui.version">Version</span></dt><dd>v1.0.3</dd></div><div><dt><span data-i18n="ui.updated">Updated</span></dt><dd>2026-11-14</dd></div><div><dt><span data-i18n="ui.created">First release</span></dt><dd>2025-07-08</dd></div><div><dt><span data-i18n="ui.game">Built for game</span></dt><dd>1.9.0.37</dd></div><div><dt><span data-i18n="ui.size">Size</span></dt><dd>566 kB</dd></div><div><dt><span data-i18n="ui.license">License</span></dt><dd>Arma Public License No Derivatives (APL-ND)</dd></div><div><dt><span data-i18n="ui.author">Workshop author</span></dt><dd>TheUnknownTeam</dd></div><div><dt><span data-i18n="ui.tags">Tags</span></dt><dd><span class="tag">DJI</span> <span class="tag">DRONE</span> <span class="tag">FPV</span> <span class="tag">JAMMER</span> <span class="tag">MAVIC2</span> <span class="tag">MISC</span></dd></div></dl>
+  </div>
+  <nav class="panel toc" aria-label="Sections"><h2 class="panel-h"><span data-i18n="admins.toc">On this page</span></h2><a href="#overview"><span data-i18n="sec.overview">Overview</span></a><a href="#features"><span data-i18n="sec.features">Capabilities</span></a><a href="#deps"><span data-i18n="sec.deps">Dependencies</span></a><a href="#changelog"><span data-i18n="sec.changelog">Latest changelog</span></a><a href="#versions"><span data-i18n="sec.versions">Version history</span></a></nav>
+</aside><div class="mmain"><section class="sec " id="overview" aria-labelledby="h-overview">
+  <h2 id="h-overview"><span class="sec-code" aria-hidden="true">01</span><span data-i18n="sec.overview">Overview</span></h2>
+  <div class="prose"><p data-i18n="m.rcd-wcs.intro.0">Realistic Combat Drones - WCS adds the full set of SalamiBoiDev's drone equipment to the WCS arsenals of the US (BLUFOR) and the USSR (OPFOR), with costs and ranks, plus a drone jammer you can build in Conflict bases.</p></div>
+</section><section class="sec " id="features" aria-labelledby="h-features">
+  <h2 id="h-features"><span class="sec-code" aria-hidden="true">02</span><span data-i18n="sec.features">Capabilities</span></h2>
+  <ul class="feat"><li data-i18n="m.rcd-wcs.f.0">FPV-RPG drone (125), FPV drone (100), dropper drone (75), recon drone (50), batteries (2), controller and goggles (0): Corporal.</li><li data-i18n="m.rcd-wcs.f.1">Jammer bag (100): Private. Long-range drone antenna (200): Sergeant. Drone command station (300): Lieutenant.</li><li data-i18n="m.rcd-wcs.f.2"><b>TPN-19 radar jammer</b>, buildable in Conflict bases by US, USSR or FIA (cost 300): jams drones within 250 m as soon as it is built. ON/OFF switch on the side door handle, usable by anyone. Generator sounds follow its state. Also available to Game Masters.</li><li data-i18n="m.rcd-wcs.f.3"><b>Friend or foe:</b> a jammer worn, carried or built into a base no longer cuts the drones of its own side and allies. A jammer left on the ground jams everyone.</li><li data-i18n="m.rcd-wcs.f.4">Drone controller in the secondary weapon slot; a mask can be worn with drone goggles.</li></ul>
+</section><section class="sec " id="deps" aria-labelledby="h-deps">
+  <h2 id="h-deps"><span class="sec-code" aria-hidden="true">05</span><span data-i18n="sec.deps">Dependencies</span></h2>
+  <p data-i18n="deps.intro">Ready to paste. The list holds the mod and everything it needs, its prerequisites included, generated from the project file and the Workshop pages. The game itself (Arma Reforger base data) is left out. The server also downloads required dependencies on its own.</p><p data-i18n="deps.direct" data-i18n-args="{&quot;n&quot;: 7, &quot;m&quot;: 22}" class="dim">7 declared directly by the project, 22 in total with their own requirements.</p>
+<div class="code-grid">
+  <figure class="codebox">
+    <figcaption><span><span data-i18n="deps.server_json"><code>server.json</code> — <code>game.mods</code> block</span></span><span class="mono dim">23</span><button type="button" class="copy" data-copy="#deps-json-rcd-wcs"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></figcaption>
+    <pre class="code" id="deps-json-rcd-wcs" tabindex="0"><code>&quot;mods&quot;: [
+  { &quot;modId&quot;: &quot;65D10E606F9A0B25&quot;, &quot;name&quot;: &quot;Realistic Combat Drones - WCS&quot; },
+  { &quot;modId&quot;: &quot;64610AFB74AA9842&quot;, &quot;name&quot;: &quot;WCS_Core&quot; },
+  { &quot;modId&quot;: &quot;68F006D910E7546F&quot;, &quot;name&quot;: &quot;WCS_Weapon_Scripts&quot; },
+  { &quot;modId&quot;: &quot;1337C0DE5DABBEEF&quot;, &quot;name&quot;: &quot;RHS - Content Pack 01&quot; },
+  { &quot;modId&quot;: &quot;BADC0DEDABBEDA5E&quot;, &quot;name&quot;: &quot;RHS - Content Pack 02&quot; },
+  { &quot;modId&quot;: &quot;595F2BF2F44836FB&quot;, &quot;name&quot;: &quot;RHS - Status Quo&quot; },
+  { &quot;modId&quot;: &quot;631C3C1AEE9C90BC&quot;, &quot;name&quot;: &quot;WCS_Sounds&quot; },
+  { &quot;modId&quot;: &quot;615806DC6C57AF02&quot;, &quot;name&quot;: &quot;WCS_NATO&quot; },
+  { &quot;modId&quot;: &quot;615818DA7C0343FD&quot;, &quot;name&quot;: &quot;WCS_RU&quot; },
+  { &quot;modId&quot;: &quot;62A668F513428630&quot;, &quot;name&quot;: &quot;WCS_Scopes&quot; },
+  { &quot;modId&quot;: &quot;61C74A8B647617DA&quot;, &quot;name&quot;: &quot;WCS_Attachments&quot; },
+  { &quot;modId&quot;: &quot;6A717EEA63A35E67&quot;, &quot;name&quot;: &quot;WCS_RHS_Attachments&quot; },
+  { &quot;modId&quot;: &quot;3B8081D9CAD979D2&quot;, &quot;name&quot;: &quot;WCS_RHS_Scopes&quot; },
+  { &quot;modId&quot;: &quot;6602C1EC7E5A4A87&quot;, &quot;name&quot;: &quot;WCS_Clothing_Assets&quot; },
+  { &quot;modId&quot;: &quot;6152CB0BD0684837&quot;, &quot;name&quot;: &quot;WCS_Clothing&quot; },
+  { &quot;modId&quot;: &quot;61E42AE6714A3CC2&quot;, &quot;name&quot;: &quot;WCS_Armbands&quot; },
+  { &quot;modId&quot;: &quot;629B2BA37EFFD577&quot;, &quot;name&quot;: &quot;WCS_Armaments&quot; },
+  { &quot;modId&quot;: &quot;65CF7AE8574E06D2&quot;, &quot;name&quot;: &quot;WCS_Weapons&quot; },
+  { &quot;modId&quot;: &quot;6AAE2A3269AD5C39&quot;, &quot;name&quot;: &quot;WCS_RHS_Sounds&quot; },
+  { &quot;modId&quot;: &quot;65F929DF622BAD50&quot;, &quot;name&quot;: &quot;WCS_RHS_Weapons&quot; },
+  { &quot;modId&quot;: &quot;6AAEEB19367529A1&quot;, &quot;name&quot;: &quot;WCS_RHS_Clothing&quot; },
+  { &quot;modId&quot;: &quot;615CC2D870A39838&quot;, &quot;name&quot;: &quot;WCS_Arsenal&quot; },
+  { &quot;modId&quot;: &quot;65AD60E204191D37&quot;, &quot;name&quot;: &quot;Realistic Combat Drones&quot; }
+]</code></pre>
+  </figure>
+  <figure class="codebox">
+    <figcaption><span><span data-i18n="deps.plain">Plain list — Name - ID</span></span><span class="mono dim">23</span><button type="button" class="copy" data-copy="#deps-plain-rcd-wcs"><span class="copy-ico" aria-hidden="true"></span><span data-i18n="ui.copy" class="copy-lbl">Copy</span></button></figcaption>
+    <pre class="code" id="deps-plain-rcd-wcs" tabindex="0"><code>Realistic Combat Drones - WCS - 65D10E606F9A0B25
+WCS_Core - 64610AFB74AA9842
+WCS_Weapon_Scripts - 68F006D910E7546F
+RHS - Content Pack 01 - 1337C0DE5DABBEEF
+RHS - Content Pack 02 - BADC0DEDABBEDA5E
+RHS - Status Quo - 595F2BF2F44836FB
+WCS_Sounds - 631C3C1AEE9C90BC
+WCS_NATO - 615806DC6C57AF02
+WCS_RU - 615818DA7C0343FD
+WCS_Scopes - 62A668F513428630
+WCS_Attachments - 61C74A8B647617DA
+WCS_RHS_Attachments - 6A717EEA63A35E67
+WCS_RHS_Scopes - 3B8081D9CAD979D2
+WCS_Clothing_Assets - 6602C1EC7E5A4A87
+WCS_Clothing - 6152CB0BD0684837
+WCS_Armbands - 61E42AE6714A3CC2
+WCS_Armaments - 629B2BA37EFFD577
+WCS_Weapons - 65CF7AE8574E06D2
+WCS_RHS_Sounds - 6AAE2A3269AD5C39
+WCS_RHS_Weapons - 65F929DF622BAD50
+WCS_RHS_Clothing - 6AAEEB19367529A1
+WCS_Arsenal - 615CC2D870A39838
+Realistic Combat Drones - 65AD60E204191D37</code></pre>
+  </figure>
+</div>
+<details class="deps-table">
+  <summary><span data-i18n="deps.table">Full table</span> <span class="mono dim">(22)</span></summary>
+  <div class="tbl"><table class="table">
+  <thead><tr><th scope="col">#</th><th scope="col"><span data-i18n="deps.col_name">Mod</span></th><th scope="col"><span data-i18n="deps.col_id">ID</span></th><th scope="col"><span data-i18n="deps.col_author">Author</span></th></tr></thead>
+  <tbody><tr><td>1</td><td><a href="https://reforger.armaplatform.com/workshop/64610AFB74AA9842" target="_blank" rel="noopener noreferrer">WCS_Core</a></td><td><code>64610AFB74AA9842</code></td><td>Worst Case Scenario</td></tr><tr><td>2</td><td><a href="https://reforger.armaplatform.com/workshop/68F006D910E7546F" target="_blank" rel="noopener noreferrer">WCS_Weapon_Scripts</a></td><td><code>68F006D910E7546F</code></td><td>Worst Case Scenario</td></tr><tr><td>3</td><td><a href="https://reforger.armaplatform.com/workshop/1337C0DE5DABBEEF" target="_blank" rel="noopener noreferrer">RHS - Content Pack 01</a></td><td><code>1337C0DE5DABBEEF</code></td><td>Red Hammer Studios</td></tr><tr><td>4</td><td><a href="https://reforger.armaplatform.com/workshop/BADC0DEDABBEDA5E" target="_blank" rel="noopener noreferrer">RHS - Content Pack 02</a></td><td><code>BADC0DEDABBEDA5E</code></td><td>Red Hammer Studios</td></tr><tr><td>5</td><td><a href="https://reforger.armaplatform.com/workshop/595F2BF2F44836FB" target="_blank" rel="noopener noreferrer">RHS - Status Quo</a></td><td><code>595F2BF2F44836FB</code></td><td>Red Hammer Studios</td></tr><tr><td>6</td><td><a href="https://reforger.armaplatform.com/workshop/631C3C1AEE9C90BC" target="_blank" rel="noopener noreferrer">WCS_Sounds</a></td><td><code>631C3C1AEE9C90BC</code></td><td>Worst Case Scenario</td></tr><tr><td>7</td><td><a href="https://reforger.armaplatform.com/workshop/615806DC6C57AF02" target="_blank" rel="noopener noreferrer">WCS_NATO</a></td><td><code>615806DC6C57AF02</code></td><td>Worst Case Scenario</td></tr><tr><td>8</td><td><a href="https://reforger.armaplatform.com/workshop/615818DA7C0343FD" target="_blank" rel="noopener noreferrer">WCS_RU</a></td><td><code>615818DA7C0343FD</code></td><td>Worst Case Scenario</td></tr><tr><td>9</td><td><a href="https://reforger.armaplatform.com/workshop/62A668F513428630" target="_blank" rel="noopener noreferrer">WCS_Scopes</a></td><td><code>62A668F513428630</code></td><td>Worst Case Scenario</td></tr><tr><td>10</td><td><a href="https://reforger.armaplatform.com/workshop/61C74A8B647617DA" target="_blank" rel="noopener noreferrer">WCS_Attachments</a></td><td><code>61C74A8B647617DA</code></td><td>Worst Case Scenario</td></tr><tr><td>11</td><td><a href="https://reforger.armaplatform.com/workshop/6A717EEA63A35E67" target="_blank" rel="noopener noreferrer">WCS_RHS_Attachments</a></td><td><code>6A717EEA63A35E67</code></td><td>Worst Case Scenario</td></tr><tr><td>12</td><td><a href="https://reforger.armaplatform.com/workshop/3B8081D9CAD979D2" target="_blank" rel="noopener noreferrer">WCS_RHS_Scopes</a></td><td><code>3B8081D9CAD979D2</code></td><td>Worst Case Scenario</td></tr><tr><td>13</td><td><a href="https://reforger.armaplatform.com/workshop/6602C1EC7E5A4A87" target="_blank" rel="noopener noreferrer">WCS_Clothing_Assets</a></td><td><code>6602C1EC7E5A4A87</code></td><td>Worst Case Scenario</td></tr><tr><td>14</td><td><a href="https://reforger.armaplatform.com/workshop/6152CB0BD0684837" target="_blank" rel="noopener noreferrer">WCS_Clothing</a></td><td><code>6152CB0BD0684837</code></td><td>Worst Case Scenario</td></tr><tr><td>15</td><td><a href="https://reforger.armaplatform.com/workshop/61E42AE6714A3CC2" target="_blank" rel="noopener noreferrer">WCS_Armbands</a></td><td><code>61E42AE6714A3CC2</code></td><td>Worst Case Scenario</td></tr><tr><td>16</td><td><a href="https://reforger.armaplatform.com/workshop/629B2BA37EFFD577" target="_blank" rel="noopener noreferrer">WCS_Armaments</a></td><td><code>629B2BA37EFFD577</code></td><td>Worst Case Scenario</td></tr><tr><td>17</td><td><a href="https://reforger.armaplatform.com/workshop/65CF7AE8574E06D2" target="_blank" rel="noopener noreferrer">WCS_Weapons</a></td><td><code>65CF7AE8574E06D2</code></td><td>Worst Case Scenario</td></tr><tr><td>18</td><td><a href="https://reforger.armaplatform.com/workshop/6AAE2A3269AD5C39" target="_blank" rel="noopener noreferrer">WCS_RHS_Sounds</a></td><td><code>6AAE2A3269AD5C39</code></td><td>Worst Case Scenario</td></tr><tr><td>19</td><td><a href="https://reforger.armaplatform.com/workshop/65F929DF622BAD50" target="_blank" rel="noopener noreferrer">WCS_RHS_Weapons</a></td><td><code>65F929DF622BAD50</code></td><td>Worst Case Scenario</td></tr><tr><td>20</td><td><a href="https://reforger.armaplatform.com/workshop/6AAEEB19367529A1" target="_blank" rel="noopener noreferrer">WCS_RHS_Clothing</a></td><td><code>6AAEEB19367529A1</code></td><td>Worst Case Scenario</td></tr><tr><td>21</td><td><a href="https://reforger.armaplatform.com/workshop/615CC2D870A39838" target="_blank" rel="noopener noreferrer">WCS_Arsenal</a></td><td><code>615CC2D870A39838</code></td><td>Worst Case Scenario</td></tr><tr><td>22</td><td><a href="https://reforger.armaplatform.com/workshop/65AD60E204191D37" target="_blank" rel="noopener noreferrer">Realistic Combat Drones</a></td><td><code>65AD60E204191D37</code></td><td>SalamiBoiDev</td></tr></tbody></table></div>
+</details>
+</section><section class="sec " id="changelog" aria-labelledby="h-changelog">
+  <h2 id="h-changelog"><span class="sec-code" aria-hidden="true">06</span><span data-i18n="sec.changelog">Latest changelog</span></h2>
+  <p data-i18n="log.workshop_note" class="dim">Changelog text quoted from the Workshop page, in its original language.</p><blockquote class="quote-log" lang="en"><p class="mono dim">v1.0.3 // 2026-11-14</p><div class="log-txt">- Reorganization of configuration files</div></blockquote>
+</section><section class="sec " id="versions" aria-labelledby="h-versions">
+  <h2 id="h-versions"><span class="sec-code" aria-hidden="true">07</span><span data-i18n="sec.versions">Version history</span></h2>
+  <ol class="vlist"><li><span class="mono">v1.0.3</span><span class="dim mono">2026-11-14</span><span data-i18n="ui.current" class="chip chip-cur">current</span></li><li><span class="mono">v1.0.2</span><span class="dim mono">2026-11-10</span></li><li><span class="mono">v1.0.1</span><span class="dim mono">2026-11-07</span></li><li><span class="mono">v1.0.0</span><span class="dim mono">2026-10-31</span></li><li><span class="mono">v0.0.12</span><span class="dim mono">2026-10-23</span></li><li><span class="mono">v0.0.11</span><span class="dim mono">2026-09-09</span></li><li><span class="mono">v0.0.10</span><span class="dim mono">2026-09-03</span></li><li><span class="mono">v0.0.9</span><span class="dim mono">2026-08-23</span></li><li><span class="mono">v0.0.8</span><span class="dim mono">2026-06-08</span></li><li><span class="mono">v0.0.7</span><span class="dim mono">2026-04-09</span></li></ol><p><a href="/REFORGER/changelog/"><span data-i18n="logp.h1">Version log</span></a></p>
+</section></div></div><nav class="pn wrap" aria-label="Mods">
+  <a class="pn-a" href="/REFORGER/mods/rcd-rhs/" rel="prev"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span><small><span data-i18n="ui.prev">Previous</span></small>Realistic Combat Drones - RHS</span></a>
+  <a class="pn-a pn-next" href="/REFORGER/mods/solo-push-pull/" rel="next"><span><small><span data-i18n="ui.next">Next</span></small>Solo Push-Pull</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-name">INDFORGE - Studio <span class="dim">//</span> <span data-i18n="site.division">Arma Reforger division</span></p>
+      <p data-i18n="about.motto" class="motto">Alone we go faster, but together we go further… and always beyond the possible.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="/REFORGER/"><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span data-i18n="nav.about">About us</span></a></nav>
+    <p data-i18n="ui.footer_legal" class="legal">Fan-made community mods for Arma Reforger. Arma Reforger is a trademark of its owner; this site is not affiliated with or endorsed by Bohemia Interactive. Third-party mod names are used only to describe dependencies.</p>
+    <p data-i18n="ui.footer_source" data-i18n-args="{&quot;date&quot;: &quot;2026-11-20&quot;}" class="src">Data checked against the mods' project files and public Workshop pages on 2026-11-20.</p>
+    <p class="foot-sys mono" aria-hidden="true">SYS.54CC3A // CH-19 // <span class="blink">&#9632;</span> SECURE CHANNEL</p>
+  </div>
+</footer>
+</body>
+</html>

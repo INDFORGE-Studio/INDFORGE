@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-v="54cc3aa918" data-base="/REFORGER/" data-page="about">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="about.title" data-i18n-suffix=" · INDFORGE - Studio">About us · INDFORGE - Studio</title>
+<meta name="description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<link rel="canonical" href="https://indforge-studio.github.io/REFORGER/about/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INDFORGE - Studio">
+<meta property="og:title" content="About us · INDFORGE - Studio">
+<meta property="og:description" content="Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.">
+<meta property="og:url" content="https://indforge-studio.github.io/REFORGER/about/">
+<meta property="og:image" content="https://indforge-studio.github.io/REFORGER/assets/img/mods/conflict-pve.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06080a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/REFORGER/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/REFORGER/assets/css/site.css?v=54cc3aa918">
+<script>(function(d){var h=d.documentElement,L=["en", "fr", "de", "es", "it", "pl", "uk"],l='';h.className+=' js';try{l=localStorage.getItem('ifg-lang')||''}catch(e){}if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);</script>
+<script src="/REFORGER/assets/js/site.js?v=54cc3aa918" defer></script>
+<script type="speculationrules">{"prerender": [{"where": {"href_matches": "/REFORGER/*"}, "eagerness": "moderate"}]}</script>
+</head>
+<body class="">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="hud" id="top">
+  <div class="hud-bar">
+    <a class="brand" href="/REFORGER/" aria-label="INDFORGE - Studio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13z"/><path d="M16 8v16M9 12l7 4 7-4"/></svg>
+      <span class="brand-txt"><b>INDFORGE</b><small><span data-i18n="site.division">Arma Reforger division</span></small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><a href="/REFORGER/"><span class="nav-n" aria-hidden="true">01</span><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span class="nav-n" aria-hidden="true">02</span><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span class="nav-n" aria-hidden="true">03</span><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span class="nav-n" aria-hidden="true">04</span><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span class="nav-n" aria-hidden="true">05</span><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span class="nav-n" aria-hidden="true">06</span><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/" aria-current="page"><span class="nav-n" aria-hidden="true">07</span><span data-i18n="nav.about">About us</span></a></nav>
+    <div class="hud-tools">
+      <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
+      <span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="tool search-btn" data-search aria-label="Search" data-i18n-attr="aria-label=nav.search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><kbd>/</kbd></button>
+      <div class="lang">
+        <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-i18n-attr="aria-label=nav.lang"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="lang-cur">EN</span></button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr"><b>FR</b><span>Français</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de"><b>DE</b><span>Deutsch</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es"><b>ES</b><span>Español</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it"><b>IT</b><span>Italiano</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="pl" lang="pl"><b>PL</b><span>Polski</span></button></li><li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk"><b>UK</b><span>Українська</span></button></li></ul>
+      </div>
+      <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label=nav.menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h12"/></svg></button>
+    </div>
+  </div>
+  <div class="hud-line" aria-hidden="true"></div>
+</header>
+<main id="main" class="main" tabindex="-1">
+<section class="phead wrap">
+  <p class="kicker"><span class="kicker-code">PER-07</span><span data-i18n="about.kicker">Personnel file</span></p>
+  <h1 data-i18n="about.h1" data-scramble>Who we are</h1>
+  <p data-i18n="about.lead" class="lead">INDFORGE - Studio makes mods for Arma Reforger. This file says who we are, how we work and for whom we build.</p>
+  
+</section><div class="wrap docgrid nogrid">
+<div class="docmain">
+<section class="sec " id="unit" aria-labelledby="h-unit">
+  <h2 id="h-unit"><span class="sec-code" aria-hidden="true">01</span><span data-i18n="about.unit">Unit</span></h2>
+  <p data-i18n="about.unit_p" class="lead2">An independent modding studio. Our Arma Reforger mods are published on the Workshop under the author name <b>TheUnknownTeam</b>.</p>
+</section> <section class="sec " id="roster" aria-labelledby="h-roster">
+  <h2 id="h-roster"><span class="sec-code" aria-hidden="true">02</span><span data-i18n="about.roster">Credited on the Workshop</span></h2>
+  <p data-i18n="about.roster_d" class="dim">Only the names published on our Workshop pages are listed here.</p><ul class="roster"><li class="op"><span class="op-ico mono" aria-hidden="true">TM</span><span><b>TheUnknownTeam</b><span data-i18n="about.r_author" class="op-role">Author of all our Arma Reforger mods</span><span class="mono dim">CLR <span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">█████</span></span></span></li><li class="op"><span class="op-ico mono" aria-hidden="true">V0</span><span><b>Volmog_0</b><span data-i18n="about.r_volmog" class="op-role">Contributor to INDFORGE - Conflict PvE</span><span class="mono dim">CLR <span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">█████</span></span></span></li><li class="op"><span class="op-ico mono" aria-hidden="true">US</span><span><b>Unknown Soldiers</b><span data-i18n="about.r_soldiers" class="op-role">Contributor to ChercheToi RP - Vehicles</span><span class="mono dim">CLR <span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">█████</span></span></span></li><li class="op"><span class="op-ico mono" aria-hidden="true">CV</span><span><b>Captain Valaaks</b><span data-i18n="about.r_valaaks" class="op-role">CTRP team contributor: SAMU equipment in ChercheToi RP - Clothing</span><span class="mono dim">CLR <span class="redact" data-deny="Access denied" title="Redacted" data-i18n-attr="data-deny=ui.denied;title=ui.redacted">█████</span></span></span></li></ul>
+</section> <section class="sec " id="doctrine" aria-labelledby="h-doctrine">
+  <h2 id="h-doctrine"><span class="sec-code" aria-hidden="true">03</span><span data-i18n="about.doctrine">Doctrine</span></h2>
+  <ul class="feat"><li data-i18n="about.d.0"><b>On the shoulders of giants.</b> We build on other creators' mods as declared dependencies and credit them on every page. Nothing repacked.</li><li data-i18n="about.d.1"><b>Documented settings.</b> Every server setting ships with its own help text, right next to it in the file.</li><li data-i18n="about.d.2"><b>Tested before release.</b> Changes go through a real dedicated-server test bench and a review before they reach the Workshop.</li><li data-i18n="about.d.3"><b>Readable by players.</b> The enemy cheats less and tells you more: lights on drones, radio hints, sirens before a strike.</li><li data-i18n="about.d.4"><b>Respect the licences.</b> Our mods are released under the Arma Public Licence (APL or APL-ND, as stated on each page).</li></ul>
+</section> <section class="sec " id="theatres" aria-labelledby="h-theatres">
+  <h2 id="h-theatres"><span class="sec-code" aria-hidden="true">04</span><span data-i18n="about.theatres">Theatres of operation</span></h2>
+  <ul class="feat"><li data-i18n="about.th.0"><b>Everon</b> — INDFORGE - Conflict PvE, Off-Road Vehicles (Game Master)</li><li data-i18n="about.th.1"><b>Belleau Wood</b> — INDFORGE - Forest</li><li data-i18n="about.th.2"><b>Kolguyev</b> — AUC - Conflict</li><li data-i18n="about.th.3"><b>Arland</b> — INDFORGE - AI Framework test scenarios</li><li data-i18n="about.th.4"><b>Faircroft Islands</b> — ChercheToi RP - Props</li></ul>
+</section> <section class="sec " id="communities" aria-labelledby="h-communities">
+  <h2 id="h-communities"><span class="sec-code" aria-hidden="true">05</span><span data-i18n="about.communities">Communities we build for</span></h2>
+  <ul class="feat"><li data-i18n="about.c.0"><b>[AUC] Arma Ukraine Community</b> — AUC - Factions, AUC - Vehicles, AUC - Conflict.</li><li data-i18n="about.c.1"><b>CHERCHE TOI – RP LIFE</b> — ChercheToi RP - Clothing, Props and Vehicles.</li><li data-i18n="about.c.2"><b>Task Force Baguette</b> — TalibanMod Red Side V2.</li></ul>
+</section> <section class="sec " id="contact" aria-labelledby="h-contact">
+  <h2 id="h-contact"><span class="sec-code" aria-hidden="true">06</span><span data-i18n="about.contact">Report a bug</span></h2>
+  <p data-i18n="about.contact_p">Comment on the mod's Workshop page and include: the mod version, the map and scenario, your other active mods, what you expected, what actually happened, and the steps to reproduce it.</p>
+</section>
+<blockquote class="motto-big"><p data-i18n="about.motto">Alone we go faster, but together we go further… and always beyond the possible.</p><footer class="mono dim">— INDFORGE - Studio</footer></blockquote>
+</div></div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-name">INDFORGE - Studio <span class="dim">//</span> <span data-i18n="site.division">Arma Reforger division</span></p>
+      <p data-i18n="about.motto" class="motto">Alone we go faster, but together we go further… and always beyond the possible.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="/REFORGER/"><span data-i18n="nav.home">Command</span></a><a href="/REFORGER/mods/"><span data-i18n="nav.mods">Mods</span></a><a href="/REFORGER/admins/"><span data-i18n="nav.admins">Admins</span></a><a href="/REFORGER/intel/"><span data-i18n="nav.intel">Intel</span></a><a href="/REFORGER/changelog/"><span data-i18n="nav.log">Log</span></a><a href="/REFORGER/status/"><span data-i18n="nav.status">Status</span></a><a href="/REFORGER/about/"><span data-i18n="nav.about">About us</span></a></nav>
+    <p data-i18n="ui.footer_legal" class="legal">Fan-made community mods for Arma Reforger. Arma Reforger is a trademark of its owner; this site is not affiliated with or endorsed by Bohemia Interactive. Third-party mod names are used only to describe dependencies.</p>
+    <p data-i18n="ui.footer_source" data-i18n-args="{&quot;date&quot;: &quot;2026-11-20&quot;}" class="src">Data checked against the mods' project files and public Workshop pages on 2026-11-20.</p>
+    <p class="foot-sys mono" aria-hidden="true">SYS.54CC3A // CH-19 // <span class="blink">&#9632;</span> SECURE CHANNEL</p>
+  </div>
+</footer>
+</body>
+</html>
