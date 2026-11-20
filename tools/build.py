@@ -31,6 +31,16 @@ ALL_LANGS = [
 LIVE = ("en", "fr")
 LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 
+# Display modes ("optics"): code, menu tag, then swatch colours (background, accent, secondary).
+OPTICS = [
+    ("tactical", "AMB", "#06080a", "#ffb000", "#46f08c"),
+    ("nvg", "NVG", "#010603", "#a6ff3d", "#3dffb4"),
+    ("thermal", "THM", "#07030f", "#ff8a1f", "#ff3d8b"),
+    ("arctic", "ARC", "#03070d", "#4cc9ff", "#7dffd8"),
+    ("red", "RED", "#070101", "#ff3b2f", "#ff8a5c"),
+    ("day", "DAY", "#e9e3d1", "#8f4f00", "#2c6a2c"),
+]
+
 CATS = [
     ("indforge", ["conflict-pve", "forest", "ai-framework", "enhanced-compositions"]),
     ("auc", ["auc-factions", "auc-vehicles", "auc-conflict"]),
@@ -288,6 +298,9 @@ def icon(name):
         "ext": '<path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/>',
         "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
         "back": '<path d="M19 12H5M11 6l-6 6 6 6"/>',
+        "nvg": '<path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/><path d="M12 3v0"/><rect x="2.5" y="8" width="8" height="11" rx="2.5"/>'
+               '<rect x="13.5" y="8" width="8" height="11" rx="2.5"/><path d="M10.5 12h3"/>'
+               '<circle class="lens" cx="6.5" cy="15" r="2.2"/><circle class="lens" cx="17.5" cy="15" r="2.2"/>',
         "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
         "cfg": '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
     }
@@ -302,15 +315,32 @@ NAV = [
 ]
 
 HEAD_JS = (
-    "(function(d){var h=d.documentElement,L=%s,l='';h.className+=' js';"
+    "(function(d){var h=d.documentElement,L=%s,O=%s,l='';h.className+=' js';"
     "try{l=localStorage.getItem('ifg-lang')||''}catch(e){}"
     "if(L.indexOf(l)<0){l='en';var n=navigator.languages||[navigator.language||'en'];"
     "for(var i=0;i<n.length;i++){var c=String(n[i]).slice(0,2).toLowerCase();if(L.indexOf(c)>=0){l=c;break}}}"
-    "h.setAttribute('data-lang',l);if(l!=='en'){h.className+=' i18n-wait';"
+    "h.setAttribute('data-lang',l);try{var o=localStorage.getItem('ifg-optic');if(O.indexOf(o)>0)h.setAttribute('data-theme',o)}catch(e){}"
+    "if(l!=='en'){h.className+=' i18n-wait';"
     "setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);"
-) % json.dumps([l for l, _ in LANGS])
+) % (json.dumps([l for l, _ in LANGS]), json.dumps([o[0] for o in OPTICS]))
 
 SPEC = json.dumps({"prerender": [{"where": {"href_matches": BASE + "*"}, "eagerness": "moderate"}]})
+
+
+# Image filters for the optics: luminance mapped onto each palette (night vision, ironbow...).
+def _fx(fid, r, g, b):
+    return ('<filter id="%s" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" '
+            'values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/><feComponentTransfer>'
+            '<feFuncR type="table" tableValues="%s"/><feFuncG type="table" tableValues="%s"/>'
+            '<feFuncB type="table" tableValues="%s"/></feComponentTransfer></filter>') % (fid, r, g, b)
+
+
+FX_DEFS = '<svg class="fx-defs" aria-hidden="true" focusable="false">%s</svg>' % "".join([
+    _fx("fx-nvg", "0 .04 .3 .7", "0 .42 .88 1", "0 .07 .28 .6"),
+    _fx("fx-thermal", "0 .22 .68 .95 1 1", "0 0 .05 .38 .78 1", ".1 .45 .55 .15 .05 .85"),
+    _fx("fx-red", "0 .42 .88 1", "0 .02 .14 .5", "0 .02 .1 .42"),
+    _fx("fx-arctic", "0 .08 .5 .85", "0 .22 .72 .95", ".03 .38 .9 1"),
+])
 
 
 def header(active):
@@ -328,7 +358,12 @@ def header(active):
         langs += '<li role="separator" class="lang-sep"></li>' + "".join(
             '<li role="none"><span class="lang-wip" role="menuitem" aria-disabled="true"><b>%s</b>%s<em>W.I.P</em></span></li>'
             % (l.upper(), redact(len(n))) for l, n in wip)
+    optics = "".join(
+        '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
+        '<i class="opt-sw" style="--c:%s;--a:%s;--b:%s" aria-hidden="true"></i><b class="opt-k">%s</b>%s</button></li>'
+        % (o, c, a, b, k, t("optic." + o)) for o, k, c, a, b in OPTICS)
     return """<a class="skip" href="#main" data-i18n="nav.skip">%s</a>
+%s
 <header class="hud" id="top">
   <div class="hud-bar">
     <a class="brand" href="%s" aria-label="INDFORGE - Studio">
@@ -344,12 +379,17 @@ def header(active):
         <button type="button" class="tool lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu" %s>%s<span class="lang-cur">EN</span></button>
         <ul class="lang-menu" id="lang-menu" role="menu" hidden>%s</ul>
       </div>
+      <div class="lang opt">
+        <button type="button" class="tool opt-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="opt-menu" %s>%s<span class="opt-cur">AMB</span></button>
+        <ul class="lang-menu opt-menu" id="opt-menu" role="menu" hidden><li role="presentation" class="opt-h">%s</li>%s</ul>
+      </div>
       <button type="button" class="tool menu-btn" aria-expanded="false" aria-controls="nav" %s>%s</button>
     </div>
   </div>
   <div class="hud-line" aria-hidden="true"></div>
-</header>""" % (H(E["nav.skip"]), url(), BASE + "assets/img/logo.svg", "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
+</header>""" % (H(E["nav.skip"]), FX_DEFS, url(), BASE + "assets/img/logo.svg", "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
+                 ta("aria-label", "nav.optic"), icon("nvg"), t("optic.h"), optics,
                  ta("aria-label", "nav.menu"), icon("menu"))
 
 

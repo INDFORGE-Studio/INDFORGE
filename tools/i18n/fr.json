@@ -3,7 +3,7 @@
   "site.name": "INDFORGE - Studio",
   "site.division": "Arma Reforger",
   "site.desc": "Documentation officielle des mods Arma Reforger d'INDFORGE - Studio : fonctions, réglages admin, commandes et listes de dépendances prêtes à coller.",
-  "nav.home": "Commandement",
+  "nav.home": "QG",
   "nav.mods": "Workshop",
   "nav.admins": "Admins",
   "nav.intel": "Renseignement",
@@ -107,7 +107,7 @@
   "deps.direct": "{n} déclarées directement par le projet, {m} au total avec leurs propres prérequis.",
   "log.workshop_note": "Texte du journal cité depuis la page Workshop, dans sa langue d'origine.",
   "log.none": "Aucun journal publié.",
-  "home.title": "Commandement",
+  "home.title": "QG",
   "home.kicker": "Manuel de terrain et centre de transmissions",
   "home.h1": "INDFORGE - Studio",
   "home.lead": "Nous créons des mods pour Arma Reforger : des campagnes PvE coopératives face à un ennemi qui réfléchit, des systèmes pour les concepteurs de missions, et des packs de configuration pour les communautés avec qui nous jouons. Cette station est la documentation officielle de chacun d'eux.",
@@ -611,5 +611,14 @@
   "ui.k_cmd": "Commande",
   "ui.k_cfg": "Fichier de réglages",
   "home.feed": "Flux en direct",
-  "ui.lang_saved": "Langue enregistrée sur cet appareil."
+  "ui.lang_saved": "Langue enregistrée sur cet appareil.",
+  "nav.optic": "Mode d'affichage",
+  "optic.h": "OPTIQUES // MODE D'AFFICHAGE",
+  "optic.tactical": "Tactique",
+  "optic.nvg": "Vision nocturne",
+  "optic.thermal": "Thermique",
+  "optic.arctic": "Arctique",
+  "optic.red": "Lumière rouge",
+  "optic.day": "Plein jour",
+  "optic.on": "Optique engagée : {n}"
 }

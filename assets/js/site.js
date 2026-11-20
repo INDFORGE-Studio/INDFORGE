@@ -94,6 +94,66 @@
     doc.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".lang")) open(false); });
   }
 
+  /* ------------------------------------------------ optics (display modes) */
+  function initOptics() {
+    var btn = $(".opt-btn"), menu = $("#opt-menu");
+    if (!btn || !menu) return;
+    var items = $$("[data-optic]", menu), meta = $('meta[name="theme-color"]');
+    function current() { return root.getAttribute("data-theme") || "tactical"; }
+    function sync() {
+      var cur = current(), on = items.filter(function (b) { return b.getAttribute("data-optic") === cur; })[0];
+      items.forEach(function (b) { b.setAttribute("aria-checked", String(b === on)); });
+      $(".opt-cur", btn).textContent = on ? $(".opt-k", on).textContent : "AMB";
+      if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || "#06080a");
+    }
+    function apply(o) {
+      if (o === "tactical") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
+      store("ifg-optic", o); sync();
+    }
+    function engage(o, from) {
+      if (o === current()) return;
+      var r = from.getBoundingClientRect();
+      root.style.setProperty("--vx", Math.round(r.left + r.width / 2) + "px");
+      root.style.setProperty("--vy", Math.round(r.top + r.height / 2) + "px");
+      var label = plain(tr("optic." + o, o));
+      if (reduce || !doc.startViewTransition) { apply(o); }
+      else {
+        root.classList.add("vt-optic");
+        var vt = doc.startViewTransition(function () { apply(o); });
+        vt.finished.then(done, done);
+      }
+      if (!reduce) {
+        var ring = doc.createElement("div"); ring.className = "optic-ring"; ring.setAttribute("aria-hidden", "true");
+        doc.body.appendChild(ring); setTimeout(function () { ring.remove(); }, 800);
+      }
+      toast(fmt(tr("optic.on", "Optic engaged: {n}"), { n: label }));
+      function done() { root.classList.remove("vt-optic"); }
+    }
+    function open(v) {
+      btn.setAttribute("aria-expanded", String(v)); menu.hidden = !v;
+      if (v) {
+        var lb = $(".lang-btn"), lm = $("#lang-menu");
+        if (lm && !lm.hidden) { lm.hidden = true; lb.setAttribute("aria-expanded", "false"); }
+        var c = $('[aria-checked="true"]', menu) || items[0]; c && c.focus();
+      }
+    }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); open(menu.hidden); });
+    menu.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-optic]"); if (!b) return;
+      open(false); btn.focus(); engage(b.getAttribute("data-optic"), btn);
+    });
+    menu.addEventListener("keydown", function (e) {
+      var i = items.indexOf(doc.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+      else if (e.key === "Escape") { open(false); btn.focus(); }
+      else if (e.key === "Tab") { open(false); }
+    });
+    doc.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".opt")) open(false); });
+    var lb0 = $(".lang-btn"); if (lb0) lb0.addEventListener("click", function () { if (!menu.hidden) open(false); });
+    sync();
+  }
+
   /* ------------------------------------------------ mobile menu */
   function initMenu() {
     var btn = $(".menu-btn"), nav = $("#nav");
@@ -369,7 +429,7 @@
   }
 
   function init() {
-    initLangMenu(); initMenu(); initClock(); initCopy(); initSearch();
+    initLangMenu(); initOptics(); initMenu(); initClock(); initCopy(); initSearch();
     initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }

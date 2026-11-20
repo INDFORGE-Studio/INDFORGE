@@ -3,7 +3,7 @@
   "site.name": "INDFORGE - Studio",
   "site.division": "Arma Reforger",
   "site.desc": "Official documentation of the INDFORGE - Studio mods for Arma Reforger: features, admin settings, commands and ready-to-paste dependency lists.",
-  "nav.home": "Command",
+  "nav.home": "HQ",
   "nav.mods": "Workshop",
   "nav.admins": "Admins",
   "nav.intel": "Intel",
@@ -107,7 +107,7 @@
   "deps.direct": "{n} declared directly by the project, {m} in total with their own requirements.",
   "log.workshop_note": "Changelog text quoted from the Workshop page, in its original language.",
   "log.none": "No changelog published.",
-  "home.title": "Command",
+  "home.title": "HQ",
   "home.kicker": "Field manual and transmission centre",
   "home.h1": "INDFORGE - Studio",
   "home.lead": "We build Arma Reforger mods: co-op PvE campaigns with an enemy that thinks, systems for mission makers, and configuration packs for the communities we play with. This station is the official documentation of every one of them.",
@@ -611,5 +611,14 @@
   "ui.k_cmd": "Command",
   "ui.k_cfg": "Settings file",
   "home.feed": "Live feed",
-  "ui.lang_saved": "Language saved on this device."
+  "ui.lang_saved": "Language saved on this device.",
+  "nav.optic": "Display mode",
+  "optic.h": "OPTICS // DISPLAY MODE",
+  "optic.tactical": "Tactical",
+  "optic.nvg": "Night vision",
+  "optic.thermal": "Thermal",
+  "optic.arctic": "Arctic",
+  "optic.red": "Red light",
+  "optic.day": "Daylight",
+  "optic.on": "Optic engaged: {n}"
 }
