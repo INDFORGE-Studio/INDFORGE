@@ -366,7 +366,7 @@
     btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
     doc.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
-    window.addEventListener("resize", function () { if (innerWidth > 1420 && nav.classList.contains("open")) set(false); });
+    window.addEventListener("resize", function () { if (innerWidth > 1460 && nav.classList.contains("open")) set(false); });
   }
 
   /* ------------------------------------------------ radio callsign: each visitor gets one, a click draws a new one */
