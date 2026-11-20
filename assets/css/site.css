@@ -117,6 +117,8 @@ table { border-collapse: collapse; width: 100%; }
 .hud-line { height: 1px; background: linear-gradient(90deg, transparent, var(--amber) 20%, var(--amber) 22%, transparent 40%, transparent 60%, var(--green) 78%, transparent); opacity: .5; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--hi); flex: none; }
 .brand-mark { width: 36px; height: 36px; flex: none; filter: drop-shadow(0 0 6px rgba(var(--amber-rgb), .35)); }
+.brand-mark .lm-a { fill: var(--amber); }
+.brand-mark .lm-b { fill: var(--bg2); }
 .brand-txt { display: inline-grid; line-height: 1; }
 .brand-txt b { font: 700 19px/1 var(--f-head); letter-spacing: .12em; margin-right: -.12em; }
 .brand-txt small { display: flex; justify-content: space-between; width: 0; min-width: 100%; font: 500 9.5px/1.4 var(--f-mono); letter-spacing: 0; color: var(--mute); margin-top: 3px; }

@@ -379,6 +379,17 @@ FX_DEFS = '<svg class="fx-defs" aria-hidden="true" focusable="false">%s</svg>' %
 ])
 
 
+# Header mark inlined so it takes the colours of the chosen optic (accent and dark fill).
+def _brand_mark():
+    svg = open(os.path.join(ROOT, "assets", "img", "logo.svg"), encoding="utf-8").read().strip()
+    assert svg.count('fill="#ffb000"') == 1 and svg.count('fill="#0a0e10"') == 1, "logo.svg colours changed"
+    svg = svg.replace('fill="#ffb000"', 'class="lm-a"').replace('fill="#0a0e10"', 'class="lm-b"')
+    return svg.replace("<svg ", '<svg class="brand-mark" width="36" height="36" aria-hidden="true" focusable="false" ', 1)
+
+
+BRAND_MARK = _brand_mark()
+
+
 def header(active):
     links = []
     for i, (p, key, pid) in enumerate(NAV):
@@ -410,7 +421,7 @@ def header(active):
 <header class="hud" id="top">
   <div class="hud-bar">
     <a class="brand" href="%s" aria-label="INDFORGE - Studio">
-      <img class="brand-mark" src="%s" width="36" height="36" alt="">
+      %s
       <span class="brand-txt"><b>INDFORGE</b><small aria-hidden="true">%s</small></span>
     </a>
     <nav class="nav" id="nav" %s>%s</nav>
@@ -430,7 +441,7 @@ def header(active):
     </div>
   </div>
   <div class="hud-line" aria-hidden="true"></div>
-</header>""" % (H(E["nav.skip"]), FX_DEFS, url(), BASE + "assets/img/logo.svg", "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
+</header>""" % (H(E["nav.skip"]), FX_DEFS, url(), BRAND_MARK, "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in E["site.division"].upper()), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
                  ta("aria-label", "nav.optic"), icon("optic"), t("optic.h"), optics,
                  ta("aria-label", "nav.menu"), icon("menu"))
