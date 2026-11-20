@@ -22,10 +22,14 @@ SITE = "https://indforge-studio.github.io/INDFORGE/"
 WORKSHOP = "https://reforger.armaplatform.com/workshop/"
 BASE_GAME = "58D0FB3206B6F859"
 
-LANGS = [
+ALL_LANGS = [
     ("en", "English"), ("fr", "Français"), ("de", "Deutsch"), ("es", "Español"),
     ("it", "Italiano"), ("pl", "Polski"), ("uk", "Українська"),
 ]
+# Languages offered on the site. The others are paused while the texts still change a lot:
+# their files stay in tools/i18n/ and come back once the texts are final and re-translated.
+LIVE = ("en", "fr")
+LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 
 CATS = [
     ("indforge", ["conflict-pve", "forest", "ai-framework", "enhanced-compositions"]),
@@ -1015,6 +1019,11 @@ def search_index():
 def write_i18n():
     d = os.path.join(ROOT, "assets", "i18n")
     os.makedirs(d, exist_ok=True)
+    for l, _ in ALL_LANGS:
+        if l not in FLAT:
+            for f in (l + ".json", "cfg-" + l + ".json"):
+                if os.path.exists(os.path.join(d, f)):
+                    os.remove(os.path.join(d, f))
     for l in FLAT:
         with open(os.path.join(d, l + ".json"), "w", encoding="utf-8", newline="\n") as f:
             json.dump(FLAT[l], f, ensure_ascii=False, separators=(",", ":"))

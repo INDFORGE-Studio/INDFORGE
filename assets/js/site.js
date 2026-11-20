@@ -5,7 +5,8 @@
   var doc = document, root = doc.documentElement;
   var BASE = root.getAttribute("data-base") || "/INDFORGE/";
   var VER = root.getAttribute("data-v") || "0";
-  var LANGS = ["en", "fr", "de", "es", "it", "pl", "uk"];
+  var LANGS = Array.prototype.map.call(doc.querySelectorAll("#lang-menu [data-lang]"), function (b) { return b.getAttribute("data-lang"); });
+  if (!LANGS.length) LANGS = ["en"];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var dict = null;
 
