@@ -1126,9 +1126,27 @@ def e404():
   <p class="kicker"><span class="kicker-code">ERR-404</span>%s</p>
   <h1 data-scramble>%s</h1>
   %s
-  <p class="mono dim" aria-hidden="true">FREQ ███.███ MHz // NO CARRIER</p>
+  <p class="mono dim e404-freq" aria-hidden="true">FREQ <span class="e404-fv">███.███</span> MHz // <span class="e404-car">NO CARRIER</span></p>
   <a class="btn btn-primary" href="%s">%s%s</a>
-</section>""" % (t("e404.title"), t("e404.h1"), t("e404.p", "p", "lead"), BASE, icon("back"), t("e404.cta"))
+  <div class="scan js-only" data-state="search">
+    <div class="scan-h"><span class="scan-t">%s</span><span class="scan-band">%s</span></div>
+    <div class="scan-scope"><canvas class="scan-cv" aria-hidden="true"></canvas><span class="scan-lock" aria-hidden="true">LOCK</span></div>
+    <div class="scan-row">
+      <span class="scan-f"><b>--.---</b> MHz</span>
+      <span class="scan-m" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="scan-st" role="status" aria-live="polite">%s</span>
+    </div>
+    <div class="scan-dial">
+      <button type="button" class="scan-b" data-step="-1" %s>&#9664;</button>
+      <input type="range" class="scan-r" min="0" max="2319" step="1" value="0" %s>
+      <button type="button" class="scan-b" data-step="1" %s>&#9654;</button>
+    </div>
+    <div class="scan-foot">%s<button type="button" class="scan-snd" aria-pressed="false">%s<b class="scan-snd-v">OFF</b></button></div>
+    <div class="scan-msg" hidden></div>
+  </div>
+</section>""" % (t("e404.title"), t("e404.h1"), t("e404.p", "p", "lead"), BASE, icon("back"), t("e404.cta"),
+                 t("e404.scan"), t("e404.band"), t("e404.st_search"), ta("aria-label", "e404.down"), ta("aria-label", "e404.dial"),
+                 ta("aria-label", "e404.up"), t("e404.hint", "span", "scan-hint"), t("e404.sound"))
     page("404.html", "e404.title", body, "404")
 
 

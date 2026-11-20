@@ -743,6 +743,277 @@
     upd();
   }
 
+  /* ------------------------------------------------ 404: signal search (VHF scanner) and the SOS call */
+  function initScan() {
+    var box = $(".scan"); if (!box) return;
+    var sec = box.closest(".e404"), cv = $(".scan-cv", box), ctx = cv && cv.getContext && cv.getContext("2d");
+    var range = $(".scan-r", box), fOut = $(".scan-f b", box), st = $(".scan-st", box), bars = $$(".scan-m i", box), msg = $(".scan-msg", box);
+    var sndBtn = $(".scan-snd", box), sndV = $(".scan-snd-v", box), fv = $(".e404-fv"), car = $(".e404-car");
+    if (!ctx || !range) return;
+    var N = 2319, F0 = 30, STEP = .025; // 30.000 to 87.975 MHz, 25 kHz channels
+    function mhz(ch) { return F0 + ch * STEP; }
+    function rint(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    var target = rint(80, N - 80), start;
+    do { start = rint(0, N); } while (Math.abs(start - target) < 600);
+    range.value = start;
+    var t0 = performance.now(), locked = false, done = false, afc = false, afcT = 0, state = "";
+    function dist() { return Math.abs(+range.value - target) * STEP; }
+    function strength() { var s = Math.max(0, 1 - dist() / 7); return Math.pow(s, 1.6); }
+    var ST = { search: ["e404.st_search", "Searching…"], weak: ["e404.st_weak", "Weak carrier"], strong: ["e404.st_strong", "Strong carrier"],
+      afc: ["e404.st_afc", "AFC: locking on…"], lock: ["e404.st_lock", "Signal acquired"] };
+    function setState(s) {
+      if (s === state) return; state = s;
+      box.setAttribute("data-state", s === "afc" || s === "lock" ? s : "search");
+      st.textContent = plain(tr(ST[s][0], ST[s][1]));
+    }
+    function update() {
+      var ch = +range.value, f = mhz(ch).toFixed(3), s = strength();
+      fOut.textContent = f; range.setAttribute("aria-valuetext", f + " MHz");
+      var lit = Math.round(s * 6);
+      bars.forEach(function (b, i) { b.classList.toggle("on", i < lit); });
+      if (locked && ch !== target) locked = false;
+      if (!locked && !afc) setState(s > .75 ? "strong" : s > .3 ? "weak" : "search");
+      audio();
+      if (!running) draw(performance.now());
+    }
+
+    /* tuning: when the dial rests close to the carrier, the AFC pulls it onto the exact channel */
+    function moved() {
+      if (afc) afc = false;
+      update(); clearTimeout(afcT); afcT = setTimeout(check, 450);
+    }
+    function check() {
+      if (locked) return;
+      var gap = target - +range.value;
+      if (!gap) { lock(); return; }
+      if (Math.abs(gap) * STEP > .5) return;
+      afc = true; setState("afc");
+      var from = +range.value, ts = performance.now(), dur = reduce ? 0 : 650;
+      (function step(now) {
+        if (!afc) return;
+        var p = dur ? Math.min(1, (now - ts) / dur) : 1, e = 1 - Math.pow(1 - p, 3);
+        range.value = Math.round(from + (target - from) * e); update();
+        if (p < 1) requestAnimationFrame(step); else { afc = false; lock(); }
+      })(ts);
+    }
+    function lock() {
+      locked = true; setState("lock");
+      if (sec) sec.classList.add("rx");
+      if (fv) fv.textContent = mhz(target).toFixed(3);
+      if (car) car.textContent = "CARRIER OK";
+      morse("--.- ... .-..", 700); // QSL: received
+      if (!done) { done = true; decode(); }
+      update();
+    }
+    range.addEventListener("input", moved);
+    function nudge(n) { range.value = Math.max(0, Math.min(N, +range.value + n)); moved(); }
+    $$(".scan-b", box).forEach(function (b) {
+      var dir = +b.getAttribute("data-step"), rep = 0, t = 0;
+      function stop() { clearTimeout(t); clearInterval(rep); t = rep = 0; }
+      b.addEventListener("pointerdown", function (e) {
+        if (e.button) return; e.preventDefault(); nudge(dir);
+        var n = 0; t = setTimeout(function () { rep = setInterval(function () { n++; nudge(dir * (n > 25 ? 8 : n > 10 ? 3 : 1)); }, 55); }, 320);
+      });
+      ["pointerup", "pointerleave", "pointercancel"].forEach(function (ev) { b.addEventListener(ev, stop); });
+      b.addEventListener("click", function (e) { if (!e.detail) nudge(dir); }); // keyboard
+    });
+    $(".scan-scope", box).addEventListener("wheel", function (e) {
+      e.preventDefault(); nudge((e.deltaY < 0 ? 1 : -1) * (e.shiftKey ? 1 : 4));
+    }, { passive: false });
+
+    /* the decrypted transmission */
+    function lev(a, b) {
+      var m = a.length, n = b.length, d = [], i, j;
+      for (i = 0; i <= m; i++) d[i] = [i];
+      for (j = 1; j <= n; j++) d[0][j] = j;
+      for (i = 1; i <= m; i++) for (j = 1; j <= n; j++)
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      return d[m][n];
+    }
+    function nearest(list, path) {
+      var seg = norm(path.split("/").filter(Boolean).pop() || "").replace(/\.html?$/, ""), best = null, home = null;
+      list.forEach(function (it) {
+        if (it.k !== "page" && it.k !== "mod") return;
+        var name = it.tk ? plain(tr(it.t, it.t)) : it.t, slug = it.u.slice(BASE.length).split("/").filter(Boolean).pop() || "";
+        if (!slug) { home = { u: it.u, n: name }; return; }
+        if (!seg) return;
+        var sc = lev(seg, slug) / Math.max(seg.length, slug.length);
+        if (slug.indexOf(seg) >= 0 || seg.indexOf(slug) >= 0) sc = Math.min(sc, .2);
+        if (!best || sc < best.sc) best = { sc: sc, u: it.u, n: name };
+      });
+      return best && best.sc <= .6 ? best : home || { u: BASE, n: plain(tr("nav.home", "HQ")) };
+    }
+    function secs(v) { var s = v.toFixed(1); return root.getAttribute("lang") === "fr" ? s.replace(".", ",") : s; }
+    function decode() {
+      var took = (performance.now() - t0) / 1000, prev = parseFloat(store("ifg-404-best")) || 0, rec = !prev || took < prev;
+      if (rec) store("ifg-404-best", took.toFixed(1));
+      var csv = $(".csign-v"), cs = store("ifg-callsign") || (csv && csv.textContent) || "OPERATOR";
+      var path = location.pathname.indexOf(BASE) === 0 ? "/" + location.pathname.slice(BASE.length) : location.pathname;
+      try { path = decodeURIComponent(path); } catch (e) {}
+      if (path.length > 60) path = path.slice(0, 57) + "…";
+      loadIndex().catch(function () { return []; }).then(function (list) {
+        var near = nearest(list || [], path), joke = "e404.joke." + rint(0, 5);
+        var lines = [
+          { c: "rx-h", s: ">> RX " + mhz(target).toFixed(3) + " MHz · " + plain(tr("e404.rx", "Decrypted transmission")) },
+          { s: fmt(plain(tr("e404.msg", "INDFORGE HQ to {cs}. The page “{path}” does not exist on this net.")), { cs: cs, path: path }) },
+          { s: plain(tr("e404.near", "Nearest destination:")) + " ", a: near },
+          { c: "rx-j", s: plain(tr(joke, "")) },
+          { s: plain(tr("e404.out", "Out.")) },
+          { c: "rx-t", s: fmt(plain(tr("e404.time", "Frequency found in {s} s.")), { s: secs(took) }) + " " +
+            (rec && prev ? plain(tr("e404.newbest", "New record!")) : fmt(plain(tr("e404.best", "Best: {s} s.")), { s: secs(rec ? took : prev) })) }
+        ];
+        msg.hidden = false; msg.innerHTML = "";
+        if (!reduce) msg.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        type(lines, 0);
+      });
+    }
+    function type(lines, i) {
+      if (i >= lines.length) return;
+      var L = lines[i], p = doc.createElement("p"); if (L.c) p.className = L.c;
+      msg.appendChild(p);
+      function finish() {
+        p.textContent = L.s;
+        if (L.a) { var a = doc.createElement("a"); a.href = L.a.u; a.textContent = L.a.n; p.appendChild(a); }
+        type(lines, i + 1);
+      }
+      if (reduce || !L.s) { finish(); return; }
+      var n = 0;
+      (function tick() {
+        n += 2; p.textContent = L.s.slice(0, n) + (n < L.s.length ? "▌" : "");
+        if (n < L.s.length) setTimeout(tick, 16); else setTimeout(finish, 120);
+      })();
+    }
+
+    /* oscilloscope: noise that turns into a clean carrier, then keys "QSL" in Morse once locked */
+    var W = 0, H = 0, col = {}, running = false, vis = true, drawn = 0, KEY = bits("--.- ... .-..");
+    function bits(code) {
+      var out = [];
+      code.split("").forEach(function (c) {
+        if (c === " ") { out.push(0, 0); return; }
+        for (var k = 0; k < (c === "-" ? 3 : 1); k++) out.push(1);
+        out.push(0);
+      });
+      return out.concat([0, 0, 0, 0]);
+    }
+    function size() {
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = cv.clientWidth; H = cv.clientHeight; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function colors() {
+      var cs = getComputedStyle(root);
+      col.g = cs.getPropertyValue("--green-rgb").trim(); col.a = cs.getPropertyValue("--amber-rgb").trim(); col.l = cs.getPropertyValue("--line-rgb").trim();
+    }
+    function draw(now) {
+      if (!W) return;
+      var s = strength(), t = now / 1000, mid = H / 2, x, y, n = 0, i;
+      ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = "rgba(" + col.l + ", .1)"; ctx.lineWidth = 1; ctx.beginPath();
+      for (i = 1; i < 10; i++) { x = Math.round(W * i / 10) + .5; ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+      for (i = 1; i < 4; i++) { y = Math.round(H * i / 4) + .5; ctx.moveTo(0, y); ctx.lineTo(W, y); }
+      ctx.stroke();
+      var rgb = locked ? col.g : col.a, amp = H * .34 * s, noise = H * .4 * (1 - s * .93), wl = 26 + 70 * s, pts = [];
+      for (x = 0; x <= W; x += 3) {
+        n = n * .45 + (Math.random() * 2 - 1) * .55;
+        var env = 1;
+        if (locked) env = KEY[Math.floor((x + t * 90) / 14) % KEY.length] ? 1 : .08;
+        pts.push(x, mid + Math.sin(x / wl * 6.283 - t * 7) * amp * env + n * noise);
+      }
+      [[3.5, .22], [1.4, .95]].forEach(function (pass) {
+        ctx.strokeStyle = "rgba(" + rgb + ", " + pass[1] + ")"; ctx.lineWidth = pass[0]; ctx.beginPath();
+        for (i = 0; i < pts.length; i += 2) { if (i) ctx.lineTo(pts[i], pts[i + 1]); else ctx.moveTo(pts[i], pts[i + 1]); }
+        ctx.stroke();
+      });
+      var sx = (t * 140) % (W + 60) - 30, g = ctx.createLinearGradient(sx - 30, 0, sx + 30, 0); // sweep
+      g.addColorStop(0, "rgba(" + rgb + ", 0)"); g.addColorStop(.5, "rgba(" + rgb + ", .07)"); g.addColorStop(1, "rgba(" + rgb + ", 0)");
+      ctx.fillStyle = g; ctx.fillRect(sx - 30, 0, 60, H);
+    }
+    function loop(now) {
+      if (!running) return;
+      if (now - drawn > 33) { drawn = now; draw(now); }
+      requestAnimationFrame(loop);
+    }
+    function run() {
+      var want = fxOn() && vis && !doc.hidden;
+      if (want && !running) { running = true; requestAnimationFrame(loop); }
+      else if (!want) { running = false; draw(performance.now()); }
+    }
+    size(); colors(); update(); run();
+    addEventListener("resize", function () { size(); if (!running) draw(performance.now()); });
+    doc.addEventListener("visibilitychange", run);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { vis = e[0].isIntersecting; run(); }).observe(box);
+    if ("MutationObserver" in window) new MutationObserver(function () { colors(); run(); }).observe(root, { attributes: true, attributeFilter: ["data-theme", "class"] });
+    doc.addEventListener("ifg:lang", function () { var s = state; state = ""; setState(s); });
+
+    /* sound, off until asked: hiss that clears up, a heterodyne whistle that drops as you close in */
+    var ac = null, nG, tO, tG, on = false;
+    function audioInit() {
+      var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+      try {
+        ac = new AC();
+        var len = ac.sampleRate * 2, buf = ac.createBuffer(1, len, ac.sampleRate), d = buf.getChannelData(0), k;
+        for (k = 0; k < len; k++) d[k] = Math.random() * 2 - 1;
+        var src = ac.createBufferSource(), bp = ac.createBiquadFilter();
+        src.buffer = buf; src.loop = true; bp.type = "bandpass"; bp.frequency.value = 1800; bp.Q.value = .6;
+        nG = ac.createGain(); nG.gain.value = 0; src.connect(bp); bp.connect(nG); nG.connect(ac.destination); src.start();
+        tO = ac.createOscillator(); tO.type = "sine"; tG = ac.createGain(); tG.gain.value = 0;
+        tO.connect(tG); tG.connect(ac.destination); tO.start();
+        return true;
+      } catch (e) { ac = null; return false; }
+    }
+    function audio() {
+      if (!on || !ac) return;
+      var s = strength(), at = ac.currentTime;
+      nG.gain.setTargetAtTime(locked ? .003 : .045 * (1 - s) + .005, at, .04);
+      tO.frequency.setTargetAtTime(380 + Math.min(dist(), 7) * 160, at, .04);
+      tG.gain.setTargetAtTime(locked || afc ? 0 : .045 * s * s, at, .04);
+    }
+    function morse(code, hz, unit) {
+      if (!on || !ac) return;
+      var o = ac.createOscillator(), g = ac.createGain(), at = ac.currentTime + .08, u = unit || .07;
+      o.frequency.value = hz; g.gain.value = 0; o.connect(g); g.connect(ac.destination);
+      code.split("").forEach(function (c) {
+        if (c === " ") { at += u * 2; return; }
+        var l = c === "-" ? 3 * u : u;
+        g.gain.setTargetAtTime(.07, at, .004); g.gain.setTargetAtTime(0, at + l, .004); at += l + u;
+      });
+      o.start(); o.stop(at + .2);
+    }
+    sndBtn.addEventListener("click", function () {
+      on = !on;
+      if (on && !ac && !audioInit()) on = false;
+      if (ac) { if (on) ac.resume(); else ac.suspend(); }
+      sndBtn.setAttribute("aria-pressed", String(on)); sndV.textContent = on ? "ON" : "OFF";
+      audio();
+    });
+    addEventListener("pagehide", function () { if (ac) ac.close(); });
+
+    /* typing S O S anywhere on the page sends a distress call */
+    var keys = "";
+    doc.addEventListener("keydown", function (e) {
+      if (e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test((e.target || {}).tagName || "")) return;
+      if (!/^[a-z]$/i.test(e.key)) { keys = ""; return; }
+      keys = (keys + e.key.toLowerCase()).slice(-3);
+      if (keys === "sos") { keys = ""; sos(); }
+    });
+    var sosOn = false;
+    function sos() {
+      if (sosOn) return; sosOn = true;
+      toast(tr("e404.sos", "Distress call received. Help is on its way: follow “Back to command”."));
+      morse("... --- ...", 760, .12);
+      if (!fxOn()) { setTimeout(function () { sosOn = false; }, 2500); return; } // ambient effect: follows the FX switch
+      var fl = doc.createElement("div"), u = 250, at = 0; fl.className = "sos-fl"; doc.body.appendChild(fl);
+      "... --- ...".split("").forEach(function (c) {
+        if (c === " ") { at += u * 2; return; }
+        var l = c === "-" ? 3 * u : u;
+        setTimeout(function () { fl.classList.add("on"); }, at);
+        setTimeout(function () { fl.classList.remove("on"); }, at + l);
+        at += l + u;
+      });
+      setTimeout(function () { fl.remove(); sosOn = false; }, at + 300);
+    }
+  }
+
   /* ------------------------------------------------ home lists */
   /* The home lists show only the rows that fit; the clipped rows leave the Tab order. */
   function initHomeLists() {
@@ -774,7 +1045,7 @@
 
   function init() {
     initLangMenu(); initOptics(); initMenu(); initCallsign(); initCopy(); initSearch();
-    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop();
+    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop(); initScan();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }
     else setLang(lang, false);
