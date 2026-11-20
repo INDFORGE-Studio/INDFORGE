@@ -92,7 +92,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 .hud-line { height: 1px; background: linear-gradient(90deg, transparent, var(--amber) 20%, var(--amber) 22%, transparent 40%, transparent 60%, var(--green) 78%, transparent); opacity: .5; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; flex: none; }
-.brand-mark { width: 30px; height: 30px; fill: none; stroke: var(--amber); stroke-width: 1.6; filter: drop-shadow(0 0 6px rgba(255, 176, 0, .45)); }
+.brand-mark { width: 36px; height: 36px; flex: none; filter: drop-shadow(0 0 6px rgba(255, 176, 0, .35)); }
 .brand-txt { display: flex; flex-direction: column; line-height: 1; }
 .brand-txt b { font: 700 19px/1 var(--f-head); letter-spacing: .12em; }
 .brand-txt small { font: 500 9.5px/1.4 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); margin-top: 3px; }

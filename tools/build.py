@@ -249,7 +249,7 @@ def header(active):
 <header class="hud" id="top">
   <div class="hud-bar">
     <a class="brand" href="%s" aria-label="INDFORGE - Studio">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13z"/><path d="M16 8v16M9 12l7 4 7-4"/></svg>
+      <img class="brand-mark" src="%s" width="36" height="36" alt="">
       <span class="brand-txt"><b>INDFORGE</b><small>%s</small></span>
     </a>
     <nav class="nav" id="nav" %s>%s</nav>
@@ -265,7 +265,7 @@ def header(active):
     </div>
   </div>
   <div class="hud-line" aria-hidden="true"></div>
-</header>""" % (H(E["nav.skip"]), url(), t("site.division"), ta("aria-label", "nav.menu"), "".join(links),
+</header>""" % (H(E["nav.skip"]), url(), BASE + "assets/img/logo.svg", t("site.division"), ta("aria-label", "nav.menu"), "".join(links),
                  ta("aria-label", "nav.search"), icon("search"), ta("aria-label", "nav.lang"), icon("globe"), langs,
                  ta("aria-label", "nav.menu"), icon("menu"))
 
@@ -317,6 +317,9 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 <meta name="theme-color" content="#06080a">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="%(base)sassets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="%(base)sassets/img/favicon.ico" sizes="48x48">
+<link rel="icon" href="%(base)sassets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="%(base)sassets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Oswald:wght@500;600;700&amp;display=swap">
