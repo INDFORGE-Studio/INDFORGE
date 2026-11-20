@@ -63,7 +63,8 @@ CATS = [
     ("indforge", ["conflict-pve", "forest", "ai-framework", "enhanced-compositions"]),
     ("auc", ["auc-factions", "auc-vehicles", "auc-conflict"]),
     ("ctrp", ["cherchetoi-rp-clothing", "cherchetoi-rp-props", "cherchetoi-rp-vehicles"]),
-    ("gear", ["lav-25-desert", "modern-fia", "rcd-rhs", "rcd-wcs", "solo-push-pull", "talibanmod-red-side-v2"]),
+    ("gear", ["modern-fia", "rcd-rhs", "rcd-wcs", "talibanmod-red-side-v2"]),
+    ("vehicles", ["lav-25-desert", "solo-push-pull"]),
     ("standby", ["off-road-vehicles", "uaz-452-offroad"]),
 ]
 ORDER = [s for _, slugs in CATS for s in slugs]
@@ -75,6 +76,7 @@ FAMILIES = [
     ("ctrp", "fam.ctrp", dict(CATS)["ctrp"]),
     ("manw", "fam.manw", ["off-road-vehicles"]),
     ("gear", "cat.gear", dict(CATS)["gear"]),
+    ("vehicles", "cat.vehicles", dict(CATS)["vehicles"]),
     ("standby", "cat.standby", dict(CATS)["standby"]),
 ]
 FAM_OF = {s: [f for f, _, slugs in FAMILIES if s in slugs] for s in ORDER}
