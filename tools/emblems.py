@@ -5,6 +5,7 @@ a simple symbol for the other optics. Drawn from scratch: no real unit insignia
 and no state emblem is reproduced. Output: assets/img/fs/<optic>.svg (run once,
 the files are committed).
 """
+import math
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,17 +38,31 @@ def gbr():
             '<path d="M20 0V48M0 22H40" stroke="#c8102e" stroke-width="5"/>')
 
 
+def star(cx, cy, r):
+    pts = []
+    for i in range(10):
+        rr = r if i % 2 == 0 else r * .382
+        a = math.radians(-90 + i * 36)
+        pts.append("%.2f,%.2f" % (cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return '<polygon points="%s"/>' % " ".join(pts)
+
+
 def usa():
+    """13 stripes, canton over 7 of them, 50 stars in 9 rows of 6 and 5 (US flag layout)."""
     h = (BOT - TOP) / 13
     s = ['<rect width="40" height="48" fill="#fff"/>']
     for i in range(13):
         if i % 2 == 0:
             s.append('<rect x="0" y="%.2f" width="40" height="%.2f" fill="#b31942"/>' % (TOP + i * h, h + .05))
     s.append('<rect x="0" y="0" width="40" height="3" fill="#b31942"/>')
-    s.append('<rect x="0" y="0" width="19" height="%.2f" fill="#0a3161"/>' % (TOP + 7 * h))
-    for r in range(4):
-        for c in range(4):
-            s.append('<circle cx="%.1f" cy="%.1f" r=".75" fill="#fff"/>' % (5.2 + c * 3.4 + (1.7 if r % 2 else 0), 5.6 + r * 3.6))
+    x0, w, y0, ch = 3, 18, TOP, 7 * h
+    s.append('<rect x="0" y="0" width="%.2f" height="%.2f" fill="#0a3161"/>' % (x0 + w, y0 + ch))
+    n, g = 0, ['<g fill="#fff">']
+    for row in range(9):
+        for c in (range(1, 12, 2) if row % 2 == 0 else range(2, 11, 2)):
+            g.append(star(x0 + w * c / 12, y0 + ch * (row + 1) / 10, .8)); n += 1
+    assert n == 50
+    s.append("".join(g) + "</g>")
     return "".join(s)
 
 
