@@ -425,6 +425,7 @@ def header(active):
       %s
       <span class="brand-txt"><b>INDFORGE</b><small aria-hidden="true">%s</small></span>
     </a>
+    <span class="mradar" aria-hidden="true"><canvas width="34" height="34"></canvas></span>
     <nav class="nav" id="nav" %s>%s</nav>
     <div class="hud-tools">
       <span class="clock" aria-hidden="true"><span class="clock-l">ZULU</span><time id="zulu">--:--:--Z</time></span>
@@ -523,7 +524,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 </html>
 """ % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
        "ogt": H(og_title), "img": img, "imgmeta": img_meta, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
-       "header": header(active), "body": body, "footer": footer()}
+       "header": header(active), "body": body, "footer": "" if active == "home" else footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8", newline="\n") as f:
@@ -788,83 +789,60 @@ def latest_updates(n):
 
 
 def home():
-    radar_blips = []
-    for j, s in enumerate(ORDER):
-        hsh = int(hashlib.md5(s.encode()).hexdigest(), 16)
-        ang = hsh % 360
-        r = 9 + (hsh >> 9) % 34
-        x = 50 + r * math.cos(math.radians(ang - 90))
-        y = 50 + r * math.sin(math.radians(ang - 90))
-        radar_blips.append('<i style="left:%.1f%%;top:%.1f%%;--d:%dms" class="blip%s"></i>' % (x, y, ang * 4000 // 360, " blip-hot" if s == "conflict-pve" else ""))
-    radar = """<div class="radar" aria-hidden="true">
-  <div class="radar-ring"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
-  <div class="radar-cross"></div><div class="radar-sweep"></div>%s
-  <span class="radar-l mono">AO EVERON // %d CONTACTS</span>
-</div>""" % ("".join(radar_blips), len(MODS))
-    ticker_items = "".join('<li><span class="mono amber">%s</span> %s <span class="mono">v%s</span></li>' % (
-        d, H(name(MODS[s])), H(MODS[s]["version"])) for d, s in latest_updates(10))
+    rel = [(d, sl, v) for sl in ORDER for v, d in MODS[sl]["versions"]]
+    rel.sort(key=lambda x: (x[0], x[1]), reverse=True)
+
+    def row(d, sl, v):
+        return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>' % (
+            url("workshop/%s/" % sl), d, H(name(MODS[sl])), H(v))
+    feed = "".join(row(d, sl, v) for d, sl, v in rel[:12])
+    latest = "".join(row(d, sl, MODS[sl]["version"]) for d, sl in latest_updates(12))
     stats = [
         (len(MODS), "home.stat_mods"), (len(THIRD_PARTY), "home.stat_deps"),
         (CFG_KEYS, "home.stat_keys"), (len(COMMANDS), "home.stat_cmds"),
     ]
     stat_html = "".join('<div class="stat"><b class="mono" data-count="%d">%d</b>%s</div>' % (n, n, t(k)) for n, k in stats)
-    latest = "".join("""<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>""" % (
-        url("workshop/%s/" % s), d, H(name(MODS[s])), H(MODS[s]["version"])) for d, s in latest_updates(6))
-    body = """<section class="hero wrap">
-  <div class="hero-txt">
-    <p class="kicker"><span class="kicker-code">STN-01</span>%s</p>
-    <h1 class="hero-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
-    %s
-    <div class="actions">
-      <a class="btn btn-primary" href="%sworkshop/">%s%s</a>
-      <a class="btn btn-ghost" href="%sadmins/">%s</a>
-      <a class="btn btn-ghost" href="%sabout/">%s</a>
-    </div>
-    <p class="hint mono">%s</p>
-  </div>
+    body = """<div class="home wrap">
+<section class="home-top">
+  <h1 class="home-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
   %s
+  <div class="actions home-act">
+    <a class="btn btn-primary" href="%sworkshop/">%s%s</a>
+    <a class="btn btn-ghost" href="%sadmins/">%s</a>
+    <button type="button" class="btn btn-ghost js-only" data-search>%s%s<kbd>/</kbd></button>
+  </div>
 </section>
-<section class="feed" aria-label="Feed">
-  <div class="feed-in"><span class="feed-l mono">%s</span><div class="feed-track"><ul>%s</ul><ul aria-hidden="true">%s</ul></div></div>
-</section>
-<section class="wrap stats" aria-label="Stats">%s</section>
-<section class="wrap featured">
-  <div class="dossier-card">
+<div class="home-grid">
+  <section class="panel hl" aria-labelledby="h-feed">
+    <h2 class="panel-h" id="h-feed">%s</h2>%s
+    <ol class="lt hl-list">%s</ol>
+    <a class="more" href="%schangelog/#recent">%s%s</a>
+  </section>
+  <article class="dossier-card home-news" aria-labelledby="h-news">
     %s
-    <p class="kicker"><span class="kicker-code">INTSUM</span>%s</p>
+    <p class="kicker"><span class="kicker-code" id="h-news">%s</span><span class="mono">%s</span></p>
     %s
     %s
-    <p class="mono dim">%s %s · %s %s</p>
+    <p class="mono dim home-ref">%s %s · %s %s</p>
     <a class="btn btn-primary" href="%sintel/">%s%s</a>
-  </div>
-  <div class="panel latest">
-    <h2 class="panel-h">%s</h2>%s
-    <ol class="lt">%s</ol>
-    <a class="more" href="%schangelog/">%s%s</a>
-  </div>
-</section>
-<section class="wrap sec orbat" id="orbat" aria-labelledby="h-orbat">
-  <h2 id="h-orbat"><span class="sec-code" aria-hidden="true">ORBAT</span>%s</h2>
-  %s
-  %s
-</section>
-<section class="wrap who">
-  <div class="panel who-in">
-    <h2 class="panel-h">%s</h2>
-    %s
-    <a class="btn btn-ghost" href="%sabout/">%s%s</a>
-  </div>
-</section>""" % (
-        t("home.kicker"), t("home.lead", "p", "lead"),
-        BASE, t("home.cta_mods"), icon("arrow"), BASE, t("home.cta_admins"), BASE, t("home.cta_about"),
-        t("ui.search_open", "span", "js-only"), radar,
-        t("home.feed"), ticker_items, ticker_items, stat_html,
-        t("ui.declassified", "span", "stamp", None, 'aria-hidden="true"'), t("home.featured"), t("home.featured_t", "h2"), t("home.featured_p", "p"),
+  </article>
+  <section class="panel hl" aria-labelledby="h-latest">
+    <h2 class="panel-h" id="h-latest">%s</h2>%s
+    <ol class="lt hl-list">%s</ol>
+    <a class="more" href="%sstatus/">%s%s</a>
+  </section>
+</div>
+<section class="stats home-stats" aria-label="Stats">%s</section>
+</div>""" % (
+        t("home.lead", "p", "lead home-lead"),
+        BASE, t("home.cta_mods"), icon("arrow"), BASE, t("home.cta_admins"), icon("search"), t("home.search"),
+        t("home.feed"), t("home.feed_d", "p", "dim"), feed, BASE, t("home.feed_more"), icon("arrow"),
+        t("ui.declassified", "span", "stamp", None, 'aria-hidden="true"'), t("home.news"), H(MODS["conflict-pve"]["updated"]),
+        t("home.featured_t", "h2"), t("home.featured_p", "p"),
         t("intel.ref"), "IFG/HQ-" + redact(4) + "-26", t("ui.classified"), redact(12),
         BASE, t("home.featured_cta"), icon("arrow"),
-        t("home.latest"), t("home.latest_d", "p", "dim"), latest, BASE, t("logp.h1"), icon("arrow"),
-        t("home.orbat"), t("home.orbat_d", "p", "dim"), orbat(),
-        t("home.who"), t("home.who_p", "p"), BASE, t("home.cta_about"), icon("arrow"))
+        t("home.latest"), t("home.latest_d", "p", "dim"), latest, BASE, t("home.latest_more"), icon("arrow"),
+        stat_html)
     page("", "home.title", body, "home", cls="p-home")
 
 
@@ -1113,7 +1091,7 @@ def about():
 %s %s %s %s %s %s
 <blockquote class="motto-big">%s<footer class="mono dim">— INDFORGE - Studio</footer></blockquote>
 </div></div>""" % (
-        sec("unit", "about.unit", t("about.unit_p", "p", "lead2"), "01"),
+        sec("unit", "about.unit", t("about.unit_p", "p", "lead2") + t("about.giants", "p"), "01"),
         sec("roster", "about.roster", t("about.roster_d", "p", "dim") + '<ul class="roster">%s</ul>' % ros, "02"),
         sec("doctrine", "about.doctrine", '<ul class="feat">%s</ul>' % tl("about.d"), "03"),
         sec("theatres", "about.theatres", '<ul class="feat">%s</ul>' % tl("about.th"), "04"),

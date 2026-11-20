@@ -630,6 +630,76 @@
     Object.keys(map).forEach(function (id) { io.observe(doc.getElementById(id)); });
   }
 
+  /* ------------------------------------------------ mini radar (header) */
+  /* Like a real scope: the beam paints each contact where it stands when it passes,
+     then the echo fades until the next turn while the contact keeps moving. */
+  function initRadar() {
+    var cv = $(".mradar canvas"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), S = 34, C = S / 2, R = C - 2, TURN = 3600, TAU = Math.PI * 2;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = cv.height = Math.round(S * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var g = "64, 200, 120", a = "255, 176, 0";
+    function colors() {
+      var cs = getComputedStyle(root);
+      g = cs.getPropertyValue("--green-rgb").trim() || g; a = cs.getPropertyValue("--amber-rgb").trim() || a;
+    }
+    colors();
+    if ("MutationObserver" in window) new MutationObserver(colors).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    function spawn(k, edge) {
+      var ang = Math.random() * TAU, r = edge ? .97 : .2 + Math.random() * .7;
+      var head = ang + Math.PI + (Math.random() - .5) * 1.6, sp = .02 + Math.random() * .035; // share of the radius per second
+      k.x = Math.cos(ang) * r; k.y = Math.sin(ang) * r; k.vx = Math.cos(head) * sp; k.vy = Math.sin(head) * sp;
+      k.px = k.x; k.py = k.y; k.seen = -1e9;
+    }
+    var ks = [];
+    for (var i = 0; i < 6; i++) { var k = { hot: i === 0 }; spawn(k, false); ks.push(k); }
+    function angOf(x, y) { var t = Math.atan2(y, x); return t < 0 ? t + TAU : t; }
+    var last = performance.now(), drawn = 0, beam = 0;
+    function draw(now, still) {
+      var dt = Math.min(.1, (now - last) / 1000), nb = (now % TURN) / TURN * TAU; last = now;
+      ctx.clearRect(0, 0, S, S);
+      for (var j = 0; j < 14; j++) { // fading trail behind the beam
+        ctx.beginPath(); ctx.moveTo(C, C); ctx.arc(C, C, R, nb - (j + 1) * .075, nb - j * .075); ctx.closePath();
+        ctx.fillStyle = "rgba(" + g + "," + (.3 * (1 - j / 14)).toFixed(3) + ")"; ctx.fill();
+      }
+      ctx.strokeStyle = "rgba(" + g + ",.95)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(C, C); ctx.lineTo(C + Math.cos(nb) * R, C + Math.sin(nb) * R); ctx.stroke();
+      ks.forEach(function (k) {
+        var ka;
+        if (still) { ka = angOf(k.x, k.y); k.seen = now - ((nb - ka + TAU) % TAU) / TAU * TURN; }
+        else {
+          k.x += k.vx * dt; k.y += k.vy * dt;
+          if (k.x * k.x + k.y * k.y > 1) spawn(k, true);
+          ka = angOf(k.x, k.y);
+          if (beam <= nb ? (ka > beam && ka <= nb) : (ka > beam || ka <= nb)) { k.px = k.x; k.py = k.y; k.seen = now; }
+        }
+        var o = 1 - (now - k.seen) / TURN; if (o <= 0) return;
+        var col = "rgba(" + (k.hot ? a : g) + "," + o.toFixed(3) + ")";
+        ctx.fillStyle = col; ctx.shadowColor = col; ctx.shadowBlur = 4;
+        ctx.beginPath(); ctx.arc(C + k.px * R, C + k.py * R, k.hot ? 1.9 : 1.4, 0, TAU); ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+      beam = nb;
+    }
+    if (reduce) { draw(performance.now(), true); return; }
+    (function loop(now) {
+      if (now - drawn > 30) { drawn = now; draw(now, false); } // about 30 frames a second is plenty
+      requestAnimationFrame(loop);
+    })(performance.now());
+  }
+
+  /* ------------------------------------------------ home lists */
+  /* The home lists show only the rows that fit; the clipped rows leave the Tab order. */
+  function initHomeLists() {
+    var lists = $$(".hl-list"); if (!lists.length) return;
+    function fit() {
+      lists.forEach(function (l) { $$("li", l).forEach(function (li) { li.style.visibility = li.offsetHeight ? "" : "hidden"; }); });
+    }
+    fit();
+    if ("ResizeObserver" in window) lists.forEach(function (l) { new ResizeObserver(fit).observe(l); });
+    else addEventListener("resize", fit);
+  }
+
   /* ------------------------------------------------ prefetch fallback */
   function initPrefetch() {
     if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
@@ -649,7 +719,7 @@
 
   function init() {
     initLangMenu(); initOptics(); initMenu(); initClock(); initCopy(); initSearch();
-    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch();
+    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }
     else setLang(lang, false);
