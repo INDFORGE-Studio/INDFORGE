@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 48" width="40" height="48">
+<defs>
+<clipPath id="c"><path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z"/></clipPath>
+<linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></linearGradient>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset="1" stop-color="#a8841f"/></linearGradient>
+</defs>
+<g clip-path="url(#c)"><defs><radialGradient id="nv"><stop offset="0" stop-color="#2f8a1a" stop-opacity="1"/><stop offset="1" stop-color="#021003" stop-opacity="1"/></radialGradient></defs><rect width="40" height="48" fill="url(#nv)"/><g stroke="#b8ff5c" stroke-width="1.3" fill="none"><circle cx="20" cy="23" r="9"/><path d="M20 10V18M20 28V36M7 23H15M25 23H33"/></g><circle cx="20" cy="23" r="1.4" fill="#b8ff5c"/><rect width="40" height="48" fill="url(#l)"/></g>
+<path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z" fill="none" stroke="#0b0f14" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

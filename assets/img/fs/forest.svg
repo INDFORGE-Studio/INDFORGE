@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 48" width="40" height="48">
+<defs>
+<clipPath id="c"><path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z"/></clipPath>
+<linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></linearGradient>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset="1" stop-color="#a8841f"/></linearGradient>
+</defs>
+<g clip-path="url(#c)"><defs><linearGradient id="fo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f4a1c"/><stop offset="1" stop-color="#08180a"/></linearGradient></defs><rect width="40" height="48" fill="url(#fo)"/><path d="M20 9L27 21H24L29.5 30H23V35H17V30H10.5L16 21H13Z" fill="#93c24f"/><path d="M9.5 18L13.5 25H12L15 31H11V34.5H8V31H4L7 25H5.5Z" fill="#5f8a2e"/><path d="M30.5 18L34.5 25H33L36 31H32V34.5H29V31H25L28 25H26.5Z" fill="#5f8a2e"/><rect width="40" height="48" fill="url(#l)"/></g>
+<path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z" fill="none" stroke="#0b0f14" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M3 3H37V21.5C37 33.5 29.5 40.8 20 45.5C10.5 40.8 3 33.5 3 21.5Z" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

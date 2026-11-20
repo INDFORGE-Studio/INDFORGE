@@ -410,16 +410,23 @@ details[open] > summary::before { transform: rotate(90deg); }
   .hl-list li:nth-child(n+7) { display: none; }
 }
 
-/* national optics: an original INDFORGE emblem beside the clock (no real insignia reproduced) */
-.fsb { display: none; width: 26px; height: 31px; flex: 0 0 auto; background: center / contain no-repeat; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .6)); }
-:root[data-theme="fra"] .fsb { display: block; background-image: url("../img/fs/fra.svg"); }
-:root[data-theme="gbr"] .fsb { display: block; background-image: url("../img/fs/gbr.svg"); }
-:root[data-theme="deu"] .fsb { display: block; background-image: url("../img/fs/deu.svg"); }
-:root[data-theme="esp"] .fsb { display: block; background-image: url("../img/fs/esp.svg"); }
-:root[data-theme="ita"] .fsb { display: block; background-image: url("../img/fs/ita.svg"); }
-:root[data-theme="pol"] .fsb { display: block; background-image: url("../img/fs/pol.svg"); }
-:root[data-theme="ukr"] .fsb { display: block; background-image: url("../img/fs/ukr.svg"); }
-:root[data-theme="usa"] .fsb { display: block; background-image: url("../img/fs/usa.svg"); }
+/* every optic shows its own original INDFORGE emblem beside the clock (no real insignia reproduced) */
+.fsb { display: block; width: 26px; height: 31px; flex: 0 0 auto; background: url("../img/fs/arma.svg") center / contain no-repeat; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .6)); }
+:root[data-theme="nvg"] .fsb { background-image: url("../img/fs/nvg.svg"); }
+:root[data-theme="thermal"] .fsb { background-image: url("../img/fs/thermal.svg"); }
+:root[data-theme="arctic"] .fsb { background-image: url("../img/fs/arctic.svg"); }
+:root[data-theme="desert"] .fsb { background-image: url("../img/fs/desert.svg"); }
+:root[data-theme="forest"] .fsb { background-image: url("../img/fs/forest.svg"); }
+:root[data-theme="red"] .fsb { background-image: url("../img/fs/red.svg"); }
+:root[data-theme="day"] .fsb { background-image: url("../img/fs/day.svg"); }
+:root[data-theme="fra"] .fsb { background-image: url("../img/fs/fra.svg"); }
+:root[data-theme="gbr"] .fsb { background-image: url("../img/fs/gbr.svg"); }
+:root[data-theme="deu"] .fsb { background-image: url("../img/fs/deu.svg"); }
+:root[data-theme="esp"] .fsb { background-image: url("../img/fs/esp.svg"); }
+:root[data-theme="ita"] .fsb { background-image: url("../img/fs/ita.svg"); }
+:root[data-theme="pol"] .fsb { background-image: url("../img/fs/pol.svg"); }
+:root[data-theme="ukr"] .fsb { background-image: url("../img/fs/ukr.svg"); }
+:root[data-theme="usa"] .fsb { background-image: url("../img/fs/usa.svg"); }
 .fsb { animation: fsb-in .5s cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes fsb-in { from { opacity: 0; transform: translateY(-4px) scale(.88); } }
 
@@ -934,7 +941,7 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
 :root[data-theme="usa"]::before {
   background:
     linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='s' width='64' height='38' patternUnits='userSpaceOnUse'%3E%3Cg fill='#fff'%3E%3Cpolygon points='16.0,2.8 17.6,7.8 22.8,7.8 18.6,10.8 20.2,15.8 16.0,12.8 11.8,15.8 13.4,10.8 9.2,7.8 14.4,7.8'/%3E%3Cpolygon points='48.0,21.8 49.6,26.8 54.8,26.8 50.6,29.8 52.2,34.8 48.0,31.8 43.8,34.8 45.4,29.8 41.2,26.8 46.4,26.8'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(#s)'/%3E%3C/svg%3E") 0 0 / 40% 345px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='s' width='64' height='38' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23fff'%3E%3Cpolygon points='16.0,2.8 17.6,7.8 22.8,7.8 18.6,10.8 20.2,15.8 16.0,12.8 11.8,15.8 13.4,10.8 9.2,7.8 14.4,7.8'/%3E%3Cpolygon points='48.0,21.8 49.6,26.8 54.8,26.8 50.6,29.8 52.2,34.8 48.0,31.8 43.8,34.8 45.4,29.8 41.2,26.8 46.4,26.8'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E") 0 0 / 40% 345px no-repeat,
     linear-gradient(#0a3161, #0a3161) 0 0 / 40% 345px no-repeat,
     repeating-linear-gradient(#b31942 0 49.23px, #fff 49.23px 98.46px) 0 0 / 100% 640px no-repeat;
 }
