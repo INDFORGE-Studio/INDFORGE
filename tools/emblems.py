@@ -94,10 +94,16 @@ def snowflake():
 
 
 SYMBOLS = {
-    # Arma: rank chevrons in amber on gunmetal
-    "arma": '<rect width="40" height="48" fill="#0d1114"/>'
-            '<path d="M10.5 32.5L20 25L29.5 32.5M10.5 24L20 16.5L29.5 24" fill="none" stroke="#ffb000" stroke-width="3.4" stroke-linejoin="miter"/>'
-            '<circle cx="20" cy="10.5" r="1.6" fill="#ffb000"/>',
+    # Arma Reforger: an anvil in the forge glow, sparks flying (to reforge; also our own name, INDFORGE)
+    "arma": '<defs>' + radial("fg", [("0", "#ff8a1f", .45), (".6", "#ff8a1f", .08), ("1", "#ff8a1f", 0)])
+            + grad("av", [("0", "#ffd36b"), ("1", "#c98400")]) + '</defs>'
+            '<rect width="40" height="48" fill="#0d1114"/><ellipse cx="20" cy="25" rx="17" ry="15" fill="url(#fg)"/>'
+            '<path d="M5 19.4L12 18.5H31V22.5H26.5C25 24 24 25.5 24 27.2C24 28.8 25.6 30 27.8 30.6V33.6H12.6V30.6C14.8 30 16.4 28.8 16.4 27.2'
+            'C16.4 25.5 15.4 24 13.8 22.5H12Z" fill="url(#av)" stroke="#0b0f14" stroke-width=".9" stroke-linejoin="round"/>'
+            '<path d="M12.5 19.6H30.2" stroke="#fff1c2" stroke-opacity=".7" stroke-width=".7"/>'
+            '<g fill="#ffe08a"><path d="M24 9.5L24.7 12.3L27.5 13L24.7 13.7L24 16.5L23.3 13.7L20.5 13L23.3 12.3Z"/>'
+            '<path d="M29.5 7.5L29.9 9.1L31.5 9.5L29.9 9.9L29.5 11.5L29.1 9.9L27.5 9.5L29.1 9.1Z"/>'
+            '<path d="M18 8L18.4 9.6L20 10L18.4 10.4L18 12L17.6 10.4L16 10L17.6 9.6Z"/></g>',
     # night vision: phosphor field and a reticle
     "nvg": '<defs>' + radial("nv", [("0", "#2f8a1a", 1), ("1", "#021003", 1)]) + '</defs><rect width="40" height="48" fill="url(#nv)"/>'
            '<g stroke="#b8ff5c" stroke-width="1.3" fill="none"><circle cx="20" cy="23" r="9"/><path d="M20 10V18M20 28V36M7 23H15M25 23H33"/></g>'
