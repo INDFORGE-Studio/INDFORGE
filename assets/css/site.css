@@ -339,8 +339,6 @@ details[open] > summary::before { transform: rotate(90deg); }
 .home-sub { margin: 0 0 clamp(14px, 2.4vh, 26px); }
 .home-sub-l { display: flex; justify-content: space-between; width: 0; min-width: 100%; font: 400 clamp(.95rem, min(2.1vw, 3vh), 1.9rem)/1 var(--f-mono); color: var(--txt2); }
 .home-sub-l i { font-style: normal; }
-.home-act { justify-content: center; margin-top: clamp(12px, 2.2vh, 24px); }
-.home-act .btn kbd { margin-left: 4px; }
 .js .btn.js-only { display: inline-flex !important; }
 .home-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(14px, 1.6vw, 22px); align-items: stretch; }
 .hl { display: flex; flex-direction: column; min-width: 0; }
@@ -405,7 +403,6 @@ details[open] > summary::before { transform: rotate(90deg); }
   .home-ref { display: none; }
   .home-news h2 { margin-bottom: .3em; }
   .home-news > p:not(.kicker) { margin-bottom: 12px; }
-  .home-act .btn { min-height: 40px; }
 }
 @media (min-width: 1100px) and (max-height: 700px) {
   .home-news > p:not(.kicker):not(.home-ref) { -webkit-line-clamp: 2; }
@@ -1508,6 +1505,34 @@ html.fx-off body::before { animation: none; }
   .hfx-rec i { animation: hfx-blink 1.2s steps(1) infinite; }
   .p-home .home-h1 { animation: hfx-glitch 7s steps(1) infinite; }
 }
+/* Public test server strip, in place of the home action buttons */
+.srv { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px 14px; width: fit-content; max-width: 100%; margin: clamp(12px, 2.2vh, 24px) auto 0;
+  padding: 8px 16px; overflow: hidden; font: 600 13px var(--f-mono); letter-spacing: .06em;
+  border: 1px solid rgba(var(--green-rgb), .55); background: linear-gradient(90deg, rgba(var(--green-rgb), .16), rgba(var(--green-rgb), .04) 60%), rgba(var(--bg-rgb), .72);
+  box-shadow: 0 0 22px rgba(var(--green-rgb), .16), inset 0 0 16px rgba(var(--green-rgb), .06);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+.srv::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 30%; pointer-events: none; transform: translateX(-120%);
+  background: linear-gradient(90deg, transparent, rgba(var(--green-rgb), .2), transparent); }
+.srv-ping { position: relative; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+.srv-ping i { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--green); opacity: 0; }
+.srv-k { color: var(--green); text-transform: uppercase; letter-spacing: .14em; white-space: nowrap; }
+.srv-name { padding: 3px 9px; font-size: 14px; color: var(--hi); background: rgba(0, 0, 0, .45); border: 1px dashed rgba(var(--green-rgb), .45); white-space: nowrap; }
+.srv-meta { font-weight: 500; font-size: 11px; color: var(--txt2); white-space: nowrap; }
+.srv-copy { display: none; align-items: center; gap: 9px; height: 30px; padding: 0 12px 0 14px; cursor: pointer; font: 600 11px var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--green); background: rgba(var(--green-rgb), .1); border: 1px solid rgba(var(--green-rgb), .6); transition: background .15s, color .15s; }
+.js .srv-copy.js-only { display: inline-flex !important; }
+.srv-copy:hover, .srv-copy.ok { background: var(--green); color: var(--on-sec); }
+.srv-copy .copy-ico { box-shadow: 3px -3px 0 -1.5px rgba(var(--bg-rgb), 1), 3px -3px 0 0 currentColor; }
+@media (max-width: 1099px) { .srv-meta { display: none; } }
+@media (max-width: 560px) { .srv { flex-wrap: wrap; padding: 10px 12px; } .srv-name { white-space: normal; } }
+@media (prefers-reduced-motion: no-preference) {
+  .srv::after { animation: srv-sweep 4.5s ease-in-out infinite; }
+  .srv-ping i { animation: srv-ping 2.2s ease-out infinite; }
+  .srv-ping i + i { animation-delay: 1.1s; }
+}
+@keyframes srv-sweep { 0%, 45% { transform: translateX(-120%); } 100% { transform: translateX(420%); } }
+@keyframes srv-ping { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(3.4); opacity: 0; } }
+.fx-off .srv::after, .fx-off .srv-ping i { animation: none; }
 .fx-off .hfx *, .fx-off .p-home .home-h1 { animation: none; } /* the site's own effects switch */
 @keyframes hfx-spin { to { transform: rotate(360deg); } }
 @keyframes hfx-blip { 0% { opacity: 1; } 60%, 100% { opacity: .15; } }

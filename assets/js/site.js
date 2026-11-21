@@ -428,11 +428,11 @@
 
   /* ------------------------------------------------ toast & copy */
   var toastEl, toastT;
-  function toast(msg, bad) {
+  function toast(msg, bad, ms) {
     if (!toastEl) { toastEl = doc.createElement("div"); toastEl.className = "toast"; toastEl.setAttribute("role", "status"); doc.body.appendChild(toastEl); }
     toastEl.textContent = plain(msg); toastEl.classList.toggle("bad", !!bad);
     void toastEl.offsetWidth; toastEl.classList.add("on");
-    clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove("on"); }, 1800);
+    clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove("on"); }, ms || 1800);
   }
   function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
@@ -447,14 +447,15 @@
   }
   function initCopy() {
     doc.addEventListener("click", function (e) {
-      var b = e.target.closest(".copy"); if (!b) return;
+      var b = e.target.closest(".copy, .srv-copy"); if (!b) return;
       var sel = b.getAttribute("data-copy"), text = b.getAttribute("data-copy-text");
       if (sel) { var src = $(sel); text = src ? src.textContent : ""; }
       if (!text) return;
       copyText(text).then(function () {
         b.classList.add("ok"); var l = $(".copy-lbl", b), old = l && l.innerHTML;
         if (l) l.textContent = plain(tr("ui.copied", "Copied"));
-        toast(tr("ui.copied", "Copied"));
+        var msg = b.getAttribute("data-copy-msg");
+        toast(msg ? tr(msg, "Copied") : tr("ui.copied", "Copied"), false, msg ? 4200 : 0);
         setTimeout(function () { b.classList.remove("ok"); if (l) l.innerHTML = old; }, 1600);
       }, function () { toast(tr("ui.copy_fail", "Copy blocked: select the text by hand"), true); });
     });

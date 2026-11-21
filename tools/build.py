@@ -885,6 +885,21 @@ HOME_FX = """<div class="hfx" aria-hidden="true">
 """
 
 
+# Public test server: its name as the in-game server browser shows it. Never an address or a port.
+TEST_SERVER = "[EU] ARMA UKRAINE | PvE 1pp                   INDFORGE Forest Conflict (Belleau Wood)"
+
+
+def srv_strip():
+    """Home strip in place of the old action buttons: the open public test server.
+    Its name is plain text (readable without JS); the button copies the full in-game name, exact spacing kept."""
+    short = " ".join(re.split(r"\s{2,}", TEST_SERVER)[0].split())
+    return """<div class="srv">
+    <span class="srv-ping" aria-hidden="true"><i></i><i></i></span>%s
+    <span class="srv-name">%s</span>%s
+    <button type="button" class="srv-copy js-only" data-copy-text="%s" data-copy-msg="srv.copied"><span class="copy-ico" aria-hidden="true"></span>%s</button>
+  </div>""" % (t("srv.h", "span", "srv-k"), H(short), t("srv.meta", "span", "srv-meta"), H(TEST_SERVER), t("ui.copy", "span", "copy-lbl"))
+
+
 def home():
     def row(d, sl, v):
         return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>' % (
@@ -914,11 +929,7 @@ def home():
     <h1 class="home-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
     <p class="home-sub"><span class="sr">Arma Reforger</span><span class="home-sub-l" aria-hidden="true">%s</span></p>
   </div>
-  <div class="actions home-act">
-    <a class="btn btn-primary" href="%sworkshop/">%s%s</a>
-    <a class="btn btn-ghost" href="%sadmins/">%s</a>
-    <button type="button" class="btn btn-ghost js-only" data-search>%s%s<kbd>/</kbd></button>
-  </div>
+  %s
 </section>
 <div class="home-grid">
   <section class="panel hl tele" aria-labelledby="h-tele">
@@ -944,7 +955,7 @@ def home():
 <section class="stats home-stats" aria-label="Stats">%s</section>
 </div>""" % (
         "".join("<i>%s</i>" % H(c) if c != " " else "<i></i>" for c in "ARMA REFORGER"),
-        BASE, t("home.cta_mods"), icon("arrow"), BASE, t("home.cta_admins"), icon("search"), t("home.search"),
+        srv_strip(),
         t("tele.h"), t("tele.d", "p", "dim", {"d": STATS_DATE or ""}), kpi, tele_rows, BASE, t("tele.more"), icon("arrow"),
         t("ui.declassified", "span", "stamp", None, 'aria-hidden="true"'), t("home.news"), H(MODS["conflict-pve"]["updated"]),
         t("home.featured_t", "h2"), t("home.featured_p", "p"),
