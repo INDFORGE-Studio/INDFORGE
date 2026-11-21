@@ -31,7 +31,7 @@ ALL_LANGS = [
 LIVE = ("en", "fr")
 LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 
-# Display modes ("optics"): code, menu tag, then swatch colours (background, accent, secondary).
+# Display modes ("optics"): code, menu tag.
 # All but the first carry an ambient effect layer (site.js, "fx").
 OPTICS = [
     ("arma", "ARM"),
