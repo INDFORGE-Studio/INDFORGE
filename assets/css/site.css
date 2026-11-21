@@ -777,6 +777,9 @@ details[open] > summary::before { transform: rotate(90deg); }
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .35) inset;
 }
 .opt-menu button[aria-checked="true"] .opt-sw { border-color: var(--amber); box-shadow: 0 0 10px rgba(var(--amber-rgb), .5); }
+/* flags stay bare: no edge, the chosen one is lifted and lit instead of framed */
+.opt-sw.opt-flag { border: 0; border-radius: 1px; box-shadow: 0 1px 3px rgba(0, 0, 0, .55); transition: transform .2s var(--ease), box-shadow .2s; }
+.opt-menu button[aria-checked="true"] .opt-sw.opt-flag { transform: scale(1.12); box-shadow: 0 2px 6px rgba(0, 0, 0, .6), 0 0 14px rgba(var(--amber-rgb), .45); }
 .optic-ring {
   position: fixed; z-index: 400; left: var(--vx); top: var(--vy); width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%;
   border: 2px solid var(--amber); box-shadow: 0 0 30px var(--amber), inset 0 0 30px rgba(var(--amber-rgb), .5); pointer-events: none;
