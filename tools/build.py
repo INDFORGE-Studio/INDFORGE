@@ -871,6 +871,20 @@ def latest_updates(n):
     return ups[:n]
 
 
+# Home backdrop, same iconography as the link-preview card: combat feed (tools/homebg.py), radar sweep,
+# track box on the lead helicopter, target reticle, viewfinder corners. Decorative only.
+HOME_FX = """<div class="hfx" aria-hidden="true">
+  <div class="hfx-radar"><i></i><b></b><b></b><b></b></div>
+  <div class="hfx-scene">
+    <div class="hfx-trk"><span>TRK 02 // HOSTILE AIR</span></div>
+    <div class="hfx-tgt"><svg viewBox="-60 -60 120 120"><circle r="34"/><circle class="hfx-spin" r="46" stroke-dasharray="10 8"/>
+      <path d="M0-58v18M0 40v18M-58 0h18M40 0h18M-4 0h8M0-4v8"/></svg><span>TGT LOCK<br>AZ 274<br>RNG 1.2K</span></div>
+  </div>
+  <div class="hfx-frame"><span class="hfx-rec"><i></i>REC</span><span class="hfx-ch">CON-01 // SECURE CHANNEL</span></div>
+</div>
+"""
+
+
 def home():
     def row(d, sl, v):
         return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>' % (
@@ -894,7 +908,7 @@ def home():
         (CFG_KEYS, "home.stat_keys"), (len(COMMANDS), "home.stat_cmds"),
     ]
     stat_html = "".join('<div class="stat"><b class="mono" data-count="%d">%d</b>%s</div>' % (n, n, t(k)) for n, k in stats)
-    body = """<div class="home wrap">
+    body = HOME_FX + """<div class="home wrap">
 <section class="home-top">
   <div class="home-title">
     <h1 class="home-h1" data-scramble>INDFORGE<span> - Studio</span></h1>
