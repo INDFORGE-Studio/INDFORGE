@@ -886,18 +886,21 @@ HOME_FX = """<div class="hfx" aria-hidden="true">
 
 
 # Public test server: its name as the in-game server browser shows it. Never an address or a port.
+# LIVE_ID is its public listing on gamemonitoring.net (free, keyless, CORS open): site.js reads
+# only online/offline, players and the reading time from it.
 TEST_SERVER = "[EU] ARMA UKRAINE | PvE 1pp                   INDFORGE Forest Conflict (Belleau Wood)"
+LIVE_ID = 17976932
 
 
 def srv_strip():
     """Home strip in place of the old action buttons: the open public test server.
     Its name is plain text (readable without JS); the button copies the full in-game name, exact spacing kept."""
     short = " ".join(re.split(r"\s{2,}", TEST_SERVER)[0].split())
-    return """<div class="srv">
+    return """<div class="srv" data-live="%s">
     <span class="srv-l"><span class="srv-ping" aria-hidden="true"><i></i><i></i></span>%s</span>
     <span class="srv-mid"><span class="srv-name">%s</span>%s</span>
     <button type="button" class="srv-copy js-only" data-copy-text="%s" data-copy-msg="srv.copied"><span class="copy-ico" aria-hidden="true"></span>%s</button>
-  </div>""" % (t("srv.h", "span", "srv-k"), H(short), t("srv.meta", "span", "srv-meta"), H(TEST_SERVER), t("ui.copy", "span", "copy-lbl"))
+  </div>""" % (LIVE_ID, t("srv.h", "span", "srv-k"), H(short), t("srv.meta", "span", "srv-meta"), H(TEST_SERVER), t("ui.copy", "span", "copy-lbl"))
 
 
 def home():

@@ -461,6 +461,75 @@
     });
   }
 
+  /* ------------------------------------------------ live test server (home strip)
+     Public reading from gamemonitoring.net: state, players, reading time. Nothing else is kept.
+     No answer, a bad answer or an old reading leaves the static strip as it is. */
+  function initLive() {
+    var box = $(".srv[data-live]"); if (!box || !window.fetch || !window.JSON) return;
+    var URL = "https://api.gamemonitoring.net/servers/" + encodeURIComponent(box.getAttribute("data-live"));
+    var KEY = "ifg-srv", MAXAGE = 110000, last = null, busy = false, prevN = -1;
+    var st = doc.createElement("span"); st.className = "srv-st"; st.hidden = true;
+    $(".srv-l", box).appendChild(st);
+    var live = doc.createElement("span"); live.className = "srv-live"; live.hidden = true;
+    live.innerHTML = '<span class="srv-cnt" aria-hidden="true"><b></b><i>/</i><b></b></span>' +
+      '<span class="srv-slots" aria-hidden="true"></span><span class="srv-age"></span><span class="srv-sr"></span>';
+    var mid = $(".srv-mid", box); mid.insertBefore(live, $(".srv-meta", mid));
+    var meta = $(".srv-meta", mid);
+    var cnt = $$(".srv-cnt b", live), slots = $(".srv-slots", live), age = $(".srv-age", live), sr = $(".srv-sr", live);
+
+    function say(el, key, fb, args) {
+      el.setAttribute("data-i18n", key);
+      if (args) el.setAttribute("data-i18n-args", JSON.stringify(args)); else el.removeAttribute("data-i18n-args");
+      el.innerHTML = fmt(tr(key, fb), args);
+    }
+    function two(n) { return n < 10 ? "0" + n : String(n); }
+    function render(d) {
+      var now = Date.now() / 1000;
+      // an old reading, or a server dark for two days (moved, renamed): say nothing rather than something false
+      var known = d && now - d.t < 1800 && (d.on || now - d.lo < 172800);
+      if (!known) { box.classList.remove("srv-on", "srv-off"); st.hidden = live.hidden = true; if (meta) say(meta, "srv.meta", meta.textContent); return; }
+      box.classList.toggle("srv-on", d.on); box.classList.toggle("srv-off", !d.on);
+      if (meta) say(meta, d.on ? "srv.meta_live" : "srv.meta", meta.textContent); // the counter already gives the slots
+      say(st, d.on ? "srv.on" : "srv.off", d.on ? "Online" : "Offline"); st.hidden = false;
+      if (!d.on) { live.hidden = true; prevN = -1; return; }
+      cnt[0].textContent = two(d.n); cnt[1].textContent = two(d.max);
+      if (slots.children.length !== d.max) { slots.innerHTML = new Array(d.max + 1).join("<i></i>"); prevN = -1; }
+      Array.prototype.forEach.call(slots.children, function (s, i) {
+        var f = i < d.n; if (f && !s.classList.contains("f") && prevN >= 0) { s.classList.add("nw"); s.style.animationDelay = (i - prevN) * 70 + "ms"; }
+        s.classList.toggle("f", f);
+      });
+      if (prevN >= 0 && prevN !== d.n) { live.classList.remove("bump"); void live.offsetWidth; live.classList.add("bump"); }
+      prevN = d.n;
+      var m = Math.max(0, Math.round((now - d.t) / 60));
+      if (m < 1) say(age, "srv.age0", "just now"); else say(age, "srv.age", "{n} min ago", { n: m });
+      say(sr, "srv.players_a", "Players online: {n} of {max}", { n: d.n, max: d.max });
+      live.title = plain(tr("srv.src", "Public reading: gamemonitoring.net"));
+      live.hidden = false;
+    }
+    function keep(r) {
+      if (!r || typeof r.numplayers !== "number" || typeof r.maxplayers !== "number") throw new Error("shape");
+      var max = Math.min(64, Math.max(1, r.maxplayers | 0));
+      return { on: r.status === true, n: Math.min(max, Math.max(0, r.numplayers | 0)), max: max,
+        t: +r.last_update || 0, lo: +r.last_online || 0, at: Date.now() };
+    }
+    function pull() {
+      if (doc.hidden || busy) return;
+      var c = null; try { c = JSON.parse(sstore(KEY) || "null"); } catch (e) {}
+      if (c && Date.now() - c.at < MAXAGE) { last = c; render(c); return; }
+      busy = true;
+      var ctl = window.AbortController ? new AbortController() : null;
+      var to = setTimeout(function () { if (ctl) ctl.abort(); }, 6000);
+      fetch(URL, { signal: ctl ? ctl.signal : undefined, credentials: "omit", referrerPolicy: "no-referrer", cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (j) { last = keep(j && j.response); sstore(KEY, JSON.stringify(last)); render(last); })
+        .catch(function () { render(last); })
+        .then(function () { clearTimeout(to); busy = false; });
+    }
+    pull();
+    setInterval(pull, 30000);
+    doc.addEventListener("visibilitychange", pull);
+  }
+
   /* ------------------------------------------------ search palette */
   var idx = null, pal, palInput, palList, palSel = 0, palItems = [], lastFocus;
   function loadIndex() {
@@ -1164,7 +1233,7 @@
   }
 
   function init() {
-    initLangMenu(); initOptics(); initMenu(); initCallsign(); initCopy(); initSearch();
+    initLangMenu(); initOptics(); initMenu(); initCallsign(); initCopy(); initLive(); initSearch();
     initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop(); initScan(); initTips();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }

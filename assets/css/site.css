@@ -1535,6 +1535,38 @@ html.fx-off body::before { animation: none; }
 @keyframes srv-sweep { 0%, 45% { transform: translateX(-120%); } 100% { transform: translateX(420%); } }
 @keyframes srv-ping { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(3.4); opacity: 0; } }
 .fx-off .srv::after, .fx-off .srv-ping i { animation: none; }
+/* live reading (site.js adds these only when gamemonitoring.net answers with a fresh reading) */
+.srv-st { flex: none; padding: 3px 7px 2px; font-size: 10.5px; line-height: 1; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap;
+  color: var(--on-sec); background: var(--green); box-shadow: 0 0 12px rgba(var(--green-rgb), .55); }
+.srv-st[hidden], .srv-live[hidden] { display: none; }
+.srv-live { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
+.srv-cnt { font: 700 21px/1 var(--f-mono); letter-spacing: .02em; color: var(--hi); text-shadow: 0 0 12px rgba(var(--green-rgb), .7); font-variant-numeric: tabular-nums; }
+.srv-cnt i { margin: 0 2px; font-style: normal; color: var(--green); }
+.srv-cnt b + i + b { font-size: 14px; color: var(--txt2); text-shadow: none; }
+.srv-slots { display: inline-flex; gap: 3px; }
+.srv-slots i { width: 5px; height: 16px; transform: skewX(-14deg); background: rgba(var(--green-rgb), .1); border: 1px solid rgba(var(--green-rgb), .35); }
+.srv-slots i.f { background: var(--green); border-color: var(--green); box-shadow: 0 0 8px rgba(var(--green-rgb), .85); }
+.srv-age { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--txt2); }
+.srv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.srv-off { border-color: rgba(var(--red-rgb), .6); box-shadow: 0 0 22px rgba(var(--red-rgb), .16), inset 0 0 16px rgba(var(--red-rgb), .06);
+  background: linear-gradient(90deg, rgba(var(--red-rgb), .16), rgba(var(--red-rgb), .04) 60%), rgba(var(--bg-rgb), .72); }
+.srv-off::after { display: none; }
+.srv-off .srv-ping { background: var(--red); box-shadow: 0 0 10px var(--red); }
+.srv-off .srv-ping i { border-color: var(--red); }
+.srv-off .srv-k { color: var(--red); }
+.srv-off .srv-st { color: #fff; background: var(--red); box-shadow: 0 0 12px rgba(var(--red-rgb), .55); }
+.srv-off .srv-name { border-color: rgba(var(--red-rgb), .45); }
+@media (max-width: 1359px) { .srv-on .srv-meta { display: none; } }
+@media (max-width: 1099px) { .srv-age { display: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .srv-st { animation: srv-st 3.2s steps(1) infinite; }
+  .srv-slots i.nw { animation: srv-slot .5s steps(4) both; }
+  .srv-live.bump .srv-cnt { animation: srv-bump .45s steps(3); }
+}
+@keyframes srv-st { 0%, 88%, 100% { opacity: 1; } 90%, 94% { opacity: .35; } }
+@keyframes srv-slot { 0% { opacity: 0; } 50% { opacity: 1; } 75% { opacity: .2; } 100% { opacity: 1; } }
+@keyframes srv-bump { 0% { transform: translateX(-3px); color: var(--green); } 50% { transform: translateX(2px); } 100% { transform: none; } }
+.fx-off .srv-st, .fx-off .srv-slots i, .fx-off .srv-live .srv-cnt { animation: none; }
 .fx-off .hfx *, .fx-off .p-home .home-h1 { animation: none; } /* the site's own effects switch */
 @keyframes hfx-spin { to { transform: rotate(360deg); } }
 @keyframes hfx-blip { 0% { opacity: 1; } 60%, 100% { opacity: .15; } }
