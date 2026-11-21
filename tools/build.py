@@ -116,6 +116,44 @@ DOCTRINE = [
 # Drone sight ranges, read from $profile:INDFORGE_DroneSight/config.json.
 DRONE_RANGES = [("intel.drone_stand", 300), ("intel.drone_crouch", 180), ("intel.drone_prone", 100)]
 
+# Tips page: how to use each feature, mod by mod.
+# (tip id, role, state, link): role p = player, a = server admin, m = Game Master / mission maker;
+# state "in" = in the Workshop release, "inc" = merged after it (shown as Incoming).
+# Texts: tools/i18n/tips/<lang>.json, keys tips.<id>.h (title), .s (steps), .x (optional hint).
+TIPS = [
+    ("conflict-pve", [
+        ("cp-base", "p", "in", "news/#base"), ("cp-fuel", "p", "in", None), ("cp-sabot", "p", "in", None),
+        ("cp-hesco", "p", "in", None), ("cp-drone", "p", "in", "news/#drones"), ("cp-jam", "p", "in", None),
+        ("cp-hq", "p", "in", "news/#hq"), ("cp-mortar", "p", "in", "news/#fires"), ("cp-spread", "p", "in", None),
+        ("cp-doct", "p", "in", "news/#doctrine"), ("cp-mark", "p", "in", None), ("cp-shovel", "p", "in", None),
+        ("cp-rank", "p", "in", None), ("cp-cram", "p", "in", None),
+        ("cp-mavic", "p", "inc", "news/#light"), ("cp-wx", "p", "inc", "news/#weather"),
+        ("cp-ambush", "p", "inc", "news/#ambush"), ("cp-air", "p", "inc", "news/#air"),
+        ("cp-radio", "p", "inc", "news/#radio"), ("cp-night", "p", "inc", "news/#night"),
+        ("cp-cmd", "a", "in", "admins/#cmds"), ("cp-cfg", "a", "in", "admins/#cfg"), ("cp-logs", "a", "in", "admins/#logs"),
+    ]),
+    ("forest", [
+        ("fo-same", "p", "in", "#conflict-pve"), ("fo-base", "p", "in", None), ("fo-snipe", "p", "in", None),
+        ("fo-road", "p", "in", None), ("fo-adm", "a", "in", "workshop/forest/#deps"),
+    ]),
+    ("enhanced-compositions", [
+        ("ec-gen", "p", "in", None), ("ec-cmd", "p", "in", None), ("ec-gar", "p", "in", None), ("ec-svc", "p", "in", None),
+        ("ec-gold", "p", "in", None), ("ec-gm", "m", "in", None), ("ec-adm", "a", "in", None),
+    ]),
+    ("rcd-wcs", [("rw-rank", "p", "in", None), ("rw-tpn", "p", "in", None), ("rw-iff", "p", "in", None), ("rw-kit", "p", "in", None)]),
+    ("rcd-rhs", [("rr-where", "p", "in", None)]),
+    ("solo-push-pull", [("sp-push", "p", "in", None)]),
+    ("off-road-vehicles", [("or-torque", "p", "in", None), ("or-gm", "m", "in", None)]),
+    ("ai-framework", [("af-heli", "p", "in", None), ("af-gar", "p", "in", None), ("af-setup", "m", "in", None), ("af-check", "a", "in", None)]),
+    ("packs", [
+        ("auf-side", "p", "in", "workshop/auc-factions/"), ("auv-rank", "p", "in", "workshop/auc-vehicles/"),
+        ("auc-scen", "p", "in", "workshop/auc-conflict/"), ("ctrp", "p", "in", "workshop/cherchetoi-rp-vehicles/"),
+        ("mfia", "p", "in", "workshop/modern-fia/"), ("tal", "p", "in", "workshop/talibanmod-red-side-v2/"),
+        ("lav", "p", "in", "workshop/lav-25-desert/"), ("uaz", "p", "in", "workshop/uaz-452-offroad/"),
+    ]),
+]
+TIP_ROLES = [("p", "tips.r.p"), ("a", "tips.r.a"), ("m", "tips.r.m")]
+
 H = html.escape
 
 
@@ -139,6 +177,13 @@ def flatten(d):
 
 # ---------------------------------------------------------------- i18n
 SRC = {l: load(os.path.join(TOOLS, "i18n", l + ".json")) for l, _ in LANGS}
+# Tips texts live apart: written in French first, the other languages get the French text
+# until their own tools/i18n/tips/<lang>.json exists.
+_TIPS_DIR = os.path.join(TOOLS, "i18n", "tips")
+TIPS_FR_ONLY = not os.path.exists(os.path.join(_TIPS_DIR, "en.json"))
+for _l in SRC:
+    _p = os.path.join(_TIPS_DIR, _l + ".json")
+    SRC[_l].update(load(_p if os.path.exists(_p) else os.path.join(_TIPS_DIR, "fr.json")))
 FLAT = {l: flatten(SRC[l]) for l in SRC}
 E = FLAT["en"]
 for l, d in FLAT.items():
@@ -365,7 +410,7 @@ def icon(name):
 
 # ---------------------------------------------------------------- shell
 NAV = [
-    ("", "nav.home", "home"), ("workshop/", "nav.mods", "mods"), ("admins/", "nav.admins", "admins"),
+    ("", "nav.home", "home"), ("workshop/", "nav.mods", "mods"), ("tips/", "nav.tips", "tips"), ("admins/", "nav.admins", "admins"),
     ("news/", "nav.intel", "intel"), ("changelog/", "nav.log", "log"), ("roadmap/", "nav.status", "status"),
     ("about/", "nav.about", "about"),
 ]
@@ -1126,6 +1171,65 @@ def status():
     page("roadmap/", "statusp.title", body, "status")
 
 
+def tips():
+    total = sum(len(x[1]) for x in TIPS)
+
+    def card(sec_n, i, tid, role, state, link):
+        k = "tips.%s." % tid
+        tags = t("tips.r." + role, "span", "trole trole-" + role,
+                 attrs=ta("title", "tips.r.m_d") if role == "m" else "")
+        if state == "inc":
+            tags += badge_inc()
+        x = '<p class="tip-x"><b>%s</b>%s</p>' % (t("tips.tip"), t(k + "x")) if (k + "x") in E else ""
+        more = '<a class="tip-more mono" href="%s">%s%s</a>' % (url(link) if not link.startswith("#") else link, t("tips.more"), icon("arrow")) if link else ""
+        return """<article class="tip" id="t-%s" data-role="%s">
+  <header class="tip-h"><span class="tip-code mono" aria-hidden="true">T%02d.%02d</span><span class="tip-tags">%s</span></header>
+  %s
+  <ol class="tip-s">%s</ol>
+  %s
+  <footer class="tip-f">%s<label class="tip-ok js-only"><input type="checkbox" value="%s"><span class="tip-box" aria-hidden="true"></span>%s</label></footer>
+</article>""" % (tid, role, sec_n, i, tags, t(k + "h", "h3"), tl(k + "s"), x, more, tid, t("tips.got"))
+
+    secs, links = [], []
+    for n, (sid, rows) in enumerate(TIPS, 1):
+        cards = "".join(card(n, i, *r) for i, r in enumerate(rows, 1))
+        if sid == "packs":
+            img = '<span class="tsec-img tsec-ico" aria-hidden="true">%s</span>' % icon("subs")
+            title, sub, page_a = t("tips.packs"), t("tips.packs_d", "p", "dim"), ""
+            thumb = '<span class="tn-ico" aria-hidden="true">%s</span>' % icon("subs")
+        else:
+            m = MODS[sid]
+            img = '<img class="tsec-img" src="%sassets/img/thumbs/%s.webp" width="480" height="270" alt="" loading="lazy" decoding="async">' % (BASE, sid)
+            title, sub = H(name(m)), t("m.%s.tag" % sid, "p", "dim")
+            page_a = '<a class="tsec-link mono" href="%s">%s%s</a>' % (url("workshop/%s/" % sid), t("tips.page"), icon("arrow"))
+            thumb = '<img src="%sassets/img/thumbs/%s.webp" width="48" height="27" alt="" loading="lazy" decoding="async">' % (BASE, sid)
+        secs.append("""<section class="tsec" id="%s" aria-labelledby="h-%s">
+  <header class="tsec-h">%s<div class="tsec-t"><h2 id="h-%s"><span class="sec-code" aria-hidden="true">T%02d</span>%s</h2>%s</div>%s</header>
+  <div class="tips">%s</div>
+</section>""" % (sid, sid, img, sid, n, title, sub, page_a, cards))
+        links.append('<a href="#%s" data-tsec="%s">%s<span class="tn-name">%s</span><i class="mono">%d</i></a>' % (sid, sid, thumb, title, len(rows)))
+
+    roles = ('<label class="seg"><input type="radio" name="tip-role" value="all" checked><span>%s</span></label>' % t("tips.r.all")
+             + "".join('<label class="seg"><input type="radio" name="tip-role" value="%s"><span>%s</span></label>' % (r, t(k)) for r, k in TIP_ROLES))
+    bar = """<div class="tipbar js-only" id="tipbar">
+  <fieldset class="tip-roles"><legend class="mono">%s</legend><div class="segs">%s</div></fieldset>
+  <div class="tip-prog">
+    <span class="tip-rank"><small class="mono">%s</small>%s</span>
+    <span class="tip-meter" aria-hidden="true"><i id="tip-bar"></i></span>
+    <span class="mono" aria-live="polite">%s</span>
+  </div>
+  <div class="tip-act"><label class="tip-hide"><input type="checkbox" id="tip-hide"><span class="tip-box" aria-hidden="true"></span>%s</label><button type="button" class="wsf-reset" id="tip-reset" disabled>%s</button></div>
+</div>""" % (t("tips.role"), roles, t("tips.rank_l"), t("tips.rank.0", "b", "", None, 'id="tip-rank"'),
+             t("tips.prog", "span", "", {"n": 0, "t": total}, 'id="tip-n"'), t("tips.hide"), t("tips.reset"))
+    body = """<div class="tips-page"%s>%s
+<div class="wrap tipgrid">
+  <nav class="tipnav" aria-label="Mods"><h2 class="panel-h">%s</h2>%s</nav>
+  <div class="tipmain">%s%s%s<p class="tip-empty mono" hidden>%s</p></div>
+</div></div>""" % (' lang="fr"' if TIPS_FR_ONLY else "", phead("TIP-03", "tips.kicker", "tips.h1", "tips.lead"),
+                   t("tips.mods"), "".join(links), bar, t("tips.note", "p", "note"), "".join(secs), t("tips.empty"))
+    page("tips/", "tips.title", body, "tips", cls="p-tips")
+
+
 def about():
     roster = [("Volmog_0", "about.r_volmog"), ("Unknown Soldiers", "about.r_soldiers"),
               ("Captain Valaaks", "about.r_valaaks")]
@@ -1184,6 +1288,9 @@ def search_index():
         items.append({"k": "cfg", "t": f["profile"], "x": " ".join(r["key"] for r in f["rows"]), "u": url("admins/#" + cfg_anchor(f["profile"]))})
     for a in ("hq", "doctrine", "fires", "drones", "light", "plans", "ambush", "air", "weather", "night", "radio", "base", "guide"):
         items.append({"k": "page", "t": "intel." + a, "tk": 1, "s": "intel.title", "u": url("news/#" + a)})
+    for _sid, rows in TIPS:
+        for tid, _r, _s, _l in rows:
+            items.append({"k": "page", "t": "tips.%s.h" % tid, "tk": 1, "s": "tips.title", "u": url("tips/#t-" + tid)})
     for a, key in (("install", "admins.install"), ("json", "admins.json"), ("scen", "admins.scen"), ("profile", "admins.profile"), ("logs", "admins.logs")):
         items.append({"k": "page", "t": key, "tk": 1, "s": "admins.title", "u": url("admins/#" + a)})
     with open(os.path.join(ROOT, "assets", "search.json"), "w", encoding="utf-8", newline="\n") as f:
@@ -1259,6 +1366,7 @@ if __name__ == "__main__":
     home()
     about()
     mods_index()
+    tips()
     for s in ORDER:
         mod_page(s)
     admins()

@@ -1,0 +1,410 @@
+{
+  "_note": "Page Tips. Source française, la seule pour l'instant : build.py la sert aux langues qui n'ont pas encore leur fichier tips/<langue>.json.",
+  "nav.tips": "Tips",
+  "tips.title": "Tips",
+  "tips.kicker": "Manuel de terrain",
+  "tips.h1": "Tips",
+  "tips.lead": "Toutes les fonctionnalités de nos mods, classées par mod, et la façon de s'en servir. Cochez les fiches que vous maîtrisez pour monter en grade : votre progression reste sur votre appareil.",
+  "tips.role": "Je suis",
+  "tips.r.all": "Tous",
+  "tips.r.p": "Joueur",
+  "tips.r.a": "Admin",
+  "tips.r.m": "Créateur",
+  "tips.r.m_d": "Game Master et créateurs de missions",
+  "tips.mods": "Mods",
+  "tips.n": "{n} fiches",
+  "tips.got": "Acquis",
+  "tips.hide": "Masquer les acquis",
+  "tips.rank_l": "Grade de terrain",
+  "tips.rank": ["Recrue", "Soldat", "Caporal", "Sergent", "Lieutenant", "Capitaine", "Major", "Colonel"],
+  "tips.prog": "{n} / {t} fiches acquises",
+  "tips.reset": "Tout décocher",
+  "tips.tip": "Astuce",
+  "tips.more": "En savoir plus",
+  "tips.page": "Fiche du mod",
+  "tips.empty": "Aucune fiche pour ce choix.",
+  "tips.note": "Les fiches marquées <b>À venir</b> sont intégrées en développement et arrivent avec la prochaine mise à jour Workshop de Conflict PvE.",
+  "tips.packs": "Packs de contenu",
+  "tips.packs_d": "Factions, véhicules et équipements prêts à l'emploi.",
+
+  "tips.cp-base.h": "Prendre une base à générateur",
+  "tips.cp-base.s": [
+    "Gardez la liaison radio avec votre QG : sans elle, le plein ne compte pas.",
+    "Réparez le générateur du QG FIA avec une clé (8 s).",
+    "Versez-y 18 L de carburant (environ 20 s) en restant à côté. La sirène de la base sonne pendant le plein.",
+    "Plein terminé : la base est à vous, tout de suite."
+  ],
+  "tips.cp-base.x": "Rester dans la zone ne prend plus une base à générateur. Une caisse dans chaque QG à générateur contient une clé et un jerrican.",
+
+  "tips.cp-fuel.h": "Garder la base ravitaillée",
+  "tips.cp-fuel.s": [
+    "Une base à générateur démarre sans ravitaillement : tout vient du générateur.",
+    "En marche, il donne à sa base 10 ravitaillements par litre brûlé, jamais plus que ce que le stock de la base peut contenir.",
+    "Un dépôt de carburant allié, ou le camion-citerne M1091 déployé près du générateur, le garde plein.",
+    "Réservoir vide : le ravitaillement s'arrête, mais la base reste à vous."
+  ],
+  "tips.cp-fuel.x": "Le M1091 de l'arsenal US se déploie en station de carburant. Le petit réservoir de carburant fonctionne aussi.",
+
+  "tips.cp-sabot.h": "Arrêter le saboteur",
+  "tips.cp-sabot.s": [
+    "Environ 30 s après votre prise, le soldat ennemi le plus proche marche vers le générateur.",
+    "Il lui faut 8 s à la clé pour le mettre en panne : la base repasse à l'ennemi et la sirène sonne.",
+    "Tuez-le avant. S'il tombe, le suivant le plus proche prend le relais."
+  ],
+  "tips.cp-sabot.x": "Un générateur saboté garde son carburant : une simple réparation suffit pour reprendre la base.",
+
+  "tips.cp-hesco.h": "Emmurer le générateur",
+  "tips.cp-hesco.s": [
+    "Les HESCO ne craignent ni les balles, ni les grenades, ni les véhicules.",
+    "Seuls les explosifs les détruisent : 1, 2 ou 4 charges M112 selon leur taille.",
+    "Générateur emmuré : un brècheur ennemi pose des charges sur le mur le plus proche.",
+    "Minuterie de 20 s : tuez-le ou désamorcez les charges."
+  ],
+
+  "tips.cp-drone.h": "Échapper aux drones ennemis",
+  "tips.cp-drone.s": [
+    "Un drone vous voit à moins de <b>300 m</b> debout, <b>180 m</b> accroupi, <b>100 m</b> couché.",
+    "Restez immobile : ces portées baissent de 30 %. La nuit et la météo les réduisent encore.",
+    "Mettez du feuillage entre vous et le drone, même le buisson où vous êtes. Sous 15 m, c'est le test du drone lui-même qui s'applique.",
+    "Perdus de vue, ils vous cherchent environ deux minutes là où ils vous ont vus en dernier : éloignez-vous."
+  ],
+
+  "tips.cp-jam.h": "Allumer son brouilleur à dos",
+  "tips.cp-jam.s": [
+    "Le sac brouilleur démarre éteint : allumez-le avec son action marche/arrêt.",
+    "Allumé, il arrête les drones FPV dans un rayon de 50 m.",
+    "Le brouilleur radar TPN-19 construit dans une base a le même interrupteur, sur son côté."
+  ],
+
+  "tips.cp-hq.h": "Ne pas attirer l'état-major",
+  "tips.cp-hq.s": [
+    "Les chasseurs ne viennent que sur renseignement : un drone ou une patrouille ennemie qui vous repère, vous ou votre véhicule.",
+    "Avec deux rapports, l'ennemi calcule votre direction et votre vitesse : il va là où vous devriez être maintenant.",
+    "Une fois repérés, changez de direction.",
+    "Les groupes de chasseurs et les parachutistes grossissent avec le nombre de joueurs proches."
+  ],
+
+  "tips.cp-mortar.h": "Survivre aux mortiers",
+  "tips.cp-mortar.s": [
+    "Pas de mortier sans observateur : un chef de groupe ou un drone de reconnaissance doit vous voir, et vous devez rester sur place assez longtemps.",
+    "D'abord les coups de réglage, puis le tir d'efficacité : au premier impact, bougez.",
+    "Tuez l'observateur ou cassez sa vue.",
+    "Contre-batterie : les batteries, installées dans une base ennemie de 900 m à 3,5 km de la cible, peuvent être trouvées et détruites."
+  ],
+
+  "tips.cp-spread.h": "Rester dispersés",
+  "tips.cp-spread.s": [
+    "Les lance-roquettes de l'IA visent aussi l'infanterie, dans toutes les factions.",
+    "Un groupe serré se prend une seule roquette pour tous : gardez de l'espace entre vous."
+  ],
+
+  "tips.cp-doct.h": "Lire la doctrine ennemie",
+  "tips.cp-doct.s": [
+    "Un groupe qui vous repère avant que vous ne le voyiez retient son feu et approche.",
+    "Pris au dépourvu, la moitié du groupe recule en tirant pendant que l'autre court vers un couvert, puis ils reviennent.",
+    "Leur portée de tir dépend de votre posture et de vos mouvements. Dès que vous tirez, vous perdez l'avantage de votre posture."
+  ],
+
+  "tips.cp-mark.h": "Repérer ses alliés",
+  "tips.cp-mark.s": [
+    "Une icône s'affiche au-dessus des alliés jusqu'à 50 m, et jusqu'à 300 m à travers une optique.",
+    "Les membres de votre groupe prennent la couleur de leur équipe.",
+    "Les noms apparaissent de près."
+  ],
+
+  "tips.cp-shovel.h": "Abattre un arbre à la pelle",
+  "tips.cp-shovel.s": [
+    "La pelle coupe aussi les arbres, pas seulement les buissons.",
+    "La souche disparaît avec l'arbre."
+  ],
+
+  "tips.cp-rank.h": "Grades et arsenal",
+  "tips.cp-rank.s": [
+    "L'arsenal US complet est ouvert à tous les grades, sauf la pelle dorée (sergent).",
+    "Vos grades sont gardés après un redémarrage du serveur ou de la mission.",
+    "Garage et héliport : un meilleur véhicule ne coûte jamais moins cher en ravitaillement, en XP ou en grade."
+  ],
+
+  "tips.cp-cram.h": "Se fier au C-RAM",
+  "tips.cp-cram.s": [
+    "Le C-RAM de la base principale engage toutes les menaces.",
+    "Il est accompagné d'une sirène d'attaque."
+  ],
+
+  "tips.cp-mavic.h": "Lire le feu du Mavic",
+  "tips.cp-mavic.s": [
+    "<span class=\"led led-g\" aria-hidden=\"true\"></span><b>Vert :</b> en patrouille, rien de repéré.",
+    "<span class=\"led led-r\" aria-hidden=\"true\"></span><b>Rouge :</b> il suit une cible. Vous êtes observés.",
+    "<span class=\"led led-rf\" aria-hidden=\"true\"></span><b>Rouge clignotant rapide :</b> il guide une bombe planante. Bougez, tout de suite.",
+    "<span class=\"led led-o\" aria-hidden=\"true\"></span><b>Orange clignotant :</b> il fouille là où il vous a perdus."
+  ],
+  "tips.cp-mavic.x": "Jamais de feu sur un FPV. Abattez le Mavic ou cassez sa vue.",
+
+  "tips.cp-wx.h": "Jouer avec la météo",
+  "tips.cp-wx.s": [
+    "Les drones ennemis restent au sol dès 10 m/s de vent, sous une forte pluie ou dans un brouillard épais.",
+    "Les largages et vagues d'hélicoptères s'arrêtent dès 14 m/s, les parachutistes dès 8 m/s.",
+    "Le brouillard et la pluie raccourcissent la vue des observateurs de mortier. La thermique voit à travers un brouillard léger."
+  ],
+
+  "tips.cp-ambush.h": "Déjouer les embuscades routières",
+  "tips.cp-ambush.s": [
+    "L'ennemi suit la route devant votre véhicule et pose une zone de destruction 400 à 600 m plus loin, du côté le plus haut.",
+    "Personne ne tire avant que vous n'entriez dans la zone : la première roquette, puis tout le monde.",
+    "Des barrages persistants apparaissent sur les routes goudronnées que vous empruntez le plus et changent de place tous les deux jours environ : variez vos itinéraires."
+  ],
+
+  "tips.cp-air.h": "Esquiver les frappes",
+  "tips.cp-air.s": [
+    "Une bombe planante vise des joueurs à pied qu'un Mavic garde en vue : son feu rouge clignote vite.",
+    "Une sirène sur une base que vous venez de prendre annonce un missile de croisière : sortez de la base.",
+    "Les Geran partent de camions lanceurs garés sur des routes à plusieurs kilomètres : détruisez le camion ou tuez son chauffeur, et le raid s'arrête.",
+    "Jamais sur la base principale d'une faction, jamais quand la météo cloue les aéronefs au sol."
+  ],
+
+  "tips.cp-radio.h": "Écouter les alertes radio",
+  "tips.cp-radio.s": [
+    "De courts messages préviennent les joueurs concernés : drone au-dessus, groupe d'interception en route, mortier, Geran, missile, avion, embuscade.",
+    "Ils ne donnent jamais la position exacte de l'ennemi."
+  ],
+
+  "tips.cp-night.h": "Combattre de nuit",
+  "tips.cp-night.s": [
+    "Certains soldats ennemis portent des jumelles de vision nocturne, plus souvent les tireurs d'élite et les forces spéciales.",
+    "Ce qu'un soldat voit dépend de ce qu'il porte : œil nu, vision nocturne ou lunette thermique. Certains drones ennemis ont une caméra thermique."
+  ],
+  "tips.cp-night.x": "La nuit ne vous cache pas de tout le monde.",
+
+  "tips.cp-cmd.h": "Piloter le serveur au chat",
+  "tips.cp-cmd.s": [
+    "Tapez les commandes dans la discussion en jeu avec le rôle d'administrateur du serveur ou de session, ou envoyez-les par RCON. La réponse revient dans la discussion.",
+    "<code>#setrank &lt;nom du joueur&gt; &lt;grade&gt;</code> : donne un grade, gardé après un redémarrage.",
+    "<code>#aidoctrine status</code> et <code>#enemyhq status</code> : l'état de la doctrine de l'IA et de l'état-major ennemi.",
+    "<code>#aidoctrine mod &lt;nom&gt; &lt;facteur&gt; [secondes]</code> : multiplie les portées d'engagement, sans redémarrer."
+  ],
+
+  "tips.cp-cfg.h": "Régler Conflict PvE",
+  "tips.cp-cfg.s": [
+    "Nos systèmes se règlent dans les fichiers <code>$profile:INDFORGE_*/config.json</code> du profil du serveur.",
+    "Un fichier absent est créé avec ses valeurs par défaut au démarrage. Un fichier existant n'est jamais écrasé.",
+    "Les systèmes tiers gardent leurs fichiers : <code>$profile:CET/CETConfig.json</code> (chasseurs), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (hélicoptères), <code>$profile:EnhancedCompositions/Garrison.json</code> (garnisons).",
+    "Le serveur tourne sur la version publiée sur le Workshop : une mise à jour n'arrive qu'après sa republication."
+  ],
+
+  "tips.cp-logs.h": "Suivre l'IA dans le journal",
+  "tips.cp-logs.s": [
+    "Cherchez <code>INDFORGE enemy HQ:</code> pour les pistes, groupes, plans et frappes, avec un bilan toutes les 5 minutes.",
+    "<code>INDFORGE AI doctrine:</code> au démarrage, à chaque changement de météo et toutes les 5 minutes.",
+    "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> et <code>INDFORGE fuel truck:</code> pour la capture des bases."
+  ],
+
+  "tips.fo-same.h": "Tout Conflict PvE s'applique",
+  "tips.fo-same.s": [
+    "Même IA, même doctrine, même arsenal, mêmes grades et mêmes réglages que sur Everon.",
+    "Toutes les fiches Conflict PvE ci-dessus valent aussi à Belleau Wood."
+  ],
+
+  "tips.fo-base.h": "Préparer l'assaut d'une base",
+  "tips.fo-base.s": [
+    "Chaque base à prendre est défendue par 3 à 4 groupes : escouade de fusiliers, équipe de mitrailleuse, équipe de feu, équipe antichar.",
+    "Ne venez pas en véhicule léger jusqu'aux murs : l'équipe antichar vous attend."
+  ],
+
+  "tips.fo-snipe.h": "Se méfier des champs",
+  "tips.fo-snipe.s": [
+    "Des tireurs d'élite Spetsnaz Overwatch, en équipe ou seuls, traquent leurs proies dans les champs autour des bases.",
+    "Traversez vite les espaces ouverts et longez les lisières."
+  ],
+
+  "tips.fo-road.h": "Rouler en forêt",
+  "tips.fo-road.s": [
+    "15 barrages forestiers sont tenus par leurs gardes.",
+    "Des patrouilles à pied circulent entre les bases, avec des véhicules armés et de transport."
+  ],
+
+  "tips.fo-adm.h": "Monter un serveur Forest",
+  "tips.fo-adm.s": [
+    "Mettez l'ID de scénario de Forest dans <code>game.scenarioId</code>.",
+    "Prenez le bloc de mods complet de la fiche du mod : Forest, Conflict PvE et ses dépendances, Belleau Wood et les deux mods ferroviaires.",
+    "Mêmes fichiers de profil et mêmes commandes que Conflict PvE."
+  ],
+
+  "tips.ec-gen.h": "Réparer et alimenter le générateur",
+  "tips.ec-gen.s": [
+    "Le générateur du QG FIA démarre en panne et à sec. Il est indestructible.",
+    "Réparez-le avec une clé : 8 s, toutes factions.",
+    "Remplissez-le avec un jerrican : il tourne jusqu'à ce que le réservoir soit vide."
+  ],
+  "tips.ec-gen.x": "Une caisse dans chaque QG à générateur contient une clé et un jerrican.",
+
+  "tips.ec-cmd.h": "Commander depuis la table du QG",
+  "tips.ec-cmd.s": [
+    "Les actions du commandant sont regroupées sur la table du QG, à côté du panneau de construction.",
+    "Trois familles : logistique, appui au combat, construction."
+  ],
+
+  "tips.ec-gar.h": "Garder ses bâtiments",
+  "tips.ec-gar.s": [
+    "Caserne : une équipe de feu de 5 soldats patrouille autour du bâtiment.",
+    "Armurerie, ateliers véhicules et dépôt de carburant : deux gardes postés. Antenne : un binôme de reconnaissance.",
+    "La première garnison est gratuite. Un groupe anéanti revient après 10 minutes, payé en ravitaillement, si aucun ennemi n'est proche.",
+    "Action <b>Garnison</b> sur le bâtiment pour la couper ou la rallumer, dès le grade de caporal."
+  ],
+  "tips.ec-gar.x": "Les soldats de garnison ne se recrutent pas et ne sont pas sauvegardés.",
+
+  "tips.ec-svc.h": "Faire réparer son véhicule",
+  "tips.ec-svc.s": [
+    "Tant qu'un garde est en vie, arrêtez-vous à côté du dépôt de carburant : il refait le plein de vos véhicules gratuitement.",
+    "Les ateliers réparent et réarment vos véhicules, contre du ravitaillement."
+  ],
+
+  "tips.ec-gold.h": "La pelle dorée",
+  "tips.ec-gold.s": [
+    "Dans les arsenaux US et USSR, dès le grade de sergent.",
+    "Avec elle, vous construisez deux fois plus vite."
+  ],
+
+  "tips.ec-gm.h": "Monter une base compacte",
+  "tips.ec-gm.s": [
+    "Petites compositions Conflict : antenne, maintenance véhicules et zone de vie US et USSR, petit QG FIA, tente et cabane, avec ou sans générateur.",
+    "La zone de vie donne la liste complète des groupes d'IA dans son menu.",
+    "Pensées pour les cartes où le mode Conflict est difficile à monter."
+  ],
+
+  "tips.ec-adm.h": "Activer les garnisons",
+  "tips.ec-adm.s": [
+    "Tous les réglages sont dans <code>$profile:EnhancedCompositions/Garrison.json</code>.",
+    "Le fichier est créé au premier lancement avec <code>\"Enabled\": false</code> : passez-le à <code>true</code>.",
+    "Le mod ne l'écrase jamais."
+  ],
+
+  "tips.rw-rank.h": "Drones : prix et grades",
+  "tips.rw-rank.s": [
+    "<b>Caporal :</b> drone FPV-RPG (125), FPV (100), largueur (75), reconnaissance (50), batteries (2), contrôleur et lunettes (0).",
+    "<b>Soldat :</b> sac brouilleur (100).",
+    "<b>Sergent :</b> antenne de drone longue portée (200). <b>Lieutenant :</b> station de commandement de drones (300)."
+  ],
+
+  "tips.rw-tpn.h": "Construire le brouilleur TPN-19",
+  "tips.rw-tpn.s": [
+    "Construisez-le dans une base Conflict, en US, USSR ou FIA, pour 300.",
+    "Il brouille les drones dans un rayon de 250 m dès qu'il est construit.",
+    "Interrupteur marche/arrêt sur la poignée de la porte latérale, utilisable par tous. Les bruits du générateur suivent son état."
+  ],
+  "tips.rw-tpn.x": "Les Game Masters peuvent aussi le poser.",
+
+  "tips.rw-iff.h": "Ne pas brouiller ses propres drones",
+  "tips.rw-iff.s": [
+    "Porté, tenu ou construit dans une base, un brouilleur ne coupe plus les drones de son camp et de ses alliés.",
+    "Posé au sol, il brouille tout le monde."
+  ],
+  "tips.rw-iff.x": "Ne laissez pas traîner votre sac brouilleur près de vos pilotes.",
+
+  "tips.rw-kit.h": "Équiper un pilote de drone",
+  "tips.rw-kit.s": [
+    "Le contrôleur de drone se range dans l'emplacement d'arme secondaire.",
+    "Un masque se porte avec les lunettes de drone."
+  ],
+
+  "tips.rr-where.h": "Trouver les drones RHS",
+  "tips.rr-where.s": [
+    "Drones FPV, largueurs et de reconnaissance, chacun avec sa batterie, plus le contrôleur, les lunettes et le sac brouilleur.",
+    "Dans les arsenaux FFA, ION, RHS MSV et USMC."
+  ],
+
+  "tips.sp-push.h": "Pousser un véhicule seul",
+  "tips.sp-push.s": [
+    "Approchez-vous d'une voiture, d'un camion ou même d'un BTR.",
+    "Utilisez l'action pour pousser ou retourner le véhicule : seul, vous y arrivez maintenant.",
+    "Compatible avec tous les mods, sans dépendance."
+  ],
+  "tips.sp-push.x": "Une overdose de Push-Pull peut nuire à la santé.",
+
+  "tips.or-torque.h": "Franchir une pente raide",
+  "tips.or-torque.s": [
+    "Si la marche avant ne suffit pas, passez la marche arrière : elle a plus de couple."
+  ],
+
+  "tips.or-gm.h": "Essayer les véhicules",
+  "tips.or-gm.s": [
+    "Lancez le scénario Game Master <b>Everon Explorer</b>.",
+    "4×4 et 6×6 en six couleurs, plus une version dépannage et assistance médicale."
+  ],
+
+  "tips.af-heli.h": "Abattre l'hélicoptère de patrouille",
+  "tips.af-heli.s": [
+    "Il apparaît près du plus gros groupe de joueurs, ancré sur un point d'intérêt, avec un équipage complet.",
+    "Abattu, sans pilote, sans rotor, posé ou dans l'eau : l'épave disparaît et le suivant attend 23 minutes au total (valeurs livrées)."
+  ],
+
+  "tips.af-gar.h": "Nettoyer une garnison",
+  "tips.af-gar.s": [
+    "Chaque point d'intérêt éligible a deux patrouilles, une serrée et une large.",
+    "De petites équipes fixes tiennent les tours, bunkers et miradors."
+  ],
+
+  "tips.af-setup.h": "Installer AI Framework",
+  "tips.af-setup.s": [
+    "Dans le World Editor, ajoutez les composants INDFORGE à l'entité <code>GameModeCampaign</code> (ou <code>GameMode</code>) de votre mission.",
+    "Copiez <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> vers <code>$profile:INDF_CombatHeliSpawner/config.json</code> : c'est cette copie qui est lue, une fois, au démarrage.",
+    "Sur le <code>CampaignFactionManager</code> de FIA, ajoutez USSR aux <em>Friendly Factions Ids</em>, et FIA sur celui d'USSR. Sinon, les deux factions se battent entre elles.",
+    "Redémarrez le serveur après chaque changement."
+  ],
+
+  "tips.af-check.h": "Vérifier que tout tourne",
+  "tips.af-check.s": [
+    "Au démarrage, le journal doit afficher <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, puis le scan des points d'intérêt et le peuplement des garnisons.",
+    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>) et l'attente de 23 minutes après un abattage.",
+    "N'augmentez pas <code>MaxActiveHelicopters</code> : le vol est scripté, sans évitement entre aéronefs."
+  ],
+
+  "tips.auf-side.h": "AUC - Factions : choisir son camp",
+  "tips.auf-side.s": [
+    "<b>BLUFOR :</b> vous jouez les forces armées ukrainiennes.",
+    "<b>OPFOR :</b> vous jouez le 214e bataillon d'assaut indépendant.",
+    "<b>INDFOR :</b> vous combattez les forces armées russes."
+  ],
+
+  "tips.auv-rank.h": "AUC - Vehicles : débloquer les véhicules",
+  "tips.auv-rank.s": [
+    "Les véhicules BLUFOR (65) et OPFOR (55) se débloquent avec les grades.",
+    "INDFOR : 21 véhicules en camouflage RHS. Civils : 13 véhicules."
+  ],
+
+  "tips.auc-scen.h": "AUC - Conflict : lancer le scénario",
+  "tips.auc-scen.s": [
+    "Scénario <b>AUC HQ Conflict - Kolguyev</b>.",
+    "Protection à l'apparition par WCS_SpawnProtection."
+  ],
+
+  "tips.ctrp.h": "ChercheToi RP : s'habiller et rouler",
+  "tips.ctrp.s": [
+    "Clothing : tenues civiles, motard et presse, et l'équipement SAMU de Captain Valaaks.",
+    "Props : objets des îles Faircroft et Brit Props de Lakes Dan, palmiers de Ben.obj.",
+    "Vehicles : voitures, utilitaires, bus, motos, vélos, karts, bateaux, camions et l'hélicoptère SA342 Gazelle."
+  ],
+
+  "tips.mfia.h": "Modern FIA : le nouvel équipement",
+  "tips.mfia.s": [
+    "Fusil d'assaut bullpup Promet en 6,5×39 mm, chargeur de 30 coups.",
+    "Deux casques balistiques NIJ IIIA et un gilet pare-balles NIJ IV."
+  ],
+
+  "tips.tal.h": "TalibanMod : l'insurrection",
+  "tips.tal.s": [
+    "FIA et USSR deviennent des combattants de rébellions du monde arabe : personnages, gilets, coiffes, véhicules couleur sable.",
+    "Civils et véhicules civils de style arabe, inscriptions arabes sur les panneaux. Scénario Conflict en PvE disponible."
+  ],
+
+  "tips.lav.h": "LAV-25 Desert : choisir sa livrée",
+  "tips.lav.s": [
+    "Quatre schémas de couleurs Tempête du désert.",
+    "Canon M242 Bushmaster de 25 mm et M240 coaxiale. Aucune dépendance."
+  ],
+
+  "tips.uaz.h": "UAZ-452 Offroad : la Boukhanka",
+  "tips.uaz.s": [
+    "Version civile 4×4 en huit couleurs.",
+    "Version dépannage pour les factions Civil, FIA et USSR."
+  ]
+}

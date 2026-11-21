@@ -1075,9 +1075,84 @@
     if (!boot()) scramble();
   }
 
+  /* ------------------------------------------------ tips: role filter, learnt cards, field rank */
+  function initTips() {
+    var bar = $("#tipbar"); if (!bar) return;
+    var KEY = "ifg-tips", RANKS = 8, got = {}, lastRank = -1;
+    var cards = $$(".tip"), secs = $$(".tsec"), boxes = $$(".tip-ok input");
+    var hide = $("#tip-hide"), reset = $("#tip-reset"), rank = $("#tip-rank"), meter = $("#tip-bar"), count = $("#tip-n"), empty = $(".tip-empty");
+    try { JSON.parse(store(KEY) || "[]").forEach(function (k) { got[k] = 1; }); } catch (e) {}
+    function save() { store(KEY, JSON.stringify(Object.keys(got))); }
+    function role() { var r = $("input[name='tip-role']:checked", bar); return r ? r.value : "all"; }
+    function run(pop) {
+      var r = role(), all = 0, done = 0, shown = 0;
+      cards.forEach(function (c) {
+        var id = c.id.slice(2), d = !!got[id], mine = r === "all" || c.getAttribute("data-role") === r;
+        c.classList.toggle("tip-done", d);
+        c.hidden = !mine || (hide.checked && d);
+        if (mine) { all++; if (d) done++; }
+        if (!c.hidden) shown++;
+      });
+      secs.forEach(function (s) {
+        var cs = $$(".tip", s), mine = cs.filter(function (c) { return r === "all" || c.getAttribute("data-role") === r; });
+        var d = mine.filter(function (c) { return got[c.id.slice(2)]; }).length;
+        s.hidden = !cs.some(function (c) { return !c.hidden; });
+        var a = $(".tipnav a[data-tsec='" + s.id + "']");
+        if (a) {
+          a.hidden = !mine.length;
+          a.classList.toggle("full", mine.length > 0 && d === mine.length);
+          $("i", a).textContent = d ? d + "/" + mine.length : mine.length;
+        }
+      });
+      var p = all ? done / all : 0, k = Math.min(RANKS - 1, Math.floor(p * (RANKS - 1) + 1e-9));
+      meter.style.setProperty("--p", p);
+      rank.setAttribute("data-i18n", "tips.rank." + k);
+      rank.innerHTML = tr("tips.rank." + k, rank.innerHTML);
+      if (pop && k > lastRank && lastRank >= 0 && !reduce) {
+        var w = rank.parentNode; w.classList.remove("up"); void w.offsetWidth; w.classList.add("up");
+      }
+      lastRank = k;
+      count.setAttribute("data-i18n-args", JSON.stringify({ n: done, t: all }));
+      count.innerHTML = fmt(tr("tips.prog", "{n} / {t}"), { n: done, t: all });
+      if (empty) empty.hidden = shown > 0;
+      reset.disabled = !Object.keys(got).length;
+    }
+    boxes.forEach(function (b) {
+      b.checked = !!got[b.value];
+      b.addEventListener("change", function () {
+        if (b.checked) got[b.value] = 1; else delete got[b.value];
+        save();
+        var c = b.closest(".tip");
+        if (b.checked && !reduce) { c.classList.remove("tip-pop"); void c.offsetWidth; c.classList.add("tip-pop"); }
+        run(true);
+      });
+    });
+    bar.addEventListener("change", function () { run(false); });
+    reset.addEventListener("click", function () {
+      got = {}; save();
+      boxes.forEach(function (b) { b.checked = false; });
+      run(false);
+    });
+    doc.addEventListener("ifg:lang", function () { run(false); });
+    run(false);
+    // the mod list follows the reading position, and stays in view on phones
+    var links = $$(".tipnav a"); if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          var on = a.getAttribute("data-tsec") === en.target.id;
+          a.classList.toggle("on", on);
+          if (on && a.parentNode.scrollWidth > a.parentNode.clientWidth) a.parentNode.scrollLeft = a.offsetLeft - 12;
+        });
+      });
+    }, { rootMargin: "-25% 0px -65% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+
   function init() {
     initLangMenu(); initOptics(); initMenu(); initCallsign(); initCopy(); initSearch();
-    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop(); initScan();
+    initCounters(); initReveal(); initModFilter(); initCfgFilter(); initSpy(); initPrefetch(); initRadar(); initHomeLists(); initTop(); initScan(); initTips();
     var lang = root.getAttribute("data-lang") || "en";
     if (lang === "en") { applyCurrent(); afterLang(); loadLang("en", function (d) { if (d) dict = d; }); }
     else setLang(lang, false);
