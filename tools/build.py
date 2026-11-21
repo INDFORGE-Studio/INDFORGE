@@ -1203,15 +1203,23 @@ def tips():
             title, sub = H(name(m)), t("m.%s.tag" % sid, "p", "dim")
             page_a = '<a class="tsec-link mono" href="%s">%s%s</a>' % (url("workshop/%s/" % sid), t("tips.page"), icon("arrow"))
             thumb = '<img src="%sassets/img/thumbs/%s.webp" width="48" height="27" alt="" loading="lazy" decoding="async">' % (BASE, sid)
-        secs.append("""<section class="tsec" id="%s" aria-labelledby="h-%s">
-  <header class="tsec-h">%s<div class="tsec-t"><h2 id="h-%s"><span class="sec-code" aria-hidden="true">T%02d</span>%s</h2>%s</div>%s</header>
+        # each mod opens like a new file: a dashed cut line, then a banner over the mod's own picture
+        sep = '<div class="tsep" aria-hidden="true"><span class="tsep-cut">&#9986;&#xFE0E;</span><b class="mono">T%02d / %02d</b></div>' % (n, len(TIPS)) if n > 1 else ""
+        bg = ' style="--tbg:url(\'%sassets/img/thumbs/%s.webp\')"' % (BASE, sid) if sid != "packs" else ""
+        secs.append("""<section class="tsec" id="%s" aria-labelledby="h-%s">%s
+  <header class="tsec-h"%s>
+    <span class="tsec-fig">%s</span>
+    <div class="tsec-t"><p class="tsec-k mono" aria-hidden="true"><span class="sec-code">T%02d</span>MOD %02d / %02d</p><h2 id="h-%s">%s</h2>%s</div>
+    <div class="tsec-side"><span class="tsec-p js-only" aria-hidden="true"><span class="tsec-n mono"><b>0</b> / %d</span><span class="tsec-meter"><i></i></span></span>%s</div>
+  </header>
   <div class="tips">%s</div>
-</section>""" % (sid, sid, img, sid, n, title, sub, page_a, cards))
+</section>""" % (sid, sid, sep, bg, img, n, n, len(TIPS), sid, title, sub, len(rows), page_a, cards))
         links.append('<a href="#%s" data-tsec="%s">%s<span class="tn-name">%s</span><i class="mono">%d</i></a>' % (sid, sid, thumb, title, len(rows)))
 
     roles = ('<label class="seg"><input type="radio" name="tip-role" value="all" checked><span>%s</span></label>' % t("tips.r.all")
              + "".join('<label class="seg"><input type="radio" name="tip-role" value="%s"><span>%s</span></label>' % (r, t(k)) for r, k in TIP_ROLES))
     bar = """<div class="tipbar js-only" id="tipbar">
+  <div class="tip-cur" aria-hidden="true"><span class="tip-cur-img"></span><span class="sec-code"></span><b></b></div>
   <fieldset class="tip-roles"><legend class="mono">%s</legend><div class="segs">%s</div></fieldset>
   <div class="tip-prog">
     <span class="tip-rank"><small class="mono">%s</small>%s</span>

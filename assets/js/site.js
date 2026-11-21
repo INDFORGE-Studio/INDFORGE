@@ -1097,6 +1097,9 @@
         var cs = $$(".tip", s), mine = cs.filter(function (c) { return r === "all" || c.getAttribute("data-role") === r; });
         var d = mine.filter(function (c) { return got[c.id.slice(2)]; }).length;
         s.hidden = !cs.some(function (c) { return !c.hidden; });
+        s.style.setProperty("--sp", mine.length ? d / mine.length : 0);
+        s.classList.toggle("full", mine.length > 0 && d === mine.length);
+        var sn = $(".tsec-n", s); if (sn) sn.innerHTML = "<b>" + d + "</b> / " + mine.length;
         var a = $(".tipnav a[data-tsec='" + s.id + "']");
         if (a) {
           a.hidden = !mine.length;
@@ -1136,10 +1139,19 @@
     doc.addEventListener("ifg:lang", function () { run(false); });
     run(false);
     // the mod list follows the reading position, and stays in view on phones
-    var links = $$(".tipnav a"); if (!("IntersectionObserver" in window)) return;
+    var links = $$(".tipnav a"), cur = $(".tip-cur", bar); if (!("IntersectionObserver" in window)) return;
+    function show(s) {
+      secs.forEach(function (x) { x.classList.toggle("on", x === s); });
+      var img = $(".tsec-fig", s), code = $(".tsec-k .sec-code", s), h = $("h2", s);
+      $(".tip-cur-img", cur).innerHTML = img ? img.innerHTML : "";
+      $(".sec-code", cur).textContent = code ? code.textContent : "";
+      $("b", cur).innerHTML = h ? h.innerHTML : "";
+      cur.classList.remove("swap"); void cur.offsetWidth; cur.classList.add("swap");
+    }
     var io = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) {
         if (!en.isIntersecting) return;
+        show(en.target);
         links.forEach(function (a) {
           var on = a.getAttribute("data-tsec") === en.target.id;
           a.classList.toggle("on", on);
