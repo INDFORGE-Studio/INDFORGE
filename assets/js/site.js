@@ -475,6 +475,7 @@
       '<span class="srv-slots" aria-hidden="true"></span><span class="srv-age"></span><span class="srv-sr"></span>';
     var mid = $(".srv-mid", box); mid.insertBefore(live, $(".srv-meta", mid));
     var meta = $(".srv-meta", mid);
+    var lbl = $(".srv-k", box);
     var cnt = $$(".srv-cnt b", live), slots = $(".srv-slots", live), age = $(".srv-age", live), sr = $(".srv-sr", live);
 
     function say(el, key, fb, args) {
@@ -487,10 +488,11 @@
       var now = Date.now() / 1000;
       // an old reading, or a server dark for two days (moved, renamed): say nothing rather than something false
       var known = d && now - d.t < 1800 && (d.on || now - d.lo < 172800);
-      if (!known) { box.classList.remove("srv-on", "srv-off"); st.hidden = live.hidden = true; if (meta) say(meta, "srv.meta", meta.textContent); return; }
+      if (!known) { box.classList.remove("srv-on", "srv-off"); st.hidden = live.hidden = true; if (meta) say(meta, "srv.meta", meta.textContent); if (lbl) say(lbl, "srv.h", lbl.textContent); return; }
       box.classList.toggle("srv-on", d.on); box.classList.toggle("srv-off", !d.on);
       if (meta) say(meta, d.on ? "srv.meta_live" : "srv.meta", meta.textContent); // the counter already gives the slots
-      say(st, d.on ? "srv.on" : "srv.off", d.on ? "Online" : "Offline"); st.hidden = false;
+      if (lbl) say(lbl, "srv.h_live", "Server"); // the badge says the rest
+      say(st, d.on ? "srv.on" : "srv.off", d.on ? "ON-LINE" : "OFF-LINE"); st.hidden = false;
       if (!d.on) { live.hidden = true; prevN = -1; return; }
       cnt[0].textContent = two(d.n); cnt[1].textContent = two(d.max);
       if (slots.children.length !== d.max) { slots.innerHTML = new Array(d.max + 1).join("<i></i>"); prevN = -1; }
