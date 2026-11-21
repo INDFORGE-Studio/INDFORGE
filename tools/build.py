@@ -28,7 +28,7 @@ ALL_LANGS = [
 ]
 # Languages offered on the site. The others are paused while the texts still change a lot:
 # their files stay in tools/i18n/ and come back once the texts are final and re-translated.
-LIVE = ("en", "fr")
+LIVE = ("en", "fr", "de", "es", "it", "pl", "uk")
 LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 
 # Display modes ("optics"): code, menu tag.

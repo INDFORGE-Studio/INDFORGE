@@ -102,7 +102,7 @@ def main():
     y = tb[3] + 78
     d.line([(tb[0], y), (tb[2], y)], fill=rgba(AMBER, 255)[:3], width=2)
     small = font("consola.ttf", 24)
-    lines = ["WORKSHOP MODS  //  ADMIN SETTINGS", "COMMANDS  //  DEPENDENCIES"]
+    lines = ["WORKSHOP MODS  //  ADMIN SETTINGS", "COMMANDS  //  DEPENDENCIES", "7 LANGUAGES"]
     for i, line in enumerate(lines):
         d.text((tb[0], y + 22 + i * 36), line, font=small, fill=MUTE)
 

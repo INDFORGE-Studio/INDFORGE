@@ -359,8 +359,15 @@
     menu.addEventListener("click", function (e) {
       if (e.target.closest("[data-fx]")) { toggleFx(); return; }
       var b = e.target.closest("[data-optic]"); if (!b) return;
-      open(false); btn.focus(); engage(b.getAttribute("data-optic"), btn);
+      engage(b.getAttribute("data-optic"), b);
     });
+    /* the menu stays open while styles are tried; with a mouse it closes once the pointer leaves it */
+    var box = btn.closest(".opt") || menu, leave = 0;
+    box.addEventListener("pointerleave", function (e) {
+      if (e.pointerType !== "mouse" || menu.hidden) return;
+      leave = setTimeout(function () { var f = menu.contains(doc.activeElement); open(false); if (f) btn.focus(); }, 300);
+    });
+    box.addEventListener("pointerenter", function () { clearTimeout(leave); });
     menu.addEventListener("keydown", function (e) {
       var i = items.indexOf(doc.activeElement);
       if (e.key === "ArrowDown") { e.preventDefault(); items[(i + 1) % items.length].focus(); }
