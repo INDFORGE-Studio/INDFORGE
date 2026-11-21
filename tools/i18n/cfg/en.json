@@ -491,7 +491,6 @@
  "c.49de95b748": "Per-player map marker preferences. LOCAL to each client: read from the player's own profile copy of this file, a server admin cannot force them. Missing section = the defaults below.",
  "c.711de4b694": "true = keep the vanilla rule (only a group leader sees the members of their group) instead of showing every player of the same faction. Default false.",
  "c.61dc3c0a97": "true = also show your own marker on the map (the vanilla rule hides it). Default true.",
- "c.09be9243d5": "Server setting. true = a killed player's marker stays on the map where they fell (grey) until they respawn; false = vanilla, the marker disappears at death. Default true.",
  "c.c72b8a2c48": "Degrees added to your heading when rotating your own map arrow (the cursor icon points up-left, so 45 makes it point along your heading). Adjust if the arrow looks rotated the wrong way. Default 45.",
  "c.fef6136cc1": "1 or -1: direction of the own map arrow rotation. Use -1 if the arrow turns the opposite way to your character. Default 1.",
  "c.1a5f75a34a": "Side in pixels of your own map arrow (square, same proportions as the cursor icon). Default 56.",

@@ -568,7 +568,6 @@
  "c.49de95b748": "Preferenze dei marcatori sulla mappa di ogni giocatore. LOCALI per ogni client: lette dalla copia di questo file nel profilo del giocatore, un admin del server non può imporle. Sezione assente = i valori predefiniti qui sotto.",
  "c.711de4b694": "true = mantenere la regola vanilla (solo un caposquadra vede i membri del suo gruppo) invece di mostrare tutti i giocatori della stessa fazione. Predefinito false.",
  "c.61dc3c0a97": "true = mostrare anche il proprio marcatore sulla mappa (la regola vanilla lo nasconde). Predefinito true.",
- "c.09be9243d5": "Impostazione del server. true = il marcatore di un giocatore ucciso resta sulla mappa dove è caduto (in grigio) fino al respawn; false = vanilla, il marcatore sparisce alla morte. Predefinito true.",
  "c.c72b8a2c48": "Gradi aggiunti alla propria direzione per ruotare la propria freccia sulla mappa (l'icona del cursore punta in alto a sinistra, quindi 45 la fa puntare nella propria direzione). Da regolare se la freccia sembra ruotata male. Predefinito 45.",
  "c.fef6136cc1": "1 o -1: senso di rotazione della propria freccia. Usare -1 se la freccia gira al contrario del personaggio. Predefinito 1.",
  "c.1a5f75a34a": "Lato in pixel della propria freccia sulla mappa (quadrata, stesse proporzioni dell'icona del cursore). Predefinito 56.",

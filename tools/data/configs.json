@@ -2648,11 +2648,6 @@
     "help": "true = also show your own marker on the map (the vanilla rule hides it). Default true."
    },
    {
-    "key": "MapMarkers.KeepDeadMarkerUntilRespawn",
-    "value": "true",
-    "help": "Server setting. true = a killed player's marker stays on the map where they fell (grey) until they respawn; false = vanilla, the marker disappears at death. Default true."
-   },
-   {
     "key": "MapMarkers.OwnMarkerRotationOffsetDegrees",
     "value": "45.0",
     "help": "Degrees added to your heading when rotating your own map arrow (the cursor icon points up-left, so 45 makes it point along your heading). Adjust if the arrow looks rotated the wrong way. Default 45."

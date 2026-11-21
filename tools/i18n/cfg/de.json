@@ -568,7 +568,6 @@
  "c.49de95b748": "Kartenmarker-Einstellungen pro Spieler. LOKAL auf jedem Client: aus der Profilkopie dieser Datei des Spielers gelesen, ein Serveradmin kann sie nicht erzwingen. Abschnitt fehlt = die Standardwerte unten.",
  "c.711de4b694": "true = Vanilla-Regel behalten (nur ein Gruppenführer sieht die Mitglieder seiner Gruppe), statt alle Spieler derselben Fraktion anzuzeigen. Standard false.",
  "c.61dc3c0a97": "true = auch den eigenen Marker auf der Karte anzeigen (die Vanilla-Regel blendet ihn aus). Standard true.",
- "c.09be9243d5": "Servereinstellung. true = der Marker eines getöteten Spielers bleibt (grau) an der Stelle auf der Karte, bis er wieder erscheint; false = Vanilla, der Marker verschwindet beim Tod. Standard true.",
  "c.c72b8a2c48": "Grad, die zur eigenen Blickrichtung addiert werden, um den eigenen Kartenpfeil zu drehen (das Cursor-Symbol zeigt nach oben links, 45 richtet ihn also nach der Blickrichtung aus). Anpassen, wenn der Pfeil falsch gedreht wirkt. Standard 45.",
  "c.fef6136cc1": "1 oder -1: Drehrichtung des eigenen Kartenpfeils. -1 verwenden, wenn sich der Pfeil entgegen der Figur dreht. Standard 1.",
  "c.1a5f75a34a": "Seitenlänge des eigenen Kartenpfeils in Pixeln (quadratisch, gleiche Proportionen wie das Cursor-Symbol). Standard 56.",
