@@ -299,7 +299,25 @@
       if (fsb) fsb.title = nm ? plain(tr("optic.emblem", "INDFORGE emblem · {n}")).replace("{n}", nm.textContent) : "";
       if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || "#06080a");
     }
-    doc.addEventListener("ifg:lang", sync);
+    /* each group (styles, countries) in alphabetical order of its names in the chosen language, Arma first */
+    function order() {
+      var groups = [[]], lang = root.getAttribute("data-lang") || "en";
+      var cmp = window.Intl && Intl.Collator ? new Intl.Collator(lang).compare : function (a, b) { return a.localeCompare(b); };
+      $$("li", menu).forEach(function (li) {
+        if (li.classList.contains("opt-h")) groups.push([]);
+        else if ($("[data-optic]", li)) groups[groups.length - 1].push(li);
+      });
+      function name(li) { var n = $("[data-i18n]", li); return n ? n.textContent : ""; }
+      function first(li) { return $("[data-optic]", li).getAttribute("data-optic") === "arma" ? 0 : 1; }
+      groups.forEach(function (g) {
+        if (!g.length) return;
+        var end = g[g.length - 1].nextSibling, box = g[0].parentNode;
+        g.slice().sort(function (a, b) { return first(a) - first(b) || cmp(name(a), name(b)); })
+          .forEach(function (li) { box.insertBefore(li, end); });
+      });
+      items = $$("button", menu);
+    }
+    doc.addEventListener("ifg:lang", function () { order(); sync(); });
     function apply(o) {
       if (o === "arma") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
       store("ifg-optic", o); sync(); fx.refresh();
@@ -354,7 +372,7 @@
     });
     doc.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".opt")) open(false); });
     var lb0 = $(".lang-btn"); if (lb0) lb0.addEventListener("click", function () { if (!menu.hidden) open(false); });
-    sync(); fx.refresh();
+    order(); sync(); fx.refresh();
   }
 
   /* ------------------------------------------------ mobile menu */

@@ -409,17 +409,20 @@ def header(active):
         langs += '<li role="separator" class="lang-sep"></li>' + "".join(
             '<li role="none"><span class="lang-wip" role="menuitem" aria-disabled="true"><b>%s</b>%s<em>W.I.P</em></span></li>'
             % (l.upper(), redact(len(n))) for l, n in wip)
+    def abc(rows):
+        # alphabetical by English name, the default optic first; site.js re-sorts for the chosen language
+        return sorted(rows, key=lambda r: (r[0] != "arma", E["optic." + r[0]].lower()))
     def opt_em(o):
         # the optic's own shield emblem (tools/emblems.py) stands for it in the menu
         return '<img class="opt-em" src="%sassets/img/fs/%s.svg" alt="" width="22" height="26" decoding="async">' % (BASE, o)
     optics = "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
         '%s<b class="opt-k">%s</b>%s</button></li>'
-        % (o, opt_em(o), k, t("optic." + o)) for o, k in OPTICS)
+        % (o, opt_em(o), k, t("optic." + o)) for o, k in abc(OPTICS))
     optics += '<li role="presentation" class="opt-h">%s</li>' % t("optic.nat") + "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
         '%s<b class="opt-k">%s</b>%s</button></li>'
-        % (o, opt_em(o), k, t("optic." + o)) for o, k in NATIONS)
+        % (o, opt_em(o), k, t("optic." + o)) for o, k in abc(NATIONS))
     optics += ('<li role="separator" class="lang-sep"></li><li role="none"><button type="button" role="menuitemcheckbox" '
                'aria-checked="true" class="opt-fx" data-fx><b class="opt-k">FX</b>%s<i class="opt-tg" aria-hidden="true"></i></button></li>'
                % t("optic.fx"))
