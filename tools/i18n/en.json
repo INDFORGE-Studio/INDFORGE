@@ -150,12 +150,10 @@
   ],
   "about.communities": "Communities we build for",
   "about.c": [
-    "<b>[AUC] Arma Ukraine Community</b> — AUC - Factions, AUC - Vehicles, AUC - Conflict.",
-    "<b>CHERCHE TOI – RP LIFE</b> — ChercheToi RP - Clothing, Props and Vehicles.",
-    "<b>Task Force Baguette</b> — TalibanMod Red Side V2."
+    "<b>ARMA UKRAINE COMMUNITY [AUC]</b>: AUC - Factions / AUC - Vehicles / AUC - Conflict",
+    "<b>CHERCHETOI - RP LIFE</b>: ChercheToi RP - Clothing / ChercheToi RP - Props / ChercheToi RP - Vehicles",
+    "<b>TASK FORCE BAGUETTE</b>: TalibanMod Red Side V2"
   ],
-  "about.contact": "Report a bug",
-  "about.contact_p": "Comment on the mod's Workshop page and include: the mod version, the map and scenario, your other active mods, what you expected, what actually happened, and the steps to reproduce it.",
   "about.motto": "Alone we go faster, but together we go further… and always beyond the possible.",
   "mods.title": "Workshop",
   "mods.kicker": "Order of battle",

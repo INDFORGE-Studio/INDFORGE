@@ -1104,7 +1104,7 @@ def about():
         H(n), t(k, "span", "op-role"), redact(5)) for n, k in roster)
     body = phead("PER-07", "about.kicker", "about.h1", "about.lead").replace('class="phead wrap"', 'class="phead wrap phead-c"') + """<div class="wrap docgrid nogrid">
 <div class="docmain">
-%s %s %s %s %s %s
+%s %s %s %s %s
 <blockquote class="motto-big">%s<footer class="mono dim">— INDFORGE - Studio</footer></blockquote>
 </div></div>""" % (
         sec("unit", "about.unit", t("about.unit_p", "p", "lead2") + t("about.giants", "p"), "01"),
@@ -1112,7 +1112,6 @@ def about():
         sec("doctrine", "about.doctrine", '<ul class="feat">%s</ul>' % tl("about.d"), "03"),
         sec("theatres", "about.theatres", '<ul class="feat">%s</ul>' % tl("about.th"), "04"),
         sec("communities", "about.communities", '<ul class="feat">%s</ul>' % tl("about.c"), "05"),
-        sec("contact", "about.contact", t("about.contact_p", "p"), "06"),
         t("about.motto", "p"))
     page("about/", "about.title", body, "about")
 
