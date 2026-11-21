@@ -702,16 +702,17 @@
     "<b>Contradetección:</b> la radiogoniometría enemiga cuenta cuánto tiempo emite el camión (radar o inhibidor) en el mismo lugar. A los 8 min aproximadamente, la tripulación recibe el aviso por radio «Enemy direction finding: shut it down or relocate». A los 10 min aproximadamente, el enemigo lo localiza: su cuartel general sabe dónde está el camión y envía tropas, y sus morteros pueden lanzar un ataque preajustado sin observador. La tripulación oye «Enemy fix on your emitter». Se repite cada 10 min más en el mismo lugar. Apagado, el contador baja tan rápido como subió; moverse más de 300 m lo pone a cero.",
     "<b>Radar antiaéreo:</b> con el radar encendido, detecta un avión de reconocimiento enemigo Su-57 que se acerque a menos de 1,5 km. Los jugadores cerca del radar oyen «Radar contact: enemy jet, friendly fighters scrambled», y una pareja de F-22 persigue al Su-57.",
     "<b>Enlace por cable con el FP-1:</b> una acción en la parte trasera del camión de drones FP-1 lo conecta por cable al radar desplegado más cercano de su facción, a 50 m como máximo. El planificador del FP-1 recibe entonces los objetivos del radar en directo. Si el radar pasa a inhibidor, el cable se suelta.",
+    "<b>Motor reforzado para pendientes fuertes:</b> basado en los ajustes 1.9 del M923A1. 280 CV en lugar de 230, par de 1800 N·m a 1100 rpm en lugar de 1250 N·m, caja más corta (1.ª a 7,5, marcha atrás a 8), diferenciales de deslizamiento limitado más cerrados, velocidad máxima de unos 70 a 76 km/h. Carga sin errores en el banco del servidor; la conducción aún debe probarse en el juego.",
     "Todos los valores (alcances, consumos, tiempos) son ajustables por los administradores del servidor."
   ],
   "ew.written_h": "Escrito, aún sin compilar ni probar",
   "ew.written": [],
   "ew.next_h": "Próximos pasos (nada de esto está hecho)",
   "ew.next": [
+    "<b>Prueba en el juego:</b> motor, enlace por cable con el FP-1 y visualización de los objetivos en el planificador.",
     "<b>Sonidos de emisión.</b>",
     "Imagen de vista previa del camión.",
-    "Entrada en el garaje grande.",
-    "<b>Prueba en el juego.</b>"
+    "Entrada en el garaje grande."
   ],
   "ew.insp": "Inspiración: los radares AESA modernos, que sirven a la vez de radar y de inhibidor (sector de unos 120°, inhibir cuesta energía y calor)."
 }
