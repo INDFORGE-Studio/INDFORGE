@@ -524,6 +524,11 @@ def footer():
                  t("ui.footer_source", "p", "src", {"date": GENERATED}), VER[:6].upper(), len(MODS), H(E["ui.secure"].upper()))
 
 
+# Link-preview text of the home page (Discord, X, Slack...): the share card, not the search snippet.
+OG_DESC = ("Secure channel open. Field-tested PvE mods for Arma Reforger: every setting, every command, "
+           "every dependency list. Declassified.")
+
+
 def page(path, title_key, body, active, desc=None, title_raw=None, image=None, cls="", cfg_i18n=False):
     if title_raw:
         title = '<title>%s · INDFORGE - Studio</title>' % H(title_raw)
@@ -551,12 +556,12 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="INDFORGE - Studio">
 <meta property="og:title" content="%(ogt)s">
-<meta property="og:description" content="%(desc)s">
+<meta property="og:description" content="%(ogdesc)s">
 <meta property="og:url" content="%(canon)s">
 <meta property="og:image" content="%(img)s">%(imgmeta)s
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="%(img)s">
-<meta name="theme-color" content="#06080a">
+<meta name="theme-color" content="#ffb000">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="%(base)sassets/img/favicon.ico?v=%(iv)s" sizes="48x48">
 <link rel="icon" href="%(base)sassets/img/favicon.svg?v=%(iv)s" type="image/svg+xml">
@@ -581,7 +586,7 @@ def page(path, title_key, body, active, desc=None, title_raw=None, image=None, c
 %(footer)s
 </body>
 </html>
-""" % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "canon": SITE + path,
+""" % {"ver": VER, "cfgv": (' data-i18n-cfg="%s"' % CFG_VER) if cfg_i18n else "", "iv": ICON_VER, "base": BASE, "active": active, "title": title, "desc": H(desc), "ogdesc": H(OG_DESC if title_key == "home.title" else desc), "canon": SITE + path,
        "ogt": H(og_title), "img": img, "imgmeta": img_meta, "headjs": HEAD_JS, "spec": SPEC, "cls": cls,
        "totop": ta("aria-label", "ui.totop"), "arrow": icon("arrow"), "header": header(active), "body": body, "footer": "" if active == "home" else footer()}
     out = os.path.join(ROOT, path, "index.html") if not path.endswith(".html") else os.path.join(ROOT, path)
