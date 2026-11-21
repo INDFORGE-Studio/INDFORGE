@@ -586,5 +586,7 @@
  "c.e6817d42c6": "L'ondata compare a circa questa distanza (metri, +/- 10 %) dalla base conquistata, sulla terraferma, poi marcia fino a lei. Predefinito 600.0.",
  "c.461705d5ff": "L'ondata è considerata arrivata entro questa distanza (metri) dalla base. Predefinito 25.0.",
  "c.49bdbb9197": "Rete di sicurezza: passato questo tempo (secondi), l'ondata viene chiusa anche se non è arrivata. Predefinito 300.",
- "c.604a70f9a2": "Numero massimo di ondate di contrattacco in corso contemporaneamente; una conquista oltre questo limite viene ignorata (non messa in coda). Predefinito 2."
+ "c.604a70f9a2": "Numero massimo di ondate di contrattacco in corso contemporaneamente; una conquista oltre questo limite viene ignorata (non messa in coda). Predefinito 2.",
+ "c.09be9243d5": "Impostazione del server. true = il marcatore di un giocatore ucciso resta sulla mappa dove è caduto (in grigio) finché non rientra in gioco; false = gioco base, il marcatore sparisce alla morte. Predefinito true.",
+ "c.e2f409a717": "Posti di IA attiva che guarnigioni e contrattacchi lasciano liberi sotto il tetto del motore (AIActiveLimit o 128 predefinito), per l'equipaggio dell'elicottero e gli altri generatori. Finché la riserva è raggiunta, una squadra di guarnigione attende e un'ondata di contrattacco viene annullata. Deve coprire l'equipaggio dell'elicottero (al massimo 4 durante l'imbarco) più una squadra di guarnigione. 0 = nessuna riserva. Predefinito 12."
 }

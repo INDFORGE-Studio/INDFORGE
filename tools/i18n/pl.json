@@ -424,14 +424,14 @@
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework jest w trakcie tworzenia i <b>nie jest jeszcze opublikowany w Workshopie</b>. Doda do zgodnych scenariuszy Conflict patrole śmigłowców bojowych, garnizony wojskowe w punktach zainteresowania i znaczniki graczy na mapie.",
     "Wszystko będzie ustawiane w jednym pliku <code>config.json</code> w profilu serwera, bez ruszania kodu. Każde ustawienie ma swój klucz pomocy, o tej samej nazwie poprzedzonej <code>_</code>, który je objaśnia.",
-    "<b>Kolejne kroki:</b> przetestować poprawkę śmigłowca na stanowisku serwerowym, potem w grze. Desant spadochronowy ze śmigłowca: planowany, wciąż na etapie projektu."
+    "<b>Następne kroki:</b> test w grze, z graczami: śmigłowiec w pobliżu garnizonów i znacznik zabitego gracza. Potem: desant żołnierzy ze śmigłowca, wciąż na etapie projektu."
   ],
   "m.ai-framework.f": [
-    "<b>Śmigłowce bojowe Mi-8MT (trzy uzbrojone warianty).</b> Wrogi śmigłowiec pojawia się w pobliżu największej grupy graczy, zakotwiczony w punkcie zainteresowania, z pełną załogą SI i regulowanym poziomem SI, od Noob do Expert. Lata dzięki własnemu fizycznemu kontrolerowi lotu studia, a nie lotowi SI silnika: pętla patrolowa, utrzymanie wysokości, zakręty z przechyleniem. <i>Stan: działał w grze do września 2026. Regresja uniemożliwia teraz jego pojawienie się; poprawka jest napisana, jeszcze nie przetestowana.</i>",
+    "<b>Śmigłowce bojowe Mi-8MT (trzy uzbrojone warianty).</b> Wrogi śmigłowiec pojawia się przy największej grupie graczy, zakotwiczony w punkcie zainteresowania, z pełną załogą SI i regulowanym poziomem SI, od Noob do Expert. Lata dzięki fizycznemu kontrolerowi lotu studia, nie dzięki lotowi SI silnika: pętla patrolu, utrzymanie wysokości, zakręty z przechyłem. <i>Stan: usterka, która uniemożliwiała jego pojawienie się, jest naprawiona. Garnizony zajmowały wszystkie miejsca SI silnika i załoga nie mogła wsiąść. Na serwerze testowym, z aktywnymi garnizonami, załoga wsiada w mniej niż 2 sekundy, a śmigłowiec wykonuje patrol. Jeszcze nie testowane w grze z graczami.</i>",
     "<b>Automatyczne sprzątanie.</b> Zestrzelony, bez pilota lub wirnika, wylądował lub w wodzie: wrak znika, a miejsce zwalnia się po odczekaniu (łącznie 23 minuty z wartościami z pliku referencyjnego).",
     "<b>Garnizony wojskowe.</b> Każdy kwalifikujący się punkt zainteresowania dostaje dwa patrole, ciasny i szeroki, a małe zespoły obsadzają wieże, bunkry i ambony. Baza, którą gracze właśnie zdobyli, zostaje kontratakowana. <i>Stan: zaprogramowane, nie testowane ponownie w grze od 3 listopada 2026.</i>",
-    "<b>Znaczniki graczy na mapie.</b> Każdy gracz jest widoczny jako żywy, nieprzytomny lub martwy, a twoja pozycja to strzałka w kolorze twojej frakcji, obracająca się zgodnie z kursem. <i>Stan: zaprogramowane, poprawka w toku, jeszcze nie testowane w grze.</i>",
-    "<b>Priorytet pod limitem SI.</b> Silnik utrzymuje naraz około 128 aktywnych SI: najpierw załoga śmigłowca, potem ciasne patrole i posterunki, na końcu szerokie patrole."
+    "<b>Znaczniki graczy na mapie.</b> Wszyscy gracze twojej frakcji są widoczni na mapie (gra podstawowa pokazuje ich tylko dowódcy drużyny), zabarwieni, gdy są nieprzytomni lub martwi. Twoja pozycja to strzałka w kolorze twojej frakcji, obrócona zgodnie z kursem. Zabity gracz zostaje szary tam, gdzie padł, aż do odrodzenia (ustawienie serwera <code>KeepDeadMarkerUntilRespawn</code>). Każdy gracz wybiera we własnym pliku, czy widzi swoją strzałkę, jej rozmiar, obrót i kolory. <i>Stan: gotowe i przetestowane na serwerze testowym, jeszcze nie testowane w grze z graczami.</i>",
+    "<b>Rezerwa pod limitem SI.</b> Silnik utrzymuje naraz najwyżej 128 aktywnych SI. Garnizony i kontrataki zostawiają wolne miejsca dla załogi śmigłowca (ustawienie <code>AIBudgetReserve</code>, domyślnie 12, 0 = brak rezerwy): gdy rezerwa zostanie osiągnięta, patrol czeka na wolne miejsce, a fala kontrataku jest pomijana. Na serwerze testowym suma utrzymuje się na poziomie 116–119 SI na 128."
   ],
   "m.ai-framework.setup": [
     "Mod nie jest jeszcze opublikowany: pełny przewodnik instalacji pojawi się wraz z premierą.",
@@ -441,7 +441,7 @@
   "m.ai-framework.admin": [
     "Nie zwiększaj <code>MaxActiveHelicopters</code>: lot jest skryptowany i nie unika kolizji między statkami powietrznymi.",
     "Przy starcie dziennik musi pokazać <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, potem skan punktów zainteresowania i zapełnianie garnizonów.",
-    "Brak śmigłowca? Sprawdź liczbę graczy (<code>MinimumPlayersToActivate</code>) i 23 minuty oczekiwania po zestrzeleniu. Na razie jego pojawienie się blokuje też regresja (poprawka jeszcze nie przetestowana)."
+    "Brak śmigłowca? Sprawdź liczbę graczy (<code>MinimumPlayersToActivate</code>), 23 minuty oczekiwania po zniszczeniu oraz czy <code>AIBudgetReserve</code> pokrywa załogę (4 SI podczas wsiadania) plus jeden oddział garnizonu."
   ],
   "m.enhanced-compositions.tag": "Kompaktowe kompozycje Conflict, przejęcie generatora i garnizony AI.",
   "m.enhanced-compositions.intro": [

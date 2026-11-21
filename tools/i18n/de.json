@@ -424,14 +424,14 @@
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework ist in Entwicklung und <b>noch nicht im Workshop veröffentlicht</b>. Es wird kompatiblen Conflict-Szenarien Kampfhubschrauber-Patrouillen, Militärgarnisonen an Points of Interest und Kartenmarker für die Spieler hinzufügen.",
     "Alles wird in einer einzigen <code>config.json</code> im Serverprofil eingestellt, ohne den Code anzufassen. Jede Einstellung hat ihren Hilfeschlüssel, denselben Namen mit vorangestelltem <code>_</code>, der sie erklärt.",
-    "<b>Nächste Schritte:</b> die Hubschrauber-Korrektur auf dem Server-Prüfstand testen, dann im Spiel. Fallschirmabsprung aus dem Hubschrauber: geplant, noch in der Konzeptphase."
+    "<b>Nächste Schritte:</b> im Spiel mit Spielern testen: den Hubschrauber in der Nähe der Garnisonen und die Markierung eines getöteten Spielers. Danach: Absetzen von Truppen aus dem Hubschrauber, noch in der Konzeptphase."
   ],
   "m.ai-framework.f": [
-    "<b>Mi-8MT-Kampfhubschrauber (drei bewaffnete Varianten).</b> Ein feindlicher Hubschrauber erscheint nahe der größten Spielergruppe, verankert an einem Point of Interest, mit kompletter KI-Besatzung und einstellbarem KI-Niveau, von Noob bis Expert. Er fliegt mit dem eigenen physikalischen Flugregler des Studios, nicht mit dem KI-Flug der Engine: Patrouillenschleife, Höhe halten, Kurven mit Schräglage. <i>Stand: lief im Spiel bis September 2026. Eine Regression verhindert jetzt sein Erscheinen; die Korrektur ist geschrieben, noch nicht getestet.</i>",
+    "<b>Kampfhubschrauber Mi-8MT (drei bewaffnete Varianten).</b> Ein feindlicher Hubschrauber erscheint bei der größten Spielergruppe, verankert an einem Punkt von Interesse, mit voller KI-Besatzung und einstellbarem KI-Niveau von Noob bis Expert. Er fliegt mit dem physikalischen Flugregler des Studios, nicht mit dem KI-Flug der Engine: Patrouillenschleife, Höhe halten, Kurven mit Schräglage. <i>Stand: Der Fehler, der sein Erscheinen verhinderte, ist behoben. Die Garnisonen belegten alle KI-Plätze der Engine, sodass die Besatzung nie einsteigen konnte. Auf dem Testserver, mit aktiven Garnisonen, steigt die Besatzung in unter 2 Sekunden ein und der Hubschrauber fliegt seine Patrouille. Noch nicht im Spiel mit Spielern getestet.</i>",
     "<b>Automatisches Aufräumen.</b> Abgeschossen, Pilot oder Rotor verloren, gelandet oder im Wasser: Das Wrack verschwindet und der Platz wird nach einer Wartezeit frei (insgesamt 23 Minuten mit den Werten der Referenzdatei).",
     "<b>Militärgarnisonen.</b> Jeder geeignete Point of Interest erhält zwei Patrouillen, eine enge und eine weite, und kleine Teams halten Türme, Bunker und Hochstände. Eine Basis, die die Spieler gerade eingenommen haben, wird gegenangegriffen. <i>Stand: programmiert, seit dem 3. November 2026 nicht mehr im Spiel getestet.</i>",
-    "<b>Kartenmarker der Spieler.</b> Jeder Spieler erscheint lebend, bewusstlos oder tot, und die eigene Position ist ein Pfeil in der Farbe der eigenen Fraktion, der sich mit der Blickrichtung dreht. <i>Stand: programmiert, eine Korrektur läuft, noch nicht im Spiel getestet.</i>",
-    "<b>Vorrang unter der KI-Obergrenze.</b> Die Engine hält etwa 128 KI gleichzeitig aktiv: zuerst die Hubschrauberbesatzung, dann enge Patrouillen und Gebäudeposten, dann weite Patrouillen."
+    "<b>Kartenmarkierungen der Spieler.</b> Alle Spieler Ihrer Fraktion erscheinen auf der Karte (das Grundspiel zeigt sie nur dem Truppführer), eingefärbt, wenn sie bewusstlos oder tot sind. Ihre eigene Position ist ein Pfeil in der Farbe Ihrer Fraktion, nach Ihrem Kurs ausgerichtet. Ein getöteter Spieler bleibt grau dort, wo er gefallen ist, bis er wieder erscheint (Servereinstellung <code>KeepDeadMarkerUntilRespawn</code>). Jeder Spieler legt in seiner eigenen Datei fest, ob er seinen Pfeil sieht, dessen Größe, Drehung und die Farben. <i>Stand: fertig und auf dem Testserver getestet, noch nicht im Spiel mit Spielern getestet.</i>",
+    "<b>Reserve unter der KI-Obergrenze.</b> Die Engine hält höchstens 128 KI gleichzeitig aktiv. Garnisonen und Gegenangriffe lassen Plätze für die Hubschrauberbesatzung frei (Einstellung <code>AIBudgetReserve</code>, Standard 12, 0 = keine Reserve): Ist die Reserve erreicht, wartet eine Patrouille auf einen freien Platz und eine Gegenangriffswelle entfällt. Auf dem Testserver bleibt die Summe bei 116 bis 119 von 128 KI."
   ],
   "m.ai-framework.setup": [
     "Der Mod ist noch nicht veröffentlicht: Die vollständige Einrichtungsanleitung kommt mit der Veröffentlichung.",
@@ -441,7 +441,7 @@
   "m.ai-framework.admin": [
     "<code>MaxActiveHelicopters</code> nicht erhöhen: Der Flug ist geskriptet und hat keine Kollisionsvermeidung zwischen Luftfahrzeugen.",
     "Beim Start muss das Log <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code> zeigen, dann den POI-Scan und die Garnisonsbevölkerung.",
-    "Kein Hubschrauber? Spielerzahl (<code>MinimumPlayersToActivate</code>) und die 23 Minuten Wartezeit nach einem Abschuss prüfen. Derzeit verhindert außerdem eine Regression sein Erscheinen (Korrektur noch nicht getestet)."
+    "Kein Hubschrauber? Prüfen Sie die Spielerzahl (<code>MinimumPlayersToActivate</code>), die Wartezeit von 23 Minuten nach einem Abschuss und ob <code>AIBudgetReserve</code> die Besatzung (4 KI beim Einsteigen) plus einen Garnisonstrupp abdeckt."
   ],
   "m.enhanced-compositions.tag": "Kompakte Conflict-Kompositionen, Generator-Eroberung und KI-Garnisonen.",
   "m.enhanced-compositions.intro": [

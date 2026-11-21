@@ -424,14 +424,14 @@
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework is in development and <b>not published on the Workshop yet</b>. It will add combat helicopter patrols, military garrisons on points of interest and player map markers to compatible Conflict scenarios.",
     "Everything will be set from a single <code>config.json</code> in the server profile, without touching the code. Each setting has its help key, the same name with a leading <code>_</code>, that explains it.",
-    "<b>Next steps:</b> test the helicopter fix on the server bench, then in game. Paradrop from the helicopter: planned, still at the design stage."
+    "<b>Next steps:</b> test in game, with players, the helicopter near the garrisons and a killed player's marker. Then: troop drops from the helicopter, still at the design stage."
   ],
   "m.ai-framework.f": [
-    "<b>Mi-8MT combat helicopters (three armed variants).</b> A hostile helicopter appears near the biggest group of players, anchored on a point of interest, with a full AI crew and a configurable AI skill, from Noob to Expert. It flies with the studio's own physics flight controller, not the engine's AI flight: patrol loop, altitude hold, banked turns. <i>Status: worked in game until September 2026. A regression now stops it from spawning; the fix is written, not tested yet.</i>",
+    "<b>Mi-8MT combat helicopters (three armed variants).</b> A hostile helicopter appears near the largest group of players, anchored on a point of interest, with a full AI crew and an adjustable AI skill, from Noob to Expert. It flies with the studio's physics flight controller, not the engine's AI flight: patrol loop, altitude hold, banked turns. <i>Status: the fault that kept it from appearing is fixed. The garrisons took every AI slot of the engine, so the crew could never board. On the dedicated-server test bench, with garrisons on, the crew boards in under 2 seconds and the helicopter flies its patrol. Not yet tested in game with players.</i>",
     "<b>Automatic cleanup.</b> Shot down, pilot or rotor lost, landed or in water: the wreck despawns and the slot is released after a cooldown (23 minutes in total with the reference file values).",
     "<b>Military garrisons.</b> Each eligible point of interest gets two patrols, one tight and one wide, and small teams hold towers, bunkers and watchtowers. A base the players have just taken faces a counter-attack. <i>Status: coded, not re-tested in game since 3 November 2026.</i>",
-    "<b>Player map markers.</b> Every player shows as alive, unconscious or dead, and your own position is an arrow in your faction colour that turns with your heading. <i>Status: coded, a fix is in progress, not tested in game yet.</i>",
-    "<b>Priority under the AI cap.</b> The engine keeps about 128 AI active at once: helicopter crew first, then close patrols and building posts, then wide patrols."
+    "<b>Player map markers.</b> Every player of your faction is shown on the map (the base game shows them to the squad leader only), tinted when unconscious or dead. Your own position is an arrow in your faction colour, turned to your heading. A killed player stays grey where they fell until they respawn (server setting <code>KeepDeadMarkerUntilRespawn</code>). Each player sets in their own file whether they see their arrow, its size, its rotation and the colours. <i>Status: done and tested on the dedicated-server test bench, not yet tested in game with players.</i>",
+    "<b>Reserve under the AI cap.</b> The engine keeps at most 128 AI active at once. Garrisons and counter-attacks leave free slots for the helicopter crew (setting <code>AIBudgetReserve</code>, 12 by default, 0 = no reserve): when the reserve is reached, a patrol waits for a free slot and a counter-attack wave is skipped. On the bench, the total stays at 116 to 119 AI out of 128."
   ],
   "m.ai-framework.setup": [
     "The mod is not published yet: the full setup guide will come with its release.",
@@ -441,7 +441,7 @@
   "m.ai-framework.admin": [
     "Do not raise <code>MaxActiveHelicopters</code>: the flight is scripted and has no collision avoidance between aircraft.",
     "At startup the log must show <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, then the POI scan and the garrison population.",
-    "No helicopter? Check the player count (<code>MinimumPlayersToActivate</code>) and the 23-minute wait after a kill. For now a regression also stops it from spawning (fix not tested yet)."
+    "No helicopter? Check the player count (<code>MinimumPlayersToActivate</code>), the 23-minute wait after a destruction, and that <code>AIBudgetReserve</code> covers the crew (4 AI while it boards) plus one garrison squad."
   ],
   "m.enhanced-compositions.tag": "Compact Conflict compositions, generator capture and AI garrisons.",
   "m.enhanced-compositions.intro": [

@@ -424,14 +424,14 @@
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework está en desarrollo y <b>aún no está publicado en el Workshop</b>. Añadirá a los escenarios Conflict compatibles patrullas de helicópteros de combate, guarniciones militares en los puntos de interés y marcadores de mapa para los jugadores.",
     "Todo se ajustará en un único <code>config.json</code> del perfil del servidor, sin tocar el código. Cada ajuste tiene su clave de ayuda, con el mismo nombre precedido de <code>_</code>, que lo explica.",
-    "<b>Próximos pasos:</b> probar la corrección del helicóptero en el banco de servidor y luego en el juego. Lanzamiento de paracaidistas desde el helicóptero: previsto, aún en fase de diseño."
+    "<b>Próximos pasos:</b> probar en el juego, con jugadores, el helicóptero cerca de las guarniciones y el marcador de un jugador muerto. Después: despliegue de tropas desde el helicóptero, aún en fase de diseño."
   ],
   "m.ai-framework.f": [
-    "<b>Helicópteros de combate Mi-8MT (tres variantes armadas).</b> Un helicóptero hostil aparece cerca del grupo de jugadores más grande, anclado en un punto de interés, con una tripulación de IA completa y un nivel de IA ajustable, de Noob a Expert. Vuela con el controlador de vuelo físico propio del estudio, no con el vuelo de IA del motor: bucle de patrulla, mantenimiento de altitud, giros inclinados. <i>Estado: funcionó en el juego hasta septiembre de 2026. Una regresión impide ahora que aparezca; la corrección está escrita, aún sin probar.</i>",
+    "<b>Helicópteros de combate Mi-8MT (tres variantes armadas).</b> Un helicóptero hostil aparece cerca del grupo de jugadores más grande, anclado en un punto de interés, con una tripulación IA completa y un nivel de IA ajustable, de Noob a Expert. Vuela con el controlador de vuelo físico del estudio, no con el vuelo IA del motor: bucle de patrulla, mantenimiento de altitud, giros inclinados. <i>Estado: el fallo que le impedía aparecer está corregido. Las guarniciones ocupaban todas las plazas de IA del motor y la tripulación no podía subir. En el banco de pruebas del servidor, con guarniciones activas, la tripulación embarca en menos de 2 segundos y el helicóptero sigue su patrulla. Aún no probado en el juego con jugadores.</i>",
     "<b>Limpieza automática.</b> Derribado, sin piloto o sin rotor, posado o en el agua: los restos desaparecen y la plaza se libera tras una espera (23 minutos en total con los valores del archivo de referencia).",
     "<b>Guarniciones militares.</b> Cada punto de interés elegible recibe dos patrullas, una cerrada y otra amplia, y pequeños equipos defienden torres, búnkeres y atalayas. Una base que los jugadores acaban de tomar sufre un contraataque. <i>Estado: programado, sin volver a probar en el juego desde el 3 de noviembre de 2026.</i>",
-    "<b>Marcadores de mapa de los jugadores.</b> Cada jugador aparece vivo, inconsciente o muerto, y tu propia posición es una flecha del color de tu facción que gira según tu rumbo. <i>Estado: programado, corrección en curso, aún sin probar en el juego.</i>",
-    "<b>Prioridad bajo el límite de IA.</b> El motor mantiene unas 128 IA activas a la vez: primero la tripulación del helicóptero, luego las patrullas cerradas y los puestos, después las patrullas amplias."
+    "<b>Marcadores de jugadores en el mapa.</b> Todos los jugadores de su facción aparecen en el mapa (el juego base solo se los muestra al jefe de escuadra), teñidos cuando están inconscientes o muertos. Su propia posición es una flecha del color de su facción, orientada según su rumbo. Un jugador muerto se queda en gris donde cayó hasta que reaparece (ajuste del servidor <code>KeepDeadMarkerUntilRespawn</code>). Cada jugador elige en su propio archivo si ve su flecha, su tamaño, su rotación y los colores. <i>Estado: terminado y probado en el banco de pruebas del servidor, aún no probado en el juego con jugadores.</i>",
+    "<b>Reserva bajo el límite de IA.</b> El motor mantiene como máximo 128 IA activas a la vez. Las guarniciones y los contraataques dejan plazas libres para la tripulación del helicóptero (ajuste <code>AIBudgetReserve</code>, 12 por defecto, 0 = sin reserva): cuando se alcanza la reserva, una patrulla espera una plaza libre y se cancela una oleada de contraataque. En el banco de pruebas, el total se mantiene entre 116 y 119 IA de 128."
   ],
   "m.ai-framework.setup": [
     "El mod aún no está publicado: la guía de instalación completa llegará con su lanzamiento.",
@@ -441,7 +441,7 @@
   "m.ai-framework.admin": [
     "No subas <code>MaxActiveHelicopters</code>: el vuelo está programado y no evita colisiones entre aeronaves.",
     "Al arrancar, el registro debe mostrar <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, y luego el análisis de puntos de interés y el poblado de guarniciones.",
-    "¿Sin helicóptero? Comprueba el número de jugadores (<code>MinimumPlayersToActivate</code>) y la espera de 23 minutos tras un derribo. De momento, una regresión también impide que aparezca (corrección aún sin probar)."
+    "¿No hay helicóptero? Compruebe el número de jugadores (<code>MinimumPlayersToActivate</code>), la espera de 23 minutos tras una destrucción y que <code>AIBudgetReserve</code> cubra la tripulación (4 IA durante el embarque) más un grupo de guarnición."
   ],
   "m.enhanced-compositions.tag": "Composiciones Conflict compactas, captura de generador y guarniciones de IA.",
   "m.enhanced-compositions.intro": [

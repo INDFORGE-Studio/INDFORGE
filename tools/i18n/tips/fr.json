@@ -168,6 +168,11 @@
     "Ils ne donnent jamais la position exacte de l'ennemi."
   ],
 
+  "tips.cp-vol.h": "Régler le volume des alertes radio",
+  "tips.cp-vol.s": [
+    "Les appels radio du QG (alertes drone, mortier, embuscade, interception…) sont trop forts ? Baissez le curseur « Chat vocal » dans Réglages > Audio.",
+    "Ils passent par la radio, comme la voix d'un joueur. Le curseur « Dialogues » ne les change pas."
+  ],
   "tips.cp-night.h": "Combattre de nuit",
   "tips.cp-night.s": [
     "Certains soldats ennemis portent des jumelles de vision nocturne, plus souvent les tireurs d'élite et les forces spéciales.",

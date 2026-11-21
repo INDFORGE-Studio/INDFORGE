@@ -129,7 +129,7 @@ TIPS = [
         ("cp-rank", "p", "in", None), ("cp-cram", "p", "in", None),
         ("cp-mavic", "p", "inc", "news/#light"), ("cp-wx", "p", "inc", "news/#weather"),
         ("cp-ambush", "p", "inc", "news/#ambush"), ("cp-air", "p", "inc", "news/#air"),
-        ("cp-radio", "p", "inc", "news/#radio"), ("cp-night", "p", "inc", "news/#night"),
+        ("cp-radio", "p", "inc", "news/#radio"), ("cp-vol", "p", "inc", None), ("cp-night", "p", "inc", "news/#night"),
         ("cp-cmd", "a", "in", "admins/#cmds"), ("cp-cfg", "a", "in", "admins/#cfg"), ("cp-logs", "a", "in", "admins/#logs"),
     ]),
     ("forest", [

@@ -424,14 +424,14 @@
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework est en développement et <b>n'est pas encore publié sur le Workshop</b>. Il ajoutera aux scénarios Conflict compatibles des patrouilles d'hélicoptères de combat, des garnisons militaires sur les points d'intérêt et des marqueurs de carte pour les joueurs.",
     "Tout se réglera dans un seul fichier <code>config.json</code> du profil serveur, sans toucher au code. Chaque réglage a sa clé d'aide, du même nom précédé de <code>_</code>, qui l'explique.",
-    "<b>Prochaines étapes :</b> tester la correction de l'hélicoptère au banc serveur, puis en jeu. Largage de parachutistes depuis l'hélicoptère : prévu, encore au stade de la conception."
+    "<b>Prochaines étapes :</b> tester en jeu, avec des joueurs, l'hélicoptère près des garnisons et le marqueur d'un joueur tué. Ensuite : largage de troupes depuis l'hélicoptère, encore au stade de la conception."
   ],
   "m.ai-framework.f": [
-    "<b>Hélicoptères de combat Mi-8MT (trois variantes armées).</b> Un hélicoptère hostile apparaît près du plus grand groupe de joueurs, ancré sur un point d'intérêt, avec un équipage IA complet et un niveau d'IA réglable, de Noob à Expert. Il vole grâce au contrôleur de vol physique du studio, pas avec le vol IA du moteur : boucle de patrouille, maintien d'altitude, virages inclinés. <i>État : a fonctionné en jeu jusqu'en septembre 2026. Une régression empêche aujourd'hui son apparition ; la correction est écrite, pas encore testée.</i>",
+    "<b>Hélicoptères de combat Mi-8MT (trois variantes armées).</b> Un hélicoptère hostile apparaît près du plus grand groupe de joueurs, ancré sur un point d'intérêt, avec un équipage IA complet et un niveau d'IA réglable, de Noob à Expert. Il vole grâce au contrôleur de vol physique du studio, pas avec le vol IA du moteur : boucle de patrouille, maintien d'altitude, virages inclinés. <i>État : la panne qui l'empêchait d'apparaître est corrigée. Les garnisons occupaient toutes les places d'IA du moteur et l'équipage ne pouvait plus monter. Au banc serveur, garnisons actives, l'équipage embarque en moins de 2 secondes et l'hélicoptère suit sa patrouille. Pas encore testé en jeu avec des joueurs.</i>",
     "<b>Nettoyage automatique.</b> Abattu, pilote ou rotor perdu, posé ou dans l'eau : l'épave disparaît et la place se libère après un délai (23 minutes au total avec les valeurs du fichier de référence).",
     "<b>Garnisons militaires.</b> Chaque point d'intérêt éligible reçoit deux patrouilles, l'une serrée, l'autre large, et de petites équipes tiennent les tours, bunkers et miradors. Une base que les joueurs viennent de prendre subit une contre-attaque. <i>État : codé, pas retesté en jeu depuis le 3 novembre 2026.</i>",
-    "<b>Marqueurs de carte des joueurs.</b> Chaque joueur apparaît vivant, inconscient ou mort, et votre position est une flèche à la couleur de votre faction, qui tourne selon votre cap. <i>État : codé, correction en cours, pas encore testé en jeu.</i>",
-    "<b>Priorité sous le plafond d'IA.</b> Le moteur garde environ 128 IA actives à la fois : d'abord l'équipage de l'hélicoptère, puis les patrouilles serrées et les postes, puis les patrouilles larges."
+    "<b>Marqueurs de carte des joueurs.</b> Tous les joueurs de votre faction apparaissent sur la carte (le jeu de base ne les montre qu'au chef d'escouade), teintés quand ils sont inconscients ou morts. Votre position est une flèche à la couleur de votre faction, tournée selon votre cap. Un joueur tué reste en gris là où il est tombé jusqu'à sa réapparition (réglage serveur <code>KeepDeadMarkerUntilRespawn</code>). Chaque joueur choisit dans son propre fichier s'il voit sa flèche, sa taille, sa rotation et les couleurs. <i>État : terminé et testé au banc serveur, pas encore testé en jeu avec des joueurs.</i>",
+    "<b>Réserve sous le plafond d'IA.</b> Le moteur garde au plus 128 IA actives à la fois. Les garnisons et les contre-attaques laissent des places libres pour l'équipage de l'hélicoptère (réglage <code>AIBudgetReserve</code>, 12 par défaut, 0 = aucune réserve) : quand la réserve est atteinte, une patrouille attend une place libre et une vague de contre-attaque est annulée. Au banc, le total reste entre 116 et 119 IA sur 128."
   ],
   "m.ai-framework.setup": [
     "Le mod n'est pas encore publié : le guide d'installation complet viendra avec sa sortie.",
@@ -441,7 +441,7 @@
   "m.ai-framework.admin": [
     "N'augmentez pas <code>MaxActiveHelicopters</code> : le vol est scripté et n'évite pas les collisions entre appareils.",
     "Au démarrage, le journal doit montrer <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, puis l'analyse des points d'intérêt et la mise en place des garnisons.",
-    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>) et l'attente de 23 minutes après une destruction. Pour l'instant, une régression empêche aussi son apparition (correction pas encore testée)."
+    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>), l'attente de 23 minutes après une destruction, et que <code>AIBudgetReserve</code> couvre l'équipage (4 IA pendant l'embarquement) plus un groupe de garnison."
   ],
   "m.enhanced-compositions.tag": "Des compositions Conflict compactes, la capture par générateur et des garnisons IA.",
   "m.enhanced-compositions.intro": [
