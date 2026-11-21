@@ -689,23 +689,26 @@
   "wip.d": "Lavoro in corso su Conflict PvE: non ancora integrato nella mod, né nella versione di sviluppo né sul Workshop. I dettagli possono ancora cambiare.",
   "ew.name": "Bigfoot - Radar/Disturbatore",
   "ew.p": "Un camion fuoristrada M923A1 6x6 «Bigfoot» trasformato in veicolo da guerra elettronica per la fazione USA: un generatore diesel e un'antenna radar sul cassone.",
-  "ew.done_h": "Fatto: fase A (non ancora testata in gioco)",
+  "ew.done_h": "Scritto: fasi A e B (non ancora compilato né provato in gioco)",
   "ew.done": [
-    "<b>Aspetto americano realistico:</b> verniciatura verde oliva del M923A1, scritte a stampino in inglese sul generatore (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
-    "Tre cartelli «WARNING – RF RADIATION HAZARD» (norma ANSI, simbolo radiofrequenza IEEE) e tre cartelli «DANGER – HIGH VOLTAGE» (simbolo ISO 7010).",
-    "Marcatura del cassone «ELEC. WARFARE / RADAR» nello stile degli stampini dell'esercito USA.",
-    "Texture realizzate con i nostri strumenti, senza copiare file del gioco."
+    "<b>Aspetto statunitense realistico (fase A):</b> vernice verde oliva dell'M923A1, scritte a stampino in inglese sul gruppo elettrogeno, cartelli «WARNING – RF RADIATION HAZARD» e «DANGER – HIGH VOLTAGE», marcatura del cassone «ELEC. WARFARE / RADAR». Texture realizzate con i nostri strumenti, senza copiare file del gioco.",
+    "<b>Due schieramenti sul retro:</b> «Schiera il radar» o «Schiera il disturbatore». Uno solo alla volta: bisogna ripiegare l'uno per schierare l'altro.",
+    "Per schierarsi il camion deve essere fermo e vuoto. Una volta schierato, nessuno può salire. Se il camion si muove, tutto si ripiega.",
+    "<b>Gruppo elettrogeno diesel a bordo:</b> interruttore sul fianco, serbatoio da 100 L che si riempie dal retro come un veicolo. Il radar consuma circa 33 L/h (circa 3 h), il disturbatore circa 50 L/h (circa 2 h). Serbatoio vuoto: si ferma tutto.",
+    "<b>Radar di sorveglianza terrestre</b> (tipo Doppler): una scansione ogni 5 s, portata 1500 m. Vede solo ciò che si muove, e il terreno lo maschera.",
+    "Ogni contatto nemico compare sulla mappa della squadra con lo stesso simbolo dei rapporti dell'IA: fanteria, mitragliatrice, anticarro, veicolo, blindato, elicottero.",
+    "<b>Disturbatore:</b> interrompe il collegamento dei droni nemici entro 500 m. Un FPV precipita, un Mavic torna alla base. I droni amici sono risparmiati.",
+    "Portate e consumi regolabili dagli amministratori del server."
   ],
-  "ew.next_h": "Previsto",
+  "ew.next_h": "Prossimi passi (niente di questo è fatto)",
   "ew.next": [
-    "<b>Due modalità esclusive,</b> schierate sul retro come il QG mobile, mai entrambe insieme: <b>radar</b>, che rileva fanteria e veicoli nemici e li segna sulla mappa come un drone da ricognizione; <b>disturbatore</b>, che mette fuori uso i droni nemici nella sua bolla.",
-    "Nessuno può salire sul camion finché è schierato.",
-    "<b>Gasolio:</b> rifornimento dall'alto del generatore, interruttore di accensione sul lato; serbatoio vuoto, si spegne tutto. Circa 3 h di radar o 2 h di disturbo per pieno, regolabile.",
-    "<b>Radar antiaereo:</b> aerei, elicotteri e droni. Un Su-57 nemico rilevato fa scattare l'inseguimento di due F-22.",
-    "<b>Contro-rilevamento:</b> trasmettere per più di 10 minuti nello stesso punto attira un attacco del QG nemico. Spostarsi o farsi scoprire: a voi la scelta.",
-    "<b>Avvisi radio</b> dei contatti radar per i giocatori con una radio.",
-    "<b>Suoni di emissione:</b> il generatore e il bip della scansione.",
-    "Immagine di anteprima del camion finale nel menu di richiesta dei veicoli."
+    "<b>Radar antiaereo:</b> il radar rileva anche gli aerei. Un Su-57 rilevato avvia l'inseguimento da parte degli F-22.",
+    "<b>Contro-rilevamento:</b> un emettitore acceso troppo a lungo attira un attacco nemico.",
+    "<b>Allerte radio</b> dei contatti radar.",
+    "<b>Suoni di emissione.</b>",
+    "Collegamento con il camion droni FP-1 (ancora allo studio).",
+    "Immagine di anteprima del camion.",
+    "Disponibile al garage."
   ],
   "ew.insp": "Ispirazione: i moderni radar AESA, che fanno sia da radar sia da disturbatore (settore di circa 120°, disturbare costa energia e calore)."
 }

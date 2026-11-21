@@ -689,23 +689,26 @@
   "wip.d": "Laufende Arbeit an Conflict PvE: noch nicht in den Mod übernommen, weder in die Entwicklungsversion noch in den Workshop. Details können sich noch ändern.",
   "ew.name": "Bigfoot - Radar/Störsender",
   "ew.p": "Ein geländegängiger M923A1-6x6-Lkw „Bigfoot“, umgebaut zum Fahrzeug für elektronische Kampfführung der US-Fraktion: ein Dieselgenerator und eine Radarantenne auf der Ladefläche.",
-  "ew.done_h": "Erledigt: Phase A (noch nicht im Spiel getestet)",
+  "ew.done_h": "Geschrieben: Phasen A und B (noch nicht kompiliert, nicht im Spiel getestet)",
   "ew.done": [
-    "<b>Realistischer US-Look:</b> olivgrüne Lackierung des M923A1, englische Schablonenschriften auf dem Generator (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
-    "Drei Schilder „WARNING – RF RADIATION HAZARD“ (ANSI-Norm, IEEE-Hochfrequenzsymbol) und drei Schilder „DANGER – HIGH VOLTAGE“ (Symbol nach ISO 7010).",
-    "Ladeflächen-Markierung „ELEC. WARFARE / RADAR“ im Stil der Schablonen der US Army.",
-    "Texturen mit unseren eigenen Werkzeugen erstellt, keine Spieldateien kopiert."
+    "<b>Realistischer US-Look (Phase A):</b> olivgrüne Lackierung des M923A1, englische Schablonenschriften am Stromaggregat, Schilder „WARNING – RF RADIATION HAZARD“ und „DANGER – HIGH VOLTAGE“, Ladeflächen-Markierung „ELEC. WARFARE / RADAR“. Texturen mit eigenen Werkzeugen erstellt, keine Spieldateien kopiert.",
+    "<b>Zwei Einsätze am Heck:</b> „Radar aufbauen“ oder „Störsender aufbauen“. Nur eines zur Zeit: das eine abbauen, um das andere aufzubauen.",
+    "Zum Aufbauen muss der Lkw stehen und leer sein. Aufgebaut kann niemand einsteigen. Fährt der Lkw, wird alles abgebaut.",
+    "<b>Diesel-Stromaggregat an Bord:</b> Schalter an der Seite, 100-L-Tank, der am Heck wie ein Fahrzeug betankt wird. Das Radar verbraucht etwa 33 L/h (etwa 3 h), der Störsender etwa 50 L/h (etwa 2 h). Tank leer: alles stoppt.",
+    "<b>Bodenüberwachungsradar</b> (Doppler-Typ): ein Durchlauf alle 5 s, Reichweite 1.500 m. Es sieht nur, was sich bewegt, und das Gelände verdeckt es.",
+    "Jeder feindliche Kontakt erscheint auf der Teamkarte mit demselben Symbol wie die KI-Meldungen: Infanterie, MG, Panzerabwehr, Fahrzeug, Panzer, Hubschrauber.",
+    "<b>Störsender:</b> trennt die Verbindung feindlicher Drohnen im Umkreis von 500 m. Eine FPV stürzt ab, eine Mavic fliegt zur Basis zurück. Eigene Drohnen bleiben verschont.",
+    "Reichweiten und Verbrauch von Server-Admins einstellbar."
   ],
-  "ew.next_h": "Geplant",
+  "ew.next_h": "Nächste Schritte (davon ist nichts fertig)",
   "ew.next": [
-    "<b>Zwei exklusive Modi,</b> hinten aufgebaut wie das mobile HQ, nie beide gleichzeitig: <b>Radar</b> erkennt feindliche Infanterie und Fahrzeuge und markiert sie wie eine Aufklärungsdrohne auf der Karte; <b>Störsender</b> schaltet feindliche Drohnen in seiner Blase aus.",
-    "Niemand kann einsteigen, solange der Lkw aufgebaut ist.",
-    "<b>Diesel:</b> Tanken oben am Generator, Ein/Aus-Schalter an der Seite; leerer Tank, alles geht aus. Etwa 3 h Radar oder 2 h Stören pro Tankfüllung, einstellbar.",
-    "<b>Flugabwehrradar:</b> Flugzeuge, Hubschrauber und Drohnen. Eine erkannte feindliche Su-57 löst die Verfolgung durch zwei F-22 aus.",
-    "<b>Gegenaufklärung:</b> Wer länger als 10 Minuten am selben Ort sendet, zieht einen Schlag des feindlichen HQ auf sich. Weiterfahren oder entdeckt werden: Ihr entscheidet.",
-    "<b>Funkmeldungen</b> zu Radarkontakten für Spieler mit Funkgerät.",
-    "<b>Sendegeräusche:</b> der Generator und der Piepton der Abtastung.",
-    "Vorschaubild des fertigen Lkw im Fahrzeuganforderungsmenü."
+    "<b>Flugabwehrradar:</b> das Radar erfasst auch Flugzeuge. Eine erkannte Su-57 löst die Verfolgung durch die F-22 aus.",
+    "<b>Gegenaufklärung:</b> ein zu lange eingeschalteter Sender zieht einen feindlichen Schlag an.",
+    "<b>Funkmeldungen</b> zu Radarkontakten.",
+    "<b>Sendegeräusche.</b>",
+    "Verbindung mit dem Drohnen-Lkw FP-1 (noch in Prüfung).",
+    "Vorschaubild des Lkw.",
+    "Verfügbar in der Fahrzeughalle."
   ],
   "ew.insp": "Inspiration: moderne AESA-Radare, die zugleich Radar und Störsender sind (Sektor von etwa 120°, Stören kostet Energie und Wärme)."
 }

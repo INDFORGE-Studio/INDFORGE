@@ -689,23 +689,26 @@
   "wip.d": "Travail en cours sur Conflict PvE : pas encore intégré au mod, ni dans la version de développement ni sur le Workshop. Le contenu peut encore changer.",
   "ew.name": "Bigfoot - Radar/Brouilleur",
   "ew.p": "Un camion tout-terrain M923A1 6x6 « Bigfoot » transformé en véhicule de guerre électronique pour la faction US : un groupe électrogène diesel et une antenne radar sur le plateau.",
-  "ew.done_h": "Fait : phase A (pas encore testée en jeu)",
+  "ew.done_h": "Écrit : phases A et B (pas encore compilé ni testé en jeu)",
   "ew.done": [
-    "<b>Aspect US réaliste :</b> peinture vert olive du M923A1, pochoirs en anglais sur le groupe électrogène (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
-    "Trois panneaux « WARNING – RF RADIATION HAZARD » (norme ANSI, symbole radiofréquence IEEE) et trois panneaux « DANGER – HIGH VOLTAGE » (symbole ISO 7010).",
-    "Marquage de plateau « ELEC. WARFARE / RADAR » dans le style des pochoirs de l'armée US.",
-    "Textures réalisées avec nos propres outils, sans copie des fichiers du jeu."
+    "<b>Aspect US réaliste (phase A) :</b> peinture vert olive du M923A1, pochoirs en anglais sur le groupe électrogène, panneaux « WARNING – RF RADIATION HAZARD » et « DANGER – HIGH VOLTAGE », marquage de plateau « ELEC. WARFARE / RADAR ». Textures faites avec nos propres outils, sans copie des fichiers du jeu.",
+    "<b>Deux déploiements à l'arrière :</b> « Déployer le radar » ou « Déployer le brouilleur ». Un seul à la fois : il faut replier l'un pour déployer l'autre.",
+    "Le camion doit être arrêté et vide pour se déployer. Une fois déployé, personne ne peut y monter. Si le camion roule, tout se replie.",
+    "<b>Groupe électrogène diesel embarqué :</b> interrupteur sur le côté, réservoir de 100 L qui se remplit à l'arrière comme un véhicule. Le radar consomme environ 33 L/h (environ 3 h d'autonomie), le brouilleur environ 50 L/h (environ 2 h). Réservoir vide : tout s'arrête.",
+    "<b>Radar de surveillance au sol</b> (type Doppler) : un balayage toutes les 5 s, portée 1 500 m. Il ne voit que ce qui bouge, et le relief le masque.",
+    "Chaque contact ennemi apparaît sur la carte de l'équipe, avec le même symbole que les rapports de l'IA : infanterie, mitrailleuse, antichar, véhicule, blindé, hélicoptère.",
+    "<b>Brouilleur :</b> il coupe la liaison des drones ennemis à 500 m. Un FPV tombe, un Mavic rentre à sa base. Les drones amis sont épargnés.",
+    "Portées et consommations réglables par les admins de serveur."
   ],
-  "ew.next_h": "Prévu",
+  "ew.next_h": "Prochaines étapes (rien de cela n'est fait)",
   "ew.next": [
-    "<b>Deux modes exclusifs,</b> déployés à l'arrière comme le QG mobile, jamais les deux à la fois : <b>radar</b>, qui détecte fantassins et véhicules ennemis et les marque sur la carte comme un drone de reconnaissance ; <b>brouilleur</b>, qui coupe les drones ennemis dans sa bulle.",
-    "Personne ne peut monter dans le camion tant qu'il est déployé.",
-    "<b>Gazole :</b> plein par le haut du groupe électrogène, bouton marche/arrêt sur le côté ; réservoir vide, tout s'éteint. Autonomie d'environ 3 h en radar et 2 h en brouilleur, réglable.",
-    "<b>Radar anti-aérien :</b> avions, hélicoptères et drones. Un Su-57 ennemi détecté déclenche la poursuite par deux F-22.",
-    "<b>Contre-détection :</b> émettre plus de 10 minutes au même endroit attire une frappe de l'état-major ennemi. Bouger ou se faire repérer : à vous de choisir.",
-    "<b>Alertes radio</b> des contacts radar pour les joueurs équipés d'une radio.",
-    "<b>Sons d'émission :</b> le groupe électrogène et le bip de balayage.",
-    "Image d'aperçu du camion final dans le menu de demande de véhicules."
+    "<b>Radar anti-aérien :</b> le radar repère aussi les avions. Un Su-57 détecté déclenche la poursuite par les F-22.",
+    "<b>Contre-détection :</b> un émetteur allumé trop longtemps attire une frappe ennemie.",
+    "<b>Alertes radio</b> des contacts radar.",
+    "<b>Sons d'émission.</b>",
+    "Lien avec le camion de drones FP-1 (encore à l'étude).",
+    "Image d'aperçu du camion.",
+    "Entrée au garage."
   ],
   "ew.insp": "Inspiration : les radars AESA modernes, qui servent à la fois de radar et de brouilleur (secteur d'environ 120°, brouiller coûte de l'énergie et de la chaleur)."
 }
