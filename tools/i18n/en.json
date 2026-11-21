@@ -701,8 +701,11 @@
     "<b>Jammer:</b> cuts the link of enemy drones within 500 m. An FPV drops, a Mavic flies back to base. Friendly drones are spared.",
     "<b>Counter-detection:</b> the enemy's radio direction finding counts how long the truck emits (radar or jammer) at the same site. After about 8 min, the crew gets a radio warning: “Enemy direction finding: shut it down or relocate”. After about 10 min, the enemy has a fix: its HQ learns where the truck is and sends troops, and its mortars can fire a pre-registered strike on it with no observer. The crew hears “Enemy fix on your emitter”. It happens again after each further 10 min at the same place. Switched off, the count goes down as fast as it went up; moving more than 300 m resets it to zero.",
     "<b>Anti-air radar:</b> with the radar on, it catches an enemy Su-57 recon jet coming within 1.5 km. Players near the radar hear “Radar contact: enemy jet, friendly fighters scrambled”, and a pair of F-22s chases the Su-57.",
-    "<b>Cable link with the FP-1:</b> once cabled to the FP-1 drone truck, the radar feeds its targets live to the FP-1 planner. Not tested in game yet.",
     "Every value (ranges, fuel use, delays) can be set by server admins."
+  ],
+  "ew.written_h": "Written, not compiled or tested yet",
+  "ew.written": [
+    "<b>Cable link with the FP-1:</b> once cabled to the FP-1 drone truck, the radar feeds its targets live to the FP-1 planner."
   ],
   "ew.next_h": "Next steps (none of this is done)",
   "ew.next": [

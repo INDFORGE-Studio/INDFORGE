@@ -638,9 +638,10 @@ def wip_block(id_, code):
   %s
   <h4>%s</h4><ul class="feat">%s</ul>
   <h4>%s</h4><ul class="feat feat-plan">%s</ul>
+  <h4>%s</h4><ul class="feat feat-plan">%s</ul>
   %s
 </article>""" % (t("ew.name"), t("ui.wip", "span", "chip chip-dev"), t("ew.p", "p"), t("ew.done_h"), tl("ew.done"),
-                 t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
+                 t("ew.written_h"), tl("ew.written"), t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
     return sec(id_, "wip.h", body, code, "sec-wip", t("wip.d", "p", "dim"))
 
 
