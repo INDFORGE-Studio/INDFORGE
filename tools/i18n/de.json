@@ -689,7 +689,7 @@
   "wip.d": "Laufende Arbeit an Conflict PvE: noch nicht in den Mod übernommen, weder in die Entwicklungsversion noch in den Workshop. Details können sich noch ändern.",
   "ew.name": "Bigfoot - Radar/Störsender",
   "ew.p": "Ein geländegängiger M923A1-6x6-Lkw „Bigfoot“, umgebaut zum Fahrzeug für elektronische Kampfführung der US-Fraktion: ein Dieselgenerator und eine Radarantenne auf der Ladefläche.",
-  "ew.done_h": "Geschrieben: Phasen A und B (noch nicht kompiliert, nicht im Spiel getestet)",
+  "ew.done_h": "Programmiert und kompiliert auf einem Entwicklungszweig: Server-Prüfstand läuft, noch nicht im Spiel getestet",
   "ew.done": [
     "<b>Realistischer US-Look (Phase A):</b> olivgrüne Lackierung des M923A1, englische Schablonenschriften am Stromaggregat, Schilder „WARNING – RF RADIATION HAZARD“ und „DANGER – HIGH VOLTAGE“, Ladeflächen-Markierung „ELEC. WARFARE / RADAR“. An den Türen zeigen die drei weißen Schablonenschilder eine Radarantenne, den strahlenden Störsendermast und den Blitz des Stromaggregats, statt Schraubenschlüssel, Granate und Waffe des ursprünglichen Bergefahrzeugs. An der Seite wird das orange Schild „EXPLOSIVES“ zu „RF RADIATION“, mit dem Symbol ISO 7010 W005 (nichtionisierende Strahlung), entlang der diagonalen Schrift gesetzt. Texturen mit eigenen Werkzeugen erstellt, keine Spieldateien kopiert.",
     "<b>Zwei Einsätze am Heck:</b> „Radar aufbauen“ oder „Störsender aufbauen“. Nur eines zur Zeit: das eine abbauen, um das andere aufzubauen.",
@@ -698,17 +698,17 @@
     "<b>Bodenüberwachungsradar</b> (Doppler-Typ): ein Durchlauf alle 5 s, Reichweite 1.500 m. Es sieht nur, was sich bewegt, und das Gelände verdeckt es.",
     "Jeder feindliche Kontakt erscheint auf der Teamkarte mit demselben Symbol wie die KI-Meldungen: Infanterie, MG, Panzerabwehr, Fahrzeug, Panzer, Hubschrauber.",
     "<b>Störsender:</b> trennt die Verbindung feindlicher Drohnen im Umkreis von 500 m. Eine FPV stürzt ab, eine Mavic fliegt zur Basis zurück. Eigene Drohnen bleiben verschont.",
-    "Reichweiten und Verbrauch von Server-Admins einstellbar."
+    "<b>Gegenaufklärung:</b> Die feindliche Funkpeilung zählt, wie lange der Lkw (Radar oder Störsender) am selben Ort sendet. Nach etwa 8 Min. erhält die Besatzung die Funkwarnung „Enemy direction finding: shut it down or relocate“. Nach etwa 10 Min. hat der Feind eine Peilung: Sein HQ erfährt die Position des Lkw und schickt Truppen, und seine Mörser können ohne Beobachter einen vorbereiteten Schlag darauf abgeben. Die Besatzung hört „Enemy fix on your emitter“. Das wiederholt sich nach jeweils weiteren 10 Min. am selben Ort. Ausgeschaltet sinkt der Zähler so schnell, wie er gestiegen ist; eine Verlegung um mehr als 300 m setzt ihn auf null.",
+    "<b>Flugabwehrradar:</b> Bei eingeschaltetem Radar erfasst es ein feindliches Su-57-Aufklärungsflugzeug, das näher als 1,5 km kommt. Spieler in der Nähe des Radars hören „Radar contact: enemy jet, friendly fighters scrambled“, und eine Rotte aus zwei F-22 nimmt die Verfolgung der Su-57 auf.",
+    "Alle Werte (Reichweiten, Verbrauch, Zeiten) sind von Serveradmins einstellbar."
   ],
   "ew.next_h": "Nächste Schritte (davon ist nichts fertig)",
   "ew.next": [
-    "<b>Flugabwehrradar:</b> das Radar erfasst auch Flugzeuge. Eine erkannte Su-57 löst die Verfolgung durch die F-22 aus.",
-    "<b>Gegenaufklärung:</b> ein zu lange eingeschalteter Sender zieht einen feindlichen Schlag an.",
-    "<b>Funkmeldungen</b> zu Radarkontakten.",
     "<b>Sendegeräusche.</b>",
-    "Verbindung mit dem Drohnen-Lkw FP-1 (noch in Prüfung).",
     "Vorschaubild des Lkw.",
-    "Verfügbar in der Fahrzeughalle."
+    "Aufnahme in die große Garage.",
+    "Verbindung mit dem Drohnen-Lkw FP-1 (noch in Prüfung).",
+    "<b>Test im Spiel.</b>"
   ],
   "ew.insp": "Inspiration: moderne AESA-Radare, die zugleich Radar und Störsender sind (Sektor von etwa 120°, Stören kostet Energie und Wärme)."
 }

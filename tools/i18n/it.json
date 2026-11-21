@@ -689,7 +689,7 @@
   "wip.d": "Lavoro in corso su Conflict PvE: non ancora integrato nella mod, né nella versione di sviluppo né sul Workshop. I dettagli possono ancora cambiare.",
   "ew.name": "Bigfoot - Radar/Disturbatore",
   "ew.p": "Un camion fuoristrada M923A1 6x6 «Bigfoot» trasformato in veicolo da guerra elettronica per la fazione USA: un generatore diesel e un'antenna radar sul cassone.",
-  "ew.done_h": "Scritto: fasi A e B (non ancora compilato né provato in gioco)",
+  "ew.done_h": "Programmato e compilato su un ramo di sviluppo: banco server in corso, non ancora testato in gioco",
   "ew.done": [
     "<b>Aspetto statunitense realistico (fase A):</b> vernice verde oliva dell'M923A1, scritte a stampino in inglese sul gruppo elettrogeno, cartelli «WARNING – RF RADIATION HAZARD» e «DANGER – HIGH VOLTAGE», marcatura del cassone «ELEC. WARFARE / RADAR». Sulle portiere, le tre targhe bianche a stampino mostrano un'antenna radar, l'albero del disturbatore che irradia e il fulmine del gruppo elettrogeno, al posto della chiave, del proiettile e dell'arma del camion officina originale. Sul fianco, la targa arancione «EXPLOSIVES» diventa «RF RADIATION», con il simbolo ISO 7010 W005 (radiazioni non ionizzanti), posto lungo l'asse della scritta in diagonale. Texture realizzate con i nostri strumenti, senza copiare file del gioco.",
     "<b>Due schieramenti sul retro:</b> «Schiera il radar» o «Schiera il disturbatore». Uno solo alla volta: bisogna ripiegare l'uno per schierare l'altro.",
@@ -698,17 +698,17 @@
     "<b>Radar di sorveglianza terrestre</b> (tipo Doppler): una scansione ogni 5 s, portata 1500 m. Vede solo ciò che si muove, e il terreno lo maschera.",
     "Ogni contatto nemico compare sulla mappa della squadra con lo stesso simbolo dei rapporti dell'IA: fanteria, mitragliatrice, anticarro, veicolo, blindato, elicottero.",
     "<b>Disturbatore:</b> interrompe il collegamento dei droni nemici entro 500 m. Un FPV precipita, un Mavic torna alla base. I droni amici sono risparmiati.",
-    "Portate e consumi regolabili dagli amministratori del server."
+    "<b>Contro-rilevamento:</b> la radiogoniometria nemica conta per quanto tempo il camion trasmette (radar o disturbatore) nello stesso punto. Dopo circa 8 min, l'equipaggio riceve l'avviso radio «Enemy direction finding: shut it down or relocate». Dopo circa 10 min, il nemico lo localizza: il suo quartier generale sa dov'è il camion e invia truppe, e i suoi mortai possono sparare un colpo pre-registrato senza osservatore. L'equipaggio sente «Enemy fix on your emitter». Si ripete dopo ogni ulteriore 10 min nello stesso punto. Spento, il contatore scende veloce come è salito; spostarsi di oltre 300 m lo azzera.",
+    "<b>Radar antiaereo:</b> con il radar acceso, individua un ricognitore nemico Su-57 che arrivi entro 1,5 km. I giocatori vicino al radar sentono «Radar contact: enemy jet, friendly fighters scrambled», e una coppia di F-22 insegue il Su-57.",
+    "Tutti i valori (portate, consumi, tempi) sono regolabili dagli admin del server."
   ],
   "ew.next_h": "Prossimi passi (niente di questo è fatto)",
   "ew.next": [
-    "<b>Radar antiaereo:</b> il radar rileva anche gli aerei. Un Su-57 rilevato avvia l'inseguimento da parte degli F-22.",
-    "<b>Contro-rilevamento:</b> un emettitore acceso troppo a lungo attira un attacco nemico.",
-    "<b>Allerte radio</b> dei contatti radar.",
     "<b>Suoni di emissione.</b>",
-    "Collegamento con il camion droni FP-1 (ancora allo studio).",
     "Immagine di anteprima del camion.",
-    "Disponibile al garage."
+    "Ingresso nel garage grande.",
+    "Collegamento con il camion droni FP-1 (ancora allo studio).",
+    "<b>Test in gioco.</b>"
   ],
   "ew.insp": "Ispirazione: i moderni radar AESA, che fanno sia da radar sia da disturbatore (settore di circa 120°, disturbare costa energia e calore)."
 }

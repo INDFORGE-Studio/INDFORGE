@@ -689,7 +689,7 @@
   "wip.d": "Travail en cours sur Conflict PvE : pas encore intégré au mod, ni dans la version de développement ni sur le Workshop. Le contenu peut encore changer.",
   "ew.name": "Bigfoot - Radar/Brouilleur",
   "ew.p": "Un camion tout-terrain M923A1 6x6 « Bigfoot » transformé en véhicule de guerre électronique pour la faction US : un groupe électrogène diesel et une antenne radar sur le plateau.",
-  "ew.done_h": "Écrit : phases A et B (pas encore compilé ni testé en jeu)",
+  "ew.done_h": "Codé et compilé sur une branche de développement : banc serveur en cours, pas encore testé en jeu",
   "ew.done": [
     "<b>Aspect US réaliste (phase A) :</b> peinture vert olive du M923A1, pochoirs en anglais sur le groupe électrogène, panneaux « WARNING – RF RADIATION HAZARD » et « DANGER – HIGH VOLTAGE », marquage de plateau « ELEC. WARFARE / RADAR ». Sur les portières, les trois plaques blanches au pochoir montrent une antenne radar, le mât du brouilleur qui rayonne et l'éclair du générateur, à la place de la clé, de l'obus et de l'arme du camion de réparation d'origine. Sur le côté, la plaque orange « EXPLOSIVES » devient « RF RADIATION », avec le symbole ISO 7010 W005 (rayonnement non ionisant), posé dans l'axe du texte en diagonale. Textures faites avec nos propres outils, sans copie des fichiers du jeu.",
     "<b>Deux déploiements à l'arrière :</b> « Déployer le radar » ou « Déployer le brouilleur ». Un seul à la fois : il faut replier l'un pour déployer l'autre.",
@@ -698,17 +698,17 @@
     "<b>Radar de surveillance au sol</b> (type Doppler) : un balayage toutes les 5 s, portée 1 500 m. Il ne voit que ce qui bouge, et le relief le masque.",
     "Chaque contact ennemi apparaît sur la carte de l'équipe, avec le même symbole que les rapports de l'IA : infanterie, mitrailleuse, antichar, véhicule, blindé, hélicoptère.",
     "<b>Brouilleur :</b> il coupe la liaison des drones ennemis à 500 m. Un FPV tombe, un Mavic rentre à sa base. Les drones amis sont épargnés.",
-    "Portées et consommations réglables par les admins de serveur."
+    "<b>Contre-détection :</b> la goniométrie radio ennemie compte le temps d'émission du camion (radar ou brouilleur) au même endroit. Vers 8 min, l'équipage reçoit l'alerte radio « Enemy direction finding: shut it down or relocate ». Vers 10 min, l'ennemi le localise : son QG apprend où est le camion et envoie des troupes, et ses mortiers peuvent tirer une frappe préréglée sans observateur. L'équipage entend « Enemy fix on your emitter ». Cela recommence toutes les 10 min au même endroit. Éteint, le compteur redescend aussi vite qu'il est monté ; un déplacement de plus de 300 m le remet à zéro.",
+    "<b>Radar anti-aérien :</b> radar allumé, il repère un avion de reconnaissance ennemi Su-57 qui arrive à moins de 1,5 km. Les joueurs proches du radar entendent « Radar contact: enemy jet, friendly fighters scrambled », et une patrouille de deux F-22 prend le Su-57 en chasse.",
+    "Toutes les valeurs (portées, consommations, délais) sont réglables par les admins de serveur."
   ],
   "ew.next_h": "Prochaines étapes (rien de cela n'est fait)",
   "ew.next": [
-    "<b>Radar anti-aérien :</b> le radar repère aussi les avions. Un Su-57 détecté déclenche la poursuite par les F-22.",
-    "<b>Contre-détection :</b> un émetteur allumé trop longtemps attire une frappe ennemie.",
-    "<b>Alertes radio</b> des contacts radar.",
     "<b>Sons d'émission.</b>",
-    "Lien avec le camion de drones FP-1 (encore à l'étude).",
     "Image d'aperçu du camion.",
-    "Entrée au garage."
+    "Entrée au grand garage.",
+    "Lien avec le camion de drones FP-1 (encore à l'étude).",
+    "<b>Test en jeu.</b>"
   ],
   "ew.insp": "Inspiration : les radars AESA modernes, qui servent à la fois de radar et de brouilleur (secteur d'environ 120°, brouiller coûte de l'énergie et de la chaleur)."
 }

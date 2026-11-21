@@ -689,7 +689,7 @@
   "wip.d": "Work in progress on Conflict PvE: not merged into the mod yet, neither in the development build nor on the Workshop. Details may still change.",
   "ew.name": "Bigfoot - Radar/Jammer",
   "ew.p": "An M923A1 6x6 “Bigfoot” off-road truck turned into an electronic warfare vehicle for the US faction: a diesel generator and a radar antenna on the cargo bed.",
-  "ew.done_h": "Written: phases A and B (not compiled or tested in game yet)",
+  "ew.done_h": "Coded and compiling on a development branch: server bench running, not tested in game yet",
   "ew.done": [
     "<b>Realistic US look (phase A):</b> M923A1 olive drab paint, English stencils on the generator, “WARNING – RF RADIATION HAZARD” and “DANGER – HIGH VOLTAGE” signs, “ELEC. WARFARE / RADAR” bed marking. On the doors, the three white stencilled plates show a radar antenna, the jammer mast radiating and the generator lightning bolt, in place of the wrench, shell and weapon of the original repair truck. On the side, the orange “EXPLOSIVES” plate becomes “RF RADIATION”, with the ISO 7010 W005 symbol (non-ionizing radiation), set along the diagonal text. Textures made with our own tools, no game files copied.",
     "<b>Two deployments at the rear:</b> “Deploy radar” or “Deploy jammer”. Only one at a time: pack one up to deploy the other.",
@@ -698,17 +698,17 @@
     "<b>Ground surveillance radar</b> (Doppler type): one sweep every 5 s, 1,500 m range. It only sees what moves, and terrain masks it.",
     "Each enemy contact appears on the team map with the same symbol as the AI reports: infantry, machine gun, anti-tank, vehicle, armour, helicopter.",
     "<b>Jammer:</b> cuts the link of enemy drones within 500 m. An FPV drops, a Mavic flies back to base. Friendly drones are spared.",
-    "Ranges and fuel use adjustable by server admins."
+    "<b>Counter-detection:</b> the enemy's radio direction finding counts how long the truck emits (radar or jammer) at the same site. After about 8 min, the crew gets a radio warning: “Enemy direction finding: shut it down or relocate”. After about 10 min, the enemy has a fix: its HQ learns where the truck is and sends troops, and its mortars can fire a pre-registered strike on it with no observer. The crew hears “Enemy fix on your emitter”. It happens again after each further 10 min at the same place. Switched off, the count goes down as fast as it went up; moving more than 300 m resets it to zero.",
+    "<b>Anti-air radar:</b> with the radar on, it catches an enemy Su-57 recon jet coming within 1.5 km. Players near the radar hear “Radar contact: enemy jet, friendly fighters scrambled”, and a pair of F-22s chases the Su-57.",
+    "Every value (ranges, fuel use, delays) can be set by server admins."
   ],
   "ew.next_h": "Next steps (none of this is done)",
   "ew.next": [
-    "<b>Air-defence radar:</b> the radar also picks up aircraft. A detected Su-57 sends the F-22s after it.",
-    "<b>Counter-detection:</b> an emitter left on too long draws an enemy strike.",
-    "<b>Radio alerts</b> of radar contacts.",
     "<b>Emission sounds.</b>",
-    "Link with the FP-1 drone truck (still under study).",
     "Preview image of the truck.",
-    "Available at the garage."
+    "Entry in the large garage.",
+    "Link with the FP-1 drone truck (still under study).",
+    "<b>In-game test.</b>"
   ],
   "ew.insp": "Inspiration: modern AESA radars that double as radar and jammer (sector of about 120°, jamming costs power and heat)."
 }

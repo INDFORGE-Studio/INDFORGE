@@ -689,7 +689,7 @@
   "wip.d": "Trabajo en curso en Conflict PvE: todavía no integrado en el mod, ni en la versión de desarrollo ni en el Workshop. Los detalles aún pueden cambiar.",
   "ew.name": "Bigfoot - Radar/Inhibidor",
   "ew.p": "Un camión todoterreno M923A1 6x6 «Bigfoot» convertido en vehículo de guerra electrónica para la facción de EE. UU.: un generador diésel y una antena de radar en la caja.",
-  "ew.done_h": "Escrito: fases A y B (aún sin compilar ni probar en el juego)",
+  "ew.done_h": "Programado y compilando en una rama de desarrollo: banco de servidor en curso, aún sin probar en el juego",
   "ew.done": [
     "<b>Aspecto estadounidense realista (fase A):</b> pintura verde oliva del M923A1, plantillas en inglés en el generador, carteles «WARNING – RF RADIATION HAZARD» y «DANGER – HIGH VOLTAGE», marcado de plataforma «ELEC. WARFARE / RADAR». En las puertas, las tres placas blancas a plantilla muestran una antena de radar, el mástil del inhibidor irradiando y el rayo del generador, en lugar de la llave, el proyectil y el arma del camión de reparación original. En el lateral, la placa naranja «EXPLOSIVES» pasa a ser «RF RADIATION», con el símbolo ISO 7010 W005 (radiación no ionizante), colocado en el eje del texto en diagonal. Texturas hechas con nuestras propias herramientas, sin copiar archivos del juego.",
     "<b>Dos despliegues en la parte trasera:</b> «Desplegar el radar» o «Desplegar el inhibidor». Solo uno a la vez: hay que recoger uno para desplegar el otro.",
@@ -698,17 +698,17 @@
     "<b>Radar de vigilancia terrestre</b> (tipo Doppler): un barrido cada 5 s, alcance de 1500 m. Solo ve lo que se mueve, y el relieve lo oculta.",
     "Cada contacto enemigo aparece en el mapa del equipo con el mismo símbolo que los informes de la IA: infantería, ametralladora, antitanque, vehículo, blindado, helicóptero.",
     "<b>Inhibidor:</b> corta el enlace de los drones enemigos a 500 m. Un FPV cae, un Mavic vuelve a su base. Los drones aliados no se ven afectados.",
-    "Alcances y consumos ajustables por los administradores del servidor."
+    "<b>Contradetección:</b> la radiogoniometría enemiga cuenta cuánto tiempo emite el camión (radar o inhibidor) en el mismo lugar. A los 8 min aproximadamente, la tripulación recibe el aviso por radio «Enemy direction finding: shut it down or relocate». A los 10 min aproximadamente, el enemigo lo localiza: su cuartel general sabe dónde está el camión y envía tropas, y sus morteros pueden lanzar un ataque preajustado sin observador. La tripulación oye «Enemy fix on your emitter». Se repite cada 10 min más en el mismo lugar. Apagado, el contador baja tan rápido como subió; moverse más de 300 m lo pone a cero.",
+    "<b>Radar antiaéreo:</b> con el radar encendido, detecta un avión de reconocimiento enemigo Su-57 que se acerque a menos de 1,5 km. Los jugadores cerca del radar oyen «Radar contact: enemy jet, friendly fighters scrambled», y una pareja de F-22 persigue al Su-57.",
+    "Todos los valores (alcances, consumos, tiempos) son ajustables por los administradores del servidor."
   ],
   "ew.next_h": "Próximos pasos (nada de esto está hecho)",
   "ew.next": [
-    "<b>Radar antiaéreo:</b> el radar también detecta aviones. Un Su-57 detectado lanza la persecución de los F-22.",
-    "<b>Contradetección:</b> un emisor encendido demasiado tiempo atrae un ataque enemigo.",
-    "<b>Alertas por radio</b> de los contactos del radar.",
     "<b>Sonidos de emisión.</b>",
-    "Enlace con el camión de drones FP-1 (aún en estudio).",
     "Imagen de vista previa del camión.",
-    "Disponible en el garaje."
+    "Entrada en el garaje grande.",
+    "Enlace con el camión de drones FP-1 (aún en estudio).",
+    "<b>Prueba en el juego.</b>"
   ],
   "ew.insp": "Inspiración: los radares AESA modernos, que sirven a la vez de radar y de inhibidor (sector de unos 120°, inhibir cuesta energía y calor)."
 }
