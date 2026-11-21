@@ -683,5 +683,29 @@
   "optic.emblem": "Godło INDFORGE · {n}",
   "ui.callsign": "Kryptonim",
   "ui.callsign_new": "Wylosuj nowy kryptonim",
-  "ui.callsign_set": "Nowy kryptonim: {c}"
+  "ui.callsign_set": "Nowy kryptonim: {c}",
+  "ui.wip": "W budowie",
+  "wip.h": "W budowie",
+  "wip.d": "Prace trwają w Conflict PvE: jeszcze niewłączone do moda, ani do wersji deweloperskiej, ani do Workshop. Szczegóły mogą się zmienić.",
+  "ew.name": "Bigfoot - Radar/Zagłuszarka",
+  "ew.p": "Terenowa ciężarówka M923A1 6x6 „Bigfoot” przerobiona na pojazd walki elektronicznej dla frakcji USA: agregat prądotwórczy z silnikiem Diesla i antena radaru na skrzyni.",
+  "ew.done_h": "Zrobione: faza A (jeszcze nietestowana w grze)",
+  "ew.done": [
+    "<b>Realistyczny amerykański wygląd:</b> oliwkowe malowanie M923A1, angielskie napisy szablonowe na agregacie (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
+    "Trzy tablice „WARNING – RF RADIATION HAZARD” (norma ANSI, symbol częstotliwości radiowej IEEE) i trzy tablice „DANGER – HIGH VOLTAGE” (symbol ISO 7010).",
+    "Oznaczenie skrzyni „ELEC. WARFARE / RADAR” w stylu szablonów armii USA.",
+    "Tekstury wykonane naszymi własnymi narzędziami, bez kopiowania plików gry."
+  ],
+  "ew.next_h": "Planowane",
+  "ew.next": [
+    "<b>Dwa wykluczające się tryby,</b> rozkładane z tyłu jak mobilny sztab, nigdy oba naraz: <b>radar</b> wykrywa wrogą piechotę i pojazdy i zaznacza je na mapie jak dron zwiadowczy; <b>zagłuszarka</b> wyłącza wrogie drony w swojej strefie.",
+    "Nikt nie może wsiąść do ciężarówki, gdy jest rozłożona.",
+    "<b>Olej napędowy:</b> tankowanie od góry agregatu, włącznik z boku; pusty zbiornik — wszystko gaśnie. Około 3 h pracy radaru lub 2 h zagłuszania na zbiorniku, z możliwością zmiany.",
+    "<b>Radar przeciwlotniczy:</b> samoloty, śmigłowce i drony. Wykryty wrogi Su-57 wywołuje pościg dwóch F-22.",
+    "<b>Przeciwwykrywanie:</b> nadawanie dłużej niż 10 minut w jednym miejscu ściąga uderzenie wrogiego sztabu. Ruszyć się albo zostać namierzonym: wasz wybór.",
+    "<b>Alerty radiowe</b> o kontaktach radarowych dla graczy z radiem.",
+    "<b>Dźwięki pracy:</b> agregat i sygnał skanowania.",
+    "Obraz podglądu gotowej ciężarówki w menu zamawiania pojazdów."
+  ],
+  "ew.insp": "Inspiracja: nowoczesne radary AESA, które pełnią jednocześnie rolę radaru i zagłuszarki (sektor około 120°, zagłuszanie kosztuje energię i ciepło)."
 }

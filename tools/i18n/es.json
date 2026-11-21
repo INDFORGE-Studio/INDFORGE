@@ -683,5 +683,29 @@
   "optic.emblem": "Emblema INDFORGE · {n}",
   "ui.callsign": "Indicativo",
   "ui.callsign_new": "Sortear un nuevo indicativo",
-  "ui.callsign_set": "Nuevo indicativo: {c}"
+  "ui.callsign_set": "Nuevo indicativo: {c}",
+  "ui.wip": "En desarrollo",
+  "wip.h": "En desarrollo",
+  "wip.d": "Trabajo en curso en Conflict PvE: todavía no integrado en el mod, ni en la versión de desarrollo ni en el Workshop. Los detalles aún pueden cambiar.",
+  "ew.name": "Bigfoot - Radar/Inhibidor",
+  "ew.p": "Un camión todoterreno M923A1 6x6 «Bigfoot» convertido en vehículo de guerra electrónica para la facción de EE. UU.: un generador diésel y una antena de radar en la caja.",
+  "ew.done_h": "Hecho: fase A (aún sin probar en el juego)",
+  "ew.done": [
+    "<b>Aspecto estadounidense realista:</b> pintura verde oliva del M923A1, rótulos en inglés sobre el generador (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
+    "Tres carteles «WARNING – RF RADIATION HAZARD» (norma ANSI, símbolo de radiofrecuencia IEEE) y tres carteles «DANGER – HIGH VOLTAGE» (símbolo ISO 7010).",
+    "Marcado de la caja «ELEC. WARFARE / RADAR» al estilo de los rótulos del Ejército de EE. UU.",
+    "Texturas hechas con nuestras propias herramientas, sin copiar archivos del juego."
+  ],
+  "ew.next_h": "Previsto",
+  "ew.next": [
+    "<b>Dos modos exclusivos,</b> desplegados en la parte trasera como el cuartel móvil, nunca los dos a la vez: <b>radar</b>, que detecta infantería y vehículos enemigos y los marca en el mapa como un dron de reconocimiento; <b>inhibidor</b>, que anula los drones enemigos dentro de su burbuja.",
+    "Nadie puede subir al camión mientras está desplegado.",
+    "<b>Gasóleo:</b> se reposta por arriba del generador, interruptor de encendido en el lateral; con el depósito vacío, todo se apaga. Unas 3 h de radar o 2 h de inhibición por depósito, ajustable.",
+    "<b>Radar antiaéreo:</b> aviones, helicópteros y drones. Un Su-57 enemigo detectado provoca la persecución de dos F-22.",
+    "<b>Contradetección:</b> emitir más de 10 minutos en el mismo sitio atrae un ataque del cuartel general enemigo. Moverse o ser descubierto: vosotros decidís.",
+    "<b>Alertas por radio</b> de los contactos de radar para los jugadores con radio.",
+    "<b>Sonidos de emisión:</b> el generador y el pitido del barrido.",
+    "Imagen de vista previa del camión final en el menú de petición de vehículos."
+  ],
+  "ew.insp": "Inspiración: los radares AESA modernos, que sirven a la vez de radar y de inhibidor (sector de unos 120°, inhibir cuesta energía y calor)."
 }

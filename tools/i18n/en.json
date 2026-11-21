@@ -683,5 +683,29 @@
   "optic.emblem": "INDFORGE emblem · {n}",
   "ui.callsign": "Callsign",
   "ui.callsign_new": "Draw a new callsign",
-  "ui.callsign_set": "New callsign: {c}"
+  "ui.callsign_set": "New callsign: {c}",
+  "ui.wip": "In development",
+  "wip.h": "In development",
+  "wip.d": "Work in progress on Conflict PvE: not merged into the mod yet, neither in the development build nor on the Workshop. Details may still change.",
+  "ew.name": "Bigfoot - Radar/Jammer",
+  "ew.p": "An M923A1 6x6 “Bigfoot” off-road truck turned into an electronic warfare vehicle for the US faction: a diesel generator and a radar antenna on the cargo bed.",
+  "ew.done_h": "Done: phase A (not tested in game yet)",
+  "ew.done": [
+    "<b>Realistic US look:</b> M923A1 olive drab paint, English stencils on the generator (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
+    "Three “WARNING – RF RADIATION HAZARD” signs (ANSI standard, IEEE radio-frequency symbol) and three “DANGER – HIGH VOLTAGE” signs (ISO 7010 symbol).",
+    "“ELEC. WARFARE / RADAR” bed marking in the style of US Army stencils.",
+    "Textures made with our own tools, no game files copied."
+  ],
+  "ew.next_h": "Planned",
+  "ew.next": [
+    "<b>Two exclusive modes,</b> deployed at the rear like the mobile HQ, never both at once: <b>radar</b> detects enemy infantry and vehicles and marks them on the map like a reconnaissance drone; <b>jammer</b> cuts enemy drones inside its bubble.",
+    "Nobody can board the truck while it is deployed.",
+    "<b>Diesel:</b> refuel from the top of the generator, on/off switch on the side; empty tank, everything shuts down. About 3 h of radar or 2 h of jamming per tank, adjustable.",
+    "<b>Air-defence radar:</b> planes, helicopters and drones. A detected enemy Su-57 sends two F-22s after it.",
+    "<b>Counter-detection:</b> emitting for more than 10 minutes in the same place draws a strike from the enemy HQ. Move or get found: your call.",
+    "<b>Radio alerts</b> of radar contacts for players carrying a radio.",
+    "<b>Emission sounds:</b> the generator and the sweep beep.",
+    "Preview image of the final truck in the vehicle request menu."
+  ],
+  "ew.insp": "Inspiration: modern AESA radars that double as radar and jammer (sector of about 120°, jamming costs power and heat)."
 }

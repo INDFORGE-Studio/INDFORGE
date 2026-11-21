@@ -683,5 +683,29 @@
   "optic.emblem": "Emblème INDFORGE · {n}",
   "ui.callsign": "Indicatif",
   "ui.callsign_new": "Tirer un nouvel indicatif",
-  "ui.callsign_set": "Nouvel indicatif : {c}"
+  "ui.callsign_set": "Nouvel indicatif : {c}",
+  "ui.wip": "En chantier",
+  "wip.h": "En chantier",
+  "wip.d": "Travail en cours sur Conflict PvE : pas encore intégré au mod, ni dans la version de développement ni sur le Workshop. Le contenu peut encore changer.",
+  "ew.name": "Bigfoot - Radar/Brouilleur",
+  "ew.p": "Un camion tout-terrain M923A1 6x6 « Bigfoot » transformé en véhicule de guerre électronique pour la faction US : un groupe électrogène diesel et une antenne radar sur le plateau.",
+  "ew.done_h": "Fait : phase A (pas encore testée en jeu)",
+  "ew.done": [
+    "<b>Aspect US réaliste :</b> peinture vert olive du M923A1, pochoirs en anglais sur le groupe électrogène (COOLANT, WARNING: HOT SURFACE, GROUND RODS, OUTPUT TERMINALS, WARNING: HIGH VOLTAGE, TIE DOWN, 5000 LBS…).",
+    "Trois panneaux « WARNING – RF RADIATION HAZARD » (norme ANSI, symbole radiofréquence IEEE) et trois panneaux « DANGER – HIGH VOLTAGE » (symbole ISO 7010).",
+    "Marquage de plateau « ELEC. WARFARE / RADAR » dans le style des pochoirs de l'armée US.",
+    "Textures réalisées avec nos propres outils, sans copie des fichiers du jeu."
+  ],
+  "ew.next_h": "Prévu",
+  "ew.next": [
+    "<b>Deux modes exclusifs,</b> déployés à l'arrière comme le QG mobile, jamais les deux à la fois : <b>radar</b>, qui détecte fantassins et véhicules ennemis et les marque sur la carte comme un drone de reconnaissance ; <b>brouilleur</b>, qui coupe les drones ennemis dans sa bulle.",
+    "Personne ne peut monter dans le camion tant qu'il est déployé.",
+    "<b>Gazole :</b> plein par le haut du groupe électrogène, bouton marche/arrêt sur le côté ; réservoir vide, tout s'éteint. Autonomie d'environ 3 h en radar et 2 h en brouilleur, réglable.",
+    "<b>Radar anti-aérien :</b> avions, hélicoptères et drones. Un Su-57 ennemi détecté déclenche la poursuite par deux F-22.",
+    "<b>Contre-détection :</b> émettre plus de 10 minutes au même endroit attire une frappe de l'état-major ennemi. Bouger ou se faire repérer : à vous de choisir.",
+    "<b>Alertes radio</b> des contacts radar pour les joueurs équipés d'une radio.",
+    "<b>Sons d'émission :</b> le groupe électrogène et le bip de balayage.",
+    "Image d'aperçu du camion final dans le menu de demande de véhicules."
+  ],
+  "ew.insp": "Inspiration : les radars AESA modernes, qui servent à la fois de radar et de brouilleur (secteur d'environ 120°, brouiller coûte de l'énergie et de la chaleur)."
 }

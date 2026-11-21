@@ -582,6 +582,19 @@ def stat_items(m):
         ta("title", key), icon(ico), t(key, "span", "sr"), H(v) if v else redact(3)) for key, ico, v in vals)
 
 
+def wip_block(id_, code):
+    """Projects still in development: not merged, not on the Workshop. Kept apart from Incoming on purpose."""
+    body = """<article class="proj">
+  <h3>%s %s</h3>
+  %s
+  <h4>%s</h4><ul class="feat">%s</ul>
+  <h4>%s</h4><ul class="feat feat-plan">%s</ul>
+  %s
+</article>""" % (t("ew.name"), t("ui.wip", "span", "chip chip-dev"), t("ew.p", "p"), t("ew.done_h"), tl("ew.done"),
+                 t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
+    return sec(id_, "wip.h", body, code, "sec-wip", t("wip.d", "p", "dim"))
+
+
 def badge_inc():
     return t("ui.incoming", "span", "chip chip-inc")
 
@@ -751,6 +764,8 @@ def mod_page(slug):
     if has("inc"):
         parts.append(sec("incoming", "sec.incoming", '<ul class="feat feat-inc">%s</ul>' % tl(k + "inc"), "02B", "sec-inc",
                          t("sec.incoming.d", "p", "dim", {"v": m["version"]})))
+    if slug == "conflict-pve":
+        parts.append(wip_block("wip", "02C"))
     if has("setup"):
         parts.append(sec("setup", "sec.setup", '<ol class="steps">%s</ol>' % tl(k + "setup"), "03"))
     if has("admin"):
@@ -775,6 +790,7 @@ def mod_page(slug):
 
     toc = "".join('<a href="#%s">%s</a>' % (a, t(kk)) for a, kk in [
         ("overview", "sec.overview"), ("features", "sec.features")] + ([("incoming", "sec.incoming")] if has("inc") else [])
+        + ([("wip", "wip.h")] if slug == "conflict-pve" else [])
         + ([("setup", "sec.setup")] if has("setup") else []) + ([("admin", "sec.admin")] if has("admin") else [])
         + ([("commands", "sec.commands")] if slug in ("conflict-pve", "forest") else [])
         + [("deps", "sec.deps")] + ([("changelog", "sec.changelog")] if m["changelog"] else [])
@@ -1015,6 +1031,7 @@ def intel():
         t(k), v, v * 100 // 300) for k, v in DRONE_RANGES)
     lights = "".join('<li><span class="led led-%s" aria-hidden="true"></span>%s</li>' % (c, t("intel.light_" + c)) for c in ("g", "r", "rf", "o"))
     body = """<div class="wrap">
+%s
 <article class="dossier">
   <header class="dossier-h">
     %s
@@ -1035,6 +1052,7 @@ def intel():
   </div>
 </article>
 </div>""" % (
+        wip_block("wip", "EW"),
         t("intel.stamp", "span", "stamp", None, 'aria-hidden="true"'), t("news.mod"),
         "".join('<a class="news-chip" href="%s">%s%s</a>' % (url("workshop/%s/" % sl), H(name(MODS[sl])), icon("arrow")) for sl in ("conflict-pve", "forest")),
         H(MODS["conflict-pve"]["updated"]), t("intel.h1"), t("intel.lead", "p", "lead"),
@@ -1096,8 +1114,10 @@ def status():
 %s
 %s
 %s
+%s
 </div>""" % (sec("pipeline", "statusp.pipeline", t("statusp.pipeline_p", "p", "", {"v": CPVE_VER}) +
                  '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "01", "sec-inc"),
+             wip_block("wip", "01B"),
              sec("board", "statusp.board", t("statusp.game_now", "p", "dim", {"v": LATEST_GAME}) + """<div class="tbl"><table class="table board">
 <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th></tr></thead>
 <tbody>%s</tbody></table></div>""" % (t("statusp.col_mod"), t("statusp.col_state"), t("statusp.col_ver"), t("statusp.col_upd"),
