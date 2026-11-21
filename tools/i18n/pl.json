@@ -701,6 +701,7 @@
     "<b>Zagłuszarka:</b> przerywa łącze wrogich dronów w promieniu 500 m. FPV spada, Mavic wraca do bazy. Własne drony są oszczędzone.",
     "<b>Przeciwdziałanie namierzaniu:</b> wrogie radionamierzanie liczy, jak długo ciężarówka emituje (radar lub zagłuszarka) w tym samym miejscu. Po około 8 min załoga dostaje ostrzeżenie radiowe „Enemy direction finding: shut it down or relocate”. Po około 10 min wróg ją namierza: jego sztab poznaje położenie ciężarówki i wysyła wojsko, a jego moździerze mogą wykonać przygotowany ostrzał bez obserwatora. Załoga słyszy „Enemy fix on your emitter”. Powtarza się to po każdych kolejnych 10 min w tym samym miejscu. Po wyłączeniu licznik spada tak szybko, jak rósł; przejazd o ponad 300 m go zeruje.",
     "<b>Radar przeciwlotniczy:</b> gdy radar jest włączony, wykrywa wrogi samolot rozpoznawczy Su-57, który zbliży się na mniej niż 1,5 km. Gracze w pobliżu radaru słyszą „Radar contact: enemy jet, friendly fighters scrambled”, a para F-22 rusza w pościg za Su-57.",
+    "<b>Połączenie kablowe z FP-1:</b> po podłączeniu kablem do ciężarówki dronów FP-1 radar przekazuje swoje cele na żywo do planera FP-1. Jeszcze nie testowane w grze.",
     "Wszystkie wartości (zasięgi, zużycie paliwa, czasy) mogą ustawiać administratorzy serwera."
   ],
   "ew.next_h": "Następne kroki (nic z tego nie jest zrobione)",
@@ -708,7 +709,6 @@
     "<b>Dźwięki emisji.</b>",
     "Obraz podglądu ciężarówki.",
     "Dodanie do dużego garażu.",
-    "Połączenie z ciężarówką dronów FP-1 (wciąż w analizie).",
     "<b>Test w grze.</b>"
   ],
   "ew.insp": "Inspiracja: nowoczesne radary AESA, które pełnią jednocześnie rolę radaru i zagłuszarki (sektor około 120°, zagłuszanie kosztuje energię i ciepło)."

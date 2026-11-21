@@ -701,6 +701,7 @@
     "<b>Störsender:</b> trennt die Verbindung feindlicher Drohnen im Umkreis von 500 m. Eine FPV stürzt ab, eine Mavic fliegt zur Basis zurück. Eigene Drohnen bleiben verschont.",
     "<b>Gegenaufklärung:</b> Die feindliche Funkpeilung zählt, wie lange der Lkw (Radar oder Störsender) am selben Ort sendet. Nach etwa 8 Min. erhält die Besatzung die Funkwarnung „Enemy direction finding: shut it down or relocate“. Nach etwa 10 Min. hat der Feind eine Peilung: Sein HQ erfährt die Position des Lkw und schickt Truppen, und seine Mörser können ohne Beobachter einen vorbereiteten Schlag darauf abgeben. Die Besatzung hört „Enemy fix on your emitter“. Das wiederholt sich nach jeweils weiteren 10 Min. am selben Ort. Ausgeschaltet sinkt der Zähler so schnell, wie er gestiegen ist; eine Verlegung um mehr als 300 m setzt ihn auf null.",
     "<b>Flugabwehrradar:</b> Bei eingeschaltetem Radar erfasst es ein feindliches Su-57-Aufklärungsflugzeug, das näher als 1,5 km kommt. Spieler in der Nähe des Radars hören „Radar contact: enemy jet, friendly fighters scrambled“, und eine Rotte aus zwei F-22 nimmt die Verfolgung der Su-57 auf.",
+    "<b>Kabelverbindung zum FP-1:</b> Per Kabel mit dem Drohnen-Lkw FP-1 verbunden, liefert das Radar seine Ziele live an den Planer des FP-1. Noch nicht im Spiel getestet.",
     "Alle Werte (Reichweiten, Verbrauch, Zeiten) sind von Serveradmins einstellbar."
   ],
   "ew.next_h": "Nächste Schritte (davon ist nichts fertig)",
@@ -708,7 +709,6 @@
     "<b>Sendegeräusche.</b>",
     "Vorschaubild des Lkw.",
     "Aufnahme in die große Garage.",
-    "Verbindung mit dem Drohnen-Lkw FP-1 (noch in Prüfung).",
     "<b>Test im Spiel.</b>"
   ],
   "ew.insp": "Inspiration: moderne AESA-Radare, die zugleich Radar und Störsender sind (Sektor von etwa 120°, Stören kostet Energie und Wärme)."
