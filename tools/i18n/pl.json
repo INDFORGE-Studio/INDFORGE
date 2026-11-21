@@ -703,6 +703,7 @@
     "<b>Radar przeciwlotniczy:</b> gdy radar jest włączony, wykrywa wrogi samolot rozpoznawczy Su-57, który zbliży się na mniej niż 1,5 km. Gracze w pobliżu radaru słyszą „Radar contact: enemy jet, friendly fighters scrambled”, a para F-22 rusza w pościg za Su-57.",
     "<b>Połączenie kablowe z FP-1:</b> akcja z tyłu ciężarówki dronów FP-1 łączy ją kablem z najbliższym rozłożonym radarem jej frakcji, oddalonym najwyżej o 50 m. Planer FP-1 otrzymuje wtedy cele radaru na żywo. Gdy radar przejdzie w tryb zagłuszarki, kabel się rozłącza.",
     "<b>Silnik wzmocniony na strome zbocza:</b> oparty na ustawieniach 1.9 M923A1. 280 KM zamiast 230, moment obrotowy 1800 N·m przy 1100 obr./min zamiast 1250 N·m, krótsza skrzynia (1. bieg 7,5, wsteczny 8), mocniej zablokowane mechanizmy różnicowe o ograniczonym poślizgu, prędkość maksymalna około 70–76 km/h. Ładuje się bez błędów na stanowisku serwerowym; jazdę trzeba jeszcze przetestować w grze.",
+    "<b>W dużym garażu:</b> 800 zaopatrzenia, 150 XP, ranga sierżant.",
     "Wszystkie wartości (zasięgi, zużycie paliwa, czasy) mogą ustawiać administratorzy serwera."
   ],
   "ew.written_h": "Napisane, jeszcze nie skompilowane ani nie testowane",
@@ -711,8 +712,7 @@
   "ew.next": [
     "<b>Test w grze:</b> silnik, połączenie kablowe z FP-1 i wyświetlanie celów w planerze.",
     "<b>Dźwięki emisji.</b>",
-    "Obraz podglądu ciężarówki.",
-    "Dodanie do dużego garażu."
+    "Obraz podglądu ciężarówki."
   ],
   "ew.insp": "Inspiracja: nowoczesne radary AESA, które pełnią jednocześnie rolę radaru i zagłuszarki (sektor około 120°, zagłuszanie kosztuje energię i ciepło)."
 }

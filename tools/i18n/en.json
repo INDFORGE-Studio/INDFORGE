@@ -703,6 +703,7 @@
     "<b>Anti-air radar:</b> with the radar on, it catches an enemy Su-57 recon jet coming within 1.5 km. Players near the radar hear “Radar contact: enemy jet, friendly fighters scrambled”, and a pair of F-22s chases the Su-57.",
     "<b>Cable link with the FP-1:</b> an action at the rear of the FP-1 drone truck cables it to the nearest deployed radar of its faction, up to 50 m away. The FP-1 planner then gets the radar's targets live. If the radar switches to jammer, the cable comes off.",
     "<b>Engine strengthened for steep slopes:</b> based on the 1.9 settings of the M923A1. 280 hp instead of 230, 1,800 N·m of torque at 1,100 rpm instead of 1,250 N·m, shorter gearbox (1st gear 7.5, reverse 8), tighter limited-slip differentials, top speed about 70 to 76 km/h. It loads without errors on the server bench; driving is still to be tested in game.",
+    "<b>In the large garage:</b> 800 supplies, 150 XP, rank Sergeant.",
     "Every value (ranges, fuel use, delays) can be set by server admins."
   ],
   "ew.written_h": "Written, not compiled or tested yet",
@@ -711,8 +712,7 @@
   "ew.next": [
     "<b>In-game test:</b> engine, FP-1 cable link and targets shown in the planner.",
     "<b>Emission sounds.</b>",
-    "Preview image of the truck.",
-    "Entry in the large garage."
+    "Preview image of the truck."
   ],
   "ew.insp": "Inspiration: modern AESA radars that double as radar and jammer (sector of about 120°, jamming costs power and heat)."
 }

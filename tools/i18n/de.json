@@ -703,6 +703,7 @@
     "<b>Flugabwehrradar:</b> Bei eingeschaltetem Radar erfasst es ein feindliches Su-57-Aufklärungsflugzeug, das näher als 1,5 km kommt. Spieler in der Nähe des Radars hören „Radar contact: enemy jet, friendly fighters scrambled“, und eine Rotte aus zwei F-22 nimmt die Verfolgung der Su-57 auf.",
     "<b>Kabelverbindung zum FP-1:</b> Eine Aktion am Heck des Drohnen-Lkw FP-1 verbindet ihn per Kabel mit dem nächsten aufgebauten Radar seiner Fraktion, höchstens 50 m entfernt. Der Planer des FP-1 erhält dann die Ziele des Radars live. Wechselt das Radar zum Störsender, löst sich das Kabel.",
     "<b>Motor verstärkt für steile Hänge:</b> übernommen aus den 1.9-Einstellungen des M923A1. 280 PS statt 230, Drehmoment 1.800 Nm bei 1.100 U/min statt 1.250 Nm, kürzeres Getriebe (1. Gang 7,5, Rückwärtsgang 8), straffere Sperrdifferenziale, Höchstgeschwindigkeit etwa 70 bis 76 km/h. Er lädt auf dem Server-Prüfstand ohne Fehler; das Fahren muss noch im Spiel getestet werden.",
+    "<b>In der großen Garage:</b> 800 Vorräte, 150 XP, Rang Sergeant.",
     "Alle Werte (Reichweiten, Verbrauch, Zeiten) sind von Serveradmins einstellbar."
   ],
   "ew.written_h": "Geschrieben, noch nicht kompiliert oder getestet",
@@ -711,8 +712,7 @@
   "ew.next": [
     "<b>Test im Spiel:</b> Motor, Kabelverbindung zum FP-1 und Anzeige der Ziele im Planer.",
     "<b>Sendegeräusche.</b>",
-    "Vorschaubild des Lkw.",
-    "Aufnahme in die große Garage."
+    "Vorschaubild des Lkw."
   ],
   "ew.insp": "Inspiration: moderne AESA-Radare, die zugleich Radar und Störsender sind (Sektor von etwa 120°, Stören kostet Energie und Wärme)."
 }

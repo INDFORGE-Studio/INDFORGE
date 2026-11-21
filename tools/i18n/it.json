@@ -703,6 +703,7 @@
     "<b>Radar antiaereo:</b> con il radar acceso, individua un ricognitore nemico Su-57 che arrivi entro 1,5 km. I giocatori vicino al radar sentono «Radar contact: enemy jet, friendly fighters scrambled», e una coppia di F-22 insegue il Su-57.",
     "<b>Collegamento via cavo con il FP-1:</b> un'azione sul retro del camion droni FP-1 lo collega via cavo al radar schierato più vicino della sua fazione, entro 50 m. Il pianificatore del FP-1 riceve allora i bersagli del radar in diretta. Se il radar passa a disturbatore, il cavo si stacca.",
     "<b>Motore rinforzato per le pendenze forti:</b> ripreso dalle impostazioni 1.9 del M923A1. 280 CV invece di 230, coppia di 1800 N·m a 1100 giri/min invece di 1250 N·m, cambio più corto (1ª a 7,5, retromarcia a 8), differenziali autobloccanti più stretti, velocità massima di circa 70-76 km/h. Si carica senza errori al banco del server; la guida resta da testare in gioco.",
+    "<b>Nel garage grande:</b> 800 rifornimenti, 150 XP, grado sergente.",
     "Tutti i valori (portate, consumi, tempi) sono regolabili dagli admin del server."
   ],
   "ew.written_h": "Scritto, non ancora compilato né testato",
@@ -711,8 +712,7 @@
   "ew.next": [
     "<b>Test in gioco:</b> motore, collegamento via cavo con il FP-1 e visualizzazione dei bersagli nel pianificatore.",
     "<b>Suoni di emissione.</b>",
-    "Immagine di anteprima del camion.",
-    "Ingresso nel garage grande."
+    "Immagine di anteprima del camion."
   ],
   "ew.insp": "Ispirazione: i moderni radar AESA, che fanno sia da radar sia da disturbatore (settore di circa 120°, disturbare costa energia e calore)."
 }
