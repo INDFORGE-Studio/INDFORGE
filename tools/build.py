@@ -894,8 +894,8 @@ def srv_strip():
     Its name is plain text (readable without JS); the button copies the full in-game name, exact spacing kept."""
     short = " ".join(re.split(r"\s{2,}", TEST_SERVER)[0].split())
     return """<div class="srv">
-    <span class="srv-ping" aria-hidden="true"><i></i><i></i></span>%s
-    <span class="srv-name">%s</span>%s
+    <span class="srv-l"><span class="srv-ping" aria-hidden="true"><i></i><i></i></span>%s</span>
+    <span class="srv-mid"><span class="srv-name">%s</span>%s</span>
     <button type="button" class="srv-copy js-only" data-copy-text="%s" data-copy-msg="srv.copied"><span class="copy-ico" aria-hidden="true"></span>%s</button>
   </div>""" % (t("srv.h", "span", "srv-k"), H(short), t("srv.meta", "span", "srv-meta"), H(TEST_SERVER), t("ui.copy", "span", "copy-lbl"))
 

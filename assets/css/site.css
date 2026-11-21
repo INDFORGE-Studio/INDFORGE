@@ -1506,8 +1506,8 @@ html.fx-off body::before { animation: none; }
   .p-home .home-h1 { animation: hfx-glitch 7s steps(1) infinite; }
 }
 /* Public test server strip, in place of the home action buttons */
-.srv { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px 14px; width: fit-content; max-width: 100%; margin: clamp(12px, 2.2vh, 24px) auto 0;
-  padding: 8px 16px; overflow: hidden; font: 600 13px var(--f-mono); letter-spacing: .06em;
+.srv { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px 18px; width: 100%; margin: clamp(12px, 2.2vh, 24px) 0 0;
+  min-width: 0; min-height: 54px; padding: 10px 16px; text-align: left; overflow: hidden; font: 600 13px var(--f-mono); letter-spacing: .06em;
   border: 1px solid rgba(var(--green-rgb), .55); background: linear-gradient(90deg, rgba(var(--green-rgb), .16), rgba(var(--green-rgb), .04) 60%), rgba(var(--bg-rgb), .72);
   box-shadow: 0 0 22px rgba(var(--green-rgb), .16), inset 0 0 16px rgba(var(--green-rgb), .06);
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
@@ -1515,6 +1515,8 @@ html.fx-off body::before { animation: none; }
   background: linear-gradient(90deg, transparent, rgba(var(--green-rgb), .2), transparent); }
 .srv-ping { position: relative; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
 .srv-ping i { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--green); opacity: 0; }
+.srv-l { display: flex; align-items: center; gap: 12px; }
+.srv-mid { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 16px; min-width: 0; }
 .srv-k { color: var(--green); text-transform: uppercase; letter-spacing: .14em; white-space: nowrap; }
 .srv-name { padding: 3px 9px; font-size: 14px; color: var(--hi); background: rgba(0, 0, 0, .45); border: 1px dashed rgba(var(--green-rgb), .45); white-space: nowrap; }
 .srv-meta { font-weight: 500; font-size: 11px; color: var(--txt2); white-space: nowrap; }
@@ -1524,7 +1526,7 @@ html.fx-off body::before { animation: none; }
 .srv-copy:hover, .srv-copy.ok { background: var(--green); color: var(--on-sec); }
 .srv-copy .copy-ico { box-shadow: 3px -3px 0 -1.5px rgba(var(--bg-rgb), 1), 3px -3px 0 0 currentColor; }
 @media (max-width: 1099px) { .srv-meta { display: none; } }
-@media (max-width: 560px) { .srv { flex-wrap: wrap; padding: 10px 12px; } .srv-name { white-space: normal; } }
+@media (max-width: 560px) { .srv { grid-template-columns: 1fr; justify-items: center; padding: 10px 12px; } .srv-name, .srv-k { white-space: normal; text-align: center; } .srv-k { letter-spacing: .1em; } }
 @media (prefers-reduced-motion: no-preference) {
   .srv::after { animation: srv-sweep 4.5s ease-in-out infinite; }
   .srv-ping i { animation: srv-ping 2.2s ease-out infinite; }
