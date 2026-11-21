@@ -762,7 +762,6 @@ details[open] > summary::before { transform: rotate(90deg); }
 .opt-btn:hover .lens, .opt-btn[aria-expanded="true"] .lens { fill-opacity: .7; filter: drop-shadow(0 0 3px var(--amber)); }
 .opt-menu { min-width: 250px; max-height: calc(100vh - var(--hud-h) - 24px); max-height: calc(100dvh - var(--hud-h) - 24px); overflow-y: auto; overscroll-behavior: contain; }
 .opt-menu li + .opt-h { margin-top: 6px; }
-.opt-sw.opt-flag { background: var(--flag); }
 .opt-menu .opt-fx { padding-left: 56px; }
 .opt-menu .opt-fx::after { content: none !important; }
 .opt-tg { flex: none; position: relative; width: 30px; height: 16px; margin-left: auto; border: 1px solid var(--line2); border-radius: 9px; background: var(--deep); }
@@ -771,14 +770,9 @@ details[open] > summary::before { transform: rotate(90deg); }
 .opt-fx[aria-checked="true"] .opt-tg::after { transform: translateX(14px); background: var(--amber); box-shadow: 0 0 6px var(--amber); }
 .opt-h { padding: 6px 10px 8px; margin-bottom: 4px; border-bottom: 1px solid var(--line2); font: 600 10px var(--f-mono); letter-spacing: .16em; color: var(--mute); }
 .opt-menu button .opt-k { font: 600 11px var(--f-mono); color: var(--mute); width: 30px; letter-spacing: .06em; }
-.opt-sw {
-  flex: none; width: 34px; height: 20px; border: 1px solid var(--line2); border-radius: var(--r);
-  background: linear-gradient(90deg, var(--c) 0 40%, var(--a) 40% 70%, var(--b) 70%);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .35) inset;
-}
-/* swatches stay bare: no edge, the chosen one is lifted and lit instead of framed */
-.opt-sw { border: 0; border-radius: 1px; box-shadow: 0 1px 3px rgba(0, 0, 0, .55); transition: transform .2s var(--ease), box-shadow .2s; }
-.opt-menu button[aria-checked="true"] .opt-sw { transform: scale(1.12); box-shadow: 0 2px 6px rgba(0, 0, 0, .6), 0 0 14px rgba(var(--amber-rgb), .45); }
+/* each optic is shown by its shield emblem; the chosen one is lifted and lit */
+.opt-em { flex: none; width: 22px; height: 26px; margin: -3px 6px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .6)); transition: transform .2s var(--ease), filter .2s; }
+.opt-menu button[aria-checked="true"] .opt-em { transform: scale(1.15); filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .6)) drop-shadow(0 0 6px rgba(var(--amber-rgb), .6)); }
 .optic-ring {
   position: fixed; z-index: 400; left: var(--vx); top: var(--vy); width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%;
   border: 2px solid var(--amber); box-shadow: 0 0 30px var(--amber), inset 0 0 30px rgba(var(--amber-rgb), .5); pointer-events: none;

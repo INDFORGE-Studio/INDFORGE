@@ -34,31 +34,28 @@ LANGS = [x for x in ALL_LANGS if x[0] in LIVE]
 # Display modes ("optics"): code, menu tag, then swatch colours (background, accent, secondary).
 # All but the first carry an ambient effect layer (site.js, "fx").
 OPTICS = [
-    ("arma", "ARM", "#06080a", "#ffb000", "#46f08c"),
-    ("nvg", "NVG", "#010603", "#a6ff3d", "#3dffb4"),
-    ("thermal", "THM", "#07030f", "#ff8a1f", "#ff3d8b"),
-    ("arctic", "ARC", "#03070d", "#4cc9ff", "#7dffd8"),
-    ("desert", "DST", "#0c0904", "#f0913a", "#e3c88f"),
-    ("forest", "FOR", "#040805", "#93c24f", "#d39a4c"),
-    ("red", "RED", "#070101", "#ff3b2f", "#ff8a5c"),
-    ("day", "DAY", "#c8c1ac", "#7a4200", "#2c6a2c"),
+    ("arma", "ARM"),
+    ("nvg", "NVG"),
+    ("thermal", "THM"),
+    ("arctic", "ARC"),
+    ("desert", "DST"),
+    ("forest", "FOR"),
+    ("red", "RED"),
+    ("day", "DAY"),
 ]
-# National colour schemes: colours only, no ambient effect. Code, menu tag, flag swatch.
+# National colour schemes: colours only, no ambient effect. Code, menu tag.
 NATIONS = [
-    ("fra", "FRA", "linear-gradient(90deg,#000091 0 33.4%,#fff 0 66.6%,#e1000f 0)"),
-    ("gbr", "GBR", "linear-gradient(#c8102e,#c8102e) center/100% 18% no-repeat,linear-gradient(#c8102e,#c8102e) center/14% 100% no-repeat,"
-                   "linear-gradient(#fff,#fff) center/100% 36% no-repeat,linear-gradient(#fff,#fff) center/26% 100% no-repeat,"
-                   "linear-gradient(to top right,transparent 42%,#fff 42% 58%,transparent 58%),"
-                   "linear-gradient(to bottom right,transparent 42%,#fff 42% 58%,transparent 58%),#012169"),
-    ("deu", "DEU", "linear-gradient(#000 0 33.4%,#dd0000 0 66.6%,#ffce00 0)"),
-    ("esp", "ESP", "linear-gradient(#aa151b 0 25%,#f1bf00 0 75%,#aa151b 0)"),
-    ("ita", "ITA", "linear-gradient(90deg,#009246 0 33.4%,#f4f5f0 0 66.6%,#ce2b37 0)"),
-    ("pol", "POL", "linear-gradient(#f4f4f4 0 50%,#dc143c 0)"),
-    ("ukr", "UKR", "linear-gradient(#0057b7 0 50%,#ffd700 0)"),
-    ("usa", "USA", "linear-gradient(#0a3161,#0a3161) 0 0/42% 54% no-repeat,repeating-linear-gradient(#b31942 0 7.7%,#fff 0 15.4%)"),
-    ("can", "CAN", "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%222400 0 4800 4800%22%3E%3Cpath fill=%22%23ff0000%22 d=%22M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z%22/%3E%3C/svg%3E') center/auto 100% no-repeat,linear-gradient(90deg,#ff0000 0 25%,#fff 0 75%,#ff0000 0)"),
-    ("bel", "BEL", "linear-gradient(90deg,#000 0 33.4%,#fdda24 0 66.6%,#ef3340 0)"),
-    ("che", "CHE", "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath fill=%22%23fff%22 d=%22M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z%22/%3E%3C/svg%3E') center/auto 100% no-repeat,#da291c"),
+    ("fra", "FRA"),
+    ("gbr", "GBR"),
+    ("deu", "DEU"),
+    ("esp", "ESP"),
+    ("ita", "ITA"),
+    ("pol", "POL"),
+    ("ukr", "UKR"),
+    ("usa", "USA"),
+    ("can", "CAN"),
+    ("bel", "BEL"),
+    ("che", "CHE"),
 ]
 
 CATS = [
@@ -412,14 +409,17 @@ def header(active):
         langs += '<li role="separator" class="lang-sep"></li>' + "".join(
             '<li role="none"><span class="lang-wip" role="menuitem" aria-disabled="true"><b>%s</b>%s<em>W.I.P</em></span></li>'
             % (l.upper(), redact(len(n))) for l, n in wip)
+    def opt_em(o):
+        # the optic's own shield emblem (tools/emblems.py) stands for it in the menu
+        return '<img class="opt-em" src="%sassets/img/fs/%s.svg" alt="" width="22" height="26" decoding="async">' % (BASE, o)
     optics = "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
-        '<i class="opt-sw" style="--c:%s;--a:%s;--b:%s" aria-hidden="true"></i><b class="opt-k">%s</b>%s</button></li>'
-        % (o, c, a, b, k, t("optic." + o)) for o, k, c, a, b in OPTICS)
+        '%s<b class="opt-k">%s</b>%s</button></li>'
+        % (o, opt_em(o), k, t("optic." + o)) for o, k in OPTICS)
     optics += '<li role="presentation" class="opt-h">%s</li>' % t("optic.nat") + "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
-        '<i class="opt-sw opt-flag" style="--flag:%s" aria-hidden="true"></i><b class="opt-k">%s</b>%s</button></li>'
-        % (o, f, k, t("optic." + o)) for o, k, f in NATIONS)
+        '%s<b class="opt-k">%s</b>%s</button></li>'
+        % (o, opt_em(o), k, t("optic." + o)) for o, k in NATIONS)
     optics += ('<li role="separator" class="lang-sep"></li><li role="none"><button type="button" role="menuitemcheckbox" '
                'aria-checked="true" class="opt-fx" data-fx><b class="opt-k">FX</b>%s<i class="opt-tg" aria-hidden="true"></i></button></li>'
                % t("optic.fx"))
