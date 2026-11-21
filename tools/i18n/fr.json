@@ -77,7 +77,7 @@
   "cat.auc": "AUC — Arma Ukraine Community",
   "cat.auc.d": "Packs de configuration conçus pour les serveurs de la [AUC] Arma Ukraine Community.",
   "cat.ctrp": "ChercheToi RP",
-  "cat.ctrp.d": "Packs de configuration conçus pour la communauté CHERCHE TOI – RP LIFE.",
+  "cat.ctrp.d": "Packs de configuration conçus pour la communauté CHERCHETOI - RP LIFE.",
   "cat.gear": "Équipements",
   "cat.gear.d": "Factions, armes et drones de combat.",
   "cat.vehicles": "Véhicules",
@@ -507,25 +507,25 @@
     "D'autres terrains suivront.",
     "Protection à l'apparition par WCS_SpawnProtection."
   ],
-  "m.cherchetoi-rp-clothing.tag": "Les tenues de jeu de rôle de la communauté CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-clothing.tag": "Les tenues de jeu de rôle de la communauté CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-clothing.intro": [
-    "ChercheToi RP - Clothing est une configuration spécifique de plusieurs mods de vêtements, avec quelques modifications, pour la communauté de jeu de rôle CHERCHE TOI – RP LIFE."
+    "ChercheToi RP - Clothing est une configuration spécifique de plusieurs mods de vêtements, avec quelques modifications, pour la communauté de jeu de rôle CHERCHETOI - RP LIFE."
   ],
   "m.cherchetoi-rp-clothing.f": [
     "Tenues civiles, de motard et de presse, réunies depuis les mods de vêtements des dépendances.",
     "Équipement SAMU, par Captain Valaaks, contributeur de l'équipe CTRP."
   ],
-  "m.cherchetoi-rp-props.tag": "Les objets de décor de jeu de rôle de la communauté CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-props.tag": "Les objets de décor de jeu de rôle de la communauté CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-props.intro": [
-    "ChercheToi RP - Props est une configuration spécifique d'objets de décor pour la communauté CHERCHE TOI – RP LIFE, construite sur le travail de Lakes Dan pour les Faircroft Islands."
+    "ChercheToi RP - Props est une configuration spécifique d'objets de décor pour la communauté CHERCHETOI - RP LIFE, construite sur le travail de Lakes Dan pour les Faircroft Islands."
   ],
   "m.cherchetoi-rp-props.f": [
     "Objets de Faircroft Islands et de Brit Props, de Lakes Dan.",
     "Palmiers de Palmtree, de Ben.obj."
   ],
-  "m.cherchetoi-rp-vehicles.tag": "Le parc de véhicules de jeu de rôle de la communauté CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-vehicles.tag": "Le parc de véhicules de jeu de rôle de la communauté CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-vehicles.intro": [
-    "ChercheToi RP - Vehicles est une configuration spécifique de 32 mods de véhicules et d'équipements, avec quelques modifications, pour la communauté de jeu de rôle CHERCHE TOI – RP LIFE."
+    "ChercheToi RP - Vehicles est une configuration spécifique de 32 mods de véhicules et d'équipements, avec quelques modifications, pour la communauté de jeu de rôle CHERCHETOI - RP LIFE."
   ],
   "m.cherchetoi-rp-vehicles.f": [
     "Voitures, SUV, fourgons, un bus, pick-up, motos, vélos, karts et bateaux tirés des mods de véhicules préférés de la communauté.",

@@ -77,7 +77,7 @@
   "cat.auc": "AUC — Arma Ukraine Community",
   "cat.auc.d": "Configuration packs built for the [AUC] Arma Ukraine Community servers.",
   "cat.ctrp": "ChercheToi RP",
-  "cat.ctrp.d": "Configuration packs built for the CHERCHE TOI – RP LIFE community.",
+  "cat.ctrp.d": "Configuration packs built for the CHERCHETOI - RP LIFE community.",
   "cat.gear": "Equipment",
   "cat.gear.d": "Factions, weapons and combat drones.",
   "cat.vehicles": "Vehicles",
@@ -507,25 +507,25 @@
     "More terrains to follow.",
     "Spawn protection from WCS_SpawnProtection."
   ],
-  "m.cherchetoi-rp-clothing.tag": "Role-play clothing for the CHERCHE TOI – RP LIFE community.",
+  "m.cherchetoi-rp-clothing.tag": "Role-play clothing for the CHERCHETOI - RP LIFE community.",
   "m.cherchetoi-rp-clothing.intro": [
-    "ChercheToi RP - Clothing is a specific configuration of several clothing mods, with a few changes, for the CHERCHE TOI – RP LIFE role-play community."
+    "ChercheToi RP - Clothing is a specific configuration of several clothing mods, with a few changes, for the CHERCHETOI - RP LIFE role-play community."
   ],
   "m.cherchetoi-rp-clothing.f": [
     "Civilian, biker and press outfits gathered from the clothing mods in the dependencies.",
     "SAMU emergency-medical equipment, by CTRP team contributor Captain Valaaks."
   ],
-  "m.cherchetoi-rp-props.tag": "Role-play props for the CHERCHE TOI – RP LIFE community.",
+  "m.cherchetoi-rp-props.tag": "Role-play props for the CHERCHETOI - RP LIFE community.",
   "m.cherchetoi-rp-props.intro": [
-    "ChercheToi RP - Props is a specific configuration of props for the CHERCHE TOI – RP LIFE community, built on Lakes Dan's work for the Faircroft Islands."
+    "ChercheToi RP - Props is a specific configuration of props for the CHERCHETOI - RP LIFE community, built on Lakes Dan's work for the Faircroft Islands."
   ],
   "m.cherchetoi-rp-props.f": [
     "Props from Faircroft Islands and Brit Props by Lakes Dan.",
     "Palm trees from Palmtree by Ben.obj."
   ],
-  "m.cherchetoi-rp-vehicles.tag": "The role-play vehicle pool of the CHERCHE TOI – RP LIFE community.",
+  "m.cherchetoi-rp-vehicles.tag": "The role-play vehicle pool of the CHERCHETOI - RP LIFE community.",
   "m.cherchetoi-rp-vehicles.intro": [
-    "ChercheToi RP - Vehicles is a specific configuration of 32 vehicle and equipment mods, with a few changes, for the CHERCHE TOI – RP LIFE role-play community."
+    "ChercheToi RP - Vehicles is a specific configuration of 32 vehicle and equipment mods, with a few changes, for the CHERCHETOI - RP LIFE role-play community."
   ],
   "m.cherchetoi-rp-vehicles.f": [
     "Cars, SUVs, vans, a bus, pickups, motorbikes, bicycles, karts and boats from the community's favourite vehicle mods.",

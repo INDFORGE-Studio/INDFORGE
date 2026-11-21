@@ -79,7 +79,7 @@
   "cat.auc": "AUC — Arma Ukraine Community",
   "cat.auc.d": "Paquetes de configuración creados para los servidores de [AUC] Arma Ukraine Community.",
   "cat.ctrp": "ChercheToi RP",
-  "cat.ctrp.d": "Paquetes de configuración creados para la comunidad CHERCHE TOI – RP LIFE.",
+  "cat.ctrp.d": "Paquetes de configuración creados para la comunidad CHERCHETOI - RP LIFE.",
   "cat.gear": "Equipo y vehículos",
   "cat.gear.d": "Facciones, vehículos, drones y mejoras de comodidad.",
   "cat.standby": "En espera",
@@ -158,7 +158,7 @@
   "about.communities": "Comunidades para las que construimos",
   "about.c": [
     "<b>[AUC] Arma Ukraine Community</b> — AUC - Factions, AUC - Vehicles, AUC - Conflict.",
-    "<b>CHERCHE TOI – RP LIFE</b> — ChercheToi RP - Clothing, Props y Vehicles.",
+    "<b>CHERCHETOI - RP LIFE</b> — ChercheToi RP - Clothing, Props y Vehicles.",
     "<b>Task Force Baguette</b> — TalibanMod Red Side V2."
   ],
   "about.motto": "Solos vamos más rápido, pero juntos llegamos más lejos… y siempre más allá de lo posible.",
@@ -489,25 +489,25 @@
     "Más terrenos próximamente.",
     "Protección de aparición de WCS_SpawnProtection."
   ],
-  "m.cherchetoi-rp-clothing.tag": "Ropa de rol para la comunidad CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-clothing.tag": "Ropa de rol para la comunidad CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-clothing.intro": [
-    "ChercheToi RP - Clothing es una configuración específica de varios mods de ropa, con algunos cambios, para la comunidad de rol CHERCHE TOI – RP LIFE."
+    "ChercheToi RP - Clothing es una configuración específica de varios mods de ropa, con algunos cambios, para la comunidad de rol CHERCHETOI - RP LIFE."
   ],
   "m.cherchetoi-rp-clothing.f": [
     "Atuendos civiles, de motero y de prensa reunidos de los mods de ropa de las dependencias.",
     "Equipo médico de emergencias SAMU, del colaborador del equipo CTRP Captain Valaaks."
   ],
-  "m.cherchetoi-rp-props.tag": "Objetos de rol para la comunidad CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-props.tag": "Objetos de rol para la comunidad CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-props.intro": [
-    "ChercheToi RP - Props es una configuración específica de objetos para la comunidad CHERCHE TOI – RP LIFE, construida sobre el trabajo de Lakes Dan para Faircroft Islands."
+    "ChercheToi RP - Props es una configuración específica de objetos para la comunidad CHERCHETOI - RP LIFE, construida sobre el trabajo de Lakes Dan para Faircroft Islands."
   ],
   "m.cherchetoi-rp-props.f": [
     "Objetos de Faircroft Islands y Brit Props de Lakes Dan.",
     "Palmeras de Palmtree de Ben.obj."
   ],
-  "m.cherchetoi-rp-vehicles.tag": "El parque de vehículos de rol de la comunidad CHERCHE TOI – RP LIFE.",
+  "m.cherchetoi-rp-vehicles.tag": "El parque de vehículos de rol de la comunidad CHERCHETOI - RP LIFE.",
   "m.cherchetoi-rp-vehicles.intro": [
-    "ChercheToi RP - Vehicles es una configuración específica de 32 mods de vehículos y equipo, con algunos cambios, para la comunidad de rol CHERCHE TOI – RP LIFE."
+    "ChercheToi RP - Vehicles es una configuración específica de 32 mods de vehículos y equipo, con algunos cambios, para la comunidad de rol CHERCHETOI - RP LIFE."
   ],
   "m.cherchetoi-rp-vehicles.f": [
     "Coches, todoterrenos, furgonetas, un autobús, pickups, motos, bicicletas, karts y barcos de los mods de vehículos favoritos de la comunidad.",
