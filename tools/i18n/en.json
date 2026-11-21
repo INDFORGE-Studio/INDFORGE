@@ -691,7 +691,7 @@
   "ew.p": "An M923A1 6x6 “Bigfoot” off-road truck turned into an electronic warfare vehicle for the US faction: a diesel generator and a radar antenna on the cargo bed.",
   "ew.done_h": "Written: phases A and B (not compiled or tested in game yet)",
   "ew.done": [
-    "<b>Realistic US look (phase A):</b> M923A1 olive drab paint, English stencils on the generator, “WARNING – RF RADIATION HAZARD” and “DANGER – HIGH VOLTAGE” signs, “ELEC. WARFARE / RADAR” bed marking. Textures made with our own tools, no game files copied.",
+    "<b>Realistic US look (phase A):</b> M923A1 olive drab paint, English stencils on the generator, “WARNING – RF RADIATION HAZARD” and “DANGER – HIGH VOLTAGE” signs, “ELEC. WARFARE / RADAR” bed marking. On the doors, the three white stencilled plates show a radar antenna, the jammer mast radiating and the generator lightning bolt, in place of the wrench, shell and weapon of the original repair truck. On the side, the orange “EXPLOSIVES” plate becomes “RF RADIATION”, with the ISO 7010 W005 symbol (non-ionizing radiation), set along the diagonal text. Textures made with our own tools, no game files copied.",
     "<b>Two deployments at the rear:</b> “Deploy radar” or “Deploy jammer”. Only one at a time: pack one up to deploy the other.",
     "The truck must be stopped and empty to deploy. Once deployed, nobody can board it. If the truck moves, everything packs up.",
     "<b>On-board diesel generator:</b> switch on the side, 100 L tank filled at the rear like a vehicle. The radar burns about 33 L/h (about 3 h), the jammer about 50 L/h (about 2 h). Empty tank: everything stops.",

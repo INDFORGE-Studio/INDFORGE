@@ -691,7 +691,7 @@
   "ew.p": "Terenowa ciężarówka M923A1 6x6 „Bigfoot” przerobiona na pojazd walki elektronicznej dla frakcji USA: agregat prądotwórczy z silnikiem Diesla i antena radaru na skrzyni.",
   "ew.done_h": "Napisane: fazy A i B (jeszcze nieskompilowane ani nietestowane w grze)",
   "ew.done": [
-    "<b>Realistyczny wygląd US (faza A):</b> oliwkowy lakier M923A1, angielskie napisy szablonowe na agregacie, tablice „WARNING – RF RADIATION HAZARD” i „DANGER – HIGH VOLTAGE”, oznaczenie skrzyni „ELEC. WARFARE / RADAR”. Tekstury wykonane własnymi narzędziami, bez kopiowania plików gry.",
+    "<b>Realistyczny wygląd US (faza A):</b> oliwkowy lakier M923A1, angielskie napisy szablonowe na agregacie, tablice „WARNING – RF RADIATION HAZARD” i „DANGER – HIGH VOLTAGE”, oznaczenie skrzyni „ELEC. WARFARE / RADAR”. Na drzwiach trzy białe tabliczki szablonowe pokazują antenę radaru, promieniujący maszt zagłuszarki i błyskawicę agregatu, w miejsce klucza, pocisku i broni z oryginalnej ciężarówki warsztatowej. Na boku pomarańczowa tablica „EXPLOSIVES” staje się „RF RADIATION”, z symbolem ISO 7010 W005 (promieniowanie niejonizujące), ustawionym wzdłuż ukośnego napisu. Tekstury wykonane własnymi narzędziami, bez kopiowania plików gry.",
     "<b>Dwa rozłożenia z tyłu:</b> „Rozłóż radar” lub „Rozłóż zagłuszarkę”. Tylko jedno naraz: trzeba złożyć jedno, by rozłożyć drugie.",
     "Do rozłożenia ciężarówka musi stać i być pusta. Po rozłożeniu nikt nie może wsiąść. Gdy ciężarówka ruszy, wszystko się składa.",
     "<b>Pokładowy agregat diesla:</b> włącznik z boku, zbiornik 100 L tankowany z tyłu jak pojazd. Radar zużywa około 33 L/h (około 3 h), zagłuszarka około 50 L/h (około 2 h). Pusty zbiornik: wszystko staje.",
