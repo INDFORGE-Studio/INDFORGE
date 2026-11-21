@@ -378,7 +378,10 @@ HEAD_JS = (
     "h.setAttribute('data-lang',l);try{var o=localStorage.getItem('ifg-optic');if(O.indexOf(o)>0)h.setAttribute('data-theme',o);"
     "var f=localStorage.getItem('ifg-fx');if(f==='off'||(!f&&matchMedia('(prefers-reduced-motion: reduce)').matches))h.className+=' fx-off'}catch(e){}"
     "if(l!=='en'){h.className+=' i18n-wait';"
-    "setTimeout(function(){h.classList.remove('i18n-wait')},1500)}})(document);"
+    "setTimeout(function(){h.classList.remove('i18n-wait')},1500)}"
+    # a page change cut short (fast clicks, prerendered page) only skips its animation: no console error
+    "addEventListener('pagereveal',function(e){var v=e.viewTransition,n=function(){};"
+    "if(v){v.ready.catch(n);v.finished.catch(n);v.updateCallbackDone.catch(n)}})})(document);"
 ) % (json.dumps([l for l, _ in LANGS]), json.dumps([o[0] for o in OPTICS] + [n[0] for n in NATIONS]))
 
 SPEC = json.dumps({"prerender": [{"where": {"href_matches": BASE + "*"}, "eagerness": "moderate"}]})
@@ -414,7 +417,8 @@ def header(active):
         return sorted(rows, key=lambda r: (r[0] != "arma", E["optic." + r[0]].lower()))
     def opt_em(o):
         # the optic's own shield emblem (tools/emblems.py) stands for it in the menu
-        return '<img class="opt-em" src="%sassets/img/fs/%s.svg" alt="" width="22" height="26" decoding="async">' % (BASE, o)
+        # data-src: site.js loads the 19 emblems the first time the menu opens, not with every page
+        return '<img class="opt-em" data-src="%sassets/img/fs/%s.svg" alt="" width="22" height="26" decoding="async">' % (BASE, o)
     optics = "".join(
         '<li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-optic="%s">'
         '%s<b class="opt-k">%s</b>%s</button></li>'

@@ -24,9 +24,7 @@ FILL = (0x0A, 0x0E, 0x10)
 BG = (0x06, 0x08, 0x0A)
 
 PNG_SIZES = {
-    "favicon-16.png": 16,
     "favicon-32.png": 32,
-    "favicon-48.png": 48,
     "apple-touch-icon.png": 180,
     "icon-192.png": 192,
     "icon-512.png": 512,
@@ -82,9 +80,6 @@ def main():
     fill_d = trace(green)
     with open(os.path.join(OUT, "logo.svg"), "w", encoding="utf-8", newline="\n") as f:
         f.write(svg(size, shield_d, fill_d, hexc(LINE), hexc(FILL)))
-    # Two-ink version for inline use: colours come from the page (CSS currentColor / --logo-fill)
-    with open(os.path.join(OUT, "logo-ink.svg"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(svg(size, shield_d, fill_d, "currentColor", "var(--logo-fill,%s)" % hexc(FILL)))
     with open(os.path.join(OUT, "favicon.svg"), "w", encoding="utf-8", newline="\n") as f:
         f.write(svg(size, shield_d, fill_d, hexc(LINE), hexc(FILL)))
 

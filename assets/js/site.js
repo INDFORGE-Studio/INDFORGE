@@ -322,6 +322,7 @@
       if (o === "arma") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", o);
       store("ifg-optic", o); sync(); fx.refresh();
     }
+    var live = null; // optic transition in progress
     function engage(o, from) {
       if (o === current()) return;
       var r = from.getBoundingClientRect(), anim = !reduce && fxOn();
@@ -331,15 +332,16 @@
       if (!anim || !doc.startViewTransition) { apply(o); }
       else {
         root.classList.add("vt-optic");
-        var vt = doc.startViewTransition(function () { apply(o); });
-        vt.ready.catch(function () {}); vt.finished.then(done, done);
+        var vt = live = doc.startViewTransition(function () { apply(o); }); // a newer one skips this one
+        vt.ready.catch(function () {}); vt.updateCallbackDone.catch(function () {});
+        vt.finished.then(done, done);
       }
       if (anim) {
         var ring = doc.createElement("div"); ring.className = "optic-ring"; ring.setAttribute("aria-hidden", "true");
         doc.body.appendChild(ring); setTimeout(function () { ring.remove(); }, 800);
       }
       toast(fmt(tr("optic.on", "Optic engaged: {n}"), { n: label }));
-      function done() { root.classList.remove("vt-optic"); }
+      function done() { if (live === vt) { live = null; root.classList.remove("vt-optic"); } }
     }
     function toggleFx() {
       var on = !fxOn();
@@ -350,6 +352,7 @@
     function open(v) {
       btn.setAttribute("aria-expanded", String(v)); menu.hidden = !v;
       if (v) {
+        $$("img[data-src]", menu).forEach(function (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
         var lb = $(".lang-btn"), lm = $("#lang-menu");
         if (lm && !lm.hidden) { lm.hidden = true; lb.setAttribute("aria-expanded", "false"); }
         var c = $('[data-optic][aria-checked="true"]', menu) || radios[0]; c && c.focus();
@@ -393,7 +396,7 @@
     btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
     doc.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
-    window.addEventListener("resize", function () { if (innerWidth > 1460 && nav.classList.contains("open")) set(false); });
+    window.addEventListener("resize", function () { if (innerWidth > 1279 && nav.classList.contains("open")) set(false); });
   }
 
   /* ------------------------------------------------ radio callsign: each visitor gets one, a click draws a new one */
@@ -738,15 +741,19 @@
       beam = nb;
     }
     var running = false;
+    function shown() { return cv.offsetWidth > 0; } // hidden on phones: no drawing at all
     function loop(now) {
       if (!running) return;
+      if (!shown()) { running = false; return; }
       if (now - drawn > 30) { drawn = now; draw(now, false); } // about 30 frames a second is plenty
       requestAnimationFrame(loop);
     }
     function run() { // ambient effect: it follows the site's FX switch, like the optics
+      if (!shown()) return;
       if (fxOn()) { if (!running) { running = true; last = performance.now(); requestAnimationFrame(loop); } }
       else { running = false; draw(performance.now(), true); }
     }
+    addEventListener("resize", run, { passive: true });
     if ("MutationObserver" in window) new MutationObserver(function () { colors(); run(); }).observe(root, { attributes: true, attributeFilter: ["data-theme", "class"] });
     run();
   }
