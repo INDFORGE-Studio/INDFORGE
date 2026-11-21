@@ -701,12 +701,11 @@
     "<b>Inhibidor:</b> corta el enlace de los drones enemigos a 500 m. Un FPV cae, un Mavic vuelve a su base. Los drones aliados no se ven afectados.",
     "<b>Contradetección:</b> la radiogoniometría enemiga cuenta cuánto tiempo emite el camión (radar o inhibidor) en el mismo lugar. A los 8 min aproximadamente, la tripulación recibe el aviso por radio «Enemy direction finding: shut it down or relocate». A los 10 min aproximadamente, el enemigo lo localiza: su cuartel general sabe dónde está el camión y envía tropas, y sus morteros pueden lanzar un ataque preajustado sin observador. La tripulación oye «Enemy fix on your emitter». Se repite cada 10 min más en el mismo lugar. Apagado, el contador baja tan rápido como subió; moverse más de 300 m lo pone a cero.",
     "<b>Radar antiaéreo:</b> con el radar encendido, detecta un avión de reconocimiento enemigo Su-57 que se acerque a menos de 1,5 km. Los jugadores cerca del radar oyen «Radar contact: enemy jet, friendly fighters scrambled», y una pareja de F-22 persigue al Su-57.",
+    "<b>Enlace por cable con el FP-1:</b> una acción en la parte trasera del camión de drones FP-1 lo conecta por cable al radar desplegado más cercano de su facción, a 50 m como máximo. El planificador del FP-1 recibe entonces los objetivos del radar en directo. Si el radar pasa a inhibidor, el cable se suelta.",
     "Todos los valores (alcances, consumos, tiempos) son ajustables por los administradores del servidor."
   ],
   "ew.written_h": "Escrito, aún sin compilar ni probar",
-  "ew.written": [
-    "<b>Enlace por cable con el FP-1:</b> conectado por cable al camión de drones FP-1, el radar envía sus objetivos en directo al planificador del FP-1."
-  ],
+  "ew.written": [],
   "ew.next_h": "Próximos pasos (nada de esto está hecho)",
   "ew.next": [
     "<b>Sonidos de emisión.</b>",

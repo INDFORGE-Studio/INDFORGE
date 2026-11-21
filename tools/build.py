@@ -633,15 +633,17 @@ def stat_items(m):
 
 def wip_block(id_, code):
     """Projects still in development: not merged, not on the Workshop. Kept apart from Incoming on purpose."""
+    # "Written" group: code not compiled yet; hidden while empty
+    written = ('<h4>%s</h4><ul class="feat feat-plan">%s</ul>\n  ' % (t("ew.written_h"), tl("ew.written"))
+               if SRC["en"]["ew.written"] else "")
     body = """<article class="proj">
   <h3>%s %s</h3>
   %s
   <h4>%s</h4><ul class="feat">%s</ul>
-  <h4>%s</h4><ul class="feat feat-plan">%s</ul>
-  <h4>%s</h4><ul class="feat feat-plan">%s</ul>
+  %s<h4>%s</h4><ul class="feat feat-plan">%s</ul>
   %s
 </article>""" % (t("ew.name"), t("ui.wip", "span", "chip chip-dev"), t("ew.p", "p"), t("ew.done_h"), tl("ew.done"),
-                 t("ew.written_h"), tl("ew.written"), t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
+                 written, t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
     return sec(id_, "wip.h", body, code, "sec-wip", t("wip.d", "p", "dim"))
 
 

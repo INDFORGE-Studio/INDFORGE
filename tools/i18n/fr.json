@@ -701,12 +701,11 @@
     "<b>Brouilleur :</b> il coupe la liaison des drones ennemis à 500 m. Un FPV tombe, un Mavic rentre à sa base. Les drones amis sont épargnés.",
     "<b>Contre-détection :</b> la goniométrie radio ennemie compte le temps d'émission du camion (radar ou brouilleur) au même endroit. Vers 8 min, l'équipage reçoit l'alerte radio « Enemy direction finding: shut it down or relocate ». Vers 10 min, l'ennemi le localise : son QG apprend où est le camion et envoie des troupes, et ses mortiers peuvent tirer une frappe préréglée sans observateur. L'équipage entend « Enemy fix on your emitter ». Cela recommence toutes les 10 min au même endroit. Éteint, le compteur redescend aussi vite qu'il est monté ; un déplacement de plus de 300 m le remet à zéro.",
     "<b>Radar anti-aérien :</b> radar allumé, il repère un avion de reconnaissance ennemi Su-57 qui arrive à moins de 1,5 km. Les joueurs proches du radar entendent « Radar contact: enemy jet, friendly fighters scrambled », et une patrouille de deux F-22 prend le Su-57 en chasse.",
+    "<b>Liaison câble avec le FP-1 :</b> une action à l'arrière du camion de drones FP-1 le relie par câble au radar déployé de sa faction le plus proche, à 50 m au plus. Le planificateur du FP-1 reçoit alors les cibles du radar en direct. Si le radar passe en brouilleur, le câble se défait.",
     "Toutes les valeurs (portées, consommations, délais) sont réglables par les admins de serveur."
   ],
   "ew.written_h": "Écrit, pas encore compilé ni testé",
-  "ew.written": [
-    "<b>Liaison câble avec le FP-1 :</b> relié par câble au camion de drones FP-1, le radar envoie ses cibles en direct au planificateur du FP-1."
-  ],
+  "ew.written": [],
   "ew.next_h": "Prochaines étapes (rien de cela n'est fait)",
   "ew.next": [
     "<b>Sons d'émission.</b>",
