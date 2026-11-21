@@ -85,7 +85,7 @@ WS_TAGS = ["VEHICLES", "WEAPONS", "STRUCTURES", "CHARACTERS", "ANIMALS", "VEGETA
 
 STATUS = {
     "conflict-pve": ["operational", "dev"],
-    "ai-framework": ["restricted"],
+    "ai-framework": ["dev", "unreleased"],
     "off-road-vehicles": ["standby"],
     "uaz-452-offroad": ["standby"],
 }
@@ -144,7 +144,6 @@ TIPS = [
     ("rcd-rhs", [("rr-where", "p", "in", None)]),
     ("solo-push-pull", [("sp-push", "p", "in", None)]),
     ("off-road-vehicles", [("or-torque", "p", "in", None), ("or-gm", "m", "in", None)]),
-    ("ai-framework", [("af-heli", "p", "in", None), ("af-gar", "p", "in", None), ("af-setup", "m", "in", None), ("af-check", "a", "in", None)]),
     ("packs", [
         ("auf-side", "p", "in", "workshop/auc-factions/"), ("auv-rank", "p", "in", "workshop/auc-vehicles/"),
         ("auc-scen", "p", "in", "workshop/auc-conflict/"), ("ctrp", "p", "in", "workshop/cherchetoi-rp-vehicles/"),
@@ -1011,6 +1010,8 @@ def cfg_table(f):
     if f["mod"] == "enhanced-compositions":
         notes += t("ui.cfg_cpve", "p", "dim")
     inc = " " + badge_inc() if folder in CFG_INCOMING else ""
+    if not mod["workshop"]:
+        inc += " " + chips(f["mod"])
     return """<details class="cfg" id="%s">
   <summary><code>%s</code><span class="cfg-meta"><a href="%s">%s</a>%s%s</span></summary>
   %s
@@ -1154,7 +1155,7 @@ def status():
             CAT_OF[s], url("workshop/%s/" % s), H(name(m)), chips(s), H("v" + m["version"]) if m["version"] else redact(5),
             H(m["updated"]) if m["updated"] else redact(8), game))
     legend = "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t("status." + k, "span", "chip chip-" + k), t("status.%s.d" % k))
-                     for k in ("operational", "standby", "restricted"))
+                     for k in ("operational", "standby", "unreleased", "restricted") if any(k in STATUS.get(s, ["operational"]) for s in ORDER))
     body = phead("SIT-06", "statusp.kicker", "statusp.h1", "statusp.lead") + """<div class="wrap">
 %s
 %s

@@ -58,9 +58,11 @@
   "status.standby": "Wstrzymany",
   "status.restricted": "Niepubliczny",
   "status.dev": "W aktywnym rozwoju",
+  "status.unreleased": "Nieopublikowany",
   "status.operational.d": "Opublikowany w Workshop.",
   "status.standby.d": "Wstrzymany: na razie bez planowanej aktualizacji. Może zostać połączony z innym modem.",
   "status.restricted.d": "Opublikowany, ale niepubliczny w Workshop. Ściśle tajne: ta linia ulegnie samozniszczeniu.",
+  "status.unreleased.d": "W trakcie tworzenia, jeszcze nie opublikowany w Workshopie.",
   "cat.indforge": "Operacje INDFORGE",
   "cat.indforge.d": "Nasze scenariusze, frameworki i systemy rozgrywki.",
   "cat.auc": "AUC — Arma Ukraine Community",
@@ -187,7 +189,7 @@
     "<code>INDFORGE AI doctrine:</code> przy starcie, przy zmianach pogody i co 5 minut.",
     "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> i <code>INDFORGE fuel truck:</code> przejęcie bazy.",
     "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — a w następnej aktualizacji <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
-    "AI Framework: linie zaczynające się od <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> i <code>[INDF_CombatHeliSpawner]</code>."
+    "AI Framework (w trakcie tworzenia, jeszcze nie opublikowany): linie zaczynające się od <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code>, <code>[INDF_CounterAttackDirector]</code> i <code>[INDF_CombatHeliSpawner]</code>."
   ],
   "cmd.setrank": "Ustawia rangę gracza. Dokładna nazwa w grze, potem nazwa rangi (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) lub jej numer. Ranga jest zapisywana między restartami.",
   "cmd.aidoctrine": "Pokazuje, przeładowuje, włącza lub wyłącza doktrynę AI.",
@@ -420,29 +422,28 @@
     "Ustaw <code>game.scenarioId</code> na ID scenariusza podane wyżej i użyj pełnego bloku modów poniżej: Forest, Conflict PvE wraz z zależnościami, Belleau Wood i dwa mody kolejowe."
   ],
   "m.forest.credits": "Mapa Belleau Wood autorstwa Thinwheat01. RailwayGenerator i RailEnfusionRedux autorstwa TilW. Oraz każdy twórca zależności Conflict PvE.",
-  "m.ai-framework.tag": "Modularne AI niezależne od mapy dla scenariuszy PvE: patrole śmigłowców, garnizony, patrole naziemne.",
+  "m.ai-framework.tag": "Modułowa, niezależna od mapy SI dla scenariuszy PvE: śmigłowce bojowe, garnizony, znaczniki na mapie. W trakcie tworzenia, jeszcze nie opublikowany.",
   "m.ai-framework.intro": [
-    "INDFORGE - AI Framework dodaje konfigurowalne wrogie patrole śmigłowców, garnizony wojskowe i patrole naziemne do zgodnych scenariuszy Conflict.",
-    "Wszystko ustawia się w pliku JSON w profilu serwera, bez dotykania kodu. Obsługa map zależy od punktów zainteresowania, które udostępnia scenariusz."
+    "INDFORGE - AI Framework jest w trakcie tworzenia i <b>nie jest jeszcze opublikowany w Workshopie</b>. Doda do zgodnych scenariuszy Conflict patrole śmigłowców bojowych, garnizony wojskowe w punktach zainteresowania i znaczniki graczy na mapie.",
+    "Wszystko będzie ustawiane w jednym pliku <code>config.json</code> w profilu serwera, bez ruszania kodu. Każde ustawienie ma swój klucz pomocy, o tej samej nazwie poprzedzonej <code>_</code>, który je objaśnia.",
+    "<b>Kolejne kroki:</b> przetestować poprawkę śmigłowca na stanowisku serwerowym, potem w grze. Desant spadochronowy ze śmigłowca: planowany, wciąż na etapie projektu."
   ],
   "m.ai-framework.f": [
-    "<b>Combat Heli Spawner.</b> Wrogi śmigłowiec patrolowy USSR pojawia się w pobliżu największej grupy graczy, zakotwiczony w punkcie zainteresowania (baza wojskowa, lotnisko, miasto, wieś…), z pełną załogą i konfigurowalnym poziomem umiejętności AI, od Noob do Expert.",
-    "<b>Skryptowy kontroler lotu</b>, a nie lot sterowany przez AI silnika: pętla patrolowa nad pobliskimi punktami zainteresowania, utrzymywanie wysokości, zakręty z przechyłem.",
-    "<b>Automatyczne sprzątanie.</b> Zestrzelony, utrata pilota lub wirnika, lądowanie lub woda: wrak znika, a miejsce zostaje zwolnione po czasie odnowienia (łącznie 23 minuty przy dostarczonych wartościach).",
-    "<b>Garnizony wojskowe.</b> Każdy kwalifikujący się punkt zainteresowania dostaje dwa patrole, jeden ciasny i jeden szeroki, a małe zespoły statyczne obsadzają wieże, bunkry i wieże obserwacyjne.",
-    "<b>Priorytet przy limicie AI.</b> Silnik utrzymuje jednocześnie około 128 aktywnych AI: najpierw załoga śmigłowców, potem bliskie patrole i posterunki w budynkach, na końcu szerokie patrole."
+    "<b>Patrole śmigłowców bojowych (UH-1H, Mi-8MT).</b> Wrogi śmigłowiec pojawia się w pobliżu największej grupy graczy, zakotwiczony w punkcie zainteresowania, z pełną załogą SI i regulowanym poziomem SI, od Noob do Expert. Lata dzięki własnemu fizycznemu kontrolerowi lotu studia, a nie lotowi SI silnika: pętla patrolowa, utrzymanie wysokości, zakręty z przechyleniem. <i>Stan: działał w grze do września 2026. Regresja uniemożliwia teraz jego pojawienie się; poprawka jest napisana, jeszcze nie przetestowana.</i>",
+    "<b>Automatyczne sprzątanie.</b> Zestrzelony, bez pilota lub wirnika, wylądował lub w wodzie: wrak znika, a miejsce zwalnia się po odczekaniu (łącznie 23 minuty z wartościami z pliku referencyjnego).",
+    "<b>Garnizony wojskowe.</b> Każdy kwalifikujący się punkt zainteresowania dostaje dwa patrole, ciasny i szeroki, a małe zespoły obsadzają wieże, bunkry i ambony. Baza, którą gracze właśnie zdobyli, zostaje kontratakowana. <i>Stan: zaprogramowane, nie testowane ponownie w grze od 3 listopada 2026.</i>",
+    "<b>Znaczniki graczy na mapie.</b> Każdy gracz jest widoczny jako żywy, nieprzytomny lub martwy, a twoja pozycja to strzałka w kolorze twojej frakcji, obracająca się zgodnie z kursem. <i>Stan: zaprogramowane, poprawka w toku, jeszcze nie testowane w grze.</i>",
+    "<b>Priorytet pod limitem SI.</b> Silnik utrzymuje naraz około 128 aktywnych SI: najpierw załoga śmigłowca, potem ciasne patrole i posterunki, na końcu szerokie patrole."
   ],
   "m.ai-framework.setup": [
-    "Zasubskrybuj mod i dodaj go do modów swojego serwera.",
-    "W World Editor dodaj komponenty INDFORGE do encji <code>GameModeCampaign</code> (lub bazowej <code>GameMode</code>) swojej misji.",
-    "Skopiuj dostarczony <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> do <code>$profile:INDF_CombatHeliSpawner/config.json</code>. Ta kopia jest czytana, raz, przy starcie.",
-    "Dla każdego świata: w <code>CampaignFactionManager</code> FIA dodaj USSR do <em>Friendly Factions Ids</em>, a w tym od USSR dodaj FIA. Bez tego obie frakcje walczą ze sobą.",
-    "Restartuj serwer po każdej zmianie. W Workbench zamknij go i otwórz ponownie: buforuje plik."
+    "Mod nie jest jeszcze opublikowany: pełny przewodnik instalacji pojawi się wraz z premierą.",
+    "Ustawienia będą czytane z <code>$profile:INDF_CombatHeliSpawner/config.json</code>, kopii dostarczonego pliku <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code>. Jest czytany raz, przy starcie: po każdej zmianie uruchom ponownie serwer (lub Workbench).",
+    "Klucze zaczynające się od <code>_</code> to teksty pomocy: mod nigdy ich nie czyta. Zmieniaj tylko wartości."
   ],
   "m.ai-framework.admin": [
-    "Nie zwiększaj <code>MaxActiveHelicopters</code>: lot jest skryptowy i nie ma unikania kolizji między statkami powietrznymi.",
-    "Przy starcie log musi pokazać <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, a potem skan POI i obsadzenie garnizonów.",
-    "Brak śmigłowca? Sprawdź liczbę graczy (<code>MinimumPlayersToActivate</code>) i 23-minutowe oczekiwanie po zestrzeleniu."
+    "Nie zwiększaj <code>MaxActiveHelicopters</code>: lot jest skryptowany i nie unika kolizji między statkami powietrznymi.",
+    "Przy starcie dziennik musi pokazać <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, potem skan punktów zainteresowania i zapełnianie garnizonów.",
+    "Brak śmigłowca? Sprawdź liczbę graczy (<code>MinimumPlayersToActivate</code>) i 23 minuty oczekiwania po zestrzeleniu. Na razie jego pojawienie się blokuje też regresja (poprawka jeszcze nie przetestowana)."
   ],
   "m.enhanced-compositions.tag": "Kompaktowe kompozycje Conflict, przejęcie generatora i garnizony AI.",
   "m.enhanced-compositions.intro": [

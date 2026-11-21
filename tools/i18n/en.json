@@ -58,9 +58,11 @@
   "status.standby": "Standby",
   "status.restricted": "Unlisted",
   "status.dev": "Active development",
+  "status.unreleased": "Unreleased",
   "status.operational.d": "Published on the Workshop.",
   "status.standby.d": "On hold: no update planned for now. It may be merged with another mod.",
   "status.restricted.d": "Published but unlisted on the Workshop. Top secret: this line will self-destruct.",
+  "status.unreleased.d": "In development, not published on the Workshop yet.",
   "cat.indforge": "INDFORGE operations",
   "cat.indforge.d": "Our scenarios, frameworks and gameplay systems.",
   "cat.auc": "AUC — Arma Ukraine Community",
@@ -187,7 +189,7 @@
     "<code>INDFORGE AI doctrine:</code> at startup, on weather changes and every 5 minutes.",
     "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> and <code>INDFORGE fuel truck:</code> base capture.",
     "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — and, in the next update, <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
-    "AI Framework: lines starting with <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> and <code>[INDF_CombatHeliSpawner]</code>."
+    "AI Framework (in development, not released yet): lines starting with <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code>, <code>[INDF_CounterAttackDirector]</code> and <code>[INDF_CombatHeliSpawner]</code>."
   ],
   "cmd.setrank": "Sets a player's rank. Exact in-game name, then the rank name (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) or its number. The rank is saved across restarts.",
   "cmd.aidoctrine": "Shows, reloads, enables or disables the AI doctrine.",
@@ -420,29 +422,28 @@
     "Set <code>game.scenarioId</code> to the scenario ID above and use the full mods block below: Forest, Conflict PvE and its dependencies, Belleau Wood and the two railway mods."
   ],
   "m.forest.credits": "Belleau Wood map by Thinwheat01. RailwayGenerator and RailEnfusionRedux by TilW. And every creator of the Conflict PvE dependencies.",
-  "m.ai-framework.tag": "Modular, map-agnostic AI for PvE scenarios: helicopter patrols, garrisons, ground patrols.",
+  "m.ai-framework.tag": "Modular, map-agnostic AI for PvE scenarios: combat helicopters, garrisons, map markers. In development, not released yet.",
   "m.ai-framework.intro": [
-    "INDFORGE - AI Framework adds configurable hostile helicopter patrols, military garrisons and ground patrols to compatible Conflict scenarios.",
-    "Everything is set from a JSON file in the server profile, without touching the code. Map support depends on the points of interest the scenario exposes."
+    "INDFORGE - AI Framework is in development and <b>not published on the Workshop yet</b>. It will add combat helicopter patrols, military garrisons on points of interest and player map markers to compatible Conflict scenarios.",
+    "Everything will be set from a single <code>config.json</code> in the server profile, without touching the code. Each setting has its help key, the same name with a leading <code>_</code>, that explains it.",
+    "<b>Next steps:</b> test the helicopter fix on the server bench, then in game. Paradrop from the helicopter: planned, still at the design stage."
   ],
   "m.ai-framework.f": [
-    "<b>Combat Heli Spawner.</b> A hostile USSR patrol helicopter appears near the biggest group of players, anchored on a point of interest (military base, airport, city, village…), with a full crew and a configurable AI skill, from Noob to Expert.",
-    "<b>Scripted flight controller</b>, not the engine's AI flight: patrol loop over nearby points of interest, altitude hold, banked turns.",
-    "<b>Automatic cleanup.</b> Shot down, pilot or rotor lost, landed or in water: the wreck despawns and the slot is released after a cooldown (23 minutes in total with the shipped values).",
-    "<b>Military garrisons.</b> Each eligible point of interest gets two patrols, one tight and one wide, and small static teams hold towers, bunkers and watchtowers.",
+    "<b>Combat helicopter patrols (UH-1H, Mi-8MT).</b> A hostile helicopter appears near the biggest group of players, anchored on a point of interest, with a full AI crew and a configurable AI skill, from Noob to Expert. It flies with the studio's own physics flight controller, not the engine's AI flight: patrol loop, altitude hold, banked turns. <i>Status: worked in game until September 2026. A regression now stops it from spawning; the fix is written, not tested yet.</i>",
+    "<b>Automatic cleanup.</b> Shot down, pilot or rotor lost, landed or in water: the wreck despawns and the slot is released after a cooldown (23 minutes in total with the reference file values).",
+    "<b>Military garrisons.</b> Each eligible point of interest gets two patrols, one tight and one wide, and small teams hold towers, bunkers and watchtowers. A base the players have just taken faces a counter-attack. <i>Status: coded, not re-tested in game since 3 November 2026.</i>",
+    "<b>Player map markers.</b> Every player shows as alive, unconscious or dead, and your own position is an arrow in your faction colour that turns with your heading. <i>Status: coded, a fix is in progress, not tested in game yet.</i>",
     "<b>Priority under the AI cap.</b> The engine keeps about 128 AI active at once: helicopter crew first, then close patrols and building posts, then wide patrols."
   ],
   "m.ai-framework.setup": [
-    "Subscribe to the mod and add it to your server's mods.",
-    "In the World Editor, add the INDFORGE components to the <code>GameModeCampaign</code> (or base <code>GameMode</code>) entity of your mission.",
-    "Copy the shipped <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> to <code>$profile:INDF_CombatHeliSpawner/config.json</code>. That copy is the one read, once, at startup.",
-    "Per world: on the FIA <code>CampaignFactionManager</code>, add USSR to <em>Friendly Factions Ids</em>, and FIA on the USSR one. Without it the two factions fight each other.",
-    "Restart the server after every change. In Workbench, close and reopen it: it caches the file."
+    "The mod is not published yet: the full setup guide will come with its release.",
+    "Settings will be read from <code>$profile:INDF_CombatHeliSpawner/config.json</code>, a copy of the shipped <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code>. It is read once, at startup: restart the server (or Workbench) after every change.",
+    "Keys starting with <code>_</code> are help texts: the mod never reads them. Only edit the values."
   ],
   "m.ai-framework.admin": [
     "Do not raise <code>MaxActiveHelicopters</code>: the flight is scripted and has no collision avoidance between aircraft.",
     "At startup the log must show <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, then the POI scan and the garrison population.",
-    "No helicopter? Check the player count (<code>MinimumPlayersToActivate</code>) and the 23-minute wait after a kill."
+    "No helicopter? Check the player count (<code>MinimumPlayersToActivate</code>) and the 23-minute wait after a kill. For now a regression also stops it from spawning (fix not tested yet)."
   ],
   "m.enhanced-compositions.tag": "Compact Conflict compositions, generator capture and AI garrisons.",
   "m.enhanced-compositions.intro": [

@@ -58,9 +58,11 @@
   "status.standby": "En attente",
   "status.restricted": "Non répertorié",
   "status.dev": "Développement actif",
+  "status.unreleased": "Non publié",
   "status.operational.d": "Publié sur le Workshop.",
   "status.standby.d": "En attente : aucune mise à jour prévue pour l'instant. Il pourrait être fusionné avec un autre mod.",
   "status.restricted.d": "Publié mais non répertorié sur le Workshop. Très secret défense : cette ligne s'autodétruira.",
+  "status.unreleased.d": "En développement, pas encore publié sur le Workshop.",
   "cat.indforge": "Opérations INDFORGE",
   "cat.indforge.d": "Nos scénarios, nos frameworks et nos systèmes de jeu.",
   "cat.auc": "AUC — Arma Ukraine Community",
@@ -187,7 +189,7 @@
     "<code>INDFORGE AI doctrine:</code> au démarrage, à chaque changement de météo et toutes les 5 minutes.",
     "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> et <code>INDFORGE fuel truck:</code> pour la capture des bases.",
     "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — et, à la prochaine mise à jour, <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
-    "AI Framework : les lignes qui commencent par <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> et <code>[INDF_CombatHeliSpawner]</code>."
+    "AI Framework (en développement, pas encore publié) : les lignes qui commencent par <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code>, <code>[INDF_CounterAttackDirector]</code> et <code>[INDF_CombatHeliSpawner]</code>."
   ],
   "cmd.setrank": "Donne un grade à un joueur. Son nom exact en jeu, puis le nom du grade (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) ou son numéro. Le grade est gardé après un redémarrage.",
   "cmd.aidoctrine": "Affiche, recharge, active ou coupe la doctrine de l'IA.",
@@ -420,29 +422,28 @@
     "Mettez <code>game.scenarioId</code> sur l'ID de scénario ci-dessus et utilisez le bloc de mods complet ci-dessous : Forest, Conflict PvE et ses dépendances, Belleau Wood et les deux mods de voie ferrée."
   ],
   "m.forest.credits": "Carte Belleau Wood de Thinwheat01. RailwayGenerator et RailEnfusionRedux de TilW. Et chaque créateur des dépendances de Conflict PvE.",
-  "m.ai-framework.tag": "Une IA modulaire, indépendante de la carte, pour les scénarios PvE : patrouilles d'hélicoptères, garnisons, patrouilles au sol.",
+  "m.ai-framework.tag": "Une IA modulaire, indépendante de la carte, pour les scénarios PvE : hélicoptères de combat, garnisons, marqueurs de carte. En développement, pas encore publié.",
   "m.ai-framework.intro": [
-    "INDFORGE - AI Framework ajoute aux scénarios Conflict compatibles des patrouilles d'hélicoptères hostiles, des garnisons militaires et des patrouilles au sol, toutes réglables.",
-    "Tout se règle dans un fichier JSON du profil serveur, sans toucher au code. La prise en charge d'une carte dépend des points d'intérêt que le scénario expose."
+    "INDFORGE - AI Framework est en développement et <b>n'est pas encore publié sur le Workshop</b>. Il ajoutera aux scénarios Conflict compatibles des patrouilles d'hélicoptères de combat, des garnisons militaires sur les points d'intérêt et des marqueurs de carte pour les joueurs.",
+    "Tout se réglera dans un seul fichier <code>config.json</code> du profil serveur, sans toucher au code. Chaque réglage a sa clé d'aide, du même nom précédé de <code>_</code>, qui l'explique.",
+    "<b>Prochaines étapes :</b> tester la correction de l'hélicoptère au banc serveur, puis en jeu. Largage de parachutistes depuis l'hélicoptère : prévu, encore au stade de la conception."
   ],
   "m.ai-framework.f": [
-    "<b>Combat Heli Spawner.</b> Un hélicoptère de patrouille USSR hostile apparaît près du plus grand groupe de joueurs, ancré sur un point d'intérêt (base militaire, aéroport, ville, village…), avec un équipage complet et un niveau d'IA réglable, de Noob à Expert.",
-    "<b>Contrôleur de vol scripté</b>, pas le vol IA du moteur : boucle de patrouille au-dessus des points d'intérêt voisins, maintien d'altitude, virages inclinés.",
-    "<b>Nettoyage automatique.</b> Abattu, pilote ou rotor perdu, posé ou dans l'eau : l'épave disparaît et la place se libère après un délai (23 minutes au total avec les valeurs livrées).",
-    "<b>Garnisons militaires.</b> Chaque point d'intérêt éligible reçoit deux patrouilles, l'une serrée, l'autre large, et de petites équipes fixes tiennent les tours, bunkers et miradors.",
+    "<b>Patrouilles d'hélicoptères de combat (UH-1H, Mi-8MT).</b> Un hélicoptère hostile apparaît près du plus grand groupe de joueurs, ancré sur un point d'intérêt, avec un équipage IA complet et un niveau d'IA réglable, de Noob à Expert. Il vole grâce au contrôleur de vol physique du studio, pas avec le vol IA du moteur : boucle de patrouille, maintien d'altitude, virages inclinés. <i>État : a fonctionné en jeu jusqu'en septembre 2026. Une régression empêche aujourd'hui son apparition ; la correction est écrite, pas encore testée.</i>",
+    "<b>Nettoyage automatique.</b> Abattu, pilote ou rotor perdu, posé ou dans l'eau : l'épave disparaît et la place se libère après un délai (23 minutes au total avec les valeurs du fichier de référence).",
+    "<b>Garnisons militaires.</b> Chaque point d'intérêt éligible reçoit deux patrouilles, l'une serrée, l'autre large, et de petites équipes tiennent les tours, bunkers et miradors. Une base que les joueurs viennent de prendre subit une contre-attaque. <i>État : codé, pas retesté en jeu depuis le 3 novembre 2026.</i>",
+    "<b>Marqueurs de carte des joueurs.</b> Chaque joueur apparaît vivant, inconscient ou mort, et votre position est une flèche à la couleur de votre faction, qui tourne selon votre cap. <i>État : codé, correction en cours, pas encore testé en jeu.</i>",
     "<b>Priorité sous le plafond d'IA.</b> Le moteur garde environ 128 IA actives à la fois : d'abord l'équipage de l'hélicoptère, puis les patrouilles serrées et les postes, puis les patrouilles larges."
   ],
   "m.ai-framework.setup": [
-    "Abonnez-vous au mod et ajoutez-le aux mods de votre serveur.",
-    "Dans le World Editor, ajoutez les composants INDFORGE sur l'entité <code>GameModeCampaign</code> (ou <code>GameMode</code> de base) de votre mission.",
-    "Copiez le fichier livré <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> vers <code>$profile:INDF_CombatHeliSpawner/config.json</code>. C'est cette copie qui est lue, une seule fois, au démarrage.",
-    "Pour chaque monde : sur le <code>CampaignFactionManager</code> de la FIA, ajoutez USSR dans <em>Friendly Factions Ids</em>, et FIA sur celui de l'USSR. Sans cela, les deux factions se tirent dessus.",
-    "Redémarrez le serveur après chaque changement. Dans Workbench, fermez-le et rouvrez-le : il garde le fichier en cache."
+    "Le mod n'est pas encore publié : le guide d'installation complet viendra avec sa sortie.",
+    "Les réglages seront lus dans <code>$profile:INDF_CombatHeliSpawner/config.json</code>, une copie du fichier livré <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code>. Il est lu une seule fois, au démarrage : redémarrez le serveur (ou Workbench) après chaque changement.",
+    "Les clés qui commencent par <code>_</code> sont des textes d'aide : le mod ne les lit pas. Ne modifiez que les valeurs."
   ],
   "m.ai-framework.admin": [
     "N'augmentez pas <code>MaxActiveHelicopters</code> : le vol est scripté et n'évite pas les collisions entre appareils.",
     "Au démarrage, le journal doit montrer <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, puis l'analyse des points d'intérêt et la mise en place des garnisons.",
-    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>) et l'attente de 23 minutes après une destruction."
+    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>) et l'attente de 23 minutes après une destruction. Pour l'instant, une régression empêche aussi son apparition (correction pas encore testée)."
   ],
   "m.enhanced-compositions.tag": "Des compositions Conflict compactes, la capture par générateur et des garnisons IA.",
   "m.enhanced-compositions.intro": [

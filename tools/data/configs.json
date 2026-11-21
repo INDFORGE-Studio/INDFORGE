@@ -176,7 +176,7 @@
    },
    {
     "key": "AssignPrefab",
-    "value": "[\"Overwatch=Overwatch\", \"Spetsnaz=Operator\", \"KLMK=Operator\", \"Recon=Operator\", \"INDF_U…",
+    "value": "[\"Overwatch=Overwatch\", \"Spetsnaz=Operator\", \"KLMK=Operator\", \"Recon=Operator\", \"INDF_U\u2026",
     "help": null
    },
    {
@@ -191,7 +191,7 @@
    },
    {
     "key": "Levels",
-    "value": "{\"Boot\": {\"RangeStand\": 275, \"RangeCrouch\": 165, \"RangeProne\": 90, \"RangeMin\": 40.0, \"M…",
+    "value": "{\"Boot\": {\"RangeStand\": 275, \"RangeCrouch\": 165, \"RangeProne\": 90, \"RangeMin\": 40.0, \"M\u2026",
     "help": null
    }
   ]
@@ -290,7 +290,7 @@
    },
    {
     "key": "AttackDrones",
-    "value": "[\"{DACE636DC6AF366F}Prefabs/Drones/FPVBase/FPVRPG_AI.et\", \"{821D293AB12438A1}Prefabs/Dr…",
+    "value": "[\"{DACE636DC6AF366F}Prefabs/Drones/FPVBase/FPVRPG_AI.et\", \"{821D293AB12438A1}Prefabs/Dr\u2026",
     "help": "Attack drones an FPV operator draws from at each launch (prefabs with the NOVA_FPV component). Empty: the drone of the operator"
    }
   ]
@@ -537,12 +537,12 @@
    },
    {
     "key": "DroneVehicleGroups",
-    "value": "[\"{7448919F1696DA41}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiVehicle_ATA…",
+    "value": "[\"{7448919F1696DA41}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiVehicle_ATA\u2026",
     "help": "Groups drawn for drone intel on a player vehicle"
    },
    {
     "key": "DroneInfantryGroups",
-    "value": "[\"{9AA4D537E88AF1AD}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel_A…",
+    "value": "[\"{9AA4D537E88AF1AD}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel_A\u2026",
     "help": "Groups drawn for drone intel on players on foot"
    },
    {
@@ -557,7 +557,7 @@
    },
    {
     "key": "ZoneGroups",
-    "value": "[\"{FE8F38BF5355B150}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel.e…",
+    "value": "[\"{FE8F38BF5355B150}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiPersonnel.e\u2026",
     "help": "Groups drawn for a zone patrol"
    },
    {
@@ -692,12 +692,12 @@
    },
    {
     "key": "OverwatchGroups",
-    "value": "[\"{40DFAC0BDF2137E8}Prefabs/Groups/OPFOR/AmbientPatrols/INDF_Group_USSR_Overwatch_Team_…",
+    "value": "[\"{40DFAC0BDF2137E8}Prefabs/Groups/OPFOR/AmbientPatrols/INDF_Group_USSR_Overwatch_Team_\u2026",
     "help": "Groups drawn for the sniper team of the harassment (spawned with their own size)"
    },
    {
     "key": "DroneTeamGroups",
-    "value": "[\"{29D37EF8013B7F54}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_DronesReconTeam_NotS…",
+    "value": "[\"{29D37EF8013B7F54}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_DronesReconTeam_NotS\u2026",
     "help": "Groups drawn for the drone team of the vehicle hunt (spawned with their own size)"
    },
    {
@@ -842,7 +842,7 @@
    },
    {
     "key": "AmbushLongRangeVehicles",
-    "value": "[\"{E8D254FC24B032C2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Kornet.et\", \"{C63657059F3EF8…",
+    "value": "[\"{E8D254FC24B032C2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Kornet.et\", \"{C63657059F3EF8\u2026",
     "help": "Vehicles drawn for the long-range hunter, each with a weapon turret (empty: always a drone team)"
    },
    {
@@ -917,7 +917,7 @@
    },
    {
     "key": "BaitPrefabs",
-    "value": "[\"{712232FE13FAC5A7}Prefabs/Structures/Roadblock/Ambush_Asphalt_Roadblock_01.et\", \"{1AA…",
+    "value": "[\"{712232FE13FAC5A7}Prefabs/Structures/Roadblock/Ambush_Asphalt_Roadblock_01.et\", \"{1AA\u2026",
     "help": "Roadblock wrecks drawn for the bait; their pivot lies on the middle of the road"
    },
    {
@@ -1352,7 +1352,7 @@
    },
    {
     "key": "GeranEscortPrefabs",
-    "value": "[\"{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman…",
+    "value": "[\"{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman\u2026",
     "help": "Soldier prefabs of the escort, taken in turn"
    },
    {
@@ -1404,7 +1404,7 @@
    },
    {
     "key": "BatteryComposition",
-    "value": "\"{28D63631873AA636}Prefabs/Compositions/Slotted/SlotFlatSmall/MortarPlacement_S_USSR_01…",
+    "value": "\"{28D63631873AA636}Prefabs/Compositions/Slotted/SlotFlatSmall/MortarPlacement_S_USSR_01\u2026",
     "help": "Mortar pit placed for a battery (it holds the mortar)"
    },
    {
@@ -2193,7 +2193,7 @@
    },
    {
     "key": "DroneText",
-    "value": "\"Enemy drone feed intercepted: a drone is watching you. Break line of sight, get under …",
+    "value": "\"Enemy drone feed intercepted: a drone is watching you. Break line of sight, get under \u2026",
     "help": null
    },
    {
@@ -2233,7 +2233,7 @@
    },
    {
     "key": "MortarText",
-    "value": "\"Enemy fire mission intercepted: a ranging round is on its way to your position. Spread…",
+    "value": "\"Enemy fire mission intercepted: a ranging round is on its way to your position. Spread\u2026",
     "help": null
    },
    {
@@ -2444,12 +2444,12 @@
    },
    {
     "key": "EpisodeNames",
-    "value": "[\"Clear\", \"Fair\", \"Cloudy\", \"Overcast\", \"Drizzle\", \"Rain\", \"Thunderstorm\", \"DawnMist\", …",
+    "value": "[\"Clear\", \"Fair\", \"Cloudy\", \"Overcast\", \"Drizzle\", \"Rain\", \"Thunderstorm\", \"DawnMist\", \u2026",
     "help": "Episodes, each described under Episodes with the same name"
    },
    {
     "key": "Episodes",
-    "value": "{\"Clear\": {\"StartWeight\": 2.0, \"MinMinutes\": 25.0, \"MaxMinutes\": 60.0, \"RampMinutes\": 1…",
+    "value": "{\"Clear\": {\"StartWeight\": 2.0, \"MinMinutes\": 25.0, \"MaxMinutes\": 60.0, \"RampMinutes\": 1\u2026",
     "help": "StartWeight: chance to be the first episode. Min/MaxMinutes: real minutes it lasts. RampMinutes: real minutes to reach its values from the previous ones (short only where real weather changes fast). VariationMinutes: its values drift inside their ranges this often. Fog/FogHeight (0-1; the height density makes the fog: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m; the amount only thickens it up to about 0.03), Rain (0-1), Wind (m/s): ranges drawn from. WindShiftMin/Max: degrees the wind turns as it starts. Severe: capped by MaxMinutes and SevereCooldownMinutes. DawnOnly: starts only around sunrise, ends BurnOffHours game hours after sunrise. Sky: the map weather states to show, first one the map has. Next: episodes that may follow, Name=weight"
    }
   ]
@@ -2596,7 +2596,7 @@
    },
    {
     "key": "Buildings",
-    "value": "{\"Barracks\": {\"Enabled\": true, \"Posture\": \"Patrol\", \"SupplyCost\": 200, \"MaxMembers\": 5,…",
+    "value": "{\"Barracks\": {\"Enabled\": true, \"Posture\": \"Patrol\", \"SupplyCost\": 200, \"MaxMembers\": 5,\u2026",
     "help": "Per building: Enabled, Posture (Patrol or Fixed), SupplyCost of a whole group, MaxMembers (largest number of soldiers taken from the group, 0 = all), RespawnDelaySeconds after the whole group is dead, Groups as FactionKey={GUID}path."
    }
   ]
@@ -2620,6 +2620,62 @@
     "key": "AIActiveLimit",
     "value": "0",
     "help": "Maximum number of AI the engine keeps active at once. 0 = leave the engine default untouched (currently 128). Raising it lets a denser map exist but costs server performance: measure before shipping a value above the default."
+   },
+   {
+    "key": "PlayableFaction",
+    "value": "\"US\"",
+    "help": "Faction key players are allowed to join, e.g. US. Every other faction on the world is locked out for the whole round, so players cannot switch to the enemy side in this PvE mod. Empty = leave the world's factions untouched (every faction stays joinable)."
+   },
+   {
+    "key": "MainEnemyFaction",
+    "value": "\"USSR\"",
+    "help": "Faction key given to every control point base (not the HQ, not the relays) at the start of a new round, e.g. USSR. Must be a known faction of the world, otherwise a warning is logged and nothing is changed. Empty = keep the vanilla default factions. Ignored when a saved game is loaded."
+   },
+   {
+    "key": "MapMarkers",
+    "value": null,
+    "help": "Per-player map marker preferences. LOCAL to each client: read from the player's own profile copy of this file, a server admin cannot force them. Missing section = the defaults below.",
+    "group": true
+   },
+   {
+    "key": "MapMarkers.RestoreVanillaVisibility",
+    "value": "false",
+    "help": "true = keep the vanilla rule (only a group leader sees the members of their group) instead of showing every player of the same faction. Default false."
+   },
+   {
+    "key": "MapMarkers.ShowOwnMarker",
+    "value": "true",
+    "help": "true = also show your own marker on the map (the vanilla rule hides it). Default true."
+   },
+   {
+    "key": "MapMarkers.KeepDeadMarkerUntilRespawn",
+    "value": "true",
+    "help": "Server setting. true = a killed player's marker stays on the map where they fell (grey) until they respawn; false = vanilla, the marker disappears at death. Default true."
+   },
+   {
+    "key": "MapMarkers.OwnMarkerRotationOffsetDegrees",
+    "value": "45.0",
+    "help": "Degrees added to your heading when rotating your own map arrow (the cursor icon points up-left, so 45 makes it point along your heading). Adjust if the arrow looks rotated the wrong way. Default 45."
+   },
+   {
+    "key": "MapMarkers.OwnMarkerRotationSign",
+    "value": "1",
+    "help": "1 or -1: direction of the own map arrow rotation. Use -1 if the arrow turns the opposite way to your character. Default 1."
+   },
+   {
+    "key": "MapMarkers.OwnMarkerArrowSize",
+    "value": "56.0",
+    "help": "Side in pixels of your own map arrow (square, same proportions as the cursor icon). Default 56."
+   },
+   {
+    "key": "MapMarkers.UnconsciousColor",
+    "value": "{\"R\": 230, \"G\": 140, \"B\": 140, \"A\": 255}",
+    "help": "Marker color of an unconscious player (RGBA, 0-255). Only applied to players streamed to this client. Default pale red 230/140/140/255."
+   },
+   {
+    "key": "MapMarkers.DeadColor",
+    "value": "{\"R\": 128, \"G\": 128, \"B\": 128, \"A\": 255}",
+    "help": "Marker color of a dead player (RGBA, 0-255). Only applied when the dead character is readable on this client. Default grey 128/128/128/255."
    },
    {
     "key": "CombatHeliSpawner",
@@ -2667,6 +2723,16 @@
     "key": "CombatHeliSpawner.SpawnMechanics.MaxActiveHelicopters",
     "value": "1",
     "help": "Maximum helicopters alive at the same time. Keep 1: the flight controller has no collision avoidance between helicopters. A destroyed helicopter keeps its slot until WreckageLifetimeSeconds + SlotAvailabilityCooldownSeconds have passed. Default 3 (if the key is missing)."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.HeliWaitForGarrisonPopulation",
+    "value": "true",
+    "help": "true = no helicopter spawn attempt until the garrison startup population (batches) has finished, so the engine AI spawn queue is free. Default true."
+   },
+   {
+    "key": "CombatHeliSpawner.SpawnMechanics.HeliPopulationMarginSeconds",
+    "value": "10",
+    "help": "Extra seconds to wait after the garrison population has finished before the first helicopter attempt. Default 10."
    },
    {
     "key": "CombatHeliSpawner.SpawnMechanics.PlayerClusterRadiusMeters",
@@ -2740,6 +2806,16 @@
     "key": "CombatHeliSpawner.AIMechanics.EngineStartDelaySeconds",
     "value": "5",
     "help": "Seconds between starting the engine and handing the helicopter to the scripted flight. Without it the airframe moves while the rotor is still spinning up. Default 5."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.PilotAgentTimeoutSeconds",
+    "value": "30",
+    "help": "How long to wait for the pilot group to be fully spawned before aborting the helicopter spawn. Raise it if the engine AI spawn queue is busy (many garrisons spawning). Default 30."
+   },
+   {
+    "key": "CombatHeliSpawner.AIMechanics.EmbarkTimeoutSeconds",
+    "value": "30",
+    "help": "How long to wait for the pilot to be seated in the helicopter before giving up on the crew and patrol setup. Default 30."
    },
    {
     "key": "CombatHeliSpawner.AIMechanics.SearchAndDestroyHoldSeconds",
@@ -2860,12 +2936,12 @@
    },
    {
     "key": "CombatHeliSpawner.Helicopters",
-    "value": "[{\"Name\": \"USSR_Mi8MT_Armed\", \"Prefab\": \"{28FD3C8C89DB914E}Prefabs/Vehicles/Helicopters…",
+    "value": "[{\"Name\": \"USSR_Mi8MT_Armed\", \"Prefab\": \"{28FD3C8C89DB914E}Prefabs/Vehicles/Helicopters\u2026",
     "help": "Helicopter types; one is picked at random by SpawnWeight. Only Faction USSR entries are used. Fields: Name = label shown in the logs; Prefab = helicopter prefab, it must carry the INDF_CombatHeliFlightController component; Faction = USSR; PilotGroupPrefab = AI group put in the pilot seat; CrewGroupPrefab = AI group put in the turrets; SpawnWeight = relative chance (20 vs 40 = half as likely, 0 or less counts as 1)."
    },
    {
     "key": "CombatHeliSpawner.Factions",
-    "value": "{\"PlayableFactions\": [\"US\"], \"HostileFactions\": [\"USSR\", \"FIA\"], \"Relations\": {\"USSR\": …",
+    "value": "{\"PlayableFactions\": [\"US\"], \"HostileFactions\": [\"USSR\", \"FIA\"], \"Relations\": {\"USSR\": \u2026",
     "help": "NO EFFECT: this whole section is read but not used by the current code. Reserved for a future version."
    },
    {
@@ -2885,8 +2961,18 @@
     "help": "Maximum number of POI garrisons created at startup (each = 2 squads), filled in the order of EligiblePoiTypes. Default 40."
    },
    {
+    "key": "MilitaryGarrison.PopulationBatchSize",
+    "value": "4",
+    "help": "Garrisons and building posts are created in batches at startup so their AI spawn requests do not flood the engine queue: this many instances per batch. 0 = all at once. Default 4."
+   },
+   {
+    "key": "MilitaryGarrison.PopulationBatchIntervalSeconds",
+    "value": "5",
+    "help": "Seconds between two startup population batches. Default 5."
+   },
+   {
     "key": "MilitaryGarrison.EligiblePoiTypes",
-    "value": "[\"MILITARY_BASE\", \"AIRPORT\", \"RADIO_TOWER\", \"PORT\", \"TOWER\", \"TOWN\", \"SETTLEMENT\", \"VIL…",
+    "value": "[\"MILITARY_BASE\", \"AIRPORT\", \"RADIO_TOWER\", \"PORT\", \"TOWER\", \"TOWN\", \"SETTLEMENT\", \"VIL\u2026",
     "help": "POI types that get a garrison, in priority order (the order matters once MaxGarrisonInstances is reached). Allowed: TOWN, SETTLEMENT, VILLAGE, HAMLET, LOCAL, MILITARY_BASE, AIRPORT, PORT, RADIO_TOWER, SPAWNPOINT, CONSTRUCTION_SITE, FUEL_STATION, HOSPITAL, FIRE_DEPARTMENT, POLICE_STATION, STORE, HOTEL, PUB, HILL, VALLEY, RIDGE, ISLAND, WATER_MAJOR, WATER_MINOR, LANDMARK, CAVE, CHURCH, TOWER. An unknown value is skipped with a warning. POIs under water or near a Conflict military base are always skipped."
    },
    {
@@ -2952,35 +3038,45 @@
     "help": "Radius (meters) of an INDF_MilitaryGarrisonReactionTrigger hand-placed near a POI in the World Editor (none = no effect). It only sets an internal 'recently engaged' flag that no behavior uses yet. Default 150.0."
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics",
+    "key": "MilitaryGarrison.CounterAttack",
     "value": null,
-    "help": "Replacement of wiped POI squads. Building posts are never replaced.",
+    "help": "One-shot AI counter-attack wave against a base the played faction just captured. Wiped garrisons and building posts are never replaced (PvE round: what players clean up stays clean until the round ends).",
     "group": true
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics.Enabled",
+    "key": "MilitaryGarrison.CounterAttack.Enabled",
     "value": "true",
-    "help": "true = a wiped POI squad is replaced by a reinforcement wave. Default true."
+    "help": "true = a captured base gets a counter-attack wave. Default true."
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics.CooldownSecondsAfterWipe",
-    "value": "600",
-    "help": "Delay (seconds) between a squad being wiped and its reinforcement spawning. Default 600."
+    "key": "MilitaryGarrison.CounterAttack.DelayMinSeconds",
+    "value": "60",
+    "help": "Minimum random delay (seconds) after the capture before the wave spawns. Default 60."
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics.ReinforcementArrivalDistanceMeters",
+    "key": "MilitaryGarrison.CounterAttack.DelayMaxSeconds",
+    "value": "180",
+    "help": "Maximum random delay (seconds) after the capture before the wave spawns. Default 180."
+   },
+   {
+    "key": "MilitaryGarrison.CounterAttack.ArrivalDistanceMeters",
     "value": "600.0",
-    "help": "The reinforcement spawns about this far (meters, +/- 10%) from the POI on dry land, then walks to it. Default 600.0."
+    "help": "The wave spawns about this far (meters, +/- 10%) from the captured base on dry land, then walks to it. Default 600.0."
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics.ReinforcementArrivalRadiusMeters",
+    "key": "MilitaryGarrison.CounterAttack.ArrivalRadiusMeters",
     "value": "25.0",
-    "help": "The reinforcement counts as arrived within this distance (meters) of the POI, then takes its guard or patrol role. Default 25.0."
+    "help": "The wave counts as arrived within this distance (meters) of the base. Default 25.0."
    },
    {
-    "key": "MilitaryGarrison.RespawnMechanics.MaxInboundTravelSeconds",
+    "key": "MilitaryGarrison.CounterAttack.MaxInboundTravelSeconds",
     "value": "300",
-    "help": "Safety net: after this time (seconds) the reinforcement takes its role even if it has not arrived. Default 300."
+    "help": "Safety net: after this time (seconds) the wave is resolved even if it has not arrived. Default 300."
+   },
+   {
+    "key": "MilitaryGarrison.CounterAttack.MaxConcurrent",
+    "value": "2",
+    "help": "Maximum number of counter-attack waves in flight at once; a capture beyond this cap is ignored (not queued). Default 2."
    },
    {
     "key": "MilitaryGarrison.PatrolMechanics",
@@ -3025,7 +3121,7 @@
    },
    {
     "key": "MilitaryGarrison.PatrolMechanics.PatrolGroups",
-    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_U…",
+    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_U\u2026",
     "help": "AI groups used by PATROL squads; one is picked at random by SpawnWeight. Empty list = patrols use the Garrisons group. Fields: Faction = label only; UnitGroupPrefab = group prefab, its unit slots set the headcount (Team_AT 4, RifleSquad 6, FireGroup 4, Team_LAT 4); SpawnWeight = relative chance (0 or less counts as 1)."
    },
    {
@@ -3056,12 +3152,12 @@
    },
    {
     "key": "MilitaryGarrison.BuildingPosts.Entries",
-    "value": "[{\"Name\": \"GuardHouse\", \"PrefabPathContains\": \"GuardHouse_01\", \"Faction\": \"USSR\", \"Unit…",
+    "value": "[{\"Name\": \"GuardHouse\", \"PrefabPathContains\": \"GuardHouse_01\", \"Faction\": \"USSR\", \"Unit\u2026",
     "help": "Building types that can host a post. Fields: Name = label shown in the logs; PrefabPathContains = text searched (case-insensitive) in the building prefab path, e.g. GuardTower_01; Faction = label only; UnitGroupPrefab = group placed there, its unit slots set the headcount (SentryTeam 2, MachineGunTeam 2, FireGroup 4); SpawnChance = chance from 0.0 to 1.0 that a matching building gets a post (default 1.0); PlacementMinRadiusMeters / PlacementMaxRadiusMeters = random dry-land spawn ring around the building, in meters (default 3.0 / 8.0)."
    },
    {
     "key": "MilitaryGarrison.Garrisons",
-    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{3A76D9342C76A1F5}Prefabs/Groups/OPFOR/Group_U…",
+    "value": "[{\"Faction\": \"USSR\", \"UnitGroupPrefab\": \"{3A76D9342C76A1F5}Prefabs/Groups/OPFOR/Group_U\u2026",
     "help": "AI groups used by the GUARD squad of every POI (and by PATROL squads when PatrolGroups is empty); one Faction USSR entry is picked at random by SpawnWeight. Fields: Faction = USSR; UnitGroupPrefab = group prefab, its unit slots set the headcount (SearchGroup = 11); SpawnWeight = relative chance (0 or less counts as 1). To change the squad size, change the group prefab."
    }
   ]

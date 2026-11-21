@@ -1428,7 +1428,7 @@
    "slug": "ai-framework",
    "guid": null,
    "title": "INDFORGE - AI Framework",
-   "workshop": true,
+   "workshop": false,
    "name": "INDFORGE - AI Framework",
    "version": null,
    "size": null,
@@ -1446,7 +1446,7 @@
     "SCENARIOS_SP",
     "SYSTEMS"
    ],
-   "unlisted": true,
+   "unlisted": false,
    "versions": [],
    "changelog": null,
    "scenarios": [

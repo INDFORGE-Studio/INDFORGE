@@ -331,33 +331,6 @@
     "4×4 et 6×6 en six couleurs, plus une version dépannage et assistance médicale."
   ],
 
-  "tips.af-heli.h": "Abattre l'hélicoptère de patrouille",
-  "tips.af-heli.s": [
-    "Il apparaît près du plus gros groupe de joueurs, ancré sur un point d'intérêt, avec un équipage complet.",
-    "Abattu, sans pilote, sans rotor, posé ou dans l'eau : l'épave disparaît et le suivant attend 23 minutes au total (valeurs livrées)."
-  ],
-
-  "tips.af-gar.h": "Nettoyer une garnison",
-  "tips.af-gar.s": [
-    "Chaque point d'intérêt éligible a deux patrouilles, une serrée et une large.",
-    "De petites équipes fixes tiennent les tours, bunkers et miradors."
-  ],
-
-  "tips.af-setup.h": "Installer AI Framework",
-  "tips.af-setup.s": [
-    "Dans le World Editor, ajoutez les composants INDFORGE à l'entité <code>GameModeCampaign</code> (ou <code>GameMode</code>) de votre mission.",
-    "Copiez <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> vers <code>$profile:INDF_CombatHeliSpawner/config.json</code> : c'est cette copie qui est lue, une fois, au démarrage.",
-    "Sur le <code>CampaignFactionManager</code> de FIA, ajoutez USSR aux <em>Friendly Factions Ids</em>, et FIA sur celui d'USSR. Sinon, les deux factions se battent entre elles.",
-    "Redémarrez le serveur après chaque changement."
-  ],
-
-  "tips.af-check.h": "Vérifier que tout tourne",
-  "tips.af-check.s": [
-    "Au démarrage, le journal doit afficher <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, puis le scan des points d'intérêt et le peuplement des garnisons.",
-    "Pas d'hélicoptère ? Vérifiez le nombre de joueurs (<code>MinimumPlayersToActivate</code>) et l'attente de 23 minutes après un abattage.",
-    "N'augmentez pas <code>MaxActiveHelicopters</code> : le vol est scripté, sans évitement entre aéronefs."
-  ],
-
   "tips.auf-side.h": "AUC - Factions : choisir son camp",
   "tips.auf-side.s": [
     "<b>BLUFOR :</b> vous jouez les forces armées ukrainiennes.",

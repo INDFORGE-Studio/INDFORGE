@@ -58,9 +58,11 @@
   "status.standby": "En espera",
   "status.restricted": "No listado",
   "status.dev": "En desarrollo activo",
+  "status.unreleased": "No publicado",
   "status.operational.d": "Publicado en el Workshop.",
   "status.standby.d": "En pausa: sin actualización prevista por ahora. Podría fusionarse con otro mod.",
   "status.restricted.d": "Publicado pero no listado en el Workshop. Alto secreto: esta línea se autodestruirá.",
+  "status.unreleased.d": "En desarrollo, aún no publicado en el Workshop.",
   "cat.indforge": "Operaciones INDFORGE",
   "cat.indforge.d": "Nuestros escenarios, frameworks y sistemas de juego.",
   "cat.auc": "AUC — Arma Ukraine Community",
@@ -187,7 +189,7 @@
     "<code>INDFORGE AI doctrine:</code> al arrancar, en los cambios de clima y cada 5 minutos.",
     "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> y <code>INDFORGE fuel truck:</code> captura de base.",
     "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — y, en la próxima actualización, <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
-    "AI Framework: líneas que empiezan por <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> y <code>[INDF_CombatHeliSpawner]</code>."
+    "AI Framework (en desarrollo, aún no publicado): líneas que empiezan por <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code>, <code>[INDF_CounterAttackDirector]</code> y <code>[INDF_CombatHeliSpawner]</code>."
   ],
   "cmd.setrank": "Asigna el rango de un jugador. Nombre exacto en el juego, luego el nombre del rango (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) o su número. El rango se conserva tras los reinicios.",
   "cmd.aidoctrine": "Muestra, recarga, activa o desactiva la doctrina de la IA.",
@@ -420,29 +422,28 @@
     "Pon en <code>game.scenarioId</code> el ID de escenario indicado arriba y usa el bloque de mods completo de abajo: Forest, Conflict PvE y sus dependencias, Belleau Wood y los dos mods de ferrocarril."
   ],
   "m.forest.credits": "Mapa Belleau Wood de Thinwheat01. RailwayGenerator y RailEnfusionRedux de TilW. Y todos los creadores de las dependencias de Conflict PvE.",
-  "m.ai-framework.tag": "IA modular e independiente del mapa para escenarios PvE: patrullas de helicópteros, guarniciones, patrullas terrestres.",
+  "m.ai-framework.tag": "Una IA modular, independiente del mapa, para escenarios PvE: helicópteros de combate, guarniciones, marcadores de mapa. En desarrollo, aún no publicado.",
   "m.ai-framework.intro": [
-    "INDFORGE - AI Framework añade patrullas de helicópteros hostiles configurables, guarniciones militares y patrullas terrestres a escenarios Conflict compatibles.",
-    "Todo se configura desde un archivo JSON en el perfil del servidor, sin tocar el código. La compatibilidad con cada mapa depende de los puntos de interés que exponga el escenario."
+    "INDFORGE - AI Framework está en desarrollo y <b>aún no está publicado en el Workshop</b>. Añadirá a los escenarios Conflict compatibles patrullas de helicópteros de combate, guarniciones militares en los puntos de interés y marcadores de mapa para los jugadores.",
+    "Todo se ajustará en un único <code>config.json</code> del perfil del servidor, sin tocar el código. Cada ajuste tiene su clave de ayuda, con el mismo nombre precedido de <code>_</code>, que lo explica.",
+    "<b>Próximos pasos:</b> probar la corrección del helicóptero en el banco de servidor y luego en el juego. Lanzamiento de paracaidistas desde el helicóptero: previsto, aún en fase de diseño."
   ],
   "m.ai-framework.f": [
-    "<b>Combat Heli Spawner.</b> Un helicóptero de patrulla USSR hostil aparece cerca del mayor grupo de jugadores, anclado a un punto de interés (base militar, aeropuerto, ciudad, pueblo…), con tripulación completa y una habilidad de IA configurable, de Noob a Expert.",
-    "<b>Controlador de vuelo por script</b>, no el vuelo de la IA del motor: bucle de patrulla sobre puntos de interés cercanos, mantenimiento de altitud, giros inclinados.",
-    "<b>Limpieza automática.</b> Derribado, piloto o rotor perdido, aterrizado o en el agua: el siniestro desaparece y la plaza se libera tras un tiempo de espera (23 minutos en total con los valores distribuidos).",
-    "<b>Guarniciones militares.</b> Cada punto de interés elegible recibe dos patrullas, una cercana y otra amplia, y pequeños equipos estáticos ocupan torres, búnkeres y atalayas.",
-    "<b>Prioridad bajo el límite de IA.</b> El motor mantiene activas unas 128 IA a la vez: primero la tripulación de helicópteros, luego las patrullas cercanas y los puestos en edificios, y por último las patrullas amplias."
+    "<b>Patrullas de helicópteros de combate (UH-1H, Mi-8MT).</b> Un helicóptero hostil aparece cerca del grupo de jugadores más grande, anclado en un punto de interés, con una tripulación de IA completa y un nivel de IA ajustable, de Noob a Expert. Vuela con el controlador de vuelo físico propio del estudio, no con el vuelo de IA del motor: bucle de patrulla, mantenimiento de altitud, giros inclinados. <i>Estado: funcionó en el juego hasta septiembre de 2026. Una regresión impide ahora que aparezca; la corrección está escrita, aún sin probar.</i>",
+    "<b>Limpieza automática.</b> Derribado, sin piloto o sin rotor, posado o en el agua: los restos desaparecen y la plaza se libera tras una espera (23 minutos en total con los valores del archivo de referencia).",
+    "<b>Guarniciones militares.</b> Cada punto de interés elegible recibe dos patrullas, una cerrada y otra amplia, y pequeños equipos defienden torres, búnkeres y atalayas. Una base que los jugadores acaban de tomar sufre un contraataque. <i>Estado: programado, sin volver a probar en el juego desde el 3 de noviembre de 2026.</i>",
+    "<b>Marcadores de mapa de los jugadores.</b> Cada jugador aparece vivo, inconsciente o muerto, y tu propia posición es una flecha del color de tu facción que gira según tu rumbo. <i>Estado: programado, corrección en curso, aún sin probar en el juego.</i>",
+    "<b>Prioridad bajo el límite de IA.</b> El motor mantiene unas 128 IA activas a la vez: primero la tripulación del helicóptero, luego las patrullas cerradas y los puestos, después las patrullas amplias."
   ],
   "m.ai-framework.setup": [
-    "Suscríbete al mod y añádelo a los mods de tu servidor.",
-    "En el World Editor, añade los componentes INDFORGE a la entidad <code>GameModeCampaign</code> (o <code>GameMode</code> base) de tu misión.",
-    "Copia el archivo distribuido <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> en <code>$profile:INDF_CombatHeliSpawner/config.json</code>. Esa copia es la que se lee, una sola vez, al arrancar.",
-    "Por mundo: en el <code>CampaignFactionManager</code> de la FIA, añade USSR a <em>Friendly Factions Ids</em>, y FIA en el de la USSR. Sin esto, las dos facciones se combaten entre sí.",
-    "Reinicia el servidor tras cada cambio. En Workbench, ciérralo y vuelve a abrirlo: guarda el archivo en caché."
+    "El mod aún no está publicado: la guía de instalación completa llegará con su lanzamiento.",
+    "Los ajustes se leerán de <code>$profile:INDF_CombatHeliSpawner/config.json</code>, una copia del archivo incluido <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code>. Se lee una sola vez, al arrancar: reinicia el servidor (o Workbench) tras cada cambio.",
+    "Las claves que empiezan por <code>_</code> son textos de ayuda: el mod nunca las lee. Cambia solo los valores."
   ],
   "m.ai-framework.admin": [
-    "No subas <code>MaxActiveHelicopters</code>: el vuelo es por script y no tiene evitación de colisiones entre aeronaves.",
-    "Al arrancar, el registro debe mostrar <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, luego el escaneo de POI y la población de guarniciones.",
-    "¿Sin helicóptero? Comprueba el número de jugadores (<code>MinimumPlayersToActivate</code>) y la espera de 23 minutos tras un derribo."
+    "No subas <code>MaxActiveHelicopters</code>: el vuelo está programado y no evita colisiones entre aeronaves.",
+    "Al arrancar, el registro debe mostrar <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code>, y luego el análisis de puntos de interés y el poblado de guarniciones.",
+    "¿Sin helicóptero? Comprueba el número de jugadores (<code>MinimumPlayersToActivate</code>) y la espera de 23 minutos tras un derribo. De momento, una regresión también impide que aparezca (corrección aún sin probar)."
   ],
   "m.enhanced-compositions.tag": "Composiciones Conflict compactas, captura de generador y guarniciones de IA.",
   "m.enhanced-compositions.intro": [

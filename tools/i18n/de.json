@@ -58,9 +58,11 @@
   "status.standby": "Bereitschaft",
   "status.restricted": "Nicht gelistet",
   "status.dev": "Aktive Entwicklung",
+  "status.unreleased": "Unveröffentlicht",
   "status.operational.d": "Im Workshop veröffentlicht.",
   "status.standby.d": "Pausiert: vorerst kein Update geplant. Eventuell wird er mit einem anderen Mod zusammengeführt.",
   "status.restricted.d": "Im Workshop veröffentlicht, aber nicht gelistet. Streng geheim: Diese Zeile zerstört sich selbst.",
+  "status.unreleased.d": "In Entwicklung, noch nicht im Workshop veröffentlicht.",
   "cat.indforge": "INDFORGE-Operationen",
   "cat.indforge.d": "Unsere Szenarien, Frameworks und Gameplay-Systeme.",
   "cat.auc": "AUC — Arma Ukraine Community",
@@ -187,7 +189,7 @@
     "<code>INDFORGE AI doctrine:</code> beim Start, bei Wetterwechseln und alle 5 Minuten.",
     "<code>INDFORGE generator capture:</code>, <code>INDFORGE generator breach:</code> und <code>INDFORGE fuel truck:</code> Basiseroberung.",
     "<code>INDFORGE hunter size:</code>, <code>INDFORGE drone sight:</code>, <code>INDFORGE patrol trucks:</code>, <code>INDFORGE session:</code> — und, im nächsten Update, <code>INDFORGE weather:</code>, <code>INDFORGE night gear:</code>, <code>INDFORGE drone team:</code>, <code>INDFORGE radio alerts:</code>.",
-    "AI Framework: Zeilen, die mit <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code> und <code>[INDF_CombatHeliSpawner]</code> beginnen."
+    "AI Framework (in Entwicklung, noch nicht veröffentlicht): Zeilen, die mit <code>[INDF_CombatHeliConfig]</code>, <code>[INDF_POIManager]</code>, <code>[INDF_MilitaryGarrisonManager]</code>, <code>[INDF_CounterAttackDirector]</code> und <code>[INDF_CombatHeliSpawner]</code> beginnen."
   ],
   "cmd.setrank": "Setzt den Rang eines Spielers. Genauer Ingame-Name, dann der Rangname (PRIVATE, CORPORAL, SERGEANT, LIEUTENANT, CAPTAIN, MAJOR…) oder seine Nummer. Der Rang bleibt über Neustarts gespeichert.",
   "cmd.aidoctrine": "Zeigt die KI-Doktrin an, lädt sie neu, aktiviert oder deaktiviert sie.",
@@ -420,29 +422,28 @@
     "Setze <code>game.scenarioId</code> auf die oben genannte Szenario-ID und nutze den kompletten Mods-Block unten: Forest, Conflict PvE samt Abhängigkeiten, Belleau Wood und die beiden Eisenbahn-Mods."
   ],
   "m.forest.credits": "Karte Belleau Wood von Thinwheat01. RailwayGenerator und RailEnfusionRedux von TilW. Und jeder Ersteller der Abhängigkeiten von Conflict PvE.",
-  "m.ai-framework.tag": "Modulare, kartenunabhängige KI für PvE-Szenarien: Hubschrauberpatrouillen, Garnisonen, Bodenpatrouillen.",
+  "m.ai-framework.tag": "Modulare, kartenunabhängige KI für PvE-Szenarien: Kampfhubschrauber, Garnisonen, Kartenmarker. In Entwicklung, noch nicht veröffentlicht.",
   "m.ai-framework.intro": [
-    "INDFORGE - AI Framework fügt kompatiblen Conflict-Szenarien konfigurierbare feindliche Hubschrauberpatrouillen, Militärgarnisonen und Bodenpatrouillen hinzu.",
-    "Alles wird über eine JSON-Datei im Serverprofil eingestellt, ohne den Code anzufassen. Die Kartenunterstützung hängt von den Points of Interest ab, die das Szenario bereitstellt."
+    "INDFORGE - AI Framework ist in Entwicklung und <b>noch nicht im Workshop veröffentlicht</b>. Es wird kompatiblen Conflict-Szenarien Kampfhubschrauber-Patrouillen, Militärgarnisonen an Points of Interest und Kartenmarker für die Spieler hinzufügen.",
+    "Alles wird in einer einzigen <code>config.json</code> im Serverprofil eingestellt, ohne den Code anzufassen. Jede Einstellung hat ihren Hilfeschlüssel, denselben Namen mit vorangestelltem <code>_</code>, der sie erklärt.",
+    "<b>Nächste Schritte:</b> die Hubschrauber-Korrektur auf dem Server-Prüfstand testen, dann im Spiel. Fallschirmabsprung aus dem Hubschrauber: geplant, noch in der Konzeptphase."
   ],
   "m.ai-framework.f": [
-    "<b>Combat Heli Spawner.</b> Ein feindlicher USSR-Patrouillenhubschrauber erscheint nahe der größten Spielergruppe, verankert an einem Point of Interest (Militärbasis, Flughafen, Stadt, Dorf…), mit voller Besatzung und konfigurierbarem KI-Können, von Noob bis Expert.",
-    "<b>Geskripteter Flugregler</b>, nicht die Flug-KI der Engine: Patrouillenschleife über nahen Points of Interest, Höhenhaltung, geneigte Kurven.",
-    "<b>Automatische Bereinigung.</b> Abgeschossen, Pilot oder Rotor verloren, gelandet oder im Wasser: Das Wrack verschwindet, und der Slot wird nach einer Abklingzeit freigegeben (insgesamt 23 Minuten mit den ausgelieferten Werten).",
-    "<b>Militärgarnisonen.</b> Jeder geeignete Point of Interest bekommt zwei Patrouillen, eine enge und eine weite, und kleine statische Teams besetzen Türme, Bunker und Wachtürme.",
-    "<b>Priorität unter dem KI-Limit.</b> Die Engine hält etwa 128 KI gleichzeitig aktiv: zuerst die Hubschrauberbesatzung, dann nahe Patrouillen und Gebäudeposten, dann weite Patrouillen."
+    "<b>Kampfhubschrauber-Patrouillen (UH-1H, Mi-8MT).</b> Ein feindlicher Hubschrauber erscheint nahe der größten Spielergruppe, verankert an einem Point of Interest, mit kompletter KI-Besatzung und einstellbarem KI-Niveau, von Noob bis Expert. Er fliegt mit dem eigenen physikalischen Flugregler des Studios, nicht mit dem KI-Flug der Engine: Patrouillenschleife, Höhe halten, Kurven mit Schräglage. <i>Stand: lief im Spiel bis September 2026. Eine Regression verhindert jetzt sein Erscheinen; die Korrektur ist geschrieben, noch nicht getestet.</i>",
+    "<b>Automatisches Aufräumen.</b> Abgeschossen, Pilot oder Rotor verloren, gelandet oder im Wasser: Das Wrack verschwindet und der Platz wird nach einer Wartezeit frei (insgesamt 23 Minuten mit den Werten der Referenzdatei).",
+    "<b>Militärgarnisonen.</b> Jeder geeignete Point of Interest erhält zwei Patrouillen, eine enge und eine weite, und kleine Teams halten Türme, Bunker und Hochstände. Eine Basis, die die Spieler gerade eingenommen haben, wird gegenangegriffen. <i>Stand: programmiert, seit dem 3. November 2026 nicht mehr im Spiel getestet.</i>",
+    "<b>Kartenmarker der Spieler.</b> Jeder Spieler erscheint lebend, bewusstlos oder tot, und die eigene Position ist ein Pfeil in der Farbe der eigenen Fraktion, der sich mit der Blickrichtung dreht. <i>Stand: programmiert, eine Korrektur läuft, noch nicht im Spiel getestet.</i>",
+    "<b>Vorrang unter der KI-Obergrenze.</b> Die Engine hält etwa 128 KI gleichzeitig aktiv: zuerst die Hubschrauberbesatzung, dann enge Patrouillen und Gebäudeposten, dann weite Patrouillen."
   ],
   "m.ai-framework.setup": [
-    "Abonniere den Mod und füge ihn den Mods deines Servers hinzu.",
-    "Füge im World Editor die INDFORGE-Komponenten zur Entity <code>GameModeCampaign</code> (oder zum Basis-<code>GameMode</code>) deiner Mission hinzu.",
-    "Kopiere die ausgelieferte <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code> nach <code>$profile:INDF_CombatHeliSpawner/config.json</code>. Diese Kopie wird einmalig beim Start gelesen.",
-    "Pro Welt: Füge im FIA-<code>CampaignFactionManager</code> die USSR zu den <em>Friendly Factions Ids</em> hinzu, und die FIA im USSR-Manager. Ohne das bekämpfen sich die beiden Fraktionen.",
-    "Starte den Server nach jeder Änderung neu. Schließe und öffne Workbench erneut: Es speichert die Datei im Cache."
+    "Der Mod ist noch nicht veröffentlicht: Die vollständige Einrichtungsanleitung kommt mit der Veröffentlichung.",
+    "Die Einstellungen werden aus <code>$profile:INDF_CombatHeliSpawner/config.json</code> gelesen, einer Kopie der mitgelieferten <code>ServerProfile/INDF_CombatHeliSpawner/config.json</code>. Sie wird einmal beim Start gelesen: Server (oder Workbench) nach jeder Änderung neu starten.",
+    "Schlüssel, die mit <code>_</code> beginnen, sind Hilfetexte: Der Mod liest sie nie. Nur die Werte ändern."
   ],
   "m.ai-framework.admin": [
-    "Erhöhe <code>MaxActiveHelicopters</code> nicht: Der Flug ist geskriptet und hat keine Kollisionsvermeidung zwischen Luftfahrzeugen.",
-    "Beim Start muss das Log <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code> zeigen, danach den POI-Scan und die Garnisonsbesetzung.",
-    "Kein Hubschrauber? Prüfe die Spielerzahl (<code>MinimumPlayersToActivate</code>) und die 23 Minuten Wartezeit nach einem Abschuss."
+    "<code>MaxActiveHelicopters</code> nicht erhöhen: Der Flug ist geskriptet und hat keine Kollisionsvermeidung zwischen Luftfahrzeugen.",
+    "Beim Start muss das Log <code>[INDF_CombatHeliConfig] LoadFromFile SUCCESS</code> zeigen, dann den POI-Scan und die Garnisonsbevölkerung.",
+    "Kein Hubschrauber? Spielerzahl (<code>MinimumPlayersToActivate</code>) und die 23 Minuten Wartezeit nach einem Abschuss prüfen. Derzeit verhindert außerdem eine Regression sein Erscheinen (Korrektur noch nicht getestet)."
   ],
   "m.enhanced-compositions.tag": "Kompakte Conflict-Kompositionen, Generator-Eroberung und KI-Garnisonen.",
   "m.enhanced-compositions.intro": [
