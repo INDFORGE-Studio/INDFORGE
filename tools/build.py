@@ -1100,11 +1100,8 @@ def status():
 def about():
     roster = [("Volmog_0", "about.r_volmog"), ("Unknown Soldiers", "about.r_soldiers"),
               ("Captain Valaaks", "about.r_valaaks")]
-    def initials(n):
-        w = re.findall(r"[A-Za-z0-9]+", n)
-        return (w[0][0] + (w[1][0] if len(w) > 1 else w[0][-1])).upper()
-    ros = "".join('<li class="op"><span class="op-ico mono" aria-hidden="true">%s</span><span><b>%s</b>%s<span class="mono dim">CLR %s</span></span></li>' % (
-        initials(n), H(n), t(k, "span", "op-role"), redact(5)) for n, k in roster)
+    ros = "".join('<li class="op"><span><b>%s</b>%s<span class="mono dim">CLR %s</span></span></li>' % (
+        H(n), t(k, "span", "op-role"), redact(5)) for n, k in roster)
     body = phead("PER-07", "about.kicker", "about.h1", "about.lead").replace('class="phead wrap"', 'class="phead wrap phead-c"') + """<div class="wrap docgrid nogrid">
 <div class="docmain">
 %s %s %s %s %s %s
