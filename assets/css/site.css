@@ -435,6 +435,8 @@ details[open] > summary::before { transform: rotate(90deg); }
 :root[data-theme="ukr"] .fsb { background-image: url("../img/fs/ukr.svg"); }
 :root[data-theme="usa"] .fsb { background-image: url("../img/fs/usa.svg"); }
 :root[data-theme="can"] .fsb { background-image: url("../img/fs/can.svg"); }
+:root[data-theme="bel"] .fsb { background-image: url("../img/fs/bel.svg"); }
+:root[data-theme="che"] .fsb { background-image: url("../img/fs/che.svg"); }
 .fsb { animation: fsb-in .5s cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes fsb-in { from { opacity: 0; transform: translateY(-4px) scale(.88); } }
 
@@ -991,6 +993,23 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
   --hi: #ffffff; --nav-txt: #f4eaea; --code-txt: #f4eaea; --on-accent: #ffffff; --on-sec: #ff0000; --scan: .5;
 }
 
+:root[data-theme="bel"] { /* Belgium: black, yellow #FDDA24, red #EF3340 */
+  --bg: #0c0b05; --bg2: #15130a; --panel2: #1d1a0d; --deep: #060502;
+  --bg-rgb: 12, 11, 5; --bg2-rgb: 21, 19, 10; --deep-rgb: 6, 5, 2; --panel-rgb: 29, 26, 13;
+  --line-rgb: 230, 200, 110; --txt: #f4f1e6; --txt2: #cfc8b0; --mute: #968f76; --mute-rgb: 150, 143, 118;
+  --amber: #fdda24; --amber2: #ffe55e; --amber-rgb: 253, 218, 36;
+  --green: #ef3340; --green-rgb: 239, 51, 64; --cyan: #ff8a93; --cyan-rgb: 255, 138, 147;
+  --hi: #ffffff; --nav-txt: #f4f1e6; --code-txt: #f4f1e6; --on-accent: #000000; --on-sec: #fdda24; --scan: .5;
+}
+:root[data-theme="che"] { /* Switzerland: red #DA291C, white */
+  --bg: #0e0302; --bg2: #180605; --panel2: #220908; --deep: #070100;
+  --bg-rgb: 14, 3, 2; --bg2-rgb: 24, 6, 5; --deep-rgb: 7, 1, 0; --panel-rgb: 34, 9, 8;
+  --line-rgb: 255, 140, 130; --txt: #f4eae9; --txt2: #cfb7b5; --mute: #967b79; --mute-rgb: 150, 123, 121;
+  --amber: #da291c; --amber2: #ff5a4a; --amber-rgb: 218, 41, 28;
+  --green: #ffffff; --green-rgb: 255, 255, 255; --cyan: #ffb4ac; --cyan-rgb: 255, 180, 172;
+  --hi: #ffffff; --nav-txt: #f4eae9; --code-txt: #f4eae9; --on-accent: #ffffff; --on-sec: #da291c; --scan: .5;
+}
+
 /* national identity: the flag floats over the top of the page, lit by folds moving in the wind */
 :root[data-theme="fra"]::before {
   background:
@@ -1046,17 +1065,29 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2400 0 4800 4800'%3E%3Cpath fill='%23ff0000' d='M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z'/%3E%3C/svg%3E") 50% 0 / 640px 640px no-repeat,
     linear-gradient(90deg, #ff0000 0 25%, #fff 0 75%, #ff0000 0) 0 0 / 100% 640px no-repeat;
 }
-:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"])::before {
+:root[data-theme="bel"]::before {
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(90deg, #000 0 33.4%, #fdda24 0 66.6%, #ef3340 0) 0 0 / 100% 640px no-repeat;
+}
+:root[data-theme="che"]::before { /* the cross sized to a square of the flag's height: 20/32 across, arms 6/32 wide */
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), var(--wash-a, .7)) 0, rgba(var(--bg-rgb), var(--wash-b, .8)) 460px, var(--bg) 640px) 0 0 / 100% 640px no-repeat,
+    linear-gradient(#fff, #fff) 50% 260px / 400px 120px no-repeat,
+    linear-gradient(#fff, #fff) 50% 120px / 120px 400px no-repeat,
+    linear-gradient(#da291c, #da291c) 0 0 / 100% 640px no-repeat;
+}
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"], :root[data-theme="bel"], :root[data-theme="che"])::before {
   content: ""; position: fixed; left: 0; top: 0; width: 100%; height: 640px; z-index: -1; pointer-events: none;
 }
-:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"]) body {
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"], :root[data-theme="bel"], :root[data-theme="che"]) body {
   background:
     linear-gradient(rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
     linear-gradient(90deg, rgba(var(--line-rgb), .045) 1px, transparent 1px) 0 0 / 48px 48px,
     transparent;
   background-attachment: fixed;
 }
-:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"]) body::before {
+:is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"], :root[data-theme="bel"], :root[data-theme="che"]) body::before {
   content: ""; position: fixed; left: -560px; top: -40px; width: calc(100% + 1120px); height: 720px; z-index: -1; pointer-events: none;
   background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .34) 150px, rgba(0, 0, 0, .06) 250px, rgba(255, 255, 255, .11) 390px, rgba(0, 0, 0, 0) 560px);
   -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, .6) 420px, transparent 680px); mask-image: linear-gradient(#000, rgba(0, 0, 0, .6) 420px, transparent 680px);
@@ -1069,7 +1100,7 @@ html.vt-optic::view-transition-new(root), html.vt-optic::view-transition-new(hud
 }
 html.fx-off body::before { animation: none; }
 @media (prefers-reduced-motion: reduce) { /* ambient effects follow the site's own switch */
-  html:not(.fx-off):is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"]) body::before { animation-duration: 12s !important; animation-iteration-count: infinite !important; }
+  html:not(.fx-off):is(:root[data-theme="fra"], :root[data-theme="gbr"], :root[data-theme="deu"], :root[data-theme="esp"], :root[data-theme="ita"], :root[data-theme="pol"], :root[data-theme="ukr"], :root[data-theme="usa"], :root[data-theme="can"], :root[data-theme="bel"], :root[data-theme="che"]) body::before { animation-duration: 12s !important; animation-iteration-count: infinite !important; }
 }
 
 /* ---------- ambient effects of the optics (layers drawn by site.js; switch: html.fx-off) */

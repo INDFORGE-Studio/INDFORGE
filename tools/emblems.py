@@ -62,6 +62,19 @@ def can():
             % (CAN_RED, x0 + q, 23 - q, k, CAN_LEAF))
 
 
+CHE_RED = "#da291c"  # Pantone 485 C
+
+
+def che():
+    """Swiss cross on red: arms 6 wide and 7 long around a 6 x 6 centre, on a field of 32."""
+    u = (35.3 - 4.7) / 32  # the field's 32 units across the visible inside of the shield
+    cx, cy = 20, 22
+    a, l = 3 * u, 10 * u
+    return ('<rect width="40" height="48" fill="%s"/><g fill="#ffffff">' % CHE_RED
+            + '<rect x="%.3f" y="%.3f" width="%.3f" height="%.3f"/>' % (cx - a, cy - l, 2 * a, 2 * l)
+            + '<rect x="%.3f" y="%.3f" width="%.3f" height="%.3f"/></g>' % (cx - l, cy - a, 2 * l, 2 * a))
+
+
 def usa():
     """13 stripes, canton over 7 of them, 50 stars in 9 rows of 6 and 5 (US flag layout)."""
     h = (BOT - TOP) / 13
@@ -90,6 +103,8 @@ FIELDS = {
     "ukr": hbands([("#0057b7", 1), ("#ffd700", 1)]),
     "gbr": gbr(),
     "can": can(),
+    "bel": vbands("#000000", "#fdda24", "#ef3340"),
+    "che": che(),
     "usa": usa(),
 }
 
