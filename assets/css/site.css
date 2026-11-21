@@ -1500,7 +1500,6 @@ html.fx-off body::before { animation: none; }
 .hfx-rec { left: 14px; color: var(--red); }
 .hfx-rec i { display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); }
 .hfx-ch { left: 74px; color: var(--amber); opacity: .8; }
-.p-home .home-h1 { text-shadow: -2px 0 rgba(var(--red-rgb), .55), 2px 0 rgba(var(--cyan-rgb), .4), 0 0 40px rgba(var(--amber-rgb), .18); }
 @media (prefers-reduced-motion: no-preference) {
   .hfx-radar i { animation: hfx-spin 6s linear infinite; }
   .hfx-radar b { animation: hfx-blip 6s linear infinite; }
@@ -1509,11 +1508,19 @@ html.fx-off body::before { animation: none; }
   .hfx-rec i { animation: hfx-blink 1.2s steps(1) infinite; }
   .p-home .home-h1 { animation: hfx-glitch 7s steps(1) infinite; }
 }
+.fx-off .hfx *, .fx-off .p-home .home-h1 { animation: none; } /* the site's own effects switch */
 @keyframes hfx-spin { to { transform: rotate(360deg); } }
 @keyframes hfx-blip { 0% { opacity: 1; } 60%, 100% { opacity: .15; } }
 @keyframes hfx-acq { 0% { transform: scale(1.25); opacity: 0; } 8% { transform: scale(1); opacity: .9; } 85% { opacity: .85; } 100% { opacity: .85; } }
 @keyframes hfx-blink { 50% { opacity: 0; } }
-@keyframes hfx-glitch { 0%, 100% { transform: none; } 92% { transform: translateX(-4px) skewX(-6deg); } 93% { transform: translateX(3px); } 94% { transform: translateX(-1px) skewX(3deg); } 95% { transform: none; } }
+/* title stays sharp; the colour split only shows during the glitch itself */
+@keyframes hfx-glitch {
+  0%, 100% { transform: none; }
+  92% { transform: translateX(-5px) skewX(-8deg); text-shadow: -4px 0 rgba(var(--red-rgb), .8), 4px 0 rgba(var(--cyan-rgb), .7); }
+  93% { transform: translateX(4px); text-shadow: 3px 0 rgba(var(--red-rgb), .8), -3px 0 rgba(var(--cyan-rgb), .7); }
+  94% { transform: translateX(-2px) skewX(4deg); text-shadow: -2px 0 rgba(var(--red-rgb), .7), 2px 0 rgba(var(--cyan-rgb), .6); }
+  95% { transform: none; }
+}
 @media (max-width: 767px) {
   /* phones: the title fills the width, so the feed stays dim and the HUD labels go */
   .hfx-scene::before { background-image: url(../img/home-bg-s.webp); opacity: .32; }
