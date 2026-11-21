@@ -227,7 +227,7 @@
     "<b>Envoi.</b> Une piste fraîche reçoit un groupe, apparu sur une route loin de tout joueur. Un renseignement de drone amène des forces spéciales ; un rapport de patrouille, des chasseurs. Un véhicule repéré amène une équipe antivéhicule.",
     "<b>Prévision.</b> Deux rapports donnent votre direction et votre vitesse. Le groupe va là où vous devriez être maintenant, pas là où vous avez été vus.",
     "<b>Fouille.</b> Une piste froide est fouillée autour de sa position estimée, sur un rayon qui grandit avec le temps, puis le groupe rentre.",
-    "<b>Formations.</b> Colonne en marche, coin à l'approche, ligne à l'assaut et au contact.",
+    "<b>Formations.</b> Colonne en marche, chevron à l'approche, ligne à l'assaut et au contact.",
     "<b>Taille.</b> Les groupes de chasseurs et les parachutistes d'hélicoptère grossissent avec le nombre de joueurs proches."
   ],
   "intel.doctrine": "Doctrine de combat",
