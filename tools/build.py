@@ -912,8 +912,8 @@ def srv_strip():
 
 def home():
     def row(d, sl, v):
-        return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name">%s</span><span class="mono dim">v%s</span></a></li>' % (
-            url("workshop/%s/" % sl), d, H(name(MODS[sl])), H(v))
+        return '<li><a href="%s"><span class="mono amber">%s</span><span class="lt-name" title="%s">%s</span><span class="mono dim">v%s</span></a></li>' % (
+            url("workshop/%s/" % sl), d, H(name(MODS[sl])), H(name(MODS[sl])), H(v))  # title: full name when the row cuts it with an ellipsis
     latest = "".join(row(d, sl, MODS[sl]["version"]) for d, sl in latest_updates(12))
     # Workshop telemetry: public figures of every listed mod (unlisted mods carry no stats)
     measured = [sl for sl in ORDER if MODS[sl].get("stats")]
@@ -923,8 +923,8 @@ def home():
     top = sorted(measured, key=lambda sl: -MODS[sl]["stats"]["downloads"])
     peak = max(MODS[top[0]]["stats"]["downloads"], 1) if top else 1
     tele_rows = "".join(
-        '<li><a href="%s"><span class="lt-name">%s</span><span class="mono dim">%s</span><i class="tele-bar" style="--w:%.3f" aria-hidden="true"></i></a></li>' % (
-            url("workshop/%s/" % sl), H(name(MODS[sl])), num(MODS[sl]["stats"]["downloads"]), MODS[sl]["stats"]["downloads"] / peak)
+        '<li><a href="%s"><span class="lt-name" title="%s">%s</span><span class="mono dim">%s</span><i class="tele-bar" style="--w:%.3f" aria-hidden="true"></i></a></li>' % (
+            url("workshop/%s/" % sl), H(name(MODS[sl])), H(name(MODS[sl])), num(MODS[sl]["stats"]["downloads"]), MODS[sl]["stats"]["downloads"] / peak)
         for sl in top)
     kpi = "".join('<div><b class="mono">%s</b>%s</div>' % (v, t(k, "span")) for v, k in (
         (num(dl), "st.downloads"), (num(votes), "tele.votes"), ("%d %%" % rating, "st.rating")))
