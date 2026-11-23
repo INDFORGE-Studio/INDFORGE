@@ -2006,6 +2006,18 @@
   ]
  },
  {
+  "profile": "$profile:INDFORGE_Movement/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "BushSlowdown",
+    "value": "false",
+    "help": null
+   }
+  ]
+ },
+ {
   "profile": "$profile:INDFORGE_NameTags/config.json",
   "mod": "conflict-pve",
   "readme": null,

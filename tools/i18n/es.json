@@ -387,7 +387,7 @@
   ],
   "m.conflict-pve.inc": [
     "<b>Camiones más fuertes en pendiente:</b> motor reforzado para todos los M923A1 y todos los FMTV. Suben mejor las pendientes pronunciadas, con la misma velocidad máxima.",
-    "<b>Ralentización en los arbustos:</b> un nuevo ajuste del servidor permite desactivarla. Está desactivada por defecto, como antes de la 1.7.",
+    "<b>Ralentización en los arbustos:</b> un nuevo ajuste del servidor permite desactivarla. Está desactivada por defecto, como antes de la actualización 1.7 del juego.",
     "<b>Game Master:</b> la tecla del editor abre ahora directamente el Game Master.",
     "<b>Planificador de misión:</b> la cámara del dron FP-1 ya está disponible en él.",
     "<b>Corrección del clima:</b> un jugador que entra durante un cambio de tiempo ya no ve un cielo azul bajo la lluvia.",
@@ -705,8 +705,8 @@
   "wip.perf": "Optimización del rendimiento del servidor",
   "wip.perf_p": "Mantener los vehículos fluidos cuando muchas IA aparecen o combaten cerca de los jugadores.",
   "wip.later": "Más adelante",
-  "wip.wx": "Clima más fino y variado",
-  "wip.wx_p": "Llovizna, nieblas, tormentas cortas con relámpagos, noches de luna llena. Todavía en desarrollo.",
+  "wip.wx": "Clima aún más rico",
+  "wip.wx_p": "Relámpagos que se ven y se oyen durante las tormentas, noches de luna llena, clima propio de la noche: bruma después de medianoche, tormentas nocturnas, noches despejadas y tranquilas. Todavía en desarrollo.",
   "ew.name": "Bigfoot - Radar/Inhibidor",
   "ew.p": "Un camión todoterreno M923A1 6x6 «Bigfoot» convertido en vehículo de guerra electrónica para la facción de EE. UU.: un generador diésel y una antena de radar en la caja.",
   "ew.done_h": "Programado y compilando en una rama de desarrollo: banco de servidor en curso, aún sin probar en el juego",
@@ -721,7 +721,7 @@
     "<b>Contradetección:</b> la radiogoniometría enemiga cuenta cuánto tiempo emite el camión (radar o inhibidor) en el mismo lugar. A los 8 min aproximadamente, la tripulación recibe el aviso por radio «Enemy direction finding: shut it down or relocate». A los 10 min aproximadamente, el enemigo lo localiza: su cuartel general sabe dónde está el camión y envía tropas, y sus morteros pueden lanzar un ataque preajustado sin observador. La tripulación oye «Enemy fix on your emitter». Se repite cada 10 min más en el mismo lugar. Apagado, el contador baja tan rápido como subió; moverse más de 300 m lo pone a cero.",
     "<b>Radar antiaéreo:</b> con el radar encendido, detecta un avión de reconocimiento enemigo Su-57 que se acerque a menos de 1,5 km. Los jugadores cerca del radar oyen «Radar contact: enemy jet, friendly fighters scrambled», y una pareja de F-22 persigue al Su-57.",
     "<b>Enlace por cable con el FP-1:</b> una acción en la parte trasera del camión de drones FP-1 lo conecta por cable al radar desplegado más cercano de su facción, a 50 m como máximo. El planificador del FP-1 recibe entonces los objetivos del radar en directo. Si el radar pasa a inhibidor, el cable se suelta.",
-    "<b>Motor reforzado para pendientes fuertes:</b> basado en los ajustes 1.9 del M923A1. 280 CV en lugar de 230, par de 1800 N·m a 1100 rpm en lugar de 1250 N·m, caja más corta (1.ª a 7,5, marcha atrás a 8), diferenciales de deslizamiento limitado más cerrados, velocidad máxima de unos 70 a 76 km/h. Carga sin errores en el banco del servidor; la conducción aún debe probarse en el juego.",
+    "<b>Motor reforzado para pendientes fuertes:</b> basado en los ajustes 1.9 del M923A1. 280 CV en lugar de 230, par de 1800 N·m a 1100 rpm en lugar de 1250 N·m, caja más corta (1.ª a 7,5, marcha atrás a 8), diferenciales de deslizamiento limitado más cerrados, velocidad máxima de unos 70 a 76 km/h. Probado en el juego: este motor llega con la próxima actualización, en todos los M923A1 y FMTV.",
     "<b>En el garaje grande:</b> 800 de suministros, 150 XP, rango sargento.",
     "Todos los valores (alcances, consumos, tiempos) son ajustables por los administradores del servidor."
   ],
@@ -729,7 +729,7 @@
   "ew.written": [],
   "ew.next_h": "Próximos pasos (nada de esto está hecho)",
   "ew.next": [
-    "<b>Prueba en el juego:</b> motor, enlace por cable con el FP-1 y visualización de los objetivos en el planificador.",
+    "<b>Prueba en el juego:</b> enlace por cable con el FP-1 y visualización de los objetivos en el planificador.",
     "<b>Sonidos de emisión.</b>",
     "Imagen de vista previa del camión."
   ],

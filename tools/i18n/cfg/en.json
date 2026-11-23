@@ -375,6 +375,7 @@
  "c.3ed51381f3": "Size of the glow seen around the light. 0: no glow",
  "c.e19560cf9d": "Seconds on, then as many off, while it searches. 0: steady",
  "c.388c377048": "Seconds on, then as many off, in TrackingColor, while it guides a glide bomb of the enemy HQ on its target. 0: steady",
+ "c.b1f25005eb": "false (default): no slowdown in bushes, as before game update 1.7. true: the vanilla game's slowdown in bushes. Read once at server start and sent to every player.",
  "c.d999c2c142": "true: every friendly soldier, AI included, gets the head icon. false: squadmates only",
  "c.cac8f67ed4": "Meters up to which the name of a player of your group shows in full. Nobody else shows a name",
  "c.a4b23e55d7": "Meters at which the fading player name is gone. Beyond it only the head icon shows",

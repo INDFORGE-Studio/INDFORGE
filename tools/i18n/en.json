@@ -387,7 +387,7 @@
   ],
   "m.conflict-pve.inc": [
     "<b>Stronger trucks on slopes:</b> uprated engine for every M923A1 and every FMTV. They climb steep slopes better, with the same top speed.",
-    "<b>Slowdown in bushes:</b> a new server setting turns it off. It is off by default, as before 1.7.",
+    "<b>Slowdown in bushes:</b> a new server setting turns it off. It is off by default, as before game update 1.7.",
     "<b>Game Master:</b> the editor key now opens the Game Master directly.",
     "<b>Mission planner:</b> the FP-1 drone camera is now available in it.",
     "<b>Weather fix:</b> a player who joins during a weather change no longer sees a blue sky in the rain.",
@@ -705,8 +705,8 @@
   "wip.perf": "Server performance optimisation",
   "wip.perf_p": "Keeping vehicles smooth when many AI spawn or fight near players.",
   "wip.later": "Later",
-  "wip.wx": "Finer, more varied weather",
-  "wip.wx_p": "Drizzle, fogs, short thunderstorms with lightning, full-moon nights. Still in development.",
+  "wip.wx": "Even richer weather",
+  "wip.wx_p": "Lightning you can see and hear during thunderstorms, full-moon nights, night-specific weather: mist after midnight, night thunderstorms, clear and calm nights. Still in development.",
   "ew.name": "Bigfoot - Radar/Jammer",
   "ew.p": "An M923A1 6x6 “Bigfoot” off-road truck turned into an electronic warfare vehicle for the US faction: a diesel generator and a radar antenna on the cargo bed.",
   "ew.done_h": "Coded and compiling on a development branch: server bench running, not tested in game yet",
@@ -721,7 +721,7 @@
     "<b>Counter-detection:</b> the enemy's radio direction finding counts how long the truck emits (radar or jammer) at the same site. After about 8 min, the crew gets a radio warning: “Enemy direction finding: shut it down or relocate”. After about 10 min, the enemy has a fix: its HQ learns where the truck is and sends troops, and its mortars can fire a pre-registered strike on it with no observer. The crew hears “Enemy fix on your emitter”. It happens again after each further 10 min at the same place. Switched off, the count goes down as fast as it went up; moving more than 300 m resets it to zero.",
     "<b>Anti-air radar:</b> with the radar on, it catches an enemy Su-57 recon jet coming within 1.5 km. Players near the radar hear “Radar contact: enemy jet, friendly fighters scrambled”, and a pair of F-22s chases the Su-57.",
     "<b>Cable link with the FP-1:</b> an action at the rear of the FP-1 drone truck cables it to the nearest deployed radar of its faction, up to 50 m away. The FP-1 planner then gets the radar's targets live. If the radar switches to jammer, the cable comes off.",
-    "<b>Engine strengthened for steep slopes:</b> based on the 1.9 settings of the M923A1. 280 hp instead of 230, 1,800 N·m of torque at 1,100 rpm instead of 1,250 N·m, shorter gearbox (1st gear 7.5, reverse 8), tighter limited-slip differentials, top speed about 70 to 76 km/h. It loads without errors on the server bench; driving is still to be tested in game.",
+    "<b>Engine strengthened for steep slopes:</b> based on the 1.9 settings of the M923A1. 280 hp instead of 230, 1,800 N·m of torque at 1,100 rpm instead of 1,250 N·m, shorter gearbox (1st gear 7.5, reverse 8), tighter limited-slip differentials, top speed about 70 to 76 km/h. Tested in game: this engine comes with the next update, on every M923A1 and FMTV.",
     "<b>In the large garage:</b> 800 supplies, 150 XP, rank Sergeant.",
     "Every value (ranges, fuel use, delays) can be set by server admins."
   ],
@@ -729,7 +729,7 @@
   "ew.written": [],
   "ew.next_h": "Next steps (none of this is done)",
   "ew.next": [
-    "<b>In-game test:</b> engine, FP-1 cable link and targets shown in the planner.",
+    "<b>In-game test:</b> FP-1 cable link and targets shown in the planner.",
     "<b>Emission sounds.</b>",
     "Preview image of the truck."
   ],

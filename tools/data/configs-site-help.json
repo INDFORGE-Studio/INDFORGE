@@ -85,5 +85,8 @@
   "AmbushRadius": "Meters. Players within this horizontal distance of the tracked vehicle's predicted position when the ambush is laid (living, with a radio if RequireRadio) get the alert.",
   "AmbushTitle": "Title of the pop-up shown to the player for the road ambush alert.",
   "AmbushText": "Text of the pop-up shown for the road ambush alert (no placeholder used)."
+ },
+ "$profile:INDFORGE_Movement/config.json": {
+  "BushSlowdown": "false (default): no slowdown in bushes, as before game update 1.7. true: the vanilla game's slowdown in bushes. Read once at server start and sent to every player."
  }
 }

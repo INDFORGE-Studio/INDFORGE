@@ -104,7 +104,7 @@ COMMANDS = [
 ]
 
 # Profile folders of features merged after the current Conflict PvE Workshop release.
-CFG_INCOMING = {"INDFORGE_Weather", "INDFORGE_NightGear", "INDFORGE_DroneTeam", "INDFORGE_MavicLight", "INDFORGE_RadioAlerts"}
+CFG_INCOMING = {"INDFORGE_Weather", "INDFORGE_NightGear", "INDFORGE_DroneTeam", "INDFORGE_MavicLight", "INDFORGE_RadioAlerts", "INDFORGE_Movement"}
 
 # Doctrine levels, read from $profile:INDFORGE_AIDoctrine/config.json (Levels block).
 DOCTRINE = [

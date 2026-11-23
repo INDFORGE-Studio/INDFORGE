@@ -387,7 +387,7 @@
   ],
   "m.conflict-pve.inc": [
     "<b>Mocniejsze ciężarówki na podjazdach:</b> wzmocniony silnik we wszystkich M923A1 i wszystkich FMTV. Lepiej pokonują strome zbocza, przy tej samej prędkości maksymalnej.",
-    "<b>Spowolnienie w krzakach:</b> nowe ustawienie serwera pozwala je wyłączyć. Domyślnie jest wyłączone, jak przed 1.7.",
+    "<b>Spowolnienie w krzakach:</b> nowe ustawienie serwera pozwala je wyłączyć. Domyślnie jest wyłączone, jak przed aktualizacją gry 1.7.",
     "<b>Game Master:</b> klawisz edytora otwiera teraz bezpośrednio Game Mastera.",
     "<b>Planer misji:</b> kamera drona FP-1 jest w nim teraz dostępna.",
     "<b>Poprawka pogody:</b> gracz, który dołączy podczas zmiany pogody, nie widzi już błękitnego nieba w deszczu.",
@@ -705,8 +705,8 @@
   "wip.perf": "Optymalizacja wydajności serwera",
   "wip.perf_p": "Płynna jazda pojazdów, gdy w pobliżu graczy pojawia się lub walczy wiele SI.",
   "wip.later": "Później",
-  "wip.wx": "Bardziej szczegółowa i zróżnicowana pogoda",
-  "wip.wx_p": "Mżawka, mgły, krótkie burze z błyskawicami, noce przy pełni księżyca. Wciąż w rozwoju.",
+  "wip.wx": "Jeszcze bogatsza pogoda",
+  "wip.wx_p": "Błyskawice widoczne i słyszalne podczas burz, noce przy pełni księżyca, pogoda typowa dla nocy: mgiełka po północy, nocne burze, pogodne i spokojne noce. Wciąż w rozwoju.",
   "ew.name": "Bigfoot - Radar/Zagłuszarka",
   "ew.p": "Terenowa ciężarówka M923A1 6x6 „Bigfoot” przerobiona na pojazd walki elektronicznej dla frakcji USA: agregat prądotwórczy z silnikiem Diesla i antena radaru na skrzyni.",
   "ew.done_h": "Zaprogramowane i kompilowane na gałęzi rozwojowej: test na serwerze w toku, jeszcze nie testowane w grze",
@@ -721,7 +721,7 @@
     "<b>Przeciwdziałanie namierzaniu:</b> wrogie radionamierzanie liczy, jak długo ciężarówka emituje (radar lub zagłuszarka) w tym samym miejscu. Po około 8 min załoga dostaje ostrzeżenie radiowe „Enemy direction finding: shut it down or relocate”. Po około 10 min wróg ją namierza: jego sztab poznaje położenie ciężarówki i wysyła wojsko, a jego moździerze mogą wykonać przygotowany ostrzał bez obserwatora. Załoga słyszy „Enemy fix on your emitter”. Powtarza się to po każdych kolejnych 10 min w tym samym miejscu. Po wyłączeniu licznik spada tak szybko, jak rósł; przejazd o ponad 300 m go zeruje.",
     "<b>Radar przeciwlotniczy:</b> gdy radar jest włączony, wykrywa wrogi samolot rozpoznawczy Su-57, który zbliży się na mniej niż 1,5 km. Gracze w pobliżu radaru słyszą „Radar contact: enemy jet, friendly fighters scrambled”, a para F-22 rusza w pościg za Su-57.",
     "<b>Połączenie kablowe z FP-1:</b> akcja z tyłu ciężarówki dronów FP-1 łączy ją kablem z najbliższym rozłożonym radarem jej frakcji, oddalonym najwyżej o 50 m. Planer FP-1 otrzymuje wtedy cele radaru na żywo. Gdy radar przejdzie w tryb zagłuszarki, kabel się rozłącza.",
-    "<b>Silnik wzmocniony na strome zbocza:</b> oparty na ustawieniach 1.9 M923A1. 280 KM zamiast 230, moment obrotowy 1800 N·m przy 1100 obr./min zamiast 1250 N·m, krótsza skrzynia (1. bieg 7,5, wsteczny 8), mocniej zablokowane mechanizmy różnicowe o ograniczonym poślizgu, prędkość maksymalna około 70–76 km/h. Ładuje się bez błędów na stanowisku serwerowym; jazdę trzeba jeszcze przetestować w grze.",
+    "<b>Silnik wzmocniony na strome zbocza:</b> oparty na ustawieniach 1.9 M923A1. 280 KM zamiast 230, moment obrotowy 1800 N·m przy 1100 obr./min zamiast 1250 N·m, krótsza skrzynia (1. bieg 7,5, wsteczny 8), mocniej zablokowane mechanizmy różnicowe o ograniczonym poślizgu, prędkość maksymalna około 70–76 km/h. Przetestowany w grze: ten silnik trafi do następnej aktualizacji, we wszystkich M923A1 i FMTV.",
     "<b>W dużym garażu:</b> 800 zaopatrzenia, 150 XP, ranga sierżant.",
     "Wszystkie wartości (zasięgi, zużycie paliwa, czasy) mogą ustawiać administratorzy serwera."
   ],
@@ -729,7 +729,7 @@
   "ew.written": [],
   "ew.next_h": "Następne kroki (nic z tego nie jest zrobione)",
   "ew.next": [
-    "<b>Test w grze:</b> silnik, połączenie kablowe z FP-1 i wyświetlanie celów w planerze.",
+    "<b>Test w grze:</b> połączenie kablowe z FP-1 i wyświetlanie celów w planerze.",
     "<b>Dźwięki emisji.</b>",
     "Obraz podglądu ciężarówki."
   ],

@@ -387,7 +387,7 @@
   ],
   "m.conflict-pve.inc": [
     "<b>Stärkere Lkw am Hang:</b> verstärkter Motor für alle M923A1 und alle FMTV. Sie kommen steile Hänge besser hinauf, bei gleicher Höchstgeschwindigkeit.",
-    "<b>Verlangsamung im Gebüsch:</b> eine neue Servereinstellung schaltet sie ab. Standardmäßig ist sie aus, wie vor 1.7.",
+    "<b>Verlangsamung im Gebüsch:</b> eine neue Servereinstellung schaltet sie ab. Standardmäßig ist sie aus, wie vor dem Spielupdate 1.7.",
     "<b>Game Master:</b> die Editor-Taste öffnet jetzt direkt den Game Master.",
     "<b>Missionsplaner:</b> die Kamera der FP-1-Drohne ist dort jetzt verfügbar.",
     "<b>Wetter-Korrektur:</b> wer während eines Wetterwechsels beitritt, sieht im Regen keinen blauen Himmel mehr.",
@@ -705,8 +705,8 @@
   "wip.perf": "Optimierung der Serverleistung",
   "wip.perf_p": "Fahrzeuge sollen flüssig bleiben, wenn viele KI in der Nähe der Spieler erscheinen oder kämpfen.",
   "wip.later": "Später",
-  "wip.wx": "Feineres, abwechslungsreicheres Wetter",
-  "wip.wx_p": "Nieselregen, Nebel, kurze Gewitter mit Blitzen, Vollmondnächte. Noch in Entwicklung.",
+  "wip.wx": "Noch reicheres Wetter",
+  "wip.wx_p": "Blitze, die man bei Gewittern sieht und hört, Vollmondnächte, eigenes Nachtwetter: Dunst nach Mitternacht, nächtliche Gewitter, klare und ruhige Nächte. Noch in Entwicklung.",
   "ew.name": "Bigfoot - Radar/Störsender",
   "ew.p": "Ein geländegängiger M923A1-6x6-Lkw „Bigfoot“, umgebaut zum Fahrzeug für elektronische Kampfführung der US-Fraktion: ein Dieselgenerator und eine Radarantenne auf der Ladefläche.",
   "ew.done_h": "Programmiert und kompiliert auf einem Entwicklungszweig: Server-Prüfstand läuft, noch nicht im Spiel getestet",
@@ -721,7 +721,7 @@
     "<b>Gegenaufklärung:</b> Die feindliche Funkpeilung zählt, wie lange der Lkw (Radar oder Störsender) am selben Ort sendet. Nach etwa 8 Min. erhält die Besatzung die Funkwarnung „Enemy direction finding: shut it down or relocate“. Nach etwa 10 Min. hat der Feind eine Peilung: Sein HQ erfährt die Position des Lkw und schickt Truppen, und seine Mörser können ohne Beobachter einen vorbereiteten Schlag darauf abgeben. Die Besatzung hört „Enemy fix on your emitter“. Das wiederholt sich nach jeweils weiteren 10 Min. am selben Ort. Ausgeschaltet sinkt der Zähler so schnell, wie er gestiegen ist; eine Verlegung um mehr als 300 m setzt ihn auf null.",
     "<b>Flugabwehrradar:</b> Bei eingeschaltetem Radar erfasst es ein feindliches Su-57-Aufklärungsflugzeug, das näher als 1,5 km kommt. Spieler in der Nähe des Radars hören „Radar contact: enemy jet, friendly fighters scrambled“, und eine Rotte aus zwei F-22 nimmt die Verfolgung der Su-57 auf.",
     "<b>Kabelverbindung zum FP-1:</b> Eine Aktion am Heck des Drohnen-Lkw FP-1 verbindet ihn per Kabel mit dem nächsten aufgebauten Radar seiner Fraktion, höchstens 50 m entfernt. Der Planer des FP-1 erhält dann die Ziele des Radars live. Wechselt das Radar zum Störsender, löst sich das Kabel.",
-    "<b>Motor verstärkt für steile Hänge:</b> übernommen aus den 1.9-Einstellungen des M923A1. 280 PS statt 230, Drehmoment 1.800 Nm bei 1.100 U/min statt 1.250 Nm, kürzeres Getriebe (1. Gang 7,5, Rückwärtsgang 8), straffere Sperrdifferenziale, Höchstgeschwindigkeit etwa 70 bis 76 km/h. Er lädt auf dem Server-Prüfstand ohne Fehler; das Fahren muss noch im Spiel getestet werden.",
+    "<b>Motor verstärkt für steile Hänge:</b> übernommen aus den 1.9-Einstellungen des M923A1. 280 PS statt 230, Drehmoment 1.800 Nm bei 1.100 U/min statt 1.250 Nm, kürzeres Getriebe (1. Gang 7,5, Rückwärtsgang 8), straffere Sperrdifferenziale, Höchstgeschwindigkeit etwa 70 bis 76 km/h. Im Spiel getestet: Dieser Motor kommt mit dem nächsten Update, in allen M923A1 und FMTV.",
     "<b>In der großen Garage:</b> 800 Vorräte, 150 XP, Rang Sergeant.",
     "Alle Werte (Reichweiten, Verbrauch, Zeiten) sind von Serveradmins einstellbar."
   ],
@@ -729,7 +729,7 @@
   "ew.written": [],
   "ew.next_h": "Nächste Schritte (davon ist nichts fertig)",
   "ew.next": [
-    "<b>Test im Spiel:</b> Motor, Kabelverbindung zum FP-1 und Anzeige der Ziele im Planer.",
+    "<b>Test im Spiel:</b> Kabelverbindung zum FP-1 und Anzeige der Ziele im Planer.",
     "<b>Sendegeräusche.</b>",
     "Vorschaubild des Lkw."
   ],

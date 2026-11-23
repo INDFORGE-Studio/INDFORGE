@@ -387,7 +387,7 @@
   ],
   "m.conflict-pve.inc": [
     "<b>Camions plus forts en côte :</b> moteur renforcé pour tous les M923A1 et tous les FMTV. Ils grimpent mieux les pentes raides, à la même vitesse de pointe.",
-    "<b>Ralentissement dans les buissons :</b> un nouveau réglage serveur permet de le couper. Il est coupé par défaut, comme avant la 1.7.",
+    "<b>Ralentissement dans les buissons :</b> un nouveau réglage serveur permet de le couper. Il est coupé par défaut, comme avant la mise à jour 1.7 du jeu.",
     "<b>Game Master :</b> la touche de l'éditeur ouvre directement le Game Master.",
     "<b>Planificateur de mission :</b> la caméra du drone FP-1 y est disponible.",
     "<b>Correction météo :</b> un joueur arrivé pendant un changement de temps ne voit plus un ciel bleu sous la pluie.",
@@ -705,8 +705,8 @@
   "wip.perf": "Optimisation des performances serveur",
   "wip.perf_p": "Garder les véhicules fluides quand beaucoup d'IA apparaissent ou combattent près des joueurs.",
   "wip.later": "Plus tard",
-  "wip.wx": "Météo plus fine et plus variée",
-  "wip.wx_p": "Bruine, brouillards, orages courts avec éclairs, nuits de pleine lune. Toujours en développement.",
+  "wip.wx": "Météo encore plus riche",
+  "wip.wx_p": "Éclairs visibles et entendus pendant les orages, nuits de pleine lune, temps propre à la nuit : brume après minuit, orages nocturnes, nuits claires et calmes. Toujours en développement.",
   "ew.name": "Bigfoot - Radar/Brouilleur",
   "ew.p": "Un camion tout-terrain M923A1 6x6 « Bigfoot » transformé en véhicule de guerre électronique pour la faction US : un groupe électrogène diesel et une antenne radar sur le plateau.",
   "ew.done_h": "Codé et compilé sur une branche de développement : banc serveur en cours, pas encore testé en jeu",
@@ -721,7 +721,7 @@
     "<b>Contre-détection :</b> la goniométrie radio ennemie compte le temps d'émission du camion (radar ou brouilleur) au même endroit. Vers 8 min, l'équipage reçoit l'alerte radio « Enemy direction finding: shut it down or relocate ». Vers 10 min, l'ennemi le localise : son QG apprend où est le camion et envoie des troupes, et ses mortiers peuvent tirer une frappe préréglée sans observateur. L'équipage entend « Enemy fix on your emitter ». Cela recommence toutes les 10 min au même endroit. Éteint, le compteur redescend aussi vite qu'il est monté ; un déplacement de plus de 300 m le remet à zéro.",
     "<b>Radar anti-aérien :</b> radar allumé, il repère un avion de reconnaissance ennemi Su-57 qui arrive à moins de 1,5 km. Les joueurs proches du radar entendent « Radar contact: enemy jet, friendly fighters scrambled », et une patrouille de deux F-22 prend le Su-57 en chasse.",
     "<b>Liaison câble avec le FP-1 :</b> une action à l'arrière du camion de drones FP-1 le relie par câble au radar déployé de sa faction le plus proche, à 50 m au plus. Le planificateur du FP-1 reçoit alors les cibles du radar en direct. Si le radar passe en brouilleur, le câble se défait.",
-    "<b>Moteur renforcé pour les fortes pentes :</b> repris des réglages 1.9 du M923A1. 280 ch au lieu de 230, couple de 1 800 N·m à 1 100 tr/min au lieu de 1 250 N·m, boîte plus courte (1re à 7,5, marche arrière à 8), différentiels à glissement limité plus serrés, environ 70 à 76 km/h en pointe. Il charge sans erreur au banc serveur ; la conduite reste à tester en jeu.",
+    "<b>Moteur renforcé pour les fortes pentes :</b> repris des réglages 1.9 du M923A1. 280 ch au lieu de 230, couple de 1 800 N·m à 1 100 tr/min au lieu de 1 250 N·m, boîte plus courte (1re à 7,5, marche arrière à 8), différentiels à glissement limité plus serrés, environ 70 à 76 km/h en pointe. Testé en jeu : ce moteur arrive avec la prochaine mise à jour, sur tous les M923A1 et FMTV.",
     "<b>Au grand garage :</b> 800 de supply, 150 XP, grade sergent.",
     "Toutes les valeurs (portées, consommations, délais) sont réglables par les admins de serveur."
   ],
@@ -729,7 +729,7 @@
   "ew.written": [],
   "ew.next_h": "Prochaines étapes (rien de cela n'est fait)",
   "ew.next": [
-    "<b>Test en jeu :</b> moteur, liaison câble avec le FP-1 et affichage des cibles dans le planificateur.",
+    "<b>Test en jeu :</b> liaison câble avec le FP-1 et affichage des cibles dans le planificateur.",
     "<b>Sons d'émission.</b>",
     "Image d'aperçu du camion."
   ],
