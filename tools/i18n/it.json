@@ -34,6 +34,7 @@
   "ui.help": "Testo di aiuto (dal file)",
   "ui.rows": "{n} impostazioni",
   "ui.rows1": "{n} impostazione",
+  "ui.rows2": "{n} impostazioni",
   "ui.mods_count": "{n} mod",
   "ui.secure": "Canale sicuro",
   "ui.classified": "Classificato",

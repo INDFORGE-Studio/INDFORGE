@@ -34,6 +34,7 @@
   "ui.help": "Hilfetext (aus der Datei)",
   "ui.rows": "{n} Einstellungen",
   "ui.rows1": "{n} Einstellung",
+  "ui.rows2": "{n} Einstellungen",
   "ui.mods_count": "{n} Mods",
   "ui.secure": "Gesicherter Kanal",
   "ui.classified": "Geheim",

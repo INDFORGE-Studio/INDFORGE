@@ -17,6 +17,13 @@
   function fmt(s, args) { if (!args) return s; for (var k in args) s = s.split("{" + k + "}").join(args[k]); return s; }
   function tr(key, fallback) { return (dict && dict[key] != null) ? dict[key] : fallback; }
   function plain(s) { var d = doc.createElement("div"); d.innerHTML = s; return d.textContent; }
+  /* Plural form of a count key: base = other/many, base1 = one, base2 = few (Polish, Ukrainian: 2-4 except 12-14). */
+  function pkey(base, n, d) {
+    var c = "other";
+    try { c = new Intl.PluralRules(root.getAttribute("lang") || "en").select(n); } catch (e) {}
+    var k = c === "one" ? base + "1" : c === "few" ? base + "2" : base;
+    return d && d[k] != null ? k : base;
+  }
 
   /* ------------------------------------------------ i18n */
   function applyDict(lang, d) {
@@ -24,9 +31,10 @@
     root.setAttribute("lang", lang);
     root.setAttribute("data-lang", lang);
     $$("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n"), s = d[key];
+      var key = el.getAttribute("data-i18n"), a = el.getAttribute("data-i18n-args"), pl = el.getAttribute("data-i18n-plural");
+      if (pl && a) { try { key = pkey(pl, JSON.parse(a).n, d); } catch (e) {} }
+      var s = d[key];
       if (s == null) return;
-      var a = el.getAttribute("data-i18n-args");
       if (a) { try { s = fmt(s, JSON.parse(a)); } catch (e) {} }
       if (el.tagName === "TITLE") { doc.title = plain(s) + (el.getAttribute("data-i18n-suffix") || ""); return; }
       if (el.innerHTML !== s) el.innerHTML = s;
@@ -742,7 +750,7 @@
         if (q) box.open = hits > 0;
         total += hits;
       });
-      count.textContent = q ? fmt(plain(total === 1 ? tr("ui.rows1", "{n} setting") : tr("ui.rows", "{n} settings")), { n: total }) : "";
+      count.textContent = q ? fmt(plain(tr(pkey("ui.rows", total, dict), "{n} settings")), { n: total }) : "";
     }
     input.addEventListener("input", function () { clearTimeout(t); t = setTimeout(run, 80); });
     if (location.hash.indexOf("#cfg-") === 0) { var target = $(location.hash); if (target && target.tagName === "DETAILS") target.open = true; }

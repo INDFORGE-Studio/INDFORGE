@@ -1062,7 +1062,8 @@ def cfg_table(f):
   <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th></tr></thead>
   <tbody>%s</tbody></table></div>
 </details>""" % (cfg_anchor(f["profile"]), H(f["profile"]), url("workshop/%s/" % f["mod"]), H(name(mod)),
-                 t("ui.rows1" if len(f["rows"]) == 1 else "ui.rows", "span", "mono dim", {"n": len(f["rows"])}), inc, notes,
+                 t("ui.rows1" if len(f["rows"]) == 1 else "ui.rows", "span", "mono dim", {"n": len(f["rows"])},
+                   'data-i18n-plural="ui.rows"'), inc, notes,
                  t("ui.key"), t("ui.default"), t("ui.help"), "".join(trs))
 
 
