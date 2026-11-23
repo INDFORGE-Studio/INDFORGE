@@ -742,7 +742,7 @@
         if (q) box.open = hits > 0;
         total += hits;
       });
-      count.textContent = q ? fmt(plain(tr("ui.rows", "{n} settings")), { n: total }) : "";
+      count.textContent = q ? fmt(plain(total === 1 ? tr("ui.rows1", "{n} setting") : tr("ui.rows", "{n} settings")), { n: total }) : "";
     }
     input.addEventListener("input", function () { clearTimeout(t); t = setTimeout(run, 80); });
     if (location.hash.indexOf("#cfg-") === 0) { var target = $(location.hash); if (target && target.tagName === "DETAILS") target.open = true; }

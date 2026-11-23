@@ -84,7 +84,7 @@ code { color: var(--amber2); background: rgba(var(--amber-rgb), .07); padding: .
 kbd { display: inline-block; min-width: 1.6em; padding: 0 .35em; border: 1px solid var(--line2); border-bottom-width: 2px; border-radius: 3px; font-size: .75em; line-height: 1.5; color: var(--txt); text-align: center; background: var(--bg2); }
 b, strong { color: var(--hi); font-weight: 600; }
 h1, h2, h3 { font-family: var(--f-head); font-weight: 600; text-transform: uppercase; letter-spacing: .02em; line-height: 1.08; margin: 0 0 .5em; color: var(--hi); }
-h1 { font-size: clamp(2.1rem, 5.6vw, 4.2rem); font-weight: 700; }
+h1 { font-size: clamp(2.1rem, 5.6vw, 4.2rem); font-weight: 700; overflow-wrap: break-word; }
 h2 { font-size: clamp(1.35rem, 2.6vw, 1.85rem); }
 h3 { font-size: 1.15rem; }
 p { margin: 0 0 1em; }
@@ -1408,7 +1408,7 @@ html.fx-off body::before { animation: none; }
   .mside { position: static; max-height: none; overflow: visible; grid-template-columns: minmax(0, 1fr); }
   .mside .toc { display: none; }
   .docgrid { grid-template-columns: minmax(0, 1fr); }
-  .docgrid > .toc { position: static; display: flex; flex-wrap: wrap; gap: 6px; }
+  .docgrid > .toc { position: relative; display: flex; flex-wrap: wrap; gap: 6px; }
   .docgrid > .toc .panel-h { flex: 1 0 100%; margin-bottom: 4px; }
   .docgrid > .toc a { border: 1px solid var(--line); font-size: .85rem; }
   .twocol { grid-template-columns: minmax(0, 1fr); }

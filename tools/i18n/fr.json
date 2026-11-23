@@ -33,6 +33,7 @@
   "ui.key": "Clé",
   "ui.help": "Aide (tirée du fichier)",
   "ui.rows": "{n} réglages",
+  "ui.rows1": "{n} réglage",
   "ui.mods_count": "{n} mods",
   "ui.secure": "Canal sécurisé",
   "ui.classified": "Classifié",

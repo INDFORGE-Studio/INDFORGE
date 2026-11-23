@@ -33,6 +33,7 @@
   "ui.key": "Klucz",
   "ui.help": "Tekst pomocy (z pliku)",
   "ui.rows": "{n} ustawień",
+  "ui.rows1": "{n} ustawienie",
   "ui.mods_count": "{n} modów",
   "ui.secure": "Kanał szyfrowany",
   "ui.classified": "Tajne",

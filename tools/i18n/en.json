@@ -33,6 +33,7 @@
   "ui.key": "Key",
   "ui.help": "Help text (from the file)",
   "ui.rows": "{n} settings",
+  "ui.rows1": "{n} setting",
   "ui.mods_count": "{n} mods",
   "ui.secure": "Secure channel",
   "ui.classified": "Classified",
