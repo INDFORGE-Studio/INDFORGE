@@ -644,6 +644,13 @@ def wip_block(id_, code):
   %s
 </article>""" % (t("ew.name"), t("ui.wip", "span", "chip chip-dev"), t("ew.p", "p"), t("ew.done_h"), tl("ew.done"),
                  written, t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
+    # Other work on Conflict PvE: no figures, no dates (Commandant's order)
+    body += """
+<div class="proj-row">
+  <article class="proj proj-s"><h3>%s %s %s</h3>%s</article>
+  <article class="proj proj-s"><h3>%s %s</h3>%s</article>
+</div>""" % (t("wip.perf"), t("ui.wip", "span", "chip chip-dev"), t("wip.prio", "span", "chip chip-cur"), t("wip.perf_p", "p"),
+             t("wip.wx"), t("wip.later", "span", "chip chip-standby"), t("wip.wx_p", "p"))
     return sec(id_, "wip.h", body, code, "sec-wip", t("wip.d", "p", "dim"))
 
 
