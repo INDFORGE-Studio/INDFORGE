@@ -754,6 +754,9 @@ details[open] > summary::before { transform: rotate(90deg); }
 .spk-head > .spk-nav { flex: none; }
 .spk-av { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(var(--amber-rgb), .6); background: var(--amber-d); }
 .spk-av svg { width: 22px; height: 22px; fill: none; stroke: var(--amber); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+/* agent au chapeau et aux lunettes noires : verres pleins, reflet sombre qui clignote */
+.spk-av .spk-lens { fill: var(--amber); }
+.spk-av .spk-glint { stroke: rgb(var(--bg-rgb)); stroke-width: .9; }
 .spk-sp { animation: spk-spark 1.6s steps(2, jump-none) infinite; }
 @keyframes spk-spark { 50% { opacity: .25; } }
 .spk-id { flex: 1 1 140px; display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }

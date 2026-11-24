@@ -728,7 +728,7 @@
   function spFocus() { var f = $(".spk-chip, .spk-links a", sp.box) || palInput; sp.box.scrollTop = 0; if (f) f.focus({ preventScroll: true }); }
   function spBuild() {
     sp.box = doc.createElement("section"); sp.box.className = "spk";
-    sp.box.innerHTML = '<div class="spk-head"><span class="spk-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15h13l2-3h3v3l-3 2v3H6v-3z"/><path d="M12 9l1.5-4M16 10l3-3M8 10L6 6.5" class="spk-sp"/></svg></span>' +
+    sp.box.innerHTML = '<div class="spk-head"><span class="spk-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9.6c3.2 1.1 15.8 1.1 19 0"/><path d="M6.4 9.9L7.5 4.6c1.4-.9 3-.5 4.5.4 1.5-.9 3.1-1.3 4.5-.4l1.1 5.3"/><path d="M6.9 7.9h10.2"/><path d="M7.6 11.2v2.6c0 3.4 2 6 4.4 6s4.4-2.6 4.4-6v-2.6"/><path class="spk-lens" d="M7.2 12.2h4l-.4 2h-3.2zM12.8 12.2h4l-.4 2h-3.2z"/><path d="M4.5 22.5l3.3-3 4.2 2.2 4.2-2.2 3.3 3"/><path class="spk-sp spk-glint" d="M8.5 13.7l1.2-1.1M14.1 13.7l1.2-1.1"/></svg></span>' +
       '<span class="spk-id"><b></b><small></small></span><span class="spk-nav"><button type="button" class="spk-back"></button><button type="button" class="spk-new"></button></span></div>' +
       '<p class="spk-hello"></p><div class="spk-say" aria-live="polite"><p></p><div class="spk-chips"></div><ul class="spk-links"></ul></div>';
     $(".spk-back", sp.box).addEventListener("click", function () { if (sp.stack.length > 1) { sp.stack.pop(); spRender(); spFocus(); } });
