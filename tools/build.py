@@ -99,9 +99,11 @@ COMMANDS = [
     ("#enemyhq status", "cmd.enemyhq", "in"),
     ("#enemyhq here [drone] [vehicle]", "cmd.enemyhq_here", "in"),
     ("#enemyhq roadblocks [reset]", "cmd.enemyhq_rb", "in"),
-    ("#enemyhq strike glide | missile | flyby | geran2 | geran4", "cmd.enemyhq_strike", "in"),
-    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | cycle | ambiance | off | on", "cmd.weather", "in"),
+    ("#enemyhq strike glide | missile | flyby | chase | geran2 | geran4", "cmd.enemyhq_strike", "in"),
+    ("#firesupport status | on | off | reload | here", "cmd.firesupport", "in"),
+    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= sky= | resume | cycle [stop] | ambiance [episode | stop] | off | on", "cmd.weather", "in"),
     ("#weather thundersync [on|off] | soundspeed [on|off] | rainthunder [on|off|test]", "cmd.weather_thunder", "in"),
+    ("#weather lightning [metres] [Cloud|Spider|Bolt|Multi|Flicker] [Clap|Roll|Far|Long|Rain] [sync|nosync]", "cmd.weather_lightning", "in"),
     ("#nightgear status", "cmd.nightgear", "in"),
 ]
 
