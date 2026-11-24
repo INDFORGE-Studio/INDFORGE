@@ -101,6 +101,7 @@ COMMANDS = [
     ("#enemyhq roadblocks [reset]", "cmd.enemyhq_rb", "in"),
     ("#enemyhq strike glide | missile | flyby | geran2 | geran4", "cmd.enemyhq_strike", "in"),
     ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | cycle | ambiance | off | on", "cmd.weather", "in"),
+    ("#weather thundersync [on|off] | soundspeed [on|off] | rainthunder [on|off|test]", "cmd.weather_thunder", "in"),
     ("#nightgear status", "cmd.nightgear", "in"),
 ]
 

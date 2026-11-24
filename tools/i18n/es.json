@@ -219,6 +219,7 @@
   "cmd.enemyhq_rb": "Lista los bloqueos de carretera persistentes, o los elimina todos.",
   "cmd.enemyhq_strike": "Desencadena un ataque aéreo o una salva de Geran delante del admin, para pruebas.",
   "cmd.weather": "Director del clima: estado, forzar el siguiente episodio, fijar valores de niebla, lluvia o viento, reanudar, encadenar todos los episodios seguidos (cycle), superponer un ambiente al episodio actual (ambiance), desactivar o activar.",
+  "cmd.weather_thunder": "Trueno, hasta el siguiente arranque: sincronizado con su destello (thundersync), a la velocidad del sonido (soundspeed), truenos de lluvia reproducidos por el director con su destello (rainthunder; test envía uno). Sin on ni off: estado actual.",
   "cmd.nightgear": "Equipo de visión nocturna y térmica de la IA: recuentos y ajustes.",
   "intel.title": "Noticias",
   "intel.h1": "Dosier: el cuartel general enemigo",
@@ -314,7 +315,7 @@
     "Lo que ve un soldado depende de lo que lleva: ojo desnudo, visión nocturna o mira térmica. Algunos drones enemigos llevan cámara térmica."
   ],
   "intel.radio": "Alertas por radio",
-  "intel.radio_p": "Breves avisos por radio llegan a los jugadores afectados: dron sobre ti, grupo de interceptación en camino, mortero, Geran, misil, avión, emboscada. Nunca la posición exacta del enemigo.",
+  "intel.radio_p": "Breves avisos por radio llegan a los jugadores afectados: dron sobre ti, grupo de interceptación en camino, mortero, Geran, misil, avión, emboscada, cazas amigos persiguiendo al avión, contacto de radar con el avión, el enemigo triangula tu radar o inhibidor, emisor localizado. Nunca la posición exacta del enemigo.",
   "intel.base": "Captura de base",
   "intel.base_s": [
     "Ya no basta con quedarse en la zona para tomar una base con generador: repara el generador con una llave y llénalo con 18 L de combustible mientras suena la sirena. Se requiere contacto por radio con tu cuartel general.",

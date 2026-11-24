@@ -219,6 +219,7 @@
   "cmd.enemyhq_rb": "Elenca i posti di blocco persistenti, o li rimuove tutti.",
   "cmd.enemyhq_strike": "Fa scattare un attacco aereo o una salva di Geran davanti all'admin, per i test.",
   "cmd.weather": "Direttore meteo: stato, forza il prossimo episodio, blocca i valori di nebbia, pioggia o vento, riprendi, fai scorrere tutti gli episodi di seguito (cycle), sovrapponi un'atmosfera all'episodio in corso (ambiance), spegni o accendi.",
+  "cmd.weather_thunder": "Tuono, fino al prossimo avvio: sincronizzato con il bagliore (thundersync), alla velocità del suono (soundspeed), tuoni di pioggia riprodotti dal direttore con il loro bagliore (rainthunder; test ne invia uno). Senza on o off: stato attuale.",
   "cmd.nightgear": "Equipaggiamento a visione notturna e termico dell'IA: conteggi e impostazioni.",
   "intel.title": "Notizie",
   "intel.h1": "Dossier: il quartier generale nemico",
@@ -314,7 +315,7 @@
     "Ciò che un soldato vede dipende da ciò che porta: occhio nudo, visore notturno o mirino termico. Alcuni droni nemici montano una termocamera."
   ],
   "intel.radio": "Avvisi radio",
-  "intel.radio_p": "Brevi indizi in stile radio raggiungono i giocatori interessati: drone sopra di te, gruppo di intercettazione in arrivo, mortaio, Geran, missile, jet, imboscata. Mai la posizione esatta del nemico.",
+  "intel.radio_p": "Brevi indizi in stile radio raggiungono i giocatori interessati: drone sopra di te, gruppo di intercettazione in arrivo, mortaio, Geran, missile, jet, imboscata, caccia amici all'inseguimento del jet, contatto radar sul jet, il nemico triangola il tuo radar o disturbatore, emettitore localizzato. Mai la posizione esatta del nemico.",
   "intel.base": "Cattura della base",
   "intel.base_s": [
     "Stare nella zona non basta più a prendere una base a generatore: ripara il generatore con una chiave, poi riempilo con 18 L di carburante mentre suona la sirena. Serve il contatto radio con il tuo QG.",

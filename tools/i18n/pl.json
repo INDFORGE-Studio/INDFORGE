@@ -219,6 +219,7 @@
   "cmd.enemyhq_rb": "Wyświetla trwałe blokady drogowe lub usuwa je wszystkie.",
   "cmd.enemyhq_strike": "Wywołuje nalot lub salwę Geranów przed adminem, do testów.",
   "cmd.weather": "Dyrektor pogody: status, wymuszenie następnego epizodu, utrzymanie wartości mgły, deszczu lub wiatru, wznowienie, odtworzenie wszystkich epizodów po kolei (cycle), nałożenie klimatu na bieżący epizod (ambiance), wyłączenie lub włączenie.",
+  "cmd.weather_thunder": "Grzmot, do następnego startu: zsynchronizowany z błyskiem (thundersync), z prędkością dźwięku (soundspeed), grzmoty deszczu odtwarzane przez dyrektora z błyskiem (rainthunder; test wysyła jeden). Bez on lub off: obecny stan.",
   "cmd.nightgear": "Sprzęt noktowizyjny i termowizyjny AI: liczby i ustawienia.",
   "intel.title": "Aktualności",
   "intel.h1": "Dossier: dowództwo wroga",
@@ -314,7 +315,7 @@
     "To, co widzi żołnierz, zależy od tego, co niesie: gołe oko, noktowizja lub celownik termowizyjny. Niektóre drony wroga mają kamerę termowizyjną."
   ],
   "intel.radio": "Alerty radiowe",
-  "intel.radio_p": "Krótkie wskazówki w stylu radiowym docierają do zainteresowanych graczy: dron nad głową, grupa przechwytująca w drodze, moździerz, Geran, rakieta, myśliwiec, zasadzka. Nigdy dokładna pozycja wroga.",
+  "intel.radio_p": "Krótkie wskazówki w stylu radiowym docierają do zainteresowanych graczy: dron nad głową, grupa przechwytująca w drodze, moździerz, Geran, rakieta, myśliwiec, zasadzka, przyjazne myśliwce ścigają wrogi odrzutowiec, kontakt radarowy z odrzutowcem, wróg namierza twój radar lub zagłuszarkę, nadajnik zlokalizowany. Nigdy dokładna pozycja wroga.",
   "intel.base": "Przejęcie bazy",
   "intel.base_s": [
     "Stanie w strefie nie przejmuje już bazy z generatorem: napraw generator kluczem, a potem wlej 18 L paliwa, gdy wyje syrena. Wymagana jest łączność radiowa z twoim dowództwem.",
