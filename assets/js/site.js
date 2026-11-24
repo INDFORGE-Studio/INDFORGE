@@ -728,9 +728,8 @@
   function spFocus() { var f = $(".spk-chip, .spk-links a", sp.box) || palInput; sp.box.scrollTop = 0; if (f) f.focus({ preventScroll: true }); }
   function spBuild() {
     sp.box = doc.createElement("section"); sp.box.className = "spk";
-    sp.box.setAttribute("aria-label", "SPARKS");
     sp.box.innerHTML = '<div class="spk-head"><span class="spk-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15h13l2-3h3v3l-3 2v3H6v-3z"/><path d="M12 9l1.5-4M16 10l3-3M8 10L6 6.5" class="spk-sp"/></svg></span>' +
-      '<span class="spk-id"><b>SPARKS</b><small></small></span><span class="spk-nav"><button type="button" class="spk-back"></button><button type="button" class="spk-new"></button></span></div>' +
+      '<span class="spk-id"><b></b><small></small></span><span class="spk-nav"><button type="button" class="spk-back"></button><button type="button" class="spk-new"></button></span></div>' +
       '<p class="spk-hello"></p><div class="spk-say" aria-live="polite"><p></p><div class="spk-chips"></div><ul class="spk-links"></ul></div>';
     $(".spk-back", sp.box).addEventListener("click", function () { if (sp.stack.length > 1) { sp.stack.pop(); spRender(); spFocus(); } });
     $(".spk-new", sp.box).addEventListener("click", function () { spReset(); palInput.focus(); });
@@ -755,6 +754,9 @@
   }
   function spRender() {
     if (!sp.box) return;
+    var nm = plain(tr("sparks.name", "INTELLIGENCE AGENT"));
+    sp.box.setAttribute("aria-label", nm);
+    $(".spk-id b", sp.box).textContent = nm;
     $(".spk-id small", sp.box).textContent = spT("role");
     $(".spk-hello", sp.box).textContent = spT("hello");
     $(".spk-back", sp.box).textContent = "← " + spT("back");
