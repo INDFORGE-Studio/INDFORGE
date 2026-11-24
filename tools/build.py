@@ -1334,7 +1334,11 @@ def search_index():
     items = [{"k": "page", "t": key, "tk": 1, "u": url(p)} for p, key, _ in NAV]
     for s in ORDER:
         m = MODS[s]
-        items.append({"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"] or "", s, " ".join(m["tags"])), "u": url("workshop/%s/" % s)})
+        it = {"k": "mod", "t": name(m), "s": "m.%s.tag" % s, "x": "%s %s %s" % (m["guid"] or "", s, " ".join(m["tags"])), "u": url("workshop/%s/" % s),
+              "c": CAT_OF[s]}  # c: family, read by the SPARKS assistant (site.js)
+        if m["guid"]:
+            it["w"] = WORKSHOP + m["guid"]  # official Workshop page (none for an unlisted mod)
+        items.append(it)
     for cmd, key, _ in COMMANDS:
         items.append({"k": "cmd", "t": cmd.split("\n")[0], "s": key, "u": url("admins/#cmds")})
     for f in CONFIGS:
@@ -1343,7 +1347,7 @@ def search_index():
         items.append({"k": "page", "t": "intel." + a, "tk": 1, "s": "intel.title", "u": url("news/#" + a)})
     for _sid, rows in TIPS:
         for tid, _r, _s, _l in rows:
-            items.append({"k": "page", "t": "tips.%s.h" % tid, "tk": 1, "s": "tips.title", "u": url("tips/#t-" + tid)})
+            items.append({"k": "page", "t": "tips.%s.h" % tid, "tk": 1, "s": "tips.title", "u": url("tips/#t-" + tid), "m": _sid})
     for a, key in (("install", "admins.install"), ("json", "admins.json"), ("scen", "admins.scen"), ("profile", "admins.profile"), ("logs", "admins.logs")):
         items.append({"k": "page", "t": key, "tk": 1, "s": "admins.title", "u": url("admins/#" + a)})
     with open(os.path.join(ROOT, "assets", "search.json"), "w", encoding="utf-8", newline="\n") as f:

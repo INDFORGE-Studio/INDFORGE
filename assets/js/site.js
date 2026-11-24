@@ -555,14 +555,21 @@
       '<ul class="pal-list" id="pal-list" role="listbox"></ul><div class="pal-hint"></div></div>';
     doc.body.appendChild(pal);
     palInput = $("input", pal); palList = $(".pal-list", pal);
+    $(".pal-field", pal).insertAdjacentElement("afterend", spBuild());
     palInput.addEventListener("input", renderPal);
     pal.addEventListener("click", function (e) { if (e.target === pal) closePal(); });
     pal.addEventListener("keydown", function (e) {
+      var inField = e.target === palInput;
       if (e.key === "Escape") { e.preventDefault(); closePal(); }
-      else if (e.key === "ArrowDown") { e.preventDefault(); selPal(palSel + 1); }
-      else if (e.key === "ArrowUp") { e.preventDefault(); selPal(palSel - 1); }
-      else if (e.key === "Enter") { var a = palItems[palSel]; if (a) { e.preventDefault(); a.click(); } }
-      else if (e.key === "Tab") { e.preventDefault(); palInput.focus(); }
+      else if (e.key === "ArrowDown" && inField) { e.preventDefault(); selPal(palSel + 1); }
+      else if (e.key === "ArrowUp" && inField) { e.preventDefault(); selPal(palSel - 1); }
+      else if (e.key === "Enter" && inField) { var a = palItems[palSel]; if (a) { e.preventDefault(); a.click(); } }
+      else if (e.key === "Tab") {
+        // focus stays inside the dialog: the field, SPARKS' buttons and links, then the results
+        var f = $$("input, button:not([hidden]), a[href]", pal).filter(function (x) { return x.offsetParent !== null; });
+        var i = f.indexOf(doc.activeElement); e.preventDefault();
+        (f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length] || palInput).focus();
+      }
     });
   }
   function kindLabel(k) { return plain(tr("ui.k_" + k, k)); }
@@ -590,6 +597,7 @@
       li.appendChild(a); palList.appendChild(li);
     });
     palItems = $$("a", palList); selPal(0);
+    spTyped(q, out.length > 0);
   }
   function selPal(i) {
     if (!palItems.length) return;
@@ -604,7 +612,8 @@
     palInput.placeholder = plain(tr("ui.search_ph", "Type a mod, a page, a command…"));
     $(".pal-hint", pal).innerHTML = tr("ui.search_hint", "");
     pal.hidden = false; palInput.value = ""; palInput.focus();
-    loadIndex().then(renderPal).catch(function () {});
+    sp.stack = [{ name: "root", args: [] }]; sp.typed = false; spRender();
+    loadIndex().then(function () { renderPal(); spRender(); }).catch(function () {});
   }
   function closePal(navigating) {
     if (!pal || pal.hidden) return;
@@ -620,6 +629,159 @@
         e.preventDefault(); openPal();
       }
     });
+  }
+
+  /* ------------------------------------------------ SPARKS: guided search assistant (inside the search palette)
+     No server, no key, nothing sent anywhere: a small question tree written by hand, plus the site's own
+     search index (assets/search.json) for the mod lists, families (c), Workshop links (w) and Tips (m). */
+  var sp = { box: null, stack: [], typed: false };
+  var SP_EXT = {
+    host: "https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting",
+    cfg: "https://community.bistudio.com/wiki/Arma_Reforger:Server_Config",
+    mod: "https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding",
+    ws: "https://reforger.armaplatform.com/workshop"
+  };
+  var SP_FAM = ["indforge", "auc", "ctrp", "gear", "vehicles", "standby"];
+  var SP_TIPS = ["conflict-pve", "forest", "enhanced-compositions", "rcd-wcs", "rcd-rhs", "solo-push-pull", "off-road-vehicles", "packs"];
+  function spT(k, args) { return fmt(plain(tr("sparks." + k, "")), args); }
+  function spMods(fam) { return (idx || []).filter(function (it) { return it.k === "mod" && (!fam || it.c === fam); }); }
+  function spMod(slug) { var u = BASE + "workshop/" + slug + "/"; return spMods().filter(function (it) { return it.u === u; })[0]; }
+  function spL(label, href, ext) { return { label: label, href: href, ext: !!ext }; }
+  function spC(label, go) { return { label: label, go: go }; }
+  /* Each step returns { say, chips, links }. */
+  var SP = {
+    root: function () {
+      return { say: spT("q_root"), chips: [
+        spC(spT("c_mods"), function () { spGo("family", "mods"); }),
+        spC(spT("c_server"), function () { spGo("server"); }),
+        spC(spT("c_play"), function () { spGo("play"); }),
+        spC(spT("c_news"), function () { spGo("news"); }),
+        spC(spT("c_team"), function () { spGo("team"); }),
+        spC(spT("c_other"), function () { spGo("other"); })
+      ] };
+    },
+    family: function (then) {
+      var chips = SP_FAM.filter(function (f) { return spMods(f).length; }).map(function (f) {
+        return spC(plain(tr("cat." + f, f)), function () { spGo("pick", f, then); });
+      });
+      chips.push(spC(spT("c_all"), function () { spGo("pick", "", then); }));
+      return { say: spT("q_family"), chips: chips };
+    },
+    pick: function (fam, then) {
+      return { say: spT("q_mod"), chips: spMods(fam).map(function (it) {
+        return spC(it.t, function () { spGo(then === "deps" ? "deps" : "mod", it); });
+      }) };
+    },
+    mod: function (it) {
+      var slug = it.u.split("/").slice(-2)[0], links = [spL(spT("l_page"), it.u), spL(spT("l_deps"), it.u + "#deps")];
+      if ((idx || []).some(function (x) { return x.m === slug; })) links.push(spL(spT("l_tips"), BASE + "tips/#" + slug));
+      if (it.w) links.push(spL(spT("l_ws"), it.w, true));
+      return { say: spT("a_mod", { name: it.t }), links: links };
+    },
+    deps: function (it) { return { say: spT("a_mod", { name: it.t }), links: [spL(spT("l_deps"), it.u + "#deps"), spL(spT("l_page"), it.u)] }; },
+    server: function () {
+      return { say: spT("q_server"), chips: [
+        spC(spT("c_srv_new"), function () { spGo("srv", "new"); }),
+        spC(spT("c_srv_cfg"), function () { spGo("srv", "cfg"); }),
+        spC(spT("c_srv_cmd"), function () { spGo("srv", "cmd"); }),
+        spC(spT("c_srv_deps"), function () { spGo("family", "deps"); }),
+        spC(spT("c_srv_bug"), function () { spGo("srv", "bug"); })
+      ] };
+    },
+    srv: function (w) {
+      var A = BASE + "admins/#", ad = function (k) { return plain(tr("admins." + k, k)); };
+      var L = {
+        "new": [spL(ad("install"), A + "install"), spL(ad("json"), A + "json"), spL(ad("scen"), A + "scen"), spL(spT("ext_host"), SP_EXT.host, true)],
+        cfg: [spL(ad("profile"), A + "profile"), spL(ad("cfg"), A + "cfg"), spL(spT("ext_cfg"), SP_EXT.cfg, true)],
+        cmd: [spL(ad("cmds"), A + "cmds")],
+        bug: [spL(ad("logs"), A + "logs"), spL(spT("ext_host"), SP_EXT.host, true)]
+      };
+      return { say: spT("a_srv_" + w), links: L[w] };
+    },
+    play: function () {
+      return { say: spT("q_play"), chips: SP_TIPS.map(function (s) {
+        var m = spMod(s);
+        return spC(s === "packs" ? spT("c_packs") : (m ? m.t : s), function () { spGo("tips", s); });
+      }) };
+    },
+    tips: function (s) {
+      var m = spMod(s), links = (idx || []).filter(function (x) { return x.m === s; }).map(function (x) {
+        return spL(plain(tr(x.t, x.t)), x.u);
+      });
+      return { say: spT("a_play", { name: s === "packs" ? spT("c_packs") : (m ? m.t : s) }), links: links };
+    },
+    news: function () { return { say: spT("a_news"), links: [spL(spT("l_news"), BASE + "news/"), spL(spT("l_road"), BASE + "roadmap/"), spL(spT("l_log"), BASE + "changelog/")] }; },
+    team: function () { return { say: spT("a_team"), links: [spL(plain(tr("nav.about", "About us")), BASE + "about/")] }; },
+    other: function () {
+      if (palInput) setTimeout(function () { palInput.focus(); }, 0);
+      return { say: spT("a_other"), links: [spL(spT("ext_ws"), SP_EXT.ws, true), spL(spT("ext_mod"), SP_EXT.mod, true), spL(spT("ext_host"), SP_EXT.host, true)] };
+    }
+  };
+  var SP_INTENT = [["mods", function () { spGo("family", "mods"); }, "c_mods"], ["server", function () { spGo("server"); }, "c_server"],
+    ["play", function () { spGo("play"); }, "c_play"], ["news", function () { spGo("news"); }, "c_news"], ["team", function () { spGo("team"); }, "c_team"]];
+  function spGo(name) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    sp.stack.push({ name: name, args: args });
+    spRender(); if (name !== "other") spFocus();
+  }
+  /* The button just pressed is gone after a step: keep the keyboard focus inside the dialog. */
+  function spFocus() { var f = $(".spk-chip, .spk-links a", sp.box) || palInput; sp.box.scrollTop = 0; if (f) f.focus({ preventScroll: true }); }
+  function spBuild() {
+    sp.box = doc.createElement("section"); sp.box.className = "spk";
+    sp.box.setAttribute("aria-label", "SPARKS");
+    sp.box.innerHTML = '<div class="spk-head"><span class="spk-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15h13l2-3h3v3l-3 2v3H6v-3z"/><path d="M12 9l1.5-4M16 10l3-3M8 10L6 6.5" class="spk-sp"/></svg></span>' +
+      '<span class="spk-id"><b>SPARKS</b><small></small></span><span class="spk-nav"><button type="button" class="spk-back"></button><button type="button" class="spk-new"></button></span></div>' +
+      '<p class="spk-hello"></p><div class="spk-say" aria-live="polite"><p></p><div class="spk-chips"></div><ul class="spk-links"></ul></div>';
+    $(".spk-back", sp.box).addEventListener("click", function () { if (sp.stack.length > 1) { sp.stack.pop(); spRender(); spFocus(); } });
+    $(".spk-new", sp.box).addEventListener("click", function () { spReset(); palInput.focus(); });
+    return sp.box;
+  }
+  function spShow(step) {
+    var say = $(".spk-say p", sp.box), chips = $(".spk-chips", sp.box), links = $(".spk-links", sp.box);
+    say.textContent = step.say || ""; chips.innerHTML = ""; links.innerHTML = "";
+    (step.chips || []).forEach(function (c) {
+      var b = doc.createElement("button"); b.type = "button"; b.className = "spk-chip"; b.textContent = c.label;
+      b.addEventListener("click", c.go); chips.appendChild(b);
+    });
+    (step.links || []).forEach(function (l) {
+      var li = doc.createElement("li"), a = doc.createElement("a");
+      a.href = l.href; a.textContent = l.label;
+      if (l.ext) {
+        a.target = "_blank"; a.rel = "noopener noreferrer";
+        var e = doc.createElement("span"); e.className = "spk-ext"; e.textContent = spT("ext"); a.appendChild(e);
+      } else a.addEventListener("click", function () { closePal(true); });
+      li.appendChild(a); links.appendChild(li);
+    });
+  }
+  function spRender() {
+    if (!sp.box) return;
+    $(".spk-id small", sp.box).textContent = spT("role");
+    $(".spk-hello", sp.box).textContent = spT("hello");
+    $(".spk-back", sp.box).textContent = "← " + spT("back");
+    $(".spk-new", sp.box).textContent = spT("restart");
+    $(".spk-back", sp.box).hidden = sp.stack.length < 2;
+    $(".spk-new", sp.box).hidden = sp.stack.length < 2 && !sp.typed;
+    var top = sp.stack[sp.stack.length - 1] || { name: "root", args: [] };
+    spShow(SP[top.name].apply(null, top.args));
+  }
+  function spReset() { sp.stack = [{ name: "root", args: [] }]; sp.typed = false; if (palInput) palInput.value = ""; if (pal && !pal.hidden) renderPal(); spRender(); }
+  /* While the visitor types: guess the channel from the keywords of the current language (and English). */
+  function spTyped(q, found) {
+    if (!sp.box) return;
+    if (!q) { if (sp.typed) { sp.typed = false; sp.stack = [{ name: "root", args: [] }]; spRender(); } return; }
+    sp.typed = true; sp.stack = [{ name: "root", args: [] }];
+    var terms = q.split(/\s+/).filter(function (t) { return t.length >= 3; });
+    var hits = SP_INTENT.filter(function (x) {
+      var kw = norm(tr("sparks.kw." + x[0], "")).split(/\s+/).filter(Boolean);
+      return terms.some(function (t) { return kw.some(function (k) { return k.indexOf(t) === 0 || t.indexOf(k) === 0; }); });
+    });
+    var chips = (hits.length ? hits : SP_INTENT).map(function (x) { return spC(spT(x[2]), function () { palInput.value = ""; renderPal(); sp.typed = false; sp.stack = [{ name: "root", args: [] }]; x[1](); }); });
+    if (found && !hits.length) { spRender(); $(".spk-say", sp.box).hidden = true; return; }
+    $(".spk-say", sp.box).hidden = false;
+    $(".spk-back", sp.box).hidden = true; $(".spk-new", sp.box).hidden = false;
+    var step = { say: hits.length ? spT("guess") : spT("none"), chips: chips };
+    if (!found) step.links = [spL(spT("ext_ws"), SP_EXT.ws, true), spL(spT("ext_mod"), SP_EXT.mod, true)];
+    spShow(step);
   }
 
   /* ------------------------------------------------ boot sequence (home, once per session) */
