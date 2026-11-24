@@ -103,9 +103,11 @@
   "log.workshop_note": "Changelog-Text von der Workshop-Seite zitiert, in der Originalsprache.",
   "log.build_h": "Build {b}: vollständiges Changelog",
   "log.build_note": "Vollständiges Changelog von Build {b}, dem Update nach Version {v}, Hinweise für Server-Admins inklusive. Zitiert in der Originalsprache.",
+  "log.build_note_pub": "Vollständiges Changelog von Build {b}, im Workshop als Version {v} veröffentlicht, Hinweise für Server-Admins inklusive. Zitiert in der Originalsprache.",
   "log.build_toc": "Vollständiges Changelog",
   "log.build_link": "Vollständiges Changelog von Build {b}, Hinweise für Server-Admins inklusive",
   "log.modlist": "Mod-Liste des Servers ({n} Mods, in Ladereihenfolge)",
+  "log.see_cfg": "Neue und ersetzte <code>$profile</code>-Einstellungsdateien: siehe die Hinweise für Server-Admins von {m}, Build {b}",
   "home.title": "HQ",
   "home.stat_mods": "Mods in den Akten",
   "home.stat_deps": "Workshop-Mods als Abhängigkeiten gewürdigt",
@@ -454,7 +456,8 @@
   ],
   "m.forest.tag": "Conflict PvE in den dichten Wäldern von Belleau Wood.",
   "m.forest.intro": [
-    "INDFORGE - Forest bringt das Erlebnis von INDFORGE - Conflict PvE auf die Karte Belleau Wood: dieselbe KI, Doktrin, dasselbe Arsenal, dieselben Ränge und Einstellungen wie auf Everon, mit eigenen Basen, Relaisstationen, Straßensperren, Patrouillen und Fahrzeug-Spawnpunkten.",
+    "INDFORGE - Forest ist kooperatives PvE im „Conflict“-Modus in den Wäldern von Belleau Wood: US-Spieler gegen KI der UdSSR und der FIA. Das volle Erlebnis von INDFORGE - Conflict PvE, mit eigenen Basen, Relaisstationen, Straßensperren, Patrouillen und Fahrzeug-Spawnpunkten. In aktiver Entwicklung.",
+    "Für fortgeschrittene bis erfahrene Spieler, die taktisches Teamspiel mögen. Einzelgänger vergießen vielleicht ein Tränchen…",
     "Er benötigt INDFORGE - Conflict PvE. Eine Änderung in Conflict PvE erreicht Forest, sobald Conflict PvE im Workshop neu veröffentlicht wird."
   ],
   "m.forest.f": [
@@ -466,11 +469,20 @@
     "KI-Spawnpunkte nach dem benannt, was sie wirklich spawnen, für leichtere Administration und Bearbeitung.",
     "Zufällige Waffenlager: auf dieser Karte vorerst ausgeschaltet, kommen bald."
   ],
+  "m.forest.new": [
+    "<b>Auf dem Stand von INDFORGE - Conflict PvE 2.1.0:</b> alles Neue aus Conflict PvE kommt jetzt nach Belleau Wood.",
+    "<b>Server-Hänger behoben:</b> KI erscheint innerhalb eines Budgets um jeden Spieler.",
+    "<b>Feindliches HQ:</b> Angriffspläne, Hinterhalte an der Straße, Straßensperren, Mörserschläge nach Aufklärung, Luftschläge, Geran-Angriffe.",
+    "<b>Funkwarnungen</b>, neues Wetter mit Blitz und Donner, Radar/Störsender-Lkw, FP-1-Drohnen-Lkw.",
+    "<b>Weniger Abhängigkeiten:</b> Thomoskis Modernised FIA und AWM - Summer Version werden nicht mehr benötigt.",
+    "<b>Abhängigkeitsliste im Workshop wiederhergestellt.</b>"
+  ],
+  "m.forest.new_note": "Diese Neuerungen kommen mit Conflict PvE 2.1.0. Auf Belleau Wood wurden sie noch nicht im Spiel geprüft, Wetter und feindliches HQ eingeschlossen.",
   "m.forest.admin": [
     "Dieselben Server-Profildateien wie Conflict PvE: Die Einstellungen und Befehle der Admin-Konsole gelten auch hier.",
     "Setze <code>game.scenarioId</code> auf die oben genannte Szenario-ID und nutze den kompletten Mods-Block unten: Forest, Conflict PvE samt Abhängigkeiten, Belleau Wood und die beiden Eisenbahn-Mods."
   ],
-  "m.forest.credits": "Karte Belleau Wood von Thinwheat01. RailwayGenerator und RailEnfusionRedux von TilW. Und jeder Ersteller der Abhängigkeiten von Conflict PvE.",
+  "m.forest.credits": "Ein großes Dankeschön an Thinwheat01 für die Karte Belleau Wood und an TilW für RailwayGenerator und RailEnfusionRedux. Danke auch an alle Ersteller der Workshop-Abhängigkeiten.",
   "m.ai-framework.tag": "Modulare, kartenunabhängige KI für PvE-Szenarien: Kampfhubschrauber, Garnisonen, Kartenmarker. In Entwicklung, noch nicht veröffentlicht.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework ist in Entwicklung und <b>noch nicht im Workshop veröffentlicht</b>. Es wird kompatiblen Conflict-Szenarien Kampfhubschrauber-Patrouillen, Militärgarnisonen an Points of Interest und Kartenmarker für die Spieler hinzufügen.",

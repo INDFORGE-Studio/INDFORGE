@@ -7,10 +7,10 @@
    "title": "INDFORGE - Conflict PvE",
    "workshop": true,
    "name": "INDFORGE - Conflict PvE",
-   "version": "2.0.6",
-   "size": 379639995,
+   "version": "2.1.0",
+   "size": 406253478,
    "created": "2026-07-02",
-   "updated": "2026-11-18",
+   "updated": "2026-11-24",
    "game": "1.9.0.37",
    "license": "Arma Public License No Derivatives (APL-ND)",
    "author": "TheUnknownTeam",
@@ -27,6 +27,10 @@
    ],
    "unlisted": false,
    "versions": [
+    [
+     "2.1.0",
+     "2026-11-24"
+    ],
     [
      "2.0.6",
      "2026-11-18"
@@ -68,7 +72,7 @@
      "2026-11-11"
     ]
    ],
-   "changelog": "ENEMY HQ (new)\n\n- Enemy hunter groups are no longer sent straight at your exact position. The enemy HQ only reacts to intel: an enemy drone or a patrol that spots you or your vehicle.\n- It sends a group to where you were last seen, or to where you should be by now: it estimates your direction and speed.\n- No intel: it searches the area, then the group returns.\n- Groups march in column and spread into a line on contact.\n\nBASE CAPTURE\n\n- The generator gives 10 supplies per liter (doubled) and never delivers more than the base storage holds.\n- If players wall the generator in with HESCO, an enemy breacher now walks to the wall closest to the generator, lays demolition charges and runs clear before the blast. Kill him, or disarm the charges within 20 s.\n- HESCO are now destructible, but very hard to break: no damage from bullets, grenades or vehicles. Explosives are needed: 1 M112 for the small HESCO, 2 for the long one, 4 for the long and tall one.\n- The saboteur finds a free side when a vehicle blocks the generator.\n\nVEHICLES\n\n- Garage and helipad costs reworked: a better vehicle never costs less, in supplies, XP or rank.\n- The M777 artillery ammo truck is removed: its driving data is broken in game version 1.9. M777 shells stay in the arsenal.\n\nARSENAL / AI\n\n- Spetsnaz paratroopers (black and A-TACS) and Mi-8 patrol passengers.\n- More variety in hunter anti-tank weapons and Overwatch weapons.\n- Groin plates on the Shaw ARC vests, plus 5-plate AVS vests.\n\nMISC\n\n- Medical litter is cleared after 120 s.\n- Enhanced Compositions garrisons spawn even with enemies 50 m away (instead of 200 m).\n- Server log session report (INDFORGE session lines).\n- FPVUR Base and FPVUR Ground Robotics are removed from the server mods.\n\nServer mods:\n\nINDFORGE - Conflict PvE - 69BD142259FCF144\nACE Core Dev - 65AD7D0D9941A380\nACE Backblast Dev - 65AD7C139EB4C1A1\nACE Captives Dev - 65AD7C249E4ECDFB\nACE Carrying Dev - 65AD7C379CBD394D\nACE Compass Dev - 65AD7CF69FAF1FDD\nACE Cook-Off Dev - 664AFDC993C9CE1A\nACE Facepaint Dev - 68EAA4B96976D557\nACE Finger Dev - 65AD7D2E9866FA6E\nACE Medical Core Dev - 6586079789278413\nACE Medical Hitzones Dev - 65B343F799FB521B\nACE Radio Dev - 65AD7C75826B46C6\nACE Tactical Periscope Dev - 65AD7CD09CAEC4E2\nACE Weather Dev - 667B230F9505C8BA\nSHS Backpacks - 695D1C20908DA231\nAI Airborne - 6A034CF803186A96\nRealistic Combat Drones - 65AD60E204191D37\nAI Use Drones - 690D33EDCB46C4B9\nWCS_Sounds - 631C3C1AEE9C90BC\nWCS_NATO - 615806DC6C57AF02\nWCS_Weapon_Scripts - 68F006D910E7546F\nWCS_RU - 615818DA7C0343FD\nWCS_Scopes - 62A668F513428630\nWCS_Attachments - 61C74A8B647617DA\nWCS_Weapons - 65CF7AE8574E06D2\nRHS - Content Pack 02 - BADC0DEDABBEDA5E\nRHS - Content Pack 01 - 1337C0DE5DABBEEF\nRHS - Status Quo - 595F2BF2F44836FB\nWCS_Clothing_Assets - 6602C1EC7E5A4A87\nWCS_Clothing - 6152CB0BD0684837\nThomoskis Modernised FIA - 69D007B68A1E8C20\nConflictPVERemixedVanilla2.0 - 61B514B96692C049\nAWM - Summer Version - 68F352219EA04EC6\nConstantEnemyThreat 1.7 - 69B856EFDEA992EB\nEnhanced Compositions - 660C6D2259B60EE8\nM777 Howitzer Artillery - 686AC479236F235D\nDarcCore - 631EE12D448D7FCC\nDarcChopper - 689EDED542F881AF\nMBS Auto Spawn AI helicopters - 6976D02296D2CA42\nNBS C-RAM - 6A388D460E34F5BF\nWCS_RHS_Sounds - 6AAE2A3269AD5C39\nWCS_Core - 64610AFB74AA9842\nWCS_RHS_Attachments - 6A717EEA63A35E67\nWCS_RHS_Scopes - 3B8081D9CAD979D2\nWCS_Armbands - 61E42AE6714A3CC2\nWCS_RHS_Weapons - 65F929DF622BAD50\nWCS_Armaments - 629B2BA37EFFD577\nWCS_RHS_Clothing - 6AAEEB19367529A1\nWCS_Arsenal - 615CC2D870A39838\nRealistic Combat Drones - WCS - 65D10E606F9A0B25\nREAPER_NH-90 HQ - 68746C2DCDABB93D\nREAPER_RHIB - 6934F9C61CE24DE5\nSleeper Cell - AI - 69C8C48790525BE3\nStun Grenade - 59EAA899751805DF\nTacticalAnimationOverhaul TEST - 61ECB5EFAA346151\nACE Trenches Dev - 65AD7CE59E8DB349\nACE Tactical Ladder Dev - 65AD7CB89F219E38\nACE Explosives Dev - 65AD7D1E9EEAFA53\nWCS_ACE - 6A8E689750C80548\nWCS_AH-1S - 64CB39E57377C861\nAKI_Core - 62CCD69DD17E4F2F\nAKI_Core_Upgrade - 662EB83AB3F8CAE3\nWCS_AH-64D - 6303360DA719E832\nWCS_AH-64D_Upgrade - 6326F0C7E748AB8A\nWCS_AH-6M - 6273146ADFE8241D\nWCS_AH-6M_Upgrade - 62AE96D92179F7A0\nWCS_SpaceCore - 5E389BB9F58B79A6\nWCS_BMP-1 - 5E524E4FEECCA92B\nWCS_BMP-3 - 5B383D4CB27E0D54\nWCS_Earplugs - 612F512CD4CB21D5\nWCS_FMTV - 65B60A48AEC31157\nWCS_Hescos - 6A20948448913FD7\nWCS_HoldBreath - 672D432E181E6807\nWCS_JLTV - 5C721177A220B42F\nWCS_JLTV_Upgrade - 6528B3CE24C85120\nWCS_KBA-105 - 684CE0507D2F8AD2\nWCS_PS5 - 656EC7E7513E76A9\nWCS_RHS_TempFixes - 69D176C07DDCFF64\nWCS_VehicleLock - 61BA4EB5C886D396\nWCS_Vehicles - 615A80027C5C9170\nWCS_MRZR - 64900A5A31F5DCB5\nWCS_RHS_Vehicles - 6A50528453E5FF27\nWCS_Stryker - 5B02128D896F7DE8\nWCS_Suppression - 685EDA5A6ACD53C5\nWCS_TempFixes - 61C4B48772550E0F\nWCS_ViewDistance - 6A68E18470531D4B\nWCS_ZU-23-2 - 63294BA2D9F0339B\nWere You Raised In A Barn - 0EE9CE408F80A62C\nWirecutters 2 - 62F364B35E9B51B0\nWCS_M1A1 - 5D1880C4AD410C14\nWCS_M2A2 - 63120AE07E6C0966\nWCS_LoadoutEditor - 61D57616CAFBB23D\nWCS_T-72 - 5E0AB16BEB16D6A4\nWCS_VON - 69333B6C7C8BE8AB\nWCS_Commands - 61A25BD1C99515B5\nWCS_Interface - 614D1A3874A23AD9\nFRP_DroneDetector - 6A8312058F0EDC8E\nTFO_DroneDetector_ENG - 6A9554824B4C155B\nTFO - Drone Jammer Backpacks - 6AA3385AD956B4DD\nChungus Core - 66D6340C1D565C98\nChungus Shotguns - 620E584B1D2C96A4",
+   "changelog": "- Server freezes fixed: AI spawn within a budget around each player.\n- Enemy HQ: attack plans, road ambushes, roadblocks, mortar recon-strikes, glide bombs, cruise missiles, Geran raids, Su-57 flybys chased by F-22.\n- Radio alerts from your HQ on the AN/PRC-152.\n- Ukrainian-front weather: 21 episodes, lightning and rolling thunder, full moon, Game Master buttons.\n- Radar/Jammer truck, FP-1 drone truck, stronger M923A1 and FMTV trucks.\n- AWM - Summer Version is no longer a dependency.\n\nFull changelog, server admin notes and the complete mod list:\nhttps://indforge-studio.github.io/INDFORGE/workshop/conflict-pve/",
    "scenarios": [
     "Gramps303's Everon Conflict"
    ],
@@ -815,9 +819,9 @@
    ],
    "stats": {
     "subs": 1,
-    "downloads": 133,
+    "downloads": 193,
     "rating": 100,
-    "votes": 3
+    "votes": 4
    }
   },
   {
@@ -826,10 +830,10 @@
    "title": "INDFORGE - Forest",
    "workshop": true,
    "name": "INDFORGE - Forest",
-   "version": "0.0.2",
+   "version": "0.0.3",
    "size": 117144,
    "created": "2026-11-11",
-   "updated": "2026-11-15",
+   "updated": "2026-11-24",
    "game": "1.9.0.37",
    "license": "Arma Public License No Derivatives (APL-ND)",
    "author": "TheUnknownTeam",
@@ -846,6 +850,10 @@
    "unlisted": false,
    "versions": [
     [
+     "0.0.3",
+     "2026-11-24"
+    ],
+    [
      "0.0.2",
      "2026-11-15"
     ],
@@ -854,7 +862,7 @@
      "2026-11-11"
     ]
    ],
-   "changelog": "- Denser enemy presence: every capturable base now has 3 to 4 defending groups (rifle squad, machine gun team, fire team, AT team).\n- Fewer two-man sentries: most of them are now full fire teams.\n- More Spetsnaz Overwatch snipers around the bases.\n- 10 new foot patrols moving between bases.\n- Defensive positions reworked: guards now hold their posts properly.\n- All AI spawn points renamed after what they really spawn, for easier admin and editing.",
+   "changelog": "- Updated for INDFORGE - Conflict PvE 2.1.0: everything new in Conflict PvE now comes to Belleau Wood.\n- Server freezes fixed: AI spawn within a budget around each player.\n- Enemy HQ: attack plans, road ambushes, roadblocks, mortar recon-strikes, air strikes, Geran raids.\n- Radio alerts, new weather with lightning and thunder, Radar/Jammer truck, FP-1 drone truck.\n- Thomoskis Modernised FIA and AWM - Summer Version are no longer dependencies.\n- Workshop dependency list restored.\n\nFull changelog, server admin notes and the complete mod list:\nhttps://indforge-studio.github.io/INDFORGE/workshop/forest/",
    "scenarios": [
     "INDFORGE Forest Conflict (Belleau Wood)"
    ],
@@ -877,6 +885,26 @@
     }
    ],
    "deps": [
+    {
+     "id": "629EDC37CDE3AD35",
+     "name": "Belleau Wood",
+     "author": "Thinwheat01"
+    },
+    {
+     "id": "5DE612963E4B005A",
+     "name": "Rail Enfusion Redux",
+     "author": "TilW"
+    },
+    {
+     "id": "5F0D245931200FD1",
+     "name": "Railway Generator",
+     "author": "TilW"
+    },
+    {
+     "id": "69BD142259FCF144",
+     "name": "INDFORGE - Conflict PvE",
+     "author": "TheUnknownTeam"
+    },
     {
      "id": "65AD7D0D9941A380",
      "name": "ACE Core Dev",
@@ -968,11 +996,6 @@
      "author": "Gramps303"
     },
     {
-     "id": "68F352219EA04EC6",
-     "name": "AWM - Summer Version",
-     "author": " EO"
-    },
-    {
      "id": "69B856EFDEA992EB",
      "name": "ConstantEnemyThreat 1.7",
      "author": "WhiskeyDreamzZz"
@@ -1008,13 +1031,8 @@
      "author": "Punkster"
     },
     {
-     "id": "64610AFB74AA9842",
-     "name": "WCS_Core",
-     "author": "Worst Case Scenario"
-    },
-    {
-     "id": "68F006D910E7546F",
-     "name": "WCS_Weapon_Scripts",
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
      "author": "Worst Case Scenario"
     },
     {
@@ -1033,13 +1051,23 @@
      "author": "Red Hammer Studios"
     },
     {
-     "id": "631C3C1AEE9C90BC",
-     "name": "WCS_Sounds",
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
      "author": "Worst Case Scenario"
     },
     {
      "id": "615806DC6C57AF02",
      "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
      "author": "Worst Case Scenario"
     },
     {
@@ -1073,18 +1101,8 @@
      "author": "Worst Case Scenario"
     },
     {
-     "id": "6152CB0BD0684837",
-     "name": "WCS_Clothing",
-     "author": "Worst Case Scenario"
-    },
-    {
      "id": "61E42AE6714A3CC2",
      "name": "WCS_Armbands",
-     "author": "Worst Case Scenario"
-    },
-    {
-     "id": "629B2BA37EFFD577",
-     "name": "WCS_Armaments",
      "author": "Worst Case Scenario"
     },
     {
@@ -1093,13 +1111,18 @@
      "author": "Worst Case Scenario"
     },
     {
-     "id": "6AAE2A3269AD5C39",
-     "name": "WCS_RHS_Sounds",
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
      "author": "Worst Case Scenario"
     },
     {
-     "id": "65F929DF622BAD50",
-     "name": "WCS_RHS_Weapons",
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
      "author": "Worst Case Scenario"
     },
     {
@@ -1143,13 +1166,13 @@
      "author": "Bale'"
     },
     {
-     "id": "65AD7CB89F219E38",
-     "name": "ACE Tactical Ladder Dev",
+     "id": "65AD7CE59E8DB349",
+     "name": "ACE Trenches Dev",
      "author": "acemod"
     },
     {
-     "id": "65AD7CE59E8DB349",
-     "name": "ACE Trenches Dev",
+     "id": "65AD7CB89F219E38",
+     "name": "ACE Tactical Ladder Dev",
      "author": "acemod"
     },
     {
@@ -1173,14 +1196,14 @@
      "author": "AkiraSeki"
     },
     {
-     "id": "6303360DA719E832",
-     "name": "WCS_AH-64D",
-     "author": "Worst Case Scenario"
-    },
-    {
      "id": "662EB83AB3F8CAE3",
      "name": "AKI_Core_Upgrade",
      "author": "AkiraSeki"
+    },
+    {
+     "id": "6303360DA719E832",
+     "name": "WCS_AH-64D",
+     "author": "Worst Case Scenario"
     },
     {
      "id": "6326F0C7E748AB8A",
@@ -1381,26 +1404,6 @@
      "id": "6AA93D208350694A",
      "name": "S&D Fixed Wing",
      "author": "SammyS_"
-    },
-    {
-     "id": "69BD142259FCF144",
-     "name": "INDFORGE - Conflict PvE",
-     "author": "TheUnknownTeam"
-    },
-    {
-     "id": "5F0D245931200FD1",
-     "name": "Railway Generator",
-     "author": "TilW"
-    },
-    {
-     "id": "5DE612963E4B005A",
-     "name": "Rail Enfusion Redux",
-     "author": "TilW"
-    },
-    {
-     "id": "629EDC37CDE3AD35",
-     "name": "Belleau Wood",
-     "author": "Thinwheat01"
     }
    ],
    "unresolved": [],
@@ -1410,7 +1413,7 @@
    ],
    "stats": {
     "subs": 0,
-    "downloads": 313,
+    "downloads": 366,
     "rating": 100,
     "votes": 2
    }
@@ -1524,7 +1527,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 1,
-    "downloads": 4681,
+    "downloads": 4716,
     "rating": 91,
     "votes": 23
    }
@@ -1747,7 +1750,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 4301,
+    "downloads": 4350,
     "rating": 92,
     "votes": 51
    }
@@ -2200,7 +2203,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 2109,
+    "downloads": 2123,
     "rating": 100,
     "votes": 14
    }
@@ -2302,7 +2305,7 @@
    ],
    "stats": {
     "subs": 0,
-    "downloads": 935,
+    "downloads": 940,
     "rating": 95,
     "votes": 21
    }
@@ -2480,7 +2483,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 1966,
+    "downloads": 1967,
     "rating": 100,
     "votes": 2
    }
@@ -2570,7 +2573,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 1842,
+    "downloads": 1843,
     "rating": 100,
     "votes": 1
    }
@@ -2934,7 +2937,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 2719,
+    "downloads": 2720,
     "rating": 75,
     "votes": 4
    }
@@ -3012,7 +3015,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 5029,
+    "downloads": 5043,
     "rating": 96,
     "votes": 24
    }
@@ -3120,7 +3123,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 6454,
+    "downloads": 6489,
     "rating": 95,
     "votes": 43
    }
@@ -3237,9 +3240,9 @@
    "scenarioIds": [],
    "stats": {
     "subs": 2,
-    "downloads": 48259,
+    "downloads": 48574,
     "rating": 91,
-    "votes": 68
+    "votes": 69
    }
   },
   {
@@ -3456,7 +3459,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 1,
-    "downloads": 58243,
+    "downloads": 58607,
     "rating": 91,
     "votes": 47
    }
@@ -3533,8 +3536,8 @@
    "image": 62970,
    "scenarioIds": [],
    "stats": {
-    "subs": 2,
-    "downloads": 982862,
+    "subs": 3,
+    "downloads": 988838,
     "rating": 91,
     "votes": 22
    }
@@ -3633,7 +3636,7 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 23647,
+    "downloads": 23680,
     "rating": 90,
     "votes": 62
    }
@@ -3713,7 +3716,7 @@
    ],
    "stats": {
     "subs": 0,
-    "downloads": 4698,
+    "downloads": 4701,
     "rating": 93,
     "votes": 29
    }
@@ -3790,11 +3793,11 @@
    "scenarioIds": [],
    "stats": {
     "subs": 0,
-    "downloads": 12545,
+    "downloads": 12553,
     "rating": 100,
     "votes": 18
    }
   }
  ],
- "stats_date": "2026-11-20"
+ "stats_date": "2026-11-24"
 }

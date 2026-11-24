@@ -324,9 +324,14 @@ THIRD_PARTY = {d["id"] for m in MODS.values() for d in m["deps"]} - OUR_IDS - {B
 CFG_KEYS = sum(len(f["rows"]) for f in CONFIGS)
 # Development builds whose complete changelog (admin notes included) lives on the mod page under a
 # permanent anchor, #build-<id>: the short Workshop changelog links there, so the anchor never changes.
-# Text: tools/data/builds/<slug>-<id>.txt, quoted as written (English). The build stays "Incoming" while
-# the Workshop still shows the version it follows.
-BUILDS = {"conflict-pve": [("77bd6c4", "2.0.6")]}
+# Text: tools/data/builds/<slug>-<id>.txt, quoted as written (English). Entry: (build, version it follows,
+# version it was published as, or None). The build stays "Incoming" while the Workshop still shows the
+# version it follows; the published version is set by hand once the Workshop page shows it.
+BUILDS = {"conflict-pve": [("77bd6c4", "2.0.6", "2.1.0")], "forest": [("b2e7e63", "0.0.2", "0.0.3")]}
+# Build notes that send server admins to another build's notes (the settings files they share).
+BUILD_SEE = {("forest", "b2e7e63"): ("conflict-pve", "77bd6c4")}
+# Mods that need RHS - Status Quo and link its EULA in their credits.
+RHS_EULA_MODS = ("conflict-pve", "forest")
 RHS_EULA = "https://docs.rhsmods.org/rhs-status-quo-user-documentation/arma-reforger/rhs-status-quo/eula"
 # Required sound credit, shown word for word in every language.
 SOUND_CREDIT = "Additional sounds: Joseph SARDIN - LaSonotheque.org"
@@ -761,7 +766,7 @@ def deps_section(m):
 _LOG_HEAD = re.compile(r"^[A-Z][A-Z /&-]*[A-Z](\s*\([^)]*\))?$")
 
 
-def build_sec(m, bid, after, code):
+def build_sec(m, bid, after, pub, code):
     """Complete changelog of one development build, under its permanent anchor #build-<id>."""
     slug = m["slug"]
     with open(os.path.join(TOOLS, "data", "builds", "%s-%s.txt" % (slug, bid)), encoding="utf-8") as f:
@@ -779,8 +784,10 @@ def build_sec(m, bid, after, code):
             out.append("<ul>%s</ul>" % "".join("<li>%s</li>" % H(x) for x in items))
             del items[:]
     lines = log.strip().split("\n")
-    out.append('<p class="mono dim">%s</p>' % H(lines[0]))
-    for line in lines[1:]:
+    if not lines[0].startswith("- "):
+        out.append('<p class="mono dim">%s</p>' % H(lines[0]))  # title line, when the text has one
+        lines = lines[1:]
+    for line in lines:
         line = line.strip()
         if line.startswith("- "):
             items.append(line[2:])
@@ -791,20 +798,31 @@ def build_sec(m, bid, after, code):
         out.append("<h3>%s</h3>" % H(line) if _LOG_HEAD.match(line) else "<p>%s</p>" % H(line))
     flush()
     pending = m["version"] == after
+    if not pending:
+        # Published: the version it went out as must be in the Workshop history of the mod.
+        assert pub and pub in [v for v, _ in m["versions"]], "build %s: published version %s not in the history" % (bid, pub)
+    see = ""
+    if (slug, bid) in BUILD_SEE:
+        s2, b2 = BUILD_SEE[(slug, bid)]
+        see = '<p><a href="%s">%s</a></p>' % (url("workshop/%s/#build-%s" % (s2, b2)),
+                                              t("log.see_cfg", "span", "", {"m": name(MODS[s2]), "b": b2}))
     body = """<blockquote class="quote-log" lang="en"><div class="log-txt log-full">%s</div></blockquote>
 <details class="deps-table">
   <summary>%s</summary>
   <pre class="code" tabindex="0" lang="en"><code>%s</code></pre>
 </details>
-<p class="mono dim">Build: %s · <a href="#deps">%s</a></p>""" % (
-        "".join(out), t("log.modlist", "span", "", {"n": len(listed)}), H(mods), H(bid), t("sec.deps"))
-    return sec("build-" + bid, "log.build_h", body, code, "sec-build", t("log.build_note", "p", "dim", {"b": bid, "v": after}),
-               {"b": bid}, " " + badge_inc() if pending else "")
+%s<p class="mono dim">Build: %s · <a href="#deps">%s</a></p>""" % (
+        "".join(out), t("log.modlist", "span", "", {"n": len(listed)}), H(mods), see, H(bid), t("sec.deps"))
+    note = (t("log.build_note", "p", "dim", {"b": bid, "v": after}) if pending
+            else t("log.build_note_pub", "p", "dim", {"b": bid, "v": pub}))
+    return sec("build-" + bid, "log.build_h", body, code, "sec-build", note, {"b": bid}, " " + badge_inc() if pending else "")
 
 
 def credits_body(m):
     k = "m.%s." % m["slug"]
     body = t(k + "credits", "p")
+    if (k + "adapted") not in SRC["en"] and m["slug"] in RHS_EULA_MODS:
+        body += '\n<ul class="feat"><li><b>RHS - Status Quo</b> (Red Hammer Studios) — %s</li></ul>' % ext(RHS_EULA, "EULA")
     if (k + "adapted") in SRC["en"]:
         body += """
 <h3>%s</h3>%s
@@ -897,7 +915,8 @@ def mod_page(slug):
             parts.append(sec("incoming", "sec.incoming", '<ul class="feat feat-inc">%s</ul>%s' % (tl(k + "new"), link), "02B", "sec-inc",
                              t("sec.incoming.d", "p", "dim", {"v": m["version"]})))
         else:
-            parts.append(sec("new", "sec.new", '<ul class="feat">%s</ul>%s' % (tl(k + "new"), link), "02B"))
+            note = t(k + "new_note", "p", "dim") if has("new_note") else ""
+            parts.append(sec("new", "sec.new", '<ul class="feat">%s</ul>%s%s' % (tl(k + "new"), note, link), "02B"))
     elif has("inc"):
         parts.append(sec("incoming", "sec.incoming", '<ul class="feat feat-inc">%s</ul>' % tl(k + "inc"), "02B", "sec-inc",
                          t("sec.incoming.d", "p", "dim", {"v": m["version"]})))
@@ -913,7 +932,7 @@ def mod_page(slug):
         parts.append(sec("commands", "sec.commands", t("admins.cmds_p", "p") + cmd_table(), "04B"))
     parts.append(deps_section(m))
     if build:
-        parts.append(build_sec(m, build[0], build[1], "06"))
+        parts.append(build_sec(m, build[0], build[1], build[2], "06"))
     if m["changelog"]:
         parts.append(sec("changelog", "sec.changelog",
                          '%s<blockquote class="quote-log" lang="en"><p class="mono dim">v%s // %s</p><div class="log-txt">%s</div></blockquote>' % (
@@ -1420,7 +1439,7 @@ def search_index():
             it["w"] = WORKSHOP + m["guid"]  # official Workshop page (none for an unlisted mod)
         items.append(it)
     for s, builds in BUILDS.items():
-        for bid, _after in builds:
+        for bid, _after, _pub in builds:
             items.append({"k": "page", "t": "%s · build %s" % (name(MODS[s]), bid), "s": "log.build_toc",
                           "x": "%s changelog %s" % (bid, s), "u": url("workshop/%s/#build-%s" % (s, bid))})
     for cmd, key, _ in COMMANDS:

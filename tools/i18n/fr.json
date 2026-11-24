@@ -103,9 +103,11 @@
   "log.workshop_note": "Texte du journal cité depuis la page Workshop, dans sa langue d'origine.",
   "log.build_h": "Build {b} : journal complet",
   "log.build_note": "Journal complet des modifications du build {b}, la mise à jour qui suit la version {v}, notes pour les administrateurs de serveur comprises. Cité dans sa langue d'origine.",
+  "log.build_note_pub": "Journal complet des modifications du build {b}, publié sur le Workshop en version {v}, notes pour les administrateurs de serveur comprises. Cité dans sa langue d'origine.",
   "log.build_toc": "Journal complet",
   "log.build_link": "Journal complet du build {b}, notes pour les administrateurs de serveur comprises",
   "log.modlist": "Liste des mods du serveur ({n} mods, dans l'ordre de chargement)",
+  "log.see_cfg": "Fichiers de réglages <code>$profile</code> nouveaux et remplacés : voir les notes pour les administrateurs de serveur de {m}, build {b}",
   "home.title": "QG",
   "home.stat_mods": "mods au registre",
   "home.stat_deps": "mods du Workshop crédités en dépendance",
@@ -454,7 +456,8 @@
   ],
   "m.forest.tag": "Conflict PvE dans les forêts denses de Belleau Wood.",
   "m.forest.intro": [
-    "INDFORGE - Forest emmène l'expérience INDFORGE - Conflict PvE sur la carte Belleau Wood : la même IA, la même doctrine, le même arsenal, les mêmes grades et réglages qu'à Everon, avec ses propres bases, relais, barrages, patrouilles et points d'apparition de véhicules.",
+    "INDFORGE - Forest, c'est le PvE coopératif « Conflict » dans les forêts de Belleau Wood : joueurs américains contre IA de l'URSS et de la FIA. Toute l'expérience INDFORGE - Conflict PvE, avec ses propres bases, relais, barrages, patrouilles et points d'apparition de véhicules. En développement actif.",
+    "Pour joueurs de niveau intermédiaire à avancé qui aiment le jeu tactique en équipe. Les loups solitaires risquent de verser une petite larme…",
     "Il nécessite INDFORGE - Conflict PvE. Un changement fait dans Conflict PvE n'arrive dans Forest qu'après la republication de Conflict PvE sur le Workshop."
   ],
   "m.forest.f": [
@@ -466,11 +469,20 @@
     "Points d'apparition de l'IA nommés d'après ce qu'ils font vraiment apparaître, pour faciliter l'administration et l'édition.",
     "Caches d'armes aléatoires : coupées sur cette carte pour l'instant, bientôt disponibles."
   ],
+  "m.forest.new": [
+    "<b>À jour avec INDFORGE - Conflict PvE 2.1.0 :</b> toutes les nouveautés de Conflict PvE arrivent sur Belleau Wood.",
+    "<b>Fin des gels du serveur :</b> l'IA apparaît dans un budget autour de chaque joueur.",
+    "<b>État-major ennemi :</b> plans d'attaque, embuscades routières, barrages routiers, frappes de mortier sur repérage, frappes aériennes, raids de Geran.",
+    "<b>Alertes radio</b>, nouvelle météo avec éclairs et tonnerre, camion Radar/Brouilleur, camion de drones FP-1.",
+    "<b>Moins de dépendances :</b> Thomoskis Modernised FIA et AWM - Summer Version ne sont plus nécessaires.",
+    "<b>Liste des dépendances du Workshop rétablie.</b>"
+  ],
+  "m.forest.new_note": "Ces nouveautés arrivent avec Conflict PvE 2.1.0. Sur Belleau Wood, elles n'ont pas encore été vérifiées en jeu, météo et état-major ennemi compris.",
   "m.forest.admin": [
     "Mêmes fichiers de profil serveur que Conflict PvE : les réglages et les commandes de la console admin valent ici aussi.",
     "Mettez <code>game.scenarioId</code> sur l'ID de scénario ci-dessus et utilisez le bloc de mods complet ci-dessous : Forest, Conflict PvE et ses dépendances, Belleau Wood et les deux mods de voie ferrée."
   ],
-  "m.forest.credits": "Carte Belleau Wood de Thinwheat01. RailwayGenerator et RailEnfusionRedux de TilW. Et chaque créateur des dépendances de Conflict PvE.",
+  "m.forest.credits": "Un grand merci à Thinwheat01 pour la carte Belleau Wood, et à TilW pour RailwayGenerator et RailEnfusionRedux. Merci aussi à chaque créateur des dépendances du Workshop.",
   "m.ai-framework.tag": "Une IA modulaire, indépendante de la carte, pour les scénarios PvE : hélicoptères de combat, garnisons, marqueurs de carte. En développement, pas encore publié.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework est en développement et <b>n'est pas encore publié sur le Workshop</b>. Il ajoutera aux scénarios Conflict compatibles des patrouilles d'hélicoptères de combat, des garnisons militaires sur les points d'intérêt et des marqueurs de carte pour les joueurs.",

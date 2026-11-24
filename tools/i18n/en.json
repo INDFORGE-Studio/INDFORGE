@@ -103,9 +103,11 @@
   "log.workshop_note": "Changelog text quoted from the Workshop page, in its original language.",
   "log.build_h": "Build {b}: full changelog",
   "log.build_note": "Complete changelog of build {b}, the update that follows version {v}, notes for server admins included. Quoted in its original language.",
+  "log.build_note_pub": "Complete changelog of build {b}, published on the Workshop as version {v}, notes for server admins included. Quoted in its original language.",
   "log.build_toc": "Full changelog",
   "log.build_link": "Full changelog of build {b}, notes for server admins included",
   "log.modlist": "Server mod list ({n} mods, in load order)",
+  "log.see_cfg": "New and replaced <code>$profile</code> settings files: see the notes for server admins of {m}, build {b}",
   "home.title": "HQ",
   "home.stat_mods": "mods on record",
   "home.stat_deps": "Workshop mods credited as dependencies",
@@ -454,7 +456,8 @@
   ],
   "m.forest.tag": "Conflict PvE in the dense forests of Belleau Wood.",
   "m.forest.intro": [
-    "INDFORGE - Forest brings the INDFORGE - Conflict PvE experience to the Belleau Wood map: the same AI, doctrine, arsenal, ranks and settings as on Everon, with its own bases, relay stations, roadblocks, patrols and vehicle spawn points.",
+    "INDFORGE - Forest is “Conflict” co-op PvE in the forests of Belleau Wood: US players versus USSR/FIA AI. The full INDFORGE - Conflict PvE experience, with its own bases, relay stations, roadblocks, patrols and vehicle spawn points. Under active development.",
+    "For intermediate to advanced players who enjoy tactical team play. Lone wolves might shed a little tear…",
     "It requires INDFORGE - Conflict PvE. A change made in Conflict PvE reaches Forest once Conflict PvE is republished on the Workshop."
   ],
   "m.forest.f": [
@@ -466,11 +469,20 @@
     "AI spawn points named after what they really spawn, for easier admin and editing.",
     "Random weapon caches: switched off on this map for now, coming soon."
   ],
+  "m.forest.new": [
+    "<b>Up to date with INDFORGE - Conflict PvE 2.1.0:</b> everything new in Conflict PvE now comes to Belleau Wood.",
+    "<b>Server freezes fixed:</b> AI spawn within a budget around each player.",
+    "<b>Enemy HQ:</b> attack plans, road ambushes, roadblocks, mortar recon-strikes, air strikes, Geran raids.",
+    "<b>Radio alerts</b>, new weather with lightning and thunder, Radar/Jammer truck, FP-1 drone truck.",
+    "<b>Fewer dependencies:</b> Thomoskis Modernised FIA and AWM - Summer Version are no longer required.",
+    "<b>Workshop dependency list restored.</b>"
+  ],
+  "m.forest.new_note": "These changes come with Conflict PvE 2.1.0. On Belleau Wood they have not been checked in game yet, weather and enemy HQ included.",
   "m.forest.admin": [
     "Same server profile files as Conflict PvE: the settings and commands of the admin console apply here too.",
     "Set <code>game.scenarioId</code> to the scenario ID above and use the full mods block below: Forest, Conflict PvE and its dependencies, Belleau Wood and the two railway mods."
   ],
-  "m.forest.credits": "Belleau Wood map by Thinwheat01. RailwayGenerator and RailEnfusionRedux by TilW. And every creator of the Conflict PvE dependencies.",
+  "m.forest.credits": "A big THX to Thinwheat01 for the Belleau Wood map, and to TilW for RailwayGenerator and RailEnfusionRedux. Thanks also to every creator of the Workshop dependencies.",
   "m.ai-framework.tag": "Modular, map-agnostic AI for PvE scenarios: combat helicopters, garrisons, map markers. In development, not released yet.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework is in development and <b>not published on the Workshop yet</b>. It will add combat helicopter patrols, military garrisons on points of interest and player map markers to compatible Conflict scenarios.",

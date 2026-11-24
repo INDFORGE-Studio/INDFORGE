@@ -103,9 +103,11 @@
   "log.workshop_note": "Tekst changelogu zacytowany ze strony Workshop, w języku oryginału.",
   "log.build_h": "Build {b}: pełny changelog",
   "log.build_note": "Pełny changelog buildu {b}, aktualizacji następującej po wersji {v}, wraz z uwagami dla administratorów serwera. Cytowany w języku oryginału.",
+  "log.build_note_pub": "Pełny changelog buildu {b}, opublikowanego w Workshop jako wersja {v}, wraz z uwagami dla administratorów serwera. Cytowany w języku oryginału.",
   "log.build_toc": "Pełny changelog",
   "log.build_link": "Pełny changelog buildu {b}, wraz z uwagami dla administratorów serwera",
   "log.modlist": "Lista modów serwera (liczba modów: {n}, w kolejności ładowania)",
+  "log.see_cfg": "Nowe i zastąpione pliki ustawień <code>$profile</code>: zobacz uwagi dla administratorów serwera w {m}, build {b}",
   "home.title": "Sztab",
   "home.stat_mods": "modów w rejestrze",
   "home.stat_deps": "modów Workshop wymienionych jako zależności",
@@ -454,7 +456,8 @@
   ],
   "m.forest.tag": "Conflict PvE w gęstych lasach Belleau Wood.",
   "m.forest.intro": [
-    "INDFORGE - Forest przenosi doświadczenie INDFORGE - Conflict PvE na mapę Belleau Wood: to samo AI, doktryna, arsenał, rangi i ustawienia co na Everon, z własnymi bazami, stacjami przekaźnikowymi, blokadami drogowymi, patrolami i punktami pojawiania się pojazdów.",
+    "INDFORGE - Forest to kooperacyjne PvE w trybie „Conflict” w lasach Belleau Wood: gracze z USA przeciwko AI ZSRR i FIA. Pełne doświadczenie INDFORGE - Conflict PvE, z własnymi bazami, stacjami przekaźnikowymi, blokadami drogowymi, patrolami i punktami pojawiania się pojazdów. W aktywnym rozwoju.",
+    "Dla graczy średnio zaawansowanych i zaawansowanych, którzy lubią taktyczną grę zespołową. Samotne wilki mogą uronić łezkę…",
     "Wymaga INDFORGE - Conflict PvE. Zmiana wprowadzona w Conflict PvE dociera do Forest po ponownej publikacji Conflict PvE w Workshop."
   ],
   "m.forest.f": [
@@ -466,11 +469,20 @@
     "Punkty pojawiania się AI nazwane według tego, co naprawdę tworzą, dla łatwiejszej administracji i edycji.",
     "Losowe skrytki z bronią: na tej mapie na razie wyłączone, wkrótce."
   ],
+  "m.forest.new": [
+    "<b>Zgodność z INDFORGE - Conflict PvE 2.1.0:</b> wszystkie nowości z Conflict PvE trafiają teraz do Belleau Wood.",
+    "<b>Koniec zawieszeń serwera:</b> AI pojawia się w ramach budżetu wokół każdego gracza.",
+    "<b>Dowództwo wroga:</b> plany ataku, zasadzki drogowe, blokady dróg, uderzenia moździerzy po rozpoznaniu, naloty, ataki Geranów.",
+    "<b>Alerty radiowe</b>, nowa pogoda z błyskawicami i grzmotami, ciężarówka Radar/Zagłuszarka, ciężarówka z dronami FP-1.",
+    "<b>Mniej zależności:</b> Thomoskis Modernised FIA i AWM - Summer Version nie są już wymagane.",
+    "<b>Przywrócona lista zależności w Workshop.</b>"
+  ],
+  "m.forest.new_note": "Te nowości przychodzą z Conflict PvE 2.1.0. Na Belleau Wood nie zostały jeszcze sprawdzone w grze, łącznie z pogodą i dowództwem wroga.",
   "m.forest.admin": [
     "Te same pliki profilu serwera co w Conflict PvE: ustawienia i komendy konsoli admina obowiązują także tutaj.",
     "Ustaw <code>game.scenarioId</code> na ID scenariusza podane wyżej i użyj pełnego bloku modów poniżej: Forest, Conflict PvE wraz z zależnościami, Belleau Wood i dwa mody kolejowe."
   ],
-  "m.forest.credits": "Mapa Belleau Wood autorstwa Thinwheat01. RailwayGenerator i RailEnfusionRedux autorstwa TilW. Oraz każdy twórca zależności Conflict PvE.",
+  "m.forest.credits": "Wielkie podziękowania dla Thinwheat01 za mapę Belleau Wood oraz dla TilW za RailwayGenerator i RailEnfusionRedux. Dziękujemy też wszystkim twórcom zależności z Workshop.",
   "m.ai-framework.tag": "Modułowa, niezależna od mapy SI dla scenariuszy PvE: śmigłowce bojowe, garnizony, znaczniki na mapie. W trakcie tworzenia, jeszcze nie opublikowany.",
   "m.ai-framework.intro": [
     "INDFORGE - AI Framework jest w trakcie tworzenia i <b>nie jest jeszcze opublikowany w Workshopie</b>. Doda do zgodnych scenariuszy Conflict patrole śmigłowców bojowych, garnizony wojskowe w punktach zainteresowania i znaczniki graczy na mapie.",
