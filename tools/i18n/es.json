@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>En preparación, todavía no disponible:</b> actualización automática de los ajustes al arrancar el servidor (claves nuevas añadidas, valores nunca cambiados pasados a los nuevos valores por defecto, tus propios valores conservados, copia de seguridad del archivo antiguo).",
   "cfg.aibudget": "Nuevo en Conflict PvE 2.1.0. Se lee al inicio de cada sesión. Comando de administración: <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "Nuevo en Conflict PvE 2.1.0: ajustes del camión Radar/Inhibidor Bigfoot. Sus claves aún no se detallan en esta página. El servidor crea este archivo con sus valores por defecto si falta, cada clave con su línea de ayuda <code>_Name</code>. Copia de referencia: carpeta <code>ServerProfile/</code> del addon.",
+  "cfg.radartruck": "Nuevo en Conflict PvE 2.1.0: ajustes del camión Radar/Inhibidor Bigfoot.",
   "home.title": "Cuartel",
   "home.stat_mods": "mods registrados",
   "home.stat_deps": "mods del Workshop acreditados como dependencias",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Clima",
   "intel.weather_s": [
-    "Episodios creíbles en secuencia: despejado, bueno, nublado, cubierto, llovizna, lluvia, frentes de tormenta, bruma del amanecer, bancos de niebla, con transiciones suaves.",
+    "21 episodios creíbles, de día y de noche, en secuencia: despejado, noche en calma, bruma nocturna, estratos bajos, calima, bueno, ventoso, despejando, nublado, cubierto, bruma del amanecer, bruma, frente gris, llovizna, chubascos, lluvia, tormenta seca, tormenta, tormenta nocturna, cola de tormenta, bancos de niebla, con transiciones suaves.",
     "Los drones quedan en tierra con viento de 10 m/s, lluvia intensa o niebla espesa; los lanzamientos en helicóptero y las oleadas, desde 14 m/s; los paracaidistas, desde 8 m/s.",
     "La niebla y la lluvia reducen lo que ven los observadores de mortero. Las miras térmicas ven a través de niebla ligera."
   ],

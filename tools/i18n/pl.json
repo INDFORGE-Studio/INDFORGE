@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>W przygotowaniu, jeszcze niedostępne:</b> automatyczna aktualizacja ustawień przy starcie serwera (nowe klucze dodane, nigdy niezmieniane wartości ustawione na nowe domyślne, twoje wartości zachowane, kopia zapasowa starego pliku).",
   "cfg.aibudget": "Nowość w Conflict PvE 2.1.0. Odczytywany na początku każdej sesji. Polecenie admina: <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "Nowość w Conflict PvE 2.1.0: ustawienia ciężarówki Radar/Zagłuszarka Bigfoot. Jej klucze nie są jeszcze opisane na tej stronie. Serwer tworzy ten plik z wartościami domyślnymi, gdy go brakuje, każdy klucz z linią pomocy <code>_Name</code>. Kopia wzorcowa: folder <code>ServerProfile/</code> addonu.",
+  "cfg.radartruck": "Nowość w Conflict PvE 2.1.0: ustawienia ciężarówki Radar/Zagłuszarka Bigfoot.",
   "home.title": "Sztab",
   "home.stat_mods": "modów w rejestrze",
   "home.stat_deps": "modów Workshop wymienionych jako zależności",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Pogoda",
   "intel.weather_s": [
-    "Wiarygodne epizody po kolei: pogodnie, zmiennie, pochmurno, zachmurzenie całkowite, mżawka, deszcz, fronty burzowe, poranna mgła, pasma mgły — z płynnymi przejściami.",
+    "21 wiarygodnych epizodów, w dzień i w nocy, po kolei: pogodnie, spokojna noc, nocna mgła, niskie stratusy, upalna mgiełka, zmiennie, wietrznie, przejaśnienia, pochmurno, zachmurzenie całkowite, poranna mgła, mgła, szary front, mżawka, przelotne opady, deszcz, sucha burza, burza, nocna burza, schyłek burzy, pasma mgły — z płynnymi przejściami.",
     "Drony są uziemione od 10 m/s wiatru, przy silnym deszczu lub gęstej mgle; zrzuty i fale śmigłowcowe od 14 m/s; spadochroniarze od 8 m/s.",
     "Mgła i deszcz skracają to, co widzą obserwatorzy moździerzy. Celowniki termowizyjne widzą przez lekką mgłę."
   ],

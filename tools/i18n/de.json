@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>In Vorbereitung, noch nicht verfügbar:</b> automatische Aktualisierung der Einstellungen beim Serverstart (neue Schlüssel ergänzt, nie geänderte Werte auf die neuen Standardwerte gesetzt, eigene Werte behalten, Sicherungskopie der alten Datei).",
   "cfg.aibudget": "Neu in Conflict PvE 2.1.0. Wird zu jedem Sitzungsbeginn gelesen. Admin-Befehl: <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "Neu in Conflict PvE 2.1.0: Einstellungen des Radar/Störsender-Lkw Bigfoot. Seine Schlüssel sind auf dieser Seite noch nicht aufgeführt. Der Server legt diese Datei mit ihren Standardwerten an, wenn sie fehlt, jeder Schlüssel mit seiner Hilfezeile <code>_Name</code>. Referenzkopie: Ordner <code>ServerProfile/</code> des Addons.",
+  "cfg.radartruck": "Neu in Conflict PvE 2.1.0: Einstellungen des Radar/Störsender-Lkw Bigfoot.",
   "home.title": "HQ",
   "home.stat_mods": "Mods in den Akten",
   "home.stat_deps": "Workshop-Mods als Abhängigkeiten gewürdigt",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Wetter",
   "intel.weather_s": [
-    "Glaubwürdige Episoden in Folge: klar, heiter, wolkig, bedeckt, Nieselregen, Regen, Gewitterfronten, Morgendunst, Nebelbänke — mit weichen Übergängen.",
+    "21 glaubwürdige Episoden bei Tag und bei Nacht in Folge: klar, stille Nacht, Nachtnebel, tiefer Stratus, Hitzedunst, heiter, windig, Aufklaren, wolkig, bedeckt, Morgendunst, Dunst, graue Front, Nieselregen, Schauer, Regen, trockenes Gewitter, Gewitter, Nachtgewitter, Gewitterausläufer, Nebelbänke — mit weichen Übergängen.",
     "Drohnen bleiben ab 10 m/s Wind, bei Starkregen oder dichtem Nebel am Boden; Hubschrauberabsetzungen und Wellen ab 14 m/s; Fallschirmjäger ab 8 m/s.",
     "Nebel und Regen verkürzen die Sicht der Mörserbeobachter. Wärmebildgeräte sehen durch leichten Nebel."
   ],

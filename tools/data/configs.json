@@ -278,7 +278,7 @@
    },
    {
     "key": "Weather",
-    "value": "[\"Clear=1\", \"Light Cloud=1\", \"Medium Cloud=0.95\", \"Heavy Cloud=0.85\"]",
+    "value": "[\"Clear=1\", \"Cloudy=0.95\", \"Overcast=0.85\", \"Rainy=0.8\", \"Light Cloud=1\", \"Medium Cloud\u2026",
     "help": null
    },
    {
@@ -1289,8 +1289,8 @@
    },
    {
     "key": "AirFlybyPrefab",
-    "value": "\"{FDD01BF3CEAB37E3}Prefabs/Vehicles/Airplanes/SU57/su57_flyby.et\"",
-    "help": "Prefab of the jet pass (an RHS call-in, harmless)"
+    "value": "\"{B0545C8DA80A3506}Prefabs/Vehicles/Airplanes/SU57/INDF_su57_flyby.et\"",
+    "help": "Prefab of the jet pass (an RHS call-in, harmless). Ours keeps the jet flying after the RHS animation, so its sound fades out; the RHS one is replaced by ours"
    },
    {
     "key": "AirFlybyPassSeconds",
@@ -1316,6 +1316,76 @@
     "key": "AirFlybySeeDistance",
     "value": "400",
     "help": "Meters. Players this close to the point the jet flies over are seen"
+   },
+   {
+    "key": "AirChasePrefab",
+    "value": "\"{B48CCD1AB231785B}Prefabs/Vehicles/Airplanes/F22/INDF_f22_flyby.et\"",
+    "help": "Prefab of each fighter that chases a Su-57 pass (ours: the RHS F-22 flyby, flying on after its animation, with our engine sound)"
+   },
+   {
+    "key": "AirChaseCount",
+    "value": "2",
+    "help": "Fighters chasing the Su-57 (0 to 4; 2: a pair, lead and wingman)"
+   },
+   {
+    "key": "AirChaseDelaySeconds",
+    "value": "1",
+    "help": "Seconds behind the Su-57 for the lead fighter, on the same path (1 s: about 200 m)"
+   },
+   {
+    "key": "AirChaseSpacingSeconds",
+    "value": "0.4",
+    "help": "Seconds between two pairs of the chase (with 3 or 4 fighters)"
+   },
+   {
+    "key": "AirChaseSideOffset",
+    "value": "80",
+    "help": "Meters to each side of the Su-57 path for the two fighters of a pair, flying abreast (twice as far for a second pair)"
+   },
+   {
+    "key": "AirChaseHeightOffset",
+    "value": "15",
+    "help": "Meters above the Su-57 path for the first pair (twice as much for a second pair)"
+   },
+   {
+    "key": "AirChaseOpenerPrefabs",
+    "value": "[\"{B0545C8DA80A3506}Prefabs/Vehicles/Airplanes/SU57/INDF_su57_flyby.et\", \"{6CFC622A224E\u2026",
+    "help": "Prefabs of the Su-57 first pass of a chase, one drawn at random: its pilot looks at the target (ours: a 90 deg turn, a bank, a jink weaving against air defence, a pass upside down), then it comes back the other way, chased"
+   },
+   {
+    "key": "AirChaseReturnSeconds",
+    "value": "25",
+    "help": "Seconds after the first pass of a chase before the Su-57 is released again, the other way, chased (5 to 120; it then needs AirFlybyPassSeconds to come over)"
+   },
+   {
+    "key": "AirChaseGunPrefab",
+    "value": "\"{4E1CEE33A3CCD77F}Prefabs/Vehicles/Airplanes/F22/INDF_f22_flyby_gun.et\"",
+    "help": "Prefab of the lead fighter when it fires a warning burst behind the Su-57 (ours: the same F-22 with a minigun sound, muzzle flash and tracer lights, no projectile, so it never hurts anyone; empty: never)"
+   },
+   {
+    "key": "AirChaseGunChance",
+    "value": "0.5",
+    "help": "Chance (0 to 1) that the lead fighter of a chase fires its warning burst (always for an admin chase)"
+   },
+   {
+    "key": "AirChaseRadar",
+    "value": "true",
+    "help": "true: a recon pass over a player that a TPN-19 radar of the players covers (built, switched on) is detected; F-22 are scrambled, the Su-57 breaks off without reporting and comes back chased"
+   },
+   {
+    "key": "AirChaseRadarPrefabs",
+    "value": "[\"{9BD1A2FF9C745B92}Prefabs/Structures/Military/Radar/ApproachRadar_TPN19_01/DroneRadar\u2026",
+    "help": "Prefabs of the entities that carry the radar's jammer (RCD-WCS TPN-19 built radar); only a radar switched on counts"
+   },
+   {
+    "key": "AirChaseRadarRange",
+    "value": "1500",
+    "help": "Meters. A recon pass whose target is this close to such a radar is detected"
+   },
+   {
+    "key": "AirChaseRadarChance",
+    "value": "1",
+    "help": "Chance (0 to 1) that the radar detects the pass in time (one chase at a time)"
    },
    {
     "key": "GeranRaids",
@@ -1471,6 +1541,141 @@
     "key": "GeranEscortBoardSeconds",
     "value": "90",
     "help": "Seconds the truck waits for its escort to get back in after the salvo, then it leaves without the ones still out"
+   },
+   {
+    "key": "EmitterDirectionFinding",
+    "value": "true",
+    "help": "true: the enemy's direction finding counts the seconds each emitter of the players emits at one site (radar/jammer truck, and the EmitterPrefabs while switched on; never radios), warns them, then locates it. false: never"
+   },
+   {
+    "key": "EmitterPrefabs",
+    "value": "[\"{9BD1A2FF9C745B92}Prefabs/Structures/Military/Radar/ApproachRadar_TPN19_01/DroneRadar\u2026",
+    "help": "RCD jammers the direction finding hears while they are switched on (matched on the GUID): the TPN-19 radar of RCD-WCS and the players' jammer backpack. The radar/jammer truck counts on its own"
+   },
+   {
+    "key": "EmitterFixSeconds",
+    "value": "600.0",
+    "help": "Seconds of emission at one site after which the enemy locates the emitter; 0: never"
+   },
+   {
+    "key": "EmitterWarningSeconds",
+    "value": "480.0",
+    "help": "Seconds of emission after which the players around it are warned by radio that the enemy is triangulating it (0: no warning)"
+   },
+   {
+    "key": "EmitterRepeatSeconds",
+    "value": "600.0",
+    "help": "Seconds of further emission at the same site before the enemy locates it again"
+   },
+   {
+    "key": "EmitterRelocateDistance",
+    "value": "300.0",
+    "help": "Metres an emitter must move away to start the count again; switched off, the count goes down as fast as it went up"
+   },
+   {
+    "key": "EmitterStrike",
+    "value": "true",
+    "help": "true: once located, the HQ also strikes the emitter with methods drawn by the EmitterWeight* keys; the HQ gets the position as a track in any case"
+   },
+   {
+    "key": "EmitterMethodsMin",
+    "value": "1",
+    "help": "Fewest strike methods at one fix (1 to 5); a drawn method that cannot act is replaced by another draw"
+   },
+   {
+    "key": "EmitterMethodsMax",
+    "value": "2",
+    "help": "Most strike methods at one fix (EmitterMethodsMin to 5), drawn at random in between"
+   },
+   {
+    "key": "EmitterWeightMortar",
+    "value": "1.0",
+    "help": "Weight of the registered mortar strike (no observer, no adjusting round; needs a battery of ours in range); 0: never"
+   },
+   {
+    "key": "EmitterWeightGlide",
+    "value": "0.5",
+    "help": "Weight of the glide bomb guided by a Mavic of ours flying within EmitterGlideMavicRange (Air* glide rules: escalation, weather, cooldown); 0: never"
+   },
+   {
+    "key": "EmitterWeightGeran",
+    "value": "0.5",
+    "help": "Weight of the Geran salvo from a launcher truck (Geran* rules: weather, one raid at a time, cooldown); never on a backpack; 0: never"
+   },
+   {
+    "key": "EmitterWeightSappers",
+    "value": "1.0",
+    "help": "Weight of the sapper raid: a group marches on the emitter and one of its soldiers lays timed charges against it (EmitterSapper* keys); only on a static emitter (truck, built radar); 0: never"
+   },
+   {
+    "key": "EmitterWeightFpv",
+    "value": "1.0",
+    "help": "Weight of the FPV raid: a drone team posts near the emitter and its FPV operator sends drones at it (EmitterFpv* keys); never on an emitter that jams drones; 0: never"
+   },
+   {
+    "key": "EmitterGlideMavicRange",
+    "value": "1500.0",
+    "help": "Metres. A glide bomb on an emitter needs a Mavic of ours flying this close to it, which guides the bomb (shot down, jammed or flying home: the bomb is called off)"
+   },
+   {
+    "key": "EmitterSapperGroups",
+    "value": "[\"{491AEDD0AEC06F03}Prefabs/Groups/OPFOR/Hunters/INDF_Group_USSR_Hunter_AntiVehicle.et\"]",
+    "help": "Groups the HQ draws from for a sapper raid on a static emitter (radar/jammer truck, built radar); one soldier of it, never the leader, lays the charges"
+   },
+   {
+    "key": "EmitterSapperLevel",
+    "value": "\"Grunt\"",
+    "help": "Doctrine level of the sapper group (Boot, Grunt, Operator; empty: the rules by prefab and faction)"
+   },
+   {
+    "key": "EmitterSapperWalkDistance",
+    "value": "150.0",
+    "help": "Metres from the emitter at which the sapper leaves his group and walks up to it"
+   },
+   {
+    "key": "EmitterSapperApproachSeconds",
+    "value": "180.0",
+    "help": "Seconds the sapper has to reach the emitter from then on, else the raid is over"
+   },
+   {
+    "key": "EmitterSapperPlantSeconds",
+    "value": "8.0",
+    "help": "Seconds the sapper kneels at the emitter before his charges are laid"
+   },
+   {
+    "key": "EmitterSapperCharges",
+    "value": "2",
+    "help": "Charges laid against the emitter (M112 with a TM-62M warhead, the breach charge; 1 to 6)"
+   },
+   {
+    "key": "EmitterSapperFuseSeconds",
+    "value": "20.0",
+    "help": "Seconds of the timed fuse; killing the sapper does not stop it, a player can disarm it"
+   },
+   {
+    "key": "EmitterSapperRetreatDistance",
+    "value": "35.0",
+    "help": "Metres from the charges the sapper and his comrades run out to before the blast"
+   },
+   {
+    "key": "EmitterFpvPostDistance",
+    "value": "500.0",
+    "help": "Metres from the emitter where the drone team of an FPV raid posts itself (DroneTeamGroups of the plans)"
+   },
+   {
+    "key": "EmitterFpvLaunches",
+    "value": "2",
+    "help": "FPV launches at most on the emitter per raid; never on an emitter that jams drones"
+   },
+   {
+    "key": "EmitterRaidSeconds",
+    "value": "1200.0",
+    "help": "Seconds after which a sapper or FPV raid that is not done is over; its group goes home"
+   },
+   {
+    "key": "EmitterRaidsMax",
+    "value": "2",
+    "help": "Sapper and FPV raids at most at a time, on all emitters"
    }
   ]
  },
@@ -2120,7 +2325,7 @@
    {
     "key": "BushSlowdown",
     "value": "false",
-    "help": null
+    "help": "true: bushes and small trees slow soldiers down, as in the game since 1.7. false: no slowdown in bushes, as before 1.7. Applies to players and AI, read once at server start"
    }
   ]
  },
@@ -2249,12 +2454,73 @@
   "profile": "$profile:INDFORGE_RadarTruck/config.json",
   "mod": "conflict-pve",
   "readme": null,
-  "rows": []
+  "rows": [
+   {
+    "key": "RadarRange",
+    "value": "1500.0",
+    "help": "Metres the radar sees around the truck (terrain masks it)"
+   },
+   {
+    "key": "RadarScanSeconds",
+    "value": "5.0",
+    "help": "Seconds between two radar sweeps"
+   },
+   {
+    "key": "RadarMinSpeed",
+    "value": "0.7",
+    "help": "Metres per second a target must move to be seen (a Doppler radar does not see what stands still)"
+   },
+   {
+    "key": "RadarAntennaHeight",
+    "value": "4.0",
+    "help": "Metres above the truck from which the radar looks over the terrain"
+   },
+   {
+    "key": "RadarMarkerError",
+    "value": "20.0",
+    "help": "Metres of error of a map marker put by the radar"
+   },
+   {
+    "key": "RadarLitersPerHour",
+    "value": "33.0",
+    "help": "Litres of diesel the generator burns per hour while the radar emits"
+   },
+   {
+    "key": "JammerRange",
+    "value": "500.0",
+    "help": "Metres around the truck where the jammer cuts enemy drone links"
+   },
+   {
+    "key": "JammerLitersPerHour",
+    "value": "50.0",
+    "help": "Litres of diesel the generator burns per hour while the jammer emits"
+   },
+   {
+    "key": "LinkDistance",
+    "value": "50.0",
+    "help": "Metres at most between an FP-1 drone launcher truck and the deployed radar it is linked to by cable; farther, or either one moved or packed up, the link breaks"
+   },
+   {
+    "key": "LinkRefreshSeconds",
+    "value": "1.0",
+    "help": "Seconds between two updates of the radar targets shown live in the linked FP-1's mission planner (1 at least)"
+   },
+   {
+    "key": "LinkMaxContacts",
+    "value": "32",
+    "help": "Radar targets at most shown in the linked FP-1's mission planner (the nearest first)"
+   },
+   {
+    "key": "SummarySeconds",
+    "value": "300.0",
+    "help": "Seconds between two journal summaries of an emitting truck"
+   }
+  ]
  },
  {
   "profile": "$profile:INDFORGE_RadioAlerts/config.json",
   "mod": "conflict-pve",
-  "readme": null,
+  "readme": "Radio alerts: the server tells a player, in the game's pop-up and by a radio call of his HQ, what the friendly listeners picked up about the enemy. Hints only, never an exact enemy position. Texts may be translated here. A sound is <file.wav>|<length s> or <sound project .acp>|<event>|<length s>; the length places the next sound of the call. Empty: none. The wav files of Sounds/INDF_RadioAlerts/ and the ACE radio sounds play like a player's radio transmission, through the VOIP volume slider (Audio settings); any other wav plays as is.",
   "rows": [
    {
     "key": "Enabled",
@@ -2282,19 +2548,79 @@
     "help": "Chance (0 to 1) that the players of a vehicle hear of the road ambush laid ahead of them: the rest stays a surprise"
    },
    {
+    "key": "RequireRadio",
+    "value": "true",
+    "help": "true: only a player who carries a radio (RadioKeywords) gets the pop-up and the HQ voice"
+   },
+   {
+    "key": "RadioKeywords",
+    "value": "[\"radio_anprc152\"]",
+    "help": "Words of the radio prefab name (any case): radio_anprc152 = every AN/PRC-152 radio (RHS, WCS), never its antenna or battery"
+   },
+   {
+    "key": "EnemyRadioKeywords",
+    "value": "[\"radio_r148\", \"radio_r187\", \"radio_r107\"]",
+    "help": "Words of the prefab name of an enemy radio taken from the Russians (R-148, R-187, R-107 backpack): its carrier also hears the enemy's own radio traffic (<Name>Intercept); with only such a radio, he hears it alone, without pop-up. Empty list: never"
+   },
+   {
     "key": "StartSound",
-    "value": "\"SOUND_RADIO_SIGNAL_GAIN\"",
-    "help": "UI sound event played when the alert comes in (vanilla radio sounds: SOUND_RADIO_SIGNAL_GAIN, SOUND_RADIO_TURN_ON, SOUND_RADIO_CHANGEFREQUENCY, SOUND_HUD_NOTIFICATION). Empty: none"
+    "value": "\"Sounds/ACE_Radio/beep_high.wav|0.11\"",
+    "help": "Opens the call (ACE radio beep, the one of a player who talks on the radio)"
    },
    {
     "key": "EndSound",
-    "value": "\"SOUND_RADIO_ROGERBEEP\"",
-    "help": "UI sound event played at the end of the call (SOUND_RADIO_ROGERBEEP, SOUND_RADIO_SIGNAL_LOST, SOUND_RADIO_TURN_OFF). Empty: none"
+    "value": "\"Sounds/ACE_Radio/click_off.wav|0.14\"",
+    "help": "Closes the call (ACE radio release click)"
    },
    {
-    "key": "EndSoundDelaySeconds",
-    "value": "2.5",
-    "help": "Seconds between the two sounds"
+    "key": "PrcBeepSound",
+    "value": "\"{EA86CA50811DB84A}Sounds/Items/Equipment/Radios/ANPRC_152/r_anprc152_operation.acp|SOU\u2026",
+    "help": "PRC-152 beep played <Name>PrcBeeps times after the opening, before the voice"
+   },
+   {
+    "key": "PrcBeepGapSeconds",
+    "value": "0.25",
+    "help": "Seconds from one PRC-152 beep to the next"
+   },
+   {
+    "key": "CallGapSeconds",
+    "value": "0.06",
+    "help": "Seconds between two sounds of the call (opening, voice, closing)"
+   },
+   {
+    "key": "InterceptGapSeconds",
+    "value": "0.35",
+    "help": "Seconds from the HQ voice to the enemy radio traffic"
+   },
+   {
+    "key": "FadeSeconds",
+    "value": "0.3",
+    "help": "Seconds over which a sound of the call still playing fades out when the call closes (0 = cut)"
+   },
+   {
+    "key": "RadioPanel",
+    "value": "true",
+    "help": "true: while a voice plays, the radio panel of the game (top left) shows the incoming call: radio icon, frequency, name and role"
+   },
+   {
+    "key": "HqName",
+    "value": "\"HQ\"",
+    "help": "Name of the HQ in the radio panel"
+   },
+   {
+    "key": "HqRole",
+    "value": "\"Commander\"",
+    "help": "Role of the HQ in the radio panel, shown (in brackets) in the commander's orange; empty: none"
+   },
+   {
+    "key": "InterceptName",
+    "value": "\"\"",
+    "help": "Name of the enemy radio traffic in the radio panel; empty: the game's own unknown source"
+   },
+   {
+    "key": "InterceptFaction",
+    "value": "\"USSR\"",
+    "help": "Faction key whose radio frequency the enemy traffic shows"
    },
    {
     "key": "Directions",
@@ -2322,6 +2648,21 @@
     "help": null
    },
    {
+    "key": "DronePrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "DroneVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_EnemyPresenceSuspected.wav|3.99\"]",
+    "help": null
+   },
+   {
+    "key": "DroneIntercept",
+    "value": "[]",
+    "help": null
+   },
+   {
     "key": "InterceptEnabled",
     "value": "true",
     "help": null
@@ -2339,6 +2680,21 @@
    {
     "key": "InterceptText",
     "value": "\"An enemy group is being sent to your sector, from the %1. Expect contact.\"",
+    "help": null
+   },
+   {
+    "key": "InterceptPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "InterceptVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_EnemyForcesDetected.wav|4.14\"]",
+    "help": null
+   },
+   {
+    "key": "InterceptIntercept",
+    "value": "[\"Sounds/INDF_RadioAlerts/RU_SearchAndDestroy_1.wav|1.88\", \"Sounds/INDF_RadioAlerts/RU_\u2026",
     "help": null
    },
    {
@@ -2362,6 +2718,21 @@
     "help": null
    },
    {
+    "key": "MortarPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "MortarVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_HoldPositions.wav|4.42\"]",
+    "help": null
+   },
+   {
+    "key": "MortarIntercept",
+    "value": "[\"Sounds/INDF_RadioAlerts/RU_FireGrid.wav|1.66\", \"Sounds/INDF_RadioAlerts/RU_Suppress.w\u2026",
+    "help": null
+   },
+   {
     "key": "GeranEnabled",
     "value": "true",
     "help": null
@@ -2379,6 +2750,21 @@
    {
     "key": "GeranText",
     "value": "\"Enemy launch detected: one-way attack drones are heading for %1. Take cover.\"",
+    "help": null
+   },
+   {
+    "key": "GeranPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "GeranVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_UnderAttack.wav|3.26\"]",
+    "help": null
+   },
+   {
+    "key": "GeranIntercept",
+    "value": "[]",
     "help": null
    },
    {
@@ -2402,6 +2788,21 @@
     "help": null
    },
    {
+    "key": "MissilePrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "MissileVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_UnderAttack.wav|3.26\"]",
+    "help": null
+   },
+   {
+    "key": "MissileIntercept",
+    "value": "[]",
+    "help": null
+   },
+   {
     "key": "FlybyEnabled",
     "value": "true",
     "help": null
@@ -2414,6 +2815,21 @@
    {
     "key": "FlybyText",
     "value": "\"An enemy recon jet is passing over your sector. Assume they know where you are.\"",
+    "help": null
+   },
+   {
+    "key": "FlybyPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "FlybyVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_EnemyPresenceSuspected.wav|3.99\"]",
+    "help": null
+   },
+   {
+    "key": "FlybyIntercept",
+    "value": "[]",
     "help": null
    },
    {
@@ -2434,6 +2850,156 @@
    {
     "key": "AmbushText",
     "value": "\"Unconfirmed reports of enemy activity on the road ahead. Possible ambush, stay alert.\"",
+    "help": null
+   },
+   {
+    "key": "AmbushPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "AmbushVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_ObstaclesOnRoad.wav|5.65\"]",
+    "help": null
+   },
+   {
+    "key": "AmbushIntercept",
+    "value": "[\"Sounds/INDF_RadioAlerts/RU_CeaseFire_1.wav|1.44\", \"Sounds/INDF_RadioAlerts/RU_CeaseFi\u2026",
+    "help": null
+   },
+   {
+    "key": "ChaseEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "ChaseTitle",
+    "value": "\"Friendly fighters engaged\"",
+    "help": null
+   },
+   {
+    "key": "ChaseText",
+    "value": "\"Friendly fighters are chasing the enemy jet over your sector. It broke off its recon r\u2026",
+    "help": null
+   },
+   {
+    "key": "ChasePrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "ChaseVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_HoldPositions.wav|4.42\"]",
+    "help": null
+   },
+   {
+    "key": "ChaseIntercept",
+    "value": "[]",
+    "help": null
+   },
+   {
+    "key": "RadarJetEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "RadarJetRadius",
+    "value": "300.0",
+    "help": null
+   },
+   {
+    "key": "RadarJetTitle",
+    "value": "\"Radar contact: enemy jet\"",
+    "help": null
+   },
+   {
+    "key": "RadarJetText",
+    "value": "\"Our radar has an enemy recon jet on its scope. Friendly fighters are scrambled to inte\u2026",
+    "help": null
+   },
+   {
+    "key": "RadarJetPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "RadarJetVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_EnemyForcesDetected.wav|4.14\"]",
+    "help": null
+   },
+   {
+    "key": "RadarJetIntercept",
+    "value": "[]",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningRadius",
+    "value": "300.0",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningTitle",
+    "value": "\"Enemy direction finding\"",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningText",
+    "value": "\"Your %2 has been emitting for %1 min: the enemy is triangulating it. Shut it down or r\u2026",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_EnemyPresenceSuspected.wav|3.99\"]",
+    "help": null
+   },
+   {
+    "key": "EmitterWarningIntercept",
+    "value": "[]",
+    "help": null
+   },
+   {
+    "key": "EmitterFixEnabled",
+    "value": "true",
+    "help": null
+   },
+   {
+    "key": "EmitterFixRadius",
+    "value": "300.0",
+    "help": null
+   },
+   {
+    "key": "EmitterFixTitle",
+    "value": "\"Enemy fix on your emitter\"",
+    "help": null
+   },
+   {
+    "key": "EmitterFixText",
+    "value": "\"The enemy has a fix on your %1. Expect incoming fire and enemy troops: clear the area.\"",
+    "help": null
+   },
+   {
+    "key": "EmitterFixPrcBeeps",
+    "value": "0",
+    "help": null
+   },
+   {
+    "key": "EmitterFixVoice",
+    "value": "[\"Sounds/INDF_RadioAlerts/US_UnderAttack.wav|3.26\"]",
+    "help": null
+   },
+   {
+    "key": "EmitterFixIntercept",
+    "value": "[\"Sounds/INDF_RadioAlerts/RU_FireGrid.wav|1.66\"]",
     "help": null
    }
   ]
@@ -2513,6 +3079,326 @@
     "help": "Game hours after sunrise until which it may start"
    },
    {
+    "key": "SkyChangeSeconds",
+    "value": "0.0",
+    "help": "Real seconds over which the sky (cloud cover) changes. Keep 0: a player who joins while the sky is changing keeps a frozen sky for the rest of his game (engine). Fog, rain and wind still change smoothly; the sky switches when an episode starts if the rain grows, else when its ramp ends"
+   },
+   {
+    "key": "CycleEpisodes",
+    "value": "[\"Clear\", \"StillNight\", \"HotHaze\", \"Fair\", \"Breezy\", \"Clearing\", \"Cloudy\", \"Overcast\", \u2026",
+    "help": "Admin weather test '#weather cycle': these episodes in this order, from the clearest to the worst"
+   },
+   {
+    "key": "CycleRampSeconds",
+    "value": "30.0",
+    "help": "Weather test: seconds over which each episode of the cycle sets in"
+   },
+   {
+    "key": "CycleHoldSeconds",
+    "value": "60.0",
+    "help": "Weather test: seconds each episode of the cycle stays once set in"
+   },
+   {
+    "key": "CycleRounds",
+    "value": "1",
+    "help": "Weather test: rounds through CycleEpisodes"
+   },
+   {
+    "key": "CycleRandomMinutes",
+    "value": "5.0",
+    "help": "Weather test: minutes of random episodes after the rounds, then the director has the weather again"
+   },
+   {
+    "key": "LightningBoltMeters",
+    "value": "6000.0",
+    "help": "Lightning (no damage) farther than this many metres shows only its flash in the sky, no bolt"
+   },
+   {
+    "key": "LightningGlowMarginKm",
+    "value": "1.0",
+    "help": "Lightning: the sky its flash lights reaches this many km past the player (at least 0.2, varied by a quarter), never less: the game calls it the visibility radius of the flash, and its own lightning uses 1 to 3 km for a strike close to the camera. The light stays fine through its few short pulses"
+   },
+   {
+    "key": "LightningFarGlowMeters",
+    "value": "5000.0",
+    "help": "Lightning farther than this many metres lights a wider sky, so a far flash is still seen; closer, LightningGlowMarginKm alone"
+   },
+   {
+    "key": "LightningFarGlowKmPerKm",
+    "value": "1.5",
+    "help": "Beyond LightningFarGlowMeters, the sky its flash lights reaches this many km more past the player for every km farther (1.5: a flash 7 km away lights 3 km more)"
+   },
+   {
+    "key": "LightningFarGlowMaxKm",
+    "value": "6.0",
+    "help": "At most this many km more past the player for a far flash (LightningFarGlowKmPerKm)"
+   },
+   {
+    "key": "LightningStylesNear",
+    "value": "[\"Cloud=40\", \"Spider=20\", \"Bolt=25\", \"Multi=10\", \"Flicker=5\"]",
+    "help": "Lightning closer than most of LightningBoltMeters: style=weight. Cloud: a glow inside the clouds; Spider: an arc crawling across the sky under the clouds; Bolt: a cloud-to-ground bolt and its return strokes; Multi: a bolt with one or two forks; Flicker: a long flickering bolt"
+   },
+   {
+    "key": "LightningStylesFar",
+    "value": "[\"Cloud=60\", \"Spider=25\", \"Bolt=15\"]",
+    "help": "Lightning farther off: style=weight, same styles as LightningStylesNear"
+   },
+   {
+    "key": "ThunderSoundScale",
+    "value": "0.25",
+    "help": "The rolling thunder is played this share of the strike's distance away from the player (0.25 makes a strike 4 km away sound 1 km away; lightning inside the clouds 1.5 times farther)"
+   },
+   {
+    "key": "ThunderClapSoundScale",
+    "value": "0.12",
+    "help": "A close clap (family Clap) is played this share of the strike's distance away instead of ThunderSoundScale, so it sounds near and bright, as a strike that close does; the delay stays the strike's own"
+   },
+   {
+    "key": "ThunderAudibleMeters",
+    "value": "15000.0",
+    "help": "No thunder from a strike farther than this many metres"
+   },
+   {
+    "key": "ThunderDelayFactor",
+    "value": "0.1",
+    "help": "With ThunderSyncToFlash false: the thunder comes this share of the real delay after the flash (1 s per 343 m); 0: with the flash, 1: real"
+   },
+   {
+    "key": "ThunderDelayMaxSeconds",
+    "value": "1.2",
+    "help": "With ThunderSyncToFlash false: the thunder comes at most this many seconds after the flash"
+   },
+   {
+    "key": "ThunderCrackMeters",
+    "value": "300.0",
+    "help": "A bolt closer than this many metres adds the crack of the game's lightning strike to its thunder (farther, its explosion and tail doubled the clap like an echo); with ThunderSpeedOfSound it comes with the thunder, from where the thunder is"
+   },
+   {
+    "key": "ThunderSyncToFlash",
+    "value": "true",
+    "help": "true: every thunder (clap, roll, rumble, crack) starts with the first pulse of its flash (then ThunderSpeedOfSound, when true, delays it by the speed of sound), so the light can be judged against the start of the sound; every thunder of ours comes with its flash, whatever the episode and the style. false: the thunder comes behind its flash (ThunderDelayFactor, ThunderDelayMaxSeconds). '#weather thundersync on|off' changes it until the next start"
+   },
+   {
+    "key": "ThunderClapMeters",
+    "value": "2500.0",
+    "help": "A bolt (Bolt, Multi, Flicker) closer than this many metres draws its thunder from ThunderFamiliesClose. The thunder families sort the LaSonotheque.org recordings: Clap (close clap, sharp and bright), Roll (rolling peal), Far (far rumble, slow and low), Long (long sustained roll)"
+   },
+   {
+    "key": "ThunderFarMeters",
+    "value": "6000.0",
+    "help": "A strike farther than this many metres draws its thunder from ThunderFamiliesFar, a closer one from ThunderFamiliesMid"
+   },
+   {
+    "key": "ThunderDryRainMax",
+    "value": "0.05",
+    "help": "Under this rain (0 to 1) the storm is dry: a strike that is neither a close bolt nor an arc (Spider) draws its thunder from ThunderFamiliesDry"
+   },
+   {
+    "key": "ThunderFamiliesClose",
+    "value": "[\"Clap=4\", \"Roll=1\"]",
+    "help": "Thunder of a close bolt (ThunderClapMeters): family=weight, families Clap, Roll, Far, Long (and Rain, the game's own rumbles of RainThunderFamilies). A clap is never played twice in a row in its family; a family without a clap is skipped"
+   },
+   {
+    "key": "ThunderFamiliesMid",
+    "value": "[\"Roll=3\", \"Long=1\", \"Far=1\"]",
+    "help": "Thunder of a strike up to ThunderFarMeters, in the rain: family=weight"
+   },
+   {
+    "key": "ThunderFamiliesFar",
+    "value": "[\"Far=3\", \"Roll=2\", \"Long=2\"]",
+    "help": "Thunder of a strike farther than ThunderFarMeters, in the rain: family=weight"
+   },
+   {
+    "key": "ThunderFamiliesDry",
+    "value": "[\"Long=3\", \"Far=2\", \"Roll=1\"]",
+    "help": "Thunder of a strike in a dry storm (rain under ThunderDryRainMax), unless a close bolt or an arc: family=weight"
+   },
+   {
+    "key": "ThunderFamiliesSpider",
+    "value": "[\"Long=3\", \"Roll=1\"]",
+    "help": "Thunder of an arc crawling across the sky (Spider style), a long channel that rolls long: family=weight"
+   },
+   {
+    "key": "RainThunder",
+    "value": "true",
+    "help": "true: the thunders the game plays under heavy rain (its own rumbles, without any flash) are played by the director instead, at the game's rhythm, each with its flash, and the game's own are silenced on every machine; one for one, nothing added, whatever the episode (a storm's lightning goes on as it is). Also with Enabled false or after '#weather off'. false: the game plays them, without flash. '#weather rainthunder on|off' changes it until the next start"
+   },
+   {
+    "key": "RainThunderRainMin",
+    "value": "0.5",
+    "help": "Rain (0 to 1) past which the rain thunders roll; the game's: 0.5"
+   },
+   {
+    "key": "RainThunderSecondsMax",
+    "value": "90.0",
+    "help": "Seconds between two rain thunders just past RainThunderRainMin; the game's: 90"
+   },
+   {
+    "key": "RainThunderSecondsMin",
+    "value": "45.0",
+    "help": "Seconds between two rain thunders at full rain (1), from RainThunderSecondsMax in a straight line; the game's: 45"
+   },
+   {
+    "key": "RainThunderJitter",
+    "value": "0.0",
+    "help": "Each period between two rain thunders is varied by up to this share either way (0.25: 75 to 125 %), the mean kept; 0: none, as the game's signal (at most 0.9)"
+   },
+   {
+    "key": "RainThunderFarMeters",
+    "value": "6500.0",
+    "help": "Metres from every player of the flash of a rain thunder just past RainThunderRainMin (up to 15 % more or less, drawn); its rumble is played ThunderSoundScale of that away, so the farther the softer"
+   },
+   {
+    "key": "RainThunderNearMeters",
+    "value": "4000.0",
+    "help": "Metres of that flash at full rain, from RainThunderFarMeters in a straight line: the heavier the rain, the closer and louder its thunder, as the game's grows 3 dB louder"
+   },
+   {
+    "key": "RainThunderStyles",
+    "value": "[\"Cloud=60\", \"Spider=25\", \"Bolt=15\"]",
+    "help": "Style of the flash of a rain thunder, style=weight (styles of LightningStylesNear); a bolt farther than LightningBoltMeters shows only its flash"
+   },
+   {
+    "key": "RainThunderFamilies",
+    "value": "[\"Rain=1\"]",
+    "help": "Thunder of a rain thunder, family=weight: Rain is the game's own six rumbles (by reference), never twice the same in a row; the families of ThunderFamiliesClose can be added"
+   },
+   {
+    "key": "ThunderSpeedOfSound",
+    "value": "true",
+    "help": "true: every thunder of ours (claps, rain thunders, the crack of a close bolt) leaves its strike with the flash and reaches the player at the speed of sound, distance / ThunderSoundSpeed seconds after the flash; each player's strike is drawn that same distance from him, so the delay is the same for every player. It comes after ThunderSyncToFlash (each thunder starts on its attack). false: ThunderSyncToFlash alone. '#weather soundspeed on|off' changes it until the next start"
+   },
+   {
+    "key": "ThunderSoundSpeed",
+    "value": "343.0",
+    "help": "With ThunderSpeedOfSound: metres per second of the sound (343 in air at 20 degrees)"
+   },
+   {
+    "key": "RainRampCurve",
+    "value": "2.0",
+    "help": "The rain changes in its root of this power, so a rain that stops lingers on its last drops and fades out instead of stopping short (2: square root); 1: in a straight line"
+   },
+   {
+    "key": "HoldRainSky",
+    "value": "\"Rainy\"",
+    "help": "'#weather hold' with a rain over HoldRainSkyMin shows this map sky (Rainy, the full rain cover of the game; a map without it shows Overcast, else Heavy Cloud, and the log says so), unless the admin names one (sky=Overcast, '_' for a space); empty: the sky stays"
+   },
+   {
+    "key": "HoldRainSkyMin",
+    "value": "0.5",
+    "help": "Rain (0 to 1) of a hold from which it shows HoldRainSky"
+   },
+   {
+    "key": "HeavyRainFogHeight",
+    "value": "0.35",
+    "help": "Under a heavy rain (a storm, the Rain sky) the height density of the fog is at least this much, so the last clear patches of the sky are hidden: reached at HeavyRainFogRainMin plus 0.25 of rain, from nothing at HeavyRainFogRainMin; 0: never. Not while '#weather hold' holds a fog"
+   },
+   {
+    "key": "HeavyRainFogRainMin",
+    "value": "0.5",
+    "help": "Rain (0 to 1) from which HeavyRainFogHeight starts"
+   },
+   {
+    "key": "Sea",
+    "value": "true",
+    "help": "true: the sea follows the weather on every machine (the server's too, which floats the boats): the waves of the ocean simulation (oceanSimIsland.emat, Everon's) go from their calm values (SeaCalm*, the material's own) towards rough ones (SeaRough*, close to the game's oceanSimWindy2.emat) as the wind goes from SeaWindFrom to SeaWindTo or the rain from SeaRainFrom to SeaRainTo, whichever is rougher. Also with Enabled false (it reads the wind and rain the game has). false: the material's own sea"
+   },
+   {
+    "key": "SeaWindFrom",
+    "value": "6.0",
+    "help": "Wind (m/s) up to which the sea stays calm"
+   },
+   {
+    "key": "SeaWindTo",
+    "value": "14.0",
+    "help": "Wind (m/s) from which the sea is fully rough"
+   },
+   {
+    "key": "SeaRainFrom",
+    "value": "0.5",
+    "help": "Rain (0 to 1) up to which it adds nothing to the sea"
+   },
+   {
+    "key": "SeaRainTo",
+    "value": "0.9",
+    "help": "Rain (0 to 1) from which the sea is fully rough"
+   },
+   {
+    "key": "SeaCalmWindSpeed",
+    "value": "7.687",
+    "help": "OceanWindSpeed of the calm sea (oceanSimIsland.emat's own)"
+   },
+   {
+    "key": "SeaRoughWindSpeed",
+    "value": "10.178",
+    "help": "OceanWindSpeed of the rough sea (oceanSimWindy2.emat's)"
+   },
+   {
+    "key": "SeaCalmAmplitude",
+    "value": "0.397",
+    "help": "OceanAmplitude of the calm sea (oceanSimIsland.emat's own)"
+   },
+   {
+    "key": "SeaRoughAmplitude",
+    "value": "0.6",
+    "help": "OceanAmplitude of the rough sea (oceanSimWindy2.emat sets none, so the game's default applies there; set higher here, for higher waves)"
+   },
+   {
+    "key": "SeaCalmGauss",
+    "value": "0.414",
+    "help": "GaussParam of the calm sea (oceanSimIsland.emat's own)"
+   },
+   {
+    "key": "SeaRoughGauss",
+    "value": "0.669",
+    "help": "GaussParam of the rough sea (oceanSimWindy2.emat's)"
+   },
+   {
+    "key": "SeaCalmChoppy",
+    "value": "-0.092",
+    "help": "OceanChoppyParam of the calm sea (oceanSimIsland.emat's own)"
+   },
+   {
+    "key": "SeaRoughChoppy",
+    "value": "-0.092",
+    "help": "OceanChoppyParam of the rough sea (kept: oceanSimWindy2.emat's -0.017 would round the crests off)"
+   },
+   {
+    "key": "SeaCalmFoam",
+    "value": "0.36",
+    "help": "OceanFoamTreshold of the calm sea (oceanSimIsland.emat's own)"
+   },
+   {
+    "key": "SeaRoughFoam",
+    "value": "0.026",
+    "help": "OceanFoamTreshold of the rough sea (oceanSimWindy2.emat's: the lower, the more foam)"
+   },
+   {
+    "key": "AlwaysFullMoon",
+    "value": "true",
+    "help": "true: a full moon every night (the date moves back to the nearest full moon, by day; the sun hardly changes). A date set by a Game Master or a save is moved too, at once if its moon is far from full. false: the moon follows the calendar. Works while the director runs (Enabled true)"
+   },
+   {
+    "key": "FullMoonMin",
+    "value": "0.95",
+    "help": "With AlwaysFullMoon: the date moves once the moon of the night falls below this (1 = full; 0.95 keeps it round to the eye)"
+   },
+   {
+    "key": "GameMasterRampSeconds",
+    "value": "3.0",
+    "help": "Real seconds for an episode a Game Master picks in the Weather tab (INDFORGE weather buttons) to set in; it then lasts its own length. An ambiance (Ambiance row) arrives in the same time and fades out over its own RampMinutes"
+   },
+   {
+    "key": "GameMasterClearDay",
+    "value": "\"Clear\"",
+    "help": "Episode the Clear square of the Day row starts at once, in GameMasterRampSeconds (empty or unknown: no Clear square in that row). The Clear square of the Ambiance row removes the ambiance in the same time"
+   },
+   {
+    "key": "GameMasterClearNight",
+    "value": "\"StillNight\"",
+    "help": "Episode the Clear square of the Night row starts at once, in GameMasterRampSeconds (empty or unknown: no Clear square in that row)"
+   },
+   {
     "key": "FogAmountFull",
     "value": "0.03",
     "help": "Fog amount from which more amount no longer thickens the fog. Fog level (0-1) = amount share up to this x height density: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m (Everon, measured in game)"
@@ -2569,13 +3455,13 @@
    },
    {
     "key": "EpisodeNames",
-    "value": "[\"Clear\", \"Fair\", \"Cloudy\", \"Overcast\", \"Drizzle\", \"Rain\", \"Thunderstorm\", \"DawnMist\", \u2026",
+    "value": "[\"Clear\", \"StillNight\", \"NightMist\", \"LowStratus\", \"HotHaze\", \"Fair\", \"Breezy\", \"Cleari\u2026",
     "help": "Episodes, each described under Episodes with the same name"
    },
    {
     "key": "Episodes",
-    "value": "{\"Clear\": {\"StartWeight\": 2.0, \"MinMinutes\": 25.0, \"MaxMinutes\": 60.0, \"RampMinutes\": 1\u2026",
-    "help": "StartWeight: chance to be the first episode. Min/MaxMinutes: real minutes it lasts. RampMinutes: real minutes to reach its values from the previous ones (short only where real weather changes fast). VariationMinutes: its values drift inside their ranges this often. Fog/FogHeight (0-1; the height density makes the fog: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m; the amount only thickens it up to about 0.03), Rain (0-1), Wind (m/s): ranges drawn from. WindShiftMin/Max: degrees the wind turns as it starts. Severe: capped by MaxMinutes and SevereCooldownMinutes. DawnOnly: starts only around sunrise, ends BurnOffHours game hours after sunrise. Sky: the map weather states to show, first one the map has. Next: episodes that may follow, Name=weight"
+    "value": "{\"Clear\": {\"StartWeight\": 2.0, \"DayWeight\": 1.0, \"NightWeight\": 1.0, \"MinMinutes\": 25.0\u2026",
+    "help": "StartWeight: chance to be the first episode. DayWeight/NightWeight: its start and Next weights are multiplied by one of these, by day or after sunset (0: never then; 1: unchanged). Min/MaxMinutes: real minutes it lasts. RampMinutes: real minutes to reach its values from the previous ones (short only where real weather changes fast). VariationMinutes: its values drift inside their ranges this often. Fog/FogHeight (0-1; the height density makes the fog: 0.2 valley mist, 0.5 about 400 m of sight, 1 about 120 m; the amount only thickens it up to about 0.03), Rain (0-1), Wind (m/s): ranges drawn from. WindShiftMin/Max: degrees the wind turns as it starts. Severe: capped by MaxMinutes and SevereCooldownMinutes. DawnOnly: starts only around sunrise, ends BurnOffHours game hours after sunrise. LightningPerMinute: average strikes per minute (0: none), harmless, between LightningMinMeters and LightningMaxMeters from every player, coming closer until the middle of the episode. Sky: the map weather states to show, first one the map has (the server log lists them at start, and says when an episode shows a later one): Everon's own are Clear, Cloudy, Overcast and Rainy; the later names are kept for a map or a mod with others (AWM - Summer Version: Clear, Light Cloud, Medium Cloud, Heavy Cloud). Next: episodes that may follow, Name=weight. Icon: image of its Game Master weather button (a .edds of the game or a mod; empty: the icon of its map sky). Group: row of that button in the Weather tab, Day, Night or Ambiance (empty or anything else: Ambiance). A Day or Night button replaces the episode under way; an Ambiance button lays its episode over it (its sky, rain and lightning, the stronger fog and wind) for its own length, then it fades back over its RampMinutes. The director's own draws take every episode, whatever its Group"
    }
   ]
  },

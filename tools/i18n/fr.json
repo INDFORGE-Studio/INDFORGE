@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>En préparation, pas encore disponible :</b> mise à jour automatique des réglages au démarrage du serveur (nouvelles clés ajoutées, valeurs jamais changées passées aux nouveaux défauts, vos propres valeurs gardées, copie de sauvegarde de l'ancien fichier).",
   "cfg.aibudget": "Nouveau dans Conflict PvE 2.1.0. Lu à chaque début de session. Commande admin : <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "Nouveau dans Conflict PvE 2.1.0 : réglages du camion Radar/Brouilleur Bigfoot. Ses clés ne sont pas encore détaillées sur cette page. Le serveur crée ce fichier avec ses valeurs par défaut s'il manque, chaque clé avec sa ligne d'aide <code>_Nom</code>. Copie de référence : dossier <code>ServerProfile/</code> de l'addon.",
+  "cfg.radartruck": "Nouveau dans Conflict PvE 2.1.0 : réglages du camion Radar/Brouilleur Bigfoot.",
   "home.title": "QG",
   "home.stat_mods": "mods au registre",
   "home.stat_deps": "mods du Workshop crédités en dépendance",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Météo",
   "intel.weather_s": [
-    "Des épisodes crédibles qui s'enchaînent : dégagé, beau, nuageux, couvert, bruine, pluie, fronts orageux, brume de l'aube, bancs de brouillard — avec des transitions douces.",
+    "21 épisodes crédibles, de jour comme de nuit, qui s'enchaînent : dégagé, nuit calme, brume nocturne, stratus bas, brume de chaleur, beau, venteux, éclaircies, nuageux, couvert, brume de l'aube, brume, front gris, bruine, averses, pluie, orage sec, orage, orage nocturne, traîne d'orage, bancs de brouillard — avec des transitions douces.",
     "Les drones restent au sol dès 10 m/s de vent, une forte pluie ou un brouillard épais ; les largages et vagues d'hélicoptères dès 14 m/s ; les parachutistes dès 8 m/s.",
     "Le brouillard et la pluie raccourcissent la vue des observateurs de mortier. La thermique voit à travers un brouillard léger."
   ],

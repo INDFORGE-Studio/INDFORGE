@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>In preparazione, non ancora disponibile:</b> aggiornamento automatico delle impostazioni all'avvio del server (nuove chiavi aggiunte, valori mai cambiati portati ai nuovi predefiniti, i tuoi valori mantenuti, copia di sicurezza del vecchio file).",
   "cfg.aibudget": "Nuovo in Conflict PvE 2.1.0. Letto a ogni inizio di sessione. Comando admin: <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "Nuovo in Conflict PvE 2.1.0: impostazioni del camion Radar/Disturbatore Bigfoot. Le sue chiavi non sono ancora elencate in questa pagina. Il server crea questo file con i valori predefiniti se manca, ogni chiave con la sua riga di aiuto <code>_Name</code>. Copia di riferimento: cartella <code>ServerProfile/</code> dell'addon.",
+  "cfg.radartruck": "Nuovo in Conflict PvE 2.1.0: impostazioni del camion Radar/Disturbatore Bigfoot.",
   "home.title": "QG",
   "home.stat_mods": "mod a registro",
   "home.stat_deps": "mod del Workshop citate come dipendenze",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Meteo",
   "intel.weather_s": [
-    "Episodi credibili in sequenza: sereno, bel tempo, nuvoloso, coperto, pioggerella, pioggia, fronti temporaleschi, foschia dell'alba, banchi di nebbia — con transizioni fluide.",
+    "21 episodi credibili, di giorno e di notte, in sequenza: sereno, notte calma, foschia notturna, strati bassi, foschia di calore, bel tempo, ventoso, schiarita, nuvoloso, coperto, foschia dell'alba, foschia, fronte grigio, pioggerella, rovesci, pioggia, temporale secco, temporale, temporale notturno, coda del temporale, banchi di nebbia — con transizioni fluide.",
     "I droni restano a terra da 10 m/s di vento, con pioggia forte o nebbia fitta; lanci e ondate di elicotteri da 14 m/s; paracadutisti da 8 m/s.",
     "Nebbia e pioggia riducono ciò che gli osservatori dei mortai possono vedere. I mirini termici vedono attraverso la nebbia leggera."
   ],

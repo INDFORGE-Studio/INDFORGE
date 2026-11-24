@@ -117,7 +117,7 @@
   ],
   "cfgtip.next": "<b>In preparation, not available yet:</b> automatic update of the settings at server start (new keys added, values never changed moved to the new defaults, your own values kept, a backup copy of the old file).",
   "cfg.aibudget": "New in Conflict PvE 2.1.0. Read at each session start. Admin command: <code>#aibudget status | on | off</code>.",
-  "cfg.radartruck": "New in Conflict PvE 2.1.0: settings of the Radar/Jammer Bigfoot truck. Its keys are not listed on this page yet. The server creates this file with its defaults when it is missing, each key with its <code>_Name</code> help line. Reference copy: <code>ServerProfile/</code> folder of the addon.",
+  "cfg.radartruck": "New in Conflict PvE 2.1.0: settings of the Radar/Jammer Bigfoot truck.",
   "home.title": "HQ",
   "home.stat_mods": "mods on record",
   "home.stat_deps": "Workshop mods credited as dependencies",
@@ -304,7 +304,7 @@
   ],
   "intel.weather": "Weather",
   "intel.weather_s": [
-    "Credible episodes in sequence: clear, fair, cloudy, overcast, drizzle, rain, thunderstorm fronts, dawn mist, fog banks — with smooth transitions.",
+    "21 credible episodes, by day and by night, in sequence: clear, still night, night mist, low stratus, hot haze, fair, breezy, clearing, cloudy, overcast, dawn mist, mist, grey front, drizzle, showers, rain, dry thunder, thunderstorm, night storm, storm tail, fog banks — with smooth transitions.",
     "Drones are grounded from 10 m/s of wind, heavy rain or thick fog; helicopter drops and waves from 14 m/s; paratroopers from 8 m/s.",
     "Fog and rain shorten what mortar observers can see. Thermal sights see through light fog."
   ],
