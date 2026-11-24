@@ -406,21 +406,6 @@
     "<b>Camion Radar/Disturbatore</b>, camion droni FP-1 con telecamera in diretta, camion M923A1 e FMTV più potenti.",
     "<b>Visori notturni e mirini termici nemici</b>, FIA in Vz95, niente più rallentamento nei cespugli."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Camion più forti in salita:</b> motore potenziato per tutti gli M923A1 e tutti gli FMTV. Salgono meglio sui pendii ripidi, con la stessa velocità massima.",
-    "<b>Rallentamento nei cespugli:</b> una nuova impostazione del server permette di disattivarlo. È disattivato per impostazione predefinita, come prima dell'aggiornamento 1.7 del gioco.",
-    "<b>Game Master:</b> il tasto dell'editor ora apre direttamente il Game Master.",
-    "<b>Pianificatore di missione:</b> la telecamera del drone FP-1 è ora disponibile al suo interno.",
-    "<b>Correzione meteo:</b> un giocatore che entra durante un cambio di tempo non vede più un cielo azzurro sotto la pioggia.",
-    "<b>Direttore meteo:</b> pioggerella, pioggia, fronti temporaleschi, foschia dell'alba e banchi di nebbia con transizioni fluide. Il maltempo tiene a terra droni e aerei nemici.",
-    "<b>Equipaggiamento notturno:</b> alcuni soldati nemici portano visori notturni o mirini termici e vedono di conseguenza.",
-    "<b>Piani d'attacco:</b> attacco a L, martello e incudine, prima il mortaio, infiltrazione, finta, molestia e imboscata stradale, scelti in base a ciò che il QG sa.",
-    "<b>Imboscate stradali:</b> nove tipi, da mine e squadre AT a corridoi FPV e attacchi di mortaio preregistrati; posti di blocco persistenti sulle strade che usi di più.",
-    "<b>Attacchi aerei e raid di Geran:</b> bombe plananti guidate, missili da crociera su basi conquistate, passaggi di ricognizione dei Su-57, camion di lancio Geran che puoi dare la caccia.",
-    "<b>Squadre di droni:</b> il Mavic nemico non sgancia più granate; gira sopra il bersaglio, guida gli attacchi e una luce sotto di esso ne mostra lo stato.",
-    "<b>Avvisi radio:</b> brevi indizi radio quando un drone ti osserva, un gruppo ti sta venendo a cercare o un attacco è in arrivo.",
-    "<b>Soldati FIA e USSR regolari</b> in uniformi Czech Vz95."
-  ],
   "m.conflict-pve.admin": [
     "I nostri sistemi si configurano dai file <code>$profile:INDFORGE_*/config.json</code>: dottrina IA, QG nemico, mortai, cattura del generatore, dimensione dei cacciatori, vista dei droni, targhette nome, camion di pattuglia, pala, rapporto di sessione e altro. La console admin elenca ogni chiave con il suo testo di aiuto.",
     "I sistemi di terzi mantengono i propri file: <code>$profile:CET/CETConfig.json</code> (cacciatori), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (elicotteri), <code>$profile:EnhancedCompositions/Garrison.json</code> (guarnigioni, da attivare).",

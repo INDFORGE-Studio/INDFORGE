@@ -406,21 +406,6 @@
     "<b>Camión Radar/Inhibidor</b>, camión de drones FP-1 con cámara en directo, camiones M923A1 y FMTV más potentes.",
     "<b>Visión nocturna y miras térmicas enemigas</b>, FIA con Vz95, se acabó la ralentización en los arbustos."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Camiones más fuertes en pendiente:</b> motor reforzado para todos los M923A1 y todos los FMTV. Suben mejor las pendientes pronunciadas, con la misma velocidad máxima.",
-    "<b>Ralentización en los arbustos:</b> un nuevo ajuste del servidor permite desactivarla. Está desactivada por defecto, como antes de la actualización 1.7 del juego.",
-    "<b>Game Master:</b> la tecla del editor abre ahora directamente el Game Master.",
-    "<b>Planificador de misión:</b> la cámara del dron FP-1 ya está disponible en él.",
-    "<b>Corrección del clima:</b> un jugador que entra durante un cambio de tiempo ya no ve un cielo azul bajo la lluvia.",
-    "<b>Director del clima:</b> llovizna, lluvia, frentes de tormenta, bruma del amanecer y bancos de niebla con transiciones suaves. El mal tiempo mantiene en tierra drones y aeronaves enemigos.",
-    "<b>Equipo nocturno:</b> algunos soldados enemigos llevan gafas de visión nocturna o miras térmicas, y ven en consecuencia.",
-    "<b>Planes de ataque:</b> ataque en L, martillo y yunque, primero el mortero, infiltración, finta, hostigamiento y emboscada en carretera, elegidos según lo que sabe el cuartel general.",
-    "<b>Emboscadas en carretera:</b> nueve tipos, desde minas y equipos AT hasta pasillos FPV y ataques de mortero pre-registrados; bloqueos de carretera persistentes en las carreteras que más usas.",
-    "<b>Ataques aéreos e incursiones de Geran:</b> bombas planeadoras guiadas, misiles de crucero contra bases capturadas, pasadas de reconocimiento del Su-57, camiones lanzadores de Geran a los que puedes dar caza.",
-    "<b>Equipos de drones:</b> el Mavic enemigo ya no suelta granadas; da vueltas sobre su objetivo, guía ataques y una luz bajo él muestra su estado.",
-    "<b>Alertas por radio:</b> breves avisos por radio cuando un dron te vigila, un grupo va a por ti o se acerca un ataque.",
-    "Soldados de la <b>FIA y de la USSR regular</b> con uniformes Czech Vz95."
-  ],
   "m.conflict-pve.admin": [
     "Nuestros sistemas se configuran desde archivos <code>$profile:INDFORGE_*/config.json</code>: doctrina de la IA, cuartel general enemigo, morteros, captura de generador, tamaño de cazadores, visión de drones, etiquetas de nombre, camiones de patrulla, pala, informe de sesión y más. La consola de admin lista cada clave con su texto de ayuda.",
     "Los sistemas de terceros conservan sus propios archivos: <code>$profile:CET/CETConfig.json</code> (cazadores), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (helicópteros), <code>$profile:EnhancedCompositions/Garrison.json</code> (guarniciones, por activar).",

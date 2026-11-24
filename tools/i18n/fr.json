@@ -406,21 +406,6 @@
     "<b>Camion Radar/Brouilleur</b>, camion de drones FP-1 avec caméra en direct, camions M923A1 et FMTV plus puissants.",
     "<b>Vision nocturne et lunettes thermiques chez l'ennemi</b>, FIA en Vz95, plus de ralentissement dans les buissons."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Camions plus forts en côte :</b> moteur renforcé pour tous les M923A1 et tous les FMTV. Ils grimpent mieux les pentes raides, à la même vitesse de pointe.",
-    "<b>Ralentissement dans les buissons :</b> un nouveau réglage serveur permet de le couper. Il est coupé par défaut, comme avant la mise à jour 1.7 du jeu.",
-    "<b>Game Master :</b> la touche de l'éditeur ouvre directement le Game Master.",
-    "<b>Planificateur de mission :</b> la caméra du drone FP-1 y est disponible.",
-    "<b>Correction météo :</b> un joueur arrivé pendant un changement de temps ne voit plus un ciel bleu sous la pluie.",
-    "<b>Directeur météo :</b> bruine, pluie, fronts orageux, brume de l'aube et bancs de brouillard, avec des transitions douces. Le mauvais temps cloue au sol les drones et les aéronefs ennemis.",
-    "<b>Équipement de nuit :</b> certains soldats ennemis portent des jumelles de vision nocturne ou des lunettes thermiques, et voient en conséquence.",
-    "<b>Plans d'attaque :</b> attaque en L, marteau et enclume, mortier d'abord, infiltration, feinte, harcèlement et embuscade routière, choisis selon ce que sait l'état-major.",
-    "<b>Embuscades routières :</b> neuf genres, des mines et des équipes antichar aux couloirs FPV et aux frappes de mortier préréglées ; des barrages persistants sur les routes que vous empruntez le plus.",
-    "<b>Frappes aériennes et raids de Geran :</b> bombes planantes guidées, missiles de croisière sur les bases prises, passages de reconnaissance de Su-57, camions lanceurs de Geran à traquer.",
-    "<b>Équipes de drones :</b> le Mavic ennemi ne lâche plus de grenades ; il tourne au-dessus de sa cible, guide les frappes, et une lumière sous lui montre son état.",
-    "<b>Alertes radio :</b> de courts messages radio quand un drone vous observe, qu'un groupe arrive ou qu'une frappe est en route.",
-    "<b>FIA et réguliers USSR</b> en tenue tchèque Vz95."
-  ],
   "m.conflict-pve.admin": [
     "Nos systèmes se règlent dans des fichiers <code>$profile:INDFORGE_*/config.json</code> : doctrine de l'IA, état-major ennemi, mortiers, capture par générateur, taille des chasseurs, vue des drones, noms au-dessus des alliés, camions de patrouille, pelle, rapport de session, et d'autres. La console admin donne chaque clé avec son texte d'aide.",
     "Les systèmes tiers gardent leurs propres fichiers : <code>$profile:CET/CETConfig.json</code> (chasseurs), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (hélicoptères), <code>$profile:EnhancedCompositions/Garrison.json</code> (garnisons, à activer).",

@@ -406,21 +406,6 @@
     "<b>Radar/Jammer truck</b>, FP-1 drone truck with live camera, stronger M923A1 and FMTV trucks.",
     "<b>Enemy night vision and thermal scopes</b>, FIA in Vz95, no more slowdown in bushes."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Stronger trucks on slopes:</b> uprated engine for every M923A1 and every FMTV. They climb steep slopes better, with the same top speed.",
-    "<b>Slowdown in bushes:</b> a new server setting turns it off. It is off by default, as before game update 1.7.",
-    "<b>Game Master:</b> the editor key now opens the Game Master directly.",
-    "<b>Mission planner:</b> the FP-1 drone camera is now available in it.",
-    "<b>Weather fix:</b> a player who joins during a weather change no longer sees a blue sky in the rain.",
-    "<b>Weather director:</b> drizzle, rain, thunderstorm fronts, dawn mist and fog banks with smooth transitions. Bad weather grounds enemy drones and aircraft.",
-    "<b>Night gear:</b> some enemy soldiers carry night-vision goggles or thermal scopes, and see accordingly.",
-    "<b>Attack plans:</b> L-shaped attack, hammer and anvil, mortar first, infiltration, feint, harassment and road ambush, chosen from what the HQ knows.",
-    "<b>Road ambushes:</b> nine kinds, from mines and AT teams to FPV corridors and pre-registered mortar strikes; persistent roadblocks on the roads you use most.",
-    "<b>Air strikes and Geran raids:</b> guided glide bombs, cruise missiles on captured bases, Su-57 reconnaissance passes, Geran launch trucks you can hunt down.",
-    "<b>Drone teams:</b> the enemy Mavic no longer drops grenades; it circles above its target, guides strikes, and a light under it shows its state.",
-    "<b>Radio alerts:</b> short radio hints when a drone watches you, a group comes for you, or a strike is on its way.",
-    "<b>FIA and regular USSR</b> soldiers in Czech Vz95 uniforms."
-  ],
   "m.conflict-pve.admin": [
     "Our systems are set from <code>$profile:INDFORGE_*/config.json</code> files: AI doctrine, enemy HQ, mortars, generator capture, hunter size, drone sight, name tags, patrol trucks, shovel, session report, and more. The admin console lists every key with its help text.",
     "Third-party systems keep their own files: <code>$profile:CET/CETConfig.json</code> (hunters), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (helicopters), <code>$profile:EnhancedCompositions/Garrison.json</code> (garrisons, to switch on).",

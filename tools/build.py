@@ -97,14 +97,19 @@ COMMANDS = [
     ("#aidoctrine mod <name> <factor> [seconds]\n#aidoctrine mod <name> off", "cmd.aidoctrine_mod", "in"),
     ("#enemyhq status", "cmd.enemyhq", "in"),
     ("#enemyhq here [drone] [vehicle]", "cmd.enemyhq_here", "in"),
-    ("#enemyhq roadblocks [reset]", "cmd.enemyhq_rb", "inc"),
-    ("#enemyhq strike glide | missile | flyby | geran2 | geran4", "cmd.enemyhq_strike", "inc"),
-    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | off | on", "cmd.weather", "inc"),
-    ("#nightgear status", "cmd.nightgear", "inc"),
+    ("#enemyhq roadblocks [reset]", "cmd.enemyhq_rb", "in"),
+    ("#enemyhq strike glide | missile | flyby | geran2 | geran4", "cmd.enemyhq_strike", "in"),
+    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | off | on", "cmd.weather", "in"),
+    ("#nightgear status", "cmd.nightgear", "in"),
 ]
 
-# Profile folders of features merged after the current Conflict PvE Workshop release.
-CFG_INCOMING = {"INDFORGE_Weather", "INDFORGE_NightGear", "INDFORGE_DroneTeam", "INDFORGE_MavicLight", "INDFORGE_RadioAlerts", "INDFORGE_Movement"}
+# Profile folders of features merged after the current Conflict PvE Workshop release (shown as Incoming).
+# Emptied when Conflict PvE 2.1.0 shipped them all (Weather, NightGear, DroneTeam, MavicLight, RadioAlerts, Movement).
+CFG_INCOMING = set()
+
+# News sections about features merged after the current Conflict PvE Workshop release (shown as Incoming).
+# Emptied when Conflict PvE 2.1.0 shipped them all (light, plans, ambush, air, weather, night, radio).
+NEWS_INCOMING = set()
 
 # Doctrine levels, read from $profile:INDFORGE_AIDoctrine/config.json (Levels block).
 DOCTRINE = [
@@ -127,9 +132,9 @@ TIPS = [
         ("cp-hq", "p", "in", "news/#hq"), ("cp-mortar", "p", "in", "news/#fires"), ("cp-spread", "p", "in", None),
         ("cp-doct", "p", "in", "news/#doctrine"), ("cp-mark", "p", "in", None), ("cp-shovel", "p", "in", None),
         ("cp-rank", "p", "in", None), ("cp-cram", "p", "in", None),
-        ("cp-mavic", "p", "inc", "news/#light"), ("cp-wx", "p", "inc", "news/#weather"),
-        ("cp-ambush", "p", "inc", "news/#ambush"), ("cp-air", "p", "inc", "news/#air"),
-        ("cp-radio", "p", "inc", "news/#radio"), ("cp-vol", "p", "inc", None), ("cp-night", "p", "inc", "news/#night"),
+        ("cp-mavic", "p", "in", "news/#light"), ("cp-wx", "p", "in", "news/#weather"),
+        ("cp-ambush", "p", "in", "news/#ambush"), ("cp-air", "p", "in", "news/#air"),
+        ("cp-radio", "p", "in", "news/#radio"), ("cp-vol", "p", "in", None), ("cp-night", "p", "in", "news/#night"),
         ("cp-cmd", "a", "in", "admins/#cmds"), ("cp-cfg", "a", "in", "admins/#cfg"), ("cp-logs", "a", "in", "admins/#logs"),
     ]),
     ("forest", [
@@ -1208,8 +1213,8 @@ def admins():
 
 
 def intel():
-    def isec(id_, key, body, code, inc=False):
-        note = (" " + badge_inc()) if inc else ""
+    def isec(id_, key, body, code):
+        note = (" " + badge_inc()) if id_ in NEWS_INCOMING else ""
         return """<section class="dsec" id="%s" aria-labelledby="h-%s">
   <h2 id="h-%s"><span class="sec-code" aria-hidden="true">%s</span>%s%s</h2>
   %s
@@ -1246,7 +1251,7 @@ def intel():
         "".join('<a class="news-chip" href="%s">%s%s</a>' % (url("workshop/%s/" % sl), H(name(MODS[sl])), icon("arrow")) for sl in ("conflict-pve", "forest")),
         H(MODS["conflict-pve"]["updated"]), t("intel.h1"), t("intel.lead", "p", "lead"),
         t("intel.ref"), redact(4), redact(14), t("ui.classified"), t("ui.declassified"),
-        t("intel.state_note", "p", "note"),
+        t("intel.state_note", "p", "note") if NEWS_INCOMING else "",
         isec("summary", "intel.summary", t("intel.summary_p", "p", "lead2"), "00"),
         isec("hq", "intel.hq", '<ul class="feat">%s</ul>' % tl("intel.hq_s"), "01"),
         isec("doctrine", "intel.doctrine", t("intel.doctrine_p", "p") + """<div class="tbl"><table class="table">
@@ -1256,13 +1261,13 @@ def intel():
         isec("drones", "intel.drones", t("intel.drones_p", "p") + """<div class="tbl"><table class="table drones">
 <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col"><span class="sr">%%</span></th></tr></thead>
 <tbody>%s</tbody></table></div><ul class="feat">%s</ul>""" % (t("intel.drone_col_pos"), t("intel.drone_col_rng"), drone, tl("intel.drones_s")), "04"),
-        isec("light", "intel.light", t("intel.light_p", "p") + '<ul class="leds">%s</ul>' % lights, "05", True),
-        isec("plans", "intel.plans", t("intel.plans_p", "p") + '<ol class="steps">%s</ol>' % tl("intel.plan") + t("intel.plans_esc", "p", "note"), "06", True),
-        isec("ambush", "intel.ambush", '<ul class="feat">%s</ul>' % tl("intel.ambush_s"), "07", True),
-        isec("air", "intel.air", '<ul class="feat">%s</ul>' % tl("intel.air_s"), "08", True),
-        isec("weather", "intel.weather", '<ul class="feat">%s</ul>' % tl("intel.weather_s"), "09", True),
-        isec("night", "intel.night", '<ul class="feat">%s</ul>' % tl("intel.night_s"), "10", True),
-        isec("radio", "intel.radio", t("intel.radio_p", "p"), "11", True),
+        isec("light", "intel.light", t("intel.light_p", "p") + '<ul class="leds">%s</ul>' % lights, "05"),
+        isec("plans", "intel.plans", t("intel.plans_p", "p") + '<ol class="steps">%s</ol>' % tl("intel.plan") + t("intel.plans_esc", "p", "note"), "06"),
+        isec("ambush", "intel.ambush", '<ul class="feat">%s</ul>' % tl("intel.ambush_s"), "07"),
+        isec("air", "intel.air", '<ul class="feat">%s</ul>' % tl("intel.air_s"), "08"),
+        isec("weather", "intel.weather", '<ul class="feat">%s</ul>' % tl("intel.weather_s"), "09"),
+        isec("night", "intel.night", '<ul class="feat">%s</ul>' % tl("intel.night_s"), "10"),
+        isec("radio", "intel.radio", t("intel.radio_p", "p"), "11"),
         isec("base", "intel.base", '<ul class="feat">%s</ul>' % tl("intel.base_s"), "12")
         + isec("guide", "intel.guide", '<ol class="steps guide">%s</ol>' % tl("intel.guide_s"), "13"))
     page("news/", "intel.title", body, "intel", cls="p-intel")
@@ -1305,7 +1310,8 @@ def status():
 %s
 %s
 </div>""" % (sec("pipeline", "statusp.pipeline", t("statusp.pipeline_p", "p", "", {"v": CPVE_VER}) +
-                 '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "01", "sec-inc"),
+                 '<ul class="feat feat-inc">%s</ul><p><a href="%sworkshop/conflict-pve/#incoming">INDFORGE - Conflict PvE</a></p>' % (tl("m.conflict-pve.inc"), BASE), "01", "sec-inc")
+             if "m.conflict-pve.inc" in SRC["en"] else "",
              wip_block("wip", "01B"),
              sec("board", "statusp.board", t("statusp.game_now", "p", "dim", {"v": LATEST_GAME}) + """<div class="tbl"><table class="table board">
 <thead><tr><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th><th scope="col">%s</th></tr></thead>

@@ -406,21 +406,6 @@
     "<b>Ciężarówka Radar/Zagłuszarka</b>, ciężarówka z dronami FP-1 z kamerą na żywo, mocniejsze ciężarówki M923A1 i FMTV.",
     "<b>Noktowizja i celowniki termowizyjne u wroga</b>, FIA w Vz95, koniec spowolnienia w krzakach."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Mocniejsze ciężarówki na podjazdach:</b> wzmocniony silnik we wszystkich M923A1 i wszystkich FMTV. Lepiej pokonują strome zbocza, przy tej samej prędkości maksymalnej.",
-    "<b>Spowolnienie w krzakach:</b> nowe ustawienie serwera pozwala je wyłączyć. Domyślnie jest wyłączone, jak przed aktualizacją gry 1.7.",
-    "<b>Game Master:</b> klawisz edytora otwiera teraz bezpośrednio Game Mastera.",
-    "<b>Planer misji:</b> kamera drona FP-1 jest w nim teraz dostępna.",
-    "<b>Poprawka pogody:</b> gracz, który dołączy podczas zmiany pogody, nie widzi już błękitnego nieba w deszczu.",
-    "<b>Dyrektor pogody:</b> mżawka, deszcz, fronty burzowe, poranna mgła i pasma mgły z płynnymi przejściami. Zła pogoda uziemia drony i statki powietrzne wroga.",
-    "<b>Sprzęt nocny:</b> niektórzy żołnierze wroga noszą gogle noktowizyjne lub celowniki termowizyjne i widzą odpowiednio do tego.",
-    "<b>Plany ataku:</b> atak w kształcie L, młot i kowadło, najpierw moździerz, infiltracja, pozorowanie, nękanie i zasadzka drogowa, wybierane na podstawie wiedzy dowództwa.",
-    "<b>Zasadzki drogowe:</b> dziewięć rodzajów, od min i zespołów AT po korytarze FPV i wcześniej zarejestrowane uderzenia moździerzy; trwałe blokady drogowe na drogach, z których korzystasz najczęściej.",
-    "<b>Naloty i ataki Geranów:</b> naprowadzane bomby szybujące, pociski manewrujące na zdobyte bazy, przeloty rozpoznawcze Su-57, ciężarówki startowe Geranów, na które można zapolować.",
-    "<b>Zespoły dronów:</b> Mavic wroga nie zrzuca już granatów; krąży nad celem, naprowadza uderzenia, a światło pod nim pokazuje jego stan.",
-    "<b>Alerty radiowe:</b> krótkie wskazówki radiowe, gdy dron cię obserwuje, grupa po ciebie idzie albo uderzenie jest w drodze.",
-    "Żołnierze <b>FIA i regularnej USSR</b> w mundurach Czech Vz95."
-  ],
   "m.conflict-pve.admin": [
     "Nasze systemy ustawia się w plikach <code>$profile:INDFORGE_*/config.json</code>: doktryna AI, dowództwo wroga, moździerze, przejęcie generatora, wielkość łowców, widoczność dronów, znaczniki nazw, ciężarówki patrolowe, łopata, raport sesji i więcej. Konsola admina wymienia każdy klucz z tekstem pomocy.",
     "Systemy innych autorów mają własne pliki: <code>$profile:CET/CETConfig.json</code> (łowcy), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (śmigłowce), <code>$profile:EnhancedCompositions/Garrison.json</code> (garnizony, do włączenia).",

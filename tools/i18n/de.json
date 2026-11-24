@@ -406,21 +406,6 @@
     "<b>Radar/Störsender-Lkw</b>, FP-1-Drohnen-Lkw mit Live-Kamera, stärkere M923A1- und FMTV-Lkw.",
     "<b>Feindliche Nachtsicht und Wärmebildzielfernrohre</b>, FIA in Vz95, keine Verlangsamung mehr im Gebüsch."
   ],
-  "m.conflict-pve.inc": [
-    "<b>Stärkere Lkw am Hang:</b> verstärkter Motor für alle M923A1 und alle FMTV. Sie kommen steile Hänge besser hinauf, bei gleicher Höchstgeschwindigkeit.",
-    "<b>Verlangsamung im Gebüsch:</b> eine neue Servereinstellung schaltet sie ab. Standardmäßig ist sie aus, wie vor dem Spielupdate 1.7.",
-    "<b>Game Master:</b> die Editor-Taste öffnet jetzt direkt den Game Master.",
-    "<b>Missionsplaner:</b> die Kamera der FP-1-Drohne ist dort jetzt verfügbar.",
-    "<b>Wetter-Korrektur:</b> wer während eines Wetterwechsels beitritt, sieht im Regen keinen blauen Himmel mehr.",
-    "<b>Wetter-Regie:</b> Nieselregen, Regen, Gewitterfronten, Morgendunst und Nebelbänke mit weichen Übergängen. Schlechtes Wetter hält feindliche Drohnen und Flugzeuge am Boden.",
-    "<b>Nachtausrüstung:</b> Manche feindlichen Soldaten tragen Nachtsichtgeräte oder Wärmebildzielfernrohre und sehen entsprechend.",
-    "<b>Angriffspläne:</b> L-förmiger Angriff, Hammer und Amboss, Mörser zuerst, Infiltration, Finte, Zermürbung und Hinterhalt an der Straße, gewählt nach dem Wissen des HQ.",
-    "<b>Hinterhalte an der Straße:</b> neun Arten, von Minen und Panzerabwehrteams bis zu FPV-Korridoren und voreingeschossenen Mörserschlägen; dauerhafte Straßensperren auf den Straßen, die du am meisten nutzt.",
-    "<b>Luftschläge und Geran-Angriffe:</b> gelenkte Gleitbomben, Marschflugkörper auf eroberte Basen, Su-57-Aufklärungsüberflüge, Geran-Starttrucks, die du jagen kannst.",
-    "<b>Drohnenteams:</b> Die feindliche Mavic wirft keine Granaten mehr ab; sie kreist über ihrem Ziel, lenkt Schläge, und ein Licht darunter zeigt ihren Zustand.",
-    "<b>Funkwarnungen:</b> kurze Funkhinweise, wenn eine Drohne dich beobachtet, eine Gruppe auf dich zukommt oder ein Schlag unterwegs ist.",
-    "<b>FIA und reguläre USSR</b>-Soldaten in tschechischen Vz95-Uniformen."
-  ],
   "m.conflict-pve.admin": [
     "Unsere Systeme werden über Dateien <code>$profile:INDFORGE_*/config.json</code> eingestellt: KI-Doktrin, feindliches HQ, Mörser, Generator-Eroberung, Jägerstärke, Drohnensicht, Namensschilder, Patrouillentrucks, Spaten, Sitzungsbericht und mehr. Die Admin-Konsole listet jeden Schlüssel mit seinem Hilfetext.",
     "Systeme von Drittanbietern behalten ihre eigenen Dateien: <code>$profile:CET/CETConfig.json</code> (Jäger), <code>$profile:MBS_AutoHeliSpawner/config.json</code> (Hubschrauber), <code>$profile:EnhancedCompositions/Garrison.json</code> (Garnisonen, zum Einschalten).",
