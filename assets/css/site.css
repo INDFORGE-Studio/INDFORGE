@@ -572,6 +572,16 @@ details[open] > summary::before { transform: rotate(90deg); }
 .vlist li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--panel); border: 1px solid var(--line); }
 .quote-log { margin: 0; padding: 16px 18px; background: var(--deep); border: 1px solid var(--line); border-left: 2px solid var(--green); }
 .log-txt { white-space: pre-line; font-size: .93rem; color: var(--txt2); max-height: 520px; overflow: auto; overflow-wrap: anywhere; }
+/* Full build changelog: shown whole (permanent anchor), sections as headings */
+.log-full { white-space: normal; max-height: none; overflow: visible; }
+.log-full h3 { margin: 18px 0 6px; font: 600 12px var(--f-mono); letter-spacing: .12em; text-transform: none; color: var(--amber); }
+.mmain .sec > h3 { margin: 28px 0 10px; }
+.log-full ul { margin: 0; padding-left: 18px; }
+.log-full li { margin: 5px 0; }
+.log-full li::marker { color: var(--green); }
+.log-full p { margin: 6px 0; }
+.sec-build > h2 { border-bottom-color: rgba(var(--green-rgb), .4); }
+.credit-req { color: var(--txt); font-weight: 600; }
 .pn { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 56px; }
 .pn-a { display: flex; align-items: center; gap: 14px; padding: 16px 18px; text-decoration: none; color: var(--txt); background: var(--panel); border: 1px solid var(--line); min-width: 0; transition: border-color .15s; }
 .pn-a:hover { border-color: var(--amber); color: var(--amber); }

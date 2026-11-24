@@ -1,0 +1,164 @@
+INDFORGE - Conflict PvE - Update
+
+SERVER PERFORMANCE (top priority)
+- Fixed the server freezes that made vehicles stutter and drift when many AI were around. ConflictPVERemixed patrols, base garrisons and counter-attacks now spawn at 600 m instead of about 750, never within 300 m of a player, spread out in time, and within a budget of AI soldiers around each player (80 for a lone player, more for a group of players). Far counter-attacks are put to sleep when the whole map is full and wake up when you come close: an enemy recapture is delayed, never blocked.
+
+ENEMY HQ
+- Attack plans: the enemy HQ now picks a plan like a commander, from what it knows (on foot or in a vehicle, moving or not, night, fog, rain, drones, mortars, recent losses): L-shaped attack, hammer and anvil, mortar first, infiltration, feint, harassment from high ground, or a direct assault. Waiting groups always take cover.
+- Recon-strike: when an enemy observer or recon drone keeps you in sight, the enemy mortars fire on you, and the group waits out of the danger zone before the assault.
+- Road ambushes against moving player vehicles: kill zones on the road ahead, mines laid by script, by a sapper or by a drone, a wreck as bait, FPV corridor, close night ambush, long-range hunter on a ridge, pre-registered mortar strike at a junction.
+- Persistent roadblocks on asphalt roads, which move toward the roads players use the most.
+- Air strikes: guided glide bomb (FAB-500) spotted by a Mavic, cruise missile on a base you capture (siren before impact), Su-57 recon flybys, sometimes chased by a pair of F-22 (warning bursts, no projectiles).
+- Su-57 and F-22 flybys: new jet engine sound, the jets now climb over hills and mountains instead of flying through them, and the F-22 burst is heard together with its tracers.
+- Geran raids: Ural launcher trucks drive to a firing site and launch Geran-2 or Geran-4 drones at a base. The truck can be hunted.
+- Enemy direction finding: radars and jammers that emit too long get located, then struck (mortar, glide bomb, Geran, sapper raid or FPV).
+
+RADIO ALERTS
+- With an AN/PRC-152 radio, your HQ warns you by radio (voice and on-screen message): enemy drone overhead, interception group inbound, mortar, Geran, cruise missile, jet, ambush, radar contacts, direction finding. A captured Russian radio lets you hear bits of enemy traffic.
+
+WEATHER
+- New weather director, Ukrainian front style: 21 episodes by day and by night (clear, still night, mist, low stratus, drizzle, showers, rain, grey front, dry thunder, thunderstorm, night storm, fog banks...), smooth transitions of fog, rain and wind.
+- Lightning and thunder: harmless lightning of several styles, thunder that arrives with the speed of sound (sharp crack close by, rolling thunder far away), thunder with the rain.
+- Full moon every night.
+- A player who joins during a sky change no longer keeps a frozen sky (blue sky under the rain).
+- Game Master: Weather tab with one button per episode (Day, Night and Ambiance rows), an instant "Clear" square per row; an Ambiance episode is laid over the Day or Night one.
+- The enemy adapts: drones grounded in strong wind, heavy rain or fog; paradrops and helicopter waves held back; mortar observers see less.
+
+VEHICLES
+- Radar/Jammer Bigfoot truck (large garage): deploy a radar that marks moving enemies on the map, or a jammer that cuts enemy drones. It runs on a diesel generator.
+- FP-1 drone launcher truck: live nose camera in the mission planner, radar cable to the radar truck (live targets on the planner), repair with a wrench, drone placards on the doors, Game Master full heal repairs the drone.
+- M923A1 trucks: stronger engine, gearbox and locking differentials on every US variant (about 70-76 km/h, better off road).
+- FMTV trucks (all M1083 variants): stronger engine and shorter low gears for off road, same top speed.
+
+AI / ARSENAL
+- Night gear: some enemy soldiers get night vision or thermal scopes, which changes how far they see at night and in fog.
+- Enemy Mavic light: green on patrol, red when it follows you, fast red blink when it guides a bomb, orange blink when it searches.
+- FIA and USSR regulars wear the Czech Vz95 uniform with SOBR gear (Thomoskis Modernised FIA removed).
+
+GAME MASTER
+- The editor key always opens the Game Master, never the building or photo mode left from before.
+
+MISC
+- AWM - Summer Version removed from the dependencies: our weather director replaces it (its skies turned overcast and rain into medium clouds).
+- No more slowdown in bushes and small trees, as before game version 1.7 (server setting).
+- WCS_Arsenal now loads after the WCS clothing mods it requires.
+- Server autosave every 30 minutes (reference config).
+
+SERVER ADMINS
+Every INDFORGE file below lives in the server profile ($profile:), is created with its defaults when missing and is never overwritten. Each key has a "_Key" help line in the file. Reference copies: ServerProfile/ folder of the addon.
+- INDFORGE_Weather/config.json (NEW): weather episodes, lightning, Game Master buttons and enemy weather limits. If you already have one, replace it with the reference copy (or delete it: the server writes it again with the defaults), otherwise the new episodes are never drawn. Admin command: #weather status | next | hold | resume | cycle | ambiance | off | on.
+- INDFORGE_AIBudget/config.json (NEW, read at each session start): Enabled true, PatrolSpawnDistance 600, PatrolDespawnDistance 800, MinPlayerDistance 300, BudgetRadius 1000, BudgetPerPlayer 80, BudgetExtraPerPlayer 20, BudgetMax 200, NearDistance 400, FarShare 0.7, GroupSpawnGapSeconds 1.5, CensusSeconds 2, ReportSeconds 60, MapBudgetPerPlayer 120, MapBudgetExtraPerPlayer 15, MapBudgetMax 250, SleepDistance 1500, WakeDistance 1200, SleepMinSeconds 120, SleepMaxSeconds 900. Admin command: #aibudget status | on | off.
+- INDFORGE_Movement/config.json (NEW, read once at server start): BushSlowdown false (true = game slowdown in bushes since 1.7).
+- INDFORGE_RadioAlerts, INDFORGE_NightGear, INDFORGE_MavicLight, INDFORGE_RadarTruck (NEW); INDFORGE_EnemyHQ, INDFORGE_FireSupport, INDFORGE_DroneTeam, INDFORGE_AIDoctrine (new keys). To get the new keys in an existing file, delete it: the server writes it again with the defaults.
+- Server mod list: remove AWM - Summer Version (68F352219EA04EC6).
+- Recommended in the server config: game.gameProperties.persistence.autoSaveInterval 30 (minutes).
+
+CREDITS
+- Additional sounds: Joseph SARDIN - LaSonotheque.org
+
+=== SERVER MOD LIST (101 mods, in load order) ===
+"mods": [
+    {"modId": "69BD142259FCF144", "name": "INDFORGE - Conflict PvE"},
+    {"modId": "65AD7D0D9941A380", "name": "ACE Core Dev"},
+    {"modId": "65AD7C139EB4C1A1", "name": "ACE Backblast Dev"},
+    {"modId": "65AD7C249E4ECDFB", "name": "ACE Captives Dev"},
+    {"modId": "65AD7C379CBD394D", "name": "ACE Carrying Dev"},
+    {"modId": "65AD7CF69FAF1FDD", "name": "ACE Compass Dev"},
+    {"modId": "664AFDC993C9CE1A", "name": "ACE Cook-Off Dev"},
+    {"modId": "68EAA4B96976D557", "name": "ACE Facepaint Dev"},
+    {"modId": "65AD7D2E9866FA6E", "name": "ACE Finger Dev"},
+    {"modId": "6586079789278413", "name": "ACE Medical Core Dev"},
+    {"modId": "65B343F799FB521B", "name": "ACE Medical Hitzones Dev"},
+    {"modId": "65AD7C75826B46C6", "name": "ACE Radio Dev"},
+    {"modId": "65AD7CD09CAEC4E2", "name": "ACE Tactical Periscope Dev"},
+    {"modId": "667B230F9505C8BA", "name": "ACE Weather Dev"},
+    {"modId": "695D1C20908DA231", "name": "SHS Backpacks"},
+    {"modId": "6A034CF803186A96", "name": "AI Airborne"},
+    {"modId": "65AD60E204191D37", "name": "Realistic Combat Drones"},
+    {"modId": "690D33EDCB46C4B9", "name": "AI Use Drones"},
+    {"modId": "61B514B96692C049", "name": "ConflictPVERemixedVanilla2.0"},
+    {"modId": "69B856EFDEA992EB", "name": "ConstantEnemyThreat 1.7"},
+    {"modId": "660C6D2259B60EE8", "name": "Enhanced Compositions"},
+    {"modId": "686AC479236F235D", "name": "M777 Howitzer Artillery"},
+    {"modId": "631EE12D448D7FCC", "name": "DarcCore"},
+    {"modId": "689EDED542F881AF", "name": "DarcChopper"},
+    {"modId": "6976D02296D2CA42", "name": "MBS Auto Spawn AI helicopters"},
+    {"modId": "6A388D460E34F5BF", "name": "NBS C-RAM"},
+    {"modId": "631C3C1AEE9C90BC", "name": "WCS_Sounds"},
+    {"modId": "1337C0DE5DABBEEF", "name": "RHS - Content Pack 01"},
+    {"modId": "BADC0DEDABBEDA5E", "name": "RHS - Content Pack 02"},
+    {"modId": "595F2BF2F44836FB", "name": "RHS - Status Quo"},
+    {"modId": "6AAE2A3269AD5C39", "name": "WCS_RHS_Sounds"},
+    {"modId": "64610AFB74AA9842", "name": "WCS_Core"},
+    {"modId": "615806DC6C57AF02", "name": "WCS_NATO"},
+    {"modId": "68F006D910E7546F", "name": "WCS_Weapon_Scripts"},
+    {"modId": "615818DA7C0343FD", "name": "WCS_RU"},
+    {"modId": "62A668F513428630", "name": "WCS_Scopes"},
+    {"modId": "61C74A8B647617DA", "name": "WCS_Attachments"},
+    {"modId": "6A717EEA63A35E67", "name": "WCS_RHS_Attachments"},
+    {"modId": "3B8081D9CAD979D2", "name": "WCS_RHS_Scopes"},
+    {"modId": "6602C1EC7E5A4A87", "name": "WCS_Clothing_Assets"},
+    {"modId": "61E42AE6714A3CC2", "name": "WCS_Armbands"},
+    {"modId": "65CF7AE8574E06D2", "name": "WCS_Weapons"},
+    {"modId": "65F929DF622BAD50", "name": "WCS_RHS_Weapons"},
+    {"modId": "629B2BA37EFFD577", "name": "WCS_Armaments"},
+    {"modId": "6152CB0BD0684837", "name": "WCS_Clothing"},
+    {"modId": "6AAEEB19367529A1", "name": "WCS_RHS_Clothing"},
+    {"modId": "615CC2D870A39838", "name": "WCS_Arsenal"},
+    {"modId": "65D10E606F9A0B25", "name": "Realistic Combat Drones - WCS"},
+    {"modId": "68746C2DCDABB93D", "name": "REAPER_NH-90 HQ"},
+    {"modId": "6934F9C61CE24DE5", "name": "REAPER_RHIB"},
+    {"modId": "69C8C48790525BE3", "name": "Sleeper Cell - AI"},
+    {"modId": "59EAA899751805DF", "name": "Stun Grenade"},
+    {"modId": "61ECB5EFAA346151", "name": "TacticalAnimationOverhaul TEST"},
+    {"modId": "65AD7CE59E8DB349", "name": "ACE Trenches Dev"},
+    {"modId": "65AD7CB89F219E38", "name": "ACE Tactical Ladder Dev"},
+    {"modId": "65AD7D1E9EEAFA53", "name": "ACE Explosives Dev"},
+    {"modId": "6A8E689750C80548", "name": "WCS_ACE"},
+    {"modId": "64CB39E57377C861", "name": "WCS_AH-1S"},
+    {"modId": "62CCD69DD17E4F2F", "name": "AKI_Core"},
+    {"modId": "662EB83AB3F8CAE3", "name": "AKI_Core_Upgrade"},
+    {"modId": "6303360DA719E832", "name": "WCS_AH-64D"},
+    {"modId": "6326F0C7E748AB8A", "name": "WCS_AH-64D_Upgrade"},
+    {"modId": "6273146ADFE8241D", "name": "WCS_AH-6M"},
+    {"modId": "62AE96D92179F7A0", "name": "WCS_AH-6M_Upgrade"},
+    {"modId": "5E389BB9F58B79A6", "name": "WCS_SpaceCore"},
+    {"modId": "5E524E4FEECCA92B", "name": "WCS_BMP-1"},
+    {"modId": "5B383D4CB27E0D54", "name": "WCS_BMP-3"},
+    {"modId": "612F512CD4CB21D5", "name": "WCS_Earplugs"},
+    {"modId": "65B60A48AEC31157", "name": "WCS_FMTV"},
+    {"modId": "6A20948448913FD7", "name": "WCS_Hescos"},
+    {"modId": "672D432E181E6807", "name": "WCS_HoldBreath"},
+    {"modId": "5C721177A220B42F", "name": "WCS_JLTV"},
+    {"modId": "6528B3CE24C85120", "name": "WCS_JLTV_Upgrade"},
+    {"modId": "684CE0507D2F8AD2", "name": "WCS_KBA-105"},
+    {"modId": "656EC7E7513E76A9", "name": "WCS_PS5"},
+    {"modId": "69D176C07DDCFF64", "name": "WCS_RHS_TempFixes"},
+    {"modId": "61BA4EB5C886D396", "name": "WCS_VehicleLock"},
+    {"modId": "615A80027C5C9170", "name": "WCS_Vehicles"},
+    {"modId": "64900A5A31F5DCB5", "name": "WCS_MRZR"},
+    {"modId": "6A50528453E5FF27", "name": "WCS_RHS_Vehicles"},
+    {"modId": "5B02128D896F7DE8", "name": "WCS_Stryker"},
+    {"modId": "685EDA5A6ACD53C5", "name": "WCS_Suppression"},
+    {"modId": "61C4B48772550E0F", "name": "WCS_TempFixes"},
+    {"modId": "6A68E18470531D4B", "name": "WCS_ViewDistance"},
+    {"modId": "63294BA2D9F0339B", "name": "WCS_ZU-23-2"},
+    {"modId": "0EE9CE408F80A62C", "name": "Were You Raised In A Barn"},
+    {"modId": "62F364B35E9B51B0", "name": "Wirecutters 2"},
+    {"modId": "5D1880C4AD410C14", "name": "WCS_M1A1"},
+    {"modId": "63120AE07E6C0966", "name": "WCS_M2A2"},
+    {"modId": "61D57616CAFBB23D", "name": "WCS_LoadoutEditor"},
+    {"modId": "5E0AB16BEB16D6A4", "name": "WCS_T-72"},
+    {"modId": "69333B6C7C8BE8AB", "name": "WCS_VON"},
+    {"modId": "61A25BD1C99515B5", "name": "WCS_Commands"},
+    {"modId": "614D1A3874A23AD9", "name": "WCS_Interface"},
+    {"modId": "6A8312058F0EDC8E", "name": "FRP_DroneDetector"},
+    {"modId": "6A9554824B4C155B", "name": "TFO_DroneDetector_ENG"},
+    {"modId": "6AA3385AD956B4DD", "name": "TFO - Drone Jammer Backpacks"},
+    {"modId": "66D6340C1D565C98", "name": "Chungus Core"},
+    {"modId": "620E584B1D2C96A4", "name": "Chungus Shotguns"},
+    {"modId": "6A89645B840FD4EE", "name": "S&D Drone Systems"},
+    {"modId": "6AA93D208350694A", "name": "S&D Fixed Wing"}
+]
+
+Build: 77bd6c4

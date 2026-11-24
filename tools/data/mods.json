@@ -130,10 +130,6 @@
      "name": "ConflictPVERemixedVanilla2.0"
     },
     {
-     "id": "68F352219EA04EC6",
-     "name": "AWM - Summer Version"
-    },
-    {
      "id": "69B856EFDEA992EB",
      "name": "ConstantEnemyThreat 1.7"
     },
@@ -402,11 +398,6 @@
      "author": "Gramps303"
     },
     {
-     "id": "68F352219EA04EC6",
-     "name": "AWM - Summer Version",
-     "author": " EO"
-    },
-    {
      "id": "69B856EFDEA992EB",
      "name": "ConstantEnemyThreat 1.7",
      "author": "WhiskeyDreamzZz"
@@ -442,13 +433,8 @@
      "author": "Punkster"
     },
     {
-     "id": "64610AFB74AA9842",
-     "name": "WCS_Core",
-     "author": "Worst Case Scenario"
-    },
-    {
-     "id": "68F006D910E7546F",
-     "name": "WCS_Weapon_Scripts",
+     "id": "631C3C1AEE9C90BC",
+     "name": "WCS_Sounds",
      "author": "Worst Case Scenario"
     },
     {
@@ -467,13 +453,23 @@
      "author": "Red Hammer Studios"
     },
     {
-     "id": "631C3C1AEE9C90BC",
-     "name": "WCS_Sounds",
+     "id": "6AAE2A3269AD5C39",
+     "name": "WCS_RHS_Sounds",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "64610AFB74AA9842",
+     "name": "WCS_Core",
      "author": "Worst Case Scenario"
     },
     {
      "id": "615806DC6C57AF02",
      "name": "WCS_NATO",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "68F006D910E7546F",
+     "name": "WCS_Weapon_Scripts",
      "author": "Worst Case Scenario"
     },
     {
@@ -507,18 +503,8 @@
      "author": "Worst Case Scenario"
     },
     {
-     "id": "6152CB0BD0684837",
-     "name": "WCS_Clothing",
-     "author": "Worst Case Scenario"
-    },
-    {
      "id": "61E42AE6714A3CC2",
      "name": "WCS_Armbands",
-     "author": "Worst Case Scenario"
-    },
-    {
-     "id": "629B2BA37EFFD577",
-     "name": "WCS_Armaments",
      "author": "Worst Case Scenario"
     },
     {
@@ -527,13 +513,18 @@
      "author": "Worst Case Scenario"
     },
     {
-     "id": "6AAE2A3269AD5C39",
-     "name": "WCS_RHS_Sounds",
+     "id": "65F929DF622BAD50",
+     "name": "WCS_RHS_Weapons",
      "author": "Worst Case Scenario"
     },
     {
-     "id": "65F929DF622BAD50",
-     "name": "WCS_RHS_Weapons",
+     "id": "629B2BA37EFFD577",
+     "name": "WCS_Armaments",
+     "author": "Worst Case Scenario"
+    },
+    {
+     "id": "6152CB0BD0684837",
+     "name": "WCS_Clothing",
      "author": "Worst Case Scenario"
     },
     {
@@ -577,13 +568,13 @@
      "author": "Bale'"
     },
     {
-     "id": "65AD7CB89F219E38",
-     "name": "ACE Tactical Ladder Dev",
+     "id": "65AD7CE59E8DB349",
+     "name": "ACE Trenches Dev",
      "author": "acemod"
     },
     {
-     "id": "65AD7CE59E8DB349",
-     "name": "ACE Trenches Dev",
+     "id": "65AD7CB89F219E38",
+     "name": "ACE Tactical Ladder Dev",
      "author": "acemod"
     },
     {
@@ -607,14 +598,14 @@
      "author": "AkiraSeki"
     },
     {
-     "id": "6303360DA719E832",
-     "name": "WCS_AH-64D",
-     "author": "Worst Case Scenario"
-    },
-    {
      "id": "662EB83AB3F8CAE3",
      "name": "AKI_Core_Upgrade",
      "author": "AkiraSeki"
+    },
+    {
+     "id": "6303360DA719E832",
+     "name": "WCS_AH-64D",
+     "author": "Worst Case Scenario"
     },
     {
      "id": "6326F0C7E748AB8A",

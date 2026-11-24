@@ -322,6 +322,14 @@ LATEST_GAME = max((m["game"] for m in MODS.values() if m["game"]), key=lambda v:
 CPVE_VER = MODS["conflict-pve"]["version"]
 THIRD_PARTY = {d["id"] for m in MODS.values() for d in m["deps"]} - OUR_IDS - {BASE_GAME}
 CFG_KEYS = sum(len(f["rows"]) for f in CONFIGS)
+# Development builds whose complete changelog (admin notes included) lives on the mod page under a
+# permanent anchor, #build-<id>: the short Workshop changelog links there, so the anchor never changes.
+# Text: tools/data/builds/<slug>-<id>.txt, quoted as written (English). The build stays "Incoming" while
+# the Workshop still shows the version it follows.
+BUILDS = {"conflict-pve": [("77bd6c4", "2.0.6")]}
+RHS_EULA = "https://docs.rhsmods.org/rhs-status-quo-user-documentation/arma-reforger/rhs-status-quo/eula"
+# Required sound credit, shown word for word in every language.
+SOUND_CREDIT = "Additional sounds: Joseph SARDIN - LaSonotheque.org"
 
 
 def name(m):
@@ -609,11 +617,11 @@ def phead(code, kicker, h1, lead=None, lead_args=None, extra=""):
                  t(lead, "p", "lead", lead_args) if lead else "", extra)
 
 
-def sec(id_, title_key, body, code="", cls="", note=""):
+def sec(id_, title_key, body, code="", cls="", note="", targs=None, badge=""):
     return """<section class="sec %s" id="%s" aria-labelledby="h-%s">
-  <h2 id="h-%s"><span class="sec-code" aria-hidden="true">%s</span>%s</h2>%s
+  <h2 id="h-%s"><span class="sec-code" aria-hidden="true">%s</span>%s%s</h2>%s
   %s
-</section>""" % (cls, id_, id_, id_, H(code), t(title_key), note, body)
+</section>""" % (cls, id_, id_, id_, H(code), t(title_key, args=targs), badge, note, body)
 
 
 def num(n):
@@ -720,6 +728,8 @@ def deps_section(m):
         intro += t("deps.direct", "p", "dim", {"n": len(m["direct"]), "m": len(m["deps"])})
     else:
         intro += t("deps.none", "p", "dim")
+    if slug in BUILDS:
+        intro += t("deps.order", "p", "dim", {"b": BUILDS[slug][-1][0]})
     rows = "".join(
         "<tr><td>%d</td><td>%s</td><td><code>%s</code></td><td>%s</td></tr>" % (
             i + 1, ext(WORKSHOP + d["id"], H(d["name"])), d["id"], H(d.get("author") or "—"))
@@ -746,6 +756,63 @@ def deps_section(m):
 %s""" % (intro, t("deps.server_json"), len(entries), copy_btn("#deps-json-" + slug), slug, H(js),
          t("deps.plain"), len(entries), copy_btn("#deps-plain-" + slug), slug, H(plain), table)
     return sec("deps", "sec.deps", body, "05")
+
+
+_LOG_HEAD = re.compile(r"^[A-Z][A-Z /&-]*[A-Z](\s*\([^)]*\))?$")
+
+
+def build_sec(m, bid, after, code):
+    """Complete changelog of one development build, under its permanent anchor #build-<id>."""
+    slug = m["slug"]
+    with open(os.path.join(TOOLS, "data", "builds", "%s-%s.txt" % (slug, bid)), encoding="utf-8") as f:
+        txt = f.read()
+    log, _, tail = txt.partition("=== SERVER MOD LIST")
+    mods = tail[tail.index('"mods": ['):tail.index("\n]") + 2]
+    # The server mod list of the build must be exactly the dependency list shown on the page.
+    listed = re.findall(r'\{"modId": "([0-9A-F]{16})", "name": "([^"]*)"\}', mods)
+    entries = dep_lists(m)[0]
+    assert listed == [(e["id"], e["name"]) for e in entries], "build %s: mod list differs from mods.json deps" % bid
+    assert ("Build: %s" % bid) in tail, "build %s: build line missing" % bid
+    out, items = [], []
+    def flush():
+        if items:
+            out.append("<ul>%s</ul>" % "".join("<li>%s</li>" % H(x) for x in items))
+            del items[:]
+    lines = log.strip().split("\n")
+    out.append('<p class="mono dim">%s</p>' % H(lines[0]))
+    for line in lines[1:]:
+        line = line.strip()
+        if line.startswith("- "):
+            items.append(line[2:])
+            continue
+        flush()
+        if not line:
+            continue
+        out.append("<h3>%s</h3>" % H(line) if _LOG_HEAD.match(line) else "<p>%s</p>" % H(line))
+    flush()
+    pending = m["version"] == after
+    body = """<blockquote class="quote-log" lang="en"><div class="log-txt log-full">%s</div></blockquote>
+<details class="deps-table">
+  <summary>%s</summary>
+  <pre class="code" tabindex="0" lang="en"><code>%s</code></pre>
+</details>
+<p class="mono dim">Build: %s · <a href="#deps">%s</a></p>""" % (
+        "".join(out), t("log.modlist", "span", "", {"n": len(listed)}), H(mods), H(bid), t("sec.deps"))
+    return sec("build-" + bid, "log.build_h", body, code, "sec-build", t("log.build_note", "p", "dim", {"b": bid, "v": after}),
+               {"b": bid}, " " + badge_inc() if pending else "")
+
+
+def credits_body(m):
+    k = "m.%s." % m["slug"]
+    body = t(k + "credits", "p")
+    if (k + "adapted") in SRC["en"]:
+        body += """
+<h3>%s</h3>%s
+<ul class="feat">%s<li><b>RHS - Status Quo</b> (Red Hammer Studios) — %s</li><li class="credit-req" lang="en">%s</li></ul>
+<h3>%s</h3>
+<ul class="feat">%s</ul>""" % (t(k + "adapted_h"), t(k + "adapted_p", "p"), tl(k + "adapted"), ext(RHS_EULA, "EULA"), H(SOUND_CREDIT),
+                               t(k + "builtin_h"), tl(k + "builtin"))
+    return body
 
 
 def facts(m):
@@ -820,11 +887,20 @@ def mod_page(slug):
     ov = tl(k + "intro", "p")
     parts.append(sec("overview", "sec.overview", '<div class="prose">%s</div>' % ov, "01"))
     parts.append(sec("features", "sec.features", '<ul class="feat">%s</ul>' % tl(k + "f"), "02"))
-    if has("inc"):
+    build = BUILDS.get(slug, [None])[-1]
+    pending = bool(build) and m["version"] == build[1]
+    new_id = "incoming" if pending else "new"
+    if build:
+        # What's new in the latest build (the mod's own description), with a link to its full changelog.
+        link = '<p><a href="#build-%s">%s</a></p>' % (build[0], t("log.build_link", "span", "", {"b": build[0]}))
+        if pending:
+            parts.append(sec("incoming", "sec.incoming", '<ul class="feat feat-inc">%s</ul>%s' % (tl(k + "new"), link), "02B", "sec-inc",
+                             t("sec.incoming.d", "p", "dim", {"v": m["version"]})))
+        else:
+            parts.append(sec("new", "sec.new", '<ul class="feat">%s</ul>%s' % (tl(k + "new"), link), "02B"))
+    elif has("inc"):
         parts.append(sec("incoming", "sec.incoming", '<ul class="feat feat-inc">%s</ul>' % tl(k + "inc"), "02B", "sec-inc",
                          t("sec.incoming.d", "p", "dim", {"v": m["version"]})))
-    if slug == "conflict-pve":
-        parts.append(wip_block("wip", "02C"))
     if has("setup"):
         parts.append(sec("setup", "sec.setup", '<ol class="steps">%s</ol>' % tl(k + "setup"), "03"))
     if has("admin"):
@@ -836,24 +912,28 @@ def mod_page(slug):
     elif slug == "forest":
         parts.append(sec("commands", "sec.commands", t("admins.cmds_p", "p") + cmd_table(), "04B"))
     parts.append(deps_section(m))
+    if build:
+        parts.append(build_sec(m, build[0], build[1], "06"))
     if m["changelog"]:
         parts.append(sec("changelog", "sec.changelog",
                          '%s<blockquote class="quote-log" lang="en"><p class="mono dim">v%s // %s</p><div class="log-txt">%s</div></blockquote>' % (
-                             t("log.workshop_note", "p", "dim"), H(m["version"]), H(m["updated"]), H(m["changelog"].strip())), "06"))
+                             t("log.workshop_note", "p", "dim"), H(m["version"]), H(m["updated"]), H(m["changelog"].strip())), "06B" if build else "06"))
     if m["versions"]:
         lis = "".join('<li><span class="mono">v%s</span><span class="dim mono">%s</span>%s</li>' % (
             H(v), H(d), t("ui.current", "span", "chip chip-cur") if j == 0 else "") for j, (v, d) in enumerate(m["versions"]))
         parts.append(sec("versions", "sec.versions", '<ol class="vlist">%s</ol><p><a href="%schangelog/">%s</a></p>' % (lis, BASE, t("logp.h1")), "07"))
     if has("credits"):
-        parts.append(sec("credits", "sec.credits", t(k + "credits", "p"), "08"))
+        parts.append(sec("credits", "sec.credits", credits_body(m), "08"))
 
     toc = "".join('<a href="#%s">%s</a>' % (a, t(kk)) for a, kk in [
-        ("overview", "sec.overview"), ("features", "sec.features")] + ([("incoming", "sec.incoming")] if has("inc") else [])
-        + ([("wip", "wip.h")] if slug == "conflict-pve" else [])
+        ("overview", "sec.overview"), ("features", "sec.features")]
+        + ([(new_id, "sec.incoming" if pending else "sec.new")] if build else [("incoming", "sec.incoming")] if has("inc") else [])
         + ([("setup", "sec.setup")] if has("setup") else []) + ([("admin", "sec.admin")] if has("admin") else [])
         + ([("commands", "sec.commands")] if slug in ("conflict-pve", "forest") else [])
-        + [("deps", "sec.deps")] + ([("changelog", "sec.changelog")] if m["changelog"] else [])
-        + ([("versions", "sec.versions")] if m["versions"] else []))
+        + [("deps", "sec.deps")] + ([("build-" + build[0], "log.build_toc")] if build else [])
+        + ([("changelog", "sec.changelog")] if m["changelog"] else [])
+        + ([("versions", "sec.versions")] if m["versions"] else [])
+        + ([("credits", "sec.credits")] if has("adapted") else []))
     side = """<aside class="mside">
   <div class="panel">
     <h2 class="panel-h">%s</h2>
@@ -1339,6 +1419,10 @@ def search_index():
         if m["guid"]:
             it["w"] = WORKSHOP + m["guid"]  # official Workshop page (none for an unlisted mod)
         items.append(it)
+    for s, builds in BUILDS.items():
+        for bid, _after in builds:
+            items.append({"k": "page", "t": "%s · build %s" % (name(MODS[s]), bid), "s": "log.build_toc",
+                          "x": "%s changelog %s" % (bid, s), "u": url("workshop/%s/#build-%s" % (s, bid))})
     for cmd, key, _ in COMMANDS:
         items.append({"k": "cmd", "t": cmd.split("\n")[0], "s": key, "u": url("admins/#cmds")})
     for f in CONFIGS:
