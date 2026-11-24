@@ -335,6 +335,8 @@ CFG_KEYS = sum(len(f["rows"]) for f in CONFIGS)
 BUILDS = {"conflict-pve": [("77bd6c4", "2.0.6", "2.1.0")], "forest": [("b2e7e63", "0.0.2", "0.0.3")]}
 # Build notes that send server admins to another build's notes (the settings files they share).
 BUILD_SEE = {("forest", "b2e7e63"): ("conflict-pve", "77bd6c4")}
+# Builds whose notes carry the settings-files tip for server admins (cfg_tip).
+CFG_TIP_BUILDS = {("conflict-pve", "77bd6c4"), ("forest", "b2e7e63")}
 # Mods that need RHS - Status Quo and link its EULA in their credits.
 RHS_EULA_MODS = ("conflict-pve", "forest")
 RHS_EULA = "https://docs.rhsmods.org/rhs-status-quo-user-documentation/arma-reforger/rhs-status-quo/eula"
@@ -816,11 +818,21 @@ def build_sec(m, bid, after, pub, code):
   <summary>%s</summary>
   <pre class="code" tabindex="0" lang="en"><code>%s</code></pre>
 </details>
-%s<p class="mono dim">Build: %s · <a href="#deps">%s</a></p>""" % (
-        "".join(out), t("log.modlist", "span", "", {"n": len(listed)}), H(mods), see, H(bid), t("sec.deps"))
+%s%s<p class="mono dim">Build: %s · <a href="#deps">%s</a></p>""" % (
+        "".join(out), t("log.modlist", "span", "", {"n": len(listed)}), H(mods), see,
+        cfg_tip() if (slug, bid) in CFG_TIP_BUILDS else "", H(bid), t("sec.deps"))
     note = (t("log.build_note", "p", "dim", {"b": bid, "v": after}) if pending
             else t("log.build_note_pub", "p", "dim", {"b": bid, "v": pub}))
     return sec("build-" + bid, "log.build_h", body, code, "sec-build", note, {"b": bid}, " " + badge_inc() if pending else "")
+
+
+def cfg_tip():
+    """What a server admin does with the $profile settings files after an update (never rewritten by the server)."""
+    return """<div class="cfg-tip">
+<h3>%s</h3>
+<ul class="feat">%s</ul>
+%s
+</div>""" % (t("cfgtip.h"), tl("cfgtip.s"), t("cfgtip.next", "p", "note"))
 
 
 def credits_body(m):
@@ -1203,7 +1215,7 @@ def admins():
 <tbody>%s</tbody></table></div>""" % (t("deps.col_name"), t("ui.scenario"), t("ui.copy"), scen_rows), "03"),
              sec("profile", "admins.profile", '<ul class="feat">%s</ul>' % tl("admins.profile_s"), "04"),
              sec("cmds", "admins.cmds", t("admins.cmds_p", "p") + cmd_table(with_mod=True), "05"),
-             sec("cfg", "admins.cfg", t("admins.cfg_p", "p") + """<div class="cfg-tools js-only">
+             sec("cfg", "admins.cfg", t("admins.cfg_p", "p") + cfg_tip() + """<div class="cfg-tools js-only">
   <label class="field">%s<input type="search" id="cfg-filter" autocomplete="off" spellcheck="false" %s></label>
   <span class="mono dim" id="cfg-count" aria-live="polite"></span>
 </div>

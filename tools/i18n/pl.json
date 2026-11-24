@@ -108,6 +108,14 @@
   "log.build_link": "Pełny changelog buildu {b}, wraz z uwagami dla administratorów serwera",
   "log.modlist": "Lista modów serwera (liczba modów: {n}, w kolejności ładowania)",
   "log.see_cfg": "Nowe i zastąpione pliki ustawień <code>$profile</code>: zobacz uwagi dla administratorów serwera w {m}, build {b}",
+  "cfgtip.h": "Administratorzy serwera: pliki ustawień po aktualizacji",
+  "cfgtip.s": [
+    "<b>Dlaczego:</b> każdy plik <code>$profile:INDFORGE_*/config.json</code> powstaje tylko wtedy, gdy go brakuje, i nigdy potem nie jest aktualizowany. Po aktualizacji moda serwer zachowuje stare ustawienia.",
+    "<b>Z Conflict PvE 2.1.0:</b> po aktualizacji zatrzymaj serwer, usuń <code>config.json</code> systemów, które się zmieniły (<code>INDFORGE_Weather</code>, <code>INDFORGE_EnemyHQ</code>, <code>INDFORGE_FireSupport</code>, <code>INDFORGE_AIDoctrine</code>), i uruchom go ponownie: serwer utworzy je od nowa z nowymi ustawieniami.",
+    "<b>Nowe foldery</b> (<code>INDFORGE_AIBudget</code>, <code>INDFORGE_Movement</code>, <code>INDFORGE_RadioAlerts</code>, <code>INDFORGE_DroneTeam</code>, <code>INDFORGE_NightGear</code>, <code>INDFORGE_MavicLight</code>, <code>INDFORGE_RadarTruck</code>) tworzą się same przy pierwszym uruchomieniu.",
+    "<b>Uwaga:</b> usunięcie pliku kasuje też ustawienia, które w nim zmieniłeś. Zapisz je wcześniej."
+  ],
+  "cfgtip.next": "<b>W przygotowaniu, jeszcze niedostępne:</b> automatyczna aktualizacja ustawień przy starcie serwera (nowe klucze dodane, nigdy niezmieniane wartości ustawione na nowe domyślne, twoje wartości zachowane, kopia zapasowa starego pliku).",
   "home.title": "Sztab",
   "home.stat_mods": "modów w rejestrze",
   "home.stat_deps": "modów Workshop wymienionych jako zależności",

@@ -108,6 +108,14 @@
   "log.build_link": "Changelog completo del build {b}, note per gli amministratori del server incluse",
   "log.modlist": "Lista dei mod del server ({n} mod, in ordine di caricamento)",
   "log.see_cfg": "File di impostazioni <code>$profile</code> nuovi e sostituiti: vedi le note per gli amministratori del server di {m}, build {b}",
+  "cfgtip.h": "Amministratori del server: i file di impostazioni dopo un aggiornamento",
+  "cfgtip.s": [
+    "<b>Perché:</b> ogni file <code>$profile:INDFORGE_*/config.json</code> viene creato solo se manca, e non viene mai aggiornato dopo. Dopo un aggiornamento della mod, un server mantiene le vecchie impostazioni.",
+    "<b>Con Conflict PvE 2.1.0:</b> dopo l'aggiornamento, ferma il server, elimina il <code>config.json</code> dei sistemi cambiati (<code>INDFORGE_Weather</code>, <code>INDFORGE_EnemyHQ</code>, <code>INDFORGE_FireSupport</code>, <code>INDFORGE_AIDoctrine</code>), poi riavvia: il server li ricrea con le nuove impostazioni.",
+    "<b>Le nuove cartelle</b> (<code>INDFORGE_AIBudget</code>, <code>INDFORGE_Movement</code>, <code>INDFORGE_RadioAlerts</code>, <code>INDFORGE_DroneTeam</code>, <code>INDFORGE_NightGear</code>, <code>INDFORGE_MavicLight</code>, <code>INDFORGE_RadarTruck</code>) si creano da sole al primo avvio.",
+    "<b>Attenzione:</b> eliminare un file cancella anche le impostazioni che vi avevi cambiato. Annotale prima."
+  ],
+  "cfgtip.next": "<b>In preparazione, non ancora disponibile:</b> aggiornamento automatico delle impostazioni all'avvio del server (nuove chiavi aggiunte, valori mai cambiati portati ai nuovi predefiniti, i tuoi valori mantenuti, copia di sicurezza del vecchio file).",
   "home.title": "QG",
   "home.stat_mods": "mod a registro",
   "home.stat_deps": "mod del Workshop citate come dipendenze",

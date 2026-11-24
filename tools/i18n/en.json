@@ -108,6 +108,14 @@
   "log.build_link": "Full changelog of build {b}, notes for server admins included",
   "log.modlist": "Server mod list ({n} mods, in load order)",
   "log.see_cfg": "New and replaced <code>$profile</code> settings files: see the notes for server admins of {m}, build {b}",
+  "cfgtip.h": "Server admins: settings files after an update",
+  "cfgtip.s": [
+    "<b>Why:</b> each <code>$profile:INDFORGE_*/config.json</code> file is created only when it is missing, and never updated afterwards. After a mod update, a server keeps its old settings.",
+    "<b>With Conflict PvE 2.1.0:</b> after the update, stop the server, delete the <code>config.json</code> of the systems that changed (<code>INDFORGE_Weather</code>, <code>INDFORGE_EnemyHQ</code>, <code>INDFORGE_FireSupport</code>, <code>INDFORGE_AIDoctrine</code>), then restart: the server writes them again with the new settings.",
+    "<b>New folders</b> (<code>INDFORGE_AIBudget</code>, <code>INDFORGE_Movement</code>, <code>INDFORGE_RadioAlerts</code>, <code>INDFORGE_DroneTeam</code>, <code>INDFORGE_NightGear</code>, <code>INDFORGE_MavicLight</code>, <code>INDFORGE_RadarTruck</code>) are created on their own at the first start.",
+    "<b>Careful:</b> deleting a file also erases the settings you changed in it. Write them down first."
+  ],
+  "cfgtip.next": "<b>In preparation, not available yet:</b> automatic update of the settings at server start (new keys added, values never changed moved to the new defaults, your own values kept, a backup copy of the old file).",
   "home.title": "HQ",
   "home.stat_mods": "mods on record",
   "home.stat_deps": "Workshop mods credited as dependencies",
