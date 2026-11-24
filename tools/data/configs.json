@@ -1,5 +1,112 @@
 [
  {
+  "profile": "$profile:INDFORGE_AIBudget/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": [
+   {
+    "key": "Enabled",
+    "value": "true",
+    "help": "false gives ConflictPVERemixed its own spawn distances back, with no budget"
+   },
+   {
+    "key": "PatrolSpawnDistance",
+    "value": "600",
+    "help": "Metres. ConflictPVERemixed patrols, base garrisons and counter-attacks spawn when a player is this close (CPR's own distance: 0.3 x the server view distance, between 250 and 1000, about 750 at a view distance of 2500). Ordinary patrols also leave as soon as no player is this close. 0 keeps CPR's distances"
+   },
+   {
+    "key": "PatrolDespawnDistance",
+    "value": "800",
+    "help": "Metres, at least the spawn distance. Groups guarding a base (within 300 m of it) that are allowed to leave are removed once every player is farther than this. Ordinary patrols leave at the spawn distance"
+   },
+   {
+    "key": "MinPlayerDistance",
+    "value": "300",
+    "help": "Metres, at most 0.8 x the spawn distance. A ConflictPVERemixed group never spawns closer than this to a player, so it never appears in sight. Counter-attacks and vehicle crews are never held back by this or by the budget"
+   },
+   {
+    "key": "BudgetRadius",
+    "value": "1000",
+    "help": "Metres. AI soldiers counted around each player, any faction and any source"
+   },
+   {
+    "key": "BudgetPerPlayer",
+    "value": "80",
+    "help": "AI soldiers allowed around a lone player before new ConflictPVERemixed groups wait to spawn"
+   },
+   {
+    "key": "BudgetExtraPerPlayer",
+    "value": "20",
+    "help": "Added to the budget for each other player within BudgetRadius"
+   },
+   {
+    "key": "BudgetMax",
+    "value": "200",
+    "help": "Highest budget, however many players are together"
+   },
+   {
+    "key": "NearDistance",
+    "value": "400",
+    "help": "Metres. Groups closer than this to the player use the whole budget"
+   },
+   {
+    "key": "FarShare",
+    "value": "0.7",
+    "help": "0 to 1. Share of the budget open to groups farther than NearDistance, so the place the player is at comes first"
+   },
+   {
+    "key": "GroupSpawnGapSeconds",
+    "value": "1.5",
+    "help": "Seconds between two ConflictPVERemixed group spawns, server-wide, counter-attacks and vehicle crews included. Spreads the spawns of a new area out"
+   },
+   {
+    "key": "CensusSeconds",
+    "value": "2",
+    "help": "Seconds between two counts of the AI soldiers around the players"
+   },
+   {
+    "key": "ReportSeconds",
+    "value": "60",
+    "help": "Seconds between two INDFORGE AI budget: reports in the server log, 0 for none"
+   },
+   {
+    "key": "MapBudgetPerPlayer",
+    "value": "120",
+    "help": "AI soldiers the whole map may hold with one living player, any faction and any source. Above it, counter-attacks far from every player are put to sleep"
+   },
+   {
+    "key": "MapBudgetExtraPerPlayer",
+    "value": "15",
+    "help": "Added to the map budget for each other living player"
+   },
+   {
+    "key": "MapBudgetMax",
+    "value": "250",
+    "help": "Highest map budget, however many players there are"
+   },
+   {
+    "key": "SleepDistance",
+    "value": "1500",
+    "help": "Metres, at least the spawn distance + 200. Above the map budget, a ConflictPVERemixed counter-attack whose soldiers are all farther than this from every living player, not fighting and on foot, is put to sleep (the farthest first, one every CensusSeconds): its soldiers are removed, its group keeps its place and its number of soldiers"
+   },
+   {
+    "key": "WakeDistance",
+    "value": "1200",
+    "help": "Metres, between the spawn distance and SleepDistance - 100. A sleeping counter-attack wakes where it was when a living player comes this close"
+   },
+   {
+    "key": "SleepMinSeconds",
+    "value": "120",
+    "help": "Seconds. A counter-attack sleeps at least this long before waking for room on the map, and stays awake at least this long after waking"
+   },
+   {
+    "key": "SleepMaxSeconds",
+    "value": "900",
+    "help": "Seconds, between SleepMinSeconds and 7200. A sleeping counter-attack wakes after this long even when the map is full, so an enemy recapture is delayed, never blocked"
+   }
+  ]
+ },
+ {
   "profile": "$profile:INDFORGE_AIDoctrine/config.json",
   "mod": "conflict-pve",
   "readme": null,
@@ -2137,6 +2244,12 @@
     "help": "0 to 1. Chance that a patrol truck that spawns loaded keeps its supplies and carries only its cab crew; otherwise the supplies are emptied and the whole squad rides in the back"
    }
   ]
+ },
+ {
+  "profile": "$profile:INDFORGE_RadarTruck/config.json",
+  "mod": "conflict-pve",
+  "readme": null,
+  "rows": []
  },
  {
   "profile": "$profile:INDFORGE_RadioAlerts/config.json",

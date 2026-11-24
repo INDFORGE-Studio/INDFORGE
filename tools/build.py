@@ -95,17 +95,21 @@ COMMANDS = [
     ("#setrank <player name> <rank>", "cmd.setrank", "in"),
     ("#aidoctrine status | reload | on | off", "cmd.aidoctrine", "in"),
     ("#aidoctrine mod <name> <factor> [seconds]\n#aidoctrine mod <name> off", "cmd.aidoctrine_mod", "in"),
+    ("#aibudget status | on | off", "cmd.aibudget", "in"),
     ("#enemyhq status", "cmd.enemyhq", "in"),
     ("#enemyhq here [drone] [vehicle]", "cmd.enemyhq_here", "in"),
     ("#enemyhq roadblocks [reset]", "cmd.enemyhq_rb", "in"),
     ("#enemyhq strike glide | missile | flyby | geran2 | geran4", "cmd.enemyhq_strike", "in"),
-    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | off | on", "cmd.weather", "in"),
+    ("#weather status | next [episode] | hold fog= height= rain= wind= dir= | resume | cycle | ambiance | off | on", "cmd.weather", "in"),
     ("#nightgear status", "cmd.nightgear", "in"),
 ]
 
 # Profile folders of features merged after the current Conflict PvE Workshop release (shown as Incoming).
 # Emptied when Conflict PvE 2.1.0 shipped them all (Weather, NightGear, DroneTeam, MavicLight, RadioAlerts, Movement).
 CFG_INCOMING = set()
+
+# Site notes shown above a settings table (i18n key), by profile folder.
+CFG_NOTES = {"INDFORGE_AIBudget": "cfg.aibudget", "INDFORGE_RadarTruck": "cfg.radartruck"}
 
 # News sections about features merged after the current Conflict PvE Workshop release (shown as Incoming).
 # Emptied when Conflict PvE 2.1.0 shipped them all (light, plans, ambush, air, weather, night, radio).
@@ -652,26 +656,31 @@ def stat_items(m):
 
 
 def wip_block(id_, code):
-    """Projects still in development: not merged, not on the Workshop. Kept apart from Incoming on purpose."""
+    """The Bigfoot, server performance and weather projects, shipped with Conflict PvE 2.1.0 (texts from its changelog).
+    Same chip as the shipped commands ("In service"), with the version they came with."""
+    v = {"v": CPVE_VER}
+    shipped = t("ui.in_service", "span", "chip chip-operational") + '<span class="mono dim">v%s</span>' % H(CPVE_VER)
     # "Written" group: code not compiled yet; hidden while empty
     written = ('<h4>%s</h4><ul class="feat feat-plan">%s</ul>\n  ' % (t("ew.written_h"), tl("ew.written"))
                if SRC["en"]["ew.written"] else "")
+    # Still planned for the truck (not in the 2.1.0 changelog); hidden once empty
+    nxt = ('<h4>%s</h4><ul class="feat feat-plan">%s</ul>\n  ' % (t("ew.next_h"), tl("ew.next"))
+           if SRC["en"]["ew.next"] else "")
     body = """<article class="proj">
   <h3>%s %s</h3>
   %s
   <h4>%s</h4><ul class="feat">%s</ul>
-  %s<h4>%s</h4><ul class="feat feat-plan">%s</ul>
-  %s
-</article>""" % (t("ew.name"), t("ui.wip", "span", "chip chip-dev"), t("ew.p", "p"), t("ew.done_h"), tl("ew.done"),
-                 written, t("ew.next_h"), tl("ew.next"), t("ew.insp", "p", "dim"))
-    # Other work on Conflict PvE: no figures, no dates (Commandant's order)
+  %s%s%s
+</article>""" % (t("ew.name"), shipped, t("ew.p", "p"), t("ew.done_h", args=v), tl("ew.done"),
+                 written, nxt, t("ew.insp", "p", "dim"))
+    # Server performance: no measured figures, no dates (Commandant's order)
     body += """
 <div class="proj-row">
-  <article class="proj proj-s"><h3>%s %s %s</h3>%s</article>
   <article class="proj proj-s"><h3>%s %s</h3>%s</article>
-</div>""" % (t("wip.perf"), t("ui.wip", "span", "chip chip-dev"), t("wip.prio", "span", "chip chip-cur"), t("wip.perf_p", "p"),
-             t("wip.wx"), t("wip.later", "span", "chip chip-standby"), t("wip.wx_p", "p"))
-    return sec(id_, "wip.h", body, code, "sec-wip", t("wip.d", "p", "dim"))
+  <article class="proj proj-s"><h3>%s %s</h3>%s</article>
+</div>""" % (t("wip.perf"), shipped, t("wip.perf_p", "p"), t("wip.wx"), shipped, t("wip.wx_p", "p"))
+    return sec(id_, "wip.h", body, code, "sec-done",
+               t("wip.d", "p", "dim", {"v": CPVE_VER, "d": MODS["conflict-pve"]["updated"]}), targs=v)
 
 
 def badge_inc():
@@ -1168,9 +1177,17 @@ def cfg_table(f):
         notes += '<p class="dim">%s</p>' % cfg_text(f["readme"])
     if f["mod"] == "enhanced-compositions":
         notes += t("ui.cfg_cpve", "p", "dim")
+    if folder in CFG_NOTES:
+        notes += t(CFG_NOTES[folder], "p", "note")
     inc = " " + badge_inc() if folder in CFG_INCOMING else ""
     if not mod["workshop"]:
         inc += " " + chips(f["mod"])
+    if not f["rows"]:
+        # Keys not documented yet (not in the changelog): the note alone, no empty table
+        return """<details class="cfg" id="%s">
+  <summary><code>%s</code><span class="cfg-meta"><a href="%s">%s</a>%s</span></summary>
+  %s
+</details>""" % (cfg_anchor(f["profile"]), H(f["profile"]), url("workshop/%s/" % f["mod"]), H(name(mod)), inc, notes)
     return """<details class="cfg" id="%s">
   <summary><code>%s</code><span class="cfg-meta"><a href="%s">%s</a>%s%s</span></summary>
   %s

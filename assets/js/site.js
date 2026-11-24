@@ -910,8 +910,10 @@
           var ok = !q || head.indexOf(q) >= 0 || norm(tr.textContent).indexOf(q) >= 0;
           tr.hidden = !ok; if (ok) hits++;
         });
-        box.hidden = q && !hits;
-        if (q) box.open = hits > 0;
+        // a file listed without its keys (note only) still shows when its name matches
+        var named = q && !$("tbody", box) && head.indexOf(q) >= 0;
+        box.hidden = q && !hits && !named;
+        if (q) box.open = hits > 0 || named;
         total += hits;
       });
       count.textContent = q ? fmt(plain(tr(pkey("ui.rows", total, dict), "{n} settings")), { n: total }) : "";

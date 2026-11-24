@@ -222,12 +222,14 @@ table { border-collapse: collapse; width: 100%; }
 .sec > h2 + .dim, .sec > h2 + p { margin-top: -2px; }
 .sec-inc > h2 { border-bottom-color: rgba(var(--amber-rgb), .4); }
 .sec-wip > h2 { border-bottom-style: dashed; border-bottom-color: rgba(var(--dev-rgb), .45); }
+.sec-done > h2 { border-bottom-color: rgba(var(--ok-rgb), .4); }
 .proj h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 10px; font: 700 1.3rem/1.2 var(--f-head); letter-spacing: .04em; text-transform: uppercase; color: var(--hi); }
 .proj h4 { margin: 22px 0 10px; font: 600 12px var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--amber); }
 .feat-plan li::before { border-style: dashed; border-color: var(--dev); }
 .proj-row { display: grid; gap: 14px; margin-top: 26px; }
 @media (min-width: 900px) { .proj-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .proj-s { padding: 4px 16px 6px; border: 1px dashed rgba(var(--dev-rgb), .45); }
+.sec-done .proj-s { border-style: solid; border-color: rgba(var(--ok-rgb), .35); }
 .proj-s h3 { margin-top: 12px; font-size: 1.05rem; }
 .proj-s p { margin: 0 0 10px; color: var(--txt2); }
 .note { padding: 12px 16px; border-left: 2px solid var(--amber); background: var(--amber-d); color: var(--txt); }
